@@ -1,0 +1,165 @@
+<!DOCTYPE html>
+<html dir="ltr" lang="en">
+
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="shortcut icon" href="./assets/images/icons/favicon.ico" type="image/x-icon" />
+    <title>GameCo - HTML Tailwind CSS</title>
+</head>
+
+<body>
+
+    <!-- preloader start -->
+    <include-preloader />
+    <!-- preloader end -->
+
+    <!-- scroll to top button start -->
+    <include-scrollToTop />
+    <!-- scroll to top button end -->
+
+    <!-- header start -->
+    <include-navbar />
+    <!-- header end -->
+
+    <!-- sidebar start -->
+    <include-left-right-sidebar />
+    <!-- sidebar end -->
+
+    <!-- app layout start -->
+    <div class="app-layout">
+
+        <!-- main start -->
+        <main>
+
+            <!-- breadcrumb start -->
+            <section class="pt-30p">
+                <div class="section-pt">
+                    <div
+                        class="relative bg-[url('../images/photos/breadcrumbImg.png')] bg-cover bg-no-repeat rounded-24 overflow-hidden">
+                        <div class="container">
+                            <div class="grid grid-cols-12 gap-30p relative xl:py-[130px] md:py-30 sm:py-25 py-20 z-[2]">
+                                <div class="lg:col-start-2 lg:col-end-12 col-span-12">
+                                    <h2 class="heading-2 text-w-neutral-1 mb-3">
+                                        Checkout
+                                    </h2>
+                                    <ul class="breadcrumb">
+                                        <li class="breadcrumb-item">
+                                            <a href="#" class="breadcrumb-link">
+                                                Home
+                                            </a>
+                                        </li>
+                                        <li class="breadcrumb-item">
+                                            <span class="breadcrumb-icon">
+                                                <i class="ti ti-chevrons-right"></i>
+                                            </span>
+                                        </li>
+                                        <li class="breadcrumb-item">
+                                            <span class="breadcrumb-current">Checkout</span>
+                                        </li>
+                                    </ul>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="overlay-11"></div>
+                    </div>
+                </div>
+            </section>
+            <!-- breadcrumb end -->
+
+            <!-- checkout section start -->
+            <section class="section-pb pt-15 overflow-visible">
+                <div class="container">
+                    <div class="grid grid-cols-12 gap-30p">
+                        <div class="3xl:col-start-2 3xl:col-end-12 col-span-12">
+                            <form class="grid grid-cols-10 gap-x-30p gap-y-10">
+                                <div
+                                    class="xxl:col-span-7 xl:col-span-6 col-span-10 xl:order-1 order-2 bg-b-neutral-3 p-40p rounded-12 ">
+                                    <div class="flex-y justify-between flex-wrap gap-3 mb-20p">
+                                        <h4 class="heading-4 text-w-neutral-1">
+                                            Contact Information
+                                        </h4>
+                                        <p class="text-sm text-w-neutral-4">
+                                            Already have an account?
+                                            <a href="./login.html" class="inline text-primary hover:underline">
+                                                Log In
+                                            </a>
+                                        </p>
+                                    </div>
+
+                                    <div class="bg-b-neutral-4 px-40p py-32p rounded-12 mb-40p">
+                                        <input class="border-input-1 mb-3" type="text" name="shipping_address"
+                                            placeholder="Enter your shipping address" id="shipping_address" />
+                                        <div class="checkbox-container shrink-0">
+                                            <input type="checkbox" value="true" id="emailMe"
+                                                class="border-corners-checkbox" checked>
+                                            <label for="emailMe" class="border-corners-checkbox-label gap-2">
+                                                <i class="ti icon-24 text-w-neutral-3"></i>
+                                                Email me with news offer
+                                            </label>
+                                        </div>
+                                    </div>
+
+                                    <div>
+                                        <h4 class="heading-4 text-w-neutral-1 mb-20p">
+                                            Payment
+                                        </h4>
+
+                                        <div class="bg-b-neutral-4 px-40p py-32p rounded-12 mb-40p">
+                                            <div class="grid grid-cols-12 gap-20p mb-24p">
+                                                <input class="sm:col-span-6 col-span-12 border-input-1" type="text"
+                                                    name="firstName" placeholder="First Name" />
+                                                <input class="sm:col-span-6 col-span-12 border-input-1" type="text"
+                                                    name="lastName" placeholder="Last Name" />
+                                                <input class="col-span-12 border-input-1" type="text" name="address"
+                                                    placeholder="Address" />
+                                                <input class="sm:col-span-6 col-span-12 border-input-1" type="text"
+                                                    name="city" placeholder="City" />
+                                                <input class="sm:col-span-6 col-span-12 border-input-1" type="number"
+                                                    name="postalCode" placeholder="Postal Code" />
+                                                <input class="col-span-12 border-input-1" type="number" name="phone"
+                                                    placeholder="Phone" />
+                                            </div>
+
+                                            <div class="checkbox-container shrink-0">
+                                                <input type="checkbox" value="true" name="saveInfo" id="saveInfo"
+                                                    class="border-corners-checkbox" checked>
+                                                <label for="saveInfo" class="border-corners-checkbox-label gap-2">
+                                                    <i class="ti icon-24 text-w-neutral-3"></i>
+                                                    Save this information for next time
+                                                </label>
+                                            </div>
+                                        </div>
+                                        <div class="flex-y flex-wrap gap-3">
+                                            <a href="./checkout.html" class="btn btn-md btn-primary rounded-12">
+                                                Complete Order
+                                            </a>
+                                            <a href="./shop.html" class="btn btn-md btn-neutral-4 rounded-12">
+                                                Return to Shipping
+                                            </a>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="xxl:col-span-3 xl:col-span-4 col-span-10 order-1 xl:order-2">
+                                    <include-billing-sidebar />
+                                </div>
+                            </form>
+                        </div>
+                    </div>
+                </div>
+            </section>
+            <!-- checkout section end -->
+
+        </main>
+        <!-- main end -->
+
+        <!-- footer start -->
+        <include-footer />
+        <!-- footer end -->
+    </div>
+    <!-- app layout end -->
+
+
+</body>
+
+</html>

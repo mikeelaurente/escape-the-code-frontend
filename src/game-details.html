@@ -1,0 +1,486 @@
+<!DOCTYPE html>
+<html dir="ltr" lang="en">
+
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="shortcut icon" href="./assets/images/icons/favicon.ico" type="image/x-icon" />
+    <title>GameCo - HTML Tailwind CSS</title>
+</head>
+
+<body>
+
+    <!-- preloader start -->
+    <include-preloader />
+    <!-- preloader end -->
+
+    <!-- scroll to top button start -->
+    <include-scrollToTop />
+    <!-- scroll to top button end -->
+
+    <!-- header start -->
+    <include-navbar />
+    <!-- header end -->
+
+    <!-- sidebar start -->
+    <include-left-right-sidebar />
+    <!-- sidebar end -->
+
+    <!-- app layout start -->
+    <div class="app-layout">
+
+        <!-- main start -->
+        <main>
+
+            <!-- game details hero start -->
+            <section class="pt-30p">
+                <div class="section-pt">
+                    <div
+                        class="relative bg-[url('../images/photos/gameDetailsHeroBG.png')] bg-cover bg-no-repeat rounded-24 overflow-hidden">
+                        <div
+                            class="container relative 3xl:px-[140px] max-3xl:px-80p xl:py-[130px] md:py-30 sm:py-25 py-20 z-[2]">
+                            <div class="max-w-[670px]">
+                                <h1 class="heading-1 text-w-neutral-1 mb-3 text-left">
+                                    Gourmet Empire
+                                </h1>
+                                <p class="text-m-medium text-w-neutral-1 mb-24p">
+                                    Meta Apes is a play-and-earn MMO strategy game. It is set in a post apocalyptic
+                                    world,
+                                    in which a new era ruled by Apes has begun. Here, play an alter ego in a parallel
+                                    world
+                                    and create your own monkey life.
+                                </p>
+                                <div class="flex items-center flex-wrap gap-3">
+                                    <a href="#" class="btn btn-md btn-primary rounded-12">
+                                        Play Now
+                                    </a>
+                                    <a href="./profile.html" class="btn btn-md btn-neutral-1 rounded-12">
+                                        Go to profile
+                                    </a>
+                                    <button class="btn-c btn-c-lg btn-neutral-1">
+                                        <i class="ti ti-heart"></i>
+                                    </button>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="overlay-1"></div>
+                    </div>
+                </div>
+            </section>
+            <!-- game details hero end -->
+
+            <!-- game details section start -->
+            <section class="pt-60p overflow-visible">
+                <div class="container">
+                    <h3 class="heading-3 text-w-neutral-1 mb-30p">
+                        Overview
+                    </h3>
+                    <div class="grid grid-cols-12 gap-x-24p gap-y-10">
+                        <div class="xxl:col-span-8 col-span-12">
+                            <div class="swiper thumbs-carousel-container mb-30p" data-carousel-name="home-hero-slider"
+                                data-slides-per-view="4">
+                                <div class="swiper thumbs-gallery-main">
+                                    <div class="swiper-wrapper">
+                                        <div class="swiper-slide rounded-12 overflow-hidden">
+                                            <img class="w-full xxl:h-[480px] xl:h-[400px] md:h-[380px] sm:h-[320px] h-[280px] object-cover"
+                                                src="./assets/images/games/gameDetails1.1.png" alt="game" />
+                                        </div>
+                                        <div class="swiper-slide rounded-12 overflow-hidden">
+                                            <img class="w-full xxl:h-[480px] xl:h-[400px] md:h-[380px] sm:h-[320px] h-[280px] object-cover"
+                                                src="./assets/images/library/libraryDetails2.png" alt="game" />
+                                        </div>
+                                        <div class="swiper-slide rounded-12 overflow-hidden">
+                                            <img class="w-full xxl:h-[480px] xl:h-[400px] md:h-[380px] sm:h-[320px] h-[280px] object-cover"
+                                                src="./assets/images/library/libraryDetails3.png" alt="game" />
+                                        </div>
+                                        <div class="swiper-slide rounded-12 overflow-hidden">
+                                            <img class="w-full xxl:h-[480px] xl:h-[400px] md:h-[380px] sm:h-[320px] h-[280px] object-cover"
+                                                src="./assets/images/library/libraryDetails4.png" alt="game" />
+                                        </div>
+                                        <div class="swiper-slide rounded-12 overflow-hidden">
+                                            <img class="w-full xxl:h-[480px] xl:h-[400px] md:h-[380px] sm:h-[320px] h-[280px] object-cover"
+                                                src="./assets/images/library/libraryDetails1.png" alt="game" />
+                                        </div>
+                                        <div class="swiper-slide rounded-12 overflow-hidden">
+                                            <img class="w-full xxl:h-[480px] xl:h-[400px] md:h-[380px] sm:h-[320px] h-[280px] object-cover"
+                                                src="./assets/images/library/libraryDetails2.png" alt="game" />
+                                        </div>
+                                        <div class="swiper-slide rounded-12 overflow-hidden">
+                                            <img class="w-full xxl:h-[480px] xl:h-[400px] md:h-[380px] sm:h-[320px] h-[280px] object-cover"
+                                                src="./assets/images/library/libraryDetails3.png" alt="game" />
+                                        </div>
+                                        <div class="swiper-slide rounded-12 overflow-hidden">
+                                            <img class="w-full xxl:h-[480px] xl:h-[400px] md:h-[380px] sm:h-[320px] h-[280px] object-cover"
+                                                src="./assets/images/library/libraryDetails4.png" alt="game" />
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="thumbs-gallery pt-30p">
+                                    <div class="swiper-wrapper">
+                                        <div class="swiper-slide">
+                                            <div class="overflow-hidden cursor-pointer rounded-16">
+                                                <img class="w-full xxl:h-[200px] lg:h-[160px] md:h-[140px] sm:h-25 h-18 object-cover hover:scale-110 transition-1"
+                                                    src="./assets/images/games/gameDetails1.1.png" alt="game">
+                                            </div>
+                                        </div>
+                                        <div class="swiper-slide">
+                                            <div class="overflow-hidden cursor-pointer rounded-16">
+                                                <img class="w-full xxl:h-[200px] lg:h-[160px] md:h-[140px] sm:h-25 h-18 object-cover hover:scale-110 transition-1"
+                                                    src="./assets/images/library/libraryDetails2.png" alt="game">
+                                            </div>
+                                        </div>
+                                        <div class="swiper-slide">
+                                            <div class="overflow-hidden cursor-pointer rounded-16">
+                                                <img class="w-full xxl:h-[200px] lg:h-[160px] md:h-[140px] sm:h-25 h-18 object-cover hover:scale-110 transition-1"
+                                                    src="./assets/images/library/libraryDetails3.png" alt="game">
+                                            </div>
+                                        </div>
+                                        <div class="swiper-slide">
+                                            <div class="overflow-hidden cursor-pointer rounded-16">
+                                                <img class="w-full xxl:h-[200px] lg:h-[160px] md:h-[140px] sm:h-25 h-18 object-cover hover:scale-110 transition-1"
+                                                    src="./assets/images/library/libraryDetails4.png" alt="game">
+                                            </div>
+                                        </div>
+                                        <div class="swiper-slide">
+                                            <div class="overflow-hidden cursor-pointer rounded-16">
+                                                <img class="w-full xxl:h-[200px] lg:h-[160px] md:h-[140px] sm:h-25 h-18 object-cover hover:scale-110 transition-1"
+                                                    src="./assets/images/library/libraryDetails1.png" alt="game">
+                                            </div>
+                                        </div>
+                                        <div class="swiper-slide">
+                                            <div class="overflow-hidden cursor-pointer rounded-16">
+                                                <img class="w-full xxl:h-[200px] lg:h-[160px] md:h-[140px] sm:h-25 h-18 object-cover hover:scale-110 transition-1"
+                                                    src="./assets/images/library/libraryDetails2.png" alt="game">
+                                            </div>
+                                        </div>
+                                        <div class="swiper-slide">
+                                            <div class="overflow-hidden cursor-pointer rounded-16">
+                                                <img class="w-full xxl:h-[200px] lg:h-[160px] md:h-[140px] sm:h-25 h-18 object-cover hover:scale-110 transition-1"
+                                                    src="./assets/images/library/libraryDetails3.png" alt="game">
+                                            </div>
+                                        </div>
+                                        <div class="swiper-slide">
+                                            <div class="overflow-hidden cursor-pointer rounded-16">
+                                                <img class="w-full xxl:h-[200px] lg:h-[160px] md:h-[140px] sm:h-25 h-18 object-cover hover:scale-110 transition-1"
+                                                    src="./assets/images/library/libraryDetails4.png" alt="game">
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                            <div x-data="{ open: false }" class="pt-30p ">
+                                <h4 class="heading-4 text-w-neutral-1 mb-16p">About Game</h4>
+                                <div class="grid grid-cols-1 gap-16p">
+                                    <p class="text-m-regular text-w-neutral-3">
+                                        Our vision is to create a welcoming, inclusive, and supportive environment where
+                                        gamers of all backgrounds and skill levels can come together. We believe in the
+                                        power of gaming to foster camaraderie, creativity, and personal growth. Whether
+                                        you're a solo player, a competitive gamerstreamer, or a game developer, you have
+                                        a place here.
+                                    </p>
+                                    <p class="text-m-regular text-w-neutral-3">
+                                        We're a diverse group of gamers, ranging from casual players to hardcore
+                                        enthusiasts, spanning various platforms and genres. What unites us is our belief
+                                        that gaming is not just a pastime but an art form, a form of storytelling, and a
+                                        means of forging connections with people from all walks of life
+                                    </p>
+                                    <p class="text-m-regular text-w-neutral-3">
+                                        As a result the villagers began invading one another, which in turn led to an
+                                        ultimate war. Wild Ninnekos are born with to help the Ninnekos conquer the
+                                        entire forest, build new villages, and establish a strong empire.
+                                    </p>
+                                    <div x-show="open" x-collapse class="grid grid-cols-1 gap-16p">
+                                        <p class="text-m-regular text-w-neutral-3">
+                                            We're a diverse group of gamers, ranging from casual players to hardcore
+                                            enthusiasts, spanning various platforms and genres. What unites us is our
+                                            belief
+                                            that gaming is not just a pastime but an art form, a form of storytelling,
+                                            and a
+                                            means of forging connections with people from all walks of life
+                                        </p>
+                                        <p class="text-m-regular text-w-neutral-3">
+                                            As a result the villagers began invading one another, which in turn led to
+                                            an
+                                            ultimate war. Wild Ninnekos are born with to help the Ninnekos conquer the
+                                            entire
+                                            forest, build new villages, and establish a strong empire.
+                                        </p>
+                                    </div>
+                                </div>
+
+                                <button @click="open = !open" class="inline-flex items-center gap-2 mt-40p">
+                                    <span class="text-base font-poppins font-semibold underline">
+                                        Read More
+                                    </span>
+                                    <i class="ti ti-chevron-down icon-24 transition-1"
+                                        :class="{ 'rotate-180': open }"></i>
+                                </button>
+                            </div>
+                        </div>
+                        <div class="xxl:col-span-4 col-span-12 relative">
+                            <div class="xxl:sticky xxl:top-30">
+                                <div class="p-40p rounded-12 bg-b-neutral-3">
+                                    <div class="flex items-center gap-3 flex-wrap">
+                                        <img class="avatar size-60p" src="./assets/images/users/avatar7.png"
+                                            alt="user" />
+                                        <div>
+                                            <span class="text-xl-medium text-w-neutral-1 mb-1">
+                                                Meta Apes
+                                            </span>
+                                            <span class="text-m-regular text-w-neutral-4">
+                                                Status: Live
+                                            </span>
+                                        </div>
+                                    </div>
+                                    <div
+                                        class="grid grid-cols-1 gap-16p py-24p *:flex *:items-center *:justify-between *:flex-wrap *:gap-16p">
+                                        <div>
+                                            <span class="text-m-regular text-w-neutral-4">
+                                                Developer
+                                            </span>
+                                            <span class="text-m-medium text-w-neutral-1">
+                                                Meta Apes PTE
+                                            </span>
+                                        </div>
+                                        <div>
+                                            <span class="text-m-regular text-w-neutral-4">
+                                                Blockchain
+                                            </span>
+                                            <img class="size-5 rounded-full" src="./assets/images/photos/bitcoin.svg"
+                                                alt="icon" />
+                                        </div>
+                                        <div>
+                                            <span class="text-m-regular text-w-neutral-4">
+                                                Release date
+                                            </span>
+                                            <span class="text-m-medium text-w-neutral-1">
+                                                4 May, 2022
+                                            </span>
+                                        </div>
+                                        <div>
+                                            <span class="text-m-regular text-w-neutral-4">
+                                                Platform
+                                            </span>
+                                            <span class="text-m-medium text-w-neutral-1">
+                                                Android, iOS
+                                            </span>
+                                        </div>
+                                        <div>
+                                            <span class="text-m-regular text-w-neutral-4">
+                                                Genre
+                                            </span>
+                                            <span class="text-m-medium text-w-neutral-1">
+                                                Strategic role-playing game
+                                            </span>
+                                        </div>
+                                    </div>
+                                    <span class="text-m-medium text-w-neutral-1 mb-20p">Community</span>
+                                    <div class="flex items-center gap-3">
+                                        <a href="#" class="btn-socal-primary">
+                                            <i class="ti ti-brand-facebook"></i>
+                                        </a>
+                                        <a href="#" class="btn-socal-primary">
+                                            <i class="ti ti-brand-twitch"></i>
+                                        </a>
+                                        <a href="#" class="btn-socal-primary">
+                                            <i class="ti ti-brand-instagram"></i>
+                                        </a>
+                                        <a href="#" class="btn-socal-primary">
+                                            <i class="ti ti-brand-discord"></i>
+                                        </a>
+                                        <a href="#" class="btn-socal-primary">
+                                            <i class="ti ti-brand-youtube"></i>
+                                        </a>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </section>
+            <!-- game details section end -->
+
+            <!-- related games start -->
+            <section class="section-py">
+                <div class="container">
+                    <div class="flex items-center justify-between flex-wrap gap-24p mb-40p">
+                        <h2 class="heading-2 text-w-neutral-1 text-split-left">
+                            Related Games
+                        </h2>
+                        <form class="select-1 shrink-0">
+                            <select class="select w-full sm:py-3 py-2 px-24p rounded-full">
+                                <option value="popular">Popular</option>
+                                <option value="new-releases">New Releases</option>
+                                <option value="action">Action</option>
+                                <option value="adventure">Adventure</option>
+                                <option value="sports">Sports</option>
+                            </select>
+                        </form>
+                    </div>
+                    <div class="swiper four-card-carousel" data-carousel-name="related-games" data-aos="fade-up">
+                        <div class="swiper-wrapper pb-15">
+                            <div class="swiper-slide">
+                                <div class="w-full bg-b-neutral-3 px-20p pt-20p pb-32p rounded-12">
+                                    <div class="glitch-effect rounded-12 overflow-hidden mb-24p">
+                                        <div class="glitch-thumb">
+                                            <img class="w-full md:h-[228px] h-[200px] object-cover"
+                                                src="./assets/images/games/game14.png" alt="Power Play" />
+                                        </div>
+                                        <div class="glitch-thumb">
+                                            <img class="w-full md:h-[228px] h-[200px] object-cover"
+                                                src="./assets/images/games/game14.png" alt="Power Play" />
+                                        </div>
+                                    </div>
+                                    <div>
+                                        <a href="./game-details.html"
+                                            class="heading-4 text-w-neutral-1 link-1 line-clamp-1">
+                                            Power Play
+                                        </a>
+                                        <p class="text-l-regular text-w-neutral-2">
+                                            Animal Park Adventures
+                                        </p>
+                                    </div>
+                                </div>
+                            </div>
+
+                            <div class="swiper-slide">
+                                <div class="w-full bg-b-neutral-3 px-20p pt-20p pb-32p rounded-12">
+                                    <div class="glitch-effect rounded-12 overflow-hidden mb-24p">
+                                        <div class="glitch-thumb">
+                                            <img class="w-full md:h-[228px] h-[200px] object-cover"
+                                                src="./assets/images/games/game15.png" alt="Gourmet Empire" />
+                                        </div>
+                                        <div class="glitch-thumb">
+                                            <img class="w-full md:h-[228px] h-[200px] object-cover"
+                                                src="./assets/images/games/game15.png" alt="Gourmet Empire" />
+                                        </div>
+                                    </div>
+                                    <div>
+                                        <a href="./game-details.html"
+                                            class="heading-4 text-w-neutral-1 link-1 line-clamp-1">
+                                            Gourmet Empire
+                                        </a>
+                                        <p class="text-l-regular text-w-neutral-2">
+                                            Food Tycoon
+                                        </p>
+                                    </div>
+                                </div>
+                            </div>
+
+                            <div class="swiper-slide">
+                                <div class="w-full bg-b-neutral-3 px-20p pt-20p pb-32p rounded-12">
+                                    <div class="glitch-effect rounded-12 overflow-hidden mb-24p">
+                                        <div class="glitch-thumb">
+                                            <img class="w-full md:h-[228px] h-[200px] object-cover"
+                                                src="./assets/images/games/game16.png" alt="Flight Captain" />
+                                        </div>
+                                        <div class="glitch-thumb">
+                                            <img class="w-full md:h-[228px] h-[200px] object-cover"
+                                                src="./assets/images/games/game16.png" alt="Flight Captain" />
+                                        </div>
+                                    </div>
+                                    <div>
+                                        <a href="./game-details.html"
+                                            class="heading-4 text-w-neutral-1 link-1 line-clamp-1">
+                                            Flight Captain
+                                        </a>
+                                        <p class="text-l-regular text-w-neutral-2">
+                                            Sky Adventures
+                                        </p>
+                                    </div>
+                                </div>
+                            </div>
+
+                            <div class="swiper-slide">
+                                <div class="w-full bg-b-neutral-3 px-20p pt-20p pb-32p rounded-12">
+                                    <div class="glitch-effect rounded-12 overflow-hidden mb-24p">
+                                        <div class="glitch-thumb">
+                                            <img class="w-full md:h-[228px] h-[200px] object-cover"
+                                                src="./assets/images/games/game17.png" alt="Animal Park Adventures" />
+                                        </div>
+                                        <div class="glitch-thumb">
+                                            <img class="w-full md:h-[228px] h-[200px] object-cover"
+                                                src="./assets/images/games/game17.png" alt="Animal Park Adventures" />
+                                        </div>
+                                    </div>
+                                    <div>
+                                        <a href="./game-details.html"
+                                            class="heading-4 text-w-neutral-1 link-1 line-clamp-1">
+                                            Animal Park Adventures
+                                        </a>
+                                        <p class="text-l-regular text-w-neutral-2">
+                                            Wildlife Journey
+                                        </p>
+                                    </div>
+                                </div>
+                            </div>
+
+                            <div class="swiper-slide">
+                                <div class="w-full bg-b-neutral-3 px-20p pt-20p pb-32p rounded-12">
+                                    <div class="glitch-effect rounded-12 overflow-hidden mb-24p">
+                                        <div class="glitch-thumb">
+                                            <img class="w-full md:h-[228px] h-[200px] object-cover"
+                                                src="./assets/images/games/game18.png" alt="Battles Beyond the Stars" />
+                                        </div>
+                                        <div class="glitch-thumb">
+                                            <img class="w-full md:h-[228px] h-[200px] object-cover"
+                                                src="./assets/images/games/game18.png" alt="Battles Beyond the Stars" />
+                                        </div>
+                                    </div>
+                                    <div>
+                                        <a href="./game-details.html"
+                                            class="heading-4 text-w-neutral-1 link-1 line-clamp-1">
+                                            Battles Beyond the Stars
+                                        </a>
+                                        <p class="text-l-regular text-w-neutral-2">
+                                            Galactic War
+                                        </p>
+                                    </div>
+                                </div>
+                            </div>
+
+                            <div class="swiper-slide">
+                                <div class="w-full bg-b-neutral-3 px-20p pt-20p pb-32p rounded-12">
+                                    <div class="glitch-effect rounded-12 overflow-hidden mb-24p">
+                                        <div class="glitch-thumb">
+                                            <img class="w-full md:h-[228px] h-[200px] object-cover"
+                                                src="./assets/images/games/game19.png" alt="Gridiron Glory" />
+                                        </div>
+                                        <div class="glitch-thumb">
+                                            <img class="w-full md:h-[228px] h-[200px] object-cover"
+                                                src="./assets/images/games/game19.png" alt="Gridiron Glory" />
+                                        </div>
+                                    </div>
+                                    <div>
+                                        <a href="./game-details.html"
+                                            class="heading-4 text-w-neutral-1 link-1 line-clamp-1">
+                                            Gridiron Glory
+                                        </a>
+                                        <p class="text-l-regular text-w-neutral-2">
+                                            Ultimate Football
+                                        </p>
+                                    </div>
+                                </div>
+                            </div>
+
+                        </div>
+                        <div class="swiper-pagination pagination-one related-games-carousel-pagination flex-c gap-2.5">
+                        </div>
+                    </div>
+                </div>
+            </section>
+            <!-- related trending end -->
+
+        </main>
+        <!-- main end -->
+
+        <!-- footer start -->
+        <include-footer />
+        <!-- footer end -->
+    </div>
+    <!-- app layout end -->
+
+
+</body>
+
+</html>

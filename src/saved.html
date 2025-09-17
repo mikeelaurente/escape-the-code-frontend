@@ -1,0 +1,366 @@
+<!DOCTYPE html>
+<html dir="ltr" lang="en">
+
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="shortcut icon" href="./assets/images/icons/favicon.ico" type="image/x-icon" />
+    <title>GameCo - HTML Tailwind CSS</title>
+</head>
+
+<body>
+
+    <!-- preloader start -->
+    <include-preloader />
+    <!-- preloader end -->
+
+    <!-- scroll to top button start -->
+    <include-scrollToTop />
+    <!-- scroll to top button end -->
+
+    <!-- header start -->
+    <include-navbar />
+    <!-- header end -->
+
+    <!-- sidebar start -->
+    <include-left-right-sidebar />
+    <!-- sidebar end -->
+
+    <!-- app layout start -->
+    <div class="app-layout">
+
+        <!-- main start -->
+        <main>
+
+            <!-- breadcrumb start -->
+            <section class="pt-30p">
+                <div class="section-pt">
+                    <div
+                        class="relative bg-[url('../images/photos/breadcrumbImg.png')] bg-cover bg-no-repeat rounded-24 overflow-hidden">
+                        <div class="container">
+                            <div class="grid grid-cols-12 gap-30p relative xl:py-[130px] md:py-30 sm:py-25 py-20 z-[2]">
+                                <div class="lg:col-start-2 lg:col-end-12 col-span-12">
+                                    <h2 class="heading-2 text-w-neutral-1 mb-3">
+                                        Saved
+                                    </h2>
+                                    <ul class="breadcrumb">
+                                        <li class="breadcrumb-item">
+                                            <a href="#" class="breadcrumb-link">
+                                                Home
+                                            </a>
+                                        </li>
+                                        <li class="breadcrumb-item">
+                                            <span class="breadcrumb-icon">
+                                                <i class="ti ti-chevrons-right"></i>
+                                            </span>
+                                        </li>
+                                        <li class="breadcrumb-item">
+                                            <span class="breadcrumb-current">Saved</span>
+                                        </li>
+                                    </ul>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="overlay-11"></div>
+                    </div>
+                </div>
+            </section>
+            <!-- breadcrumb end -->
+
+            <!-- saved start -->
+            <section class="section-pb pt-60p relative overflow-visible">
+                <div class="container">
+                    <div class="grid 3xl:grid-cols-2 xxl:grid-cols-3 lg:grid-cols-2 grid-cols-1 gap-24p">
+                        <!-- Card 1 -->
+                        <div
+                            class="w-full bg-b-neutral-3 p-24p rounded-24 grid 3xl:grid-cols-2 xl:grid-cols-1 lg:grid-cols-1 md:grid-cols-2 grid-cols-1 items-center gap-30p group">
+                            <div
+                                class="overflow-hidden w-full xl:h-[260px] md:h-[240px] sm:h-[220px] h-[200px] rounded-24">
+                                <img class="w-full xl:h-[260px] md:h-[240px] sm:h-[220px] h-[200px] object-cover group-hover:scale-110 transition-1"
+                                    src="./assets/images/games/game13.png" alt="img" />
+                            </div>
+                            <div>
+                                <a href="./game-details-two.html"
+                                    class="heading-3 text-w-neutral-1 4xl:line-clamp-2 line-clamp-2 link-1 text-split-left">
+                                    Lunar Legacy Celestial Chronicles
+                                </a>
+                                <div class="flex-y flex-wrap py-20p gap-3">
+                                    <img class="avatar size-60p shrink-0" src="./assets/images/users/avatar1.png"
+                                        alt="user" />
+                                    <span class="text-l-medium text-w-neutral-1">
+                                        Gaming Community
+                                    </span>
+                                </div>
+                                <div class="flex-y flex-wrap gap-2">
+                                    <span class="badge badge-smm badge-primary py-2.5 font-normal">
+                                        Collection
+                                    </span>
+                                    <button class="badge badge-neutral-2 px-16p py-1.5 font-normal">
+                                        <i class="ti ti-share-3 icon-24"></i>
+                                        Share
+                                    </button>
+                                    <div x-data="dropdown" class="dropdown">
+                                        <button @click="toggle()"
+                                            class="dropdown-toggle w-fit badge badge-neutral-2 px-16p py-1.5"
+                                            :aria-expanded="isOpen">
+                                            <i class="ti ti-dots-vertical  icon-24"></i>
+                                        </button>
+                                        <div x-show="isOpen" @click.away="close()" class="dropdown-content">
+                                            <button @click="close()" class="dropdown-item">Unsaved</button>
+                                            <button @click="close()" class="dropdown-item">Report</button>
+                                            <button @click="close()" class="dropdown-item">Block</button>
+                                            <button @click="close()" class="dropdown-item">Delete</button>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+
+                        <!-- Card 2 -->
+                        <div
+                            class="w-full bg-b-neutral-3 p-24p rounded-24 grid 3xl:grid-cols-2 xl:grid-cols-1 lg:grid-cols-1 md:grid-cols-2 grid-cols-1 items-center gap-30p group">
+                            <div
+                                class="overflow-hidden w-full xl:h-[260px] md:h-[240px] sm:h-[220px] h-[200px] rounded-24">
+                                <img class="w-full xl:h-[260px] md:h-[240px] sm:h-[220px] h-[200px] object-cover group-hover:scale-110 transition-1"
+                                    src="./assets/images/games/game8.png" alt="img" />
+                            </div>
+                            <div>
+                                <a href="./game-details-two.html"
+                                    class="heading-3 text-w-neutral-1 4xl:line-clamp-2 line-clamp-2 link-1 text-split-left">
+                                    Shadow Saga Realm of Shadows
+                                </a>
+                                <div class="flex-y flex-wrap py-20p gap-3">
+                                    <img class="avatar size-60p shrink-0" src="./assets/images/users/avatar2.png"
+                                        alt="user" />
+                                    <span class="text-l-medium text-w-neutral-1">
+                                        Gaming Community
+                                    </span>
+                                </div>
+                                <div class="flex-y flex-wrap gap-2">
+                                    <span class="badge badge-smm badge-primary py-2.5 font-normal">
+                                        Collection
+                                    </span>
+                                    <button class="badge badge-neutral-2 px-16p py-1.5 font-normal">
+                                        <i class="ti ti-share-3 icon-24"></i>
+                                        Share
+                                    </button>
+                                    <div x-data="dropdown" class="dropdown">
+                                        <button @click="toggle()"
+                                            class="dropdown-toggle w-fit badge badge-neutral-2 px-16p py-1.5"
+                                            :aria-expanded="isOpen">
+                                            <i class="ti ti-dots-vertical  icon-24"></i>
+                                        </button>
+                                        <div x-show="isOpen" @click.away="close()" class="dropdown-content">
+                                            <button @click="close()" class="dropdown-item">Unsaved</button>
+                                            <button @click="close()" class="dropdown-item">Report</button>
+                                            <button @click="close()" class="dropdown-item">Block</button>
+                                            <button @click="close()" class="dropdown-item">Delete</button>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+
+                        <!-- Card 3 -->
+                        <div
+                            class="w-full bg-b-neutral-3 p-24p rounded-24 grid 3xl:grid-cols-2 xl:grid-cols-1 lg:grid-cols-1 md:grid-cols-2 grid-cols-1 items-center gap-30p group">
+                            <div
+                                class="overflow-hidden w-full xl:h-[260px] md:h-[240px] sm:h-[220px] h-[200px] rounded-24">
+                                <img class="w-full xl:h-[260px] md:h-[240px] sm:h-[220px] h-[200px] object-cover group-hover:scale-110 transition-1"
+                                    src="./assets/images/games/game9.png" alt="img" />
+                            </div>
+                            <div>
+                                <a href="./game-details-two.html"
+                                    class="heading-3 text-w-neutral-1 4xl:line-clamp-2 line-clamp-2 link-1 text-split-left">
+                                    Elysium Echoes Dreams Unveiled
+                                </a>
+                                <div class="flex-y flex-wrap py-20p gap-3">
+                                    <img class="avatar size-60p shrink-0" src="./assets/images/users/avatar3.png"
+                                        alt="user" />
+                                    <span class="text-l-medium text-w-neutral-1">
+                                        Gaming Community
+                                    </span>
+                                </div>
+                                <div class="flex-y flex-wrap gap-2">
+                                    <span class="badge badge-smm badge-primary py-2.5 font-normal">
+                                        Collection
+                                    </span>
+                                    <button class="badge badge-neutral-2 px-16p py-1.5 font-normal">
+                                        <i class="ti ti-share-3 icon-24"></i>
+                                        Share
+                                    </button>
+                                    <div x-data="dropdown" class="dropdown">
+                                        <button @click="toggle()"
+                                            class="dropdown-toggle w-fit badge badge-neutral-2 px-16p py-1.5"
+                                            :aria-expanded="isOpen">
+                                            <i class="ti ti-dots-vertical  icon-24"></i>
+                                        </button>
+                                        <div x-show="isOpen" @click.away="close()" class="dropdown-content">
+                                            <button @click="close()" class="dropdown-item">Unsaved</button>
+                                            <button @click="close()" class="dropdown-item">Report</button>
+                                            <button @click="close()" class="dropdown-item">Block</button>
+                                            <button @click="close()" class="dropdown-item">Delete</button>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+
+                        <!-- Card 4 -->
+                        <div
+                            class="w-full bg-b-neutral-3 p-24p rounded-24 grid 3xl:grid-cols-2 xl:grid-cols-1 lg:grid-cols-1 md:grid-cols-2 grid-cols-1 items-center gap-30p group">
+                            <div
+                                class="overflow-hidden w-full xl:h-[260px] md:h-[240px] sm:h-[220px] h-[200px] rounded-24">
+                                <img class="w-full xl:h-[260px] md:h-[240px] sm:h-[220px] h-[200px] object-cover group-hover:scale-110 transition-1"
+                                    src="./assets/images/games/game10.png" alt="img" />
+                            </div>
+                            <div>
+                                <a href="./game-details-two.html"
+                                    class="heading-3 text-w-neutral-1 4xl:line-clamp-2 line-clamp-2 link-1 text-split-left">
+                                    Legacy Of Legends Tales Untold
+                                </a>
+                                <div class="flex-y flex-wrap py-20p gap-3">
+                                    <img class="avatar size-60p shrink-0" src="./assets/images/users/avatar4.png"
+                                        alt="user" />
+                                    <span class="text-l-medium text-w-neutral-1">
+                                        Gaming Community
+                                    </span>
+                                </div>
+                                <div class="flex-y flex-wrap gap-2">
+                                    <span class="badge badge-smm badge-primary py-2.5 font-normal">
+                                        Collection
+                                    </span>
+                                    <button class="badge badge-neutral-2 px-16p py-1.5 font-normal">
+                                        <i class="ti ti-share-3 icon-24"></i>
+                                        Share
+                                    </button>
+                                    <div x-data="dropdown" class="dropdown">
+                                        <button @click="toggle()"
+                                            class="dropdown-toggle w-fit badge badge-neutral-2 px-16p py-1.5"
+                                            :aria-expanded="isOpen">
+                                            <i class="ti ti-dots-vertical  icon-24"></i>
+                                        </button>
+                                        <div x-show="isOpen" @click.away="close()" class="dropdown-content">
+                                            <button @click="close()" class="dropdown-item">Unsaved</button>
+                                            <button @click="close()" class="dropdown-item">Report</button>
+                                            <button @click="close()" class="dropdown-item">Block</button>
+                                            <button @click="close()" class="dropdown-item">Delete</button>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+
+                        <!-- Card 5 -->
+                        <div
+                            class="w-full bg-b-neutral-3 p-24p rounded-24 grid 3xl:grid-cols-2 xl:grid-cols-1 lg:grid-cols-1 md:grid-cols-2 grid-cols-1 items-center gap-30p group">
+                            <div
+                                class="overflow-hidden w-full xl:h-[260px] md:h-[240px] sm:h-[220px] h-[200px] rounded-24">
+                                <img class="w-full xl:h-[260px] md:h-[240px] sm:h-[220px] h-[200px] object-cover group-hover:scale-110 transition-1"
+                                    src="./assets/images/games/game11.png" alt="img" />
+                            </div>
+                            <div>
+                                <a href="./game-details-two.html"
+                                    class="heading-3 text-w-neutral-1 4xl:line-clamp-2 line-clamp-2 link-1 text-split-left">
+                                    Mystic Realms Legends Unleashed
+                                </a>
+                                <div class="flex-y flex-wrap py-20p gap-3">
+                                    <img class="avatar size-60p shrink-0" src="./assets/images/users/avatar5.png"
+                                        alt="user" />
+                                    <span class="text-l-medium text-w-neutral-1">
+                                        Gaming Community
+                                    </span>
+                                </div>
+                                <div class="flex-y flex-wrap gap-2">
+                                    <span class="badge badge-smm badge-primary py-2.5 font-normal">
+                                        Collection
+                                    </span>
+                                    <button class="badge badge-neutral-2 px-16p py-1.5 font-normal">
+                                        <i class="ti ti-share-3 icon-24"></i>
+                                        Share
+                                    </button>
+                                    <div x-data="dropdown" class="dropdown">
+                                        <button @click="toggle()"
+                                            class="dropdown-toggle w-fit badge badge-neutral-2 px-16p py-1.5"
+                                            :aria-expanded="isOpen">
+                                            <i class="ti ti-dots-vertical  icon-24"></i>
+                                        </button>
+                                        <div x-show="isOpen" @click.away="close()" class="dropdown-content">
+                                            <button @click="close()" class="dropdown-item">Unsaved</button>
+                                            <button @click="close()" class="dropdown-item">Report</button>
+                                            <button @click="close()" class="dropdown-item">Block</button>
+                                            <button @click="close()" class="dropdown-item">Delete</button>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+
+                        <!-- Card 6 -->
+                        <div
+                            class="w-full bg-b-neutral-3 p-24p rounded-24 grid 3xl:grid-cols-2 xl:grid-cols-1 lg:grid-cols-1 md:grid-cols-2 grid-cols-1 items-center gap-30p group">
+                            <div
+                                class="overflow-hidden w-full xl:h-[260px] md:h-[240px] sm:h-[220px] h-[200px] rounded-24">
+                                <img class="w-full xl:h-[260px] md:h-[240px] sm:h-[220px] h-[200px] object-cover group-hover:scale-110 transition-1"
+                                    src="./assets/images/games/game12.png" alt="img" />
+                            </div>
+                            <div>
+                                <a href="./game-details-two.html"
+                                    class="heading-3 text-w-neutral-1 4xl:line-clamp-2 line-clamp-2 link-1 text-split-left">
+                                    Nebula Nova Cosmic Conques
+                                </a>
+                                <div class="flex-y flex-wrap py-20p gap-3">
+                                    <img class="avatar size-60p shrink-0" src="./assets/images/users/avatar6.png"
+                                        alt="user" />
+                                    <span class="text-l-medium text-w-neutral-1">
+                                        Gaming Community
+                                    </span>
+                                </div>
+                                <div class="flex-y flex-wrap gap-2">
+                                    <span class="badge badge-smm badge-primary py-2.5 font-normal">
+                                        Collection
+                                    </span>
+                                    <button class="badge badge-neutral-2 px-16p py-1.5 font-normal">
+                                        <i class="ti ti-share-3 icon-24"></i>
+                                        Share
+                                    </button>
+                                    <div x-data="dropdown" class="dropdown">
+                                        <button @click="toggle()"
+                                            class="dropdown-toggle w-fit badge badge-neutral-2 px-16p py-1.5"
+                                            :aria-expanded="isOpen">
+                                            <i class="ti ti-dots-vertical  icon-24"></i>
+                                        </button>
+                                        <div x-show="isOpen" @click.away="close()" class="dropdown-content">
+                                            <button @click="close()" class="dropdown-item">Unsaved</button>
+                                            <button @click="close()" class="dropdown-item">Report</button>
+                                            <button @click="close()" class="dropdown-item">Block</button>
+                                            <button @click="close()" class="dropdown-item">Delete</button>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+
+                    </div>
+                    <div class="flex-c mt-48p">
+                        <a href="#" class="btn btn-xl py-3 btn-neutral-3 rounded-12">
+                            Load More
+                        </a>
+                    </div>
+                </div>
+            </section>
+            <!-- saved end -->
+
+        </main>
+        <!-- main end -->
+
+        <!-- footer start -->
+        <include-footer />
+        <!-- footer end -->
+    </div>
+    <!-- app layout end -->
+
+
+</body>
+
+</html>

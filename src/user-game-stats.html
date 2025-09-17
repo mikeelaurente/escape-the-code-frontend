@@ -1,0 +1,499 @@
+<!DOCTYPE html>
+<html dir="ltr" lang="en">
+
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="shortcut icon" href="./assets/images/icons/favicon.ico" type="image/x-icon" />
+    <title>GameCo - HTML Tailwind CSS</title>
+</head>
+
+<body>
+
+    <!-- preloader start -->
+    <include-preloader />
+    <!-- preloader end -->
+
+    <!-- scroll to top button start -->
+    <include-scrollToTop />
+    <!-- scroll to top button end -->
+
+    <!-- header start -->
+    <include-navbar />
+    <!-- header end -->
+
+    <!-- sidebar start -->
+    <include-left-right-sidebar />
+    <!-- sidebar end -->
+
+    <!-- app layout start -->
+    <div class="app-layout">
+
+        <!-- main start -->
+        <main>
+
+            <!-- user profile section start -->
+            <section class="section-pt overflow-visible">
+                <div class="container">
+                    <div class="relative">
+                        <div class="glitch-effect">
+                            <div class="glitch-thumb">
+                                <img class="w-full xl:h-[490px] h-[400px] hover:scale-110 object-cover"
+                                    src="./assets/images/photos/profileCover1.png" alt="image">
+                            </div>
+                            <div class="glitch-thumb">
+                                <img class="w-full xl:h-[490px] lg:h-[400px] md:h-[340px] sm:h-[300px] h-[240px] hover:scale-110 object-cover"
+                                    src="./assets/images/photos/profileCover1.png" alt="image">
+                            </div>
+                        </div>
+                    </div>
+                    <div class="grid grid-cols-12 gap-30p bg-b-neutral-3 rounded-12 pb-30p">
+                        <div class="4xl:col-start-2 4xl:col-end-12 col-span-12 max-4xl:px-48p">
+                            <div
+                                class="relative flex 3xl:items-end max-3xl:items-center 3xl:justify-between max-3xl:flex-col gap-30p 3xl:mt-[70px] xl:-mt-52 lg:-mt-44 md:-mt-36 sm:-mt-30 -mt-20 4xl:mb-[70px] mb-60p">
+                                <div class="3xl:order-1 order-2 flex text-center divide-x divide-shap">
+                                    <div class="pr-6">
+                                        <h2 class="heading-40 text-w-neutral-1 mb-1">
+                                            75
+                                        </h2>
+                                        <span class="text-m-medium text-w-neutral-4/70">
+                                            Friends
+                                        </span>
+                                    </div>
+                                    <div class="px-24p">
+                                        <h2 class="heading-40 text-w-neutral-1 mb-1">
+                                            140
+                                        </h2>
+                                        <span class="text-m-medium text-w-neutral-4/70">
+                                            Winning
+                                        </span>
+                                    </div>
+                                    <div class="pl-6">
+                                        <h2 class="heading-40 text-w-neutral-1 mb-1">
+                                            241
+                                        </h2>
+                                        <span class="text-m-medium text-w-neutral-4/70">
+                                            Tournaments
+                                        </span>
+                                    </div>
+                                </div>
+                                <div
+                                    class="3xl:order-2 order-1 3xl:absolute 3xl:bottom-0 3xl:left-1/2 3xl:-translate-x-1/2 max-3xl:flex-col-c z-[4]">
+                                    <img class="avatar xl:size-60 lg:size-52 md:size-44 sm:size-40 size-28 border border-secondary "
+                                        src="./assets/images/users/user32.png" alt="profile" />
+                                    <div class="text-center mt-30p">
+                                        <h3 class="heading-3 text-w-neutral-1 mb-3 text-split-top">
+                                            Josephine Williams
+                                        </h3>
+                                        <p class="text-m-medium text-w-neutral-4">
+                                            I will destroy all enemies
+                                        </p>
+                                    </div>
+                                </div>
+                                <div class="order-3 flex items-center gap-3">
+                                    <a href="#" class="btn-socal-primary">
+                                        <i class="ti ti-brand-facebook"></i>
+                                    </a>
+                                    <a href="#" class="btn-socal-primary">
+                                        <i class="ti ti-brand-twitch"></i>
+                                    </a>
+                                    <a href="#" class="btn-socal-primary">
+                                        <i class="ti ti-brand-instagram"></i>
+                                    </a>
+                                    <a href="#" class="btn-socal-primary">
+                                        <i class="ti ti-brand-discord"></i>
+                                    </a>
+                                    <a href="#" class="btn-socal-primary">
+                                        <i class="ti ti-brand-youtube"></i>
+                                    </a>
+                                </div>
+                                <div
+                                    class="order-4 3xl:absolute 3xl:right-0 3xl:-top-25 flex items-center justify-center flex-wrap gap-20p z-[3]">
+                                    <button type="button" class="btn btn-lg btn-primary rounded-12">
+                                        Add Friend
+                                        <i class="ti ti-plus"></i>
+                                    </button>
+                                    <button type="button" class="btn btn-lg btn-neutral-2 rounded-12">
+                                        Send Message
+                                    </button>
+                                </div>
+                            </div>
+                            <div>
+                                <div
+                                    class="flex items-center max-sm:items-start justify-between max-sm:flex-col gap-32p ">
+
+                                    <div
+                                        class="tab-navbar flex items-center flex-wrap gap-x-32p gap-y-24p sm:text-xl text-lg *:font-borda font-medium text-w-neutral-1 whitespace-nowrap">
+                                        <a href="./profile.html">
+                                            Posts - Item
+                                        </a>
+                                        <a href="./user-game-stats.html">
+                                            Game - Stats
+                                        </a>
+                                        <a href="./user-about.html">
+                                            About
+                                        </a>
+                                        <a href="./user-team.html">
+                                            Teams
+                                        </a>
+                                        <a href="./user-groups.html">
+                                            Groups
+                                        </a>
+                                        <a href="./user-forums.html">
+                                            Forums
+                                        </a>
+                                        <a href="./user-videos.html">
+                                            Video
+                                        </a>
+                                        <a href="./user-achievements.html">
+                                            Achievements
+                                        </a>
+                                    </div>
+
+                                    <div class="flex items-center gap-24p">
+                                        <div x-data="dropdown" class="dropdown">
+                                            <button @click="toggle()"
+                                                class="relative btn-c btn-c-xxl btn-neutral-2 text-w-neutral-4">
+                                                <i class="ti ti-search"></i>
+                                            </button>
+                                            <div x-show="isOpen" @click.away="close()"
+                                                class="absolute sm:right-0 max-sm:left-0 sm:top-18 top-15 z-20">
+                                                <form
+                                                    class="flex items-center sm:gap-3 gap-2 min-w-[300px] max-w-[670px] w-full px-20p py-16p bg-b-neutral-2 rounded-full">
+                                                    <span class="flex-c icon-20 text-white">
+                                                        <i class="ti ti-search"></i>
+                                                    </span>
+                                                    <input autocomplete="off" class="bg-transparent w-full" type="text"
+                                                        name="search" id="search" placeholder="Search...">
+                                                </form>
+                                            </div>
+                                        </div>
+
+                                        <div x-data="dropdown" class="dropdown">
+                                            <button @click="toggle()"
+                                                class="relative btn-c btn-c-xxl btn-neutral-2 text-w-neutral-4">
+                                                <i class="ti ti-dots"></i>
+                                            </button>
+                                            <div x-show="isOpen" @click.away="close()"
+                                                class="dropdown-content sm:right-0 max-sm:left-0 sm:top-18 top-15 z-20">
+                                                <a href="./chat.html" @click="close()" class="dropdown-item">
+                                                    Send Message
+                                                </a>
+                                                <button @click="close()" class="dropdown-item">
+                                                    Follow Profile
+                                                </button>
+                                                <button @click="close()" class="dropdown-item">
+                                                    Report Profile
+                                                </button>
+                                                <button @click="close()" class="dropdown-item">
+                                                    Block User
+                                                </button>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </section>
+            <!-- user profile section end -->
+
+            <!-- user profile Game Stats section start -->
+            <section class="section-pb pt-60p overflow-visible">
+                <div class="container">
+                    <div class="grid grid-cols-12 gap-30p">
+                        <div class="4xl:col-start-2 4xl:col-end-8  xl:col-span-7 col-span-12">
+                            <div class="bg-b-neutral-3 p-40p rounded-12">
+                                <h3 class="heading-3 text-w-neutral-1 mb-30p text-split-left">
+                                    Game Stats
+                                </h3>
+                                <div
+                                    class="grid xxl+:grid-cols-3 xl:grid-cols-2 lg:grid-cols-3 sm:grid-cols-2 grid-cols-1 gap-30p">
+                                    <!-- game stats 1 -->
+                                    <div class="bg-b-neutral-4 p-16p flex-col-c" data-aos="fade-up">
+                                        <img class="avatar size-80p" src="./assets/images/games/gameLogo3.png"
+                                            alt="game stats" />
+                                        <a href="./game-details.html"
+                                            class="heading-5 text-w-neutral-1 link-1 line-clamp-1 my-2">
+                                            Lunar Legends
+                                        </a>
+                                        <div class="flex items-center border-t border-shap text-center pt-2">
+                                            <div>
+                                                <span class="text-sm text-w-neutral-1 mb-1">
+                                                    Matches
+                                                </span>
+                                                <span class="text-sm text-primary">
+                                                    275
+                                                </span>
+                                            </div>
+                                            <div class="3xl:mx-7 mx-20p w-1px h-full bg-shap"></div>
+                                            <div>
+                                                <span class="text-sm text-w-neutral-1 mb-1">
+                                                    Winnings
+                                                </span>
+                                                <span class="text-sm text-primary">
+                                                    145
+                                                </span>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <!-- game stats 2 -->
+                                    <div class="bg-b-neutral-4 p-16p flex-col-c" data-aos="fade-up">
+                                        <img class="avatar size-80p" src="./assets/images/games/gameLogo4.png"
+                                            alt="game stats" />
+                                        <a href="./game-details.html"
+                                            class="heading-5 text-w-neutral-1 link-1 line-clamp-1 my-2">
+                                            Elysian Tales
+                                        </a>
+                                        <div class="flex items-center border-t border-shap text-center pt-2">
+                                            <div>
+                                                <span class="text-sm text-w-neutral-1 mb-1">
+                                                    Matches
+                                                </span>
+                                                <span class="text-sm text-primary">
+                                                    275
+                                                </span>
+                                            </div>
+                                            <div class="3xl:mx-7 mx-20p w-1px h-full bg-shap"></div>
+                                            <div>
+                                                <span class="text-sm text-w-neutral-1 mb-1">
+                                                    Winnings
+                                                </span>
+                                                <span class="text-sm text-primary">
+                                                    145
+                                                </span>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <!-- game stats 3 -->
+                                    <div class="bg-b-neutral-4 p-16p flex-col-c" data-aos="fade-up">
+                                        <img class="avatar size-80p" src="./assets/images/games/gameLogo5.png"
+                                            alt="game stats" />
+                                        <a href="./game-details.html"
+                                            class="heading-5 text-w-neutral-1 link-1 line-clamp-1 my-2">
+                                            Soul Spark
+                                        </a>
+                                        <div class="flex items-center border-t border-shap text-center pt-2">
+                                            <div>
+                                                <span class="text-sm text-w-neutral-1 mb-1">
+                                                    Matches
+                                                </span>
+                                                <span class="text-sm text-primary">
+                                                    275
+                                                </span>
+                                            </div>
+                                            <div class="3xl:mx-7 mx-20p w-1px h-full bg-shap"></div>
+                                            <div>
+                                                <span class="text-sm text-w-neutral-1 mb-1">
+                                                    Winnings
+                                                </span>
+                                                <span class="text-sm text-primary">
+                                                    145
+                                                </span>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <!-- game stats 4 -->
+                                    <div class="bg-b-neutral-4 p-16p flex-col-c" data-aos="fade-up">
+                                        <img class="avatar size-80p" src="./assets/images/games/gameLogo6.png"
+                                            alt="game stats" />
+                                        <a href="./game-details.html"
+                                            class="heading-5 text-w-neutral-1 link-1 line-clamp-1 my-2">
+                                            Nova Rush
+                                        </a>
+                                        <div class="flex items-center border-t border-shap text-center pt-2">
+                                            <div>
+                                                <span class="text-sm text-w-neutral-1 mb-1">
+                                                    Matches
+                                                </span>
+                                                <span class="text-sm text-primary">
+                                                    275
+                                                </span>
+                                            </div>
+                                            <div class="3xl:mx-7 mx-20p w-1px h-full bg-shap"></div>
+                                            <div>
+                                                <span class="text-sm text-w-neutral-1 mb-1">
+                                                    Winnings
+                                                </span>
+                                                <span class="text-sm text-primary">
+                                                    145
+                                                </span>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <!-- game stats 5 -->
+                                    <div class="bg-b-neutral-4 p-16p flex-col-c" data-aos="fade-up">
+                                        <img class="avatar size-80p" src="./assets/images/games/gameLogo7.png"
+                                            alt="game stats" />
+                                        <a href="./game-details.html"
+                                            class="heading-5 text-w-neutral-1 link-1 line-clamp-1 my-2">
+                                            Shadow Strike
+                                        </a>
+                                        <div class="flex items-center border-t border-shap text-center pt-2">
+                                            <div>
+                                                <span class="text-sm text-w-neutral-1 mb-1">
+                                                    Matches
+                                                </span>
+                                                <span class="text-sm text-primary">
+                                                    275
+                                                </span>
+                                            </div>
+                                            <div class="3xl:mx-7 mx-20p w-1px h-full bg-shap"></div>
+                                            <div>
+                                                <span class="text-sm text-w-neutral-1 mb-1">
+                                                    Winnings
+                                                </span>
+                                                <span class="text-sm text-primary">
+                                                    145
+                                                </span>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <!-- game stats 6 -->
+                                    <div class="bg-b-neutral-4 p-16p flex-col-c" data-aos="fade-up">
+                                        <img class="avatar size-80p" src="./assets/images/games/gameLogo8.png"
+                                            alt="game stats" />
+                                        <a href="./game-details.html"
+                                            class="heading-5 text-w-neutral-1 link-1 line-clamp-1 my-2">
+                                            Dragon Fury
+                                        </a>
+                                        <div class="flex items-center border-t border-shap text-center pt-2">
+                                            <div>
+                                                <span class="text-sm text-w-neutral-1 mb-1">
+                                                    Matches
+                                                </span>
+                                                <span class="text-sm text-primary">
+                                                    275
+                                                </span>
+                                            </div>
+                                            <div class="3xl:mx-7 mx-20p w-1px h-full bg-shap"></div>
+                                            <div>
+                                                <span class="text-sm text-w-neutral-1 mb-1">
+                                                    Winnings
+                                                </span>
+                                                <span class="text-sm text-primary">
+                                                    145
+                                                </span>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="4xl:col-start-8 4xl:col-end-12  xl:col-span-5 col-span-12 relative ">
+                            <div class="xl:sticky xl:top-30">
+                                <div class="grid grid-cols-1 gap-30p *:bg-b-neutral-3 *:rounded-12 *:py-32p *:px-40p">
+                                    <div>
+                                        <h3 class="heading-3 text-w-neutral-1 mb-20p text-split-left">
+                                            Level 24
+                                        </h3>
+
+                                        <div x-data="progressBar(0, 75)" x-init="init()"
+                                            class="flex items-center gap-24p overflow-x-hidden mb-3">
+                                            <div class="flex items-center w-full">
+                                                <div class="w-3.5 h-5 bg-primary"></div>
+                                                <div x-intersect.once="$dispatch('start-progress')"
+                                                    class="relative w-full h-2.5  bg-w-neutral-3">
+                                                    <span :style="'width:' + progress + '%'" class="progressbar-1">
+                                                    </span>
+                                                </div>
+                                            </div>
+                                            <div class="flex items-center text-w-neutral-1">
+                                                <h4 x-text="progress" class="heading-4"></h4>
+                                                <h4 class="heading-4">%</h4>
+                                            </div>
+                                        </div>
+                                        <a href="#" class="text-m-medium text-w-neutral-1 link-1">
+                                            View All Level
+                                        </a>
+                                    </div>
+
+                                    <div>
+                                        <h3 class="heading-3 text-w-neutral-1 mb-30p text-split-left">
+                                            Games Playing
+                                        </h3>
+
+                                        <div class="grid grid-cols-1 gap-y-40p">
+
+                                            <div class="flex max-sm:flex-col items-center max-sm:text-center gap-3">
+                                                <img class="shrink-0 size-[102px] rounded-12"
+                                                    src="./assets/images/games/gamelogo1.png" alt="game" />
+                                                <div class="w-full">
+                                                    <a href="./game-details.html"
+                                                        class="heading-4 text-w-neutral-1 link-1 line-clamp-1 inline-block">
+                                                        Phoenix Edge
+                                                    </a>
+                                                    <div x-data="progressBar(0, 45)" x-init="init()"
+                                                        class="flex items-center gap-24p overflow-x-hidden">
+                                                        <div class="flex items-center w-full">
+                                                            <div class="w-3.5 h-5 bg-primary"></div>
+                                                            <div x-intersect.once="$dispatch('start-progress')"
+                                                                class="relative w-full h-2.5  bg-w-neutral-3">
+                                                                <span :style="'width:' + progress + '%'"
+                                                                    class="progressbar-1">
+                                                                </span>
+                                                            </div>
+                                                        </div>
+                                                        <div class="flex items-center text-w-neutral-1">
+                                                            <h4 x-text="progress" class="heading-4"></h4>
+                                                            <h4 class="heading-4">%</h4>
+                                                        </div>
+                                                    </div>
+                                                    <span class="text-base text-w-neutral-1 my-2">
+                                                        Win Ration <span class="span text-primary">63%</span>
+                                                    </span>
+                                                </div>
+                                            </div>
+
+                                            <div class="flex max-sm:flex-col items-center max-sm:text-center gap-3">
+                                                <img class="shrink-0 size-[102px] rounded-12"
+                                                    src="./assets/images/games/gameLogo2.png" alt="game" />
+                                                <div class="w-full">
+                                                    <a href="./game-details.html"
+                                                        class="heading-4 text-w-neutral-1 link-1 line-clamp-1 inline-block">
+                                                        Phoenix Edge
+                                                    </a>
+                                                    <div x-data="progressBar(0, 45)" x-init="init()"
+                                                        class="flex items-center gap-24p overflow-x-hidden">
+                                                        <div class="flex items-center w-full">
+                                                            <div class="w-3.5 h-5 bg-primary"></div>
+                                                            <div x-intersect.once="$dispatch('start-progress')"
+                                                                class="relative w-full h-2.5  bg-w-neutral-3">
+                                                                <span :style="'width:' + progress + '%'"
+                                                                    class="progressbar-1">
+                                                                </span>
+                                                            </div>
+                                                        </div>
+                                                        <div class="flex items-center text-w-neutral-1">
+                                                            <h4 x-text="progress" class="heading-4"></h4>
+                                                            <h4 class="heading-4">%</h4>
+                                                        </div>
+                                                    </div>
+                                                    <span class="text-base text-w-neutral-1 my-2">
+                                                        Win Ration <span class="span text-primary">63%</span>
+                                                    </span>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </section>
+            <!-- user profile Game Stats section end -->
+        </main>
+        <!-- main end -->
+
+        <!-- footer start -->
+        <include-footer />
+        <!-- footer end -->
+    </div>
+    <!-- app layout end -->
+
+
+</body>
+
+</html>

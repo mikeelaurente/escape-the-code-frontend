@@ -1,0 +1,315 @@
+<!DOCTYPE html>
+<html dir="ltr" lang="en">
+
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="shortcut icon" href="./assets/images/icons/favicon.ico" type="image/x-icon" />
+    <title>GameCo - HTML Tailwind CSS</title>
+</head>
+
+<body>
+
+    <!-- preloader start -->
+    <include-preloader />
+    <!-- preloader end -->
+
+    <!-- scroll to top button start -->
+    <include-scrollToTop />
+    <!-- scroll to top button end -->
+
+    <!-- header start -->
+    <include-navbar />
+    <!-- header end -->
+
+    <!-- sidebar start -->
+    <include-left-right-sidebar />
+    <!-- sidebar end -->
+
+    <!-- app layout start -->
+    <div class="app-layout">
+
+        <!-- main start -->
+        <main>
+
+            <!-- group details section start -->
+            <section class="section-pb pt-30 overflow-visible">
+                <div class="container">
+                    <div class="grid grid-cols-12 gap-x-30p gap-y-10">
+                        <div class="4xl:col-span-9 xxl:col-span-8 col-span-12">
+                            <div>
+
+                                <include-group-header />
+
+                                <!-- group details forum tab start -->
+                                <div class="pt-8">
+                                    <h4 class="heading-4 text-w-neutral-1 mb-30p">
+                                        Drawing & Art
+                                    </h4>
+                                    <div
+                                        class="flex-y flex-wrap gap-20p py-3 px-32p border border-accent-7 rounded-12 mb-30p">
+                                        <p class="text-sm text-w-neutral-1">
+                                            This forum has 10 topics, 4 replies, and was last updated 3 days, 6
+                                            hours ago by
+                                        </p>
+                                        <div class="flex-y gap-3">
+                                            <img class="avatar size-8" src="./assets/images/users/user3.png"
+                                                alt="user" />
+                                            <a href="./profile.html" class="text-sm text-w-neutral-1">
+                                                Malan Layon
+                                            </a>
+                                        </div>
+                                    </div>
+                                    <p class="text-m-medium text-w-neutral-1 mb-30p">
+                                        Viewing 10 topics - 1 through 10 (of 10 total)
+                                    </p>
+
+                                    <div class="p-32p bg-b-neutral-3 rounded-12 overflow-x-auto scrollbar-sm mb-[30px]">
+                                        <div class="grid grid-cols-1 divide-y divide-shap">
+                                            <!-- forums 1 -->
+                                            <div class="flex items-center justify-between gap-x-60p pb-32p">
+                                                <div>
+                                                    <p class="text-xl-medium mb-16p whitespace-nowrap">
+                                                        The Best Cardio Workouts in Crossfit
+                                                    </p>
+                                                    <div class="flex-y gap-3 min-w-[240px]">
+                                                        <img class="shrink-0 avatar size-60p"
+                                                            src="./assets/images/users/user20.png" alt="user" />
+                                                        <div class="flex-y gap-3.5">
+                                                            <a href="./profile.html"
+                                                                class="text-l-medium whitespace-nowrap line-clamp-1 link-1">
+                                                                Guy Hawkins
+                                                            </a>
+                                                            <i
+                                                                class="ti ti-circle-check-filled icon-24 text-secondary"></i>
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                                <div
+                                                    class="flex items-center justify-between 3xl:gap-x-[128px] gap-x-60p">
+                                                    <span class="text-l-medium">01</span>
+                                                    <span class="text-l-medium">02</span>
+                                                    <div>
+                                                        <p class="text-l-medium whitespace-nowrap mb-16p">
+                                                            7 months ago
+                                                        </p>
+                                                        <div class="flex-y gap-3 min-w-[240px]">
+                                                            <img class="shrink-0 avatar size-60p"
+                                                                src="./assets/images/users/user21.png" alt="user" />
+                                                            <div>
+                                                                <div class="flex-y gap-3.5">
+                                                                    <a href="./profile.html"
+                                                                        class="text-l-medium whitespace-nowrap line-clamp-1 link-1">
+                                                                        David Malan
+                                                                    </a>
+                                                                    <i
+                                                                        class="ti ti-circle-check-filled icon-24 text-secondary"></i>
+                                                                </div>
+                                                                <span class="text-s-medium text-w-neutral-3">
+                                                                    Leader
+                                                                </span>
+                                                            </div>
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                            <!-- forums 2 -->
+                                            <div class="flex items-center justify-between gap-x-60p pb-32p pt-24p">
+                                                <div>
+                                                    <p class="text-xl-medium mb-16p whitespace-nowrap">
+                                                        The Best Cardio Workouts in Crossfit
+                                                    </p>
+                                                    <div class="flex-y gap-3 min-w-[240px]">
+                                                        <img class="shrink-0 avatar size-60p"
+                                                            src="./assets/images/users/user2.png" alt="user" />
+                                                        <div class="flex-y gap-3.5">
+                                                            <a href="./profile.html"
+                                                                class="text-l-medium whitespace-nowrap line-clamp-1 link-1">
+                                                                Jacob Jones
+                                                            </a>
+                                                            <i
+                                                                class="ti ti-circle-check-filled icon-24 text-secondary"></i>
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                                <div
+                                                    class="flex items-center justify-between 3xl:gap-x-[128px] gap-x-60p">
+                                                    <span class="text-l-medium">01</span>
+                                                    <span class="text-l-medium">02</span>
+                                                    <div>
+                                                        <p class="text-l-medium whitespace-nowrap mb-16p">
+                                                            7 months ago
+                                                        </p>
+                                                        <div class="flex-y gap-3 min-w-[240px]">
+                                                            <img class="shrink-0 avatar size-60p"
+                                                                src="./assets/images/users/user22.png" alt="user" />
+                                                            <div>
+                                                                <div class="flex-y gap-3.5">
+                                                                    <a href="./profile.html"
+                                                                        class="text-l-medium whitespace-nowrap line-clamp-1 link-1">
+                                                                        David Malan
+                                                                    </a>
+                                                                    <i
+                                                                        class="ti ti-circle-check-filled icon-24 text-secondary"></i>
+                                                                </div>
+                                                                <span class="text-s-medium text-w-neutral-3">
+                                                                    Leader
+                                                                </span>
+                                                            </div>
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                            <!-- forums 3 -->
+                                            <div class="flex items-center justify-between gap-x-60p pb-32p pt-24p">
+                                                <div>
+                                                    <p class="text-xl-medium mb-16p whitespace-nowrap">
+                                                        The Best Cardio Workouts in Crossfit
+                                                    </p>
+                                                    <div class="flex-y gap-3 min-w-[240px]">
+                                                        <img class="shrink-0 avatar size-60p"
+                                                            src="./assets/images/users/user23.png" alt="user" />
+                                                        <div class="flex-y gap-3.5">
+                                                            <a href="./profile.html"
+                                                                class="text-l-medium whitespace-nowrap line-clamp-1 link-1">
+                                                                Guy Hawkins
+                                                            </a>
+                                                            <i
+                                                                class="ti ti-circle-check-filled icon-24 text-secondary"></i>
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                                <div
+                                                    class="flex items-center justify-between 3xl:gap-x-[128px] gap-x-60p">
+                                                    <span class="text-l-medium">01</span>
+                                                    <span class="text-l-medium">02</span>
+                                                    <div>
+                                                        <p class="text-l-medium whitespace-nowrap mb-16p">
+                                                            7 months ago
+                                                        </p>
+                                                        <div class="flex-y gap-3 min-w-[240px]">
+                                                            <img class="shrink-0 avatar size-60p"
+                                                                src="./assets/images/users/user24.png" alt="user" />
+                                                            <div>
+                                                                <div class="flex-y gap-3.5">
+                                                                    <a href="./profile.html"
+                                                                        class="text-l-medium whitespace-nowrap line-clamp-1 link-1">
+                                                                        David Smith
+                                                                    </a>
+                                                                    <i
+                                                                        class="ti ti-circle-check-filled icon-24 text-secondary"></i>
+                                                                </div>
+                                                                <span class="text-s-medium text-w-neutral-3">
+                                                                    Leader
+                                                                </span>
+                                                            </div>
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                            <!-- forums 4 -->
+                                            <div class="flex items-center justify-between gap-x-60p pt-24p">
+                                                <div>
+                                                    <p class="text-xl-medium mb-16p whitespace-nowrap">
+                                                        The Best Cardio Workouts in Crossfit
+                                                    </p>
+                                                    <div class="flex-y gap-3 min-w-[240px]">
+                                                        <img class="shrink-0 avatar size-60p"
+                                                            src="./assets/images/users/user25.png" alt="user" />
+                                                        <div class="flex-y gap-3.5">
+                                                            <a href="./profile.html"
+                                                                class="text-l-medium whitespace-nowrap line-clamp-1 link-1">
+                                                                Robert Fox
+                                                            </a>
+                                                            <i
+                                                                class="ti ti-circle-check-filled icon-24 text-secondary"></i>
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                                <div
+                                                    class="flex items-center justify-between 3xl:gap-x-[128px] gap-x-60p">
+                                                    <span class="text-l-medium">01</span>
+                                                    <span class="text-l-medium">02</span>
+                                                    <div>
+                                                        <p class="text-l-medium whitespace-nowrap mb-16p">
+                                                            7 months ago
+                                                        </p>
+                                                        <div class="flex-y gap-3 min-w-[240px]">
+                                                            <img class="shrink-0 avatar size-60p"
+                                                                src="./assets/images/users/user26.png" alt="user" />
+                                                            <div>
+                                                                <div class="flex-y gap-3.5">
+                                                                    <a href="./profile.html"
+                                                                        class="text-l-medium whitespace-nowrap line-clamp-1 link-1">
+                                                                        Rokon Khan
+                                                                    </a>
+                                                                    <i
+                                                                        class="ti ti-circle-check-filled icon-24 text-secondary"></i>
+                                                                </div>
+                                                                <span class="text-s-medium text-w-neutral-3">
+                                                                    Leader
+                                                                </span>
+                                                            </div>
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+
+                                    <form class="bg-b-neutral-3 p-32p rounded-12">
+                                        <div class="mb-30p">
+                                            <span class="text-m-medium text-w-neutral-2 mb-24p">
+                                                Username:
+                                            </span>
+                                            <input type="text" class="box-input-2"
+                                                placeholder="Enter your username..." />
+                                        </div>
+                                        <div class="mb-30p">
+                                            <span class="text-m-medium text-w-neutral-2 mb-24p">
+                                                Password:
+                                            </span>
+                                            <input type="password" class="box-input-2"
+                                                placeholder="Enter your Password..." />
+                                        </div>
+                                        <div class="checkbox-container shrink-0 mb-40p">
+                                            <input type="checkbox" id="keep-signed" class="border-corners-checkbox "
+                                                checked>
+                                            <label for="keep-signed" class="border-corners-checkbox-label">
+                                                <i class="ti icon-32"></i>
+                                                <span class="text-sm text-w-neutral-1 ml-3">
+                                                    Keep me signed in
+                                                </span>
+                                            </label>
+                                        </div>
+                                        <button class="btn btn-lg btn-primary rounded-12">
+                                            LOG IN
+                                        </button>
+                                    </form>
+                                </div>
+                                <!-- group details forum tab end -->
+                            </div>
+                        </div>
+                        <div class="4xl:col-span-3 xxl:col-span-4 col-span-12 relative">
+                            <div class="xxl:sticky xxl:top-30">
+                                <include-right-aside-one />
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </section>
+            <!-- group details section end -->
+
+        </main>
+        <!-- main end -->
+
+        <!-- footer start -->
+        <include-footer />
+        <!-- footer end -->
+    </div>
+    <!-- app layout end -->
+
+
+</body>
+
+</html>

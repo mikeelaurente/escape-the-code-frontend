@@ -1,0 +1,297 @@
+@layer components {
+  //All Section Start
+
+  .link-1 {
+    @apply hover:text-secondary transition-1;
+  }
+
+  .footer-link {
+    li {
+      @apply hover:translate-x-2 -translate-x-5 inline-flex items-center gap-1 hover:text-primary transition-1 max-w-fit;
+    }
+    i {
+      @apply group-hover:visible invisible text-primary group-hover:opacity-100 opacity-0 transition-1;
+    }
+  }
+
+  .app-layout {
+    @apply min-h-screen lg:w-[calc(100%-268px)] lg:mx-auto;
+  }
+
+  .app-main {
+    @apply lg:flex-1 relative min-h-screen lg:w-[calc(100%-268px)] lg:mx-auto overflow-x-hidden;
+  }
+
+  .counter-badge {
+    @apply size-3 flex-c text-[10px] bg-primary text-b-neutral-4 rounded-full;
+  }
+
+  .black-btn,
+  .btn-primary,
+  .outline-btn {
+    background-color: #f29620;
+    color: #030304;
+    // border: 1px solid #13203b;
+    position: relative;
+    overflow: hidden;
+    transition: 0.5s;
+    z-index: 1;
+  }
+
+  .black-btn::before,
+  .btn-primary::before,
+  .outline-btn::before {
+    content: "";
+    width: 0;
+    height: 100vh;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%) rotate(45deg);
+    background: #45f882;
+    transition: 0.5s ease;
+    display: block;
+    z-index: -1;
+  }
+
+  .black-btn:hover,
+  .btn-primary:hover,
+  .outline-btn:hover {
+    color: #13203b !important;
+  }
+
+  .black-btn:hover::before,
+  .btn-primary:hover::before,
+  .outline-btn:hover::before {
+    width: 150%;
+  }
+
+  // overlay
+  .overlay-1 {
+    position: absolute;
+    inset: 0;
+    z-index: 1;
+    background: linear-gradient(
+      270deg,
+      rgba(38, 38, 38, 0.36) 0%,
+      rgba(19, 19, 19, 0.36) 21.5%,
+      rgba(0, 0, 0, 0.72) 62.71%
+    );
+  }
+  .overlay-2 {
+    position: absolute;
+    inset: 0;
+    z-index: 1;
+    background: linear-gradient(
+      180deg,
+      rgba(8, 8, 8, 0.2) 0%,
+      rgba(8, 8, 8, 0.6) 45.89%,
+      rgba(8, 8, 8, 0.9) 100%
+    );
+    background: linear-gradient(
+      270deg,
+      rgba(38, 38, 38, 0.36) 0%,
+      rgba(19, 19, 19, 0.36) 21.5%,
+      rgba(0, 0, 0, 0.72) 62.71%
+    );
+  }
+  .overlay-3 {
+    position: absolute;
+    inset: 0;
+    z-index: 1;
+    background: linear-gradient(
+      180deg,
+      rgba(34, 34, 34, 0.2) 0%,
+      rgba(0, 0, 0, 0.2) 100%
+    );
+  }
+  .overlay-4 {
+    position: absolute;
+    inset: 0;
+    z-index: 1;
+    background: linear-gradient(
+      180deg,
+      rgba(34, 34, 34, 0.7) 0%,
+      rgba(0, 0, 0, 0.7) 100%
+    );
+  }
+  .overlay-5 {
+    position: absolute;
+    inset: 0;
+    z-index: 1;
+    background: linear-gradient(
+      0deg,
+      #0e1012 0%,
+      rgba(14, 16, 18, 0.24) 98.02%
+    );
+  }
+  .overlay-6 {
+    position: absolute;
+    inset: 0;
+    z-index: 1;
+    background: linear-gradient(
+      0deg,
+      #0e1012 0%,
+      rgba(14, 16, 18, 0.24) 98.02%
+    );
+  }
+  .overlay-7 {
+    position: absolute;
+    inset: 0;
+    z-index: 1;
+    background: linear-gradient(180deg, rgba(54, 54, 54, 0) 0%, #0f1115 92.33%);
+  }
+  .overlay-8 {
+    position: absolute;
+    inset: 0;
+    z-index: 1;
+    background: linear-gradient(
+      180deg,
+      rgba(102, 102, 102, 0) 0%,
+      rgba(0, 0, 0, 0.87) 100%
+    );
+  }
+  .overlay-9 {
+    position: absolute;
+    inset: 0;
+    z-index: 1;
+    background: linear-gradient(
+      180deg,
+      rgba(59, 59, 59, 0.39) 0%,
+      rgba(0, 0, 0, 0.73) 100%
+    );
+  }
+
+  .overlay-10 {
+    position: absolute;
+    inset: 0;
+    z-index: 1;
+    background: linear-gradient(
+      270deg,
+      rgba(0, 0, 0, 0.3) 0%,
+      rgba(0, 0, 0, 0.7) 57.38%,
+      rgba(0, 0, 0, 0.8) 100%
+    );
+  }
+
+  .overlay-11 {
+    position: absolute;
+    inset: 0;
+    z-index: 1;
+    background: linear-gradient(
+      180deg,
+      rgba(0, 0, 0, 0.4) 0%,
+      rgba(0, 0, 0, 0.8) 100%
+    );
+  }
+
+  // progressbar
+  .progressbar-1 {
+    @apply relative h-full bg-primary duration-300 before:absolute before:w-3.5 before:h-5 before:bg-primary before:top-1/2 before:-translate-y-1/2 before:right-0 before:content-[''];
+  }
+
+  // swiper common class
+  .swp-navigation-one {
+    @apply flex items-center gap-2;
+
+    .navigation-btn-one {
+      @apply btn-c btn-c-md border hover:bg-primary border-primary text-w-neutral-1 hover:text-b-neutral-4;
+    }
+
+    .navigation-btn-two {
+      @apply size-60p rounded-full flex-c border border-dashed border-w-neutral-1/40 hover:border-primary *:hover:bg-primary hover:text-b-neutral-4;
+    }
+  }
+
+  // tournament brackets section
+  .bracket {
+    position: relative; /* Ensure pseudo-elements are positioned relative to this */
+  }
+
+  /* Bracket AFTER - Base styles */
+  .bracket::after {
+    content: "";
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
+    width: 25px;
+    height: calc(55% + 4px);
+    border: 2px solid #212529;
+    border-left: 0px;
+    border-radius: 0px 10px 10px 0px;
+    right: -35px;
+    @media screen and (max-width: 400px) {
+      right: -15px;
+    }
+    @media screen and (max-width: 992px) {
+      right: -20px;
+      width: 20px;
+    }
+  }
+
+  /* Bracket BEFORE - Only for screens > 1400px */
+  @media screen and (min-width: 1400px) {
+    .bracket::before {
+      content: "";
+      position: absolute;
+      top: 50%;
+      transform: translateY(-50%);
+      right: -62px;
+      width: 28px;
+      height: 2px;
+      background-color: #212529;
+    }
+  }
+
+  // company slider section
+  .company-icon-filter {
+    filter: brightness(0) saturate(100%) invert(46%) sepia(34%) saturate(199%)
+      hue-rotate(182deg) brightness(88%) contrast(85%);
+    &:hover {
+      filter: none;
+      transition: all 0.5s ease-in-out;
+    }
+  }
+
+  // works steps section
+  .process-step-line {
+    @apply after:content-[\'\'] after:absolute after:left-6 after:h-full after:w-0.5 after:bg-black after:z-[-1] pb-40p;
+  }
+
+  .appear-down {
+    -webkit-transform: scale(0.8);
+    -ms-transform: scale(0.8);
+    transform: scale(0.8);
+  }
+
+  //All Section End
+
+  // webkit start
+  // text stroke start
+  .stroked-text-1 {
+    position: relative;
+    display: inline-block;
+    -webkit-text-stroke-width: 1px;
+    -webkit-text-stroke-color: #45f882;
+    text-transform: capitalize;
+  }
+  .stroked-text-1::after {
+    content: attr(data-text);
+    position: absolute;
+    top: -5px;
+    left: -6px;
+    z-index: -1;
+    color: transparent;
+    -webkit-text-stroke: 1px #45f882;
+    color: black;
+    -webkit-transition: all 0.4s ease-out;
+    transition: all 0.4s ease-out;
+  }
+  .stroked-text-1:hover::after {
+    top: 5px;
+  }
+
+  // text stroke start
+
+  // webkit end
+}

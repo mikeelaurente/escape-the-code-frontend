@@ -1,0 +1,48 @@
+@import url("https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700;800;900&display=swap");
+
+@font-face {
+  font-family: "Borda";
+  font-style: normal;
+  font-weight: 300;
+  src: local("Borda Light"),
+    url("/src/assets/fonts/Borda_Light.ttf") format("woff2");
+}
+
+@font-face {
+  font-family: "Borda";
+  font-style: normal;
+  font-weight: 400;
+  src: local("Borda"), url("/src/assets/fonts/Borda.ttf") format("woff2");
+}
+
+@font-face {
+  font-family: "Borda";
+  font-style: normal;
+  font-weight: 500;
+  src: local("Borda Medium"),
+    url("/src/assets/fonts/Borda_Medium.ttf") format("woff2");
+}
+
+@font-face {
+  font-family: "Borda";
+  font-style: normal;
+  font-weight: 600;
+  src: local("Borda DemiBold"),
+    url("/src/assets/fonts/Borda_DemiBold.ttf") format("woff2");
+}
+
+@font-face {
+  font-family: "Borda";
+  font-style: normal;
+  font-weight: 700;
+  src: local("Borda Bold"),
+    url("/src/assets/fonts/Borda_Bold.ttf") format("woff2");
+}
+
+@font-face {
+  font-family: "Borda";
+  font-style: normal;
+  font-weight: 800;
+  src: local("Borda ExtraBold"),
+    url("/src/assets/fonts/Borda_ExtraBold.ttf") format("woff2");
+}

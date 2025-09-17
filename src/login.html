@@ -1,0 +1,173 @@
+<!DOCTYPE html>
+<html dir="ltr" lang="en">
+
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="shortcut icon" href="./assets/images/icons/favicon.ico" type="image/x-icon" />
+    <title>GameCo - HTML Tailwind CSS</title>
+</head>
+
+<body>
+
+    <!-- preloader start -->
+    <include-preloader />
+    <!-- preloader end -->
+
+    <!-- scroll to top button start -->
+    <include-scrollToTop />
+    <!-- scroll to top button end -->
+
+    <!-- header start -->
+    <include-navbar />
+    <!-- header end -->
+
+    <!-- sidebar start -->
+    <include-left-right-sidebar />
+    <!-- sidebar end -->
+
+    <!-- app layout start -->
+    <div class="app-layout">
+
+        <!-- main start -->
+        <main>
+
+            <!-- breadcrumb start -->
+            <section class="pt-30p">
+                <div class="section-pt">
+                    <div
+                        class="relative bg-[url('../images/photos/breadcrumbImg.png')] bg-cover bg-no-repeat rounded-24 overflow-hidden">
+                        <div class="container">
+                            <div class="grid grid-cols-12 gap-30p relative xl:py-[130px] md:py-30 sm:py-25 py-20 z-[2]">
+                                <div class="lg:col-start-2 lg:col-end-12 col-span-12">
+                                    <h2 class="heading-2 text-w-neutral-1 mb-3">
+                                        Login
+                                    </h2>
+                                    <ul class="breadcrumb">
+                                        <li class="breadcrumb-item">
+                                            <a href="#" class="breadcrumb-link">
+                                                Home
+                                            </a>
+                                        </li>
+                                        <li class="breadcrumb-item">
+                                            <span class="breadcrumb-icon">
+                                                <i class="ti ti-chevrons-right"></i>
+                                            </span>
+                                        </li>
+                                        <li class="breadcrumb-item">
+                                            <span class="breadcrumb-current">Login</span>
+                                        </li>
+                                    </ul>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="overlay-11"></div>
+                    </div>
+                </div>
+            </section>
+            <!-- breadcrumb end -->
+
+            <!-- login section start -->
+            <section class="section-py">
+                <div class="container">
+                    <div class="flex-c">
+                        <div class="max-w-[530px] w-full p-40p bg-b-neutral-3 rounded-12">
+                            <h2 class="heading-2 text-w-neutral-1 mb-16p text-center">
+                                Login
+                            </h2>
+                            <p class="text-m-medium text-w-neutral-3 text-center">
+                                Don’t have an account? <a href="./sign-up.html" class="inline text-primary">Sign Up</a>
+                            </p>
+                            <div class="grid grid-cols-1 gap-3 py-32p text-center">
+                                <button class="btn btn-md bg-[#434DE4] hover:bg-[#434DE4]/80 w-full">
+                                    <i class="ti ti-brand-discord icon-24"></i>
+                                    Log In With Discord
+                                </button>
+                                <button class="btn btn-md bg-[#6E31DF] hover:bg-[#6E31DF]/80 w-full">
+                                    <i class="ti ti-brand-twitch icon-24"></i>
+                                    Log In with Twitch
+                                </button>
+                                <button class="btn btn-md bg-[#1876F2] hover:bg-[#1876F2]/80 w-full">
+                                    <i class="ti ti-brand-facebook icon-24"></i>
+                                    Log In With Facebook
+                                </button>
+                                <div x-data="{ isOpen: false }" class="pb-20p">
+                                    <button @click="isOpen = !isOpen" :aria-expanded="isOpen.toString()"
+                                        class="inline-flex items-center justify-center gap-2 text-s-medium text-w-neutral-1">
+                                        Show more
+                                        <i :class="isOpen ? 'rotate-180' : ''" class="ti ti-chevron-down icon-20"></i>
+                                    </button>
+                                    <div x-show="isOpen" x-collapse @click.away="isOpen = false">
+                                        <div class="grid grid-cols-1 gap-3 mt-16p">
+                                            <button class="btn btn-md bg-[#6E31DF] hover:bg-[#6E31DF]/80 w-full">
+                                                <i class="ti ti-brand-instagram icon-24"></i>
+                                                Log In with Instagram
+                                            </button>
+                                            <button class="btn btn-md bg-[#1876F2] hover:bg-[#1876F2]/80 w-full">
+                                                <i class="ti ti-brand-google icon-24"></i>
+                                                Log In With Google
+                                            </button>
+                                        </div>
+                                    </div>
+                                </div>
+
+                                <div class="flex items-center gap-3">
+                                    <div class="w-full h-1px bg-shap"></div>
+                                    <span class="text-m-medium text-w-neutral-1">Or</span>
+                                    <div class="w-full h-1px bg-shap"></div>
+                                </div>
+                            </div>
+                            <form>
+                                <div class="grid grid-cols-1 gap-30p mb-40p">
+                                    <div>
+                                        <label for="userEmail" class="label label-xl text-w-neutral-1 font-borda mb-3">
+                                            Email
+                                        </label>
+                                        <input class="border-input-1" type="email" name="email" id="userEmail"
+                                            placeholder="Email" />
+                                    </div>
+                                    <div>
+                                        <label for="password" class="label label-xl text-w-neutral-1 font-borda mb-3">
+                                            Password
+                                        </label>
+                                        <input class="border-input-1" type="Password" name="Password" id="password"
+                                            placeholder="Password" />
+                                    </div>
+                                    <div>
+                                        <label
+                                            class="label label-md text-w-neutral-1 inline-flex items-center cursor-pointer gap-3">
+                                            <input type="checkbox" id="togglePricing" value="" checked
+                                                class="sr-only peer togglePricing">
+                                            <span
+                                                class="relative w-11 h-6 bg-w-neutral-1 peer-focus:outline-none rounded-full peer peer-checked:after:translate-x-full peer-checked:after:bg-w-neutral-1 after:content-[''] after:absolute after:top-[2px] after:start-[2px] after:bg-b-neutral-3 after:rounded-full after:h-5 after:w-5 after:transition-all peer-checked:bg-primary shrink-0">
+                                            </span>
+                                            Remember me
+                                        </label>
+                                    </div>
+                                </div>
+                                <button class="btn btn-md btn-primary rounded-12 w-full mb-16p">
+                                    Log In
+                                </button>
+                                <a href="#" class="text-m-medium text-primary text-center">
+                                    Forgot your password?
+                                </a>
+                            </form>
+                        </div>
+                    </div>
+                </div>
+            </section>
+            <!-- login section end -->
+
+        </main>
+        <!-- main end -->
+
+        <!-- footer start -->
+        <include-footer />
+        <!-- footer end -->
+    </div>
+    <!-- app layout end -->
+
+
+</body>
+
+</html>

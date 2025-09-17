@@ -1,0 +1,302 @@
+<!DOCTYPE html>
+<html dir="ltr" lang="en">
+
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="shortcut icon" href="./assets/images/icons/favicon.ico" type="image/x-icon" />
+    <title>GameCo - HTML Tailwind CSS</title>
+</head>
+
+<body>
+
+    <!-- preloader start -->
+    <include-preloader />
+    <!-- preloader end -->
+
+    <!-- scroll to top button start -->
+    <include-scrollToTop />
+    <!-- scroll to top button end -->
+
+    <!-- header start -->
+    <include-navbar />
+    <!-- header end -->
+
+    <!-- sidebar start -->
+    <include-left-right-sidebar />
+    <!-- sidebar end -->
+
+    <!-- app layout start -->
+    <div class="app-layout">
+
+        <!-- main start -->
+        <main>
+
+            <!-- breadcrumb start -->
+            <section class="pt-30p">
+                <div class="section-pt">
+                    <div
+                        class="relative bg-[url('../images/photos/breadcrumbImg.png')] bg-cover bg-no-repeat rounded-24 overflow-hidden">
+                        <div class="container">
+                            <div class="grid grid-cols-12 gap-30p relative xl:py-[130px] md:py-30 sm:py-25 py-20 z-[2]">
+                                <div class="lg:col-start-2 lg:col-end-12 col-span-12">
+                                    <h2 class="heading-2 text-w-neutral-1 mb-3">
+                                        Faq's
+                                    </h2>
+                                    <ul class="breadcrumb">
+                                        <li class="breadcrumb-item">
+                                            <a href="#" class="breadcrumb-link">
+                                                Home
+                                            </a>
+                                        </li>
+                                        <li class="breadcrumb-item">
+                                            <span class="breadcrumb-icon">
+                                                <i class="ti ti-chevrons-right"></i>
+                                            </span>
+                                        </li>
+                                        <li class="breadcrumb-item">
+                                            <span class="breadcrumb-current">Faq's</span>
+                                        </li>
+                                    </ul>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="overlay-11"></div>
+                    </div>
+                </div>
+            </section>
+            <!-- breadcrumb end -->
+
+            <!-- faq's section start -->
+            <section class="section-py">
+                <div class="container">
+                    <div class="grid grid-cols-12">
+                        <div class="xl:col-start-3 lg:col-start-2 xl:col-end-11 lg:col-end-12 col-span-12">
+                            <div x-data="{ activeId: 1 }" class="grid grid-cols-1 gap-20p">
+
+                                <!-- Accordion Item 1 -->
+                                <div>
+                                    <button @click="activeId = (activeId === 1 ? null : 1)"
+                                        :class="activeId === 1 ? 'bg-primary text-b-neutral-4' : 'text-w-neutral-4'"
+                                        class="px-20p py-3 rounded-12 border border-shap flex items-center justify-between gap-2.5 w-full transition-1">
+                                        <span class="text-base text-left font-medium">
+                                            What are the community guidelines?
+                                        </span>
+                                        <span class="shrink-0 icon-24">
+                                            <i :class="activeId === 1 ? 'rotate-180 ti-chevron-up' : 'rotate-0 ti-chevron-down'"
+                                                class="ti icon-24"></i>
+                                        </span>
+                                    </button>
+                                    <div x-show="activeId === 1" x-collapse>
+                                        <p class="text-m-regular text-left text-w-neutral-4 pt-16p">
+                                            The community guidelines are designed to foster a positive and inclusive
+                                            environment for all players. Members are expected to treat others with
+                                            respect, avoid offensive language or behavior, and refrain from any form of
+                                            harassment or discrimination. Guidelines also emphasize the importance of
+                                            fair play, prohibiting cheating, exploitation, or use of unauthorized
+                                            third-party software. Members are encouraged to report any violations to
+                                            ensure the community remains a welcoming space for everyone.
+                                        </p>
+                                    </div>
+                                </div>
+
+                                <!-- Accordion Item 2 -->
+                                <div>
+                                    <button @click="activeId = (activeId === 2 ? null : 2)"
+                                        :class="activeId === 2 ? 'bg-primary text-b-neutral-4' : 'text-w-neutral-4'"
+                                        class="px-20p py-3 rounded-12 border border-shap flex items-center justify-between gap-2.5 w-full transition-1">
+                                        <span class="text-base text-left font-medium">
+                                            Are there prizes for winners of community tournaments?
+                                        </span>
+                                        <span class="shrink-0 icon-24">
+                                            <i :class="activeId === 2 ? 'rotate-180 ti-chevron-up' : 'rotate-0 ti-chevron-down'"
+                                                class="ti icon-24"></i>
+                                        </span>
+                                    </button>
+                                    <div x-show="activeId === 2" x-collapse>
+                                        <p class="text-m-regular text-left text-w-neutral-4 pt-16p">
+                                            Yes, winners of community tournaments are rewarded with exciting prizes.
+                                            These prizes may include in-game rewards such as rare skins, exclusive
+                                            items, or bonus currency. Additionally, some tournaments offer physical
+                                            merchandise, gift cards, or recognition in the form of leaderboard features
+                                            and shoutouts in the community. The prizes aim to incentivize fair
+                                            competition and celebrate the achievements of skilled players.
+                                        </p>
+                                    </div>
+                                </div>
+
+                                <!-- Accordion Item 3 -->
+                                <div>
+                                    <button @click="activeId = (activeId === 3 ? null : 3)"
+                                        :class="activeId === 3 ? 'bg-primary text-b-neutral-4' : 'text-w-neutral-4'"
+                                        class="px-20p py-3 rounded-12 border border-shap flex items-center justify-between gap-2.5 w-full transition-1">
+                                        <span class="text-base text-left font-medium">
+                                            What types of games are featured in community events?
+                                        </span>
+                                        <span class="shrink-0 icon-24">
+                                            <i :class="activeId === 3 ? 'rotate-180 ti-chevron-up' : 'rotate-0 ti-chevron-down'"
+                                                class="ti icon-24"></i>
+                                        </span>
+                                    </button>
+                                    <div x-show="activeId === 3" x-collapse>
+                                        <p class="text-m-regular text-left text-w-neutral-4 pt-16p">
+                                            Community events feature a wide variety of games catering to different
+                                            interests and skill levels. These include role-playing games (RPGs),
+                                            strategy games, first-person shooters (FPS), cooperative multiplayer
+                                            adventures, and casual party games. The events are curated to ensure diverse
+                                            participation and often rotate themes to keep things fresh. For example, one
+                                            month may focus on battle royale games, while another highlights cooperative
+                                            storytelling experiences.
+                                        </p>
+                                    </div>
+                                </div>
+
+                                <!-- Accordion Item 4 -->
+                                <div>
+                                    <button @click="activeId = (activeId === 4 ? null : 4)"
+                                        :class="activeId === 4 ? 'bg-primary text-b-neutral-4' : 'text-w-neutral-4'"
+                                        class="px-20p py-3 rounded-12 border border-shap flex items-center justify-between gap-2.5 w-full transition-1">
+                                        <span class="text-base text-left font-medium">
+                                            Are there opportunities to contribute content to the community?
+                                        </span>
+                                        <span class="shrink-0 icon-24">
+                                            <i :class="activeId === 4 ? 'rotate-180 ti-chevron-up' : 'rotate-0 ti-chevron-down'"
+                                                class="ti icon-24"></i>
+                                        </span>
+                                    </button>
+                                    <div x-show="activeId === 4" x-collapse>
+                                        <p class="text-m-regular text-left text-w-neutral-4 pt-16p">
+                                            Yes, the community encourages members to contribute content in various ways.
+                                            Players can share fan art, create custom mods, write guides, or participate
+                                            in creative contests. Some events specifically invite players to design
+                                            in-game assets, propose story ideas, or create tutorials for newer members.
+                                            These contributions not only enrich the community but also allow players to
+                                            leave a lasting impact on the platform.
+                                        </p>
+                                    </div>
+                                </div>
+
+                                <!-- Accordion Item 5 -->
+                                <div>
+                                    <button @click="activeId = (activeId === 5 ? null : 5)"
+                                        :class="activeId === 5 ? 'bg-primary text-b-neutral-4' : 'text-w-neutral-4'"
+                                        class="px-20p py-3 rounded-12 border border-shap flex items-center justify-between gap-2.5 w-full transition-1">
+                                        <span class="text-base text-left font-medium">
+                                            What measures are in place to prevent hacking or data breaches?
+                                        </span>
+                                        <span class="shrink-0 icon-24">
+                                            <i :class="activeId === 5 ? 'rotate-180 ti-chevron-up' : 'rotate-0 ti-chevron-down'"
+                                                class="ti icon-24"></i>
+                                        </span>
+                                    </button>
+                                    <div x-show="activeId === 5" x-collapse>
+                                        <p class="text-m-regular text-left text-w-neutral-4 pt-16p">
+                                            The platform employs robust measures to protect user data and ensure a
+                                            secure gaming experience. This includes end-to-end encryption, regular
+                                            server audits, and multi-factor authentication for accounts. Additionally,
+                                            anti-cheat systems are in place to detect and block unauthorized tools or
+                                            hacks. Community members are encouraged to report suspicious activity, and
+                                            the platform’s team works diligently to address any vulnerabilities to
+                                            maintain trust.
+                                        </p>
+                                    </div>
+                                </div>
+
+                                <!-- Accordion Item 6 -->
+                                <div>
+                                    <button @click="activeId = (activeId === 6 ? null : 6)"
+                                        :class="activeId === 6 ? 'bg-primary text-b-neutral-4' : 'text-w-neutral-4'"
+                                        class="px-20p py-3 rounded-12 border border-shap flex items-center justify-between gap-2.5 w-full transition-1">
+                                        <span class="text-base text-left font-medium">
+                                            What benefits do premium members receive?
+                                        </span>
+                                        <span class="shrink-0 icon-24">
+                                            <i :class="activeId === 6 ? 'rotate-180 ti-chevron-up' : 'rotate-0 ti-chevron-down'"
+                                                class="ti icon-24"></i>
+                                        </span>
+                                    </button>
+                                    <div x-show="activeId === 6" x-collapse>
+                                        <p class="text-m-regular text-left text-w-neutral-4 pt-16p">
+                                            Premium membership offers numerous exclusive perks designed to enhance the
+                                            gaming experience. Benefits may include early access to new features or
+                                            events, rare in-game items, faster progression systems, and bonus rewards.
+                                            Premium members often enjoy a more personalized experience with priority
+                                            support services, access to premium-only forums, and exclusive discounts on
+                                            in-game purchases. These benefits ensure that premium members feel valued
+                                            and have access to content that stands out.
+                                        </p>
+                                    </div>
+                                </div>
+
+                                <!-- Accordion Item 7 -->
+                                <div>
+                                    <button @click="activeId = (activeId === 7 ? null : 7)"
+                                        :class="activeId === 7 ? 'bg-primary text-b-neutral-4' : 'text-w-neutral-4'"
+                                        class="px-20p py-3 rounded-12 border border-shap flex items-center justify-between gap-2.5 w-full transition-1">
+                                        <span class="text-base text-left font-medium">
+                                            Are there plans to expand the community to other platforms or games?
+                                        </span>
+                                        <span class="shrink-0 icon-24">
+                                            <i :class="activeId === 7 ? 'rotate-180 ti-chevron-up' : 'rotate-0 ti-chevron-down'"
+                                                class="ti icon-24"></i>
+                                        </span>
+                                    </button>
+                                    <div x-show="activeId === 7" x-collapse>
+                                        <p class="text-m-regular text-left text-w-neutral-4 pt-16p">
+                                            Yes, the platform has ambitious plans to grow and reach new audiences. The
+                                            development team is actively exploring partnerships to bring the community
+                                            to additional gaming platforms, including mobile and consoles. Additionally,
+                                            efforts are underway to introduce new games and experiences that align with
+                                            the community’s interests. This expansion aims to make the platform more
+                                            accessible and provide members with even more opportunities to connect and
+                                            enjoy diverse content.
+                                        </p>
+                                    </div>
+                                </div>
+
+                                <!-- Accordion Item 8 -->
+                                <div>
+                                    <button @click="activeId = (activeId === 8 ? null : 8)"
+                                        :class="activeId === 8 ? 'bg-primary text-b-neutral-4' : 'text-w-neutral-4'"
+                                        class="px-20p py-3 rounded-12 border border-shap flex items-center justify-between gap-2.5 w-full transition-1">
+                                        <span class="text-base text-left font-medium">
+                                            How can I contact the community administrators or support team?
+                                        </span>
+                                        <span class="shrink-0 icon-24">
+                                            <i :class="activeId === 8 ? 'rotate-180 ti-chevron-up' : 'rotate-0 ti-chevron-down'"
+                                                class="ti icon-24"></i>
+                                        </span>
+                                    </button>
+                                    <div x-show="activeId === 8" x-collapse>
+                                        <p class="text-m-regular text-left text-w-neutral-4 pt-16p">
+                                            You can contact the community administrators or support team through
+                                            multiple channels. The official website features a detailed help center
+                                            where you can submit tickets or browse FAQs. There is also a live chat
+                                            option for real-time assistance during certain hours. For more complex
+                                            queries, you can reach out via email, and social media platforms often
+                                            provide updates and quick responses to general inquiries. Support is
+                                            committed to providing prompt and helpful resolutions to all issues.
+                                        </p>
+                                    </div>
+                                </div>
+
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </section>
+            <!-- faq's section end -->
+
+        </main>
+        <!-- main end -->
+
+        <!-- footer start -->
+        <include-footer />
+        <!-- footer end -->
+    </div>
+    <!-- app layout end -->
+
+
+</body>
+
+</html>

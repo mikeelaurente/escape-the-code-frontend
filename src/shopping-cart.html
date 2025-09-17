@@ -1,0 +1,271 @@
+<!DOCTYPE html>
+<html dir="ltr" lang="en">
+
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="shortcut icon" href="./assets/images/icons/favicon.ico" type="image/x-icon" />
+    <title>GameCo - HTML Tailwind CSS</title>
+</head>
+
+<body>
+
+    <!-- preloader start -->
+    <include-preloader />
+    <!-- preloader end -->
+
+    <!-- scroll to top button start -->
+    <include-scrollToTop />
+    <!-- scroll to top button end -->
+
+    <!-- header start -->
+    <include-navbar />
+    <!-- header end -->
+
+    <!-- sidebar start -->
+    <include-left-right-sidebar />
+    <!-- sidebar end -->
+
+    <!-- app layout start -->
+    <div class="app-layout">
+
+        <!-- main start -->
+        <main>
+
+            <!-- breadcrumb start -->
+            <section class="pt-30p">
+                <div class="section-pt">
+                    <div
+                        class="relative bg-[url('../images/photos/breadcrumbImg.png')] bg-cover bg-no-repeat rounded-24 overflow-hidden">
+                        <div class="container">
+                            <div class="grid grid-cols-12 gap-30p relative xl:py-[130px] md:py-30 sm:py-25 py-20 z-[2]">
+                                <div class="lg:col-start-2 lg:col-end-12 col-span-12">
+                                    <h2 class="heading-2 text-w-neutral-1 mb-3">
+                                        Shop Cart
+                                    </h2>
+                                    <ul class="breadcrumb">
+                                        <li class="breadcrumb-item">
+                                            <a href="#" class="breadcrumb-link">
+                                                Home
+                                            </a>
+                                        </li>
+                                        <li class="breadcrumb-item">
+                                            <span class="breadcrumb-icon">
+                                                <i class="ti ti-chevrons-right"></i>
+                                            </span>
+                                        </li>
+                                        <li class="breadcrumb-item">
+                                            <span class="breadcrumb-current">Shop Cart</span>
+                                        </li>
+                                    </ul>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="overlay-11"></div>
+                    </div>
+                </div>
+            </section>
+            <!-- breadcrumb end -->
+
+            <!-- product cart section start -->
+            <section class="section-pb pt-15">
+                <div class="container">
+                    <div class="grid grid-cols-12 gap-30p">
+                        <div class="xxl:col-start-2 xxl:col-end-12 col-span-12">
+                            <div class="overflow-x-auto scrollbar-sm w-full mb-5">
+                                <table class="w-full text-left">
+                                    <thead>
+                                        <tr class="md:text-2xl sm:text-xl text-lg font-borda">
+                                            <th class="min-w-[320px] w-full">Product</th>
+                                            <th class="3xl:min-w-[157px] min-w-[144px] p-16p">Price</th>
+                                            <th class="3xl:min-w-[206px] min-w-[144px] p-16p text-center">Quantity</th>
+                                            <th class="3xl:min-w-[163px] min-w-[144px] p-16p text-center">Subtotal</th>
+                                            <th class="min-w-10 p-16p">Edit</th>
+                                        </tr>
+                                    </thead>
+                                    <tbody
+                                        class="*:bg-b-neutral-3 sm:divide-y-[20px] divide-y-[16px] divide-b-neutral-4">
+
+                                        <tr class="*:p-20p">
+                                            <td>
+                                                <div class="flex items-center gap-3">
+                                                    <div class="shrink-0 bg-b-neutral-2 p-24p rounded-12">
+                                                        <img class="size-[74px] rounded-12"
+                                                            src="./assets/images/shop/product1.1.webp" alt="product" />
+                                                    </div>
+                                                    <a href="./shop-details.html"
+                                                        class="text-m-medium text-w-neutral-1 link-1">
+                                                        Beats Solo Wireless On Ear
+                                                    </a>
+                                                </div>
+                                            </td>
+                                            <td>
+                                                <span class="text-m-medium text-w-neutral-1">
+                                                    €29.90
+                                                </span>
+                                            </td>
+                                            <td>
+                                                <div class="flex-c">
+                                                    <div
+                                                        class="qtySelector inline-flex items-center justify-center border border-shap px-16p sm:py-3 py-2 rounded-12 w-[144px] *:h-full">
+                                                        <button class="decreaseQty flex-c size-12 icon-24">
+                                                            <i class="ti ti-minus"></i>
+                                                        </button>
+                                                        <input min="1" value="1" type="number" placeholder="1"
+                                                            class="qtyValue btn-xsm bg-transparent min-w-12 max-w-18 text-base text-w-neutral-1 text-center"
+                                                            readonly="">
+                                                        <button class="increaseQty flex-c size-12 icon-24">
+                                                            <i class="ti ti-plus"></i>
+                                                        </button>
+                                                    </div>
+                                                </div>
+                                            </td>
+                                            <td>
+                                                <span class="text-m-medium text-w-neutral-1 text-center">
+                                                    €29.90
+                                                </span>
+                                            </td>
+                                            <td>
+                                                <button
+                                                    class="icon-24 text-w-neutral-1 hover:text-danger text-center transition-1">
+                                                    <i class="ti ti-archive"></i>
+                                                </button>
+                                            </td>
+                                        </tr>
+
+                                        <tr class="*:p-20p">
+                                            <td>
+                                                <div class="flex items-center gap-3">
+                                                    <div class="shrink-0 bg-b-neutral-2 p-24p rounded-12">
+                                                        <img class="size-[74px] rounded-12"
+                                                            src="./assets/images/shop/product2.webp" alt="product" />
+                                                    </div>
+                                                    <a href="./shop-details.html"
+                                                        class="text-m-medium text-w-neutral-1 link-1">
+                                                        Compact Washing Machine
+                                                    </a>
+                                                </div>
+                                            </td>
+                                            <td>
+                                                <span class="text-m-medium text-w-neutral-1">
+                                                    €289.90
+                                                </span>
+                                            </td>
+                                            <td>
+                                                <div class="flex-c">
+                                                    <div
+                                                        class="qtySelector inline-flex items-center justify-center border border-shap px-16p sm:py-3 py-2 rounded-12 w-[144px] *:h-full">
+                                                        <button class="decreaseQty flex-c size-12 icon-24">
+                                                            <i class="ti ti-minus"></i>
+                                                        </button>
+                                                        <input min="1" value="1" type="number" placeholder="1"
+                                                            class="qtyValue btn-xsm bg-transparent min-w-12 max-w-18 text-base text-w-neutral-1 text-center"
+                                                            readonly="">
+                                                        <button class="increaseQty flex-c size-12 icon-24">
+                                                            <i class="ti ti-plus"></i>
+                                                        </button>
+                                                    </div>
+                                                </div>
+                                            </td>
+                                            <td>
+                                                <span class="text-m-medium text-w-neutral-1 text-center">
+                                                    €380.00
+                                                </span>
+                                            </td>
+                                            <td>
+                                                <button
+                                                    class="icon-24 text-w-neutral-1 hover:text-danger text-center transition-1">
+                                                    <i class="ti ti-archive"></i>
+                                                </button>
+                                            </td>
+                                        </tr>
+
+                                        <tr class="*:p-20p">
+                                            <td>
+                                                <div class="flex items-center gap-3">
+                                                    <div class="shrink-0 bg-b-neutral-2 p-24p rounded-12">
+                                                        <img class="size-[74px] rounded-12"
+                                                            src="./assets/images/shop/product3.webp" alt="product" />
+                                                    </div>
+                                                    <a href="./shop-details.html"
+                                                        class="text-m-medium text-w-neutral-1 link-1">
+                                                        Double-Door Refrigerator
+                                                    </a>
+                                                </div>
+                                            </td>
+                                            <td>
+                                                <span class="text-m-medium text-w-neutral-1">
+                                                    €29.90
+                                                </span>
+                                            </td>
+                                            <td>
+                                                <div class="flex-c">
+                                                    <div
+                                                        class="qtySelector inline-flex items-center justify-center border border-shap px-16p sm:py-3 py-2 rounded-12 w-[144px] *:h-full">
+                                                        <button class="decreaseQty flex-c size-12 icon-24">
+                                                            <i class="ti ti-minus"></i>
+                                                        </button>
+                                                        <input min="1" value="1" type="number" placeholder="1"
+                                                            class="qtyValue btn-xsm bg-transparent min-w-12 max-w-18 text-base text-w-neutral-1 text-center"
+                                                            readonly="">
+                                                        <button class="increaseQty flex-c size-12 icon-24">
+                                                            <i class="ti ti-plus"></i>
+                                                        </button>
+                                                    </div>
+                                                </div>
+                                            </td>
+                                            <td>
+                                                <span class="text-m-medium text-w-neutral-1 text-center">
+                                                    €29.90
+                                                </span>
+                                            </td>
+                                            <td>
+                                                <button
+                                                    class="icon-24 text-w-neutral-1 hover:text-danger text-center transition-1">
+                                                    <i class="ti ti-archive"></i>
+                                                </button>
+                                            </td>
+                                        </tr>
+
+                                    </tbody>
+                                </table>
+                            </div>
+                            <div
+                                class="bg-b-neutral-3 flex max-md:flex-wrap items-center justify-between gap-20p p-30p">
+                                <div>
+                                    <span class="heading-4 font-normal text-w-neutral-1 mb-3">
+                                        Subtotal
+                                    </span>
+                                    <p class="text-l-reguler text-w-neutral-4">
+                                        Taxes and shipping calculated at checkout
+                                    </p>
+                                </div>
+                                <div class="flex-y gap-30p">
+                                    <div>
+                                        <span class="heading-4 text-w-neutral-1 font-normal inline">$</span><span
+                                            class="heading-4 text-w-neutral-1 font-normal inline">79.96</span>
+                                    </div>
+                                    <a href="./checkout.html" class="btn btn-md btn-primary rounded-12">
+                                        Checkout
+                                    </a>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </section>
+            <!-- product cart section end -->
+
+        </main>
+        <!-- main end -->
+
+        <!-- footer start -->
+        <include-footer />
+        <!-- footer end -->
+    </div>
+    <!-- app layout end -->
+
+
+</body>
+
+</html>

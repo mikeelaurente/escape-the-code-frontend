@@ -1,0 +1,147 @@
+.box-input-common {
+  @apply w-full text-base outline-none focus:outline-none;
+}
+
+.box-input-1 {
+  @apply box-input-common bg-b-neutral-3 text-w-neutral-2 placeholder:text-base placeholder:text-w-neutral-4 p-16p rounded-12 transition-1;
+}
+
+.box-input-2 {
+  @apply box-input-common bg-b-neutral-4 text-w-neutral-2 placeholder:text-base placeholder:text-w-neutral-4 p-20p rounded-12 transition-1;
+}
+
+.box-input-3 {
+  @apply box-input-common bg-transparent text-w-neutral-2 placeholder:text-base placeholder:text-w-neutral-4 px-16p py-3 rounded-12 border border-shap transition-1 w-full;
+}
+
+.box-input-4 {
+  @apply box-input-common p-16p bg-glass-1 rounded-4 placeholder:text-body/60 text-base text-w-neutral-1 w-full;
+}
+
+.border-input-1 {
+  @apply w-full px-16p py-3 bg-transparent border border-shap focus-within:border-primary rounded-12 text-base placeholder:text-w-neutral-4 text-w-neutral-1;
+}
+
+// css styles start
+// custom checkbox start
+.form-group {
+  display: block;
+  margin-bottom: 15px;
+}
+
+.form-group input {
+  padding: 0;
+  height: initial;
+  width: initial;
+  margin-bottom: 0;
+  display: none;
+  cursor: pointer;
+}
+
+.form-group label {
+  position: relative;
+  cursor: pointer;
+}
+
+.form-group label:before {
+  content: "";
+  -webkit-appearance: none;
+  background-color: transparent;
+  border: 1px solid #1c1c1c;
+  padding: 10px;
+  display: inline-block;
+  position: relative;
+  vertical-align: middle;
+  cursor: pointer;
+  margin-right: 5px;
+}
+
+.form-group label:hover:before {
+  background-color: white;
+  border: white;
+}
+
+.form-group input:checked + label:after {
+  content: "";
+  display: block;
+  position: absolute;
+  top: 7px;
+  left: 7px;
+  width: 6px;
+  height: 12px;
+  border: solid #6d8c36;
+  border-width: 0 2px 2px 0;
+  transform: rotate(45deg);
+}
+
+// custom checkbox end
+
+// custom radio ring button start
+/* label container */
+.radio-button-container {
+  // color: rgba(0, 0, 0, 0.75);
+  display: block;
+  position: relative;
+  padding-left: 24px;
+  cursor: pointer;
+  -webkit-user-select: none;
+  -moz-user-select: none;
+  -ms-user-select: none;
+  user-select: none;
+}
+
+/* Hide the browser's default radio button */
+.radio-button-container input {
+  position: absolute;
+  opacity: 0;
+  cursor: pointer;
+}
+
+/* Create a custom radio button */
+.checkmark {
+  position: absolute;
+  top: 6px;
+  left: 0;
+  height: 16px;
+  width: 16px;
+  background-color: transparent;
+  border-radius: 100%;
+  border: 1px solid #f29620;
+  transition: all 0.3s;
+}
+
+/* On mouse-over, add a grey background color */
+// .radio-button-container:hover input ~ .checkmark {
+//   border-color: rgba(0, 0, 0, 0.5);
+// }
+
+/* When the radio button is checked */
+.radio-button-container input:checked ~ .checkmark {
+  background-color: #f29620;
+  border-color: #f29620;
+}
+
+/* Create the indicator (the dot/circle - hidden when not checked) */
+.checkmark:after {
+  content: "";
+  position: absolute;
+  display: none;
+}
+
+/* Show the indicator (dot/circle) when checked */
+.radio-button-container input:checked ~ .checkmark:after {
+  display: block;
+}
+
+/* Style the indicator (dot/circle) */
+.radio-button-container .checkmark:after {
+  top: 3px;
+  left: 3px;
+  width: 8px;
+  height: 8px;
+  border-radius: 100%;
+  background: #f29620;
+}
+// custom radio ring button end
+
+// css styles end

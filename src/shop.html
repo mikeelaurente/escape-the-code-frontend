@@ -1,0 +1,748 @@
+<!DOCTYPE html>
+<html dir="ltr" lang="en">
+
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="shortcut icon" href="./assets/images/icons/favicon.ico" type="image/x-icon" />
+    <title>GameCo - HTML Tailwind CSS</title>
+</head>
+
+<body>
+
+    <!-- preloader start -->
+    <include-preloader />
+    <!-- preloader end -->
+
+    <!-- scroll to top button start -->
+    <include-scrollToTop />
+    <!-- scroll to top button end -->
+
+    <!-- header start -->
+    <include-navbar />
+    <!-- header end -->
+
+    <!-- sidebar start -->
+    <include-left-right-sidebar />
+    <!-- sidebar end -->
+
+    <!-- app layout start -->
+    <div class="app-layout">
+
+        <!-- main start -->
+        <main>
+
+            <!-- breadcrumb start -->
+            <section class="pt-30p">
+                <div class="section-pt">
+                    <div
+                        class="relative bg-[url('../images/photos/breadcrumbImg.png')] bg-cover bg-no-repeat rounded-24 overflow-hidden">
+                        <div class="container">
+                            <div class="grid grid-cols-12 gap-30p relative xl:py-[130px] md:py-30 sm:py-25 py-20 z-[2]">
+                                <div class="lg:col-start-2 lg:col-end-12 col-span-12">
+                                    <h2 class="heading-2 text-w-neutral-1 mb-3">
+                                        Shop
+                                    </h2>
+                                    <ul class="breadcrumb">
+                                        <li class="breadcrumb-item">
+                                            <a href="#" class="breadcrumb-link">
+                                                Home
+                                            </a>
+                                        </li>
+                                        <li class="breadcrumb-item">
+                                            <span class="breadcrumb-icon">
+                                                <i class="ti ti-chevrons-right"></i>
+                                            </span>
+                                        </li>
+                                        <li class="breadcrumb-item">
+                                            <span class="breadcrumb-current">Shop</span>
+                                        </li>
+                                    </ul>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="overlay-11"></div>
+                    </div>
+                </div>
+            </section>
+            <!-- breadcrumb end -->
+
+            <!-- products section start -->
+            <section class="section-py overflow-visible relative">
+                <div x-data="{filterSidebar : false}" class="container">
+
+                    <h2 class="heading-2 text-w-neutral-1 mb-40p">
+                        Latest Products
+                    </h2>
+
+                    <div class="xl:grid xl:grid-cols-12 gap-x-30p gap-y-10">
+
+                        <aside class="xxl+:col-span-3 xl:col-span-4 relative max-xl:z-[60]">
+                            <div :class="filterSidebar ? 'xl:translate-x-0' : 'max-xl:-translate-x-[150%]'"
+                                class="xl:sticky max-xl:fixed xl:top-30 top-0 left-0 transition-1 w-full">
+                                <div
+                                    class="relative h-screen overflow-y-auto scrollbar-sm sm:w-[400px] xsm:w-[300px] xl:w-full bg-b-neutral-4 z-20">
+                                    <div class="xl:hidden w-full flex-y justify-between gap-20p max-xl:p-20p">
+                                        <a href="index.html" class="shrink-0">
+                                            <img class="xl:w-[170px] sm:w-30 w-25 h-auto shrink-0"
+                                                src="./assets/images/icons/logo.png" alt="brand">
+                                        </a>
+                                        <button @click="filterSidebar = false"
+                                            class="btn-c btn-c-md btn-primary icon-24 ">
+                                            <i class="ti ti-x"></i>
+                                        </button>
+                                    </div>
+                                    <div class="grid grid-cols-1 gap-24p max-xl:p-20p">
+
+                                        <div class="bg-b-neutral-3 p-24p border border-shap rounded-12">
+                                            <div class="border-l-2 border-primary mb-20p">
+                                                <span class="ml-1 heading-4">
+                                                    Search
+                                                </span>
+                                            </div>
+                                            <form
+                                                class="flex-y justify-between gap-2 w-full py-2 pl-3 pr-2 rounded-4 border border-shap">
+                                                <input
+                                                    class="bg-transparent text-base text-w-neutral-1 placeholder:text-body w-full"
+                                                    type="text" name="search" id="search" placeholder="Search" />
+                                                <button
+                                                    class="shrink-0 flex-c bg-primary text-b-neutral-4 size-8 rounded-4 icon-20">
+                                                    <i class="ti ti-search"></i>
+                                                </button>
+                                            </form>
+                                        </div>
+
+                                        <div class="bg-b-neutral-3 p-24p border border-shap rounded-12">
+                                            <div class="border-l-2 border-primary mb-20p">
+                                                <span class="ml-1 heading-4">
+                                                    Filter by Price
+                                                </span>
+                                            </div>
+                                            <form class="products-price-range mt-24p">
+                                                <div class="range-slider mb-24p">
+                                                    <div class="slider-track"></div>
+                                                    <input type="range" min="0" max="1000" value="14"
+                                                        id="range-slider-1">
+                                                    <input type="range" min="0" max="1000" value="900"
+                                                        id="range-slider-2">
+                                                </div>
+                                                <div class="flex-y flex-wrap justify-between gap-20p">
+                                                    <div class="price-values">
+                                                        <div class="flex-y text-l-medium text-white">
+                                                            <span>
+                                                                Price :
+                                                            </span>
+                                                            <span class="flex gap-1 ml-1">
+                                                                $ <span id="min-value">
+                                                                    $14
+                                                                </span>
+                                                                —
+                                                                $ <span id="max-value">
+                                                                    146
+                                                                </span>
+                                                            </span>
+                                                        </div>
+                                                    </div>
+                                                    <button type="submit" class="btn px-16p py-2 btn-primary rounded-4">
+                                                        Filter
+                                                    </button>
+                                                </div>
+
+                                            </form>
+                                        </div>
+
+                                        <div class="bg-b-neutral-3 p-24p border border-shap rounded-12">
+                                            <div class="border-l-2 border-primary mb-24p">
+                                                <span class="ml-1 heading-4">
+                                                    Category
+                                                </span>
+                                            </div>
+
+                                            <div
+                                                class="grid grid-cols-1 *:py-2 divide-y divide-b-neutral-2 border-y border-b-neutral-2">
+                                                <div class="checkbox-container shrink-0">
+                                                    <input type="checkbox" value="macbook" id="product-1"
+                                                        class="border-corners-checkbox">
+                                                    <label for="product-1"
+                                                        class="border-corners-checkbox-label gap-2 text-body">
+                                                        <i class="ti icon-24 text-body"></i>
+                                                        MacBook Air M2
+                                                    </label>
+                                                </div>
+                                                <div class="checkbox-container shrink-0">
+                                                    <input type="checkbox" value="headphones" id="product-2"
+                                                        class="border-corners-checkbox">
+                                                    <label for="product-2"
+                                                        class="border-corners-checkbox-label gap-2 text-body">
+                                                        <i class="ti icon-24 text-body"></i>
+                                                        Ear Headphones - Gold Tone
+                                                    </label>
+                                                </div>
+                                                <div class="checkbox-container shrink-0">
+                                                    <input type="checkbox" value="macbook_pro" id="product-3"
+                                                        class="border-corners-checkbox">
+                                                    <label for="product-3"
+                                                        class="border-corners-checkbox-label gap-2 text-body">
+                                                        <i class="ti icon-24 text-body"></i>
+                                                        MacBook Pro
+                                                    </label>
+                                                </div>
+                                                <div class="checkbox-container shrink-0">
+                                                    <input type="checkbox" value="mic" id="product-4"
+                                                        class="border-corners-checkbox">
+                                                    <label for="product-4"
+                                                        class="border-corners-checkbox-label gap-2 text-body">
+                                                        <i class="ti icon-24 text-body"></i>
+                                                        Ear Earbuds with Mic
+                                                    </label>
+                                                </div>
+                                                <div class="checkbox-container shrink-0">
+                                                    <input type="checkbox" value="watch" id="product-5"
+                                                        class="border-corners-checkbox">
+                                                    <label for="product-5"
+                                                        class="border-corners-checkbox-label gap-2 text-body">
+                                                        <i class="ti icon-24 text-body"></i>
+                                                        Apple Watch SE
+                                                    </label>
+                                                </div>
+                                                <div class="checkbox-container shrink-0">
+                                                    <input type="checkbox" value="quest" id="product-6"
+                                                        class="border-corners-checkbox">
+                                                    <label for="product-6"
+                                                        class="border-corners-checkbox-label gap-2 text-body">
+                                                        <i class="ti icon-24 text-body"></i>
+                                                        Meta Quest 2
+                                                    </label>
+                                                </div>
+                                            </div>
+                                        </div>
+
+                                        <div class="bg-b-neutral-3 p-24p border border-shap rounded-12">
+                                            <div class="border-l-2 border-primary mb-20p">
+                                                <span class="ml-1 heading-4">
+                                                    Latest Products
+                                                </span>
+                                            </div>
+                                            <div class="grid grid-cols-1 gap-16p">
+                                                <div class="flex-y gap-3">
+                                                    <div class="size-100p p-3 rounded-8 bg-b-neutral-2">
+                                                        <img class="rounded-8" src="./assets/images/shop/product1.webp"
+                                                            alt="product" />
+                                                    </div>
+                                                    <div>
+                                                        <div class="flex-y gap-1 icon-16 text-primary">
+                                                            <i class="ti ti-star-filled"></i>
+                                                            <i class="ti ti-star-filled"></i>
+                                                            <i class="ti ti-star-filled"></i>
+                                                            <i class="ti ti-star-filled"></i>
+                                                            <i class="ti ti-star-half-filled"></i>
+                                                        </div>
+                                                        <a href="./shop-details.html"
+                                                            class="heading-5 text-white line-clamp-1 link-1 my-1">
+                                                            Ear Earbuds with Mic
+                                                        </a>
+                                                        <span class="text-l-regular text-body">
+                                                            $23.00
+                                                        </span>
+                                                    </div>
+                                                </div>
+                                                <div class="flex-y gap-3">
+                                                    <div class="size-100p p-3 rounded-8 bg-b-neutral-2">
+                                                        <img class="rounded-8" src="./assets/images/shop/product8.webp"
+                                                            alt="product" />
+                                                    </div>
+                                                    <div>
+                                                        <div class="flex-y gap-1 icon-16 text-primary">
+                                                            <i class="ti ti-star-filled"></i>
+                                                            <i class="ti ti-star-filled"></i>
+                                                            <i class="ti ti-star-filled"></i>
+                                                            <i class="ti ti-star-filled"></i>
+                                                            <i class="ti ti-star-half-filled"></i>
+                                                        </div>
+                                                        <a href="./shop-details.html"
+                                                            class="heading-5 text-white line-clamp-1 link-1 my-1">
+                                                            Apple Watch SE
+                                                        </a>
+                                                        <span class="text-l-regular text-body">
+                                                            $23.00
+                                                        </span>
+                                                    </div>
+                                                </div>
+                                                <div class="flex-y gap-3">
+                                                    <div class="size-100p p-3 rounded-8 bg-b-neutral-2">
+                                                        <img class="rounded-8" src="./assets/images/shop/product9.webp"
+                                                            alt="product" />
+                                                    </div>
+                                                    <div>
+                                                        <div class="flex-y gap-1 icon-16 text-primary">
+                                                            <i class="ti ti-star-filled"></i>
+                                                            <i class="ti ti-star-filled"></i>
+                                                            <i class="ti ti-star-filled"></i>
+                                                            <i class="ti ti-star-filled"></i>
+                                                            <i class="ti ti-star-half-filled"></i>
+                                                        </div>
+                                                        <a href="./shop-details.html"
+                                                            class="heading-5 text-white line-clamp-1 link-1 my-1">
+                                                            Ear Headphones
+                                                        </a>
+                                                        <span class="text-l-regular text-body">
+                                                            $23.00
+                                                        </span>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </div>
+
+                                    </div>
+                                </div>
+                                <div @click="filterSidebar = false" class="absolute inset-0 bg-black/20"></div>
+                            </div>
+                        </aside>
+
+                        <div class="xxl+:col-span-9 xl:col-span-8 ">
+                            <div
+                                class="flex flex-wrap-reverse items-center justify-between gap-24p p-16p bg-b-neutral-3 rounded-12 border border-shap mb-30p">
+                                <p class="text-lg text-w-neutral-1">
+                                    Showing 1–9 of 12 Results
+                                </p>
+                                <div class="flex flex-wrap items-center gap-24p">
+                                    <div class="select-4 sm:w-[272px] w-full">
+                                        <select class="select px-16p py-3 w-full">
+                                            <option value="newest">Sort by Newest</option>
+                                            <option value="treanding">Sort by Best Treanding</option>
+                                            <option value="selling">Sort by Best Selling</option>
+                                            <option value="low-to-high">Price: Low to High</option>
+                                            <option value="high-to-low">Price: High to Low</option>
+                                        </select>
+                                    </div>
+                                    <div class="flex items-center gap-2">
+                                        <button @click="filterSidebar = !filterSidebar"
+                                            class="xl:hidden border border-shap hover:border-primary hover:bg-primary text-w-neutral-1 hover:text-b-neutral-4 size-48p rounded-4 icon-24">
+                                            <i class="ti ti-filter"></i>
+                                        </button>
+                                        <button
+                                            class="border border-shap hover:border-primary hover:bg-primary text-w-neutral-1 hover:text-b-neutral-4 size-48p rounded-4 icon-24">
+                                            <i class="ti ti-layout-grid"></i>
+                                        </button>
+                                        <button
+                                            class="border border-shap hover:border-primary hover:bg-primary text-w-neutral-1 hover:text-b-neutral-4 size-48p rounded-4 icon-24">
+                                            <i class="ti ti-list"></i>
+                                        </button>
+                                    </div>
+                                </div>
+                            </div>
+
+                            <div class="grid xxl+:grid-cols-3 sm:grid-cols-2 gap-30p mb-60p">
+                                <!-- product card 1 -->
+                                <div class="py-30p px-20p rounded-20 border border-shap group">
+                                    <div class="flex-col-c overflow-hidden mb-30p">
+                                        <img class="w-[220px] h-[225px] group-hover:scale-105 transition-1"
+                                            src="./assets/images/shop/product1.webp" alt="img" />
+                                    </div>
+                                    <div class="py-24p border-t border-shap pt-30p">
+                                        <a href="./shop-details.html"
+                                            class="heading-4 text-w-neutral-1 line-clamp-1 link-1 mb-20p ">
+                                            Wireless Earbuds with Noise Cancellation
+                                        </a>
+                                        <div class="flex-y flex-wrap gap-x-24p gap-y-3 mb-20p">
+                                            <div class="flex-y gap-1">
+                                                <span class="text-base text-body line-through">
+                                                    $100
+                                                </span>
+                                                <span class="text-xl-medium text-w-neutral-1">
+                                                    $75
+                                                </span>
+                                            </div>
+                                            <div class="flex-c gap-1 icon-20 text-primary">
+                                                <i class="ti ti-star-filled"></i>
+                                                <i class="ti ti-star-filled"></i>
+                                                <i class="ti ti-star-filled"></i>
+                                                <i class="ti ti-star-filled"></i>
+                                                <i class="ti ti-star-half-filled"></i>
+                                            </div>
+                                        </div>
+                                        <div class="flex-y justify-between 4xl:gap-6 gap-3">
+                                            <a href="./shopping-cart.html"
+                                                class="btn btn-md btn-neutral-3 group-hover:bg-primary group-hover:text-b-neutral-4 rounded-12">
+                                                <span class="flex-c icon-24">
+                                                    <i class="ti ti-shopping-cart-plus"></i>
+                                                </span>
+                                                Add To Cart
+                                            </a>
+                                            <button
+                                                class="shrink-0 btn-c btn-c-lg btn-c-neutral-3 group-hover:bg-secondary group-hover:text-b-neutral-4 icon-24">
+                                                <i class="ti ti-heart"></i>
+                                            </button>
+                                        </div>
+                                    </div>
+                                </div>
+                                <!-- product card 2 -->
+                                <div class="py-30p px-20p rounded-20 border border-shap group">
+                                    <div class="flex-col-c overflow-hidden mb-30p">
+                                        <img class="w-[220px] h-[225px] group-hover:scale-105 transition-1"
+                                            src="./assets/images/shop/product2.webp" alt="img" />
+                                    </div>
+                                    <div class="py-24p border-t border-shap pt-30p">
+                                        <a href="./shop-details.html"
+                                            class="heading-4 text-w-neutral-1 line-clamp-1 link-1 mb-20p ">
+                                            Compact Washing Machine
+                                        </a>
+                                        <div class="flex-y flex-wrap gap-x-24p gap-y-3 mb-20p">
+                                            <div class="flex-y gap-1">
+                                                <span class="text-base text-body line-through">
+                                                    $100
+                                                </span>
+                                                <span class="text-xl-medium text-w-neutral-1">
+                                                    $75
+                                                </span>
+                                            </div>
+                                            <div class="flex-c gap-1 icon-20 text-primary">
+                                                <i class="ti ti-star-filled"></i>
+                                                <i class="ti ti-star-filled"></i>
+                                                <i class="ti ti-star-filled"></i>
+                                                <i class="ti ti-star-filled"></i>
+                                                <i class="ti ti-star-half-filled"></i>
+                                            </div>
+                                        </div>
+                                        <div class="flex-y justify-between 4xl:gap-6 gap-3">
+                                            <a href="./shopping-cart.html"
+                                                class="btn btn-md btn-neutral-3 group-hover:bg-primary group-hover:text-b-neutral-4 rounded-12">
+                                                <span class="flex-c icon-24">
+                                                    <i class="ti ti-shopping-cart-plus"></i>
+                                                </span>
+                                                Add To Cart
+                                            </a>
+                                            <button
+                                                class="shrink-0 btn-c btn-c-lg btn-c-neutral-3 group-hover:bg-secondary group-hover:text-b-neutral-4 icon-24">
+                                                <i class="ti ti-heart"></i>
+                                            </button>
+                                        </div>
+                                    </div>
+                                </div>
+                                <!-- product card 3 -->
+                                <div class="py-30p px-20p rounded-20 border border-shap group">
+                                    <div class="flex-col-c overflow-hidden mb-30p">
+                                        <img class="w-[220px] h-[225px] group-hover:scale-105 transition-1"
+                                            src="./assets/images/shop/product3.webp" alt="img" />
+                                    </div>
+                                    <div class="py-24p border-t border-shap pt-30p">
+                                        <a href="./shop-details.html"
+                                            class="heading-4 text-w-neutral-1 line-clamp-1 link-1 mb-20p ">
+                                            Double-Door Refrigerator
+                                        </a>
+                                        <div class="flex-y flex-wrap gap-x-24p gap-y-3 mb-20p">
+                                            <div class="flex-y gap-1">
+                                                <span class="text-base text-body line-through">
+                                                    $100
+                                                </span>
+                                                <span class="text-xl-medium text-w-neutral-1">
+                                                    $75
+                                                </span>
+                                            </div>
+                                            <div class="flex-c gap-1 icon-20 text-primary">
+                                                <i class="ti ti-star-filled"></i>
+                                                <i class="ti ti-star-filled"></i>
+                                                <i class="ti ti-star-filled"></i>
+                                                <i class="ti ti-star-filled"></i>
+                                                <i class="ti ti-star-half-filled"></i>
+                                            </div>
+                                        </div>
+                                        <div class="flex-y justify-between 4xl:gap-6 gap-3">
+                                            <a href="./shopping-cart.html"
+                                                class="btn btn-md btn-neutral-3 group-hover:bg-primary group-hover:text-b-neutral-4 rounded-12">
+                                                <span class="flex-c icon-24">
+                                                    <i class="ti ti-shopping-cart-plus"></i>
+                                                </span>
+                                                Add To Cart
+                                            </a>
+                                            <button
+                                                class="shrink-0 btn-c btn-c-lg btn-c-neutral-3 group-hover:bg-secondary group-hover:text-b-neutral-4 icon-24">
+                                                <i class="ti ti-heart"></i>
+                                            </button>
+                                        </div>
+                                    </div>
+                                </div>
+                                <!-- product card 4 -->
+                                <div class="py-30p px-20p rounded-20 border border-shap group">
+                                    <div class="flex-col-c overflow-hidden mb-30p">
+                                        <img class="w-[220px] h-[225px] group-hover:scale-105 transition-1"
+                                            src="./assets/images/shop/product4.webp" alt="img" />
+                                    </div>
+                                    <div class="py-24p border-t border-shap pt-30p">
+                                        <a href="./shop-details.html"
+                                            class="heading-4 text-w-neutral-1 line-clamp-1 link-1 mb-20p ">
+                                            Portable Air Purifier
+                                        </a>
+                                        <div class="flex-y flex-wrap gap-x-24p gap-y-3 mb-20p">
+                                            <div class="flex-y gap-1">
+                                                <span class="text-base text-body line-through">
+                                                    $100
+                                                </span>
+                                                <span class="text-xl-medium text-w-neutral-1">
+                                                    $75
+                                                </span>
+                                            </div>
+                                            <div class="flex-c gap-1 icon-20 text-primary">
+                                                <i class="ti ti-star-filled"></i>
+                                                <i class="ti ti-star-filled"></i>
+                                                <i class="ti ti-star-filled"></i>
+                                                <i class="ti ti-star-filled"></i>
+                                                <i class="ti ti-star-half-filled"></i>
+                                            </div>
+                                        </div>
+                                        <div class="flex-y justify-between 4xl:gap-6 gap-3">
+                                            <a href="./shopping-cart.html"
+                                                class="btn btn-md btn-neutral-3 group-hover:bg-primary group-hover:text-b-neutral-4 rounded-12">
+                                                <span class="flex-c icon-24">
+                                                    <i class="ti ti-shopping-cart-plus"></i>
+                                                </span>
+                                                Add To Cart
+                                            </a>
+                                            <button
+                                                class="shrink-0 btn-c btn-c-lg btn-c-neutral-3 group-hover:bg-secondary group-hover:text-b-neutral-4 icon-24">
+                                                <i class="ti ti-heart"></i>
+                                            </button>
+                                        </div>
+                                    </div>
+                                </div>
+                                <!-- product card 5 -->
+                                <div class="py-30p px-20p rounded-20 border border-shap group">
+                                    <div class="flex-col-c overflow-hidden mb-30p">
+                                        <img class="w-[220px] h-[225px] group-hover:scale-105 transition-1"
+                                            src="./assets/images/shop/product5.webp" alt="img" />
+                                    </div>
+                                    <div class="py-24p border-t border-shap pt-30p">
+                                        <a href="./shop-details.html"
+                                            class="heading-4 text-w-neutral-1 line-clamp-1 link-1 mb-20p ">
+                                            Wireless Over-Ear Headphones
+                                        </a>
+                                        <div class="flex-y flex-wrap gap-x-24p gap-y-3 mb-20p">
+                                            <div class="flex-y gap-1">
+                                                <span class="text-base text-body line-through">
+                                                    $100
+                                                </span>
+                                                <span class="text-xl-medium text-w-neutral-1">
+                                                    $75
+                                                </span>
+                                            </div>
+                                            <div class="flex-c gap-1 icon-20 text-primary">
+                                                <i class="ti ti-star-filled"></i>
+                                                <i class="ti ti-star-filled"></i>
+                                                <i class="ti ti-star-filled"></i>
+                                                <i class="ti ti-star-filled"></i>
+                                                <i class="ti ti-star-half-filled"></i>
+                                            </div>
+                                        </div>
+                                        <div class="flex-y justify-between 4xl:gap-6 gap-3">
+                                            <a href="./shopping-cart.html"
+                                                class="btn btn-md btn-neutral-3 group-hover:bg-primary group-hover:text-b-neutral-4 rounded-12">
+                                                <span class="flex-c icon-24">
+                                                    <i class="ti ti-shopping-cart-plus"></i>
+                                                </span>
+                                                Add To Cart
+                                            </a>
+                                            <button
+                                                class="shrink-0 btn-c btn-c-lg btn-c-neutral-3 group-hover:bg-secondary group-hover:text-b-neutral-4 icon-24">
+                                                <i class="ti ti-heart"></i>
+                                            </button>
+                                        </div>
+                                    </div>
+                                </div>
+                                <!-- product card 6 -->
+                                <div class="py-30p px-20p rounded-20 border border-shap group">
+                                    <div class="flex-col-c overflow-hidden mb-30p">
+                                        <img class="w-[220px] h-[225px] group-hover:scale-105 transition-1"
+                                            src="./assets/images/shop/product6.webp" alt="img" />
+                                    </div>
+                                    <div class="py-24p border-t border-shap pt-30p">
+                                        <a href="./shop-details.html"
+                                            class="heading-4 text-w-neutral-1 line-clamp-1 link-1 mb-20p ">
+                                            Slim Laptop
+                                        </a>
+                                        <div class="flex-y flex-wrap gap-x-24p gap-y-3 mb-20p">
+                                            <div class="flex-y gap-1">
+                                                <span class="text-base text-body line-through">
+                                                    $100
+                                                </span>
+                                                <span class="text-xl-medium text-w-neutral-1">
+                                                    $75
+                                                </span>
+                                            </div>
+                                            <div class="flex-c gap-1 icon-20 text-primary">
+                                                <i class="ti ti-star-filled"></i>
+                                                <i class="ti ti-star-filled"></i>
+                                                <i class="ti ti-star-filled"></i>
+                                                <i class="ti ti-star-filled"></i>
+                                                <i class="ti ti-star-half-filled"></i>
+                                            </div>
+                                        </div>
+                                        <div class="flex-y justify-between 4xl:gap-6 gap-3">
+                                            <a href="./shopping-cart.html"
+                                                class="btn btn-md btn-neutral-3 group-hover:bg-primary group-hover:text-b-neutral-4 rounded-12">
+                                                <span class="flex-c icon-24">
+                                                    <i class="ti ti-shopping-cart-plus"></i>
+                                                </span>
+                                                Add To Cart
+                                            </a>
+                                            <button
+                                                class="shrink-0 btn-c btn-c-lg btn-c-neutral-3 group-hover:bg-secondary group-hover:text-b-neutral-4 icon-24">
+                                                <i class="ti ti-heart"></i>
+                                            </button>
+                                        </div>
+                                    </div>
+                                </div>
+                                <!-- product card 7 -->
+                                <div class="py-30p px-20p rounded-20 border border-shap group">
+                                    <div class="flex-col-c overflow-hidden mb-30p">
+                                        <img class="w-[220px] h-[225px] group-hover:scale-105 transition-1"
+                                            src="./assets/images/shop/product7.webp" alt="img" />
+                                    </div>
+                                    <div class="py-24p border-t border-shap pt-30p">
+                                        <a href="./shop-details.html"
+                                            class="heading-4 text-w-neutral-1 line-clamp-1 link-1 mb-20p ">
+                                            Mouse
+                                        </a>
+                                        <div class="flex-y flex-wrap gap-x-24p gap-y-3 mb-20p">
+                                            <div class="flex-y gap-1">
+                                                <span class="text-base text-body line-through">
+                                                    $100
+                                                </span>
+                                                <span class="text-xl-medium text-w-neutral-1">
+                                                    $75
+                                                </span>
+                                            </div>
+                                            <div class="flex-c gap-1 icon-20 text-primary">
+                                                <i class="ti ti-star-filled"></i>
+                                                <i class="ti ti-star-filled"></i>
+                                                <i class="ti ti-star-filled"></i>
+                                                <i class="ti ti-star-filled"></i>
+                                                <i class="ti ti-star-half-filled"></i>
+                                            </div>
+                                        </div>
+                                        <div class="flex-y justify-between 4xl:gap-6 gap-3">
+                                            <a href="./shopping-cart.html"
+                                                class="btn btn-md btn-neutral-3 group-hover:bg-primary group-hover:text-b-neutral-4 rounded-12">
+                                                <span class="flex-c icon-24">
+                                                    <i class="ti ti-shopping-cart-plus"></i>
+                                                </span>
+                                                Add To Cart
+                                            </a>
+                                            <button
+                                                class="shrink-0 btn-c btn-c-lg btn-c-neutral-3 group-hover:bg-secondary group-hover:text-b-neutral-4 icon-24">
+                                                <i class="ti ti-heart"></i>
+                                            </button>
+                                        </div>
+                                    </div>
+                                </div>
+                                <!-- product card 8 -->
+                                <div class="py-30p px-20p rounded-20 border border-shap group">
+                                    <div class="flex-col-c overflow-hidden mb-30p">
+                                        <img class="w-[220px] h-[225px] group-hover:scale-105 transition-1"
+                                            src="./assets/images/shop/product8.webp" alt="img" />
+                                    </div>
+                                    <div class="py-24p border-t border-shap pt-30p">
+                                        <a href="./shop-details.html"
+                                            class="heading-4 text-w-neutral-1 line-clamp-1 link-1 mb-20p ">
+                                            Apple Watch
+                                        </a>
+                                        <div class="flex-y flex-wrap gap-x-24p gap-y-3 mb-20p">
+                                            <div class="flex-y gap-1">
+                                                <span class="text-base text-body line-through">
+                                                    $100
+                                                </span>
+                                                <span class="text-xl-medium text-w-neutral-1">
+                                                    $75
+                                                </span>
+                                            </div>
+                                            <div class="flex-c gap-1 icon-20 text-primary">
+                                                <i class="ti ti-star-filled"></i>
+                                                <i class="ti ti-star-filled"></i>
+                                                <i class="ti ti-star-filled"></i>
+                                                <i class="ti ti-star-filled"></i>
+                                                <i class="ti ti-star-half-filled"></i>
+                                            </div>
+                                        </div>
+                                        <div class="flex-y justify-between 4xl:gap-6 gap-3">
+                                            <a href="./shopping-cart.html"
+                                                class="btn btn-md btn-neutral-3 group-hover:bg-primary group-hover:text-b-neutral-4 rounded-12">
+                                                <span class="flex-c icon-24">
+                                                    <i class="ti ti-shopping-cart-plus"></i>
+                                                </span>
+                                                Add To Cart
+                                            </a>
+                                            <button
+                                                class="shrink-0 btn-c btn-c-lg btn-c-neutral-3 group-hover:bg-secondary group-hover:text-b-neutral-4 icon-24">
+                                                <i class="ti ti-heart"></i>
+                                            </button>
+                                        </div>
+                                    </div>
+                                </div>
+                                <!-- product card 9 -->
+                                <div class="py-30p px-20p rounded-20 border border-shap group">
+                                    <div class="flex-col-c overflow-hidden mb-30p">
+                                        <img class="w-[220px] h-[225px] group-hover:scale-105 transition-1"
+                                            src="./assets/images/shop/product9.webp" alt="img" />
+                                    </div>
+                                    <div class="py-24p border-t border-shap pt-30p">
+                                        <a href="./shop-details.html"
+                                            class="heading-4 text-w-neutral-1 line-clamp-1 link-1 mb-20p ">
+                                            Ear Headphones
+                                        </a>
+                                        <div class="flex-y flex-wrap gap-x-24p gap-y-3 mb-20p">
+                                            <div class="flex-y gap-1">
+                                                <span class="text-base text-body line-through">
+                                                    $100
+                                                </span>
+                                                <span class="text-xl-medium text-w-neutral-1">
+                                                    $75
+                                                </span>
+                                            </div>
+                                            <div class="flex-c gap-1 icon-20 text-primary">
+                                                <i class="ti ti-star-filled"></i>
+                                                <i class="ti ti-star-filled"></i>
+                                                <i class="ti ti-star-filled"></i>
+                                                <i class="ti ti-star-filled"></i>
+                                                <i class="ti ti-star-half-filled"></i>
+                                            </div>
+                                        </div>
+                                        <div class="flex-y justify-between 4xl:gap-6 gap-3">
+                                            <a href="./shopping-cart.html"
+                                                class="btn btn-md btn-neutral-3 group-hover:bg-primary group-hover:text-b-neutral-4 rounded-12">
+                                                <span class="flex-c icon-24">
+                                                    <i class="ti ti-shopping-cart-plus"></i>
+                                                </span>
+                                                Add To Cart
+                                            </a>
+                                            <button
+                                                class="shrink-0 btn-c btn-c-lg btn-c-neutral-3 group-hover:bg-secondary group-hover:text-b-neutral-4 icon-24">
+                                                <i class="ti ti-heart"></i>
+                                            </button>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+
+                            <div class="flex-c mt-48p">
+                                <a href="#" class="btn btn-xl py-3 btn-primary rounded-12">
+                                    Load More...
+                                </a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </section>
+            <!-- products section end -->
+
+        </main>
+        <!-- main end -->
+
+        <!-- footer start -->
+        <include-footer />
+        <!-- footer end -->
+    </div>
+    <!-- app layout end -->
+
+
+</body>
+
+</html>

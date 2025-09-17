@@ -1,0 +1,194 @@
+<!DOCTYPE html>
+<html dir="ltr" lang="en">
+
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="shortcut icon" href="./assets/images/icons/favicon.ico" type="image/x-icon" />
+    <title>GameCo - HTML Tailwind CSS</title>
+</head>
+
+<body>
+
+    <!-- preloader start -->
+    <include-preloader />
+    <!-- preloader end -->
+
+    <!-- scroll to top button start -->
+    <include-scrollToTop />
+    <!-- scroll to top button end -->
+
+    <!-- header start -->
+    <include-navbar />
+    <!-- header end -->
+
+    <!-- sidebar start -->
+    <include-left-right-sidebar />
+    <!-- sidebar end -->
+
+    <!-- app layout start -->
+    <div class="app-layout">
+
+        <!-- main start -->
+        <main>
+
+            <!-- breadcrumb start -->
+            <section class="pt-30p">
+                <div class="section-pt">
+                    <div
+                        class="relative bg-[url('../images/photos/breadcrumbImg.png')] bg-cover bg-no-repeat rounded-24 overflow-hidden">
+                        <div class="container">
+                            <div class="grid grid-cols-12 gap-30p relative xl:py-[130px] md:py-30 sm:py-25 py-20 z-[2]">
+                                <div class="lg:col-start-2 lg:col-end-12 col-span-12">
+                                    <h2 class="heading-2 text-w-neutral-1 mb-3">
+                                        Shipping
+                                    </h2>
+                                    <ul class="breadcrumb">
+                                        <li class="breadcrumb-item">
+                                            <a href="#" class="breadcrumb-link">
+                                                Home
+                                            </a>
+                                        </li>
+                                        <li class="breadcrumb-item">
+                                            <span class="breadcrumb-icon">
+                                                <i class="ti ti-chevrons-right"></i>
+                                            </span>
+                                        </li>
+                                        <li class="breadcrumb-item">
+                                            <span class="breadcrumb-current">Shipping</span>
+                                        </li>
+                                    </ul>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="overlay-11"></div>
+                    </div>
+                </div>
+            </section>
+            <!-- breadcrumb end -->
+
+            <!-- shipping section start -->
+            <section class="section-pb pt-15 overflow-visible">
+                <div class="container">
+                    <div class="grid grid-cols-12 gap-30p">
+                        <div class="3xl:col-start-2 3xl:col-end-12 col-span-12">
+                            <form class="grid grid-cols-10 gap-30p">
+                                <div class="xxl:col-span-7 xl:col-span-6 col-span-10 bg-b-neutral-3 p-40p rounded-12 ">
+                                    <div class="bg-b-neutral-4 px-40p py-32p rounded-12 mb-20p">
+                                        <label for="contact" class="label label-lg mb-24p">
+                                            Contact
+                                        </label>
+                                        <input class="border-input-1" type="number" name="contact"
+                                            placeholder="Enter your number" id="contact" />
+                                    </div>
+                                    <div class="bg-b-neutral-4 px-40p py-32p rounded-12 mb-40p">
+                                        <label for="shipping_address" class="label label-lg mb-24p">
+                                            Shipping Address
+                                        </label>
+                                        <input class="border-input-1" type="text" name="shipping_address"
+                                            placeholder="Enter your shipping address" id="shipping_address" />
+                                    </div>
+                                    <div>
+                                        <h4 class="heading-4 text-w-neutral-1 mb-1">
+                                            Payment
+                                        </h4>
+                                        <p class="text-base text-w-neutral-4 mb-20p">
+                                            All transactions are secure and encrypted.
+                                        </p>
+                                        <div
+                                            class="grid grid-cols-1 gap-20p bg-b-neutral-4 px-40p py-32p rounded-12 mb-20p">
+                                            <!-- Payment 1 -->
+                                            <div class="border-input-1">
+                                                <label class="radio-button-container">
+                                                    <span class="text-l-medium text-w-neutral-4 cursor-pointer ">
+                                                        Bank Transfer - BEFTN/NPSB
+                                                    </span>
+                                                    <input type="radio" name="payment" value="bank" />
+                                                    <span class="checkmark"></span>
+                                                </label>
+                                            </div>
+                                            <!-- Payment 2 -->
+                                            <div class="border-input-1">
+                                                <label class="radio-button-container">
+                                                    <span class="text-l-medium text-w-neutral-4 cursor-pointer ">
+                                                        Cash On Delivery
+                                                    </span>
+                                                    <input type="radio" name="payment" value="cash_on_delivery" />
+                                                    <span class="checkmark"></span>
+                                                </label>
+                                            </div>
+                                            <!-- Payment 3 -->
+                                            <div class="border-input-1">
+                                                <label class="radio-button-container">
+                                                    <span class="text-l-medium text-w-neutral-4 cursor-pointer ">
+                                                        Online Payment(Visa, MasterCard, MFS, Netbanking)-PortWallet
+                                                    </span>
+                                                    <input type="radio" name="payment" value="card" />
+                                                    <span class="checkmark"></span>
+                                                </label>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div>
+                                        <h4 class="heading-4 text-w-neutral-1 mb-1">
+                                            Billing Address
+                                        </h4>
+                                        <p class="text-base text-w-neutral-4 mb-20p">
+                                            Select the address that matches your card or payment method.
+                                        </p>
+                                        <div
+                                            class="grid grid-cols-1 gap-20p bg-b-neutral-4 px-40p py-32p rounded-12 mb-20p">
+                                            <!-- Payment 1 -->
+                                            <div class="border-input-1">
+                                                <label class="radio-button-container">
+                                                    <span class="text-l-medium text-w-neutral-4 cursor-pointer ">
+                                                        Same As Shipping Address
+                                                    </span>
+                                                    <input type="radio" name="payment" value="shipping_address" />
+                                                    <span class="checkmark"></span>
+                                                </label>
+                                            </div>
+                                            <!-- Payment 2 -->
+                                            <div class="border-input-1">
+                                                <label class="radio-button-container">
+                                                    <span class="text-l-medium text-w-neutral-4 cursor-pointer ">
+                                                        Use A Different Billing Address
+                                                    </span>
+                                                    <input type="radio" name="payment" value="billing_address" />
+                                                    <span class="checkmark"></span>
+                                                </label>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="flex-y flex-wrap gap-3">
+                                        <a href="./checkout.html" class="btn btn-md btn-primary rounded-12">
+                                            Complete Order
+                                        </a>
+                                        <a href="./shop.html" class="btn btn-md btn-neutral-4 rounded-12">
+                                            Return to Shipping
+                                        </a>
+                                    </div>
+                                </div>
+                                <div class="xxl:col-span-3 xl:col-span-4 col-span-10">
+                                    <include-billing-sidebar />
+                                </div>
+                            </form>
+                        </div>
+                    </div>
+                </div>
+            </section>
+            <!-- shipping section end -->
+
+        </main>
+        <!-- main end -->
+
+        <!-- footer start -->
+        <include-footer />
+        <!-- footer end -->
+    </div>
+    <!-- app layout end -->
+
+
+</body>
+
+</html>

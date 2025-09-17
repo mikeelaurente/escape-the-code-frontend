@@ -1,0 +1,122 @@
+<!DOCTYPE html>
+<html dir="ltr" lang="en">
+
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="shortcut icon" href="./assets/images/icons/favicon.ico" type="image/x-icon" />
+    <title>GameCo - HTML Tailwind CSS</title>
+</head>
+
+<body>
+
+    <!-- preloader start -->
+    <include-preloader />
+    <!-- preloader end -->
+
+    <!-- scroll to top button start -->
+    <include-scrollToTop />
+    <!-- scroll to top button end -->
+
+    <!-- header start -->
+    <include-navbar />
+    <!-- header end -->
+
+    <!-- sidebar start -->
+    <include-left-right-sidebar />
+    <!-- sidebar end -->
+
+    <!-- app layout start -->
+    <div class="app-layout">
+
+        <!-- main start -->
+        <main>
+
+            <include-user-profile />
+
+            <!-- user videos section start -->
+            <section class="section-pb pt-60p">
+                <div class="container">
+                    <div class="grid grid-cols-12 gap-30p">
+                        <div
+                            class="4xl:col-start-2 4xl:col-end-12 col-span-12 xl:p-[55px] p-48p bg-b-neutral-3 rounded-12">
+                            <div class="flex items-center gap-24p justify-between mb-20p">
+                                <h3 class="heading-3 text-w-neutral-1">
+                                    Video 03
+                                </h3>
+                                <div x-data="dropdown" class="dropdown">
+                                    <button @click="toggle()" class="icon-32 text-w-neutral-4">
+                                        <i class="ti ti-dots"></i>
+                                    </button>
+                                    <div x-show="isOpen" @click.away="close()" class="dropdown-content ">
+                                        <button @click="close()" class="dropdown-item">
+                                            Recent Post
+                                        </button>
+                                        <button @click="close()" class="dropdown-item">
+                                            Old Post
+                                        </button>
+                                        <button @click="close()" class="dropdown-item">
+                                            A - Z
+                                        </button>
+                                        <button @click="close()" class="dropdown-item">
+                                            Z - A
+                                        </button>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="grid xxl+:grid-cols-3 md:grid-cols-2 grid-cols-1 gap-20p mt-20p">
+
+                                <!-- card 1 -->
+                                <div class="*:w-full *:h-[250px] rounded-12 overflow-hidden" data-aos="fade-up">
+                                    <div class="plyr__video-embed player relative">
+                                        <img class="plyr_custom_poster"
+                                            src="./assets/images/videothumbnails/thumbnail3.png" alt="poster" />
+                                        <iframe src="https://www.youtube.com/embed/mUxzKVrSAjs" allowfullscreen
+                                            allow="autoplay"></iframe>
+                                    </div>
+                                </div>
+
+                                <!-- card 2 -->
+                                <div class="*:w-full *:h-[250px] rounded-12 overflow-hidden" data-aos="fade-up">
+                                    <div class="plyr__video-embed player relative">
+                                        <img class="plyr_custom_poster"
+                                            src="./assets/images/videothumbnails/thumbnail4.png" alt="poster" />
+                                        <iframe src="https://www.youtube.com/embed/mUxzKVrSAjs" allowfullscreen
+                                            allow="autoplay"></iframe>
+                                    </div>
+                                </div>
+
+                                <!-- card 3 -->
+                                <div class="*:w-full *:h-[250px] rounded-12 overflow-hidden" data-aos="fade-up">
+                                    <div class="plyr__video-embed player relative">
+                                        <img class="plyr_custom_poster"
+                                            src="./assets/images/videothumbnails/thumbnail1.png" alt="poster" />
+                                        <iframe src="https://www.youtube.com/embed/mUxzKVrSAjs" allowfullscreen
+                                            allow="autoplay"></iframe>
+                                    </div>
+                                </div>
+
+                            </div>
+                            <div class="flex-c mt-40p">
+                                <a href="#" class="btn btn-xl py-3 btn-primary rounded-12">
+                                    Load More...
+                                </a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </section>
+            <!-- user videos section end -->
+        </main>
+        <!-- main end -->
+
+        <!-- footer start -->
+        <include-footer />
+        <!-- footer end -->
+    </div>
+    <!-- app layout end -->
+
+
+</body>
+
+</html>

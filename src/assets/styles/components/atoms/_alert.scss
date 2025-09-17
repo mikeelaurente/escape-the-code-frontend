@@ -1,0 +1,25 @@
+@layer components {
+  .alert {
+    $alert: &;
+
+    @apply relative flex items-center gap-2 rounded-primary p-4 text-sm;
+
+    &-primary {
+      @apply bg-primary text-white;
+    }
+
+    &-outline {
+      &-primary {
+        @apply border border-primary bg-transparent text-primary;
+      }
+    }
+
+    &-dismiss {
+      @apply absolute right-2 top-3 rounded-primary p-1.5 transition-colors duration-150;
+
+      #{$alert}-primary & {
+        @apply text-primary hover:bg-primary;
+      }
+    }
+  }
+}

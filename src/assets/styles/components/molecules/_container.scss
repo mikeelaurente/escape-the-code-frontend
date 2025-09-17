@@ -1,0 +1,15 @@
+@layer components {
+  // Container Start
+  .container {
+    @apply mx-auto max-md:px-3 sm:max-w-[540px] md:max-w-[720px] lg:max-w-[960px] xl:max-w-[1140px] xxl:max-w-[1296px] 3xl:max-w-[1650px];
+  }
+
+  .container-md {
+    @apply mx-auto px-3 sm:max-w-[540px] md:max-w-[720px] lg:max-w-[960px] xl:max-w-[1140px] xxl:max-w-[1320px] 3xl:max-w-[1600px];
+  }
+
+  .container-full {
+    @apply mx-auto px-3 sm:max-w-[540px] md:max-w-[720px] lg:max-w-[960px] xl:max-w-[1140px] xxl:max-w-[1296px] 3xl:max-w-[1920px];
+  }
+  // Container End px-3
+}

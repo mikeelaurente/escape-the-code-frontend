@@ -1,0 +1,330 @@
+<!DOCTYPE html>
+<html dir="ltr" lang="en">
+
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="shortcut icon" href="./assets/images/icons/favicon.ico" type="image/x-icon" />
+    <title>GameCo - HTML Tailwind CSS</title>
+</head>
+
+<body>
+
+    <!-- preloader start -->
+    <include-preloader />
+    <!-- preloader end -->
+
+    <!-- scroll to top button start -->
+    <include-scrollToTop />
+    <!-- scroll to top button end -->
+
+    <!-- header start -->
+    <include-navbar />
+    <!-- header end -->
+
+    <!-- sidebar start -->
+    <include-left-right-sidebar />
+    <!-- sidebar end -->
+
+    <!-- app layout start -->
+    <div class="app-layout">
+
+        <!-- main start -->
+        <main>
+
+            <include-tournament-header />
+
+            <!-- Tournament Participants section start -->
+            <section class="section-pb overflow-visible relative">
+                <div class="container">
+                    <div class="grid 4xl:grid-cols-12 grid-cols-1 gap-30p ">
+                        <div class="4xl:col-start-2 4xl:col-end-12">
+
+                            <div class="flex-y justify-between flex-wrap gap-24p mb-30p">
+                                <h3 class="heading-3 text-w-neutral-1">
+                                    Total Participants ( 29 )
+                                </h3>
+                                <form
+                                    class="bg-b-neutral-3 px-24p py-16p max-w-[390px] flex items-center sm:gap-3 gap-2 min-w-[300px] rounded-12">
+                                    <span class="flex-c icon-24 text-white">
+                                        <i class="ti ti-search"></i>
+                                    </span>
+                                    <input autocomplete="off"
+                                        class="bg-transparent w-full text-base text-w-neutral-1 placeholder:text-w-neutral-1"
+                                        type="text" name="search" id="search" placeholder="Search..." />
+                                </form>
+                            </div>
+
+                            <div class="overflow-x-auto scrollbar-sm">
+                                <table class="min-w-full">
+                                    <thead class="text-xl font-borda bg-transparent text-w-neutral-1 whitespace-nowrap">
+                                        <tr>
+                                            <th class="px-32p pb-20p text-left">
+                                                Name
+                                            </th>
+                                            <th class="px-32p pb-20p text-left">
+                                                Status
+                                            </th>
+                                            <th class="px-32p pb-20p text-left">
+                                                Team Leader
+                                            </th>
+                                            <th class="px-32p pb-20p text-left">
+                                                Game ID
+                                            </th>
+                                        </tr>
+                                    </thead>
+                                    <tbody
+                                        class="text-base font-medium font-poppins text-w-neutral-1 divide-y-[12px] divide-b-neutral-4">
+                                        <!-- Row Template -->
+                                        <tr class="bg-b-neutral-3 hover:bg-b-neutral-2 transition-1 *:min-w-[220px]">
+                                            <td class="px-32p py-3">
+                                                <div class="flex items-center gap-2.5">
+                                                    <img class="avatar size-8 shrink-0"
+                                                        src="./assets/images/users/user1.png" alt="user" />
+                                                    <a href="./profile.html" class="link-1">
+                                                        Wade Warren
+                                                    </a>
+                                                </div>
+                                            </td>
+                                            <td class="px-32p py-3 ">
+                                                <div class="flex items-center gap-2.5">
+                                                    <span
+                                                        class="badge badge-circle badge-dot size-3 badge-primary"></span>
+                                                    <span>
+                                                        Accepted
+                                                    </span>
+                                                </div>
+                                            </td>
+                                            <td class="px-32p py-3">
+                                                Floyd Miles
+                                            </td>
+                                            <td class="px-32p py-3">
+                                                Elite Ek
+                                            </td>
+                                        </tr>
+                                        <tr class="bg-b-neutral-3 hover:bg-b-neutral-2 transition-1 *:min-w-[220px]">
+                                            <td class="px-32p py-3">
+                                                <div class="flex items-center gap-2.5">
+                                                    <img class="avatar size-8 shrink-0"
+                                                        src="./assets/images/users/user2.png" alt="user" />
+                                                    <a href="./profile.html" class="link-1">Jerome
+                                                        Bell</a>
+                                                </div>
+                                            </td>
+                                            <td class="px-32p py-3 ">
+                                                <div class="flex items-center gap-2.5">
+                                                    <span
+                                                        class="badge badge-circle badge-dot size-3 badge-primary"></span>
+                                                    <span>Accepted</span>
+                                                </div>
+                                            </td>
+                                            <td class="px-32p py-3">Dianne Russell</td>
+                                            <td class="px-32p py-3">Elite Ek</td>
+                                        </tr>
+                                        <tr class="bg-b-neutral-3 hover:bg-b-neutral-2 transition-1 *:min-w-[220px]">
+                                            <td class="px-32p py-3">
+                                                <div class="flex items-center gap-2.5">
+                                                    <img class="avatar size-8 shrink-0"
+                                                        src="./assets/images/users/user3.png" alt="user" />
+                                                    <a href="./profile.html" class="link-1">Cameron
+                                                        Williamson</a>
+                                                </div>
+                                            </td>
+                                            <td class="px-32p py-3 ">
+                                                <div class="flex items-center gap-2.5">
+                                                    <span
+                                                        class="badge badge-circle badge-dot size-3 badge-secondary"></span>
+                                                    <span>Pending</span>
+                                                </div>
+                                            </td>
+                                            <td class="px-32p py-3">Devon Lane</td>
+                                            <td class="px-32p py-3">Elite Ek</td>
+                                        </tr>
+                                        <tr class="bg-b-neutral-3 hover:bg-b-neutral-2 transition-1 *:min-w-[220px]">
+                                            <td class="px-32p py-3">
+                                                <div class="flex items-center gap-2.5">
+                                                    <img class="avatar size-8 shrink-0"
+                                                        src="./assets/images/users/user4.png" alt="user" />
+                                                    <a href="./profile.html" class="link-1">Leslie
+                                                        Alexander</a>
+                                                </div>
+                                            </td>
+                                            <td class="px-32p py-3 ">
+                                                <div class="flex items-center gap-2.5">
+                                                    <span
+                                                        class="badge badge-circle badge-dot size-3 badge-primary"></span>
+                                                    <span>Accepted</span>
+                                                </div>
+                                            </td>
+                                            <td class="px-32p py-3">Darrell Steward</td>
+                                            <td class="px-32p py-3">Elite Ek</td>
+                                        </tr>
+                                        <tr class="bg-b-neutral-3 hover:bg-b-neutral-2 transition-1 *:min-w-[220px]">
+                                            <td class="px-32p py-3">
+                                                <div class="flex items-center gap-2.5">
+                                                    <img class="avatar size-8 shrink-0"
+                                                        src="./assets/images/users/user5.png" alt="user" />
+                                                    <a href="./profile.html" class="link-1">Leslie
+                                                        Alexander</a>
+                                                </div>
+                                            </td>
+                                            <td class="px-32p py-3 ">
+                                                <div class="flex items-center gap-2.5">
+                                                    <span
+                                                        class="badge badge-circle badge-dot size-3 badge-primary"></span>
+                                                    <span>Accepted</span>
+                                                </div>
+                                            </td>
+                                            <td class="px-32p py-3">Marvin McKinney</td>
+                                            <td class="px-32p py-3">Elite Ek</td>
+                                        </tr>
+                                        <tr class="bg-b-neutral-3 hover:bg-b-neutral-2 transition-1 *:min-w-[220px]">
+                                            <td class="px-32p py-3">
+                                                <div class="flex items-center gap-2.5">
+                                                    <img class="avatar size-8 shrink-0"
+                                                        src="./assets/images/users/user6.png" alt="user" />
+                                                    <a href="./profile.html" class="link-1">Jenny
+                                                        Wilson</a>
+                                                </div>
+                                            </td>
+                                            <td class="px-32p py-3 ">
+                                                <div class="flex items-center gap-2.5">
+                                                    <span
+                                                        class="badge badge-circle badge-dot size-3 badge-secondary"></span>
+                                                    <span>Pending</span>
+                                                </div>
+                                            </td>
+                                            <td class="px-32p py-3">Jerome Bell</td>
+                                            <td class="px-32p py-3">Elite Ek</td>
+                                        </tr>
+                                        <tr class="bg-b-neutral-3 hover:bg-b-neutral-2 transition-1 *:min-w-[220px]">
+                                            <td class="px-32p py-3">
+                                                <div class="flex items-center gap-2.5">
+                                                    <img class="avatar size-8 shrink-0"
+                                                        src="./assets/images/users/user7.png" alt="user" />
+                                                    <a href="./profile.html" class="link-1">Albert
+                                                        Flores</a>
+                                                </div>
+                                            </td>
+                                            <td class="px-32p py-3 ">
+                                                <div class="flex items-center gap-2.5">
+                                                    <span
+                                                        class="badge badge-circle badge-dot size-3 badge-secondary"></span>
+                                                    <span>Pending</span>
+                                                </div>
+                                            </td>
+                                            <td class="px-32p py-3">Theresa Webb</td>
+                                            <td class="px-32p py-3">Elite Ek</td>
+                                        </tr>
+                                        <tr class="bg-b-neutral-3 hover:bg-b-neutral-2 transition-1 *:min-w-[220px]">
+                                            <td class="px-32p py-3">
+                                                <div class="flex items-center gap-2.5">
+                                                    <img class="avatar size-8 shrink-0"
+                                                        src="./assets/images/users/user8.png" alt="user" />
+                                                    <a href="./profile.html" class="link-1">Ronald
+                                                        Richards</a>
+                                                </div>
+                                            </td>
+                                            <td class="px-32p py-3 ">
+                                                <div class="flex items-center gap-2.5">
+                                                    <span
+                                                        class="badge badge-circle badge-dot size-3 badge-secondary"></span>
+                                                    <span>Pending</span>
+                                                </div>
+                                            </td>
+                                            <td class="px-32p py-3">Theresa Webb</td>
+                                            <td class="px-32p py-3">Elite Ek</td>
+                                        </tr>
+                                        <tr class="bg-b-neutral-3 hover:bg-b-neutral-2 transition-1 *:min-w-[220px]">
+                                            <td class="px-32p py-3">
+                                                <div class="flex items-center gap-2.5">
+                                                    <img class="avatar size-8 shrink-0"
+                                                        src="./assets/images/users/user9.png" alt="user" />
+                                                    <a href="./profile.html" class="link-1">Kathryn
+                                                        Murphy</a>
+                                                </div>
+                                            </td>
+                                            <td class="px-32p py-3 ">
+                                                <div class="flex items-center gap-2.5">
+                                                    <span
+                                                        class="badge badge-circle badge-dot size-3 badge-primary"></span>
+                                                    <span>Accepted</span>
+                                                </div>
+                                            </td>
+                                            <td class="px-32p py-3">Darlene Robertson</td>
+                                            <td class="px-32p py-3">Elite Ek</td>
+                                        </tr>
+                                        <tr class="bg-b-neutral-3 hover:bg-b-neutral-2 transition-1 *:min-w-[220px]">
+                                            <td class="px-32p py-3">
+                                                <div class="flex items-center gap-2.5">
+                                                    <img class="avatar size-8 shrink-0"
+                                                        src="./assets/images/users/user10.png" alt="user" />
+                                                    <a href="./profile.html" class="link-1">Jerome
+                                                        Bell</a>
+                                                </div>
+                                            </td>
+                                            <td class="px-32p py-3 ">
+                                                <div class="flex items-center gap-2.5">
+                                                    <span
+                                                        class="badge badge-circle badge-dot size-3 badge-secondary"></span>
+                                                    <span>Pending</span>
+                                                </div>
+                                            </td>
+                                            <td class="px-32p py-3">Elite Ek</td>
+                                            <td class="px-32p py-3">Elite Ek</td>
+                                        </tr>
+                                    </tbody>
+                                </table>
+                            </div>
+
+                            <div
+                                class="pagination pagination-primary lg:pagination-center pagination-center pagination-circle pagination-xl w-full mt-48p">
+                                <a href="#" class="pagination-item pagination-prev">
+                                    <i class="ti ti-chevron-left"></i>
+                                </a>
+                                <div class="pagination-list">
+                                    <a href="#" class="pagination-item pagination-circle active">
+                                        <span class="pagination-link">1</span>
+                                    </a>
+                                    <a href="#" class="pagination-item pagination-circle">
+                                        <span class="pagination-link">2</span>
+                                    </a>
+                                    <a href="#" class="pagination-item pagination-circle">
+                                        <span class="pagination-link">3</span>
+                                    </a>
+                                    <a href="#" class="pagination-item pagination-circle">
+                                        <span class="pagination-link">4</span>
+                                    </a>
+                                    <a href="#" class="pagination-item pagination-circle">
+                                        <span class="pagination-link">5</span>
+                                    </a>
+                                    <a href="#" class="pagination-item pagination-circle">
+                                        <span class="pagination-link pagination-more">...</span>
+                                    </a>
+                                    <a href="#" class="pagination-item pagination-circle">
+                                        <span class="pagination-link">10</span>
+                                    </a>
+                                </div>
+                                <a href="#" class="pagination-item pagination-next">
+                                    <i class="ti ti-chevron-right"></i>
+                                </a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </section>
+            <!-- Tournament Participants section end -->
+
+        </main>
+        <!-- main end -->
+
+        <!-- footer start -->
+        <include-footer />
+        <!-- footer end -->
+    </div>
+    <!-- app layout end -->
+
+
+</body>
+
+</html>

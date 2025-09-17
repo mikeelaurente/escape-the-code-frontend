@@ -1,0 +1,466 @@
+<!DOCTYPE html>
+<html dir="ltr" lang="en">
+
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="shortcut icon" href="./assets/images/icons/favicon.ico" type="image/x-icon" />
+    <title>GameCo - HTML Tailwind CSS</title>
+</head>
+
+<body>
+
+    <!-- preloader start -->
+    <include-preloader />
+    <!-- preloader end -->
+
+    <!-- scroll to top button start -->
+    <include-scrollToTop />
+    <!-- scroll to top button end -->
+
+    <!-- header start -->
+    <include-navbar />
+    <!-- header end -->
+
+    <!-- sidebar start -->
+    <include-left-right-sidebar />
+    <!-- sidebar end -->
+
+    <!-- app layout start -->
+    <div class="app-layout">
+
+        <!-- main start -->
+        <main>
+
+            <include-tournament-header />
+
+            <!-- Tournament Matches section start -->
+            <section class="section-pb overflow-visible relative">
+                <div x-data="modal" @keydown.escape.window="close()" class="container">
+                    <div class="grid 4xl:grid-cols-12 grid-cols-1 gap-30p ">
+                        <div class="4xl:col-start-2 4xl:col-end-12">
+
+                            <div class="flex-y justify-between flex-wrap gap-24p mb-30p">
+                                <h3 class="heading-3 text-w-neutral-1">
+                                    Total Participants ( 29 )
+                                </h3>
+                                <form
+                                    class="px-20p py-16p max-w-[390px] flex items-center sm:gap-3 gap-2 min-w-[300px] bg-b-neutral-3 rounded-12">
+                                    <span class="flex-c icon-20 text-white">
+                                        <i class="ti ti-search"></i>
+                                    </span>
+                                    <input autocomplete="off" class="bg-transparent w-full" type="text" name="search"
+                                        id="search" placeholder="Search..." />
+                                </form>
+                            </div>
+
+                            <div
+                                class="grid xl:grid-cols-1 md:grid-cols-2 grid-cols-1 justify-center max-xl:gap-x-30p divide-y divide-shap/70 4xl:px-[140px] px-80p px-120p py-80p bg-b-neutral-3">
+                                <div
+                                    class="relative flex max-xl:flex-col items-center justify-center gap-y-30p gap-x-40p sm:pb-6 pb-5 ">
+                                    <div class="flex items-center gap-3 min- w-[180px]">
+                                        <a href="./profile.html"
+                                            class="text-m-medium text-w-neutral-1 line-clamp-1 link-1">
+                                            Theresa Webb
+                                        </a>
+                                        <img class="avatar size-48p shrink-0" src="./assets/images/users/user1.png"
+                                            alt="user" />
+                                    </div>
+                                    <div class="flex items-center gap-16p">
+                                        <h5 class="text-xl text-white">
+                                            2
+                                        </h5>
+                                        <div class="flex-col-c">
+                                            <span class="badge badge-rounded px-3 py-2 badge-neutral-2 mb-16p">
+                                                Waiting
+                                            </span>
+                                            <img src="./assets/images/icons/clone.svg" alt="clone" />
+                                        </div>
+                                        <h5 class="text-xl text-white">
+                                            7
+                                        </h5>
+                                    </div>
+                                    <div class="flex items-center gap-3 min- w-[180px]">
+                                        <a href="./profile.html"
+                                            class="text-m-medium text-w-neutral-1 line-clamp-1 link-1">
+                                            Theresa Webb
+                                        </a>
+                                        <img class="avatar size-48p shrink-0" src="./assets/images/users/user2.png"
+                                            alt="user" />
+                                    </div>
+                                    <button @click="open()" class="absolute right-0 icon-32 text-primary">
+                                        <i class="ti ti-chevrons-right"></i>
+                                    </button>
+                                </div>
+                                <div
+                                    class="relative flex max-xl:flex-col items-center justify-center gap-y-30p gap-x-40p sm:py-6 py-5">
+                                    <div class="flex items-center gap-3 min- w-[180px]">
+                                        <a href="./profile.html"
+                                            class="text-m-medium text-w-neutral-1 line-clamp-1 link-1">
+                                            Theresa Webb
+                                        </a>
+                                        <img class="avatar size-48p shrink-0" src="./assets/images/users/user3.png"
+                                            alt="user" />
+                                    </div>
+                                    <div class="flex items-center gap-16p">
+                                        <h5 class="text-xl text-white">
+                                            2
+                                        </h5>
+                                        <div class="flex-col-c">
+                                            <span class="badge badge-rounded px-3 py-2 badge-neutral-2 mb-16p">
+                                                Waiting
+                                            </span>
+                                            <img src="./assets/images/icons/clone.svg" alt="clone" />
+                                        </div>
+                                        <h5 class="text-xl text-white">
+                                            7
+                                        </h5>
+                                    </div>
+                                    <div class="flex items-center gap-3 min- w-[180px]">
+                                        <a href="./profile.html"
+                                            class="text-m-medium text-w-neutral-1 line-clamp-1 link-1">
+                                            Annette Black
+                                        </a>
+                                        <img class="avatar size-48p shrink-0" src="./assets/images/users/user4.png"
+                                            alt="user" />
+                                    </div>
+                                    <button @click="open()" class="absolute right-0 icon-32 text-primary">
+                                        <i class="ti ti-chevrons-right"></i>
+                                    </button>
+                                </div>
+                                <div
+                                    class="relative flex max-xl:flex-col items-center justify-center gap-y-30p gap-x-40p sm:py-6 py-5">
+                                    <div class="flex items-center gap-3 min- w-[180px]">
+                                        <a href="./profile.html"
+                                            class="text-m-medium text-w-neutral-1 line-clamp-1 link-1">
+                                            Theresa Webb
+                                        </a>
+                                        <img class="avatar size-48p shrink-0" src="./assets/images/users/user5.png"
+                                            alt="user" />
+                                    </div>
+                                    <div class="flex items-center gap-16p">
+                                        <h5 class="text-xl text-white">
+                                            6
+                                        </h5>
+                                        <div class="flex-col-c">
+                                            <span class="badge badge-rounded px-3 py-2 badge-neutral-2 mb-16p">
+                                                Waiting
+                                            </span>
+                                            <img src="./assets/images/icons/clone.svg" alt="clone" />
+                                        </div>
+                                        <h5 class="text-xl text-white">
+                                            1
+                                        </h5>
+                                    </div>
+                                    <div class="flex items-center gap-3 min- w-[180px]">
+                                        <a href="./profile.html"
+                                            class="text-m-medium text-w-neutral-1 line-clamp-1 link-1">
+                                            Floyd Miles
+                                        </a>
+                                        <img class="avatar size-48p shrink-0" src="./assets/images/users/user6.png"
+                                            alt="user" />
+                                    </div>
+                                    <button @click="open()" class="absolute right-0 icon-32 text-primary">
+                                        <i class="ti ti-chevrons-right"></i>
+                                    </button>
+                                </div>
+                                <div
+                                    class="relative flex max-xl:flex-col items-center justify-center gap-y-30p gap-x-40p sm:py-6 py-5">
+                                    <div class="flex items-center gap-3 min- w-[180px]">
+                                        <a href="./profile.html"
+                                            class="text-m-medium text-w-neutral-1 line-clamp-1 link-1">
+                                            Theresa Webb
+                                        </a>
+                                        <img class="avatar size-48p shrink-0" src="./assets/images/users/user7.png"
+                                            alt="user" />
+                                    </div>
+                                    <div class="flex items-center gap-16p">
+                                        <h5 class="text-xl text-white">
+                                            0
+                                        </h5>
+                                        <div class="flex-col-c">
+                                            <span class="badge badge-rounded px-3 py-2 badge-neutral-2 mb-16p">
+                                                Waiting
+                                            </span>
+                                            <img src="./assets/images/icons/clone.svg" alt="clone" />
+                                        </div>
+                                        <h5 class="text-xl text-white">
+                                            1
+                                        </h5>
+                                    </div>
+                                    <div class="flex items-center gap-3 min- w-[180px]">
+                                        <a href="./profile.html"
+                                            class="text-m-medium text-w-neutral-1 line-clamp-1 link-1">
+                                            Dianne Russell
+                                        </a>
+                                        <img class="avatar size-48p shrink-0" src="./assets/images/users/user8.png"
+                                            alt="user" />
+                                    </div>
+                                    <button @click="open()" class="absolute right-0 icon-32 text-primary">
+                                        <i class="ti ti-chevrons-right"></i>
+                                    </button>
+                                </div>
+                                <div
+                                    class="relative flex max-xl:flex-col items-center justify-center gap-y-30p gap-x-40p sm:py-6 py-5">
+                                    <div class="flex items-center gap-3 min- w-[180px]">
+                                        <a href="./profile.html"
+                                            class="text-m-medium text-w-neutral-1 line-clamp-1 link-1">
+                                            Theresa Webb
+                                        </a>
+                                        <img class="avatar size-48p shrink-0" src="./assets/images/users/user9.png"
+                                            alt="user" />
+                                    </div>
+                                    <div class="flex items-center gap-16p">
+                                        <h5 class="text-xl text-white">
+                                            2
+                                        </h5>
+                                        <div class="flex-col-c">
+                                            <span class="badge badge-rounded px-3 py-2 badge-neutral-2 mb-16p">
+                                                Waiting
+                                            </span>
+                                            <img src="./assets/images/icons/clone.svg" alt="clone" />
+                                        </div>
+                                        <h5 class="text-xl text-white">
+                                            1
+                                        </h5>
+                                    </div>
+                                    <div class="flex items-center gap-3 min- w-[180px]">
+                                        <a href="./profile.html"
+                                            class="text-m-medium text-w-neutral-1 line-clamp-1 link-1">
+                                            Dianne Russell
+                                        </a>
+                                        <img class="avatar size-48p shrink-0" src="./assets/images/users/user10.png"
+                                            alt="user" />
+                                    </div>
+                                    <button @click="open()" class="absolute right-0 icon-32 text-primary">
+                                        <i class="ti ti-chevrons-right"></i>
+                                    </button>
+                                </div>
+                                <div
+                                    class="relative flex max-xl:flex-col items-center justify-center gap-y-30p gap-x-40p sm:py-6 py-5">
+                                    <div class="flex items-center gap-3 min- w-[180px]">
+                                        <a href="./profile.html"
+                                            class="text-m-medium text-w-neutral-1 line-clamp-1 link-1">
+                                            Theresa Webb
+                                        </a>
+                                        <img class="avatar size-48p shrink-0" src="./assets/images/users/avatar1.png"
+                                            alt="user" />
+                                    </div>
+                                    <div class="flex items-center gap-16p">
+                                        <h5 class="text-xl text-white">
+                                            3
+                                        </h5>
+                                        <div class="flex-col-c">
+                                            <span class="badge badge-rounded px-3 py-2 badge-neutral-2 mb-16p">
+                                                Waiting
+                                            </span>
+                                            <img src="./assets/images/icons/clone.svg" alt="clone" />
+                                        </div>
+                                        <h5 class="text-xl text-white">
+                                            2
+                                        </h5>
+                                    </div>
+                                    <div class="flex items-center gap-3 min- w-[180px]">
+                                        <a href="./profile.html"
+                                            class="text-m-medium text-w-neutral-1 line-clamp-1 link-1">
+                                            Dianne Russell
+                                        </a>
+                                        <img class="avatar size-48p shrink-0" src="./assets/images/users/avatar2.png"
+                                            alt="user" />
+                                    </div>
+                                    <button @click="open()" class="absolute right-0 icon-32 text-primary">
+                                        <i class="ti ti-chevrons-right"></i>
+                                    </button>
+                                </div>
+                            </div>
+
+                            <div :class="{ 'z-50': modalOpen }">
+                                <template x-teleport="body">
+                                    <div x-show="modalOpen"
+                                        class="fixed top-0 left-0 z-[99] flex items-center justify-center w-screen h-screen"
+                                        x-cloak>
+                                        <div @click="close()" x-show="modalOpen" x-transition
+                                            class="absolute inset-0 bg-black/50 backdrop-blur-sm"></div>
+
+                                        <div x-show="modalOpen" x-trap.inert.noscroll="modalOpen" x-transition
+                                            class="relative bg-b-neutral-3 py-40p px-32p md:w-[630px] sm:w-[500px] xsm:w-[360px] w-[280px] rounded-20 overflow-hidden">
+
+                                            <button @click="close()"
+                                                class="absolute top-5 right-5 flex items-center justify-center icon-32 bg-b-neutral-3 text-w-neutral-2 hover:text-primary transition-1">
+                                                <i class="ti ti-circle-x"></i>
+                                            </button>
+                                            <div class="sm:h-[528px] h-[400px] overflow-y-auto scrollbar-sm">
+                                                <div class="pr-2">
+                                                    <h3 class="heading-3 text-white mb-3 text-center">
+                                                        Match 1
+                                                    </h3>
+                                                    <h6 class="heading-6 text-center">
+                                                        Best of 1 game
+                                                    </h6>
+                                                    <div class="mt-60p">
+                                                        <div
+                                                            class="relative flex max-sm:flex-col items-center justify-center gap-y-30p gap-x-40p sm:pb-6 pb-5 mb-60p">
+                                                            <div class="flex items-center gap-3 min- w-[180px]">
+                                                                <div>
+                                                                    <a href="./profile.html"
+                                                                        class="text-m-medium text-w-neutral-1 line-clamp-1 link-1 mb-1">
+                                                                        Jon Smith
+                                                                    </a>
+                                                                    <a href="#" class="text-xs-medium text-secondary">
+                                                                        View Team
+                                                                    </a>
+                                                                </div>
+                                                                <img class="avatar size-48p shrink-0"
+                                                                    src="./assets/images/users/user1.png" alt="user" />
+                                                            </div>
+                                                            <div class="flex items-center gap-16p">
+                                                                <h5 class="text-xl text-white">
+                                                                    2
+                                                                </h5>
+                                                                <div class="flex-col-c">
+                                                                    <span
+                                                                        class="badge badge-rounded px-3 py-2 badge-neutral-2 mb-16p">
+                                                                        Waiting
+                                                                    </span>
+                                                                    <img src="./assets/images/icons/clone.svg"
+                                                                        alt="clone" />
+                                                                </div>
+                                                                <h5 class="text-xl text-white">
+                                                                    7
+                                                                </h5>
+                                                            </div>
+                                                            <div class="flex items-center gap-3 min- w-[180px]">
+                                                                <div>
+                                                                    <a href="./profile.html"
+                                                                        class="text-m-medium text-w-neutral-1 line-clamp-1 link-1 mb-1">
+                                                                        Annette Black
+                                                                    </a>
+                                                                    <a href="#" class="text-xs-medium text-secondary">
+                                                                        View Team
+                                                                    </a>
+                                                                </div>
+                                                                <img class="avatar size-48p shrink-0"
+                                                                    src="./assets/images/users/user2.png" alt="user" />
+                                                            </div>
+                                                        </div>
+                                                        <div x-data="{ activeTab: 1 }">
+                                                            <div
+                                                                class="flex gap-x-32p text-base font-borda border-b border-secondary/30">
+                                                                <button @click="activeTab = 1"
+                                                                    :class="activeTab == 1 ? 'text-w-neutral-1 border-secondary' : 'text-w-neutral-4 border-transparent'"
+                                                                    class="pb-4 border-b">
+                                                                    Games
+                                                                </button>
+                                                                <button @click="activeTab = 2"
+                                                                    :class="activeTab == 2 ? 'text-w-neutral-1 border-secondary' : 'text-w-neutral-4 border-transparent'"
+                                                                    class="pb-4 border-b">
+                                                                    Lineups
+                                                                </button>
+                                                            </div>
+
+                                                            <div class="pt-60p">
+                                                                <div x-show="activeTab == 1">
+                                                                    <div class="flex-col-c">
+                                                                        <span class="icon-40 text-w-neutral-4">
+                                                                            <i class="ti ti-list"></i>
+                                                                        </span>
+                                                                        <h6
+                                                                            class="heading-6 text-base text-w-neutral-1 my-2.5">
+                                                                            No Games
+                                                                        </h6>
+                                                                        <p class="text-s-medium text-w-neutral-1">
+                                                                            This Match Does Not Have Any
+                                                                            Games
+                                                                            Yet.
+                                                                        </p>
+                                                                    </div>
+                                                                </div>
+                                                                <div x-show="activeTab == 2">
+                                                                    <div
+                                                                        class="grid grid-cols-1 gap-3 *:flex *:items-center *:gap-3">
+                                                                        <div>
+                                                                            <img class="avatar size-8 shrink-0"
+                                                                                src="./assets/images/users/user1.png"
+                                                                                alt="user" />
+                                                                            <a href="./profile.html" class="link-1">
+                                                                                Eleanor Pena
+                                                                            </a>
+                                                                        </div>
+                                                                        <div>
+                                                                            <img class="avatar size-8 shrink-0"
+                                                                                src="./assets/images/users/user2.png"
+                                                                                alt="user" />
+                                                                            <a href="./profile.html" class="link-1">
+                                                                                Marvin McKinney
+                                                                            </a>
+                                                                        </div>
+                                                                        <div>
+                                                                            <img class="avatar size-8 shrink-0"
+                                                                                src="./assets/images/users/user3.png"
+                                                                                alt="user" />
+                                                                            <a href="./profile.html" class="link-1">
+                                                                                Dianne Russell
+                                                                            </a>
+                                                                        </div>
+                                                                        <div>
+                                                                            <img class="avatar size-8 shrink-0"
+                                                                                src="./assets/images/users/user4.png"
+                                                                                alt="user" />
+                                                                            <a href="./profile.html" class="link-1">
+                                                                                Floyd Miles
+                                                                            </a>
+                                                                        </div>
+                                                                        <div>
+                                                                            <img class="avatar size-8 shrink-0"
+                                                                                src="./assets/images/users/user11.png"
+                                                                                alt="user" />
+                                                                            <a href="./profile.html" class="link-1">
+                                                                                Annette Black
+                                                                            </a>
+                                                                        </div>
+                                                                        <div>
+                                                                            <img class="avatar size-8 shrink-0"
+                                                                                src="./assets/images/users/user12.png"
+                                                                                alt="user" />
+                                                                            <a href="./profile.html" class="link-1">
+                                                                                Theresa Web
+                                                                            </a>
+                                                                        </div>
+                                                                        <div>
+                                                                            <img class="avatar size-8 shrink-0"
+                                                                                src="./assets/images/users/user13.png"
+                                                                                alt="user" />
+                                                                            <a href="./profile.html" class="link-1">
+                                                                                Kathryn Murphy
+                                                                            </a>
+                                                                        </div>
+                                                                    </div>
+                                                                </div>
+                                                            </div>
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </template>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </section>
+            <!-- Tournament Matches section end -->
+
+        </main>
+        <!-- main end -->
+
+        <!-- footer start -->
+        <include-footer />
+        <!-- footer end -->
+    </div>
+    <!-- app layout end -->
+
+
+</body>
+
+</html>

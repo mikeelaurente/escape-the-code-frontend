@@ -1,0 +1,41 @@
+@layer components {
+  .radio {
+    @apply h-4 w-4 border-slate-300 bg-transparent text-primary  disabled:cursor-not-allowed disabled:opacity-80;
+
+    &-sm {
+      @apply h-3.5 w-3.5;
+    }
+
+    &-md {
+      @apply h-4 w-4;
+    }
+
+    &-lg {
+      @apply h-5 w-5;
+    }
+
+    &-primary {
+      @apply text-primary;
+    }
+
+    &.is-valid,
+    .form-validated &:valid {
+      @apply border-success-500 text-success-500;
+    }
+
+    &.is-valid ~ .label,
+    .form-validated &:valid ~ .label {
+      @apply text-success-500;
+    }
+
+    &.is-invalid,
+    .form-validated &:invalid {
+      @apply border-danger-500 text-danger-500;
+    }
+
+    &.is-invalid ~ .label,
+    .form-validated &:invalid ~ .label {
+      @apply text-danger-500;
+    }
+  }
+}

@@ -1,0 +1,702 @@
+// lins background start
+.lines {
+  border: 0.5px solid #969f96;
+  background-image: repeating-linear-gradient(
+    140deg,
+    #eeeeeea2 10px,
+    #eeeeeea2 12px,
+    transparent 12px,
+    transparent 20px
+  );
+}
+
+.grid-lines-1 {
+  width: 100%;
+  height: 100%;
+  --color: #2a123d;
+  background-color: #1b072c;
+  background-image: linear-gradient(
+      0deg,
+      transparent 24%,
+      var(--color) 25%,
+      var(--color) 26%,
+      transparent 27%,
+      transparent 74%,
+      var(--color) 75%,
+      var(--color) 76%,
+      transparent 77%,
+      transparent
+    ),
+    linear-gradient(
+      90deg,
+      transparent 24%,
+      var(--color) 25%,
+      var(--color) 26%,
+      transparent 27%,
+      transparent 74%,
+      var(--color) 75%,
+      var(--color) 76%,
+      transparent 77%,
+      transparent
+    );
+  background-size: 42px 42px;
+}
+
+.grid-lines {
+  width: 100%;
+  height: 100%;
+  --color: rgba(27, 7, 44, 0.06);
+  background-image: linear-gradient(
+      0deg,
+      transparent 24%,
+      var(--color) 25%,
+      var(--color) 26%,
+      transparent 27%,
+      transparent 74%,
+      var(--color) 75%,
+      var(--color) 76%,
+      transparent 77%,
+      transparent
+    ),
+    linear-gradient(
+      90deg,
+      transparent 24%,
+      var(--color) 25%,
+      var(--color) 26%,
+      transparent 27%,
+      transparent 74%,
+      var(--color) 75%,
+      var(--color) 76%,
+      transparent 77%,
+      transparent
+    );
+  background-size: 60px 60px;
+}
+
+.grid-lines-2 {
+  width: 100%;
+  height: 100%;
+  --color: #2c1442;
+  background-color: #250c3c;
+  background-image: linear-gradient(
+      0deg,
+      transparent 24%,
+      var(--color) 25%,
+      var(--color) 26%,
+      transparent 27%,
+      transparent 74%,
+      var(--color) 75%,
+      var(--color) 76%,
+      transparent 77%,
+      transparent
+    ),
+    linear-gradient(
+      90deg,
+      transparent 24%,
+      var(--color) 25%,
+      var(--color) 26%,
+      transparent 27%,
+      transparent 74%,
+      var(--color) 75%,
+      var(--color) 76%,
+      transparent 77%,
+      transparent
+    );
+  background-size: 42px 42px;
+}
+
+.beadcrumb {
+  background: linear-gradient(0deg, #250c3c 0%, rgba(37, 12, 60, 0) 100%);
+}
+
+.testimonials-one {
+  background: linear-gradient(
+    0deg,
+    #1b072c 0%,
+    rgba(27, 7, 44, 0.8) 50.4%,
+    rgba(27, 7, 44, 0) 100%
+  );
+}
+// opacity light effect end
+
+// form area start
+// inputs field start
+// input outline start
+.input-outline {
+  position: relative;
+  width: 100%;
+
+  label {
+    position: absolute;
+    top: 50%;
+    left: 24px;
+    transform: translateY(-50%);
+    font-size: 14px;
+    line-height: 24px;
+    background-color: #2e0e4d;
+    padding: 0 6px;
+    margin-left: -6px;
+    border-radius: 10px;
+    color: #dfe0e4;
+    pointer-events: none;
+    transition: all 0.3s ease;
+  }
+
+  .textarea {
+    label {
+      top: 20%;
+      transform: translateY(-12px);
+    }
+    &:focus + label,
+    &:not(:placeholder-shown) + label {
+      top: 0;
+      transform: translateY(-20);
+      font-size: 40px;
+    }
+  }
+
+  input,
+  textarea {
+    background: transparent;
+    width: 100%;
+    border: none;
+    border-radius: 32px;
+    outline: none;
+    font-size: 14px;
+    line-height: 24px;
+    color: #fff;
+    border: 1px solid rgba(255, 255, 255, 0.2);
+    border-radius: 32px;
+    &:focus + label,
+    &:not(:placeholder-shown) + label {
+      top: 0;
+      transform: translateY(-50);
+      font-size: 14px;
+      color: #fff;
+    }
+    &::placeholder {
+      opacity: 0; /* Hidden by default */
+      font-size: 14px;
+      transition: opacity 0.3s ease; /* Add transition for smooth effect */
+    }
+    &:focus {
+      &::placeholder {
+        opacity: 1; /* Visible when focused */
+      }
+    }
+  }
+}
+// input outline start
+
+// inputs field end
+
+// custom checkbox start
+
+// checkbox border style 1
+
+.checkbox.style-border-1 {
+  display: inline-block;
+  position: relative;
+  user-select: none;
+}
+.checkbox.style-border-1 input {
+  position: absolute;
+  opacity: 0;
+  cursor: pointer;
+  height: 0;
+  width: 0;
+}
+.checkbox.style-border-1 input:checked ~ .checkbox__label .checkbox__checkmark {
+  background-color: rgba(255, 255, 255, 0.05);
+}
+.checkbox.style-border-1
+  input:checked
+  ~ .checkbox__label
+  .checkbox__checkmark:after {
+  opacity: 1;
+}
+.checkbox.style-border-1:hover input ~ .checkbox__label .checkbox__checkmark {
+  background-color: rgba(255, 255, 255, 0.05);
+}
+.checkbox.style-border-1 .checkbox__checkmark {
+  position: absolute;
+  top: 0px;
+  left: 0;
+  height: 24px;
+  width: 24px;
+  border: 1px solid #e8e8e8;
+  transition: background-color 0.25s ease;
+  border-radius: 4px;
+}
+.checkbox.style-border-1 .checkbox__checkmark:after {
+  content: "";
+  position: absolute;
+  left: 8px;
+  top: 3px;
+  width: 7px;
+  height: 12px;
+  border: solid #191919;
+  border-width: 0 2px 2px 0;
+  transform: rotate(45deg);
+  opacity: 0;
+  transition: opacity 0.25s ease;
+  cursor: pointer;
+}
+.checkbox.style-box .checkbox__body {
+  font-size: 18px;
+  font-weight: 400;
+  margin-left: 32px;
+  margin-top: -6px;
+  cursor: pointer;
+}
+
+// checkbox box style
+
+.checkbox__label,
+.checkbox__body {
+  width: 100%;
+}
+
+.checkbox.style-box {
+  display: inline-block;
+  position: relative;
+  user-select: none;
+}
+.checkbox.style-box input {
+  position: absolute;
+  opacity: 0;
+  cursor: pointer;
+  height: 0;
+  width: 0;
+}
+.checkbox.style-box input:checked ~ .checkbox__label .checkbox__checkmark {
+  background-color: #f4f6fb;
+}
+.checkbox.style-box
+  input:checked
+  ~ .checkbox__label
+  .checkbox__checkmark:after {
+  opacity: 1;
+}
+.checkbox.style-box:hover input ~ .checkbox__label .checkbox__checkmark {
+  background-color: #f4f6fb;
+}
+.checkbox.style-box .checkbox__checkmark {
+  position: absolute;
+  top: 0px;
+  left: 0;
+  height: 24px;
+  width: 24px;
+  background-color: #f4f6fb;
+  transition: background-color 0.25s ease;
+  border-radius: 4px;
+}
+.checkbox.style-box .checkbox__checkmark:after {
+  content: "";
+  position: absolute;
+  left: 9px;
+  top: 5px;
+  width: 7px;
+  height: 12px;
+  border: solid #191919;
+  border-width: 0 2px 2px 0;
+  transform: rotate(45deg);
+  opacity: 0;
+  transition: opacity 0.25s ease;
+  cursor: pointer;
+}
+.checkbox.style-box .checkbox__body {
+  font-size: 18px;
+  font-weight: 400;
+  margin-left: 32px;
+  margin-top: -6px;
+  cursor: pointer;
+}
+
+/* Custom Checkbox Styles */
+.border-corners-checkbox {
+  display: none; /* Hide the original checkbox */
+}
+
+.border-corners-checkbox-label {
+  display: inline-flex;
+  align-items: center;
+  cursor: pointer;
+  user-select: none;
+}
+
+.border-corners-checkbox-label i {
+  transition: color 0.3s ease;
+  font-family: "tabler-icons";
+}
+
+/* Unchecked state - use square icon */
+.border-corners-checkbox:not(:checked)
+  + .border-corners-checkbox-label
+  i::before {
+  content: "\eb2c";
+  // color: #f29620;
+}
+
+/* Checked state - use checkbox icon */
+.border-corners-checkbox:checked + .border-corners-checkbox-label i::before {
+  content: "\eba6";
+  // color: #f29620;
+}
+
+/* Hover effect */
+.border-corners-checkbox-label:hover i::before {
+  opacity: 0.8;
+}
+
+// custom checkbox end
+
+// custom radio start
+.radio-wrapper.style-border-1-circle {
+  display: inline-flex;
+  align-items: center;
+  gap: 16px;
+}
+
+/* Hide the default radio input */
+.radio.style-border-1-circle:checked,
+.radio.style-border-1-circle:not(:checked) {
+  position: absolute;
+  left: -9999px;
+}
+
+/* Style the label and add padding for the custom radio */
+.radio.style-border-1-circle:checked + label,
+.radio.style-border-1-circle:not(:checked) + label {
+  position: relative;
+  padding-left: 34px;
+  padding-top: 2px;
+  cursor: pointer;
+  line-height: 20px;
+  display: inline-block;
+}
+
+/* Create the outer circle for the custom radio button */
+.radio.style-border-1-circle:checked + label:before,
+.radio.style-border-1-circle:not(:checked) + label:before {
+  content: "";
+  position: absolute;
+  left: 0;
+  top: 0;
+  width: 24px;
+  height: 24px;
+  border: 2px solid #191919;
+  border-radius: 100%;
+  background: transparent;
+}
+
+/* Create the inner circle that fills when the radio is checked */
+.radio.style-border-1-circle:checked + label:after,
+.radio.style-border-1-circle:not(:checked) + label:after {
+  content: "";
+  width: 14px;
+  height: 14px;
+  background: #191919;
+  position: absolute;
+  top: 5px;
+  left: 5px;
+  border-radius: 100%;
+  -webkit-transition: all 0.2s ease;
+  transition: all 0.2s ease;
+}
+
+/* Hide the inner circle for unchecked radios */
+.radio.style-border-1-circle:not(:checked) + label:after {
+  opacity: 0;
+  -webkit-transform: scale(0);
+  transform: scale(0);
+}
+
+/* Show and scale the inner circle when the radio is checked */
+.radio.style-border-1-circle:checked + label:after {
+  opacity: 1;
+  -webkit-transform: scale(1);
+  transform: scale(1);
+}
+
+// custom radio end
+
+/* form start */
+[type="button"]:not(:disabled),
+[type="reset"]:not(:disabled),
+[type="submit"]:not(:disabled),
+button:not(:disabled) {
+  cursor: pointer;
+}
+
+// animate height start
+.transition-height {
+  overflow: hidden;
+  transition: height 0.3s ease;
+}
+// animate height end
+
+/* Custom Preloader start */
+.preloader {
+  position: fixed;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  width: 100vw;
+  height: 100vh;
+  background: #121212;
+  z-index: 1000;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.loader {
+  transform: rotateZ(45deg);
+  perspective: 1000px;
+  border-radius: 50%;
+  width: 48px;
+  height: 48px;
+  color: #91ff00;
+}
+
+.loader:before,
+.loader:after {
+  content: "";
+  display: block;
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: inherit;
+  height: inherit;
+  border-radius: 50%;
+  transform: rotateX(70deg);
+  animation: 1s spin linear infinite;
+}
+
+.loader:after {
+  color: #ff3d00;
+  transform: rotateY(70deg);
+  animation-delay: 0.4s;
+}
+
+@keyframes rotate {
+  0% {
+    transform: translate(-50%, -50%) rotateZ(0deg);
+  }
+
+  100% {
+    transform: translate(-50%, -50%) rotateZ(360deg);
+  }
+}
+
+@keyframes rotateccw {
+  0% {
+    transform: translate(-50%, -50%) rotate(0deg);
+  }
+
+  100% {
+    transform: translate(-50%, -50%) rotate(-360deg);
+  }
+}
+
+@keyframes spin {
+  0%,
+  100% {
+    box-shadow: 0.2em 0px 0 0px currentcolor;
+  }
+
+  12% {
+    box-shadow: 0.2em 0.2em 0 0 currentcolor;
+  }
+
+  25% {
+    box-shadow: 0 0.2em 0 0px currentcolor;
+  }
+
+  37% {
+    box-shadow: -0.2em 0.2em 0 0 currentcolor;
+  }
+
+  50% {
+    box-shadow: -0.2em 0 0 0 currentcolor;
+  }
+
+  62% {
+    box-shadow: -0.2em -0.2em 0 0 currentcolor;
+  }
+
+  75% {
+    box-shadow: 0px -0.2em 0 0 currentcolor;
+  }
+
+  87% {
+    box-shadow: 0.2em -0.2em 0 0 currentcolor;
+  }
+}
+
+/* Custom Preloader end */
+
+// image zoom start
+
+// Zoomable
+
+.zoomable {
+  $parentSelector: &;
+
+  position: relative;
+  overflow: hidden;
+
+  &__img {
+    transform-origin: var(--zoom-pos-x, 0%) var(--zoom-pos-y, 0%);
+    transition: transform 0.15s linear;
+  }
+
+  &--zoomed {
+    #{$parentSelector}__img {
+      cursor: zoom-in;
+      transform: scale(var(--zoom, 2));
+    }
+  }
+}
+
+// image zoom end
+
+.glitch-effect {
+  position: relative;
+  overflow: hidden;
+  transition: all 0.5s ease-in-out;
+  .glitch-thumb {
+    position: relative;
+    overflow: hidden;
+    width: 100%;
+    display: block;
+    transition: all 0.5s ease-in-out;
+    :nth-child(2) {
+      transition: all 0.5s ease-in-out;
+    }
+  }
+  .glitch-thumb:first-child {
+    position: absolute;
+    left: 0;
+    top: 0;
+    right: 0;
+    bottom: 0;
+    z-index: 1;
+    transform: translatex(50%) scalex(2);
+    opacity: 0;
+    filter: blur(10px);
+    img {
+      transform: scale(1);
+      transition: all 0.5s ease-in-out;
+    }
+  }
+  &:hover {
+    .glitch-thumb:first-child {
+      transform: translatex(0) scalex(1);
+      opacity: 1;
+      filter: blur(0);
+    }
+    .glitch-thumb:nth-child(2) {
+      transform: translatex(-50%) scalex(2);
+      opacity: 0;
+      filter: blur(10px);
+    }
+  }
+}
+
+/* Custom CSS to handle even-items with reverse column order */
+@media (min-width: 768px) {
+  .flex-col-reverse-even > :nth-child(even) {
+    flex-direction: column-reverse;
+  }
+}
+
+// cercle spin button start
+.circle-spinner-button {
+  position: relative;
+  width: 174px;
+  height: 174px;
+  border-radius: 100vmax;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border: 1px solid #250c3c;
+}
+
+.circle-spinner-button .logo {
+  position: absolute;
+  width: 60px;
+  height: 60px;
+  background-size: cover;
+  border-radius: 100vmax;
+  background-position: center;
+}
+
+.circle-spinner-button .text {
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  animation: textRotation 8s linear infinite;
+}
+
+@keyframes textRotation {
+  to {
+    transform: rotate(360deg);
+  }
+}
+
+.circle-spinner-button .text span {
+  position: absolute;
+  left: 50%;
+  transform-origin: 0 87px;
+}
+// cercle spin button end
+
+/* button play effect start */
+
+.btn_effect {
+  min-width: 64px;
+  width: 64px;
+  height: 64px;
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  z-index: 5;
+  background: white;
+  transition: 0.5s;
+}
+
+.btn_effect:before {
+  content: "";
+  position: absolute;
+  width: 85%;
+  height: 85%;
+  background-color: white;
+  border-radius: 50%;
+  opacity: 0.6;
+  z-index: -1;
+  animation: pulse 2s ease-out infinite;
+}
+
+.btn_effect:after {
+  content: "";
+  position: absolute;
+  width: 85%;
+  height: 85%;
+  background-color: rgba(255, 255, 255, 0.4);
+  border-radius: 50%;
+  opacity: 0.7;
+  z-index: -1;
+  animation: pulse 2s 1.5s ease-out infinite;
+}
+
+@keyframes pulse {
+  100% {
+    transform: scale(2.5);
+    opacity: 0;
+  }
+}
+
+/* button play effect end */

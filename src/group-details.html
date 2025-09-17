@@ -1,0 +1,85 @@
+<!DOCTYPE html>
+<html dir="ltr" lang="en">
+
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="shortcut icon" href="./assets/images/icons/favicon.ico" type="image/x-icon" />
+    <title>GameCo - HTML Tailwind CSS</title>
+</head>
+
+<body>
+
+    <!-- preloader start -->
+    <include-preloader />
+    <!-- preloader end -->
+
+    <!-- scroll to top button start -->
+    <include-scrollToTop />
+    <!-- scroll to top button end -->
+
+    <!-- header start -->
+    <include-navbar />
+    <!-- header end -->
+
+    <!-- sidebar start -->
+    <include-left-right-sidebar />
+    <!-- sidebar end -->
+
+    <!-- app layout start -->
+    <div class="app-layout">
+
+        <!-- main start -->
+        <main>
+
+            <!-- group details section start -->
+            <section class="section-pb pt-30 overflow-visible">
+                <div class="container">
+                    <div class="grid grid-cols-12 gap-x-30p gap-y-10">
+                        <div class="4xl:col-span-9 xxl:col-span-8 col-span-12">
+                            <div>
+
+                                <include-group-header />
+
+                                <div class="pt-8">
+                                    <div x-show="activeTab == 1" x-transition>
+                                        <include-group-home />
+                                    </div>
+                                    <div x-show="activeTab == 2" x-transition>
+                                        <include-group-related-groups />
+                                    </div>
+                                    <div x-show="activeTab == 3" x-transition>
+                                        <include-group-forum />
+                                    </div>
+                                    <div x-show="activeTab == 4" x-transition>
+                                        <include-group-members />
+                                    </div>
+                                    <div x-show="activeTab == 5" x-transition>
+                                        <include-group-media />
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="4xl:col-span-3 xxl:col-span-4 col-span-12 relative">
+                            <div class="xxl:sticky xxl:top-30">
+                                <include-right-aside-one />
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </section>
+            <!-- group details section end -->
+
+        </main>
+        <!-- main end -->
+
+        <!-- footer start -->
+        <include-footer />
+        <!-- footer end -->
+    </div>
+    <!-- app layout end -->
+
+
+</body>
+
+</html>

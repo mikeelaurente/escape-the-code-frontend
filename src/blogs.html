@@ -1,0 +1,427 @@
+<!DOCTYPE html>
+<html dir="ltr" lang="en">
+
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="shortcut icon" href="./assets/images/icons/favicon.ico" type="image/x-icon" />
+    <title>GameCo - HTML Tailwind CSS</title>
+</head>
+
+<body>
+
+    <!-- preloader start -->
+    <include-preloader />
+    <!-- preloader end -->
+
+    <!-- scroll to top button start -->
+    <include-scrollToTop />
+    <!-- scroll to top button end -->
+
+    <!-- header start -->
+    <include-navbar />
+    <!-- header end -->
+
+    <!-- sidebar start -->
+    <include-left-right-sidebar />
+    <!-- sidebar end -->
+
+    <!-- app layout start -->
+    <div class="app-layout">
+
+        <!-- main start -->
+        <main>
+
+            <!-- breadcrumb start -->
+            <section class="pt-30p">
+                <div class="section-pt">
+                    <div
+                        class="relative bg-[url('../images/photos/breadcrumbImg.png')] bg-cover bg-no-repeat rounded-24 overflow-hidden">
+                        <div class="container">
+                            <div class="grid grid-cols-12 gap-30p relative xl:py-[130px] md:py-30 sm:py-25 py-20 z-[2]">
+                                <div class="lg:col-start-2 lg:col-end-12 col-span-12">
+                                    <h2 class="heading-2 text-w-neutral-1 mb-3">
+                                        Blogs
+                                    </h2>
+                                    <ul class="breadcrumb">
+                                        <li class="breadcrumb-item">
+                                            <a href="#" class="breadcrumb-link">
+                                                Home
+                                            </a>
+                                        </li>
+                                        <li class="breadcrumb-item">
+                                            <span class="breadcrumb-icon">
+                                                <i class="ti ti-chevrons-right"></i>
+                                            </span>
+                                        </li>
+                                        <li class="breadcrumb-item">
+                                            <span class="breadcrumb-current">Blogs</span>
+                                        </li>
+                                    </ul>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="overlay-11"></div>
+                    </div>
+                </div>
+            </section>
+            <!-- breadcrumb end -->
+
+            <!-- all blogs section start -->
+            <section class="section-pb pt-60p ">
+                <div class="container">
+                    <div class="grid 3xl:grid-cols-4 xl:grid-cols-3 sm:grid-cols-2 grid-cols-1 gap-30p">
+
+                        <div class="bg-b-neutral-3 py-24p px-30p rounded-12 group">
+                            <div class="overflow-hidden rounded-12">
+                                <img class="w-full h-[202px] object-cover group-hover:scale-110 transition-1"
+                                    src="./assets/images/blogs/blog1.png" alt="img" />
+                            </div>
+                            <div class="flex-y justify-between flex-wrap gap-20px py-3">
+                                <div class="flex-y gap-3">
+                                    <div class="flex-y gap-1">
+                                        <i class="ti ti-heart icon-20 text-danger"></i>
+                                        <span class="text-sm text-w-neutral-1">
+                                            02
+                                        </span>
+                                    </div>
+                                    <div class="flex-y gap-1">
+                                        <i class="ti ti-message icon-20 text-primary"></i>
+                                        <span class="text-sm text-w-neutral-1">
+                                            07
+                                        </span>
+                                    </div>
+                                </div>
+                                <div class="flex-y gap-1">
+                                    <i class="ti ti-share-3 icon-20 text-w-neutral-4"></i>
+                                    <span>
+                                        07
+                                    </span>
+                                </div>
+                            </div>
+                            <div class="flex-y flex-wrap gap-3 mb-1">
+                                <span class="text-m-medium text-w-neutral-1">
+                                    Collections
+                                </span>
+                                <p class="text-sm text-w-neutral-2">
+                                    September 04, 2023
+                                </p>
+                            </div>
+                            <a href="./blog-details.html"
+                                class="heading-5 text-w-neutral-1 leading-[130%] line-clamp-2 link-1">
+                                Pros and Cons of Minimal Navigation In Web Design
+                            </a>
+                        </div>
+
+                        <div class="bg-b-neutral-3 py-24p px-30p rounded-12 group" data-aos="zoom-in">
+                            <div class="overflow-hidden rounded-12">
+                                <img class="w-full h-[202px] object-cover group-hover:scale-110 transition-1"
+                                    src="./assets/images/blogs/blog2.png" alt="The Evolution of MMORPGs" />
+                            </div>
+                            <div class="flex-y justify-between flex-wrap gap-20px py-3">
+                                <div class="flex-y gap-3">
+                                    <div class="flex-y gap-1">
+                                        <i class="ti ti-heart icon-20 text-danger"></i>
+                                        <span class="text-sm text-w-neutral-1">
+                                            12
+                                        </span>
+                                    </div>
+                                    <div class="flex-y gap-1">
+                                        <i class="ti ti-message icon-20 text-primary"></i>
+                                        <span class="text-sm text-w-neutral-1">
+                                            15
+                                        </span>
+                                    </div>
+                                </div>
+                                <div class="flex-y gap-1">
+                                    <i class="ti ti-share-3 icon-20 text-w-neutral-4"></i>
+                                    <span>
+                                        8
+                                    </span>
+                                </div>
+                            </div>
+                            <div class="flex-y flex-wrap gap-3 mb-1">
+                                <span class="text-m-medium text-w-neutral-1">
+                                    MMORPG
+                                </span>
+                                <p class="text-sm text-w-neutral-2">
+                                    October 12, 2024
+                                </p>
+                            </div>
+                            <a href="./blog-details.html"
+                                class="heading-5 text-w-neutral-1 leading-[130%] line-clamp-2 link-1">
+                                The Evolution of MMORPGs: From Text-Based Adventures to Open Worlds
+                            </a>
+                        </div>
+
+                        <div class="bg-b-neutral-3 py-24p px-30p rounded-12 group" data-aos="zoom-in">
+                            <div class="overflow-hidden rounded-12">
+                                <img class="w-full h-[202px] object-cover group-hover:scale-110 transition-1"
+                                    src="./assets/images/blogs/blog3.png" alt="FPS Game Strategies" />
+                            </div>
+                            <div class="flex-y justify-between flex-wrap gap-20px py-3">
+                                <div class="flex-y gap-3">
+                                    <div class="flex-y gap-1">
+                                        <i class="ti ti-heart icon-20 text-danger"></i>
+                                        <span class="text-sm text-w-neutral-1">
+                                            8
+                                        </span>
+                                    </div>
+                                    <div class="flex-y gap-1">
+                                        <i class="ti ti-message icon-20 text-primary"></i>
+                                        <span class="text-sm text-w-neutral-1">
+                                            10
+                                        </span>
+                                    </div>
+                                </div>
+                                <div class="flex-y gap-1">
+                                    <i class="ti ti-share-3 icon-20 text-w-neutral-4"></i>
+                                    <span>
+                                        5
+                                    </span>
+                                </div>
+                            </div>
+                            <div class="flex-y flex-wrap gap-3 mb-1">
+                                <span class="text-m-medium text-w-neutral-1">
+                                    FPS
+                                </span>
+                                <p class="text-sm text-w-neutral-2">
+                                    October 10, 2024
+                                </p>
+                            </div>
+                            <a href="./blog-details.html"
+                                class="heading-5 text-w-neutral-1 leading-[130%] line-clamp-2 link-1">
+                                Top 10 FPS Game Strategies to Boost Your Rank
+                            </a>
+                        </div>
+
+                        <div class="bg-b-neutral-3 py-24p px-30p rounded-12 group" data-aos="zoom-in">
+                            <div class="overflow-hidden rounded-12">
+                                <img class="w-full h-[202px] object-cover group-hover:scale-110 transition-1"
+                                    src="./assets/images/blogs/blog4.png" alt="Game Community Growth Tips" />
+                            </div>
+                            <div class="flex-y justify-between flex-wrap gap-20px py-3">
+                                <div class="flex-y gap-3">
+                                    <div class="flex-y gap-1">
+                                        <i class="ti ti-heart icon-20 text-danger"></i>
+                                        <span class="text-sm text-w-neutral-1">
+                                            20
+                                        </span>
+                                    </div>
+                                    <div class="flex-y gap-1">
+                                        <i class="ti ti-message icon-20 text-primary"></i>
+                                        <span class="text-sm text-w-neutral-1">
+                                            25
+                                        </span>
+                                    </div>
+                                </div>
+                                <div class="flex-y gap-1">
+                                    <i class="ti ti-share-3 icon-20 text-w-neutral-4"></i>
+                                    <span>
+                                        15
+                                    </span>
+                                </div>
+                            </div>
+                            <div class="flex-y flex-wrap gap-3 mb-1">
+                                <span class="text-m-medium text-w-neutral-1">
+                                    Community
+                                </span>
+                                <p class="text-sm text-w-neutral-2">
+                                    October 8, 2024
+                                </p>
+                            </div>
+                            <a href="./blog-details.html"
+                                class="heading-5 text-w-neutral-1 leading-[130%] line-clamp-2 link-1">
+                                5 Tips to Grow and Engage Your Game Community
+                            </a>
+                        </div>
+
+                        <div class="bg-b-neutral-3 py-24p px-30p rounded-12 group" data-aos="zoom-in">
+                            <div class="overflow-hidden rounded-12">
+                                <img class="w-full h-[202px] object-cover group-hover:scale-110 transition-1"
+                                    src="./assets/images/blogs/blog5.png" alt="Esports Revolution" />
+                            </div>
+                            <div class="flex-y justify-between flex-wrap gap-20px py-3">
+                                <div class="flex-y gap-3">
+                                    <div class="flex-y gap-1">
+                                        <i class="ti ti-heart icon-20 text-danger"></i>
+                                        <span class="text-sm text-w-neutral-1">
+                                            18
+                                        </span>
+                                    </div>
+                                    <div class="flex-y gap-1">
+                                        <i class="ti ti-message icon-20 text-primary"></i>
+                                        <span class="text-sm text-w-neutral-1">
+                                            12
+                                        </span>
+                                    </div>
+                                </div>
+                                <div class="flex-y gap-1">
+                                    <i class="ti ti-share-3 icon-20 text-w-neutral-4"></i>
+                                    <span>
+                                        9
+                                    </span>
+                                </div>
+                            </div>
+                            <div class="flex-y flex-wrap gap-3 mb-1">
+                                <span class="text-m-medium text-w-neutral-1">
+                                    Esports
+                                </span>
+                                <p class="text-sm text-w-neutral-2">
+                                    October 6, 2024
+                                </p>
+                            </div>
+                            <a href="./blog-details.html"
+                                class="heading-5 text-w-neutral-1 leading-[130%] line-clamp-2 link-1">
+                                The Rise of Esports: How Gaming Became a Global Phenomenon
+                            </a>
+                        </div>
+
+                        <div class="bg-b-neutral-3 py-24p px-30p rounded-12 group" data-aos="zoom-in">
+                            <div class="overflow-hidden rounded-12">
+                                <img class="w-full h-[202px] object-cover group-hover:scale-110 transition-1"
+                                    src="./assets/images/blogs/blog6.png" alt="RPG Storytelling" />
+                            </div>
+                            <div class="flex-y justify-between flex-wrap gap-20px py-3">
+                                <div class="flex-y gap-3">
+                                    <div class="flex-y gap-1">
+                                        <i class="ti ti-heart icon-20 text-danger"></i>
+                                        <span class="text-sm text-w-neutral-1">
+                                            25
+                                        </span>
+                                    </div>
+                                    <div class="flex-y gap-1">
+                                        <i class="ti ti-message icon-20 text-primary"></i>
+                                        <span class="text-sm text-w-neutral-1">
+                                            30
+                                        </span>
+                                    </div>
+                                </div>
+                                <div class="flex-y gap-1">
+                                    <i class="ti ti-share-3 icon-20 text-w-neutral-4"></i>
+                                    <span>
+                                        20
+                                    </span>
+                                </div>
+                            </div>
+                            <div class="flex-y flex-wrap gap-3 mb-1">
+                                <span class="text-m-medium text-w-neutral-1">
+                                    RPG
+                                </span>
+                                <p class="text-sm text-w-neutral-2">
+                                    October 5, 2024
+                                </p>
+                            </div>
+                            <a href="./blog-details.html"
+                                class="heading-5 text-w-neutral-1 leading-[130%] line-clamp-2 link-1">
+                                Why Storytelling is the Heart of Every Great RPG
+                            </a>
+                        </div>
+
+                        <div class="bg-b-neutral-3 py-24p px-30p rounded-12 group" data-aos="zoom-in">
+                            <div class="overflow-hidden rounded-12">
+                                <img class="w-full h-[202px] object-cover group-hover:scale-110 transition-1"
+                                    src="./assets/images/blogs/blog7.png" alt="Indie Games Spotlight" />
+                            </div>
+                            <div class="flex-y justify-between flex-wrap gap-20px py-3">
+                                <div class="flex-y gap-3">
+                                    <div class="flex-y gap-1">
+                                        <i class="ti ti-heart icon-20 text-danger"></i>
+                                        <span class="text-sm text-w-neutral-1">
+                                            30
+                                        </span>
+                                    </div>
+                                    <div class="flex-y gap-1">
+                                        <i class="ti ti-message icon-20 text-primary"></i>
+                                        <span class="text-sm text-w-neutral-1">
+                                            22
+                                        </span>
+                                    </div>
+                                </div>
+                                <div class="flex-y gap-1">
+                                    <i class="ti ti-share-3 icon-20 text-w-neutral-4"></i>
+                                    <span>
+                                        18
+                                    </span>
+                                </div>
+                            </div>
+                            <div class="flex-y flex-wrap gap-3 mb-1">
+                                <span class="text-m-medium text-w-neutral-1">
+                                    Indie
+                                </span>
+                                <p class="text-sm text-w-neutral-2">
+                                    October 4, 2024
+                                </p>
+                            </div>
+                            <a href="./blog-details.html"
+                                class="heading-5 text-w-neutral-1 leading-[130%] line-clamp-2 link-1">
+                                Indie Games You Shouldn’t Miss in 2024
+                            </a>
+                        </div>
+
+                        <div class="bg-b-neutral-3 py-24p px-30p rounded-12 group" data-aos="zoom-in">
+                            <div class="overflow-hidden rounded-12">
+                                <img class="w-full h-[202px] object-cover group-hover:scale-110 transition-1"
+                                    src="./assets/images/blogs/blog8.png" alt="VR Gaming Trends" />
+                            </div>
+                            <div class="flex-y justify-between flex-wrap gap-20px py-3">
+                                <div class="flex-y gap-3">
+                                    <div class="flex-y gap-1">
+                                        <i class="ti ti-heart icon-20 text-danger"></i>
+                                        <span class="text-sm text-w-neutral-1">
+                                            40
+                                        </span>
+                                    </div>
+                                    <div class="flex-y gap-1">
+                                        <i class="ti ti-message icon-20 text-primary"></i>
+                                        <span class="text-sm text-w-neutral-1">
+                                            35
+                                        </span>
+                                    </div>
+                                </div>
+                                <div class="flex-y gap-1">
+                                    <i class="ti ti-share-3 icon-20 text-w-neutral-4"></i>
+                                    <span>
+                                        25
+                                    </span>
+                                </div>
+                            </div>
+                            <div class="flex-y flex-wrap gap-3 mb-1">
+                                <span class="text-m-medium text-w-neutral-1">
+                                    VR
+                                </span>
+                                <p class="text-sm text-w-neutral-2">
+                                    October 3, 2024
+                                </p>
+                            </div>
+                            <a href="./blog-details.html"
+                                class="heading-5 text-w-neutral-1 leading-[130%] line-clamp-2 link-1">
+                                VR Gaming: The Future of Immersive Entertainment
+                            </a>
+                        </div>
+
+                    </div>
+                    <div class="flex-c mt-48p">
+                        <a href="#" class="btn btn-xl py-3 btn-primary rounded-12">
+                            Load More...
+                        </a>
+                    </div>
+                </div>
+            </section>
+            <!-- all blogs section end -->
+
+
+
+        </main>
+        <!-- main end -->
+
+        <!-- footer start -->
+        <include-footer />
+        <!-- footer end -->
+    </div>
+    <!-- app layout end -->
+
+
+</body>
+
+</html>

@@ -1,0 +1,112 @@
+@layer components {
+  .badge {
+    @apply inline-flex items-center justify-center gap-2.5 rounded-xl sm:px-3 px-2 py-2 text-sm font-medium transition-1;
+
+    // Badge Varients
+    .ti {
+      @apply icon-24;
+    }
+
+    &-circle {
+      @apply h-5 w-5 rounded-full p-0;
+    }
+
+    &-dot {
+      @apply h-2 w-2 rounded-full p-0;
+    }
+
+    &-rounded {
+      @apply rounded-full px-3;
+    }
+
+    /* Badge size variations */
+    &-xs {
+      @apply px-2 py-1.5 font-normal; /* 8px 6px */
+    }
+
+    &-compact {
+      @apply px-3 font-normal; /* 12px */
+    }
+
+    &-base {
+      @apply px-3 py-2; /* 12px 8px */
+    }
+
+    &-smm {
+      @apply sm:px-4 px-3 py-1.5; /* 16px 6px */
+    }
+
+    &-sm {
+      @apply sm:px-4 px-3 py-2; /* 16px 8px */
+    }
+
+    &-md {
+      @apply px-20p sm:py-3 py-2; /* 20px 12px */
+    }
+
+    &-lg {
+      @apply px-24p sm:py-3 py-2; /* 24px 12px */
+    }
+
+    &-xl {
+      @apply px-32p sm:py-3 py-2.5; /* 32px 12px */
+    }
+
+    // Badge Styles
+    &-primary {
+      @apply bg-primary text-b-neutral-4;
+    }
+
+    &-secondary {
+      @apply bg-secondary text-b-neutral-4;
+    }
+
+    &-danger {
+      @apply bg-danger text-w-neutral-1;
+    }
+
+    &-light {
+      @apply bg-w-neutral-1 text-b-neutral-3 rounded-12;
+    }
+
+    &-neutral {
+      @apply bg-b-neutral-3 text-w-neutral-1 rounded-12;
+    }
+
+    &-neutral-2 {
+      @apply bg-b-neutral-2 text-w-neutral-1 rounded-12;
+    }
+
+    &-neutral-3 {
+      @apply bg-b-neutral-3 text-w-neutral-1 rounded-12;
+    }
+
+    &-neutral-4 {
+      @apply bg-b-neutral-4 text-w-neutral-4 rounded-12;
+    }
+
+    &-glass {
+      @apply bg-[rgba(0,0,0,0.50)] text-w-neutral-1 rounded-12;
+    }
+
+    &-outline-primary {
+      @apply border border-primary text-w-neutral-1 bg-b-neutral-4;
+    }
+
+    &-outline-secondary {
+      @apply border border-secondary text-b-neutral-4;
+    }
+
+    &-outline-shap {
+      @apply border border-shap text-w-neutral-1;
+    }
+
+    &-ring-accent-1 {
+      @apply bg-accent-1 text-w-neutral-1 size-3 border border-b-neutral-1;
+    }
+
+    &-box-neutral-1 {
+      @apply rounded-full flex-c size-[34px] bg-b-neutral-1 text-sm text-w-neutral-1;
+    }
+  }
+}

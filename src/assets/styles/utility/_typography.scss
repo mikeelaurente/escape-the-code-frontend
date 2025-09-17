@@ -1,0 +1,315 @@
+/* Common custom text start */
+p,
+li,
+input,
+// span,
+a,
+table {
+  font-family: "poppins";
+}
+
+/* General Heading Styles */
+/* Apply styles to all spans except those inside .word or with the class .char */
+span:not(.word, .char) {
+  @apply font-poppins;
+}
+
+@layer base {
+  h1,
+  h2,
+  h3,
+  h4,
+  h5,
+  h6,
+  .h1,
+  .h2,
+  .h3,
+  .h4,
+  .h5,
+  .h6,
+  .heading-1,
+  .heading-2,
+  .heading-3,
+  .heading-4,
+  .heading-5,
+  .heading-6 {
+    @apply font-borda font-bold text-w-neutral-1;
+  }
+
+  /* Headings */
+
+  .heading-1,
+  h1,
+  .h1 {
+    @apply text-[calc(1.75rem+1.5vw)] xl:text-[3rem] leading-[120%] block;
+  }
+
+  /* Heading 2: Responsive, 40px at xl */
+  .heading-2,
+  h2,
+  .h2 {
+    @apply text-[calc(1.5rem+1.25vw)] xl:text-[2.5rem] leading-[120%] block;
+  }
+
+  /* Heading 3: Responsive, 32px at xl */
+  .heading-3,
+  h3,
+  .h3 {
+    @apply text-[calc(1.25rem+1vw)] xl:text-[2rem] leading-[120%] block;
+  }
+
+  /* Heading 4: Responsive, 24px at xl */
+  .heading-4,
+  h4,
+  .h4 {
+    @apply text-[calc(1.25rem+0.75vw)] xl:text-[1.5rem] leading-[130%] block;
+  }
+
+  /* Heading 5: Fixed 20px */
+  .heading-5,
+  h5,
+  .h5 {
+    @apply text-[clac(1.25rem+0.5vw)] xl:text-xl leading-[130%] block;
+  }
+
+  /* Heading 6: Fixed 16px */
+  .heading-6,
+  h6,
+  .h6 {
+    @apply text-base leading-[130%] block;
+  }
+
+  a,
+  span {
+    @apply block;
+  }
+
+  /* Lead Text Styles */
+  .text-lead-bold {
+    @apply text-[24px] font-bold;
+  }
+  .text-lead-semi-bold {
+    @apply text-[24px] font-semibold;
+  }
+  .text-lead-medium {
+    @apply text-[24px] font-medium;
+  }
+  .text-lead-regular {
+    @apply text-[24px] font-normal;
+  }
+
+  /* Blockquotes */
+  .blockquote {
+    @apply border-l-4 border-slate-200 pl-4 font-medium italic text-slate-600 dark:border-slate-800 dark:text-slate-300;
+    & > p {
+      @apply before:content-['"'] after:content-['"'];
+    }
+  }
+
+  /* Code Block */
+  code:not(.prose code) {
+    @apply rounded bg-slate-100 p-1 text-xs tracking-wide text-slate-500 dark:bg-slate-600 dark:text-slate-300;
+  }
+}
+
+@layer components {
+  /* Display Text Styles */
+  .display-100 {
+    @apply text-5xl sm:text-6xl md:text-7xl lg:text-8xl 3xl:text-[100px] leading-[120%] font-semibold block; //100px
+  }
+
+  .display-120 {
+    @apply text-5xl sm:text-6xl md:text-7xl lg:text-8xl 3xl:text-[120px] leading-[120%] font-bold block; //160px
+  }
+
+  .display-140 {
+    @apply text-6xl sm:text-7xl md:text-8xl lg:text-9xl 3xl:text-[140px] leading-[120%] font-bold block; //140px
+  }
+
+  .display-lg {
+    @apply text-4xl sm:text-5xl md:text-[100px] lg:text-[140px] 3xl:text-[160px] leading-[120%] font-semibold block; //160px
+  }
+  .display-1 {
+    @apply text-4xl sm:text-5xl md:text-6xl lg:text-7xl 3xl:text-[100px] leading-[120%] font-semibold block; //100px
+  }
+  .display-2 {
+    @apply text-3xl min-[400px]:text-4xl sm:text-5xl md:text-6xl lg:text-7xl leading-[120%] font-semibold block; //72px
+  }
+  .display-3 {
+    @apply text-3xl min-[400px]:text-4xl sm:text-5xl md:text-6xl lg:text-[64px] leading-[120%] font-semibold block; //64px
+  }
+  .display-4 {
+    @apply text-3xl sm:text-4xl md:text-5xl lg:text-[3.5625rem] lg:leading-[120%] font-semibold block; //56px
+  }
+  .display-5 {
+    @apply text-[1.75rem] sm:text-4xl md:text-[2.5rem] lg:text-5xl leading-[120%] font-semibold block; //48px
+  }
+  .display-6 {
+    @apply text-2xl sm:text-3xl md:text-4xl lg:text-[2.5rem] lg:leading-[48px] font-semibold block; //40px
+  }
+
+  /* Text Sizes and Weights */
+  // lead text 24px
+  .text-lead-bold {
+    @apply text-xl sm:text-2xl font-bold;
+  }
+  .text-lead-semi-bold {
+    @apply text-xl sm:text-2xl font-semibold;
+  }
+  .text-lead-medium {
+    @apply text-xl sm:text-2xl font-medium;
+  }
+  .text-lead-regular {
+    @apply text-xl sm:text-2xl font-normal;
+  }
+
+  // xl text 20px
+  .text-xl-bold {
+    @apply text-base sm:text-xl font-bold;
+  }
+  .text-xl-semi-bold {
+    @apply text-base sm:text-xl font-semibold;
+  }
+  .text-xl-medium {
+    @apply text-base sm:text-xl font-medium;
+  }
+  .text-xl-regular {
+    @apply text-base sm:text-xl font-normal;
+  }
+
+  // l text 18px
+  .text-l-bold {
+    @apply text-base sm:text-lg font-bold;
+  }
+  .text-l-semi-bold {
+    @apply text-base sm:text-lg font-semibold;
+  }
+  .text-l-medium {
+    @apply text-base sm:text-lg font-medium;
+  }
+  .text-l-regular {
+    @apply text-base sm:text-lg font-normal;
+  }
+
+  // m text 16px
+  .text-m-bold {
+    @apply text-sm sm:text-base font-bold;
+  }
+  .text-m-semi-bold {
+    @apply text-sm sm:text-base font-semibold;
+  }
+  .text-m-medium {
+    @apply text-sm sm:text-base font-medium;
+  }
+  .text-m-regular {
+    @apply text-sm sm:text-base font-normal;
+  }
+
+  .text-s-bold {
+    @apply text-sm font-bold;
+  }
+  .text-s-semi-bold {
+    @apply text-sm font-semibold;
+  }
+  .text-s-medium {
+    @apply text-sm font-medium;
+  }
+  .text-s-regular {
+    @apply text-sm font-normal;
+  }
+
+  .text-xs-bold {
+    @apply text-xs font-bold;
+  }
+  .text-xs-semi-bold {
+    @apply text-xs font-semibold;
+  }
+  .text-xs-medium {
+    @apply text-xs font-medium;
+  }
+  .text-xs-regular {
+    @apply text-xs font-normal;
+  }
+
+  /* Helper Classes */
+  .span,
+  .a {
+    @apply inline-block;
+  }
+  .help-text {
+    @apply text-xs font-light text-slate-500;
+  }
+  .success-message {
+    @apply mt-1 hidden w-full text-xs text-success-500;
+  }
+  .error-message {
+    @apply mt-1 hidden w-full text-xs text-danger-600;
+  }
+
+  /* Labels */
+  .label {
+    @apply block text-sm font-medium font-poppins text-w-neutral-1;
+
+    &-xs {
+      @apply text-xs;
+    }
+    &-sm {
+      @apply text-sm;
+    }
+    &-md {
+      @apply text-base;
+    }
+    &-lg {
+      @apply sm:text-lg text-base;
+    }
+    &-xl {
+      @apply sm:text-xl text-base;
+    }
+
+    &-required {
+      @apply after:ml-0.5 after:inline-block after:text-danger-500 after:content-['*'];
+    }
+
+    &-disabled {
+      @apply text-slate-500 opacity-80;
+    }
+  }
+}
+
+/*Common custom text end */
+
+/*Common icon size start */
+
+.icon-16 {
+  @apply text-base;
+}
+
+.icon-20 {
+  @apply text-lg sm:text-xl;
+}
+
+.icon-24 {
+  @apply text-xl sm:text-2xl;
+}
+
+.icon-28 {
+  @apply text-xl sm:text-2xl md:text-[28px];
+}
+
+.icon-32 {
+  @apply text-xl sm:text-2xl md:text-[32px];
+}
+
+.icon-40 {
+  @apply text-2xl sm:text-3xl md:text-[40px];
+}
+
+.icon-48 {
+  @apply text-3xl sm:text-4xl md:text-5xl;
+}
+
+.icon-60 {
+  @apply text-4xl md:text-5xl lg:text-[60px];
+}
+
+/*Common icon size end */

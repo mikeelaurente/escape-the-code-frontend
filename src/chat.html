@@ -1,0 +1,477 @@
+<!DOCTYPE html>
+<html dir="ltr" lang="en">
+
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="shortcut icon" href="./assets/images/icons/favicon.ico" type="image/x-icon" />
+    <title>GameCo - HTML Tailwind CSS</title>
+</head>
+
+<body>
+
+    <!-- preloader start -->
+    <include-preloader />
+    <!-- preloader end -->
+
+    <!-- scroll to top button start -->
+    <include-scrollToTop />
+    <!-- scroll to top button end -->
+
+    <!-- header start -->
+    <include-navbar />
+    <!-- header end -->
+
+    <!-- sidebar start -->
+    <include-left-right-sidebar />
+    <!-- sidebar end -->
+
+    <!-- app layout start -->
+    <div class="app-layout">
+
+        <!-- main start -->
+        <main>
+
+            <!-- chats section start -->
+            <section class="section-py">
+                <div class="container pt-60p">
+                    <h2 class="heading-2 text-w-neutral-1 mb-30p">
+                        Chats
+                    </h2>
+                    <div class="grid grid-cols-12 gap-30p">
+                        <div class="xxl:col-span-4 xl:col-span-5 col-span-12 max-xl:hidden">
+                            <!-- chat list start -->
+                            <div class="h-screen overflow-y-auto scrollbar-sm">
+                                <div
+                                    class="grid grid-cols-1 gap-2 *:py-24p *:px-30p *:flex *:gap-20p *:rounded-12 *:bg-glass-7">
+                                    <a href="#">
+                                        <div class="shrink-0 size-60p relative">
+                                            <img class="size-60p" src="./assets/images/users/avatar1.png" alt="user" />
+                                            <span
+                                                class="absolute right-0 bottom-0 size-5 border-4 border-glass-6 bg-secondary rounded-full"></span>
+                                        </div>
+                                        <div class="w-full">
+                                            <div class="flex-y gap-3 justify-between">
+                                                <span class="text-l-medium text-w-neutral-1 mb-1 line-clamp-1">
+                                                    Cameron Williamson
+                                                </span>
+                                                <span class="text-base text-w-neutral-4 whitespace-nowrap">
+                                                    3:15 PM
+                                                </span>
+                                            </div>
+                                            <p class="text-base text-w-neutral-4 line-clamp-1">
+                                                We invite you to treat yourself gift of relaxation.
+                                            </p>
+                                        </div>
+                                    </a>
+                                    <a href="#">
+                                        <div class="shrink-0 size-60p relative">
+                                            <img class="size-60p" src="./assets/images/users/avatar2.png" alt="user" />
+                                            <span
+                                                class="absolute right-0 bottom-0 size-5 border-4 border-glass-6 bg-secondary rounded-full"></span>
+                                        </div>
+                                        <div class="w-full">
+                                            <div class="flex-y gap-3 justify-between">
+                                                <span class="text-l-medium text-w-neutral-1 mb-1 line-clamp-1">
+                                                    Esther Howard
+                                                </span>
+                                                <span class="text-base text-w-neutral-4 whitespace-nowrap">
+                                                    3:12 PM
+                                                </span>
+                                            </div>
+                                            <p class="text-base text-w-neutral-4 line-clamp-1">
+                                                relief from aches and pains
+                                            </p>
+                                        </div>
+                                    </a>
+                                    <a href="#">
+                                        <div class="shrink-0 size-60p relative">
+                                            <img class="size-60p" src="./assets/images/users/avatar3.png" alt="user" />
+                                            <span
+                                                class="absolute right-0 bottom-0 size-5 border-4 border-glass-6 bg-secondary rounded-full"></span>
+                                        </div>
+                                        <div class="w-full">
+                                            <div class="flex-y gap-3 justify-between">
+                                                <span class="text-l-medium text-w-neutral-1 mb-1 line-clamp-1">
+                                                    Brooklyn Simmons
+                                                </span>
+                                                <span class="text-base text-w-neutral-4 whitespace-nowrap">
+                                                    3:15 PM
+                                                </span>
+                                            </div>
+                                            <p class="text-base text-w-neutral-4 line-clamp-1">
+                                                Let us guide you towards a state of balance
+                                            </p>
+                                        </div>
+                                    </a>
+                                    <a href="#">
+                                        <div class="shrink-0 size-60p relative">
+                                            <img class="size-60p" src="./assets/images/users/avatar4.png" alt="user" />
+                                            <span
+                                                class="absolute right-0 bottom-0 size-5 border-4 border-glass-6 bg-secondary rounded-full"></span>
+                                        </div>
+                                        <div class="w-full">
+                                            <div class="flex-y gap-3 justify-between">
+                                                <span class="text-l-medium text-w-neutral-1 mb-1 line-clamp-1">
+                                                    Leslie Alexander
+                                                </span>
+                                                <span class="text-base text-w-neutral-4 whitespace-nowrap">
+                                                    3:31 PM
+                                                </span>
+                                            </div>
+                                            <p class="text-base text-w-neutral-4 line-clamp-1">
+                                                As you step into our tranquil
+                                            </p>
+                                        </div>
+                                    </a>
+                                    <a href="#">
+                                        <div class="shrink-0 size-60p relative">
+                                            <img class="size-60p" src="./assets/images/users/avatar5.png" alt="user" />
+                                            <span
+                                                class="absolute right-0 bottom-0 size-5 border-4 border-glass-6 bg-secondary rounded-full"></span>
+                                        </div>
+                                        <div class="w-full">
+                                            <div class="flex-y gap-3 justify-between">
+                                                <span class="text-l-medium text-w-neutral-1 mb-1 line-clamp-1">
+                                                    Robert Fox
+                                                </span>
+                                                <span class="text-base text-w-neutral-4 whitespace-nowrap">
+                                                    3:19 PM
+                                                </span>
+                                            </div>
+                                            <p class="text-base text-w-neutral-4 line-clamp-1">
+                                                leave behind the stresses of daily life
+                                            </p>
+                                        </div>
+                                    </a>
+                                    <a href="#">
+                                        <div class="shrink-0 size-60p relative">
+                                            <img class="size-60p" src="./assets/images/users/avatar6.png" alt="user" />
+                                            <span
+                                                class="absolute right-0 bottom-0 size-5 border-4 border-glass-6 bg-secondary rounded-full"></span>
+                                        </div>
+                                        <div class="w-full">
+                                            <div class="flex-y gap-3 justify-between">
+                                                <span class="text-l-medium text-w-neutral-1 mb-1 line-clamp-1">
+                                                    Jacob Jones
+                                                </span>
+                                                <span class="text-base text-w-neutral-4 whitespace-nowrap">
+                                                    5:15 PM
+                                                </span>
+                                            </div>
+                                            <p class="text-base text-w-neutral-4 line-clamp-1">
+                                                Our ambiance is carefully curated to provide
+                                            </p>
+                                        </div>
+                                    </a>
+                                    <a href="#">
+                                        <div class="shrink-0 size-60p relative">
+                                            <img class="size-60p" src="./assets/images/users/avatar1.png" alt="user" />
+                                            <span
+                                                class="absolute right-0 bottom-0 size-5 border-4 border-glass-6 bg-secondary rounded-full"></span>
+                                        </div>
+                                        <div class="w-full">
+                                            <div class="flex-y gap-3 justify-between">
+                                                <span class="text-l-medium text-w-neutral-1 mb-1 line-clamp-1">
+                                                    Cameron Williamson
+                                                </span>
+                                                <span class="text-base text-w-neutral-4 whitespace-nowrap">
+                                                    3:15 PM
+                                                </span>
+                                            </div>
+                                            <p class="text-base text-w-neutral-4 line-clamp-1">
+                                                We invite you to treat yourself gift of relaxation.
+                                            </p>
+                                        </div>
+                                    </a>
+                                    <a href="#">
+                                        <div class="shrink-0 size-60p relative">
+                                            <img class="size-60p" src="./assets/images/users/avatar2.png" alt="user" />
+                                            <span
+                                                class="absolute right-0 bottom-0 size-5 border-4 border-glass-6 bg-secondary rounded-full"></span>
+                                        </div>
+                                        <div class="w-full">
+                                            <div class="flex-y gap-3 justify-between">
+                                                <span class="text-l-medium text-w-neutral-1 mb-1 line-clamp-1">
+                                                    Esther Howard
+                                                </span>
+                                                <span class="text-base text-w-neutral-4 whitespace-nowrap">
+                                                    3:12 PM
+                                                </span>
+                                            </div>
+                                            <p class="text-base text-w-neutral-4 line-clamp-1">
+                                                relief from aches and pains
+                                            </p>
+                                        </div>
+                                    </a>
+                                    <a href="#">
+                                        <div class="shrink-0 size-60p relative">
+                                            <img class="size-60p" src="./assets/images/users/avatar3.png" alt="user" />
+                                            <span
+                                                class="absolute right-0 bottom-0 size-5 border-4 border-glass-6 bg-secondary rounded-full"></span>
+                                        </div>
+                                        <div class="w-full">
+                                            <div class="flex-y gap-3 justify-between">
+                                                <span class="text-l-medium text-w-neutral-1 mb-1 line-clamp-1">
+                                                    Brooklyn Simmons
+                                                </span>
+                                                <span class="text-base text-w-neutral-4 whitespace-nowrap">
+                                                    3:15 PM
+                                                </span>
+                                            </div>
+                                            <p class="text-base text-w-neutral-4 line-clamp-1">
+                                                Let us guide you towards a state of balance
+                                            </p>
+                                        </div>
+                                    </a>
+                                    <a href="#">
+                                        <div class="shrink-0 size-60p relative">
+                                            <img class="size-60p" src="./assets/images/users/avatar4.png" alt="user" />
+                                            <span
+                                                class="absolute right-0 bottom-0 size-5 border-4 border-glass-6 bg-secondary rounded-full"></span>
+                                        </div>
+                                        <div class="w-full">
+                                            <div class="flex-y gap-3 justify-between">
+                                                <span class="text-l-medium text-w-neutral-1 mb-1 line-clamp-1">
+                                                    Leslie Alexander
+                                                </span>
+                                                <span class="text-base text-w-neutral-4 whitespace-nowrap">
+                                                    3:31 PM
+                                                </span>
+                                            </div>
+                                            <p class="text-base text-w-neutral-4 line-clamp-1">
+                                                As you step into our tranquil
+                                            </p>
+                                        </div>
+                                    </a>
+                                    <a href="#">
+                                        <div class="shrink-0 size-60p relative">
+                                            <img class="size-60p" src="./assets/images/users/avatar5.png" alt="user" />
+                                            <span
+                                                class="absolute right-0 bottom-0 size-5 border-4 border-glass-6 bg-secondary rounded-full"></span>
+                                        </div>
+                                        <div class="w-full">
+                                            <div class="flex-y gap-3 justify-between">
+                                                <span class="text-l-medium text-w-neutral-1 mb-1 line-clamp-1">
+                                                    Robert Fox
+                                                </span>
+                                                <span class="text-base text-w-neutral-4 whitespace-nowrap">
+                                                    3:19 PM
+                                                </span>
+                                            </div>
+                                            <p class="text-base text-w-neutral-4 line-clamp-1">
+                                                leave behind the stresses of daily life
+                                            </p>
+                                        </div>
+                                    </a>
+                                    <a href="#">
+                                        <div class="shrink-0 size-60p relative">
+                                            <img class="size-60p" src="./assets/images/users/avatar6.png" alt="user" />
+                                            <span
+                                                class="absolute right-0 bottom-0 size-5 border-4 border-glass-6 bg-secondary rounded-full"></span>
+                                        </div>
+                                        <div class="w-full">
+                                            <div class="flex-y gap-3 justify-between">
+                                                <span class="text-l-medium text-w-neutral-1 mb-1 line-clamp-1">
+                                                    Jacob Jones
+                                                </span>
+                                                <span class="text-base text-w-neutral-4 whitespace-nowrap">
+                                                    5:15 PM
+                                                </span>
+                                            </div>
+                                            <p class="text-base text-w-neutral-4 line-clamp-1">
+                                                Our ambiance is carefully curated to provide
+                                            </p>
+                                        </div>
+                                    </a>
+                                </div>
+                            </div>
+                            <!-- chat list end -->
+                        </div>
+                        <div class="xxl:col-span-8 xl:col-span-7 col-span-12">
+                            <!-- inbox message start -->
+                            <div class="bg-glass-7 rounded-12">
+                                <div class="p-30p flex items-center justify-between gap-20p border-b border-shap">
+                                    <div class="shrink-0 flex-y gap-20p">
+                                        <div class="shrink-0 size-80p relative">
+                                            <img class="size-80p" src="./assets/images/users/avatar1.png" alt="user" />
+                                            <span
+                                                class="absolute right-0 bottom-0 size-5 border-4 border-glass-6 bg-secondary rounded-full"></span>
+                                        </div>
+                                        <div>
+                                            <a href="./profile.html" class="heading-4 text-w-neutral-1 md:mb-2 mb-0.5">
+                                                Leslie Alexander
+                                            </a>
+                                            <span class="text-m-reguler text-w-neutral-4">
+                                                Active Now
+                                            </span>
+                                        </div>
+                                    </div>
+                                    <div class="flex-y lg:gap-32p gap-20p">
+                                        <button class="icon-32 text-w-neutral-4">
+                                            <i class="ti ti-video"></i>
+                                        </button>
+                                        <button class="icon-32 text-w-neutral-4">
+                                            <i class="ti ti-phone"></i>
+                                        </button>
+                                    </div>
+                                </div>
+                                <div class="h-screen overflow-y-auto scrollbar-sm">
+                                    <div class="p-30p grid grid-cols-1 lg:gap-y-60p gap-y-40p">
+                                        <!-- recive message -->
+                                        <div class="flex justify-start">
+                                            <div class="flex sm:items-end max-sm:flex-col gap-x-30p gap-y-20p">
+                                                <img class="shrink-0 avatar size-60p"
+                                                    src="./assets/images/users/avatar1.png" alt="user" />
+                                                <div class="flex sm:items-end max-sm:flex-col gap-x-30p gap-y-20p">
+                                                    <div
+                                                        class="p-24p bg-glass-1 rounded-t-3xl rounded-br-3xl text-base text-w-neutral-3 max-w-[566px]">
+                                                        <p>
+                                                            We invite you to treat yourself to the gift of
+                                                            relaxation.
+                                                            Whether
+                                                            you're seeking relief from aches and pains, stress
+                                                            reduction, or
+                                                            a
+                                                            moment of pure indulgence,
+                                                        </p>
+                                                    </div>
+                                                    <span class="shrink-0 text-base text-w-neutral-4 ">
+                                                        3:15 PM
+                                                    </span>
+                                                </div>
+                                            </div>
+                                        </div>
+                                        <!-- send message -->
+                                        <div class="flex justify-end">
+                                            <div class="flex max-sm:flex-col-reverse items-end gap-x-30p gap-y-20p">
+                                                <div class="flex items-end max-sm:flex-col-reverse gap-x-30p gap-y-20p">
+                                                    <span class="shrink-0 text-base text-w-neutral-4">
+                                                        3:16 PM
+                                                    </span>
+                                                    <div
+                                                        class="p-24p bg-glass-8 rounded-t-3xl rounded-bl-3xl text-base text-w-neutral-3 max-w-[566px]">
+                                                        <p>
+                                                            Our massage therapy has something for everyone.
+                                                        </p>
+                                                    </div>
+                                                </div>
+                                                <img class="shrink-0 avatar size-60p"
+                                                    src="./assets/images/users/avatar3.png" alt="user" />
+                                            </div>
+                                        </div>
+                                        <!-- recive message -->
+                                        <div class="flex justify-start">
+                                            <div class="flex sm:items-end max-sm:flex-col gap-x-30p gap-y-20p">
+                                                <img class="shrink-0 avatar size-60p"
+                                                    src="./assets/images/users/avatar1.png" alt="user" />
+                                                <div class="flex sm:items-end max-sm:flex-col gap-x-30p gap-y-20p">
+                                                    <div
+                                                        class="p-24p bg-glass-1 rounded-t-3xl rounded-br-3xl text-base text-w-neutral-3 max-w-[566px]">
+                                                        <p>
+                                                            Whether you're seeking a gentle
+                                                        </p>
+                                                    </div>
+                                                    <span class="shrink-0 text-base text-w-neutral-4 ">
+                                                        3:15 PM
+                                                    </span>
+                                                </div>
+                                            </div>
+                                        </div>
+                                        <!-- send message -->
+                                        <div class="flex justify-end">
+                                            <div class="flex max-sm:flex-col-reverse items-end gap-x-30p gap-y-20p">
+                                                <div class="flex items-end max-sm:flex-col-reverse gap-x-30p gap-y-20p">
+                                                    <span class="shrink-0 text-base text-w-neutral-4">
+                                                        3:16 PM
+                                                    </span>
+                                                    <div
+                                                        class="p-24p bg-glass-8 rounded-t-3xl rounded-bl-3xl text-base text-w-neutral-3 max-w-[566px]">
+                                                        <p>
+                                                            Your comfort and well-being are of utmost importance to
+                                                            us.
+                                                            If
+                                                            you have any health concerns or specific needs,
+                                                        </p>
+                                                    </div>
+                                                </div>
+                                                <img class="shrink-0 avatar size-60p"
+                                                    src="./assets/images/users/avatar3.png" alt="user" />
+                                            </div>
+                                        </div>
+                                        <!-- recive message -->
+                                        <div class="flex justify-start">
+                                            <div class="flex sm:items-end max-sm:flex-col gap-x-30p gap-y-20p">
+                                                <img class="shrink-0 avatar size-60p"
+                                                    src="./assets/images/users/avatar1.png" alt="user" />
+                                                <div class="flex sm:items-end max-sm:flex-col gap-x-30p gap-y-20p">
+                                                    <div
+                                                        class="p-24p bg-glass-1 rounded-t-3xl rounded-br-3xl text-base text-w-neutral-3 max-w-[566px]">
+                                                        <p>
+                                                            Soothing music, and the aroma of essential oils all
+                                                            contribute
+                                                            to enhancing your massage experience.
+                                                        </p>
+                                                    </div>
+                                                    <span class="shrink-0 text-base text-w-neutral-4 ">
+                                                        3:15 PM
+                                                    </span>
+                                                </div>
+                                            </div>
+                                        </div>
+                                        <!-- send message -->
+                                        <div class="flex justify-end">
+                                            <div class="flex max-sm:flex-col-reverse items-end gap-x-30p gap-y-20p">
+                                                <div class="flex items-end max-sm:flex-col-reverse gap-x-30p gap-y-20p">
+                                                    <span class="shrink-0 text-base text-w-neutral-4">
+                                                        3:16 PM
+                                                    </span>
+                                                    <div
+                                                        class="p-24p bg-glass-8 rounded-t-3xl rounded-bl-3xl text-base text-w-neutral-3 max-w-[566px]">
+                                                        <p>
+                                                            Thank You
+                                                        </p>
+                                                    </div>
+                                                </div>
+                                                <img class="shrink-0 avatar size-60p"
+                                                    src="./assets/images/users/avatar3.png" alt="user" />
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                                <form class="p-30p flex items-center justify-between gap-20p border-t border-shap">
+                                    <input class="placeholder:text-w-neutral-1 bg-transparent" type="text"
+                                        placeholder="Type Your message here....." />
+                                    <div class="flex-y gap-x-24p">
+                                        <button type="button" class="icon-24 text-w-neutral-1">
+                                            <i class="ti ti-link"></i>
+                                        </button>
+                                        <button type="button" class="icon-24 text-w-neutral-1">
+                                            <i class="ti ti-mood-smile"></i>
+                                        </button>
+                                        <button type="button" class="size-40p icon-24 btn-primary rounded-12">
+                                            <i class="ti ti-send"></i>
+                                        </button>
+                                    </div>
+                                </form>
+                            </div>
+                            <!-- inbox message end -->
+                        </div>
+                    </div>
+                </div>
+            </section>
+            <!-- chats section end -->
+
+        </main>
+        <!-- main end -->
+
+        <!-- footer start -->
+        <include-footer />
+        <!-- footer end -->
+    </div>
+    <!-- app layout end -->
+
+
+</body>
+
+</html>

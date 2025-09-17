@@ -1,0 +1,413 @@
+<!DOCTYPE html>
+<html dir="ltr" lang="en">
+
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="shortcut icon" href="./assets/images/icons/favicon.ico" type="image/x-icon" />
+    <title>GameCo - HTML Tailwind CSS</title>
+</head>
+
+<body>
+
+    <!-- preloader start -->
+    <include-preloader />
+    <!-- preloader end -->
+
+    <!-- scroll to top button start -->
+    <include-scrollToTop />
+    <!-- scroll to top button end -->
+
+    <!-- header start -->
+    <include-navbar />
+    <!-- header end -->
+
+    <!-- sidebar start -->
+    <include-left-right-sidebar />
+    <!-- sidebar end -->
+
+    <!-- app layout start -->
+    <div class="app-layout">
+
+        <!-- main start -->
+        <main>
+
+            <!-- group details section start -->
+            <section class="section-pb pt-30 overflow-visible">
+                <div class="container">
+                    <div class="grid grid-cols-12 gap-x-30p gap-y-10">
+                        <div class="4xl:col-span-9 xxl:col-span-8 col-span-12">
+                            <div>
+
+                                <include-group-header />
+
+                                <!-- group details members tab start -->
+                                <div
+                                    class="pt-8 grid 4xl:grid-cols-3 xxl:grid-cols-2 md:grid-cols-2 grid-cols-1 gap-24p">
+
+                                    <!-- Members 1 -->
+                                    <div
+                                        class="bg-b-neutral-3 rounded-12 p-32p border border-transparent hover:border-accent-7 group transition-1">
+                                        <div class="flex items-start justify-between gap-24p mb-16p">
+                                            <div class="flex-y flex-wrap gap-3">
+                                                <img class="avatar size-60p" src="./assets/images/users/user1.png"
+                                                    alt="team" />
+                                                <div>
+                                                    <a href="./group-home.html"
+                                                        class="text-xl-medium text-w-neutral-1 link-1">Inferno
+                                                        Aces</a>
+                                                    <span class="text-m-medium text-w-neutral-3">Joined 7 h
+                                                        ago</span>
+                                                </div>
+                                            </div>
+                                            <button class="btn-c btn-c-md btn-c-outline-primary shrink-0">
+                                                <i class="ti ti-user-plus"></i>
+                                            </button>
+                                        </div>
+
+                                        <div
+                                            class="flex-y flex-wrap justify-between gap-24p pt-16p border-t border-t-shap">
+                                            <h5 class="text-xl-medium text-w-neutral-1">
+                                                Friends
+                                            </h5>
+                                            <div
+                                                class="flex items-center *:size-9 *:shrink-0 *:border *:border-white *:-ml-3 ml-3">
+                                                <img class="avatar" src="./assets/images/users/user1.png" alt="user" />
+                                                <img class="avatar" src="./assets/images/users/user2.png" alt="user" />
+                                                <img class="avatar" src="./assets/images/users/user3.png" alt="user" />
+                                                <img class="avatar" src="./assets/images/users/user4.png" alt="user" />
+                                                <span
+                                                    class="flex-c rounded-full bg-[#333333] text-xs text-w-neutral-1 z-[1] relative">+30</span>
+                                            </div>
+                                        </div>
+                                    </div>
+
+                                    <!-- Members 2 -->
+                                    <div
+                                        class="bg-b-neutral-3 rounded-12 p-32p border border-transparent hover:border-accent-7 group transition-1">
+                                        <div class="flex items-start justify-between gap-24p mb-16p">
+                                            <div class="flex-y flex-wrap gap-3">
+                                                <img class="avatar size-60p" src="./assets/images/users/user2.png"
+                                                    alt="team" />
+                                                <div>
+                                                    <a href="./group-home.html"
+                                                        class="text-xl-medium text-w-neutral-1 link-1">Shadow
+                                                        Knights</a>
+                                                    <span class="text-m-medium text-w-neutral-3">Joined 12 h
+                                                        ago</span>
+                                                </div>
+                                            </div>
+                                            <button class="btn-c btn-c-md btn-c-outline-primary shrink-0">
+                                                <i class="ti ti-user-plus"></i>
+                                            </button>
+                                        </div>
+
+                                        <div
+                                            class="flex-y flex-wrap justify-between gap-24p pt-16p border-t border-t-shap">
+                                            <h5 class="text-xl-medium text-w-neutral-1">
+                                                Friends
+                                            </h5>
+                                            <div
+                                                class="flex items-center *:size-9 *:shrink-0 *:border *:border-white *:-ml-3 ml-3">
+                                                <img class="avatar" src="./assets/images/users/user2.png" alt="user" />
+                                                <img class="avatar" src="./assets/images/users/user3.png" alt="user" />
+                                                <img class="avatar" src="./assets/images/users/user4.png" alt="user" />
+                                                <img class="avatar" src="./assets/images/users/user5.png" alt="user" />
+                                                <span
+                                                    class="flex-c rounded-full bg-[#333333] text-xs text-w-neutral-1 z-[1] relative">+45</span>
+                                            </div>
+                                        </div>
+                                    </div>
+
+                                    <!-- Members 3 -->
+                                    <div
+                                        class="bg-b-neutral-3 rounded-12 p-32p border border-transparent hover:border-accent-7 group transition-1">
+                                        <div class="flex items-start justify-between gap-24p mb-16p">
+                                            <div class="flex-y flex-wrap gap-3">
+                                                <img class="avatar size-60p" src="./assets/images/users/user3.png"
+                                                    alt="team" />
+                                                <div>
+                                                    <a href="./group-home.html"
+                                                        class="text-xl-medium text-w-neutral-1 link-1">Crimson
+                                                        Flames</a>
+                                                    <span class="text-m-medium text-w-neutral-3">Joined 2 d
+                                                        ago</span>
+                                                </div>
+                                            </div>
+                                            <button class="btn-c btn-c-md btn-c-outline-primary shrink-0">
+                                                <i class="ti ti-user-plus"></i>
+                                            </button>
+                                        </div>
+
+                                        <div
+                                            class="flex-y flex-wrap justify-between gap-24p pt-16p border-t border-t-shap">
+                                            <h5 class="text-xl-medium text-w-neutral-1">
+                                                Friends
+                                            </h5>
+                                            <div
+                                                class="flex items-center *:size-9 *:shrink-0 *:border *:border-white *:-ml-3 ml-3">
+                                                <img class="avatar" src="./assets/images/users/user3.png" alt="user" />
+                                                <img class="avatar" src="./assets/images/users/user4.png" alt="user" />
+                                                <img class="avatar" src="./assets/images/users/user5.png" alt="user" />
+                                                <img class="avatar" src="./assets/images/users/user6.png" alt="user" />
+                                                <span
+                                                    class="flex-c rounded-full bg-[#333333] text-xs text-w-neutral-1 z-[1] relative">+20</span>
+                                            </div>
+                                        </div>
+                                    </div>
+
+                                    <!-- Members 4 -->
+                                    <div
+                                        class="bg-b-neutral-3 rounded-12 p-32p border border-transparent hover:border-accent-7 group transition-1">
+                                        <div class="flex items-start justify-between gap-24p mb-16p">
+                                            <div class="flex-y flex-wrap gap-3">
+                                                <img class="avatar size-60p" src="./assets/images/users/user4.png"
+                                                    alt="team" />
+                                                <div>
+                                                    <a href="./group-home.html"
+                                                        class="text-xl-medium text-w-neutral-1 link-1">Blue
+                                                        Phoenix</a>
+                                                    <span class="text-m-medium text-w-neutral-3">Joined 1 w
+                                                        ago</span>
+                                                </div>
+                                            </div>
+                                            <button class="btn-c btn-c-md btn-c-outline-primary shrink-0">
+                                                <i class="ti ti-user-plus"></i>
+                                            </button>
+                                        </div>
+
+                                        <div
+                                            class="flex-y flex-wrap justify-between gap-24p pt-16p border-t border-t-shap">
+                                            <h5 class="text-xl-medium text-w-neutral-1">
+                                                Friends
+                                            </h5>
+                                            <div
+                                                class="flex items-center *:size-9 *:shrink-0 *:border *:border-white *:-ml-3 ml-3">
+                                                <img class="avatar" src="./assets/images/users/user4.png" alt="user" />
+                                                <img class="avatar" src="./assets/images/users/user5.png" alt="user" />
+                                                <img class="avatar" src="./assets/images/users/user6.png" alt="user" />
+                                                <img class="avatar" src="./assets/images/users/user7.png" alt="user" />
+                                                <span
+                                                    class="flex-c rounded-full bg-[#333333] text-xs text-w-neutral-1 z-[1] relative">+15</span>
+                                            </div>
+                                        </div>
+                                    </div>
+
+                                    <!-- Members 5 -->
+                                    <div
+                                        class="bg-b-neutral-3 rounded-12 p-32p border border-transparent hover:border-accent-7 group transition-1">
+                                        <div class="flex items-start justify-between gap-24p mb-16p">
+                                            <div class="flex-y flex-wrap gap-3">
+                                                <img class="avatar size-60p" src="./assets/images/users/user5.png"
+                                                    alt="team" />
+                                                <div>
+                                                    <a href="./group-home.html"
+                                                        class="text-xl-medium text-w-neutral-1 link-1">Silver
+                                                        Wolves</a>
+                                                    <span class="text-m-medium text-w-neutral-3">Joined 3 h
+                                                        ago</span>
+                                                </div>
+                                            </div>
+                                            <button class="btn-c btn-c-md btn-c-outline-primary shrink-0">
+                                                <i class="ti ti-user-plus"></i>
+                                            </button>
+                                        </div>
+
+                                        <div
+                                            class="flex-y flex-wrap justify-between gap-24p pt-16p border-t border-t-shap">
+                                            <h5 class="text-xl-medium text-w-neutral-1">
+                                                Friends
+                                            </h5>
+                                            <div
+                                                class="flex items-center *:size-9 *:shrink-0 *:border *:border-white *:-ml-3 ml-3">
+                                                <img class="avatar" src="./assets/images/users/user5.png" alt="user" />
+                                                <img class="avatar" src="./assets/images/users/user6.png" alt="user" />
+                                                <img class="avatar" src="./assets/images/users/user7.png" alt="user" />
+                                                <img class="avatar" src="./assets/images/users/user8.png" alt="user" />
+                                                <span
+                                                    class="flex-c rounded-full bg-[#333333] text-xs text-w-neutral-1 z-[1] relative">+40</span>
+                                            </div>
+                                        </div>
+                                    </div>
+
+                                    <!-- Members 6 -->
+                                    <div
+                                        class="bg-b-neutral-3 rounded-12 p-32p border border-transparent hover:border-accent-7 group transition-1">
+                                        <div class="flex items-start justify-between gap-24p mb-16p">
+                                            <div class="flex-y flex-wrap gap-3">
+                                                <img class="avatar size-60p" src="./assets/images/users/user6.png"
+                                                    alt="team" />
+                                                <div>
+                                                    <a href="./group-home.html"
+                                                        class="text-xl-medium text-w-neutral-1 link-1">Golden
+                                                        Eagles</a>
+                                                    <span class="text-m-medium text-w-neutral-3">Joined 5 d
+                                                        ago</span>
+                                                </div>
+                                            </div>
+                                            <button class="btn-c btn-c-md btn-c-outline-primary shrink-0">
+                                                <i class="ti ti-user-plus"></i>
+                                            </button>
+                                        </div>
+
+                                        <div
+                                            class="flex-y flex-wrap justify-between gap-24p pt-16p border-t border-t-shap">
+                                            <h5 class="text-xl-medium text-w-neutral-1">
+                                                Friends
+                                            </h5>
+                                            <div
+                                                class="flex items-center *:size-9 *:shrink-0 *:border *:border-white *:-ml-3 ml-3">
+                                                <img class="avatar" src="./assets/images/users/user6.png" alt="user" />
+                                                <img class="avatar" src="./assets/images/users/user7.png" alt="user" />
+                                                <img class="avatar" src="./assets/images/users/user8.png" alt="user" />
+                                                <img class="avatar" src="./assets/images/users/user9.png" alt="user" />
+                                                <span
+                                                    class="flex-c rounded-full bg-[#333333] text-xs text-w-neutral-1 z-[1] relative">+18</span>
+                                            </div>
+                                        </div>
+                                    </div>
+
+                                    <!-- Members 7 -->
+                                    <div
+                                        class="bg-b-neutral-3 rounded-12 p-32p border border-transparent hover:border-accent-7 group transition-1">
+                                        <div class="flex items-start justify-between gap-24p mb-16p">
+                                            <div class="flex-y flex-wrap gap-3">
+                                                <img class="avatar size-60p" src="./assets/images/users/user7.png"
+                                                    alt="team" />
+                                                <div>
+                                                    <a href="./group-home.html"
+                                                        class="text-xl-medium text-w-neutral-1 link-1">Iron
+                                                        Titans</a>
+                                                    <span class="text-m-medium text-w-neutral-3">Joined 2 w
+                                                        ago</span>
+                                                </div>
+                                            </div>
+                                            <button class="btn-c btn-c-md btn-c-outline-primary shrink-0">
+                                                <i class="ti ti-user-plus"></i>
+                                            </button>
+                                        </div>
+
+                                        <div
+                                            class="flex-y flex-wrap justify-between gap-24p pt-16p border-t border-t-shap">
+                                            <h5 class="text-xl-medium text-w-neutral-1">
+                                                Friends
+                                            </h5>
+                                            <div
+                                                class="flex items-center *:size-9 *:shrink-0 *:border *:border-white *:-ml-3 ml-3">
+                                                <img class="avatar" src="./assets/images/users/user7.png" alt="user" />
+                                                <img class="avatar" src="./assets/images/users/user8.png" alt="user" />
+                                                <img class="avatar" src="./assets/images/users/user9.png" alt="user" />
+                                                <img class="avatar" src="./assets/images/users/user1.png" alt="user" />
+                                                <span
+                                                    class="flex-c rounded-full bg-[#333333] text-xs text-w-neutral-1 z-[1] relative">+25</span>
+                                            </div>
+                                        </div>
+                                    </div>
+
+                                    <!-- Members 8 -->
+                                    <div
+                                        class="bg-b-neutral-3 rounded-12 p-32p border border-transparent hover:border-accent-7 group transition-1">
+                                        <div class="flex items-start justify-between gap-24p mb-16p">
+                                            <div class="flex-y flex-wrap gap-3">
+                                                <img class="avatar size-60p" src="./assets/images/users/user8.png"
+                                                    alt="team" />
+                                                <div>
+                                                    <a href="./group-home.html"
+                                                        class="text-xl-medium text-w-neutral-1 link-1">Emerald
+                                                        Dragons</a>
+                                                    <span class="text-m-medium text-w-neutral-3">Joined 4 w
+                                                        ago</span>
+                                                </div>
+                                            </div>
+                                            <button class="btn-c btn-c-md btn-c-outline-primary shrink-0">
+                                                <i class="ti ti-user-plus"></i>
+                                            </button>
+                                        </div>
+
+                                        <div
+                                            class="flex-y flex-wrap justify-between gap-24p pt-16p border-t border-t-shap">
+                                            <h5 class="text-xl-medium text-w-neutral-1">
+                                                Friends
+                                            </h5>
+                                            <div
+                                                class="flex items-center *:size-9 *:shrink-0 *:border *:border-white *:-ml-3 ml-3">
+                                                <img class="avatar" src="./assets/images/users/user8.png" alt="user" />
+                                                <img class="avatar" src="./assets/images/users/user9.png" alt="user" />
+                                                <img class="avatar" src="./assets/images/users/user1.png" alt="user" />
+                                                <img class="avatar" src="./assets/images/users/user2.png" alt="user" />
+                                                <span
+                                                    class="flex-c rounded-full bg-[#333333] text-xs text-w-neutral-1 z-[1] relative">+12</span>
+                                            </div>
+                                        </div>
+                                    </div>
+
+                                    <!-- Members 9 -->
+                                    <div
+                                        class="bg-b-neutral-3 rounded-12 p-32p border border-transparent hover:border-accent-7 group transition-1">
+                                        <div class="flex items-start justify-between gap-24p mb-16p">
+                                            <div class="flex-y flex-wrap gap-3">
+                                                <img class="avatar size-60p" src="./assets/images/users/user9.png"
+                                                    alt="team" />
+                                                <div>
+                                                    <a href="./group-home.html"
+                                                        class="text-xl-medium text-w-neutral-1 link-1">Obsidian
+                                                        Storm</a>
+                                                    <span class="text-m-medium text-w-neutral-3">Joined 1 m
+                                                        ago</span>
+                                                </div>
+                                            </div>
+                                            <button class="btn-c btn-c-md btn-c-outline-primary shrink-0">
+                                                <i class="ti ti-user-plus"></i>
+                                            </button>
+                                        </div>
+
+                                        <div
+                                            class="flex-y flex-wrap justify-between gap-24p pt-16p border-t border-t-shap">
+                                            <h5 class="text-xl-medium text-w-neutral-1">
+                                                Friends
+                                            </h5>
+                                            <div
+                                                class="flex items-center *:size-9 *:shrink-0 *:border *:border-white *:-ml-3 ml-3">
+                                                <img class="avatar" src="./assets/images/users/user9.png" alt="user" />
+                                                <img class="avatar" src="./assets/images/users/user1.png" alt="user" />
+                                                <img class="avatar" src="./assets/images/users/user2.png" alt="user" />
+                                                <img class="avatar" src="./assets/images/users/user3.png" alt="user" />
+                                                <span
+                                                    class="flex-c rounded-full bg-[#333333] text-xs text-w-neutral-1 z-[1] relative">+50</span>
+                                            </div>
+                                        </div>
+                                    </div>
+
+                                </div>
+
+                                <div class="flex-c mt-48p">
+                                    <a href="#" class="btn btn-xl py-3 btn-primary rounded-12">
+                                        Load More...
+                                    </a>
+                                </div>
+                                <!-- group details members tab end -->
+                            </div>
+                        </div>
+                        <div class="4xl:col-span-3 xxl:col-span-4 col-span-12 relative">
+                            <div class="xxl:sticky xxl:top-30">
+                                <include-right-aside-one />
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </section>
+            <!-- group details section end -->
+
+        </main>
+        <!-- main end -->
+
+        <!-- footer start -->
+        <include-footer />
+        <!-- footer end -->
+    </div>
+    <!-- app layout end -->
+
+
+</body>
+
+</html>

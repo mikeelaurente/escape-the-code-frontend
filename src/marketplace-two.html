@@ -1,0 +1,1372 @@
+<!DOCTYPE html>
+<html dir="ltr" lang="en">
+
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="shortcut icon" href="./assets/images/icons/favicon.ico" type="image/x-icon" />
+    <title>GameCo - HTML Tailwind CSS</title>
+</head>
+
+<body>
+
+    <!-- preloader start -->
+    <include-preloader />
+    <!-- preloader end -->
+
+    <!-- scroll to top button start -->
+    <include-scrollToTop />
+    <!-- scroll to top button end -->
+
+    <!-- header start -->
+    <include-navbar />
+    <!-- header end -->
+
+    <!-- sidebar start -->
+    <include-left-right-sidebar />
+    <!-- sidebar end -->
+
+    <!-- app layout start -->
+    <div class="app-layout">
+
+        <!-- main start -->
+        <main>
+
+            <!-- breadcrumb start -->
+            <section class="pt-30p">
+                <div class="section-pt">
+                    <div
+                        class="relative bg-[url('../images/photos/breadcrumbImg.png')] bg-cover bg-no-repeat rounded-24 overflow-hidden">
+                        <div class="container">
+                            <div class="grid grid-cols-12 gap-30p relative xl:py-[130px] md:py-30 sm:py-25 py-20 z-[2]">
+                                <div class="lg:col-start-2 lg:col-end-12 col-span-12">
+                                    <h2 class="heading-2 text-w-neutral-1 mb-3">
+                                        Marketplace
+                                    </h2>
+                                    <ul class="breadcrumb">
+                                        <li class="breadcrumb-item">
+                                            <a href="#" class="breadcrumb-link">
+                                                Home
+                                            </a>
+                                        </li>
+                                        <li class="breadcrumb-item">
+                                            <span class="breadcrumb-icon">
+                                                <i class="ti ti-chevrons-right"></i>
+                                            </span>
+                                        </li>
+                                        <li class="breadcrumb-item">
+                                            <span class="breadcrumb-current">Marketplace</span>
+                                        </li>
+                                    </ul>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="overlay-11"></div>
+                    </div>
+                </div>
+            </section>
+            <!-- breadcrumb end -->
+
+            <!-- marketplace section start -->
+            <section class="section-pb pt-60p">
+                <div class="container">
+                    <h2 class="heading-2 text-w-neutral-1 mb-40p">
+                        Browse Marketplace
+                    </h2>
+                    <div x-data="{ activeTab: 1 }">
+                        <div class="flex items-center justify-between flex-wrap gap-24p pb-30p border-b border-shap">
+                            <form class="select-1 shrink-0">
+                                <select class="select w-full sm:py-3 py-2 px-24p rounded-full">
+                                    <option value="popular">Popular</option>
+                                    <option value="new-releases">New Releases</option>
+                                    <option value="price-low">Price Low to High</option>
+                                    <option value="price-high">Price High to Low</option>
+                                    <option value="best-sellers">Best Sellers</option>
+                                    <option value="a-z">A - Z</option>
+                                    <option value="z-a">Z - A</option>
+                                </select>
+                            </form>
+                            <div
+                                class="flex items-center max-sm:justify-center overflow-x-auto scrollbar-0 max-w-[680px] ">
+                                <div
+                                    class="flex flex-wrap gap-2 text-base text-w-neutral-1 *:rounded-12 *:px-32p *:py-3 whitespace-nowrap">
+                                    <button @click="activeTab = 1"
+                                        :class="activeTab == 1 ? 'bg-b-neutral-2' : 'bg-b-neutral-3'">
+                                        All
+                                    </button>
+                                    <button @click="activeTab = 2"
+                                        :class="activeTab == 2 ? 'bg-b-neutral-2' : 'bg-b-neutral-3' ">
+                                        Heroes
+                                    </button>
+                                    <button @click="activeTab = 3"
+                                        :class="activeTab == 3 ? 'bg-b-neutral-2' : 'bg-b-neutral-3' ">
+                                        Swords
+                                    </button>
+                                    <button @click="activeTab = 4"
+                                        :class="activeTab == 4 ? 'bg-b-neutral-2' : 'bg-b-neutral-3' ">
+                                        Boosts
+                                    </button>
+                                    <button @click="activeTab = 5"
+                                        :class="activeTab == 5 ? 'bg-b-neutral-2' : 'bg-b-neutral-3' ">
+                                        Battle Arenas
+                                    </button>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="mt-60p">
+                            <div x-show="activeTab == 1" x-transition>
+                                <div class="grid 3xl:grid-cols-4 xl:grid-cols-3 md:grid-cols-2 grid-cols-1 gap-30p">
+
+                                    <div class="relative bg-b-neutral-3 rounded-24 group overflow-hidden w-full h-full "
+                                        data-aos="zoom-in">
+                                        <div class="overflow-hidden">
+                                            <span class="badge badge-neutral absolute top-3 left-3 z-10">
+                                                <i class="avatar avatar-primary size-3"></i>
+                                                <span class="text-s-regular text-w-neutral-1">Heroes</span>
+                                            </span>
+                                            <img src="./assets/images/marketplaces/marketplace5.png"
+                                                class="w-full 3xl:h-[310px] xl:h-[280px] lg:h-[260px] h-[240px] object-cover object-top group-hover:scale-110 group-hover:rotate-2 transition-1"
+                                                alt="Playing Valorant" />
+                                        </div>
+                                        <div class="p-28p">
+                                            <a href="./marketplace-details.html"
+                                                class="heading-3 link-1 mb-2 line-clamp-1">Playing
+                                                Valorant</a>
+                                            <p class="text-l-regular text-w-neutral-2">
+                                                Starting at $ <span class="span">7.00</span>
+                                            </p>
+                                            <div class="flex-y gap-2 my-24p">
+                                                <div class="flex-y gap-1 text-primary icon-24">
+                                                    <i class="ti ti-star-filled"></i>
+                                                    <i class="ti ti-star-filled"></i>
+                                                    <i class="ti ti-star-filled"></i>
+                                                    <i class="ti ti-star-filled"></i>
+                                                    <i class="ti ti-star-half-filled"></i>
+                                                </div>
+                                                <p class="text-base text-w-neutral-1">4.9 (120)</p>
+                                            </div>
+                                            <div class="flex-y flex-wrap gap-3">
+                                                <img class="size-60p rounded-full shrink-0"
+                                                    src="./assets/images/users/user5.png" alt="David Liu" />
+                                                <div>
+                                                    <a href="./profile.html"
+                                                        class="flex-y gap-2 text-l-medium link-1 text-w-neutral-1 mb-1">
+                                                        <span>David Liu</span>
+                                                        <i class="ti ti-circle-check-filled text-secondary icon-24"></i>
+                                                    </a>
+                                                    <span class="text-s-medium text-w-neutral-3">Leader</span>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+
+                                    <div class="relative bg-b-neutral-3 rounded-24 group overflow-hidden w-full h-full "
+                                        data-aos="zoom-in">
+                                        <div class="overflow-hidden">
+                                            <span class="badge badge-neutral absolute top-3 left-3 z-10">
+                                                <i class="avatar avatar-primary size-3"></i>
+                                                <span class="text-s-regular text-w-neutral-1">Heroes</span>
+                                            </span>
+                                            <img src="./assets/images/marketplaces/marketplace6.png"
+                                                class="w-full 3xl:h-[310px] xl:h-[280px] lg:h-[260px] h-[240px] object-cover object-top group-hover:scale-110 group-hover:rotate-2 transition-1"
+                                                alt="Mastering Mindset" />
+                                        </div>
+                                        <div class="p-28p">
+                                            <a href="./marketplace-details.html"
+                                                class="heading-3 link-1 mb-2 line-clamp-1">Mastering
+                                                Mindset</a>
+                                            <p class="text-l-regular text-w-neutral-2">
+                                                Starting at $ <span class="span">7.00</span>
+                                            </p>
+                                            <div class="flex-y gap-2 my-24p">
+                                                <div class="flex-y gap-1 text-primary icon-24">
+                                                    <i class="ti ti-star-filled"></i>
+                                                    <i class="ti ti-star-filled"></i>
+                                                    <i class="ti ti-star-filled"></i>
+                                                    <i class="ti ti-star-filled"></i>
+                                                    <i class="ti ti-star-half-filled"></i>
+                                                </div>
+                                                <p class="text-base text-w-neutral-1">4.6 (87)</p>
+                                            </div>
+                                            <div class="flex-y flex-wrap gap-3">
+                                                <img class="size-60p rounded-full shrink-0"
+                                                    src="./assets/images/users/user6.png" alt="Mia Lee" />
+                                                <div>
+                                                    <a href="./profile.html"
+                                                        class="flex-y gap-2 text-l-medium link-1 text-w-neutral-1 mb-1">
+                                                        <span>Mia Lee</span>
+                                                        <i class="ti ti-circle-check-filled text-secondary icon-24"></i>
+                                                    </a>
+                                                    <span class="text-s-medium text-w-neutral-3">Writer</span>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+
+                                    <div class="relative bg-b-neutral-3 rounded-24 group overflow-hidden w-full h-full "
+                                        data-aos="zoom-in">
+                                        <div class="overflow-hidden">
+                                            <span class="badge badge-neutral absolute top-3 left-3 z-10">
+                                                <i class="avatar avatar-primary size-3"></i>
+                                                <span class="text-s-regular text-w-neutral-1">Heroes</span>
+                                            </span>
+                                            <img src="./assets/images/marketplaces/marketplace7.png"
+                                                class="w-full 3xl:h-[310px] xl:h-[280px] lg:h-[260px] h-[240px] object-cover object-top group-hover:scale-110 group-hover:rotate-2 transition-1"
+                                                alt="Beyond Limits" />
+                                        </div>
+                                        <div class="p-28p">
+                                            <a href="./marketplace-details.html"
+                                                class="heading-3 link-1 mb-2 line-clamp-1">Beyond
+                                                Limits</a>
+                                            <p class="text-l-regular text-w-neutral-2">
+                                                Starting at $ <span class="span">7.00</span>
+                                            </p>
+                                            <div class="flex-y gap-2 my-24p">
+                                                <div class="flex-y gap-1 text-primary icon-24">
+                                                    <i class="ti ti-star-filled"></i>
+                                                    <i class="ti ti-star-filled"></i>
+                                                    <i class="ti ti-star-filled"></i>
+                                                    <i class="ti ti-star-filled"></i>
+                                                    <i class="ti ti-star-half-filled"></i>
+                                                </div>
+                                                <p class="text-base text-w-neutral-1">4.8 (105)</p>
+                                            </div>
+                                            <div class="flex-y flex-wrap gap-3">
+                                                <img class="size-60p rounded-full shrink-0"
+                                                    src="./assets/images/users/user7.png" alt="John Maxwell" />
+                                                <div>
+                                                    <a href="./profile.html"
+                                                        class="flex-y gap-2 text-l-medium link-1 text-w-neutral-1 mb-1">
+                                                        <span>John Maxwell</span>
+                                                        <i class="ti ti-circle-check-filled text-secondary icon-24"></i>
+                                                    </a>
+                                                    <span class="text-s-medium text-w-neutral-3">Leader</span>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+
+                                    <div class="relative bg-b-neutral-3 rounded-24 group overflow-hidden w-full h-full "
+                                        data-aos="zoom-in">
+                                        <div class="overflow-hidden">
+                                            <span class="badge badge-neutral absolute top-3 left-3 z-10">
+                                                <i class="avatar avatar-primary size-3"></i>
+                                                <span class="text-s-regular text-w-neutral-1">Heroes</span>
+                                            </span>
+                                            <img src="./assets/images/marketplaces/marketplace8.png"
+                                                class="w-full 3xl:h-[310px] xl:h-[280px] lg:h-[260px] h-[240px] object-cover object-top group-hover:scale-110 group-hover:rotate-2 transition-1"
+                                                alt="Building Resilience" />
+                                        </div>
+                                        <div class="p-28p">
+                                            <a href="./marketplace-details.html"
+                                                class="heading-3 link-1 mb-2 line-clamp-1">Building
+                                                Resilience</a>
+                                            <p class="text-l-regular text-w-neutral-2">
+                                                Starting at $ <span class="span">7.00</span>
+                                            </p>
+                                            <div class="flex-y gap-2 my-24p">
+                                                <div class="flex-y gap-1 text-primary icon-24">
+                                                    <i class="ti ti-star-filled"></i>
+                                                    <i class="ti ti-star-filled"></i>
+                                                    <i class="ti ti-star-filled"></i>
+                                                    <i class="ti ti-star-filled"></i>
+                                                    <i class="ti ti-star-half-filled"></i>
+                                                </div>
+                                                <p class="text-base text-w-neutral-1">4.7 (98)</p>
+                                            </div>
+                                            <div class="flex-y flex-wrap gap-3">
+                                                <img class="size-60p rounded-full shrink-0"
+                                                    src="./assets/images/users/user9.png" alt="Sophia Carter" />
+                                                <div>
+                                                    <a href="./profile.html"
+                                                        class="flex-y gap-2 text-l-medium link-1 text-w-neutral-1 mb-1">
+                                                        <span>Sophia Carter</span>
+                                                        <i class="ti ti-circle-check-filled text-secondary icon-24"></i>
+                                                    </a>
+                                                    <span class="text-s-medium text-w-neutral-3">Mentor</span>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+
+                                    <div class="relative bg-b-neutral-3 rounded-24 group overflow-hidden w-full h-full "
+                                        data-aos="zoom-in">
+                                        <div class="overflow-hidden">
+                                            <span class="badge badge-neutral absolute top-3 left-3 z-10">
+                                                <i class="avatar avatar-primary size-3"></i>
+                                                <span class="text-s-regular text-w-neutral-1">Heroes</span>
+                                            </span>
+                                            <img src="./assets/images/marketplaces/marketplace9.png"
+                                                class="w-full 3xl:h-[310px] xl:h-[280px] lg:h-[260px] h-[240px] object-cover object-top group-hover:scale-110 group-hover:rotate-2 transition-1"
+                                                alt="Path to Growth" />
+                                        </div>
+                                        <div class="p-28p">
+                                            <a href="./marketplace-details.html"
+                                                class="heading-3 link-1 mb-2 line-clamp-1">Path to
+                                                Growth</a>
+                                            <p class="text-l-regular text-w-neutral-2">
+                                                Starting at $ <span class="span">7.00</span>
+                                            </p>
+                                            <div class="flex-y gap-2 my-24p">
+                                                <div class="flex-y gap-1 text-primary icon-24">
+                                                    <i class="ti ti-star-filled"></i>
+                                                    <i class="ti ti-star-filled"></i>
+                                                    <i class="ti ti-star-filled"></i>
+                                                    <i class="ti ti-star-filled"></i>
+                                                    <i class="ti ti-star-half-filled"></i>
+                                                </div>
+                                                <p class="text-base text-w-neutral-1">4.8 (110)</p>
+                                            </div>
+                                            <div class="flex-y flex-wrap gap-3">
+                                                <img class="size-60p rounded-full shrink-0"
+                                                    src="./assets/images/users/user10.png" alt="Ethan Jones" />
+                                                <div>
+                                                    <a href="./profile.html"
+                                                        class="flex-y gap-2 text-l-medium link-1 text-w-neutral-1 mb-1">
+                                                        <span>Ethan Jones</span>
+                                                        <i class="ti ti-circle-check-filled text-secondary icon-24"></i>
+                                                    </a>
+                                                    <span class="text-s-medium text-w-neutral-3">Trainer</span>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+
+                                    <div class="relative bg-b-neutral-3 rounded-24 group overflow-hidden w-full h-full "
+                                        data-aos="zoom-in">
+                                        <div class="overflow-hidden">
+                                            <span class="badge badge-neutral absolute top-3 left-3 z-10">
+                                                <i class="avatar avatar-primary size-3"></i>
+                                                <span class="text-s-regular text-w-neutral-1">Heroes</span>
+                                            </span>
+                                            <img src="./assets/images/marketplaces/marketplace10.png"
+                                                class="w-full 3xl:h-[310px] xl:h-[280px] lg:h-[260px] h-[240px] object-cover object-top group-hover:scale-110 group-hover:rotate-2 transition-1"
+                                                alt="Mind Over Matter" />
+                                        </div>
+                                        <div class="p-28p">
+                                            <a href="./marketplace-details.html"
+                                                class="heading-3 link-1 mb-2 line-clamp-1">Mind
+                                                Over Matter</a>
+                                            <p class="text-l-regular text-w-neutral-2">
+                                                Starting at $ <span class="span">7.00</span>
+                                            </p>
+                                            <div class="flex-y gap-2 my-24p">
+                                                <div class="flex-y gap-1 text-primary icon-24">
+                                                    <i class="ti ti-star-filled"></i>
+                                                    <i class="ti ti-star-filled"></i>
+                                                    <i class="ti ti-star-filled"></i>
+                                                    <i class="ti ti-star-filled"></i>
+                                                    <i class="ti ti-star-half-filled"></i>
+                                                </div>
+                                                <p class="text-base text-w-neutral-1">4.9 (130)</p>
+                                            </div>
+                                            <div class="flex-y flex-wrap gap-3">
+                                                <img class="size-60p rounded-full shrink-0"
+                                                    src="./assets/images/users/user11.png" alt="Isabella Martinez" />
+                                                <div>
+                                                    <a href="./profile.html"
+                                                        class="flex-y gap-2 text-l-medium link-1 text-w-neutral-1 mb-1">
+                                                        <span>Isabella Martinez</span>
+                                                        <i class="ti ti-circle-check-filled text-secondary icon-24"></i>
+                                                    </a>
+                                                    <span class="text-s-medium text-w-neutral-3">Advisor</span>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+
+                                    <div class="relative bg-b-neutral-3 rounded-24 group overflow-hidden w-full h-full "
+                                        data-aos="zoom-in">
+                                        <div class="overflow-hidden">
+                                            <span class="badge badge-neutral absolute top-3 left-3 z-10">
+                                                <i class="avatar avatar-primary size-3"></i>
+                                                <span class="text-s-regular text-w-neutral-1">Heroes</span>
+                                            </span>
+                                            <img src="./assets/images/marketplaces/marketplace11.png"
+                                                class="w-full 3xl:h-[310px] xl:h-[280px] lg:h-[260px] h-[240px] object-cover object-top group-hover:scale-110 group-hover:rotate-2 transition-1"
+                                                alt="Elevate Your Potential" />
+                                        </div>
+                                        <div class="p-28p">
+                                            <a href="./marketplace-details.html"
+                                                class="heading-3 link-1 mb-2 line-clamp-1">Elevate
+                                                Your
+                                                Potential</a>
+                                            <p class="text-l-regular text-w-neutral-2">
+                                                Starting at $ <span class="span">9.00</span>
+                                            </p>
+                                            <div class="flex-y gap-2 my-24p">
+                                                <div class="flex-y gap-1 text-primary icon-24">
+                                                    <i class="ti ti-star-filled"></i>
+                                                    <i class="ti ti-star-filled"></i>
+                                                    <i class="ti ti-star-filled"></i>
+                                                    <i class="ti ti-star-filled"></i>
+                                                    <i class="ti ti-star-filled"></i>
+                                                </div>
+                                                <p class="text-base text-w-neutral-1">5.0 (150)</p>
+                                            </div>
+                                            <div class="flex-y flex-wrap gap-3">
+                                                <img class="size-60p rounded-full shrink-0"
+                                                    src="./assets/images/users/user12.png" alt="Liam Brown" />
+                                                <div>
+                                                    <a href="./profile.html"
+                                                        class="flex-y gap-2 text-l-medium link-1 text-w-neutral-1 mb-1">
+                                                        <span>Liam Brown</span>
+                                                        <i class="ti ti-circle-check-filled text-secondary icon-24"></i>
+                                                    </a>
+                                                    <span class="text-s-medium text-w-neutral-3">Coach</span>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+
+                                    <div class="relative bg-b-neutral-3 rounded-24 group overflow-hidden w-full h-full "
+                                        data-aos="zoom-in">
+                                        <div class="overflow-hidden">
+                                            <span class="badge badge-neutral absolute top-3 left-3 z-10">
+                                                <i class="avatar avatar-primary size-3"></i>
+                                                <span class="text-s-regular text-w-neutral-1">Heroes</span>
+                                            </span>
+                                            <img src="./assets/images/marketplaces/marketplace12.png"
+                                                class="w-full 3xl:h-[310px] xl:h-[280px] lg:h-[260px] h-[240px] object-cover object-top group-hover:scale-110 group-hover:rotate-2 transition-1"
+                                                alt="The Leadership Path" />
+                                        </div>
+                                        <div class="p-28p">
+                                            <a href="./marketplace-details.html"
+                                                class="heading-3 link-1 mb-2 line-clamp-1">The
+                                                Leadership
+                                                Path</a>
+                                            <p class="text-l-regular text-w-neutral-2">
+                                                Starting at $ <span class="span">8.00</span>
+                                            </p>
+                                            <div class="flex-y gap-2 my-24p">
+                                                <div class="flex-y gap-1 text-primary icon-24">
+                                                    <i class="ti ti-star-filled"></i>
+                                                    <i class="ti ti-star-filled"></i>
+                                                    <i class="ti ti-star-filled"></i>
+                                                    <i class="ti ti-star-filled"></i>
+                                                    <i class="ti ti-star-half-filled"></i>
+                                                </div>
+                                                <p class="text-base text-w-neutral-1">4.6 (120)</p>
+                                            </div>
+                                            <div class="flex-y flex-wrap gap-3">
+                                                <img class="size-60p rounded-full shrink-0"
+                                                    src="./assets/images/users/user13.png" alt="Olivia Wilson" />
+                                                <div>
+                                                    <a href="./profile.html"
+                                                        class="flex-y gap-2 text-l-medium link-1 text-w-neutral-1 mb-1">
+                                                        <span>Olivia Wilson</span>
+                                                        <i class="ti ti-circle-check-filled text-secondary icon-24"></i>
+                                                    </a>
+                                                    <span class="text-s-medium text-w-neutral-3">Leader</span>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+
+                                </div>
+                            </div>
+                            <div x-show="activeTab == 2" x-transition>
+                                <div class="grid 3xl:grid-cols-4 xl:grid-cols-3 md:grid-cols-2 grid-cols-1 gap-30p">
+                                    <div class="relative bg-b-neutral-3 rounded-24 group overflow-hidden w-full h-full "
+                                        data-aos="zoom-in">
+                                        <div class="overflow-hidden">
+                                            <span class="badge badge-neutral absolute top-3 left-3 z-10">
+                                                <i class="avatar avatar-primary size-3"></i>
+                                                <span class="text-s-regular text-w-neutral-1">Heroes</span>
+                                            </span>
+                                            <img src="./assets/images/marketplaces/marketplace9.png"
+                                                class="w-full 3xl:h-[310px] xl:h-[280px] lg:h-[260px] h-[240px] object-cover object-top group-hover:scale-110 group-hover:rotate-2 transition-1"
+                                                alt="Path to Growth" />
+                                        </div>
+                                        <div class="p-28p">
+                                            <a href="./marketplace-details.html"
+                                                class="heading-3 link-1 mb-2 line-clamp-1">Path to
+                                                Growth</a>
+                                            <p class="text-l-regular text-w-neutral-2">
+                                                Starting at $ <span class="span">7.00</span>
+                                            </p>
+                                            <div class="flex-y gap-2 my-24p">
+                                                <div class="flex-y gap-1 text-primary icon-24">
+                                                    <i class="ti ti-star-filled"></i>
+                                                    <i class="ti ti-star-filled"></i>
+                                                    <i class="ti ti-star-filled"></i>
+                                                    <i class="ti ti-star-filled"></i>
+                                                    <i class="ti ti-star-half-filled"></i>
+                                                </div>
+                                                <p class="text-base text-w-neutral-1">4.8 (110)</p>
+                                            </div>
+                                            <div class="flex-y flex-wrap gap-3">
+                                                <img class="size-60p rounded-full shrink-0"
+                                                    src="./assets/images/users/user10.png" alt="Ethan Jones" />
+                                                <div>
+                                                    <a href="./profile.html"
+                                                        class="flex-y gap-2 text-l-medium link-1 text-w-neutral-1 mb-1">
+                                                        <span>Ethan Jones</span>
+                                                        <i class="ti ti-circle-check-filled text-secondary icon-24"></i>
+                                                    </a>
+                                                    <span class="text-s-medium text-w-neutral-3">Trainer</span>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+
+                                    <div class="relative bg-b-neutral-3 rounded-24 group overflow-hidden w-full h-full "
+                                        data-aos="zoom-in">
+                                        <div class="overflow-hidden">
+                                            <span class="badge badge-neutral absolute top-3 left-3 z-10">
+                                                <i class="avatar avatar-primary size-3"></i>
+                                                <span class="text-s-regular text-w-neutral-1">Heroes</span>
+                                            </span>
+                                            <img src="./assets/images/marketplaces/marketplace10.png"
+                                                class="w-full 3xl:h-[310px] xl:h-[280px] lg:h-[260px] h-[240px] object-cover object-top group-hover:scale-110 group-hover:rotate-2 transition-1"
+                                                alt="Mind Over Matter" />
+                                        </div>
+                                        <div class="p-28p">
+                                            <a href="./marketplace-details.html"
+                                                class="heading-3 link-1 mb-2 line-clamp-1">Mind
+                                                Over Matter</a>
+                                            <p class="text-l-regular text-w-neutral-2">
+                                                Starting at $ <span class="span">7.00</span>
+                                            </p>
+                                            <div class="flex-y gap-2 my-24p">
+                                                <div class="flex-y gap-1 text-primary icon-24">
+                                                    <i class="ti ti-star-filled"></i>
+                                                    <i class="ti ti-star-filled"></i>
+                                                    <i class="ti ti-star-filled"></i>
+                                                    <i class="ti ti-star-filled"></i>
+                                                    <i class="ti ti-star-half-filled"></i>
+                                                </div>
+                                                <p class="text-base text-w-neutral-1">4.9 (130)</p>
+                                            </div>
+                                            <div class="flex-y flex-wrap gap-3">
+                                                <img class="size-60p rounded-full shrink-0"
+                                                    src="./assets/images/users/user11.png" alt="Isabella Martinez" />
+                                                <div>
+                                                    <a href="./profile.html"
+                                                        class="flex-y gap-2 text-l-medium link-1 text-w-neutral-1 mb-1">
+                                                        <span>Isabella Martinez</span>
+                                                        <i class="ti ti-circle-check-filled text-secondary icon-24"></i>
+                                                    </a>
+                                                    <span class="text-s-medium text-w-neutral-3">Advisor</span>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+
+                                    <div class="relative bg-b-neutral-3 rounded-24 group overflow-hidden w-full h-full "
+                                        data-aos="zoom-in">
+                                        <div class="overflow-hidden">
+                                            <span class="badge badge-neutral absolute top-3 left-3 z-10">
+                                                <i class="avatar avatar-primary size-3"></i>
+                                                <span class="text-s-regular text-w-neutral-1">Heroes</span>
+                                            </span>
+                                            <img src="./assets/images/marketplaces/marketplace11.png"
+                                                class="w-full 3xl:h-[310px] xl:h-[280px] lg:h-[260px] h-[240px] object-cover object-top group-hover:scale-110 group-hover:rotate-2 transition-1"
+                                                alt="Elevate Your Potential" />
+                                        </div>
+                                        <div class="p-28p">
+                                            <a href="./marketplace-details.html"
+                                                class="heading-3 link-1 mb-2 line-clamp-1">Elevate
+                                                Your
+                                                Potential</a>
+                                            <p class="text-l-regular text-w-neutral-2">
+                                                Starting at $ <span class="span">9.00</span>
+                                            </p>
+                                            <div class="flex-y gap-2 my-24p">
+                                                <div class="flex-y gap-1 text-primary icon-24">
+                                                    <i class="ti ti-star-filled"></i>
+                                                    <i class="ti ti-star-filled"></i>
+                                                    <i class="ti ti-star-filled"></i>
+                                                    <i class="ti ti-star-filled"></i>
+                                                    <i class="ti ti-star-filled"></i>
+                                                </div>
+                                                <p class="text-base text-w-neutral-1">5.0 (150)</p>
+                                            </div>
+                                            <div class="flex-y flex-wrap gap-3">
+                                                <img class="size-60p rounded-full shrink-0"
+                                                    src="./assets/images/users/user12.png" alt="Liam Brown" />
+                                                <div>
+                                                    <a href="./profile.html"
+                                                        class="flex-y gap-2 text-l-medium link-1 text-w-neutral-1 mb-1">
+                                                        <span>Liam Brown</span>
+                                                        <i class="ti ti-circle-check-filled text-secondary icon-24"></i>
+                                                    </a>
+                                                    <span class="text-s-medium text-w-neutral-3">Coach</span>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+
+                                    <div class="relative bg-b-neutral-3 rounded-24 group overflow-hidden w-full h-full "
+                                        data-aos="zoom-in">
+                                        <div class="overflow-hidden">
+                                            <span class="badge badge-neutral absolute top-3 left-3 z-10">
+                                                <i class="avatar avatar-primary size-3"></i>
+                                                <span class="text-s-regular text-w-neutral-1">Heroes</span>
+                                            </span>
+                                            <img src="./assets/images/marketplaces/marketplace12.png"
+                                                class="w-full 3xl:h-[310px] xl:h-[280px] lg:h-[260px] h-[240px] object-cover object-top group-hover:scale-110 group-hover:rotate-2 transition-1"
+                                                alt="The Leadership Path" />
+                                        </div>
+                                        <div class="p-28p">
+                                            <a href="./marketplace-details.html"
+                                                class="heading-3 link-1 mb-2 line-clamp-1">The
+                                                Leadership
+                                                Path</a>
+                                            <p class="text-l-regular text-w-neutral-2">
+                                                Starting at $ <span class="span">8.00</span>
+                                            </p>
+                                            <div class="flex-y gap-2 my-24p">
+                                                <div class="flex-y gap-1 text-primary icon-24">
+                                                    <i class="ti ti-star-filled"></i>
+                                                    <i class="ti ti-star-filled"></i>
+                                                    <i class="ti ti-star-filled"></i>
+                                                    <i class="ti ti-star-filled"></i>
+                                                    <i class="ti ti-star-half-filled"></i>
+                                                </div>
+                                                <p class="text-base text-w-neutral-1">4.6 (120)</p>
+                                            </div>
+                                            <div class="flex-y flex-wrap gap-3">
+                                                <img class="size-60p rounded-full shrink-0"
+                                                    src="./assets/images/users/user13.png" alt="Olivia Wilson" />
+                                                <div>
+                                                    <a href="./profile.html"
+                                                        class="flex-y gap-2 text-l-medium link-1 text-w-neutral-1 mb-1">
+                                                        <span>Olivia Wilson</span>
+                                                        <i class="ti ti-circle-check-filled text-secondary icon-24"></i>
+                                                    </a>
+                                                    <span class="text-s-medium text-w-neutral-3">Leader</span>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                            <div x-show="activeTab == 3" x-transition>
+                                <div class="grid 3xl:grid-cols-4 xl:grid-cols-3 md:grid-cols-2 grid-cols-1 gap-30p">
+
+                                    <div class="relative bg-b-neutral-3 rounded-24 group overflow-hidden w-full h-full "
+                                        data-aos="zoom-in">
+                                        <div class="overflow-hidden">
+                                            <span class="badge badge-neutral absolute top-3 left-3 z-10">
+                                                <i class="avatar avatar-primary size-3"></i>
+                                                <span class="text-s-regular text-w-neutral-1">Heroes</span>
+                                            </span>
+                                            <img src="./assets/images/marketplaces/marketplace5.png"
+                                                class="w-full 3xl:h-[310px] xl:h-[280px] lg:h-[260px] h-[240px] object-cover object-top group-hover:scale-110 group-hover:rotate-2 transition-1"
+                                                alt="Playing Valorant" />
+                                        </div>
+                                        <div class="p-28p">
+                                            <a href="./marketplace-details.html"
+                                                class="heading-3 link-1 mb-2 line-clamp-1">Playing
+                                                Valorant</a>
+                                            <p class="text-l-regular text-w-neutral-2">
+                                                Starting at $ <span class="span">7.00</span>
+                                            </p>
+                                            <div class="flex-y gap-2 my-24p">
+                                                <div class="flex-y gap-1 text-primary icon-24">
+                                                    <i class="ti ti-star-filled"></i>
+                                                    <i class="ti ti-star-filled"></i>
+                                                    <i class="ti ti-star-filled"></i>
+                                                    <i class="ti ti-star-filled"></i>
+                                                    <i class="ti ti-star-half-filled"></i>
+                                                </div>
+                                                <p class="text-base text-w-neutral-1">4.9 (120)</p>
+                                            </div>
+                                            <div class="flex-y flex-wrap gap-3">
+                                                <img class="size-60p rounded-full shrink-0"
+                                                    src="./assets/images/users/user5.png" alt="David Liu" />
+                                                <div>
+                                                    <a href="./profile.html"
+                                                        class="flex-y gap-2 text-l-medium link-1 text-w-neutral-1 mb-1">
+                                                        <span>David Liu</span>
+                                                        <i class="ti ti-circle-check-filled text-secondary icon-24"></i>
+                                                    </a>
+                                                    <span class="text-s-medium text-w-neutral-3">Leader</span>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+
+                                    <div class="relative bg-b-neutral-3 rounded-24 group overflow-hidden w-full h-full "
+                                        data-aos="zoom-in">
+                                        <div class="overflow-hidden">
+                                            <span class="badge badge-neutral absolute top-3 left-3 z-10">
+                                                <i class="avatar avatar-primary size-3"></i>
+                                                <span class="text-s-regular text-w-neutral-1">Heroes</span>
+                                            </span>
+                                            <img src="./assets/images/marketplaces/marketplace6.png"
+                                                class="w-full 3xl:h-[310px] xl:h-[280px] lg:h-[260px] h-[240px] object-cover object-top group-hover:scale-110 group-hover:rotate-2 transition-1"
+                                                alt="Mastering Mindset" />
+                                        </div>
+                                        <div class="p-28p">
+                                            <a href="./marketplace-details.html"
+                                                class="heading-3 link-1 mb-2 line-clamp-1">Mastering
+                                                Mindset</a>
+                                            <p class="text-l-regular text-w-neutral-2">
+                                                Starting at $ <span class="span">7.00</span>
+                                            </p>
+                                            <div class="flex-y gap-2 my-24p">
+                                                <div class="flex-y gap-1 text-primary icon-24">
+                                                    <i class="ti ti-star-filled"></i>
+                                                    <i class="ti ti-star-filled"></i>
+                                                    <i class="ti ti-star-filled"></i>
+                                                    <i class="ti ti-star-filled"></i>
+                                                    <i class="ti ti-star-half-filled"></i>
+                                                </div>
+                                                <p class="text-base text-w-neutral-1">4.6 (87)</p>
+                                            </div>
+                                            <div class="flex-y flex-wrap gap-3">
+                                                <img class="size-60p rounded-full shrink-0"
+                                                    src="./assets/images/users/user6.png" alt="Mia Lee" />
+                                                <div>
+                                                    <a href="./profile.html"
+                                                        class="flex-y gap-2 text-l-medium link-1 text-w-neutral-1 mb-1">
+                                                        <span>Mia Lee</span>
+                                                        <i class="ti ti-circle-check-filled text-secondary icon-24"></i>
+                                                    </a>
+                                                    <span class="text-s-medium text-w-neutral-3">Writer</span>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+
+                                    <div class="relative bg-b-neutral-3 rounded-24 group overflow-hidden w-full h-full "
+                                        data-aos="zoom-in">
+                                        <div class="overflow-hidden">
+                                            <span class="badge badge-neutral absolute top-3 left-3 z-10">
+                                                <i class="avatar avatar-primary size-3"></i>
+                                                <span class="text-s-regular text-w-neutral-1">Heroes</span>
+                                            </span>
+                                            <img src="./assets/images/marketplaces/marketplace7.png"
+                                                class="w-full 3xl:h-[310px] xl:h-[280px] lg:h-[260px] h-[240px] object-cover object-top group-hover:scale-110 group-hover:rotate-2 transition-1"
+                                                alt="Beyond Limits" />
+                                        </div>
+                                        <div class="p-28p">
+                                            <a href="./marketplace-details.html"
+                                                class="heading-3 link-1 mb-2 line-clamp-1">Beyond
+                                                Limits</a>
+                                            <p class="text-l-regular text-w-neutral-2">
+                                                Starting at $ <span class="span">7.00</span>
+                                            </p>
+                                            <div class="flex-y gap-2 my-24p">
+                                                <div class="flex-y gap-1 text-primary icon-24">
+                                                    <i class="ti ti-star-filled"></i>
+                                                    <i class="ti ti-star-filled"></i>
+                                                    <i class="ti ti-star-filled"></i>
+                                                    <i class="ti ti-star-filled"></i>
+                                                    <i class="ti ti-star-half-filled"></i>
+                                                </div>
+                                                <p class="text-base text-w-neutral-1">4.8 (105)</p>
+                                            </div>
+                                            <div class="flex-y flex-wrap gap-3">
+                                                <img class="size-60p rounded-full shrink-0"
+                                                    src="./assets/images/users/user7.png" alt="John Maxwell" />
+                                                <div>
+                                                    <a href="./profile.html"
+                                                        class="flex-y gap-2 text-l-medium link-1 text-w-neutral-1 mb-1">
+                                                        <span>John Maxwell</span>
+                                                        <i class="ti ti-circle-check-filled text-secondary icon-24"></i>
+                                                    </a>
+                                                    <span class="text-s-medium text-w-neutral-3">Leader</span>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+
+                                    <div class="relative bg-b-neutral-3 rounded-24 group overflow-hidden w-full h-full "
+                                        data-aos="zoom-in">
+                                        <div class="overflow-hidden">
+                                            <span class="badge badge-neutral absolute top-3 left-3 z-10">
+                                                <i class="avatar avatar-primary size-3"></i>
+                                                <span class="text-s-regular text-w-neutral-1">Heroes</span>
+                                            </span>
+                                            <img src="./assets/images/marketplaces/marketplace8.png"
+                                                class="w-full 3xl:h-[310px] xl:h-[280px] lg:h-[260px] h-[240px] object-cover object-top group-hover:scale-110 group-hover:rotate-2 transition-1"
+                                                alt="Building Resilience" />
+                                        </div>
+                                        <div class="p-28p">
+                                            <a href="./marketplace-details.html"
+                                                class="heading-3 link-1 mb-2 line-clamp-1">Building
+                                                Resilience</a>
+                                            <p class="text-l-regular text-w-neutral-2">
+                                                Starting at $ <span class="span">7.00</span>
+                                            </p>
+                                            <div class="flex-y gap-2 my-24p">
+                                                <div class="flex-y gap-1 text-primary icon-24">
+                                                    <i class="ti ti-star-filled"></i>
+                                                    <i class="ti ti-star-filled"></i>
+                                                    <i class="ti ti-star-filled"></i>
+                                                    <i class="ti ti-star-filled"></i>
+                                                    <i class="ti ti-star-half-filled"></i>
+                                                </div>
+                                                <p class="text-base text-w-neutral-1">4.7 (98)</p>
+                                            </div>
+                                            <div class="flex-y flex-wrap gap-3">
+                                                <img class="size-60p rounded-full shrink-0"
+                                                    src="./assets/images/users/user9.png" alt="Sophia Carter" />
+                                                <div>
+                                                    <a href="./profile.html"
+                                                        class="flex-y gap-2 text-l-medium link-1 text-w-neutral-1 mb-1">
+                                                        <span>Sophia Carter</span>
+                                                        <i class="ti ti-circle-check-filled text-secondary icon-24"></i>
+                                                    </a>
+                                                    <span class="text-s-medium text-w-neutral-3">Mentor</span>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+
+                                    <div class="relative bg-b-neutral-3 rounded-24 group overflow-hidden w-full h-full "
+                                        data-aos="zoom-in">
+                                        <div class="overflow-hidden">
+                                            <span class="badge badge-neutral absolute top-3 left-3 z-10">
+                                                <i class="avatar avatar-primary size-3"></i>
+                                                <span class="text-s-regular text-w-neutral-1">Heroes</span>
+                                            </span>
+                                            <img src="./assets/images/marketplaces/marketplace9.png"
+                                                class="w-full 3xl:h-[310px] xl:h-[280px] lg:h-[260px] h-[240px] object-cover object-top group-hover:scale-110 group-hover:rotate-2 transition-1"
+                                                alt="Path to Growth" />
+                                        </div>
+                                        <div class="p-28p">
+                                            <a href="./marketplace-details.html"
+                                                class="heading-3 link-1 mb-2 line-clamp-1">Path to
+                                                Growth</a>
+                                            <p class="text-l-regular text-w-neutral-2">
+                                                Starting at $ <span class="span">7.00</span>
+                                            </p>
+                                            <div class="flex-y gap-2 my-24p">
+                                                <div class="flex-y gap-1 text-primary icon-24">
+                                                    <i class="ti ti-star-filled"></i>
+                                                    <i class="ti ti-star-filled"></i>
+                                                    <i class="ti ti-star-filled"></i>
+                                                    <i class="ti ti-star-filled"></i>
+                                                    <i class="ti ti-star-half-filled"></i>
+                                                </div>
+                                                <p class="text-base text-w-neutral-1">4.8 (110)</p>
+                                            </div>
+                                            <div class="flex-y flex-wrap gap-3">
+                                                <img class="size-60p rounded-full shrink-0"
+                                                    src="./assets/images/users/user10.png" alt="Ethan Jones" />
+                                                <div>
+                                                    <a href="./profile.html"
+                                                        class="flex-y gap-2 text-l-medium link-1 text-w-neutral-1 mb-1">
+                                                        <span>Ethan Jones</span>
+                                                        <i class="ti ti-circle-check-filled text-secondary icon-24"></i>
+                                                    </a>
+                                                    <span class="text-s-medium text-w-neutral-3">Trainer</span>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+
+                                    <div class="relative bg-b-neutral-3 rounded-24 group overflow-hidden w-full h-full "
+                                        data-aos="zoom-in">
+                                        <div class="overflow-hidden">
+                                            <span class="badge badge-neutral absolute top-3 left-3 z-10">
+                                                <i class="avatar avatar-primary size-3"></i>
+                                                <span class="text-s-regular text-w-neutral-1">Heroes</span>
+                                            </span>
+                                            <img src="./assets/images/marketplaces/marketplace10.png"
+                                                class="w-full 3xl:h-[310px] xl:h-[280px] lg:h-[260px] h-[240px] object-cover object-top group-hover:scale-110 group-hover:rotate-2 transition-1"
+                                                alt="Mind Over Matter" />
+                                        </div>
+                                        <div class="p-28p">
+                                            <a href="./marketplace-details.html"
+                                                class="heading-3 link-1 mb-2 line-clamp-1">Mind
+                                                Over Matter</a>
+                                            <p class="text-l-regular text-w-neutral-2">
+                                                Starting at $ <span class="span">7.00</span>
+                                            </p>
+                                            <div class="flex-y gap-2 my-24p">
+                                                <div class="flex-y gap-1 text-primary icon-24">
+                                                    <i class="ti ti-star-filled"></i>
+                                                    <i class="ti ti-star-filled"></i>
+                                                    <i class="ti ti-star-filled"></i>
+                                                    <i class="ti ti-star-filled"></i>
+                                                    <i class="ti ti-star-half-filled"></i>
+                                                </div>
+                                                <p class="text-base text-w-neutral-1">4.9 (130)</p>
+                                            </div>
+                                            <div class="flex-y flex-wrap gap-3">
+                                                <img class="size-60p rounded-full shrink-0"
+                                                    src="./assets/images/users/user11.png" alt="Isabella Martinez" />
+                                                <div>
+                                                    <a href="./profile.html"
+                                                        class="flex-y gap-2 text-l-medium link-1 text-w-neutral-1 mb-1">
+                                                        <span>Isabella Martinez</span>
+                                                        <i class="ti ti-circle-check-filled text-secondary icon-24"></i>
+                                                    </a>
+                                                    <span class="text-s-medium text-w-neutral-3">Advisor</span>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+
+                                    <div class="relative bg-b-neutral-3 rounded-24 group overflow-hidden w-full h-full "
+                                        data-aos="zoom-in">
+                                        <div class="overflow-hidden">
+                                            <span class="badge badge-neutral absolute top-3 left-3 z-10">
+                                                <i class="avatar avatar-primary size-3"></i>
+                                                <span class="text-s-regular text-w-neutral-1">Heroes</span>
+                                            </span>
+                                            <img src="./assets/images/marketplaces/marketplace11.png"
+                                                class="w-full 3xl:h-[310px] xl:h-[280px] lg:h-[260px] h-[240px] object-cover object-top group-hover:scale-110 group-hover:rotate-2 transition-1"
+                                                alt="Elevate Your Potential" />
+                                        </div>
+                                        <div class="p-28p">
+                                            <a href="./marketplace-details.html"
+                                                class="heading-3 link-1 mb-2 line-clamp-1">Elevate
+                                                Your
+                                                Potential</a>
+                                            <p class="text-l-regular text-w-neutral-2">
+                                                Starting at $ <span class="span">9.00</span>
+                                            </p>
+                                            <div class="flex-y gap-2 my-24p">
+                                                <div class="flex-y gap-1 text-primary icon-24">
+                                                    <i class="ti ti-star-filled"></i>
+                                                    <i class="ti ti-star-filled"></i>
+                                                    <i class="ti ti-star-filled"></i>
+                                                    <i class="ti ti-star-filled"></i>
+                                                    <i class="ti ti-star-filled"></i>
+                                                </div>
+                                                <p class="text-base text-w-neutral-1">5.0 (150)</p>
+                                            </div>
+                                            <div class="flex-y flex-wrap gap-3">
+                                                <img class="size-60p rounded-full shrink-0"
+                                                    src="./assets/images/users/user12.png" alt="Liam Brown" />
+                                                <div>
+                                                    <a href="./profile.html"
+                                                        class="flex-y gap-2 text-l-medium link-1 text-w-neutral-1 mb-1">
+                                                        <span>Liam Brown</span>
+                                                        <i class="ti ti-circle-check-filled text-secondary icon-24"></i>
+                                                    </a>
+                                                    <span class="text-s-medium text-w-neutral-3">Coach</span>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+
+                                    <div class="relative bg-b-neutral-3 rounded-24 group overflow-hidden w-full h-full "
+                                        data-aos="zoom-in">
+                                        <div class="overflow-hidden">
+                                            <span class="badge badge-neutral absolute top-3 left-3 z-10">
+                                                <i class="avatar avatar-primary size-3"></i>
+                                                <span class="text-s-regular text-w-neutral-1">Heroes</span>
+                                            </span>
+                                            <img src="./assets/images/marketplaces/marketplace12.png"
+                                                class="w-full 3xl:h-[310px] xl:h-[280px] lg:h-[260px] h-[240px] object-cover object-top group-hover:scale-110 group-hover:rotate-2 transition-1"
+                                                alt="The Leadership Path" />
+                                        </div>
+                                        <div class="p-28p">
+                                            <a href="./marketplace-details.html"
+                                                class="heading-3 link-1 mb-2 line-clamp-1">The
+                                                Leadership
+                                                Path</a>
+                                            <p class="text-l-regular text-w-neutral-2">
+                                                Starting at $ <span class="span">8.00</span>
+                                            </p>
+                                            <div class="flex-y gap-2 my-24p">
+                                                <div class="flex-y gap-1 text-primary icon-24">
+                                                    <i class="ti ti-star-filled"></i>
+                                                    <i class="ti ti-star-filled"></i>
+                                                    <i class="ti ti-star-filled"></i>
+                                                    <i class="ti ti-star-filled"></i>
+                                                    <i class="ti ti-star-half-filled"></i>
+                                                </div>
+                                                <p class="text-base text-w-neutral-1">4.6 (120)</p>
+                                            </div>
+                                            <div class="flex-y flex-wrap gap-3">
+                                                <img class="size-60p rounded-full shrink-0"
+                                                    src="./assets/images/users/user13.png" alt="Olivia Wilson" />
+                                                <div>
+                                                    <a href="./profile.html"
+                                                        class="flex-y gap-2 text-l-medium link-1 text-w-neutral-1 mb-1">
+                                                        <span>Olivia Wilson</span>
+                                                        <i class="ti ti-circle-check-filled text-secondary icon-24"></i>
+                                                    </a>
+                                                    <span class="text-s-medium text-w-neutral-3">Leader</span>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+
+                                </div>
+                            </div>
+                            <div x-show="activeTab == 4" x-transition>
+                                <div class="grid 3xl:grid-cols-4 xl:grid-cols-3 md:grid-cols-2 grid-cols-1 gap-30p">
+
+                                    <div class="relative bg-b-neutral-3 rounded-24 group overflow-hidden w-full h-full "
+                                        data-aos="zoom-in">
+                                        <div class="overflow-hidden">
+                                            <span class="badge badge-neutral absolute top-3 left-3 z-10">
+                                                <i class="avatar avatar-primary size-3"></i>
+                                                <span class="text-s-regular text-w-neutral-1">Heroes</span>
+                                            </span>
+                                            <img src="./assets/images/marketplaces/marketplace7.png"
+                                                class="w-full 3xl:h-[310px] xl:h-[280px] lg:h-[260px] h-[240px] object-cover object-top group-hover:scale-110 group-hover:rotate-2 transition-1"
+                                                alt="Beyond Limits" />
+                                        </div>
+                                        <div class="p-28p">
+                                            <a href="./marketplace-details.html"
+                                                class="heading-3 link-1 mb-2 line-clamp-1">Beyond
+                                                Limits</a>
+                                            <p class="text-l-regular text-w-neutral-2">
+                                                Starting at $ <span class="span">7.00</span>
+                                            </p>
+                                            <div class="flex-y gap-2 my-24p">
+                                                <div class="flex-y gap-1 text-primary icon-24">
+                                                    <i class="ti ti-star-filled"></i>
+                                                    <i class="ti ti-star-filled"></i>
+                                                    <i class="ti ti-star-filled"></i>
+                                                    <i class="ti ti-star-filled"></i>
+                                                    <i class="ti ti-star-half-filled"></i>
+                                                </div>
+                                                <p class="text-base text-w-neutral-1">4.8 (105)</p>
+                                            </div>
+                                            <div class="flex-y flex-wrap gap-3">
+                                                <img class="size-60p rounded-full shrink-0"
+                                                    src="./assets/images/users/user7.png" alt="John Maxwell" />
+                                                <div>
+                                                    <a href="./profile.html"
+                                                        class="flex-y gap-2 text-l-medium link-1 text-w-neutral-1 mb-1">
+                                                        <span>John Maxwell</span>
+                                                        <i class="ti ti-circle-check-filled text-secondary icon-24"></i>
+                                                    </a>
+                                                    <span class="text-s-medium text-w-neutral-3">Leader</span>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+
+                                    <div class="relative bg-b-neutral-3 rounded-24 group overflow-hidden w-full h-full "
+                                        data-aos="zoom-in">
+                                        <div class="overflow-hidden">
+                                            <span class="badge badge-neutral absolute top-3 left-3 z-10">
+                                                <i class="avatar avatar-primary size-3"></i>
+                                                <span class="text-s-regular text-w-neutral-1">Heroes</span>
+                                            </span>
+                                            <img src="./assets/images/marketplaces/marketplace8.png"
+                                                class="w-full 3xl:h-[310px] xl:h-[280px] lg:h-[260px] h-[240px] object-cover object-top group-hover:scale-110 group-hover:rotate-2 transition-1"
+                                                alt="Building Resilience" />
+                                        </div>
+                                        <div class="p-28p">
+                                            <a href="./marketplace-details.html"
+                                                class="heading-3 link-1 mb-2 line-clamp-1">Building
+                                                Resilience</a>
+                                            <p class="text-l-regular text-w-neutral-2">
+                                                Starting at $ <span class="span">7.00</span>
+                                            </p>
+                                            <div class="flex-y gap-2 my-24p">
+                                                <div class="flex-y gap-1 text-primary icon-24">
+                                                    <i class="ti ti-star-filled"></i>
+                                                    <i class="ti ti-star-filled"></i>
+                                                    <i class="ti ti-star-filled"></i>
+                                                    <i class="ti ti-star-filled"></i>
+                                                    <i class="ti ti-star-half-filled"></i>
+                                                </div>
+                                                <p class="text-base text-w-neutral-1">4.7 (98)</p>
+                                            </div>
+                                            <div class="flex-y flex-wrap gap-3">
+                                                <img class="size-60p rounded-full shrink-0"
+                                                    src="./assets/images/users/user9.png" alt="Sophia Carter" />
+                                                <div>
+                                                    <a href="./profile.html"
+                                                        class="flex-y gap-2 text-l-medium link-1 text-w-neutral-1 mb-1">
+                                                        <span>Sophia Carter</span>
+                                                        <i class="ti ti-circle-check-filled text-secondary icon-24"></i>
+                                                    </a>
+                                                    <span class="text-s-medium text-w-neutral-3">Mentor</span>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+
+                                    <div class="relative bg-b-neutral-3 rounded-24 group overflow-hidden w-full h-full "
+                                        data-aos="zoom-in">
+                                        <div class="overflow-hidden">
+                                            <span class="badge badge-neutral absolute top-3 left-3 z-10">
+                                                <i class="avatar avatar-primary size-3"></i>
+                                                <span class="text-s-regular text-w-neutral-1">Heroes</span>
+                                            </span>
+                                            <img src="./assets/images/marketplaces/marketplace9.png"
+                                                class="w-full 3xl:h-[310px] xl:h-[280px] lg:h-[260px] h-[240px] object-cover object-top group-hover:scale-110 group-hover:rotate-2 transition-1"
+                                                alt="Path to Growth" />
+                                        </div>
+                                        <div class="p-28p">
+                                            <a href="./marketplace-details.html"
+                                                class="heading-3 link-1 mb-2 line-clamp-1">Path to
+                                                Growth</a>
+                                            <p class="text-l-regular text-w-neutral-2">
+                                                Starting at $ <span class="span">7.00</span>
+                                            </p>
+                                            <div class="flex-y gap-2 my-24p">
+                                                <div class="flex-y gap-1 text-primary icon-24">
+                                                    <i class="ti ti-star-filled"></i>
+                                                    <i class="ti ti-star-filled"></i>
+                                                    <i class="ti ti-star-filled"></i>
+                                                    <i class="ti ti-star-filled"></i>
+                                                    <i class="ti ti-star-half-filled"></i>
+                                                </div>
+                                                <p class="text-base text-w-neutral-1">4.8 (110)</p>
+                                            </div>
+                                            <div class="flex-y flex-wrap gap-3">
+                                                <img class="size-60p rounded-full shrink-0"
+                                                    src="./assets/images/users/user10.png" alt="Ethan Jones" />
+                                                <div>
+                                                    <a href="./profile.html"
+                                                        class="flex-y gap-2 text-l-medium link-1 text-w-neutral-1 mb-1">
+                                                        <span>Ethan Jones</span>
+                                                        <i class="ti ti-circle-check-filled text-secondary icon-24"></i>
+                                                    </a>
+                                                    <span class="text-s-medium text-w-neutral-3">Trainer</span>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+
+                                    <div class="relative bg-b-neutral-3 rounded-24 group overflow-hidden w-full h-full "
+                                        data-aos="zoom-in">
+                                        <div class="overflow-hidden">
+                                            <span class="badge badge-neutral absolute top-3 left-3 z-10">
+                                                <i class="avatar avatar-primary size-3"></i>
+                                                <span class="text-s-regular text-w-neutral-1">Heroes</span>
+                                            </span>
+                                            <img src="./assets/images/marketplaces/marketplace10.png"
+                                                class="w-full 3xl:h-[310px] xl:h-[280px] lg:h-[260px] h-[240px] object-cover object-top group-hover:scale-110 group-hover:rotate-2 transition-1"
+                                                alt="Mind Over Matter" />
+                                        </div>
+                                        <div class="p-28p">
+                                            <a href="./marketplace-details.html"
+                                                class="heading-3 link-1 mb-2 line-clamp-1">Mind
+                                                Over Matter</a>
+                                            <p class="text-l-regular text-w-neutral-2">
+                                                Starting at $ <span class="span">7.00</span>
+                                            </p>
+                                            <div class="flex-y gap-2 my-24p">
+                                                <div class="flex-y gap-1 text-primary icon-24">
+                                                    <i class="ti ti-star-filled"></i>
+                                                    <i class="ti ti-star-filled"></i>
+                                                    <i class="ti ti-star-filled"></i>
+                                                    <i class="ti ti-star-filled"></i>
+                                                    <i class="ti ti-star-half-filled"></i>
+                                                </div>
+                                                <p class="text-base text-w-neutral-1">4.9 (130)</p>
+                                            </div>
+                                            <div class="flex-y flex-wrap gap-3">
+                                                <img class="size-60p rounded-full shrink-0"
+                                                    src="./assets/images/users/user11.png" alt="Isabella Martinez" />
+                                                <div>
+                                                    <a href="./profile.html"
+                                                        class="flex-y gap-2 text-l-medium link-1 text-w-neutral-1 mb-1">
+                                                        <span>Isabella Martinez</span>
+                                                        <i class="ti ti-circle-check-filled text-secondary icon-24"></i>
+                                                    </a>
+                                                    <span class="text-s-medium text-w-neutral-3">Advisor</span>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                            <div x-show="activeTab == 5" x-transition>
+                                <div class="grid 3xl:grid-cols-4 xl:grid-cols-3 md:grid-cols-2 grid-cols-1 gap-30p">
+                                    <div class="relative bg-b-neutral-3 rounded-24 group overflow-hidden w-full h-full "
+                                        data-aos="zoom-in">
+                                        <div class="overflow-hidden">
+                                            <span class="badge badge-neutral absolute top-3 left-3 z-10">
+                                                <i class="avatar avatar-primary size-3"></i>
+                                                <span class="text-s-regular text-w-neutral-1">Heroes</span>
+                                            </span>
+                                            <img src="./assets/images/marketplaces/marketplace5.png"
+                                                class="w-full 3xl:h-[310px] xl:h-[280px] lg:h-[260px] h-[240px] object-cover object-top group-hover:scale-110 group-hover:rotate-2 transition-1"
+                                                alt="Playing Valorant" />
+                                        </div>
+                                        <div class="p-28p">
+                                            <a href="./marketplace-details.html"
+                                                class="heading-3 link-1 mb-2 line-clamp-1">Playing
+                                                Valorant</a>
+                                            <p class="text-l-regular text-w-neutral-2">
+                                                Starting at $ <span class="span">7.00</span>
+                                            </p>
+                                            <div class="flex-y gap-2 my-24p">
+                                                <div class="flex-y gap-1 text-primary icon-24">
+                                                    <i class="ti ti-star-filled"></i>
+                                                    <i class="ti ti-star-filled"></i>
+                                                    <i class="ti ti-star-filled"></i>
+                                                    <i class="ti ti-star-filled"></i>
+                                                    <i class="ti ti-star-half-filled"></i>
+                                                </div>
+                                                <p class="text-base text-w-neutral-1">4.9 (120)</p>
+                                            </div>
+                                            <div class="flex-y flex-wrap gap-3">
+                                                <img class="size-60p rounded-full shrink-0"
+                                                    src="./assets/images/users/user5.png" alt="David Liu" />
+                                                <div>
+                                                    <a href="./profile.html"
+                                                        class="flex-y gap-2 text-l-medium link-1 text-w-neutral-1 mb-1">
+                                                        <span>David Liu</span>
+                                                        <i class="ti ti-circle-check-filled text-secondary icon-24"></i>
+                                                    </a>
+                                                    <span class="text-s-medium text-w-neutral-3">Leader</span>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+
+                                    <div class="relative bg-b-neutral-3 rounded-24 group overflow-hidden w-full h-full "
+                                        data-aos="zoom-in">
+                                        <div class="overflow-hidden">
+                                            <span class="badge badge-neutral absolute top-3 left-3 z-10">
+                                                <i class="avatar avatar-primary size-3"></i>
+                                                <span class="text-s-regular text-w-neutral-1">Heroes</span>
+                                            </span>
+                                            <img src="./assets/images/marketplaces/marketplace12.png"
+                                                class="w-full 3xl:h-[310px] xl:h-[280px] lg:h-[260px] h-[240px] object-cover object-top group-hover:scale-110 group-hover:rotate-2 transition-1"
+                                                alt="The Leadership Path" />
+                                        </div>
+                                        <div class="p-28p">
+                                            <a href="./marketplace-details.html"
+                                                class="heading-3 link-1 mb-2 line-clamp-1">The
+                                                Leadership
+                                                Path</a>
+                                            <p class="text-l-regular text-w-neutral-2">
+                                                Starting at $ <span class="span">8.00</span>
+                                            </p>
+                                            <div class="flex-y gap-2 my-24p">
+                                                <div class="flex-y gap-1 text-primary icon-24">
+                                                    <i class="ti ti-star-filled"></i>
+                                                    <i class="ti ti-star-filled"></i>
+                                                    <i class="ti ti-star-filled"></i>
+                                                    <i class="ti ti-star-filled"></i>
+                                                    <i class="ti ti-star-half-filled"></i>
+                                                </div>
+                                                <p class="text-base text-w-neutral-1">4.6 (120)</p>
+                                            </div>
+                                            <div class="flex-y flex-wrap gap-3">
+                                                <img class="size-60p rounded-full shrink-0"
+                                                    src="./assets/images/users/user13.png" alt="Olivia Wilson" />
+                                                <div>
+                                                    <a href="./profile.html"
+                                                        class="flex-y gap-2 text-l-medium link-1 text-w-neutral-1 mb-1">
+                                                        <span>Olivia Wilson</span>
+                                                        <i class="ti ti-circle-check-filled text-secondary icon-24"></i>
+                                                    </a>
+                                                    <span class="text-s-medium text-w-neutral-3">Leader</span>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+
+                                    <div class="relative bg-b-neutral-3 rounded-24 group overflow-hidden w-full h-full "
+                                        data-aos="zoom-in">
+                                        <div class="overflow-hidden">
+                                            <span class="badge badge-neutral absolute top-3 left-3 z-10">
+                                                <i class="avatar avatar-primary size-3"></i>
+                                                <span class="text-s-regular text-w-neutral-1">Heroes</span>
+                                            </span>
+                                            <img src="./assets/images/marketplaces/marketplace8.png"
+                                                class="w-full 3xl:h-[310px] xl:h-[280px] lg:h-[260px] h-[240px] object-cover object-top group-hover:scale-110 group-hover:rotate-2 transition-1"
+                                                alt="Building Resilience" />
+                                        </div>
+                                        <div class="p-28p">
+                                            <a href="./marketplace-details.html"
+                                                class="heading-3 link-1 mb-2 line-clamp-1">Building
+                                                Resilience</a>
+                                            <p class="text-l-regular text-w-neutral-2">
+                                                Starting at $ <span class="span">7.00</span>
+                                            </p>
+                                            <div class="flex-y gap-2 my-24p">
+                                                <div class="flex-y gap-1 text-primary icon-24">
+                                                    <i class="ti ti-star-filled"></i>
+                                                    <i class="ti ti-star-filled"></i>
+                                                    <i class="ti ti-star-filled"></i>
+                                                    <i class="ti ti-star-filled"></i>
+                                                    <i class="ti ti-star-half-filled"></i>
+                                                </div>
+                                                <p class="text-base text-w-neutral-1">4.7 (98)</p>
+                                            </div>
+                                            <div class="flex-y flex-wrap gap-3">
+                                                <img class="size-60p rounded-full shrink-0"
+                                                    src="./assets/images/users/user9.png" alt="Sophia Carter" />
+                                                <div>
+                                                    <a href="./profile.html"
+                                                        class="flex-y gap-2 text-l-medium link-1 text-w-neutral-1 mb-1">
+                                                        <span>Sophia Carter</span>
+                                                        <i class="ti ti-circle-check-filled text-secondary icon-24"></i>
+                                                    </a>
+                                                    <span class="text-s-medium text-w-neutral-3">Mentor</span>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+
+                                    <div class="relative bg-b-neutral-3 rounded-24 group overflow-hidden w-full h-full "
+                                        data-aos="zoom-in">
+                                        <div class="overflow-hidden">
+                                            <span class="badge badge-neutral absolute top-3 left-3 z-10">
+                                                <i class="avatar avatar-primary size-3"></i>
+                                                <span class="text-s-regular text-w-neutral-1">Heroes</span>
+                                            </span>
+                                            <img src="./assets/images/marketplaces/marketplace7.png"
+                                                class="w-full 3xl:h-[310px] xl:h-[280px] lg:h-[260px] h-[240px] object-cover object-top group-hover:scale-110 group-hover:rotate-2 transition-1"
+                                                alt="Beyond Limits" />
+                                        </div>
+                                        <div class="p-28p">
+                                            <a href="./marketplace-details.html"
+                                                class="heading-3 link-1 mb-2 line-clamp-1">Beyond
+                                                Limits</a>
+                                            <p class="text-l-regular text-w-neutral-2">
+                                                Starting at $ <span class="span">7.00</span>
+                                            </p>
+                                            <div class="flex-y gap-2 my-24p">
+                                                <div class="flex-y gap-1 text-primary icon-24">
+                                                    <i class="ti ti-star-filled"></i>
+                                                    <i class="ti ti-star-filled"></i>
+                                                    <i class="ti ti-star-filled"></i>
+                                                    <i class="ti ti-star-filled"></i>
+                                                    <i class="ti ti-star-half-filled"></i>
+                                                </div>
+                                                <p class="text-base text-w-neutral-1">4.8 (105)</p>
+                                            </div>
+                                            <div class="flex-y flex-wrap gap-3">
+                                                <img class="size-60p rounded-full shrink-0"
+                                                    src="./assets/images/users/user7.png" alt="John Maxwell" />
+                                                <div>
+                                                    <a href="./profile.html"
+                                                        class="flex-y gap-2 text-l-medium link-1 text-w-neutral-1 mb-1">
+                                                        <span>John Maxwell</span>
+                                                        <i class="ti ti-circle-check-filled text-secondary icon-24"></i>
+                                                    </a>
+                                                    <span class="text-s-medium text-w-neutral-3">Leader</span>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="flex-c mt-48p">
+                            <a href="#" class="btn btn-xl py-3 btn-primary rounded-12">
+                                Load More...
+                            </a>
+                        </div>
+                    </div>
+                </div>
+            </section>
+            <!-- marketplace section end -->
+
+
+        </main>
+        <!-- main end -->
+
+        <!-- footer start -->
+        <include-footer />
+        <!-- footer end -->
+    </div>
+    <!-- app layout end -->
+
+
+</body>
+
+</html>

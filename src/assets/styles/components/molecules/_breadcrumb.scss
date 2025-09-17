@@ -1,0 +1,25 @@
+@layer components {
+  .breadcrumb {
+    @apply flex flex-wrap items-center list-none;
+
+    &-item {
+      @apply flex items-center text-base text-w-neutral-1;
+
+      &:last-child .breadcrumb-icon {
+        @apply hidden; /* Hide the icon for the last item */
+      }
+
+      &:last-child .breadcrumb-current {
+        @apply text-primary;
+      }
+    }
+
+    .breadcrumb-link {
+      @apply hover:text-primary transition-1;
+    }
+
+    .breadcrumb-icon {
+      @apply flex-c icon-24 mx-1.5 text-primary transition-1;
+    }
+  }
+}

@@ -1,0 +1,1802 @@
+<!DOCTYPE html>
+<html dir="ltr" lang="en">
+
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="shortcut icon" href="./assets/images/icons/favicon.ico" type="image/x-icon" />
+    <title>GameCo - HTML Tailwind CSS</title>
+</head>
+
+<body>
+
+    <!-- preloader start -->
+    <include-preloader />
+    <!-- preloader end -->
+
+    <!-- scroll to top button start -->
+    <include-scrollToTop />
+    <!-- scroll to top button end -->
+
+    <!-- header start -->
+    <include-navbar />
+    <!-- header end -->
+
+    <!-- sidebar start -->
+    <include-left-right-sidebar />
+    <!-- sidebar end -->
+
+    <!-- app layout start -->
+    <div class="app-layout">
+
+        <!-- main start -->
+        <main>
+
+            <include-user-profile />
+
+            <!-- user profile home section start -->
+            <section class="section-pb pt-60p overflow-visible">
+                <div class="container">
+                    <div class="grid grid-cols-12 gap-30p">
+                        <div class="4xl:col-start-2 4xl:col-end-8 xxl:col-span-7 col-span-12">
+                            <div class="grid grid-cols-1 gap-30p">
+                                <form class="bg-b-neutral-3 rounded-12 px-32p py-20p">
+                                    <div class="flex-y gap-3.5 mb-24p">
+                                        <img class="shrink-0 avatar size-60p" src="./assets/images/users/user1.png"
+                                            alt="user" />
+                                        <div class="w-full">
+                                            <input
+                                                class="w-full bg-b-neutral-2 text-sm text-w-neutral-1 placeholder:text-w-neutral-4 rounded-32 py-16p px-24p"
+                                                type="text" name="post" id="post" placeholder="What’s Your Mind ?" />
+                                        </div>
+                                    </div>
+                                    <div class="flex flex-wrap items-center justify-around gap-3">
+                                        <label for="media" class="flex-y gap-3 cursor-pointer">
+                                            <span
+                                                class="shrink-0 flex-c size-48p rounded-full bg-secondary/20 text-secondary icon-24">
+                                                <i class="ti ti-photo"></i>
+                                            </span>
+                                            <span class="text-s-medium text-w-neutral-1">Photo/Video</span>
+                                            <input type="file" id="media" class="hidden" />
+                                        </label>
+                                        <button type="button" class="flex-y gap-3 cursor-pointer">
+                                            <span
+                                                class="shrink-0 flex-c size-48p rounded-full bg-primary/20 text-primary icon-24">
+                                                <i class="ti ti-users"></i>
+                                            </span>
+                                            <span class="text-s-medium text-w-neutral-1">Tag Friend</span>
+                                        </button>
+                                        <button type="button" class="flex-y gap-3 cursor-pointer">
+                                            <span
+                                                class="shrink-0 flex-c size-48p rounded-full bg-accent-4/20 text-accent-4 icon-24">
+                                                <i class="ti ti-mood-smile-beam"></i>
+                                            </span>
+                                            <span class="text-s-medium text-w-neutral-1">Fealing /Activity</span>
+                                        </button>
+                                    </div>
+                                </form>
+                                <div>
+                                    <div
+                                        class="grid grid-cols-1 gap-30p *:bg-b-neutral-3 *:rounded-12 *:px-40p *:py-32p">
+
+                                        <!-- post card 1 -->
+                                        <div data-aos="fade-up">
+                                            <div class="flex items-center justify-between flex-wrap gap-3">
+                                                <div class="flex items-center gap-3">
+                                                    <img class="avatar size-60p" src="./assets/images/users/user4.png"
+                                                        alt="user" />
+                                                    <div>
+                                                        <a href="./profile.html"
+                                                            class="text-xl-medium text-w-neutral-1 link-1 line-clamp-1 mb-1">
+                                                            David Malan
+                                                        </a>
+                                                        <span class="text-s-medium text-w-neutral-4">
+                                                            5 day ago
+                                                        </span>
+                                                    </div>
+                                                </div>
+                                                <div x-data="dropdown" class="dropdown">
+                                                    <button @click="toggle()"
+                                                        class="dropdown-toggle w-fit text-white icon-32">
+                                                        <i class="ti ti-dots"></i>
+                                                    </button>
+                                                    <div x-show="isOpen" @click.away="close()" class="dropdown-content">
+                                                        <button @click="close()" class="dropdown-item">Save
+                                                            Link</button>
+                                                        <button @click="close()" class="dropdown-item">Report</button>
+                                                        <button @click="close()" class="dropdown-item">Hide
+                                                            Post</button>
+                                                        <button @click="close()" class="dropdown-item">Block
+                                                            User</button>
+                                                    </div>
+                                                </div>
+                                            </div>
+
+                                            <!-- post content area -->
+                                            <div class="py-20p">
+                                                <div class="plyr__video-embed player">
+                                                    <img class="plyr_custom_poster"
+                                                        src="./assets/images/videothumbnails/thumbnail1.png"
+                                                        alt="poster" />
+                                                    <iframe src="https://www.youtube.com/embed/mUxzKVrSAjs"
+                                                        allowfullscreen allow="autoplay"></iframe>
+                                                </div>
+                                            </div>
+
+                                            <!-- post footer -->
+                                            <div x-data="{ commentsShow: false }" @click.outside="commentsShow = false">
+                                                <div class="flex items-center justify-between flex-wrap gap-24p mb-20p">
+                                                    <div class="flex items-center gap-32p">
+                                                        <button type="button" class="flex items-center gap-2 text-base
+                                                text-w-neutral-1">
+                                                            <i class="ti ti-heart icon-24 text-w-neutral-4"></i>
+                                                            Like
+                                                        </button>
+                                                        <button type="button" @click="commentsShow =  !commentsShow"
+                                                            class="flex items-center gap-2 text-base
+                                            text-w-neutral-1">
+                                                            <i class="ti ti-message icon-24 text-w-neutral-4"></i>
+                                                            Comment
+                                                        </button>
+                                                    </div>
+                                                    <button type="button" class="flex items-center gap-2 text-base
+                                        text-w-neutral-1">
+                                                        <i class="ti ti-share-3 icon-24 text-w-neutral-4"></i>
+                                                        Share
+                                                    </button>
+                                                </div>
+                                                <div class="flex items-center flex-wrap gap-3 md:gap-[18px] mb-20p">
+                                                    <div
+                                                        class="flex items-center *:avatar *:size-8 *:border *:border-white *:-ml-3 ml-3">
+                                                        <img src="./assets/images/users/avatar1.png" alt="user" />
+                                                        <img src="./assets/images/users/avatar2.png" alt="user" />
+                                                        <img src="./assets/images/users/avatar3.png" alt="user" />
+                                                        <img src="./assets/images/users/avatar4.png" alt="user" />
+                                                    </div>
+                                                    <p class="text-sm text-w-neutral-4">
+                                                        Liked
+                                                        <span class="span text-w-neutral-1">Johnson</span>
+                                                        <span class="span text-w-neutral-1">and</span>
+                                                        209 Others
+                                                    </p>
+                                                </div>
+
+                                                <!-- comments area -->
+                                                <div>
+                                                    <div class="pt-20p border-t border-shap">
+                                                        <div class="grid grid-cols-1 gap-20p mb-20p">
+                                                            <!-- comment 1 -->
+                                                            <div class="flex items-start gap-3">
+                                                                <img class="avatar size-48p"
+                                                                    src="./assets/images/users/user2.png" alt="user" />
+                                                                <div>
+                                                                    <div class="bg-glass-5 px-3 py-2 rounded-12">
+                                                                        <a href="./profile.html"
+                                                                            class="text-m-medium text-w-neutral-1 link-1 line-clamp-1 mb-2">
+                                                                            Rolex Yaaeh
+                                                                        </a>
+                                                                        <div
+                                                                            class="flex items-end max-sm:flex-wrap gap-3">
+                                                                            <p class="text-sm text-w-neutral-3">
+                                                                                In ut odio libero vulputate
+                                                                            </p>
+                                                                            <button type="button"
+                                                                                class="shrink-0 flex-y gap-2 icon-20 text-w-neutral-4">
+                                                                                <i class="ti ti-heart"></i>
+                                                                                <i class="ti ti-mood-smile-beam"></i>
+                                                                            </button>
+                                                                        </div>
+                                                                    </div>
+                                                                    <div class="flex items-center gap-16p">
+                                                                        <button type="button" class="flex-y gap-1">
+                                                                            <i
+                                                                                class="ti ti-heart icon-20 text-danger"></i>
+                                                                            <span
+                                                                                class="text-sm text-w-neutral-1">Like</span>
+                                                                        </button>
+                                                                        <div class="flex-y gap-1">
+                                                                            <button type="button"
+                                                                                class="text-sm text-w-neutral-1">
+                                                                                Reply
+                                                                            </button>
+                                                                            <span class="text-sm text-w-neutral-1">
+                                                                                4D
+                                                                            </span>
+                                                                        </div>
+                                                                    </div>
+                                                                </div>
+                                                            </div>
+                                                            <!-- comment 2 -->
+                                                            <div class="flex items-start gap-3">
+                                                                <img class="avatar size-48p"
+                                                                    src="./assets/images/users/user3.png" alt="user" />
+                                                                <div>
+                                                                    <div class="bg-glass-5 px-3 py-2 rounded-12">
+                                                                        <a href="./profile.html"
+                                                                            class="text-m-medium text-w-neutral-1 link-1 line-clamp-1 mb-2">
+                                                                            Jon Smith
+                                                                        </a>
+                                                                        <div
+                                                                            class="flex items-end max-sm:flex-wrap gap-3">
+                                                                            <p class="text-sm text-w-neutral-3">
+                                                                                We invite you to treat yourself to the
+                                                                                gift of relaxation. Whether you're
+                                                                                seeking from aches and pains, stress
+                                                                                reduction, or a moment of pure
+                                                                                indulgence, our massage therapy has
+                                                                                something for everyone.
+                                                                            </p>
+                                                                            <button type="button"
+                                                                                class="shrink-0 flex items-end gap-2 icon-20 text-w-neutral-4">
+                                                                                <i class="ti ti-heart"></i>
+                                                                                <i class="ti ti-mood-smile-beam"></i>
+                                                                            </button>
+                                                                        </div>
+                                                                    </div>
+                                                                    <div class="flex items-center gap-16p">
+                                                                        <button type="button" class="flex-y gap-1">
+                                                                            <i
+                                                                                class="ti ti-heart icon-20 text-danger"></i>
+                                                                            <span
+                                                                                class="text-sm text-w-neutral-1">Like</span>
+                                                                        </button>
+                                                                        <div class="flex-y gap-1">
+                                                                            <button type="button"
+                                                                                class="text-sm text-w-neutral-1">
+                                                                                Reply
+                                                                            </button>
+                                                                            <span class="text-sm text-w-neutral-1">
+                                                                                5D
+                                                                            </span>
+                                                                        </div>
+                                                                    </div>
+                                                                </div>
+                                                            </div>
+                                                        </div>
+
+                                                        <!-- hidden comments -->
+                                                        <div x-show="commentsShow" x-collapse
+                                                            class="grid grid-cols-1 gap-20p">
+                                                            <!-- comment 3 -->
+                                                            <div class="flex items-start gap-3">
+                                                                <img class="avatar size-48p"
+                                                                    src="./assets/images/users/user5.png" alt="user" />
+                                                                <div>
+                                                                    <div class="bg-glass-5 px-3 py-2 rounded-12">
+                                                                        <a href="./profile.html"
+                                                                            class="text-m-medium text-w-neutral-1 link-1 line-clamp-1 mb-2">
+                                                                            Jon Smith
+                                                                        </a>
+                                                                        <div
+                                                                            class="flex items-end max-sm:flex-wrap gap-3">
+                                                                            <p class="text-sm text-w-neutral-3">
+                                                                                We invite you to treat yourself to the
+                                                                                gift of relaxation. Whether you're
+                                                                                seeking from aches and pains, stress
+                                                                                reduction, or a moment of pure
+                                                                                indulgence, our massage therapy has
+                                                                                something for everyone.
+                                                                            </p>
+                                                                            <button type="button"
+                                                                                class="shrink-0 flex-y gap-2 icon-20 text-w-neutral-4">
+                                                                                <i class="ti ti-heart"></i>
+                                                                                <i class="ti ti-mood-smile-beam"></i>
+                                                                            </button>
+                                                                        </div>
+                                                                    </div>
+                                                                    <div class="flex items-center gap-16p">
+                                                                        <button type="button" class="flex-y gap-1">
+                                                                            <i
+                                                                                class="ti ti-heart icon-20 text-danger"></i>
+                                                                            <span
+                                                                                class="text-sm text-w-neutral-1">Like</span>
+                                                                        </button>
+                                                                        <div class="flex-y gap-1">
+                                                                            <button type="button"
+                                                                                class="text-sm text-w-neutral-1">
+                                                                                Reply
+                                                                            </button>
+                                                                            <span class="text-sm text-w-neutral-1">
+                                                                                4D
+                                                                            </span>
+                                                                        </div>
+                                                                    </div>
+                                                                </div>
+                                                            </div>
+                                                            <!-- comment 4 -->
+                                                            <div class="flex items-start gap-3">
+                                                                <img class="avatar size-48p"
+                                                                    src="./assets/images/users/user4.png" alt="user" />
+                                                                <div>
+                                                                    <div class="bg-glass-5 px-3 py-2 rounded-12">
+                                                                        <a href="./profile.html"
+                                                                            class="text-m-medium text-w-neutral-1 link-1 line-clamp-1 mb-2">
+                                                                            Harry Wonder
+                                                                        </a>
+                                                                        <div
+                                                                            class="flex items-end max-sm:flex-wrap gap-3">
+                                                                            <p class="text-sm text-w-neutral-3">
+                                                                                We invite you to treat yourself to the
+                                                                                gift of relaxation. Whether you're
+                                                                                seeking from aches and pains, stress
+                                                                                reduction, or a moment of pure
+                                                                                indulgence, our massage therapy has
+                                                                                something for everyone.
+                                                                            </p>
+                                                                            <button type="button"
+                                                                                class="shrink-0 flex items-end gap-2 icon-20 text-w-neutral-4">
+                                                                                <i class="ti ti-heart"></i>
+                                                                                <i class="ti ti-mood-smile-beam"></i>
+                                                                            </button>
+                                                                        </div>
+                                                                    </div>
+                                                                    <div class="flex items-center gap-16p">
+                                                                        <button type="button" class="flex-y gap-1">
+                                                                            <i
+                                                                                class="ti ti-heart icon-20 text-danger"></i>
+                                                                            <span
+                                                                                class="text-sm text-w-neutral-1">Like</span>
+                                                                        </button>
+                                                                        <div class="flex-y gap-1">
+                                                                            <button type="button"
+                                                                                class="text-sm text-w-neutral-1">
+                                                                                Reply
+                                                                            </button>
+                                                                            <span class="text-sm text-w-neutral-1">
+                                                                                5D
+                                                                            </span>
+                                                                        </div>
+                                                                    </div>
+                                                                </div>
+                                                            </div>
+                                                        </div>
+
+                                                        <div class="mt-20p">
+                                                            <button @click="commentsShow = !commentsShow" type="button"
+                                                                class="text-m-medium text-w-neutral-1 mb-16p block">
+                                                                View 02 more comment
+                                                            </button>
+                                                            <form
+                                                                class="flex items-center justify-between gap-24p bg-b-neutral-2  rounded-full py-16p px-32p">
+                                                                <input
+                                                                    class="w-full bg-transparent text-base text-white placeholder:text-w-neutral-1"
+                                                                    type="text" name="name"
+                                                                    placeholder="Add Your Comment..." />
+                                                                <div class="flex-y gap-3 icon-24 text-w-neutral-4">
+                                                                    <button type="button">
+                                                                        <i class="ti ti-mood-smile-beam"></i>
+                                                                    </button>
+                                                                    <label for="comment-media-1">
+                                                                        <i class="ti ti-photo"></i>
+                                                                    </label>
+                                                                    <button>
+                                                                        <i class="ti ti-link"></i>
+                                                                    </button>
+                                                                    <input type="file" name="comment-media"
+                                                                        id="comment-media-1" class="hidden" />
+                                                                </div>
+                                                            </form>
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </div>
+
+                                        <!-- post card 2 -->
+                                        <div data-aos="fade-up">
+                                            <div class="flex items-center justify-between flex-wrap gap-3">
+                                                <div class="flex items-center gap-3">
+                                                    <img class="avatar size-60p" src="./assets/images/users/user5.png"
+                                                        alt="user" />
+                                                    <div>
+                                                        <a href="./profile.html"
+                                                            class="text-xl-medium text-w-neutral-1 link-1 line-clamp-1 mb-1">
+                                                            Jon Smith
+                                                        </a>
+                                                        <span class="text-s-medium text-w-neutral-4">
+                                                            6 day ago
+                                                        </span>
+                                                    </div>
+                                                </div>
+                                                <div x-data="dropdown" class="dropdown">
+                                                    <button @click="toggle()"
+                                                        class="dropdown-toggle w-fit text-white icon-32">
+                                                        <i class="ti ti-dots"></i>
+                                                    </button>
+                                                    <div x-show="isOpen" @click.away="close()" class="dropdown-content">
+                                                        <button @click="close()" class="dropdown-item">Save
+                                                            Link</button>
+                                                        <button @click="close()" class="dropdown-item">Report</button>
+                                                        <button @click="close()" class="dropdown-item">Hide
+                                                            Post</button>
+                                                        <button @click="close()" class="dropdown-item">Block
+                                                            User</button>
+                                                    </div>
+                                                </div>
+                                            </div>
+
+                                            <!-- post content area -->
+                                            <div class="py-20p">
+                                                <div id="gallery-container" class="grid grid-cols-4 gap-24p">
+                                                    <div class="col-span-4">
+                                                        <div
+                                                            class="gallery-items relative rounded-12 overflow-hidden group">
+                                                            <img class="w-full xl:h-[350px] md:h-[300px] h-[240px] group-hover:scale-110 object-cover transition-1"
+                                                                src="./assets/images/gallery/gallery4.png"
+                                                                alt="Gallery Image 1" />
+                                                            <div class="overlay-3"></div>
+                                                        </div>
+                                                    </div>
+                                                    <div class="col-span-2">
+                                                        <div
+                                                            class="gallery-items relative rounded-12 overflow-hidden group">
+                                                            <img class="w-full md:h-[252px] h-[220px] group-hover:scale-110 object-cover transition-1"
+                                                                src="./assets/images/gallery/gallery5.png"
+                                                                alt="Gallery Image 2" />
+                                                            <div class="overlay-3"></div>
+                                                        </div>
+                                                    </div>
+                                                    <div class="col-span-2">
+                                                        <div
+                                                            class="gallery-items relative rounded-12 overflow-hidden group">
+                                                            <img class="w-full md:h-[252px] h-[220px] group-hover:scale-110 object-cover transition-1"
+                                                                src="./assets/images/photos/heroBanner6.webp"
+                                                                alt="Gallery Image 5" />
+                                                            <div class="overlay-3"></div>
+                                                            <div class="photo-counter">
+                                                                <h4 class="heading-4 text-w-neutral-1">+4 Photos</h4>
+                                                            </div>
+                                                            <div class="overlay-9"></div>
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                            </div>
+
+                                            <!-- post footer -->
+                                            <div x-data="{ commentsShow: false }" @click.outside="commentsShow = false">
+                                                <div class="flex items-center justify-between flex-wrap gap-24p mb-20p">
+                                                    <div class="flex items-center gap-32p">
+                                                        <button type="button" class="flex items-center gap-2 text-base
+                                                text-w-neutral-1">
+                                                            <i class="ti ti-heart icon-24 text-w-neutral-4"></i>
+                                                            Like
+                                                        </button>
+                                                        <button type="button" @click="commentsShow =  !commentsShow"
+                                                            class="flex items-center gap-2 text-base
+                                            text-w-neutral-1">
+                                                            <i class="ti ti-message icon-24 text-w-neutral-4"></i>
+                                                            Comment
+                                                        </button>
+                                                    </div>
+                                                    <button type="button" class="flex items-center gap-2 text-base
+                                        text-w-neutral-1">
+                                                        <i class="ti ti-share-3 icon-24 text-w-neutral-4"></i>
+                                                        Share
+                                                    </button>
+                                                </div>
+                                                <div class="flex items-center flex-wrap gap-3 md:gap-[18px] mb-20p">
+                                                    <div
+                                                        class="flex items-center *:avatar *:size-8 *:border *:border-white *:-ml-3 ml-3">
+                                                        <img src="./assets/images/users/avatar1.png" alt="user" />
+                                                        <img src="./assets/images/users/avatar2.png" alt="user" />
+                                                        <img src="./assets/images/users/avatar3.png" alt="user" />
+                                                        <img src="./assets/images/users/avatar4.png" alt="user" />
+                                                    </div>
+                                                    <p class="text-sm text-w-neutral-4">
+                                                        Liked
+                                                        <span class="span text-w-neutral-1">Johnson</span>
+                                                        <span class="span text-w-neutral-1">and</span>
+                                                        209 Others
+                                                    </p>
+                                                </div>
+
+                                                <!-- comments area -->
+                                                <div>
+                                                    <div class="pt-20p border-t border-shap">
+                                                        <div class="grid grid-cols-1 gap-20p mb-20p">
+                                                            <!-- comment 1 -->
+                                                            <div class="flex items-start gap-3">
+                                                                <img class="avatar size-48p"
+                                                                    src="./assets/images/users/user2.png" alt="user" />
+                                                                <div>
+                                                                    <div class="bg-glass-5 px-3 py-2 rounded-12">
+                                                                        <a href="./profile.html"
+                                                                            class="text-m-medium text-w-neutral-1 link-1 line-clamp-1 mb-2">
+                                                                            Rolex Yaaeh
+                                                                        </a>
+                                                                        <div
+                                                                            class="flex items-end max-sm:flex-wrap gap-3">
+                                                                            <p class="text-sm text-w-neutral-3">
+                                                                                In ut odio libero vulputate
+                                                                            </p>
+                                                                            <button type="button"
+                                                                                class="shrink-0 flex-y gap-2 icon-20 text-w-neutral-4">
+                                                                                <i class="ti ti-heart"></i>
+                                                                                <i class="ti ti-mood-smile-beam"></i>
+                                                                            </button>
+                                                                        </div>
+                                                                    </div>
+                                                                    <div class="flex items-center gap-16p">
+                                                                        <button type="button" class="flex-y gap-1">
+                                                                            <i
+                                                                                class="ti ti-heart icon-20 text-danger"></i>
+                                                                            <span
+                                                                                class="text-sm text-w-neutral-1">Like</span>
+                                                                        </button>
+                                                                        <div class="flex-y gap-1">
+                                                                            <button type="button"
+                                                                                class="text-sm text-w-neutral-1">
+                                                                                Reply
+                                                                            </button>
+                                                                            <span class="text-sm text-w-neutral-1">
+                                                                                4D
+                                                                            </span>
+                                                                        </div>
+                                                                    </div>
+                                                                </div>
+                                                            </div>
+                                                            <!-- comment 2 -->
+                                                            <div class="flex items-start gap-3">
+                                                                <img class="avatar size-48p"
+                                                                    src="./assets/images/users/user3.png" alt="user" />
+                                                                <div>
+                                                                    <div class="bg-glass-5 px-3 py-2 rounded-12">
+                                                                        <a href="./profile.html"
+                                                                            class="text-m-medium text-w-neutral-1 link-1 line-clamp-1 mb-2">
+                                                                            Jon Smith
+                                                                        </a>
+                                                                        <div
+                                                                            class="flex items-end max-sm:flex-wrap gap-3">
+                                                                            <p class="text-sm text-w-neutral-3">
+                                                                                We invite you to treat yourself to the
+                                                                                gift of relaxation. Whether you're
+                                                                                seeking from aches and pains, stress
+                                                                                reduction, or a moment of pure
+                                                                                indulgence, our massage therapy has
+                                                                                something for everyone.
+                                                                            </p>
+                                                                            <button type="button"
+                                                                                class="shrink-0 flex items-end gap-2 icon-20 text-w-neutral-4">
+                                                                                <i class="ti ti-heart"></i>
+                                                                                <i class="ti ti-mood-smile-beam"></i>
+                                                                            </button>
+                                                                        </div>
+                                                                    </div>
+                                                                    <div class="flex items-center gap-16p">
+                                                                        <button type="button" class="flex-y gap-1">
+                                                                            <i
+                                                                                class="ti ti-heart icon-20 text-danger"></i>
+                                                                            <span
+                                                                                class="text-sm text-w-neutral-1">Like</span>
+                                                                        </button>
+                                                                        <div class="flex-y gap-1">
+                                                                            <button type="button"
+                                                                                class="text-sm text-w-neutral-1">
+                                                                                Reply
+                                                                            </button>
+                                                                            <span class="text-sm text-w-neutral-1">
+                                                                                5D
+                                                                            </span>
+                                                                        </div>
+                                                                    </div>
+                                                                </div>
+                                                            </div>
+                                                        </div>
+
+                                                        <!-- hidden comments -->
+                                                        <div x-show="commentsShow" x-collapse
+                                                            class="grid grid-cols-1 gap-20p">
+                                                            <!-- comment 3 -->
+                                                            <div class="flex items-start gap-3">
+                                                                <img class="avatar size-48p"
+                                                                    src="./assets/images/users/user5.png" alt="user" />
+                                                                <div>
+                                                                    <div class="bg-glass-5 px-3 py-2 rounded-12">
+                                                                        <a href="./profile.html"
+                                                                            class="text-m-medium text-w-neutral-1 link-1 line-clamp-1 mb-2">
+                                                                            Jon Smith
+                                                                        </a>
+                                                                        <div
+                                                                            class="flex items-end max-sm:flex-wrap gap-3">
+                                                                            <p class="text-sm text-w-neutral-3">
+                                                                                We invite you to treat yourself to the
+                                                                                gift of relaxation. Whether you're
+                                                                                seeking from aches and pains, stress
+                                                                                reduction, or a moment of pure
+                                                                                indulgence, our massage therapy has
+                                                                                something for everyone.
+                                                                            </p>
+                                                                            <button type="button"
+                                                                                class="shrink-0 flex-y gap-2 icon-20 text-w-neutral-4">
+                                                                                <i class="ti ti-heart"></i>
+                                                                                <i class="ti ti-mood-smile-beam"></i>
+                                                                            </button>
+                                                                        </div>
+                                                                    </div>
+                                                                    <div class="flex items-center gap-16p">
+                                                                        <button type="button" class="flex-y gap-1">
+                                                                            <i
+                                                                                class="ti ti-heart icon-20 text-danger"></i>
+                                                                            <span
+                                                                                class="text-sm text-w-neutral-1">Like</span>
+                                                                        </button>
+                                                                        <div class="flex-y gap-1">
+                                                                            <button type="button"
+                                                                                class="text-sm text-w-neutral-1">
+                                                                                Reply
+                                                                            </button>
+                                                                            <span class="text-sm text-w-neutral-1">
+                                                                                4D
+                                                                            </span>
+                                                                        </div>
+                                                                    </div>
+                                                                </div>
+                                                            </div>
+                                                            <!-- comment 4 -->
+                                                            <div class="flex items-start gap-3">
+                                                                <img class="avatar size-48p"
+                                                                    src="./assets/images/users/user4.png" alt="user" />
+                                                                <div>
+                                                                    <div class="bg-glass-5 px-3 py-2 rounded-12">
+                                                                        <a href="./profile.html"
+                                                                            class="text-m-medium text-w-neutral-1 link-1 line-clamp-1 mb-2">
+                                                                            Harry Wonder
+                                                                        </a>
+                                                                        <div
+                                                                            class="flex items-end max-sm:flex-wrap gap-3">
+                                                                            <p class="text-sm text-w-neutral-3">
+                                                                                We invite you to treat yourself to the
+                                                                                gift of relaxation. Whether you're
+                                                                                seeking from aches and pains, stress
+                                                                                reduction, or a moment of pure
+                                                                                indulgence, our massage therapy has
+                                                                                something for everyone.
+                                                                            </p>
+                                                                            <button type="button"
+                                                                                class="shrink-0 flex items-end gap-2 icon-20 text-w-neutral-4">
+                                                                                <i class="ti ti-heart"></i>
+                                                                                <i class="ti ti-mood-smile-beam"></i>
+                                                                            </button>
+                                                                        </div>
+                                                                    </div>
+                                                                    <div class="flex items-center gap-16p">
+                                                                        <button type="button" class="flex-y gap-1">
+                                                                            <i
+                                                                                class="ti ti-heart icon-20 text-danger"></i>
+                                                                            <span
+                                                                                class="text-sm text-w-neutral-1">Like</span>
+                                                                        </button>
+                                                                        <div class="flex-y gap-1">
+                                                                            <button type="button"
+                                                                                class="text-sm text-w-neutral-1">
+                                                                                Reply
+                                                                            </button>
+                                                                            <span class="text-sm text-w-neutral-1">
+                                                                                5D
+                                                                            </span>
+                                                                        </div>
+                                                                    </div>
+                                                                </div>
+                                                            </div>
+                                                        </div>
+
+                                                        <div class="mt-20p">
+                                                            <button @click="commentsShow = !commentsShow" type="button"
+                                                                class="text-m-medium text-w-neutral-1 mb-16p block">
+                                                                View 02 more comment
+                                                            </button>
+                                                            <form
+                                                                class="flex items-center justify-between gap-24p bg-b-neutral-2  rounded-full py-16p px-32p">
+                                                                <input
+                                                                    class="w-full bg-transparent text-base text-white placeholder:text-w-neutral-1"
+                                                                    type="text" name="name"
+                                                                    placeholder="Add Your Comment..." />
+                                                                <div class="flex-y gap-3 icon-24 text-w-neutral-4">
+                                                                    <button type="button">
+                                                                        <i class="ti ti-mood-smile-beam"></i>
+                                                                    </button>
+                                                                    <label for="comment-media-2">
+                                                                        <i class="ti ti-photo"></i>
+                                                                    </label>
+                                                                    <button>
+                                                                        <i class="ti ti-link"></i>
+                                                                    </button>
+                                                                    <input type="file" name="comment-media"
+                                                                        id="comment-media-2" class="hidden" />
+                                                                </div>
+                                                            </form>
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </div>
+
+                                        <!-- post card 3 -->
+                                        <div data-aos="fade-up">
+                                            <div class="flex items-center justify-between flex-wrap gap-3">
+                                                <div class="flex items-center gap-3">
+                                                    <img class="avatar size-60p" src="./assets/images/users/user6.png"
+                                                        alt="user" />
+                                                    <div>
+                                                        <a href="./profile.html"
+                                                            class="text-xl-medium text-w-neutral-1 link-1 line-clamp-1 mb-1">
+                                                            Brooklyn Simmons
+                                                        </a>
+                                                        <span class="text-s-medium text-w-neutral-4">
+                                                            7 day ago
+                                                        </span>
+                                                    </div>
+                                                </div>
+                                                <div x-data="dropdown" class="dropdown">
+                                                    <button @click="toggle()"
+                                                        class="dropdown-toggle w-fit text-white icon-32">
+                                                        <i class="ti ti-dots"></i>
+                                                    </button>
+                                                    <div x-show="isOpen" @click.away="close()" class="dropdown-content">
+                                                        <button @click="close()" class="dropdown-item">Save
+                                                            Link</button>
+                                                        <button @click="close()" class="dropdown-item">Report</button>
+                                                        <button @click="close()" class="dropdown-item">Hide
+                                                            Post</button>
+                                                        <button @click="close()" class="dropdown-item">Block
+                                                            User</button>
+                                                    </div>
+                                                </div>
+                                            </div>
+
+                                            <!-- post content area -->
+                                            <div class="py-20p">
+                                                <div class="plyr__video-embed player">
+                                                    <img class="plyr_custom_poster"
+                                                        src="./assets/images/videothumbnails/thumbnail2.png"
+                                                        alt="poster" />
+                                                    <iframe src="https://www.youtube.com/embed/mUxzKVrSAjs"
+                                                        allowfullscreen allow="autoplay"></iframe>
+                                                </div>
+                                            </div>
+
+                                            <!-- post footer -->
+                                            <div x-data="{ commentsShow: false }" @click.outside="commentsShow = false">
+                                                <div class="flex items-center justify-between flex-wrap gap-24p mb-20p">
+                                                    <div class="flex items-center gap-32p">
+                                                        <button type="button" class="flex items-center gap-2 text-base
+                                                text-w-neutral-1">
+                                                            <i class="ti ti-heart icon-24 text-w-neutral-4"></i>
+                                                            Like
+                                                        </button>
+                                                        <button type="button" @click="commentsShow =  !commentsShow"
+                                                            class="flex items-center gap-2 text-base
+                                            text-w-neutral-1">
+                                                            <i class="ti ti-message icon-24 text-w-neutral-4"></i>
+                                                            Comment
+                                                        </button>
+                                                    </div>
+                                                    <button type="button" class="flex items-center gap-2 text-base
+                                        text-w-neutral-1">
+                                                        <i class="ti ti-share-3 icon-24 text-w-neutral-4"></i>
+                                                        Share
+                                                    </button>
+                                                </div>
+                                                <div class="flex items-center flex-wrap gap-3 md:gap-[18px] mb-20p">
+                                                    <div
+                                                        class="flex items-center *:avatar *:size-8 *:border *:border-white *:-ml-3 ml-3">
+                                                        <img src="./assets/images/users/avatar1.png" alt="user" />
+                                                        <img src="./assets/images/users/avatar2.png" alt="user" />
+                                                        <img src="./assets/images/users/avatar3.png" alt="user" />
+                                                        <img src="./assets/images/users/avatar4.png" alt="user" />
+                                                    </div>
+                                                    <p class="text-sm text-w-neutral-4">
+                                                        Liked
+                                                        <span class="span text-w-neutral-1">Johnson</span>
+                                                        <span class="span text-w-neutral-1">and</span>
+                                                        209 Others
+                                                    </p>
+                                                </div>
+
+                                                <!-- comments area -->
+                                                <div>
+                                                    <div class="pt-20p border-t border-shap">
+                                                        <div class="grid grid-cols-1 gap-20p mb-20p">
+                                                            <!-- comment 1 -->
+                                                            <div class="flex items-start gap-3">
+                                                                <img class="avatar size-48p"
+                                                                    src="./assets/images/users/user2.png" alt="user" />
+                                                                <div>
+                                                                    <div class="bg-glass-5 px-3 py-2 rounded-12">
+                                                                        <a href="./profile.html"
+                                                                            class="text-m-medium text-w-neutral-1 link-1 line-clamp-1 mb-2">
+                                                                            Rolex Yaaeh
+                                                                        </a>
+                                                                        <div
+                                                                            class="flex items-end max-sm:flex-wrap gap-3">
+                                                                            <p class="text-sm text-w-neutral-3">
+                                                                                In ut odio libero vulputate
+                                                                            </p>
+                                                                            <button type="button"
+                                                                                class="shrink-0 flex-y gap-2 icon-20 text-w-neutral-4">
+                                                                                <i class="ti ti-heart"></i>
+                                                                                <i class="ti ti-mood-smile-beam"></i>
+                                                                            </button>
+                                                                        </div>
+                                                                    </div>
+                                                                    <div class="flex items-center gap-16p">
+                                                                        <button type="button" class="flex-y gap-1">
+                                                                            <i
+                                                                                class="ti ti-heart icon-20 text-danger"></i>
+                                                                            <span
+                                                                                class="text-sm text-w-neutral-1">Like</span>
+                                                                        </button>
+                                                                        <div class="flex-y gap-1">
+                                                                            <button type="button"
+                                                                                class="text-sm text-w-neutral-1">
+                                                                                Reply
+                                                                            </button>
+                                                                            <span class="text-sm text-w-neutral-1">
+                                                                                4D
+                                                                            </span>
+                                                                        </div>
+                                                                    </div>
+                                                                </div>
+                                                            </div>
+                                                            <!-- comment 2 -->
+                                                            <div class="flex items-start gap-3">
+                                                                <img class="avatar size-48p"
+                                                                    src="./assets/images/users/user3.png" alt="user" />
+                                                                <div>
+                                                                    <div class="bg-glass-5 px-3 py-2 rounded-12">
+                                                                        <a href="./profile.html"
+                                                                            class="text-m-medium text-w-neutral-1 link-1 line-clamp-1 mb-2">
+                                                                            Jon Smith
+                                                                        </a>
+                                                                        <div
+                                                                            class="flex items-end max-sm:flex-wrap gap-3">
+                                                                            <p class="text-sm text-w-neutral-3">
+                                                                                We invite you to treat yourself to the
+                                                                                gift of relaxation. Whether you're
+                                                                                seeking from aches and pains, stress
+                                                                                reduction, or a moment of pure
+                                                                                indulgence, our massage therapy has
+                                                                                something for everyone.
+                                                                            </p>
+                                                                            <button type="button"
+                                                                                class="shrink-0 flex items-end gap-2 icon-20 text-w-neutral-4">
+                                                                                <i class="ti ti-heart"></i>
+                                                                                <i class="ti ti-mood-smile-beam"></i>
+                                                                            </button>
+                                                                        </div>
+                                                                    </div>
+                                                                    <div class="flex items-center gap-16p">
+                                                                        <button type="button" class="flex-y gap-1">
+                                                                            <i
+                                                                                class="ti ti-heart icon-20 text-danger"></i>
+                                                                            <span
+                                                                                class="text-sm text-w-neutral-1">Like</span>
+                                                                        </button>
+                                                                        <div class="flex-y gap-1">
+                                                                            <button type="button"
+                                                                                class="text-sm text-w-neutral-1">
+                                                                                Reply
+                                                                            </button>
+                                                                            <span class="text-sm text-w-neutral-1">
+                                                                                5D
+                                                                            </span>
+                                                                        </div>
+                                                                    </div>
+                                                                </div>
+                                                            </div>
+                                                        </div>
+
+                                                        <!-- hidden comments -->
+                                                        <div x-show="commentsShow" x-collapse
+                                                            class="grid grid-cols-1 gap-20p">
+                                                            <!-- comment 3 -->
+                                                            <div class="flex items-start gap-3">
+                                                                <img class="avatar size-48p"
+                                                                    src="./assets/images/users/user5.png" alt="user" />
+                                                                <div>
+                                                                    <div class="bg-glass-5 px-3 py-2 rounded-12">
+                                                                        <a href="./profile.html"
+                                                                            class="text-m-medium text-w-neutral-1 link-1 line-clamp-1 mb-2">
+                                                                            Jon Smith
+                                                                        </a>
+                                                                        <div
+                                                                            class="flex items-end max-sm:flex-wrap gap-3">
+                                                                            <p class="text-sm text-w-neutral-3">
+                                                                                We invite you to treat yourself to the
+                                                                                gift of relaxation. Whether you're
+                                                                                seeking from aches and pains, stress
+                                                                                reduction, or a moment of pure
+                                                                                indulgence, our massage therapy has
+                                                                                something for everyone.
+                                                                            </p>
+                                                                            <button type="button"
+                                                                                class="shrink-0 flex-y gap-2 icon-20 text-w-neutral-4">
+                                                                                <i class="ti ti-heart"></i>
+                                                                                <i class="ti ti-mood-smile-beam"></i>
+                                                                            </button>
+                                                                        </div>
+                                                                    </div>
+                                                                    <div class="flex items-center gap-16p">
+                                                                        <button type="button" class="flex-y gap-1">
+                                                                            <i
+                                                                                class="ti ti-heart icon-20 text-danger"></i>
+                                                                            <span
+                                                                                class="text-sm text-w-neutral-1">Like</span>
+                                                                        </button>
+                                                                        <div class="flex-y gap-1">
+                                                                            <button type="button"
+                                                                                class="text-sm text-w-neutral-1">
+                                                                                Reply
+                                                                            </button>
+                                                                            <span class="text-sm text-w-neutral-1">
+                                                                                4D
+                                                                            </span>
+                                                                        </div>
+                                                                    </div>
+                                                                </div>
+                                                            </div>
+                                                            <!-- comment 4 -->
+                                                            <div class="flex items-start gap-3">
+                                                                <img class="avatar size-48p"
+                                                                    src="./assets/images/users/user4.png" alt="user" />
+                                                                <div>
+                                                                    <div class="bg-glass-5 px-3 py-2 rounded-12">
+                                                                        <a href="./profile.html"
+                                                                            class="text-m-medium text-w-neutral-1 link-1 line-clamp-1 mb-2">
+                                                                            Harry Wonder
+                                                                        </a>
+                                                                        <div
+                                                                            class="flex items-end max-sm:flex-wrap gap-3">
+                                                                            <p class="text-sm text-w-neutral-3">
+                                                                                We invite you to treat yourself to the
+                                                                                gift of relaxation. Whether you're
+                                                                                seeking from aches and pains, stress
+                                                                                reduction, or a moment of pure
+                                                                                indulgence, our massage therapy has
+                                                                                something for everyone.
+                                                                            </p>
+                                                                            <button type="button"
+                                                                                class="shrink-0 flex items-end gap-2 icon-20 text-w-neutral-4">
+                                                                                <i class="ti ti-heart"></i>
+                                                                                <i class="ti ti-mood-smile-beam"></i>
+                                                                            </button>
+                                                                        </div>
+                                                                    </div>
+                                                                    <div class="flex items-center gap-16p">
+                                                                        <button type="button" class="flex-y gap-1">
+                                                                            <i
+                                                                                class="ti ti-heart icon-20 text-danger"></i>
+                                                                            <span
+                                                                                class="text-sm text-w-neutral-1">Like</span>
+                                                                        </button>
+                                                                        <div class="flex-y gap-1">
+                                                                            <button type="button"
+                                                                                class="text-sm text-w-neutral-1">
+                                                                                Reply
+                                                                            </button>
+                                                                            <span class="text-sm text-w-neutral-1">
+                                                                                5D
+                                                                            </span>
+                                                                        </div>
+                                                                    </div>
+                                                                </div>
+                                                            </div>
+                                                        </div>
+
+                                                        <div class="mt-20p">
+                                                            <button @click="commentsShow = !commentsShow" type="button"
+                                                                class="text-m-medium text-w-neutral-1 mb-16p block">
+                                                                View 02 more comment
+                                                            </button>
+                                                            <form
+                                                                class="flex items-center justify-between gap-24p bg-b-neutral-2  rounded-full py-16p px-32p">
+                                                                <input
+                                                                    class="w-full bg-transparent text-base text-white placeholder:text-w-neutral-1"
+                                                                    type="text" name="name"
+                                                                    placeholder="Add Your Comment..." />
+                                                                <div class="flex-y gap-3 icon-24 text-w-neutral-4">
+                                                                    <button type="button">
+                                                                        <i class="ti ti-mood-smile-beam"></i>
+                                                                    </button>
+                                                                    <label for="comment-media-3">
+                                                                        <i class="ti ti-photo"></i>
+                                                                    </label>
+                                                                    <button>
+                                                                        <i class="ti ti-link"></i>
+                                                                    </button>
+                                                                    <input type="file" name="comment-media"
+                                                                        id="comment-media-3" class="hidden" />
+                                                                </div>
+                                                            </form>
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </div>
+
+                                        <!-- post card 4 -->
+                                        <div data-aos="fade-up">
+                                            <div class="flex items-center justify-between flex-wrap gap-3">
+                                                <div class="flex items-center gap-3">
+                                                    <img class="avatar size-60p" src="./assets/images/users/user7.png"
+                                                        alt="user" />
+                                                    <div>
+                                                        <a href="./profile.html"
+                                                            class="text-xl-medium text-w-neutral-1 link-1 line-clamp-1 mb-1">
+                                                            Malan Willam
+                                                        </a>
+                                                        <span class="text-s-medium text-w-neutral-4">
+                                                            7 day ago
+                                                        </span>
+                                                    </div>
+                                                </div>
+                                                <div x-data="dropdown" class="dropdown">
+                                                    <button @click="toggle()"
+                                                        class="dropdown-toggle w-fit text-white icon-32">
+                                                        <i class="ti ti-dots"></i>
+                                                    </button>
+                                                    <div x-show="isOpen" @click.away="close()" class="dropdown-content">
+                                                        <button @click="close()" class="dropdown-item">Save
+                                                            Link</button>
+                                                        <button @click="close()" class="dropdown-item">Report</button>
+                                                        <button @click="close()" class="dropdown-item">Hide
+                                                            Post</button>
+                                                        <button @click="close()" class="dropdown-item">Block
+                                                            User</button>
+                                                    </div>
+                                                </div>
+                                            </div>
+
+                                            <!-- post content area -->
+                                            <div class="py-20p">
+                                                <p class="text-sm text-w-neutral-4">
+                                                    The new interface design is really coming together! I
+                                                    particularly like the way you’ve integrated the color scheme
+                                                    with the game's theme. However, I feel like the menu icons
+                                                    could use a bit more refinement to make them stand out,
+                                                    especially for new players. Maybe a subtle glow or shadow
+                                                    effect could help?
+                                                </p>
+                                            </div>
+
+                                            <!-- post footer -->
+                                            <div x-data="{ commentsShow: false }" @click.outside="commentsShow = false">
+                                                <div class="flex items-center justify-between flex-wrap gap-24p mb-20p">
+                                                    <div class="flex items-center gap-32p">
+                                                        <button type="button" class="flex items-center gap-2 text-base
+                                                text-w-neutral-1">
+                                                            <i class="ti ti-heart icon-24 text-w-neutral-4"></i>
+                                                            Like
+                                                        </button>
+                                                        <button type="button" @click="commentsShow =  !commentsShow"
+                                                            class="flex items-center gap-2 text-base
+                                            text-w-neutral-1">
+                                                            <i class="ti ti-message icon-24 text-w-neutral-4"></i>
+                                                            Comment
+                                                        </button>
+                                                    </div>
+                                                    <button type="button" class="flex items-center gap-2 text-base
+                                        text-w-neutral-1">
+                                                        <i class="ti ti-share-3 icon-24 text-w-neutral-4"></i>
+                                                        Share
+                                                    </button>
+                                                </div>
+                                                <div class="flex items-center flex-wrap gap-3 md:gap-[18px] mb-20p">
+                                                    <div
+                                                        class="flex items-center *:avatar *:size-8 *:border *:border-white *:-ml-3 ml-3">
+                                                        <img src="./assets/images/users/avatar1.png" alt="user" />
+                                                        <img src="./assets/images/users/avatar2.png" alt="user" />
+                                                        <img src="./assets/images/users/avatar3.png" alt="user" />
+                                                        <img src="./assets/images/users/avatar4.png" alt="user" />
+                                                    </div>
+                                                    <p class="text-sm text-w-neutral-4">
+                                                        Liked
+                                                        <span class="span text-w-neutral-1">Johnson</span>
+                                                        <span class="span text-w-neutral-1">and</span>
+                                                        209 Others
+                                                    </p>
+                                                </div>
+
+                                                <!-- comments area -->
+                                                <div>
+                                                    <div class="pt-20p border-t border-shap">
+                                                        <div class="grid grid-cols-1 gap-20p mb-20p">
+                                                            <!-- comment 1 -->
+                                                            <div class="flex items-start gap-3">
+                                                                <img class="avatar size-48p"
+                                                                    src="./assets/images/users/user2.png" alt="user" />
+                                                                <div>
+                                                                    <div class="bg-glass-5 px-3 py-2 rounded-12">
+                                                                        <a href="./profile.html"
+                                                                            class="text-m-medium text-w-neutral-1 link-1 line-clamp-1 mb-2">
+                                                                            Rolex Yaaeh
+                                                                        </a>
+                                                                        <div
+                                                                            class="flex items-end max-sm:flex-wrap gap-3">
+                                                                            <p class="text-sm text-w-neutral-3">
+                                                                                In ut odio libero vulputate
+                                                                            </p>
+                                                                            <button type="button"
+                                                                                class="shrink-0 flex-y gap-2 icon-20 text-w-neutral-4">
+                                                                                <i class="ti ti-heart"></i>
+                                                                                <i class="ti ti-mood-smile-beam"></i>
+                                                                            </button>
+                                                                        </div>
+                                                                    </div>
+                                                                    <div class="flex items-center gap-16p">
+                                                                        <button type="button" class="flex-y gap-1">
+                                                                            <i
+                                                                                class="ti ti-heart icon-20 text-danger"></i>
+                                                                            <span
+                                                                                class="text-sm text-w-neutral-1">Like</span>
+                                                                        </button>
+                                                                        <div class="flex-y gap-1">
+                                                                            <button type="button"
+                                                                                class="text-sm text-w-neutral-1">
+                                                                                Reply
+                                                                            </button>
+                                                                            <span class="text-sm text-w-neutral-1">
+                                                                                4D
+                                                                            </span>
+                                                                        </div>
+                                                                    </div>
+                                                                </div>
+                                                            </div>
+                                                            <!-- comment 2 -->
+                                                            <div class="flex items-start gap-3">
+                                                                <img class="avatar size-48p"
+                                                                    src="./assets/images/users/user3.png" alt="user" />
+                                                                <div>
+                                                                    <div class="bg-glass-5 px-3 py-2 rounded-12">
+                                                                        <a href="./profile.html"
+                                                                            class="text-m-medium text-w-neutral-1 link-1 line-clamp-1 mb-2">
+                                                                            Jon Smith
+                                                                        </a>
+                                                                        <div
+                                                                            class="flex items-end max-sm:flex-wrap gap-3">
+                                                                            <p class="text-sm text-w-neutral-3">
+                                                                                We invite you to treat yourself to the
+                                                                                gift of relaxation. Whether you're
+                                                                                seeking from aches and pains, stress
+                                                                                reduction, or a moment of pure
+                                                                                indulgence, our massage therapy has
+                                                                                something for everyone.
+                                                                            </p>
+                                                                            <button type="button"
+                                                                                class="shrink-0 flex items-end gap-2 icon-20 text-w-neutral-4">
+                                                                                <i class="ti ti-heart"></i>
+                                                                                <i class="ti ti-mood-smile-beam"></i>
+                                                                            </button>
+                                                                        </div>
+                                                                    </div>
+                                                                    <div class="flex items-center gap-16p">
+                                                                        <button type="button" class="flex-y gap-1">
+                                                                            <i
+                                                                                class="ti ti-heart icon-20 text-danger"></i>
+                                                                            <span
+                                                                                class="text-sm text-w-neutral-1">Like</span>
+                                                                        </button>
+                                                                        <div class="flex-y gap-1">
+                                                                            <button type="button"
+                                                                                class="text-sm text-w-neutral-1">
+                                                                                Reply
+                                                                            </button>
+                                                                            <span class="text-sm text-w-neutral-1">
+                                                                                5D
+                                                                            </span>
+                                                                        </div>
+                                                                    </div>
+                                                                </div>
+                                                            </div>
+                                                        </div>
+
+                                                        <!-- hidden comments -->
+                                                        <div x-show="commentsShow" x-collapse
+                                                            class="grid grid-cols-1 gap-20p">
+                                                            <!-- comment 3 -->
+                                                            <div class="flex items-start gap-3">
+                                                                <img class="avatar size-48p"
+                                                                    src="./assets/images/users/user5.png" alt="user" />
+                                                                <div>
+                                                                    <div class="bg-glass-5 px-3 py-2 rounded-12">
+                                                                        <a href="./profile.html"
+                                                                            class="text-m-medium text-w-neutral-1 link-1 line-clamp-1 mb-2">
+                                                                            Jon Smith
+                                                                        </a>
+                                                                        <div
+                                                                            class="flex items-end max-sm:flex-wrap gap-3">
+                                                                            <p class="text-sm text-w-neutral-3">
+                                                                                We invite you to treat yourself to the
+                                                                                gift of relaxation. Whether you're
+                                                                                seeking from aches and pains, stress
+                                                                                reduction, or a moment of pure
+                                                                                indulgence, our massage therapy has
+                                                                                something for everyone.
+                                                                            </p>
+                                                                            <button type="button"
+                                                                                class="shrink-0 flex-y gap-2 icon-20 text-w-neutral-4">
+                                                                                <i class="ti ti-heart"></i>
+                                                                                <i class="ti ti-mood-smile-beam"></i>
+                                                                            </button>
+                                                                        </div>
+                                                                    </div>
+                                                                    <div class="flex items-center gap-16p">
+                                                                        <button type="button" class="flex-y gap-1">
+                                                                            <i
+                                                                                class="ti ti-heart icon-20 text-danger"></i>
+                                                                            <span
+                                                                                class="text-sm text-w-neutral-1">Like</span>
+                                                                        </button>
+                                                                        <div class="flex-y gap-1">
+                                                                            <button type="button"
+                                                                                class="text-sm text-w-neutral-1">
+                                                                                Reply
+                                                                            </button>
+                                                                            <span class="text-sm text-w-neutral-1">
+                                                                                4D
+                                                                            </span>
+                                                                        </div>
+                                                                    </div>
+                                                                </div>
+                                                            </div>
+                                                            <!-- comment 4 -->
+                                                            <div class="flex items-start gap-3">
+                                                                <img class="avatar size-48p"
+                                                                    src="./assets/images/users/user4.png" alt="user" />
+                                                                <div>
+                                                                    <div class="bg-glass-5 px-3 py-2 rounded-12">
+                                                                        <a href="./profile.html"
+                                                                            class="text-m-medium text-w-neutral-1 link-1 line-clamp-1 mb-2">
+                                                                            Harry Wonder
+                                                                        </a>
+                                                                        <div
+                                                                            class="flex items-end max-sm:flex-wrap gap-3">
+                                                                            <p class="text-sm text-w-neutral-3">
+                                                                                We invite you to treat yourself to the
+                                                                                gift of relaxation. Whether you're
+                                                                                seeking from aches and pains, stress
+                                                                                reduction, or a moment of pure
+                                                                                indulgence, our massage therapy has
+                                                                                something for everyone.
+                                                                            </p>
+                                                                            <button type="button"
+                                                                                class="shrink-0 flex items-end gap-2 icon-20 text-w-neutral-4">
+                                                                                <i class="ti ti-heart"></i>
+                                                                                <i class="ti ti-mood-smile-beam"></i>
+                                                                            </button>
+                                                                        </div>
+                                                                    </div>
+                                                                    <div class="flex items-center gap-16p">
+                                                                        <button type="button" class="flex-y gap-1">
+                                                                            <i
+                                                                                class="ti ti-heart icon-20 text-danger"></i>
+                                                                            <span
+                                                                                class="text-sm text-w-neutral-1">Like</span>
+                                                                        </button>
+                                                                        <div class="flex-y gap-1">
+                                                                            <button type="button"
+                                                                                class="text-sm text-w-neutral-1">
+                                                                                Reply
+                                                                            </button>
+                                                                            <span class="text-sm text-w-neutral-1">
+                                                                                5D
+                                                                            </span>
+                                                                        </div>
+                                                                    </div>
+                                                                </div>
+                                                            </div>
+                                                        </div>
+
+                                                        <div class="mt-20p">
+                                                            <button @click="commentsShow = !commentsShow" type="button"
+                                                                class="text-m-medium text-w-neutral-1 mb-16p block">
+                                                                View 02 more comment
+                                                            </button>
+                                                            <form
+                                                                class="flex items-center justify-between gap-24p bg-b-neutral-2  rounded-full py-16p px-32p">
+                                                                <input
+                                                                    class="w-full bg-transparent text-base text-white placeholder:text-w-neutral-1"
+                                                                    type="text" name="name"
+                                                                    placeholder="Add Your Comment..." />
+                                                                <div class="flex-y gap-3 icon-24 text-w-neutral-4">
+                                                                    <button type="button">
+                                                                        <i class="ti ti-mood-smile-beam"></i>
+                                                                    </button>
+                                                                    <label for="comment-media-4">
+                                                                        <i class="ti ti-photo"></i>
+                                                                    </label>
+                                                                    <button>
+                                                                        <i class="ti ti-link"></i>
+                                                                    </button>
+                                                                    <input type="file" name="comment-media"
+                                                                        id="comment-media-4" class="hidden" />
+                                                                </div>
+                                                            </form>
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </div>
+
+                                        <!-- post card 5 -->
+                                        <div data-aos="fade-up">
+                                            <div class="flex items-center justify-between flex-wrap gap-3">
+                                                <div class="flex items-center gap-3">
+                                                    <img class="avatar size-60p" src="./assets/images/users/user7.png"
+                                                        alt="user" />
+                                                    <div>
+                                                        <a href="./profile.html"
+                                                            class="text-xl-medium text-w-neutral-1 link-1 line-clamp-1 mb-1">
+                                                            Malan Willam
+                                                        </a>
+                                                        <span class="text-s-medium text-w-neutral-4">
+                                                            7 day ago
+                                                        </span>
+                                                    </div>
+                                                </div>
+                                                <div x-data="dropdown" class="dropdown">
+                                                    <button @click="toggle()"
+                                                        class="dropdown-toggle w-fit text-white icon-32">
+                                                        <i class="ti ti-dots"></i>
+                                                    </button>
+                                                    <div x-show="isOpen" @click.away="close()" class="dropdown-content">
+                                                        <button @click="close()" class="dropdown-item">Save
+                                                            Link</button>
+                                                        <button @click="close()" class="dropdown-item">Report</button>
+                                                        <button @click="close()" class="dropdown-item">Hide
+                                                            Post</button>
+                                                        <button @click="close()" class="dropdown-item">Block
+                                                            User</button>
+                                                    </div>
+                                                </div>
+                                            </div>
+
+                                            <!-- post content area -->
+                                            <div class="py-20p">
+                                                <div class="overflow-hidden">
+                                                    <img class="w-full xl:h-[472px] lg:h-[420px] md:h-[380px] h-[320px] hover:scale-110 object-cover transition-1"
+                                                        src="./assets/images/photos/trendingPlayerThumb.png"
+                                                        alt="img" />
+                                                </div>
+                                            </div>
+
+                                            <!-- post footer -->
+                                            <div x-data="{ commentsShow: false }" @click.outside="commentsShow = false">
+                                                <div class="flex items-center justify-between flex-wrap gap-24p mb-20p">
+                                                    <div class="flex items-center gap-32p">
+                                                        <button type="button" class="flex items-center gap-2 text-base
+                                                text-w-neutral-1">
+                                                            <i class="ti ti-heart icon-24 text-w-neutral-4"></i>
+                                                            Like
+                                                        </button>
+                                                        <button type="button" @click="commentsShow =  !commentsShow"
+                                                            class="flex items-center gap-2 text-base
+                                            text-w-neutral-1">
+                                                            <i class="ti ti-message icon-24 text-w-neutral-4"></i>
+                                                            Comment
+                                                        </button>
+                                                    </div>
+                                                    <button type="button" class="flex items-center gap-2 text-base
+                                        text-w-neutral-1">
+                                                        <i class="ti ti-share-3 icon-24 text-w-neutral-4"></i>
+                                                        Share
+                                                    </button>
+                                                </div>
+                                                <div class="flex items-center flex-wrap gap-3 md:gap-[18px] mb-20p">
+                                                    <div
+                                                        class="flex items-center *:avatar *:size-8 *:border *:border-white *:-ml-3 ml-3">
+                                                        <img src="./assets/images/users/avatar1.png" alt="user" />
+                                                        <img src="./assets/images/users/avatar2.png" alt="user" />
+                                                        <img src="./assets/images/users/avatar3.png" alt="user" />
+                                                        <img src="./assets/images/users/avatar4.png" alt="user" />
+                                                    </div>
+                                                    <p class="text-sm text-w-neutral-4">
+                                                        Liked
+                                                        <span class="span text-w-neutral-1">Johnson</span>
+                                                        <span class="span text-w-neutral-1">and</span>
+                                                        209 Others
+                                                    </p>
+                                                </div>
+
+                                                <!-- comments area -->
+                                                <div>
+                                                    <div class="pt-20p border-t border-shap">
+                                                        <div class="grid grid-cols-1 gap-20p mb-20p">
+                                                            <!-- comment 1 -->
+                                                            <div class="flex items-start gap-3">
+                                                                <img class="avatar size-48p"
+                                                                    src="./assets/images/users/user2.png" alt="user" />
+                                                                <div>
+                                                                    <div class="bg-glass-5 px-3 py-2 rounded-12">
+                                                                        <a href="./profile.html"
+                                                                            class="text-m-medium text-w-neutral-1 link-1 line-clamp-1 mb-2">
+                                                                            Rolex Yaaeh
+                                                                        </a>
+                                                                        <div
+                                                                            class="flex items-end max-sm:flex-wrap gap-3">
+                                                                            <p class="text-sm text-w-neutral-3">
+                                                                                In ut odio libero vulputate
+                                                                            </p>
+                                                                            <button type="button"
+                                                                                class="shrink-0 flex-y gap-2 icon-20 text-w-neutral-4">
+                                                                                <i class="ti ti-heart"></i>
+                                                                                <i class="ti ti-mood-smile-beam"></i>
+                                                                            </button>
+                                                                        </div>
+                                                                    </div>
+                                                                    <div class="flex items-center gap-16p">
+                                                                        <button type="button" class="flex-y gap-1">
+                                                                            <i
+                                                                                class="ti ti-heart icon-20 text-danger"></i>
+                                                                            <span
+                                                                                class="text-sm text-w-neutral-1">Like</span>
+                                                                        </button>
+                                                                        <div class="flex-y gap-1">
+                                                                            <button type="button"
+                                                                                class="text-sm text-w-neutral-1">
+                                                                                Reply
+                                                                            </button>
+                                                                            <span class="text-sm text-w-neutral-1">
+                                                                                4D
+                                                                            </span>
+                                                                        </div>
+                                                                    </div>
+                                                                </div>
+                                                            </div>
+                                                            <!-- comment 2 -->
+                                                            <div class="flex items-start gap-3">
+                                                                <img class="avatar size-48p"
+                                                                    src="./assets/images/users/user3.png" alt="user" />
+                                                                <div>
+                                                                    <div class="bg-glass-5 px-3 py-2 rounded-12">
+                                                                        <a href="./profile.html"
+                                                                            class="text-m-medium text-w-neutral-1 link-1 line-clamp-1 mb-2">
+                                                                            Jon Smith
+                                                                        </a>
+                                                                        <div
+                                                                            class="flex items-end max-sm:flex-wrap gap-3">
+                                                                            <p class="text-sm text-w-neutral-3">
+                                                                                We invite you to treat yourself to the
+                                                                                gift of relaxation. Whether you're
+                                                                                seeking from aches and pains, stress
+                                                                                reduction, or a moment of pure
+                                                                                indulgence, our massage therapy has
+                                                                                something for everyone.
+                                                                            </p>
+                                                                            <button type="button"
+                                                                                class="shrink-0 flex items-end gap-2 icon-20 text-w-neutral-4">
+                                                                                <i class="ti ti-heart"></i>
+                                                                                <i class="ti ti-mood-smile-beam"></i>
+                                                                            </button>
+                                                                        </div>
+                                                                    </div>
+                                                                    <div class="flex items-center gap-16p">
+                                                                        <button type="button" class="flex-y gap-1">
+                                                                            <i
+                                                                                class="ti ti-heart icon-20 text-danger"></i>
+                                                                            <span
+                                                                                class="text-sm text-w-neutral-1">Like</span>
+                                                                        </button>
+                                                                        <div class="flex-y gap-1">
+                                                                            <button type="button"
+                                                                                class="text-sm text-w-neutral-1">
+                                                                                Reply
+                                                                            </button>
+                                                                            <span class="text-sm text-w-neutral-1">
+                                                                                5D
+                                                                            </span>
+                                                                        </div>
+                                                                    </div>
+                                                                </div>
+                                                            </div>
+                                                        </div>
+
+                                                        <!-- hidden comments -->
+                                                        <div x-show="commentsShow" x-collapse
+                                                            class="grid grid-cols-1 gap-20p">
+                                                            <!-- comment 3 -->
+                                                            <div class="flex items-start gap-3">
+                                                                <img class="avatar size-48p"
+                                                                    src="./assets/images/users/user5.png" alt="user" />
+                                                                <div>
+                                                                    <div class="bg-glass-5 px-3 py-2 rounded-12">
+                                                                        <a href="./profile.html"
+                                                                            class="text-m-medium text-w-neutral-1 link-1 line-clamp-1 mb-2">
+                                                                            Jon Smith
+                                                                        </a>
+                                                                        <div
+                                                                            class="flex items-end max-sm:flex-wrap gap-3">
+                                                                            <p class="text-sm text-w-neutral-3">
+                                                                                We invite you to treat yourself to the
+                                                                                gift of relaxation. Whether you're
+                                                                                seeking from aches and pains, stress
+                                                                                reduction, or a moment of pure
+                                                                                indulgence, our massage therapy has
+                                                                                something for everyone.
+                                                                            </p>
+                                                                            <button type="button"
+                                                                                class="shrink-0 flex-y gap-2 icon-20 text-w-neutral-4">
+                                                                                <i class="ti ti-heart"></i>
+                                                                                <i class="ti ti-mood-smile-beam"></i>
+                                                                            </button>
+                                                                        </div>
+                                                                    </div>
+                                                                    <div class="flex items-center gap-16p">
+                                                                        <button type="button" class="flex-y gap-1">
+                                                                            <i
+                                                                                class="ti ti-heart icon-20 text-danger"></i>
+                                                                            <span
+                                                                                class="text-sm text-w-neutral-1">Like</span>
+                                                                        </button>
+                                                                        <div class="flex-y gap-1">
+                                                                            <button type="button"
+                                                                                class="text-sm text-w-neutral-1">
+                                                                                Reply
+                                                                            </button>
+                                                                            <span class="text-sm text-w-neutral-1">
+                                                                                4D
+                                                                            </span>
+                                                                        </div>
+                                                                    </div>
+                                                                </div>
+                                                            </div>
+                                                            <!-- comment 4 -->
+                                                            <div class="flex items-start gap-3">
+                                                                <img class="avatar size-48p"
+                                                                    src="./assets/images/users/user4.png" alt="user" />
+                                                                <div>
+                                                                    <div class="bg-glass-5 px-3 py-2 rounded-12">
+                                                                        <a href="./profile.html"
+                                                                            class="text-m-medium text-w-neutral-1 link-1 line-clamp-1 mb-2">
+                                                                            Harry Wonder
+                                                                        </a>
+                                                                        <div
+                                                                            class="flex items-end max-sm:flex-wrap gap-3">
+                                                                            <p class="text-sm text-w-neutral-3">
+                                                                                We invite you to treat yourself to the
+                                                                                gift of relaxation. Whether you're
+                                                                                seeking from aches and pains, stress
+                                                                                reduction, or a moment of pure
+                                                                                indulgence, our massage therapy has
+                                                                                something for everyone.
+                                                                            </p>
+                                                                            <button type="button"
+                                                                                class="shrink-0 flex items-end gap-2 icon-20 text-w-neutral-4">
+                                                                                <i class="ti ti-heart"></i>
+                                                                                <i class="ti ti-mood-smile-beam"></i>
+                                                                            </button>
+                                                                        </div>
+                                                                    </div>
+                                                                    <div class="flex items-center gap-16p">
+                                                                        <button type="button" class="flex-y gap-1">
+                                                                            <i
+                                                                                class="ti ti-heart icon-20 text-danger"></i>
+                                                                            <span
+                                                                                class="text-sm text-w-neutral-1">Like</span>
+                                                                        </button>
+                                                                        <div class="flex-y gap-1">
+                                                                            <button type="button"
+                                                                                class="text-sm text-w-neutral-1">
+                                                                                Reply
+                                                                            </button>
+                                                                            <span class="text-sm text-w-neutral-1">
+                                                                                5D
+                                                                            </span>
+                                                                        </div>
+                                                                    </div>
+                                                                </div>
+                                                            </div>
+                                                        </div>
+
+                                                        <div class="mt-20p">
+                                                            <button @click="commentsShow = !commentsShow" type="button"
+                                                                class="text-m-medium text-w-neutral-1 mb-16p block">
+                                                                View 02 more comment
+                                                            </button>
+                                                            <form
+                                                                class="flex items-center justify-between gap-24p bg-b-neutral-2  rounded-full py-16p px-32p">
+                                                                <input
+                                                                    class="w-full bg-transparent text-base text-white placeholder:text-w-neutral-1"
+                                                                    type="text" name="name"
+                                                                    placeholder="Add Your Comment..." />
+                                                                <div class="flex-y gap-3 icon-24 text-w-neutral-4">
+                                                                    <button type="button">
+                                                                        <i class="ti ti-mood-smile-beam"></i>
+                                                                    </button>
+                                                                    <label for="comment-media-5">
+                                                                        <i class="ti ti-photo"></i>
+                                                                    </label>
+                                                                    <button>
+                                                                        <i class="ti ti-link"></i>
+                                                                    </button>
+                                                                    <input type="file" name="comment-media"
+                                                                        id="comment-media-5" class="hidden" />
+                                                                </div>
+                                                            </form>
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </div>
+
+                                    </div>
+                                    <div class="flex-c mt-48p">
+                                        <button type="button" class="btn btn-lg btn-neutral-3 rounded-12">
+                                            Load more...
+                                        </button>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <div
+                            class="4xl:col-start-8 4xl:col-end-12 xxl:col-span-5 col-span-12 relative xxl:block hidden">
+                            <div class="xxl:sticky xxl:top-30">
+                                <div
+                                    class="grid grid-cols-1 gap-30p *:bg-b-neutral-3 *:rounded-12 *:py-32p *:px-40p xxl:max-h-screen xxl:overflow-y-auto scrollbar-sm">
+                                    <div>
+                                        <div class="flex items-center justify-between gap-24p">
+                                            <div>
+                                                <h3 class="heading-3 text-w-neutral-1 mb-1">
+                                                    Frriends
+                                                </h3>
+                                                <span>
+                                                    575 Friends
+                                                </span>
+                                            </div>
+                                            <a href="#" class="text-medium text-w-neutral-1 hover:text-primary">
+                                                See All
+                                            </a>
+                                        </div>
+
+                                        <div class="grid grid-cols-3 gap-x-20p gap-y-30p my-20p">
+                                            <div>
+                                                <img class="w-full sm:h-[136px] h-24 object-cover aspect-square rounded-12 mb-3"
+                                                    src="./assets/images/users/avatar9.png" alt="user" />
+                                                <a href="./profile.html"
+                                                    class="text-m-semi-bold text-w-neutral-1 link-1 line-clamp-1">
+                                                    Robert Fox
+                                                </a>
+                                            </div>
+                                            <div>
+                                                <img class="w-full sm:h-[136px] h-24 object-cover aspect-square rounded-12 mb-3"
+                                                    src="./assets/images/users/avatar10.png" alt="user" />
+                                                <a href="./profile.html"
+                                                    class="text-m-semi-bold text-w-neutral-1 link-1 line-clamp-1">
+                                                    Wade Warren
+                                                </a>
+                                            </div>
+                                            <div>
+                                                <img class="w-full sm:h-[136px] h-24 object-cover aspect-square rounded-12 mb-3"
+                                                    src="./assets/images/users/avatar11.png" alt="user" />
+                                                <a href="./profile.html"
+                                                    class="text-m-semi-bold text-w-neutral-1 link-1 line-clamp-1">
+                                                    Theresa Webb
+                                                </a>
+                                            </div>
+                                            <div>
+                                                <img class="w-full sm:h-[136px] h-24 object-cover aspect-square rounded-12 mb-3"
+                                                    src="./assets/images/users/avatar12.png" alt="user" />
+                                                <a href="./profile.html"
+                                                    class="text-m-semi-bold text-w-neutral-1 link-1 line-clamp-1">
+                                                    Albert Flores
+                                                </a>
+                                            </div>
+                                            <div>
+                                                <img class="w-full sm:h-[136px] h-24 object-cover aspect-square rounded-12 mb-3"
+                                                    src="./assets/images/users/avatar13.png" alt="user" />
+                                                <a href="./profile.html"
+                                                    class="text-m-semi-bold text-w-neutral-1 link-1 line-clamp-1">
+                                                    Albert Flores
+                                                </a>
+                                            </div>
+                                            <div>
+                                                <img class="w-full sm:h-[136px] h-24 object-cover aspect-square rounded-12 mb-3"
+                                                    src="./assets/images/users/avatar14.png" alt="user" />
+                                                <a href="./profile.html"
+                                                    class="text-m-semi-bold text-w-neutral-1 link-1 line-clamp-1">
+                                                    Courtney Henry
+                                                </a>
+                                            </div>
+                                        </div>
+
+                                        <a href="#" class="btn btn-md btn-neutral-2 rounded-12 w-full">
+                                            See All
+                                        </a>
+                                    </div>
+
+                                    <div>
+                                        <div class="flex-y justify-between gap-24p">
+                                            <h3 class="heading-3 text-w-neutral-1">
+                                                Photos
+                                                <span class="h3 span text-primary">75</span>
+                                            </h3>
+                                        </div>
+
+                                        <div class="grid grid-cols-3 gap-x-20p gap-y-30p my-20p">
+                                            <div class="overflow-hidden rounded-12">
+                                                <img class="w-full sm:h-[136px] h-24 object-cover aspect-square rounded-12 hover:scale-105 mb-3 transition-1"
+                                                    src="./assets/images/gallery/galleryPhoto1.png" alt="profile" />
+                                            </div>
+                                            <div class="overflow-hidden rounded-12">
+                                                <img class="w-full sm:h-[136px] h-24 object-cover aspect-square rounded-12 hover:scale-105 mb-3 transition-1"
+                                                    src="./assets/images/gallery/galleryPhoto2.png" alt="profile" />
+                                            </div>
+                                            <div class="overflow-hidden rounded-12">
+                                                <img class="w-full sm:h-[136px] h-24 object-cover aspect-square rounded-12 hover:scale-105 mb-3 transition-1"
+                                                    src="./assets/images/gallery/galleryPhoto3.png" alt="profile" />
+                                            </div>
+                                            <div class="overflow-hidden rounded-12">
+                                                <img class="w-full sm:h-[136px] h-24 object-cover aspect-square rounded-12 hover:scale-105 mb-3 transition-1"
+                                                    src="./assets/images/gallery/galleryPhoto4.png" alt="profile" />
+                                            </div>
+                                            <div class="overflow-hidden rounded-12">
+                                                <img class="w-full sm:h-[136px] h-24 object-cover aspect-square rounded-12 hover:scale-105 mb-3 transition-1"
+                                                    src="./assets/images/gallery/galleryPhoto5.png" alt="profile" />
+                                            </div>
+                                            <div class="overflow-hidden rounded-12">
+                                                <img class="w-full sm:h-[136px] h-24 object-cover aspect-square rounded-12 hover:scale-105 mb-3 transition-1"
+                                                    src="./assets/images/gallery/galleryPhoto6.png" alt="profile" />
+                                            </div>
+                                        </div>
+
+                                        <a href="#" class="btn btn-md btn-neutral-2 rounded-12 w-full">
+                                            See All
+                                        </a>
+                                    </div>
+
+                                    <div>
+                                        <div class="flex-y justify-between gap-24p">
+                                            <h3 class="heading-3 text-w-neutral-1">
+                                                Videos
+                                                <span class="h3 span text-primary">02</span>
+                                            </h3>
+                                        </div>
+
+                                        <div class="grid grid-cols-1 gap-20p mt-20p">
+
+                                            <!-- card 1 -->
+                                            <div class="*:w-full *:h-[246px] rounded-12 overflow-hidden">
+                                                <div class="plyr__video-embed player relative">
+                                                    <img class="plyr_custom_poster"
+                                                        src="./assets/images/videothumbnails/thumbnail3.png"
+                                                        alt="poster" />
+                                                    <iframe src="https://www.youtube.com/embed/mUxzKVrSAjs"
+                                                        allowfullscreen allow="autoplay"></iframe>
+                                                </div>
+                                            </div>
+
+                                            <!-- card 2 -->
+                                            <div class="*:w-full *:h-[246px] rounded-12 overflow-hidden">
+                                                <div class="plyr__video-embed player relative">
+                                                    <img class="plyr_custom_poster"
+                                                        src="./assets/images/videothumbnails/thumbnail4.png"
+                                                        alt="poster" />
+                                                    <iframe src="https://www.youtube.com/embed/mUxzKVrSAjs"
+                                                        allowfullscreen allow="autoplay"></iframe>
+                                                </div>
+                                            </div>
+
+                                        </div>
+
+                                    </div>
+
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </section>
+            <!-- user profile home section end -->
+        </main>
+        <!-- main end -->
+
+        <!-- footer start -->
+        <include-footer />
+        <!-- footer end -->
+    </div>
+    <!-- app layout end -->
+
+
+</body>
+
+</html>

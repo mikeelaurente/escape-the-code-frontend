@@ -1,0 +1,25 @@
+@layer components {
+  .avatar {
+    @apply relative rounded-full;
+
+    &-accent {
+      @apply bg-accent-1;
+    }
+
+    &-primary {
+      @apply bg-accent-3;
+    }
+
+    .status-badge {
+      @apply absolute -bottom-2 -right-2 icon-24;
+
+      &.online {
+        @apply text-secondary;
+      }
+
+      &.offline {
+        @apply text-w-neutral-4;
+      }
+    }
+  }
+}

@@ -1,0 +1,117 @@
+/* Global Styles */
+html {
+  scroll-behavior: smooth;
+}
+
+body {
+  background-color: #030304;
+  color: #fefefe;
+}
+
+section {
+  overflow: hidden;
+}
+
+// custom video modal
+.video-modal-backdrop {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-color: rgba(0, 0, 0, 0.5); /* Semi-transparent black */
+  z-index: 998; /* Should be behind the modal content */
+}
+
+/* Typography */
+
+/* Header Animation */
+.header-animation {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  z-index: 399;
+  animation-name: fadeDown;
+  animation-duration: 1s;
+  background-color: #030304;
+}
+
+@keyframes fadeDown {
+  0% {
+    opacity: 0;
+    transform: translateY(-20px);
+  }
+  100% {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+/* Scrollbar Styles */
+::-webkit-scrollbar {
+  width: 8px;
+  height: 8px;
+  padding-left: 8px;
+  background-color: #030304;
+}
+
+::-webkit-scrollbar-thumb {
+  border-radius: 40px;
+  background-color: #45f882;
+}
+
+.scrollbar-0::-webkit-scrollbar {
+  width: 0px;
+  height: 0px;
+  padding-left: 4px;
+  background-color: transparent;
+}
+
+.scrollbar-sm::-webkit-scrollbar {
+  width: 4px;
+  height: 4px;
+  padding-left: 4px;
+  background-color: transparent;
+}
+
+.scrollbar-xsm::-webkit-scrollbar {
+  width: 2px;
+  height: 2px;
+  padding-left: 4px;
+  background-color: transparent;
+}
+
+/* Button and Input Styles */
+button {
+  cursor: pointer;
+}
+
+input:focus {
+  outline: none;
+}
+
+/* Remove number input spinners */
+input[type="number"]::-webkit-inner-spin-button,
+input[type="number"]::-webkit-outer-spin-button {
+  -webkit-appearance: none;
+  margin: 0;
+}
+
+/* Webkit specific styles */
+input::-webkit-outer-spin-button,
+input::-webkit-inner-spin-button {
+  -webkit-appearance: none;
+  margin: 0;
+}
+
+input[type="number"]::-webkit-inner-spin-button,
+input[type="number"]::-webkit-outer-spin-button {
+  opacity: 1;
+  margin: 0;
+}
+
+/* Firefox specific styles */
+input[type="number"] {
+  -moz-appearance: textfield;
+}

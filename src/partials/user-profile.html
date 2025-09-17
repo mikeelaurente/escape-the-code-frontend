@@ -1,0 +1,163 @@
+<!-- user profile section start -->
+<section class="section-pt overflow-visible">
+    <div class="container">
+        <div class="relative">
+            <div class="glitch-effect">
+                <div class="glitch-thumb">
+                    <img class="w-full xl:h-[490px] h-[400px] hover:scale-110 object-cover"
+                        src="./assets/images/photos/profileCover1.png" alt="image">
+                </div>
+                <div class="glitch-thumb">
+                    <img class="w-full xl:h-[490px] lg:h-[400px] md:h-[340px] sm:h-[300px] h-[240px] hover:scale-110 object-cover"
+                        src="./assets/images/photos/profileCover1.png" alt="image">
+                </div>
+            </div>
+        </div>
+        <div class="grid grid-cols-12 gap-30p bg-b-neutral-3 rounded-12 pb-30p">
+            <div class="4xl:col-start-2 4xl:col-end-12 col-span-12 max-4xl:px-48p">
+                <div
+                    class="relative flex 3xl:items-end max-3xl:items-center 3xl:justify-between max-3xl:flex-col gap-30p 3xl:mt-[70px] xl:-mt-52 lg:-mt-44 md:-mt-36 sm:-mt-30 -mt-20 4xl:mb-[70px] mb-60p">
+                    <div class="3xl:order-1 order-2 flex text-center divide-x divide-shap">
+                        <div class="pr-6">
+                            <h2 class="heading-40 text-w-neutral-1 mb-1">
+                                75
+                            </h2>
+                            <span class="text-m-medium text-w-neutral-4/70">
+                                Friends
+                            </span>
+                        </div>
+                        <div class="px-24p">
+                            <h2 class="heading-40 text-w-neutral-1 mb-1">
+                                140
+                            </h2>
+                            <span class="text-m-medium text-w-neutral-4/70">
+                                Winning
+                            </span>
+                        </div>
+                        <div class="pl-6">
+                            <h2 class="heading-40 text-w-neutral-1 mb-1">
+                                241
+                            </h2>
+                            <span class="text-m-medium text-w-neutral-4/70">
+                                Tournaments
+                            </span>
+                        </div>
+                    </div>
+                    <div
+                        class="3xl:order-2 order-1 3xl:absolute 3xl:bottom-0 3xl:left-1/2 3xl:-translate-x-1/2 max-3xl:flex-col-c z-[4]">
+                        <img class="avatar xl:size-60 lg:size-52 md:size-44 sm:size-40 size-28 border border-secondary "
+                            src="./assets/images/users/user32.png" alt="profile" />
+                        <div class="text-center mt-30p">
+                            <h3 class="heading-3 text-w-neutral-1 mb-3 text-split-top">
+                                Josephine Williams
+                            </h3>
+                            <p class="text-m-medium text-w-neutral-4">
+                                I will destroy all enemies
+                            </p>
+                        </div>
+                    </div>
+                    <div class="order-3 flex items-center gap-3">
+                        <a href="#" class="btn-socal-primary">
+                            <i class="ti ti-brand-facebook"></i>
+                        </a>
+                        <a href="#" class="btn-socal-primary">
+                            <i class="ti ti-brand-twitch"></i>
+                        </a>
+                        <a href="#" class="btn-socal-primary">
+                            <i class="ti ti-brand-instagram"></i>
+                        </a>
+                        <a href="#" class="btn-socal-primary">
+                            <i class="ti ti-brand-discord"></i>
+                        </a>
+                        <a href="#" class="btn-socal-primary">
+                            <i class="ti ti-brand-youtube"></i>
+                        </a>
+                    </div>
+                    <div
+                        class="order-4 3xl:absolute 3xl:right-0 3xl:-top-25 flex items-center justify-center flex-wrap gap-20p z-[3]">
+                        <button type="button" class="btn btn-lg btn-primary rounded-12">
+                            Add Friend
+                            <i class="ti ti-plus"></i>
+                        </button>
+                        <a href="./chat.html" class="btn btn-lg btn-neutral-2 rounded-12">
+                            Send Message
+                        </a>
+                    </div>
+                </div>
+                <div>
+                    <div class="flex items-center max-sm:items-start justify-between max-sm:flex-col gap-32p ">
+
+                        <div
+                            class="tab-navbar flex items-center flex-wrap gap-x-32p gap-y-24p sm:text-xl text-lg *:font-borda font-medium text-w-neutral-1 whitespace-nowrap">
+                            <a href="./profile.html">
+                                Posts - Item
+                            </a>
+                            <a href="./user-game-stats.html">
+                                Game - Stats
+                            </a>
+                            <a href="./user-about.html">
+                                About
+                            </a>
+                            <a href="./user-team.html">
+                                Teams
+                            </a>
+                            <a href="./user-groups.html">
+                                Groups
+                            </a>
+                            <a href="./user-forums.html">
+                                Forums
+                            </a>
+                            <a href="./user-videos.html">
+                                Video
+                            </a>
+                            <a href="./user-achievements.html">
+                                Achievements
+                            </a>
+                        </div>
+
+                        <div class="flex items-center gap-24p">
+                            <div x-data="dropdown" class="dropdown">
+                                <button @click="toggle()"
+                                    class="relative btn-c btn-c-xxl btn-neutral-2 text-w-neutral-4">
+                                    <i class="ti ti-search"></i>
+                                </button>
+                                <div x-show="isOpen" @click.away="close()"
+                                    class="absolute sm:right-0 max-sm:left-0 sm:top-18 top-15 z-20">
+                                    <form
+                                        class="flex items-center sm:gap-3 gap-2 min-w-[300px] max-w-[670px] w-full px-20p py-16p bg-b-neutral-2 rounded-full">
+                                        <span class="flex-c icon-20 text-white">
+                                            <i class="ti ti-search"></i>
+                                        </span>
+                                        <input autocomplete="off" class="bg-transparent w-full" type="text"
+                                            name="search" id="search" placeholder="Search...">
+                                    </form>
+                                </div>
+                            </div>
+
+                            <div x-data="dropdown" class="dropdown">
+                                <button @click="toggle()"
+                                    class="relative btn-c btn-c-xxl btn-neutral-2 text-w-neutral-4">
+                                    <i class="ti ti-dots"></i>
+                                </button>
+                                <div x-show="isOpen" @click.away="close()"
+                                    class="dropdown-content sm:right-0 max-sm:left-0 sm:top-18 top-15 z-20">
+                                    <a href="./user-settings.html" class="dropdown-item">Settings</a>
+                                    <button @click="close()" class="dropdown-item">
+                                        Follow Profile
+                                    </button>
+                                    <button @click="close()" class="dropdown-item">
+                                        Report Profile
+                                    </button>
+                                    <button @click="close()" class="dropdown-item">
+                                        Block User
+                                    </button>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+<!-- user profile section end -->

@@ -1,0 +1,568 @@
+<!DOCTYPE html>
+<html dir="ltr" lang="en">
+
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="shortcut icon" href="./assets/images/icons/favicon.ico" type="image/x-icon" />
+    <title>GameCo - HTML Tailwind CSS</title>
+</head>
+
+<body>
+
+    <!-- preloader start -->
+    <include-preloader />
+    <!-- preloader end -->
+
+    <!-- scroll to top button start -->
+    <include-scrollToTop />
+    <!-- scroll to top button end -->
+
+    <!-- header start -->
+    <include-navbar />
+    <!-- header end -->
+
+    <!-- sidebar start -->
+    <include-left-right-sidebar />
+    <!-- sidebar end -->
+
+    <!-- app layout start -->
+    <div class="app-layout">
+
+        <!-- main start -->
+        <main>
+
+            <!-- team section start -->
+            <section class="section-pb pt-30 overflow-visible">
+                <div class="container">
+                    <div class="grid grid-cols-12 gap-x-30p gap-y-10">
+                        <div class="4xl:col-span-9 xxl:col-span-8 col-span-12">
+                            <div>
+                                <include-team-header />
+
+                                <!-- team tournaments section start -->
+                                <div
+                                    class="grid 4xl:grid-cols-1 3xl:grid-cols-3 xxl:grid-cols-2 xl:grid-cols-3 sm:grid-cols-2 grid-cols-1 gap-20p">
+                                    <!-- tournament 1 -->
+                                    <div
+                                        class="grid 4xl:grid-cols-11 grid-cols-1 gap-y-24p 4xl:divide-x divide-shap bg-b-neutral-3 p-40p rounded-12 4xl:text-left text-center">
+                                        <div class="4xl:col-span-3">
+                                            <div class="flex-y max-4xl:justify-center gap-3">
+                                                <img class="avatar size-60p" src="./assets/images/teams/team4.png"
+                                                    alt="team" />
+                                                <a href="./tournament-overview.html"
+                                                    class="text-xl-medium text-w-neutral-1 line-clamp-1 link-1">
+                                                    Cyber Ninja
+                                                </a>
+                                            </div>
+                                        </div>
+                                        <div class="4xl:col-span-2 4xl: flex-col-c">
+                                            <div>
+                                                <span class="text-xl-medium text-w-neutral-1 mb-1">
+                                                    Foxtie Max
+                                                </span>
+                                                <span class="text-base text-w-neutral-1">
+                                                    Online
+                                                </span>
+                                            </div>
+                                        </div>
+                                        <div class="4xl:col-span-2 4xl: flex-col-c">
+                                            <div>
+                                                <span class="text-xl-medium text-w-neutral-1 mb-1">
+                                                    Prize
+                                                </span>
+                                                <div class="flex-y gap-2 text-secondary">
+                                                    <i class="ti ti-trophy icon-24"></i>
+                                                    <span class="text-base">
+                                                        $75000
+                                                    </span>
+                                                </div>
+                                            </div>
+                                        </div>
+                                        <div
+                                            class="4xl:col-span-4 4xl: flex items-center 4xl:justify-between justify-center max-4xl:flex-col gap-y-24p">
+                                            <div class="4xl:ml-[70px]">
+                                                <span class="text-xl-medium text-w-neutral-1 mb-1">
+                                                    Time
+                                                </span>
+                                                <div class="flex-y gap-2 text-secondary">
+                                                    <i class="ti ti-clock-hour-3 icon-24"></i>
+                                                    <span class="text-base">
+                                                        12H : 17M
+                                                    </span>
+                                                </div>
+                                            </div>
+
+                                            <button class="modal-open-btn btn btn-md btn-neutral-4 rounded-12"
+                                                data-video-url="https://www.youtube.com/embed/mUxzKVrSAjs">
+                                                Live Now
+                                                <i class="ti ti-player-play icon-24"></i>
+                                            </button>
+                                        </div>
+
+                                    </div>
+                                    <!-- tournament 2 -->
+                                    <div
+                                        class="grid 4xl:grid-cols-11 grid-cols-1 gap-y-24p 4xl:divide-x divide-shap bg-b-neutral-3 p-40p rounded-12 4xl:text-left text-center">
+                                        <div class="4xl:col-span-3">
+                                            <div class="flex-y max-4xl:justify-center gap-3">
+                                                <img class="avatar size-60p" src="./assets/images/teams/team1.png"
+                                                    alt="team" />
+                                                <a href="./tournament-overview.html"
+                                                    class="text-xl-medium text-w-neutral-1 line-clamp-1 link-1">
+                                                    Cyber Ninja
+                                                </a>
+                                            </div>
+                                        </div>
+                                        <div class="4xl:col-span-2 4xl: flex-col-c">
+                                            <div>
+                                                <span class="text-xl-medium text-w-neutral-1 mb-1">
+                                                    Foxtie Max
+                                                </span>
+                                                <span class="text-base text-w-neutral-1">
+                                                    Online
+                                                </span>
+                                            </div>
+                                        </div>
+                                        <div class="4xl:col-span-2 4xl: flex-col-c">
+                                            <div>
+                                                <span class="text-xl-medium text-w-neutral-1 mb-1">
+                                                    Prize
+                                                </span>
+                                                <div class="flex-y gap-2 text-secondary">
+                                                    <i class="ti ti-trophy icon-24"></i>
+                                                    <span class="text-base">
+                                                        $75000
+                                                    </span>
+                                                </div>
+                                            </div>
+                                        </div>
+                                        <div
+                                            class="4xl:col-span-4 4xl: flex items-center 4xl:justify-between justify-center max-4xl:flex-col gap-y-24p">
+                                            <div class="4xl:ml-[70px]">
+                                                <span class="text-xl-medium text-w-neutral-1 mb-1">
+                                                    Time
+                                                </span>
+                                                <div class="flex-y gap-2 text-secondary">
+                                                    <i class="ti ti-clock-hour-3 icon-24"></i>
+                                                    <span class="text-base">
+                                                        12H : 17M
+                                                    </span>
+                                                </div>
+                                            </div>
+
+                                            <button class="modal-open-btn btn btn-md btn-neutral-4 rounded-12"
+                                                data-video-url="https://www.youtube.com/embed/mUxzKVrSAjs">
+                                                Live Now
+                                                <i class="ti ti-player-play icon-24"></i>
+                                            </button>
+                                        </div>
+
+                                    </div>
+                                    <!-- tournament 3 -->
+                                    <div
+                                        class="grid 4xl:grid-cols-11 grid-cols-1 gap-y-24p 4xl:divide-x divide-shap bg-b-neutral-3 p-40p rounded-12 4xl:text-left text-center">
+                                        <div class="4xl:col-span-3">
+                                            <div class="flex-y max-4xl:justify-center gap-3">
+                                                <img class="avatar size-60p" src="./assets/images/teams/team10.png"
+                                                    alt="team" />
+                                                <a href="./tournament-overview.html"
+                                                    class="text-xl-medium text-w-neutral-1 line-clamp-1 link-1">
+                                                    Cyber Ninja
+                                                </a>
+                                            </div>
+                                        </div>
+                                        <div class="4xl:col-span-2 4xl: flex-col-c">
+                                            <div>
+                                                <span class="text-xl-medium text-w-neutral-1 mb-1">
+                                                    Foxtie Max
+                                                </span>
+                                                <span class="text-base text-w-neutral-1">
+                                                    Online
+                                                </span>
+                                            </div>
+                                        </div>
+                                        <div class="4xl:col-span-2 4xl: flex-col-c">
+                                            <div>
+                                                <span class="text-xl-medium text-w-neutral-1 mb-1">
+                                                    Prize
+                                                </span>
+                                                <div class="flex-y gap-2 text-secondary">
+                                                    <i class="ti ti-trophy icon-24"></i>
+                                                    <span class="text-base">
+                                                        $75000
+                                                    </span>
+                                                </div>
+                                            </div>
+                                        </div>
+                                        <div
+                                            class="4xl:col-span-4 4xl: flex items-center 4xl:justify-between justify-center max-4xl:flex-col gap-y-24p">
+                                            <div class="4xl:ml-[70px]">
+                                                <span class="text-xl-medium text-w-neutral-1 mb-1">
+                                                    Time
+                                                </span>
+                                                <div class="flex-y gap-2 text-secondary">
+                                                    <i class="ti ti-clock-hour-3 icon-24"></i>
+                                                    <span class="text-base">
+                                                        12H : 17M
+                                                    </span>
+                                                </div>
+                                            </div>
+                                            <button class="modal-open-btn btn btn-md btn-neutral-4 rounded-12"
+                                                data-video-url="https://www.youtube.com/embed/mUxzKVrSAjs">
+                                                Live Now
+                                                <i class="ti ti-player-play icon-24"></i>
+                                            </button>
+                                        </div>
+
+                                    </div>
+                                    <!-- tournament 4 -->
+                                    <div
+                                        class="grid 4xl:grid-cols-11 grid-cols-1 gap-y-24p 4xl:divide-x divide-shap bg-b-neutral-3 p-40p rounded-12 4xl:text-left text-center">
+                                        <div class="4xl:col-span-3">
+                                            <div class="flex-y max-4xl:justify-center gap-3">
+                                                <img class="avatar size-60p" src="./assets/images/teams/team11.png"
+                                                    alt="team" />
+                                                <a href="./tournament-overview.html"
+                                                    class="text-xl-medium text-w-neutral-1 line-clamp-1 link-1">
+                                                    Cyber Ninja
+                                                </a>
+                                            </div>
+                                        </div>
+                                        <div class="4xl:col-span-2 4xl: flex-col-c">
+                                            <div>
+                                                <span class="text-xl-medium text-w-neutral-1 mb-1">
+                                                    Foxtie Max
+                                                </span>
+                                                <span class="text-base text-w-neutral-1">
+                                                    Online
+                                                </span>
+                                            </div>
+                                        </div>
+                                        <div class="4xl:col-span-2 4xl: flex-col-c">
+                                            <div>
+                                                <span class="text-xl-medium text-w-neutral-1 mb-1">
+                                                    Prize
+                                                </span>
+                                                <div class="flex-y gap-2 text-secondary">
+                                                    <i class="ti ti-trophy icon-24"></i>
+                                                    <span class="text-base">
+                                                        $75000
+                                                    </span>
+                                                </div>
+                                            </div>
+                                        </div>
+                                        <div
+                                            class="4xl:col-span-4 4xl: flex items-center 4xl:justify-between justify-center max-4xl:flex-col gap-y-24p">
+                                            <div class="4xl:ml-[70px]">
+                                                <span class="text-xl-medium text-w-neutral-1 mb-1">
+                                                    Time
+                                                </span>
+                                                <div class="flex-y gap-2 text-secondary">
+                                                    <i class="ti ti-clock-hour-3 icon-24"></i>
+                                                    <span class="text-base">
+                                                        12H : 17M
+                                                    </span>
+                                                </div>
+                                            </div>
+                                            <button class="modal-open-btn btn btn-md btn-neutral-4 rounded-12"
+                                                data-video-url="https://www.youtube.com/embed/mUxzKVrSAjs">
+                                                Live Now
+                                                <i class="ti ti-player-play icon-24"></i>
+                                            </button>
+                                        </div>
+
+                                    </div>
+                                    <!-- tournament 5 -->
+                                    <div
+                                        class="grid 4xl:grid-cols-11 grid-cols-1 gap-y-24p 4xl:divide-x divide-shap bg-b-neutral-3 p-40p rounded-12 4xl:text-left text-center">
+                                        <div class="4xl:col-span-3">
+                                            <div class="flex-y max-4xl:justify-center gap-3">
+                                                <img class="avatar size-60p" src="./assets/images/teams/team1.png"
+                                                    alt="team" />
+                                                <a href="./tournament-overview.html"
+                                                    class="text-xl-medium text-w-neutral-1 line-clamp-1 link-1">
+                                                    Cyber Ninja
+                                                </a>
+                                            </div>
+                                        </div>
+                                        <div class="4xl:col-span-2 4xl: flex-col-c">
+                                            <div>
+                                                <span class="text-xl-medium text-w-neutral-1 mb-1">
+                                                    Foxtie Max
+                                                </span>
+                                                <span class="text-base text-w-neutral-1">
+                                                    Online
+                                                </span>
+                                            </div>
+                                        </div>
+                                        <div class="4xl:col-span-2 4xl: flex-col-c">
+                                            <div>
+                                                <span class="text-xl-medium text-w-neutral-1 mb-1">
+                                                    Prize
+                                                </span>
+                                                <div class="flex-y gap-2 text-secondary">
+                                                    <i class="ti ti-trophy icon-24"></i>
+                                                    <span class="text-base">
+                                                        $75000
+                                                    </span>
+                                                </div>
+                                            </div>
+                                        </div>
+                                        <div
+                                            class="4xl:col-span-4 4xl: flex items-center 4xl:justify-between justify-center max-4xl:flex-col gap-y-24p">
+                                            <div class="4xl:ml-[70px]">
+                                                <span class="text-xl-medium text-w-neutral-1 mb-1">
+                                                    Time
+                                                </span>
+                                                <div class="flex-y gap-2 text-secondary">
+                                                    <i class="ti ti-clock-hour-3 icon-24"></i>
+                                                    <span class="text-base">
+                                                        12H : 17M
+                                                    </span>
+                                                </div>
+                                            </div>
+                                            <button class="modal-open-btn btn btn-md btn-neutral-4 rounded-12"
+                                                data-video-url="https://www.youtube.com/embed/mUxzKVrSAjs">
+                                                Live Now
+                                                <i class="ti ti-player-play icon-24"></i>
+                                            </button>
+                                        </div>
+
+                                    </div>
+                                    <!-- tournament 6 -->
+                                    <div
+                                        class="grid 4xl:grid-cols-11 grid-cols-1 gap-y-24p 4xl:divide-x divide-shap bg-b-neutral-3 p-40p rounded-12 4xl:text-left text-center">
+                                        <div class="4xl:col-span-3">
+                                            <div class="flex-y max-4xl:justify-center gap-3">
+                                                <img class="avatar size-60p" src="./assets/images/teams/team2.png"
+                                                    alt="team" />
+                                                <a href="./tournament-overview.html"
+                                                    class="text-xl-medium text-w-neutral-1 line-clamp-1 link-1">
+                                                    Cyber Ninja
+                                                </a>
+                                            </div>
+                                        </div>
+                                        <div class="4xl:col-span-2 4xl: flex-col-c">
+                                            <div>
+                                                <span class="text-xl-medium text-w-neutral-1 mb-1">
+                                                    Foxtie Max
+                                                </span>
+                                                <span class="text-base text-w-neutral-1">
+                                                    Online
+                                                </span>
+                                            </div>
+                                        </div>
+                                        <div class="4xl:col-span-2 4xl: flex-col-c">
+                                            <div>
+                                                <span class="text-xl-medium text-w-neutral-1 mb-1">
+                                                    Prize
+                                                </span>
+                                                <div class="flex-y gap-2 text-secondary">
+                                                    <i class="ti ti-trophy icon-24"></i>
+                                                    <span class="text-base">
+                                                        $75000
+                                                    </span>
+                                                </div>
+                                            </div>
+                                        </div>
+                                        <div
+                                            class="4xl:col-span-4 4xl: flex items-center 4xl:justify-between justify-center max-4xl:flex-col gap-y-24p">
+                                            <div class="4xl:ml-[70px]">
+                                                <span class="text-xl-medium text-w-neutral-1 mb-1">
+                                                    Time
+                                                </span>
+                                                <div class="flex-y gap-2 text-secondary">
+                                                    <i class="ti ti-clock-hour-3 icon-24"></i>
+                                                    <span class="text-base">
+                                                        12H : 17M
+                                                    </span>
+                                                </div>
+                                            </div>
+                                            <button class="modal-open-btn btn btn-md btn-neutral-4 rounded-12"
+                                                data-video-url="https://www.youtube.com/embed/mUxzKVrSAjs">
+                                                Live Now
+                                                <i class="ti ti-player-play icon-24"></i>
+                                            </button>
+                                        </div>
+
+                                    </div>
+                                    <!-- tournament 7 -->
+                                    <div
+                                        class="grid 4xl:grid-cols-11 grid-cols-1 gap-y-24p 4xl:divide-x divide-shap bg-b-neutral-3 p-40p rounded-12 4xl:text-left text-center">
+                                        <div class="4xl:col-span-3">
+                                            <div class="flex-y max-4xl:justify-center gap-3">
+                                                <img class="avatar size-60p" src="./assets/images/teams/team4.png"
+                                                    alt="team" />
+                                                <a href="./tournament-overview.html"
+                                                    class="text-xl-medium text-w-neutral-1 line-clamp-1 link-1">
+                                                    Cyber Ninja
+                                                </a>
+                                            </div>
+                                        </div>
+                                        <div class="4xl:col-span-2 4xl: flex-col-c">
+                                            <div>
+                                                <span class="text-xl-medium text-w-neutral-1 mb-1">
+                                                    Foxtie Max
+                                                </span>
+                                                <span class="text-base text-w-neutral-1">
+                                                    Online
+                                                </span>
+                                            </div>
+                                        </div>
+                                        <div class="4xl:col-span-2 4xl: flex-col-c">
+                                            <div>
+                                                <span class="text-xl-medium text-w-neutral-1 mb-1">
+                                                    Prize
+                                                </span>
+                                                <div class="flex-y gap-2 text-secondary">
+                                                    <i class="ti ti-trophy icon-24"></i>
+                                                    <span class="text-base">
+                                                        $75000
+                                                    </span>
+                                                </div>
+                                            </div>
+                                        </div>
+                                        <div
+                                            class="4xl:col-span-4 4xl: flex items-center 4xl:justify-between justify-center max-4xl:flex-col gap-y-24p">
+                                            <div class="4xl:ml-[70px]">
+                                                <span class="text-xl-medium text-w-neutral-1 mb-1">
+                                                    Time
+                                                </span>
+                                                <div class="flex-y gap-2 text-secondary">
+                                                    <i class="ti ti-clock-hour-3 icon-24"></i>
+                                                    <span class="text-base">
+                                                        12H : 17M
+                                                    </span>
+                                                </div>
+                                            </div>
+                                            <button class="modal-open-btn btn btn-md btn-neutral-4 rounded-12"
+                                                data-video-url="https://www.youtube.com/embed/mUxzKVrSAjs">
+                                                Live Now
+                                                <i class="ti ti-player-play icon-24"></i>
+                                            </button>
+                                        </div>
+
+                                    </div>
+                                    <!-- tournament 8 -->
+                                    <div
+                                        class="grid 4xl:grid-cols-11 grid-cols-1 gap-y-24p 4xl:divide-x divide-shap bg-b-neutral-3 p-40p rounded-12 4xl:text-left text-center">
+                                        <div class="4xl:col-span-3">
+                                            <div class="flex-y max-4xl:justify-center gap-3">
+                                                <img class="avatar size-60p" src="./assets/images/teams/team3.png"
+                                                    alt="team" />
+                                                <a href="./tournament-overview.html"
+                                                    class="text-xl-medium text-w-neutral-1 line-clamp-1 link-1">
+                                                    Cyber Ninja
+                                                </a>
+                                            </div>
+                                        </div>
+                                        <div class="4xl:col-span-2 4xl: flex-col-c">
+                                            <div>
+                                                <span class="text-xl-medium text-w-neutral-1 mb-1">
+                                                    Foxtie Max
+                                                </span>
+                                                <span class="text-base text-w-neutral-1">
+                                                    Online
+                                                </span>
+                                            </div>
+                                        </div>
+                                        <div class="4xl:col-span-2 4xl: flex-col-c">
+                                            <div>
+                                                <span class="text-xl-medium text-w-neutral-1 mb-1">
+                                                    Prize
+                                                </span>
+                                                <div class="flex-y gap-2 text-secondary">
+                                                    <i class="ti ti-trophy icon-24"></i>
+                                                    <span class="text-base">
+                                                        $75000
+                                                    </span>
+                                                </div>
+                                            </div>
+                                        </div>
+                                        <div
+                                            class="4xl:col-span-4 4xl: flex items-center 4xl:justify-between justify-center max-4xl:flex-col gap-y-24p">
+                                            <div class="4xl:ml-[70px]">
+                                                <span class="text-xl-medium text-w-neutral-1 mb-1">
+                                                    Time
+                                                </span>
+                                                <div class="flex-y gap-2 text-secondary">
+                                                    <i class="ti ti-clock-hour-3 icon-24"></i>
+                                                    <span class="text-base">
+                                                        12H : 17M
+                                                    </span>
+                                                </div>
+                                            </div>
+                                            <button class="modal-open-btn btn btn-md btn-neutral-4 rounded-12"
+                                                data-video-url="https://www.youtube.com/embed/mUxzKVrSAjs">
+                                                Live Now
+                                                <i class="ti ti-player-play icon-24"></i>
+                                            </button>
+                                        </div>
+
+                                    </div>
+                                </div>
+
+                                <div
+                                    class="pagination pagination-primary lg:pagination-center pagination-center pagination-circle pagination-xl w-full mt-48p">
+                                    <a href="#" class="pagination-item pagination-prev">
+                                        <i class="ti ti-chevron-left"></i>
+                                    </a>
+                                    <div class="pagination-list">
+                                        <a href="#" class="pagination-item pagination-circle active">
+                                            <span class="pagination-link">1</span>
+                                        </a>
+                                        <a href="#" class="pagination-item pagination-circle">
+                                            <span class="pagination-link">2</span>
+                                        </a>
+                                        <a href="#" class="pagination-item pagination-circle">
+                                            <span class="pagination-link">3</span>
+                                        </a>
+                                        <a href="#" class="pagination-item pagination-circle">
+                                            <span class="pagination-link">4</span>
+                                        </a>
+                                        <a href="#" class="pagination-item pagination-circle">
+                                            <span class="pagination-link">5</span>
+                                        </a>
+                                        <a href="#" class="pagination-item pagination-circle">
+                                            <span class="pagination-link pagination-more">...</span>
+                                        </a>
+                                        <a href="#" class="pagination-item pagination-circle">
+                                            <span class="pagination-link">10</span>
+                                        </a>
+                                    </div>
+                                    <a href="#" class="pagination-item pagination-next">
+                                        <i class="ti ti-chevron-right"></i>
+                                    </a>
+                                </div>
+                                <!-- team tournaments section end -->
+
+                            </div>
+                        </div>
+                        <div class="4xl:col-span-3 xxl:col-span-4 col-span-12 relative">
+                            <div class="xxl:sticky xxl:top-30">
+                                <include-right-aside-one />
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </section>
+            <!-- team section end -->
+
+        </main>
+        <!-- main end -->
+
+        <!-- video popup modal start -->
+        <include-popup-video-modal />
+        <!-- video popup modal end -->
+
+        <!-- footer start -->
+        <include-footer />
+        <!-- footer end -->
+    </div>
+    <!-- app layout end -->
+
+
+</body>
+
+</html>

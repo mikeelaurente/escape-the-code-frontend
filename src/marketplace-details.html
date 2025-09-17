@@ -1,0 +1,759 @@
+<!DOCTYPE html>
+<html dir="ltr" lang="en">
+
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="shortcut icon" href="./assets/images/icons/favicon.ico" type="image/x-icon" />
+    <title>GameCo - HTML Tailwind CSS</title>
+</head>
+
+<body>
+
+    <!-- preloader start -->
+    <include-preloader />
+    <!-- preloader end -->
+
+    <!-- scroll to top button start -->
+    <include-scrollToTop />
+    <!-- scroll to top button end -->
+
+    <!-- header start -->
+    <include-navbar />
+    <!-- header end -->
+
+    <!-- sidebar start -->
+    <include-left-right-sidebar />
+    <!-- sidebar end -->
+
+    <!-- app layout start -->
+    <div class="app-layout">
+
+        <!-- main start -->
+        <main>
+
+            <!-- breadcrumb start -->
+            <section class="pt-30p">
+                <div class="section-pt">
+                    <div
+                        class="relative bg-[url('../images/photos/breadcrumbImg.png')] bg-cover bg-no-repeat rounded-24 overflow-hidden">
+                        <div class="container">
+                            <div class="grid grid-cols-12 gap-30p relative xl:py-[130px] md:py-30 sm:py-25 py-20 z-[2]">
+                                <div class="lg:col-start-2 lg:col-end-12 col-span-12">
+                                    <h2 class="heading-2 text-w-neutral-1 mb-3">
+                                        Marketplace Details
+                                    </h2>
+                                    <ul class="breadcrumb">
+                                        <li class="breadcrumb-item">
+                                            <a href="#" class="breadcrumb-link">
+                                                Home
+                                            </a>
+                                        </li>
+                                        <li class="breadcrumb-item">
+                                            <span class="breadcrumb-icon">
+                                                <i class="ti ti-chevrons-right"></i>
+                                            </span>
+                                        </li>
+                                        <li class="breadcrumb-item">
+                                            <span class="breadcrumb-current">Marketplace Details</span>
+                                        </li>
+                                    </ul>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="overlay-11"></div>
+                    </div>
+                </div>
+            </section>
+            <!-- breadcrumb end -->
+
+            <!-- marketplace details section start -->
+            <section class="section-pb pt-60p overflow-visible">
+                <div class="container">
+                    <div class="grid grid-cols-12 gap-30p">
+                        <div class="3xl:col-span-8 xxl:col-span-7 col-span-12">
+                            <div>
+                                <div class="glitch-effect mb-24p overflow-hidden rounded-12">
+                                    <div class="glitch-thumb">
+                                        <img class="w-full xl:h-[450px] md:h-[400px] sm:h-[300px] h-[280px] object-cover"
+                                            src="./assets/images/games/marketplaceDetails1.png" alt="image">
+                                    </div>
+                                    <div class="glitch-thumb">
+                                        <img class="w-full xl:h-[450px] md:h-[400px] sm:h-[300px] h-[280px] object-cover"
+                                            src="./assets/images/games/marketplaceDetails1.png" alt="image">
+                                    </div>
+                                </div>
+                                <div>
+                                    <h3 class="heading-3 text-w-neutral-1 mb-2.5">
+                                        Description
+                                    </h3>
+                                    <p class="text-m-regular text-w-neutral-4 mb-2.5">
+                                        We're a diverse group of gamers, ranging from casual players to hardcore
+                                        enthusiasts, spanning various platforms and genres. What unites us is our belief
+                                        that gaming is not just a pastime but an art form, a form of storytelling, and a
+                                        means of forging connections with people from all walks of life.
+                                    </p>
+                                    <p class="text-m-regular text-w-neutral-4">
+                                        We invite you to become a part of our gaming community. Share your stories,
+                                        insights, and experiences. Engage with others who are as passionate about gaming
+                                        as
+                                        you are.of virtual adventures and make lasting memories.
+                                    </p>
+                                    <div class="flex items-center flex-wrap gap-y-24p gap-x-60p mt-24p">
+                                        <div>
+                                            <span class="text-m-medium text-primary mb-1">Game</span>
+                                            <p class="text-sm text-w-neutral-4">
+                                                League of Legends
+                                            </p>
+                                        </div>
+                                        <div>
+                                            <span class="text-m-medium text-primary mb-1">Languages</span>
+                                            <p class="text-sm text-w-neutral-4">
+                                                English, Romanian and French
+                                            </p>
+                                        </div>
+                                        <div>
+                                            <span class="text-m-medium text-primary mb-1">ADC</span>
+                                            <p class="text-sm text-w-neutral-4">
+                                                Vlad D2003
+                                            </p>
+                                        </div>
+                                    </div>
+                                    <div class="py-40p">
+                                        <h4 class="heading-4 text-w-neutral-1">Seller</h4>
+                                        <div class="flex items-center gap-3 py-3">
+                                            <img class="avatar size-60p" src="./assets/images/users/user10.png"
+                                                alt="user" />
+                                            <div>
+                                                <span class="text-l-medium text-w-neutral-1 mb-1">David Malan</span>
+                                                <span class="text-sm text-w-neutral-4">Leader</span>
+                                            </div>
+                                        </div>
+                                        <p class="text-m-regular text-w-neutral-4">
+                                            Been playing TFT since set 1, usually hitting Grandmaster every set
+                                        </p>
+                                    </div>
+                                    <div x-data="{ activeId: 1 }"
+                                        class="grid grid-cols-1 border-y border-shap divide-y divide-shap">
+                                        <!-- Accordion Item 1 -->
+                                        <div>
+                                            <button @click="activeId = (activeId === 1 ? null : 1)"
+                                                class="py-20p rounded-2xl flex items-center justify-between gap-2.5 w-full">
+                                                <span class="heading-5 text-left font-medium text-w-neutral-1">
+                                                    Things to keep in mind
+                                                </span>
+                                                <span :class="activeId === 1 ? 'text-w-neutral-1' : ''"
+                                                    class="shrink-0 icon-24">
+                                                    <i :class="activeId === 1 ? 'rotate-180 ti-chevron-down' : 'rotate-0 ti-chevron-up'"
+                                                        class="ti"></i>
+                                                </span>
+                                            </button>
+                                            <div x-show="activeId === 1" x-collapse>
+                                                <p class="text-m-regular text-left text-w-neutral-4 pb-20p">
+                                                    When using our services, it’s essential to be well-informed to
+                                                    ensure a
+                                                    smooth experience. Start by
+                                                    reviewing the terms and conditions associated with the service you
+                                                    are
+                                                    purchasing. This helps avoid any
+                                                    misunderstandings or unexpected surprises. Communication with the
+                                                    service provider is crucial; it ensures
+                                                    clarity on details like timelines, expectations, and deliverables.
+                                                    Additionally, be mindful of deadlines
+                                                    or any time-sensitive aspects of the service, as delays can
+                                                    sometimes
+                                                    affect the outcome. It’s always a
+                                                    good idea to double-check all details before proceeding to ensure
+                                                    everything aligns with your needs.
+                                                </p>
+                                            </div>
+                                        </div>
+
+                                        <!-- Accordion Item 2 -->
+                                        <div>
+                                            <button @click="activeId = (activeId === 2 ? null : 2)"
+                                                class="py-20p rounded-2xl flex items-center justify-between gap-2.5 w-full">
+                                                <span class="heading-5 text-left font-medium text-w-neutral-1">
+                                                    Payment Policy
+                                                </span>
+                                                <span :class="activeId === 2 ? 'text-w-neutral-1' : ''"
+                                                    class="shrink-0 icon-24">
+                                                    <i :class="activeId === 2 ? 'rotate-180 ti-chevron-down' : 'rotate-0 ti-chevron-up'"
+                                                        class="ti"></i>
+                                                </span>
+                                            </button>
+                                            <div x-show="activeId === 2" x-collapse>
+                                                <p class="text-m-regular text-left text-w-neutral-4 pb-20p">
+                                                    We require payment to be made in advance to secure any service. This
+                                                    ensures that both the service
+                                                    provider and client are committed to the agreement. Rest assured
+                                                    that
+                                                    all payments are processed through
+                                                    a secure payment system to protect your financial information. Once
+                                                    your
+                                                    payment is complete, you’ll
+                                                    receive a confirmation receipt as proof of the transaction.
+                                                </p>
+                                            </div>
+                                        </div>
+
+                                        <!-- Accordion Item 3 -->
+                                        <div>
+                                            <button @click="activeId = (activeId === 3 ? null : 3)"
+                                                class="py-20p rounded-2xl flex items-center justify-between gap-2.5 w-full">
+                                                <span class="heading-5 text-left font-medium text-w-neutral-1">
+                                                    Cancellation Policy
+                                                </span>
+                                                <span :class="activeId === 3 ? 'text-w-neutral-1' : ''"
+                                                    class="shrink-0 icon-24">
+                                                    <i :class="activeId === 3 ? 'rotate-180 ti-chevron-down' : 'rotate-0 ti-chevron-up'"
+                                                        class="ti"></i>
+                                                </span>
+                                            </button>
+                                            <div x-show="activeId === 3" x-collapse>
+                                                <p class="text-m-regular text-left text-w-neutral-4 pb-20p">
+                                                    We understand that plans can change, so we offer a flexible
+                                                    cancellation
+                                                    policy. If you need to cancel
+                                                    a service, it’s best to do so before the service starts or before
+                                                    significant progress has been made. For
+                                                    cancellations made within the appropriate notice period, you may be
+                                                    eligible for a full refund. However,
+                                                    cancellations made at the last minute or after substantial resources
+                                                    have been allocated may incur a
+                                                    cancellation fee.
+                                                </p>
+                                            </div>
+                                        </div>
+
+                                        <!-- Accordion Item 4 -->
+                                        <div>
+                                            <button @click="activeId = (activeId === 4 ? null : 4)"
+                                                class="py-20p rounded-2xl flex items-center justify-between gap-2.5 w-full">
+                                                <span class="heading-5 text-left font-medium text-w-neutral-1">
+                                                    Refund Policy
+                                                </span>
+                                                <span :class="activeId === 4 ? 'text-w-neutral-1' : ''"
+                                                    class="shrink-0 icon-24">
+                                                    <i :class="activeId === 4 ? 'rotate-180 ti-chevron-down' : 'rotate-0 ti-chevron-up'"
+                                                        class="ti"></i>
+                                                </span>
+                                            </button>
+                                            <div x-show="activeId === 4" x-collapse>
+                                                <p class="text-m-regular text-left text-w-neutral-4 pb-20p">
+                                                    Your satisfaction is important to us, which is why we offer a fair
+                                                    and
+                                                    transparent refund policy. If the
+                                                    service provider is unable to deliver the agreed-upon service or if
+                                                    a
+                                                    justified cancellation is made, you
+                                                    will be eligible for a refund. Refunds are typically processed
+                                                    within
+                                                    5–7 business days after approval,
+                                                    though this timeline may vary slightly depending on your payment
+                                                    method.
+                                                </p>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="3xl:col-span-4 xxl:col-span-5 col-span-12 relative">
+                            <div class="xxl:sticky xxl:top-30">
+                                <div class="bg-b-neutral-3 rounded-20 p-30p">
+                                    <span
+                                        class="badge badge-bage badge-outline-shap text-s-regular bg-b-neutral-3 mb-16p">
+                                        Graphics & Design
+                                    </span>
+                                    <h4 class="heading-4 text-w-neutral-1">
+                                        ADC coaching - improve your ADC gameplay & climb in soloQ!
+                                    </h4>
+                                    <p class="text-m-regular text-w-neutral-4 my-16p">
+                                        ADC coaching - improve your ADC gameplay & climb in soloQ! Fix your mistakes and
+                                        become ADC monster and climb the ladder!
+                                    </p>
+                                    <div class="flex-y gap-2 mb-20p">
+                                        <div class="flex-y gap-1 text-primary icon-24">
+                                            <i class="ti ti-star-filled"></i>
+                                            <i class="ti ti-star-filled"></i>
+                                            <i class="ti ti-star-filled"></i>
+                                            <i class="ti ti-star-half-filled"></i>
+                                        </div>
+                                        <span class="text-base text-w-neutral-1">
+                                            4.7 (99)
+                                        </span>
+                                    </div>
+                                    <h4 class="heading-4 text-w-neutral-1 mb-24p">
+                                        Price: €45.00
+                                    </h4>
+                                    <div
+                                        class="grid xxl:grid-cols-1 xl:grid-cols-2 grid-cols-1 gap-16p *:flex-y *:max-sm:flex-wrap *:gap-24p *:border *:border-shap *:py-32p *:px-20p *:rounded-12 mb-30p">
+                                        <div>
+                                            <div class="checkbox-container shrink-0">
+                                                <input type="checkbox" id="one-game-review"
+                                                    class="border-corners-checkbox">
+                                                <label for="one-game-review" class="border-corners-checkbox-label">
+                                                    <i class="ti icon-32 text-primary"></i>
+                                                </label>
+                                            </div>
+                                            <div>
+                                                <h5 class="heading-5 text-w-neutral-1 mb-2.5">
+                                                    One game review
+                                                </h5>
+                                                <p class="text-base text-w-neutral-4">
+                                                    I will analyze in details one game of your choice, tell you what you
+                                                    should work on and what you could do better.
+                                                </p>
+                                            </div>
+                                            <h4 class="heading-4 text-w-neutral-1">
+                                                €6.00
+                                            </h4>
+                                        </div>
+                                        <div>
+                                            <div class="checkbox-container shrink-0">
+                                                <input type="checkbox" id="live-coaching"
+                                                    class="border-corners-checkbox" checked>
+                                                <label for="live-coaching" class="border-corners-checkbox-label">
+                                                    <i class="ti icon-32 text-secondary"></i>
+                                                </label>
+                                            </div>
+                                            <div>
+                                                <h5 class="heading-5 text-w-neutral-1 mb-2.5">
+                                                    Live coaching
+                                                </h5>
+                                                <p class="text-base text-w-neutral-4">
+                                                    We will do live coaching, I will explain in details what could you
+                                                    do better, what are your mistakes and how to work on it. We will
+                                                    work on your micro gameplay, macro gameplay
+                                                </p>
+                                            </div>
+                                            <h4 class="heading-4 text-w-neutral-1">
+                                                €6.00
+                                            </h4>
+                                        </div>
+                                    </div>
+                                    <a href="./checkout.html" class="btn btn-md btn-primary w-full mb-32p">
+                                        Buy
+                                    </a>
+                                    <div class="pt-24p border-t border-shap flex-y justify-between gap-24p">
+                                        <p class="text-sm text-w-neutral-4">
+                                            For your own protection and for Challengermode to assist in any potential
+                                            disputes, it's important that you never make any payments outside of the
+                                            platform.
+                                        </p>
+                                        <i class="ti ti-shield-check text-primary icon-32"></i>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </section>
+            <!-- marketplace details section end -->
+
+            <!-- related listings section start -->
+            <section class="section-pb">
+                <div class="container">
+                    <div class="flex items-center justify-between flex-wrap gap-24p">
+                        <h2 class="heading-2">
+                            Related listings
+                        </h2>
+                        <form class="select-1 shrink-0">
+                            <select class="select w-full sm:py-3 py-2 px-24p rounded-full">
+                                <option value="popular">Popular</option>
+                                <option value="new-releases">New Releases</option>
+                                <option value="action">Action</option>
+                                <option value="adventure">Adventure</option>
+                                <option value="sports">Sports</option>
+                            </select>
+                        </form>
+                    </div>
+                    <div class="mt-40p">
+                        <div class="swiper four-card-carousel" data-carousel-name="related-marketplace">
+                            <div class="swiper-wrapper pb-60p">
+                                <div class="swiper-slide">
+                                    <div class="relative bg-b-neutral-3 rounded-24 group overflow-hidden w-full h-full "
+                                        data-aos="zoom-in">
+                                        <div class="overflow-hidden">
+                                            <span class="badge badge-neutral absolute top-3 left-3 z-10">
+                                                <i class="avatar avatar-primary size-3"></i>
+                                                <span class="text-s-regular text-w-neutral-1">Heroes</span>
+                                            </span>
+                                            <img src="./assets/images/marketplaces/marketplace5.png"
+                                                class="w-full 3xl:h-[310px] xl:h-[280px] lg:h-[260px] h-[240px] object-cover object-top group-hover:scale-110 group-hover:rotate-2 transition-1"
+                                                alt="Playing Valorant" />
+                                        </div>
+                                        <div class="p-28p">
+                                            <a href="./marketplace-details.html"
+                                                class="heading-3 link-1 mb-2 line-clamp-1">Playing
+                                                Valorant</a>
+                                            <p class="text-l-regular text-w-neutral-2">
+                                                Starting at $ <span class="span">7.00</span>
+                                            </p>
+                                            <div class="flex-y gap-2 my-24p">
+                                                <div class="flex-y gap-1 text-primary icon-24">
+                                                    <i class="ti ti-star-filled"></i>
+                                                    <i class="ti ti-star-filled"></i>
+                                                    <i class="ti ti-star-filled"></i>
+                                                    <i class="ti ti-star-filled"></i>
+                                                    <i class="ti ti-star-half-filled"></i>
+                                                </div>
+                                                <p class="text-base text-w-neutral-1">4.9 (120)</p>
+                                            </div>
+                                            <div class="flex-y flex-wrap gap-3">
+                                                <img class="size-60p rounded-full shrink-0"
+                                                    src="./assets/images/users/user5.png" alt="David Liu" />
+                                                <div>
+                                                    <a href="#"
+                                                        class="flex-y gap-2 text-l-medium link-1 text-w-neutral-1 mb-1">
+                                                        <span>David Liu</span>
+                                                        <i class="ti ti-circle-check-filled text-secondary icon-24"></i>
+                                                    </a>
+                                                    <span class="text-s-medium text-w-neutral-3">Leader</span>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="swiper-slide">
+                                    <div class="relative bg-b-neutral-3 rounded-24 group overflow-hidden w-full h-full "
+                                        data-aos="zoom-in">
+                                        <div class="overflow-hidden">
+                                            <span class="badge badge-neutral absolute top-3 left-3 z-10">
+                                                <i class="avatar avatar-primary size-3"></i>
+                                                <span class="text-s-regular text-w-neutral-1">Heroes</span>
+                                            </span>
+                                            <img src="./assets/images/marketplaces/marketplace6.png"
+                                                class="w-full 3xl:h-[310px] xl:h-[280px] lg:h-[260px] h-[240px] object-cover object-top group-hover:scale-110 group-hover:rotate-2 transition-1"
+                                                alt="Mastering Mindset" />
+                                        </div>
+                                        <div class="p-28p">
+                                            <a href="./marketplace-details.html"
+                                                class="heading-3 link-1 mb-2 line-clamp-1">Mastering
+                                                Mindset</a>
+                                            <p class="text-l-regular text-w-neutral-2">
+                                                Starting at $ <span class="span">7.00</span>
+                                            </p>
+                                            <div class="flex-y gap-2 my-24p">
+                                                <div class="flex-y gap-1 text-primary icon-24">
+                                                    <i class="ti ti-star-filled"></i>
+                                                    <i class="ti ti-star-filled"></i>
+                                                    <i class="ti ti-star-filled"></i>
+                                                    <i class="ti ti-star-filled"></i>
+                                                    <i class="ti ti-star-half-filled"></i>
+                                                </div>
+                                                <p class="text-base text-w-neutral-1">4.6 (87)</p>
+                                            </div>
+                                            <div class="flex-y flex-wrap gap-3">
+                                                <img class="size-60p rounded-full shrink-0"
+                                                    src="./assets/images/users/user6.png" alt="Mia Lee" />
+                                                <div>
+                                                    <a href="#"
+                                                        class="flex-y gap-2 text-l-medium link-1 text-w-neutral-1 mb-1">
+                                                        <span>Mia Lee</span>
+                                                        <i class="ti ti-circle-check-filled text-secondary icon-24"></i>
+                                                    </a>
+                                                    <span class="text-s-medium text-w-neutral-3">Writer</span>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="swiper-slide">
+                                    <div class="relative bg-b-neutral-3 rounded-24 group overflow-hidden w-full h-full "
+                                        data-aos="zoom-in">
+                                        <div class="overflow-hidden">
+                                            <span class="badge badge-neutral absolute top-3 left-3 z-10">
+                                                <i class="avatar avatar-primary size-3"></i>
+                                                <span class="text-s-regular text-w-neutral-1">Heroes</span>
+                                            </span>
+                                            <img src="./assets/images/marketplaces/marketplace7.png"
+                                                class="w-full 3xl:h-[310px] xl:h-[280px] lg:h-[260px] h-[240px] object-cover object-top group-hover:scale-110 group-hover:rotate-2 transition-1"
+                                                alt="Beyond Limits" />
+                                        </div>
+                                        <div class="p-28p">
+                                            <a href="./marketplace-details.html"
+                                                class="heading-3 link-1 mb-2 line-clamp-1">Beyond
+                                                Limits</a>
+                                            <p class="text-l-regular text-w-neutral-2">
+                                                Starting at $ <span class="span">7.00</span>
+                                            </p>
+                                            <div class="flex-y gap-2 my-24p">
+                                                <div class="flex-y gap-1 text-primary icon-24">
+                                                    <i class="ti ti-star-filled"></i>
+                                                    <i class="ti ti-star-filled"></i>
+                                                    <i class="ti ti-star-filled"></i>
+                                                    <i class="ti ti-star-filled"></i>
+                                                    <i class="ti ti-star-half-filled"></i>
+                                                </div>
+                                                <p class="text-base text-w-neutral-1">4.8 (105)</p>
+                                            </div>
+                                            <div class="flex-y flex-wrap gap-3">
+                                                <img class="size-60p rounded-full shrink-0"
+                                                    src="./assets/images/users/user7.png" alt="John Maxwell" />
+                                                <div>
+                                                    <a href="#"
+                                                        class="flex-y gap-2 text-l-medium link-1 text-w-neutral-1 mb-1">
+                                                        <span>John Maxwell</span>
+                                                        <i class="ti ti-circle-check-filled text-secondary icon-24"></i>
+                                                    </a>
+                                                    <span class="text-s-medium text-w-neutral-3">Leader</span>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="swiper-slide">
+                                    <div class="relative bg-b-neutral-3 rounded-24 group overflow-hidden w-full h-full "
+                                        data-aos="zoom-in">
+                                        <div class="overflow-hidden">
+                                            <span class="badge badge-neutral absolute top-3 left-3 z-10">
+                                                <i class="avatar avatar-primary size-3"></i>
+                                                <span class="text-s-regular text-w-neutral-1">Heroes</span>
+                                            </span>
+                                            <img src="./assets/images/marketplaces/marketplace8.png"
+                                                class="w-full 3xl:h-[310px] xl:h-[280px] lg:h-[260px] h-[240px] object-cover object-top group-hover:scale-110 group-hover:rotate-2 transition-1"
+                                                alt="Building Resilience" />
+                                        </div>
+                                        <div class="p-28p">
+                                            <a href="./marketplace-details.html"
+                                                class="heading-3 link-1 mb-2 line-clamp-1">Building
+                                                Resilience</a>
+                                            <p class="text-l-regular text-w-neutral-2">
+                                                Starting at $ <span class="span">7.00</span>
+                                            </p>
+                                            <div class="flex-y gap-2 my-24p">
+                                                <div class="flex-y gap-1 text-primary icon-24">
+                                                    <i class="ti ti-star-filled"></i>
+                                                    <i class="ti ti-star-filled"></i>
+                                                    <i class="ti ti-star-filled"></i>
+                                                    <i class="ti ti-star-filled"></i>
+                                                    <i class="ti ti-star-half-filled"></i>
+                                                </div>
+                                                <p class="text-base text-w-neutral-1">4.7 (98)</p>
+                                            </div>
+                                            <div class="flex-y flex-wrap gap-3">
+                                                <img class="size-60p rounded-full shrink-0"
+                                                    src="./assets/images/users/user9.png" alt="Sophia Carter" />
+                                                <div>
+                                                    <a href="#"
+                                                        class="flex-y gap-2 text-l-medium link-1 text-w-neutral-1 mb-1">
+                                                        <span>Sophia Carter</span>
+                                                        <i class="ti ti-circle-check-filled text-secondary icon-24"></i>
+                                                    </a>
+                                                    <span class="text-s-medium text-w-neutral-3">Mentor</span>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="swiper-slide">
+                                    <div class="relative bg-b-neutral-3 rounded-24 group overflow-hidden w-full h-full "
+                                        data-aos="zoom-in">
+                                        <div class="overflow-hidden">
+                                            <span class="badge badge-neutral absolute top-3 left-3 z-10">
+                                                <i class="avatar avatar-primary size-3"></i>
+                                                <span class="text-s-regular text-w-neutral-1">Heroes</span>
+                                            </span>
+                                            <img src="./assets/images/marketplaces/marketplace9.png"
+                                                class="w-full 3xl:h-[310px] xl:h-[280px] lg:h-[260px] h-[240px] object-cover object-top group-hover:scale-110 group-hover:rotate-2 transition-1"
+                                                alt="Path to Growth" />
+                                        </div>
+                                        <div class="p-28p">
+                                            <a href="./marketplace-details.html"
+                                                class="heading-3 link-1 mb-2 line-clamp-1">Path to
+                                                Growth</a>
+                                            <p class="text-l-regular text-w-neutral-2">
+                                                Starting at $ <span class="span">7.00</span>
+                                            </p>
+                                            <div class="flex-y gap-2 my-24p">
+                                                <div class="flex-y gap-1 text-primary icon-24">
+                                                    <i class="ti ti-star-filled"></i>
+                                                    <i class="ti ti-star-filled"></i>
+                                                    <i class="ti ti-star-filled"></i>
+                                                    <i class="ti ti-star-filled"></i>
+                                                    <i class="ti ti-star-half-filled"></i>
+                                                </div>
+                                                <p class="text-base text-w-neutral-1">4.8 (110)</p>
+                                            </div>
+                                            <div class="flex-y flex-wrap gap-3">
+                                                <img class="size-60p rounded-full shrink-0"
+                                                    src="./assets/images/users/user10.png" alt="Ethan Jones" />
+                                                <div>
+                                                    <a href="#"
+                                                        class="flex-y gap-2 text-l-medium link-1 text-w-neutral-1 mb-1">
+                                                        <span>Ethan Jones</span>
+                                                        <i class="ti ti-circle-check-filled text-secondary icon-24"></i>
+                                                    </a>
+                                                    <span class="text-s-medium text-w-neutral-3">Trainer</span>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="swiper-slide">
+                                    <div class="relative bg-b-neutral-3 rounded-24 group overflow-hidden w-full h-full "
+                                        data-aos="zoom-in">
+                                        <div class="overflow-hidden">
+                                            <span class="badge badge-neutral absolute top-3 left-3 z-10">
+                                                <i class="avatar avatar-primary size-3"></i>
+                                                <span class="text-s-regular text-w-neutral-1">Heroes</span>
+                                            </span>
+                                            <img src="./assets/images/marketplaces/marketplace10.png"
+                                                class="w-full 3xl:h-[310px] xl:h-[280px] lg:h-[260px] h-[240px] object-cover object-top group-hover:scale-110 group-hover:rotate-2 transition-1"
+                                                alt="Mind Over Matter" />
+                                        </div>
+                                        <div class="p-28p">
+                                            <a href="./marketplace-details.html"
+                                                class="heading-3 link-1 mb-2 line-clamp-1">Mind
+                                                Over Matter</a>
+                                            <p class="text-l-regular text-w-neutral-2">
+                                                Starting at $ <span class="span">7.00</span>
+                                            </p>
+                                            <div class="flex-y gap-2 my-24p">
+                                                <div class="flex-y gap-1 text-primary icon-24">
+                                                    <i class="ti ti-star-filled"></i>
+                                                    <i class="ti ti-star-filled"></i>
+                                                    <i class="ti ti-star-filled"></i>
+                                                    <i class="ti ti-star-filled"></i>
+                                                    <i class="ti ti-star-half-filled"></i>
+                                                </div>
+                                                <p class="text-base text-w-neutral-1">4.9 (130)</p>
+                                            </div>
+                                            <div class="flex-y flex-wrap gap-3">
+                                                <img class="size-60p rounded-full shrink-0"
+                                                    src="./assets/images/users/user11.png" alt="Isabella Martinez" />
+                                                <div>
+                                                    <a href="#"
+                                                        class="flex-y gap-2 text-l-medium link-1 text-w-neutral-1 mb-1">
+                                                        <span>Isabella Martinez</span>
+                                                        <i class="ti ti-circle-check-filled text-secondary icon-24"></i>
+                                                    </a>
+                                                    <span class="text-s-medium text-w-neutral-3">Advisor</span>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="swiper-slide">
+                                    <div class="relative bg-b-neutral-3 rounded-24 group overflow-hidden w-full h-full "
+                                        data-aos="zoom-in">
+                                        <div class="overflow-hidden">
+                                            <span class="badge badge-neutral absolute top-3 left-3 z-10">
+                                                <i class="avatar avatar-primary size-3"></i>
+                                                <span class="text-s-regular text-w-neutral-1">Heroes</span>
+                                            </span>
+                                            <img src="./assets/images/marketplaces/marketplace11.png"
+                                                class="w-full 3xl:h-[310px] xl:h-[280px] lg:h-[260px] h-[240px] object-cover object-top group-hover:scale-110 group-hover:rotate-2 transition-1"
+                                                alt="Elevate Your Potential" />
+                                        </div>
+                                        <div class="p-28p">
+                                            <a href="./marketplace-details.html"
+                                                class="heading-3 link-1 mb-2 line-clamp-1">Elevate
+                                                Your
+                                                Potential</a>
+                                            <p class="text-l-regular text-w-neutral-2">
+                                                Starting at $ <span class="span">9.00</span>
+                                            </p>
+                                            <div class="flex-y gap-2 my-24p">
+                                                <div class="flex-y gap-1 text-primary icon-24">
+                                                    <i class="ti ti-star-filled"></i>
+                                                    <i class="ti ti-star-filled"></i>
+                                                    <i class="ti ti-star-filled"></i>
+                                                    <i class="ti ti-star-filled"></i>
+                                                    <i class="ti ti-star-filled"></i>
+                                                </div>
+                                                <p class="text-base text-w-neutral-1">5.0 (150)</p>
+                                            </div>
+                                            <div class="flex-y flex-wrap gap-3">
+                                                <img class="size-60p rounded-full shrink-0"
+                                                    src="./assets/images/users/user12.png" alt="Liam Brown" />
+                                                <div>
+                                                    <a href="#"
+                                                        class="flex-y gap-2 text-l-medium link-1 text-w-neutral-1 mb-1">
+                                                        <span>Liam Brown</span>
+                                                        <i class="ti ti-circle-check-filled text-secondary icon-24"></i>
+                                                    </a>
+                                                    <span class="text-s-medium text-w-neutral-3">Coach</span>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="swiper-slide">
+                                    <div class="relative bg-b-neutral-3 rounded-24 group overflow-hidden w-full h-full "
+                                        data-aos="zoom-in">
+                                        <div class="overflow-hidden">
+                                            <span class="badge badge-neutral absolute top-3 left-3 z-10">
+                                                <i class="avatar avatar-primary size-3"></i>
+                                                <span class="text-s-regular text-w-neutral-1">Heroes</span>
+                                            </span>
+                                            <img src="./assets/images/marketplaces/marketplace12.png"
+                                                class="w-full 3xl:h-[310px] xl:h-[280px] lg:h-[260px] h-[240px] object-cover object-top group-hover:scale-110 group-hover:rotate-2 transition-1"
+                                                alt="The Leadership Path" />
+                                        </div>
+                                        <div class="p-28p">
+                                            <a href="./marketplace-details.html"
+                                                class="heading-3 link-1 mb-2 line-clamp-1">The
+                                                Leadership
+                                                Path</a>
+                                            <p class="text-l-regular text-w-neutral-2">
+                                                Starting at $ <span class="span">8.00</span>
+                                            </p>
+                                            <div class="flex-y gap-2 my-24p">
+                                                <div class="flex-y gap-1 text-primary icon-24">
+                                                    <i class="ti ti-star-filled"></i>
+                                                    <i class="ti ti-star-filled"></i>
+                                                    <i class="ti ti-star-filled"></i>
+                                                    <i class="ti ti-star-filled"></i>
+                                                    <i class="ti ti-star-half-filled"></i>
+                                                </div>
+                                                <p class="text-base text-w-neutral-1">4.6 (120)</p>
+                                            </div>
+                                            <div class="flex-y flex-wrap gap-3">
+                                                <img class="size-60p rounded-full shrink-0"
+                                                    src="./assets/images/users/user13.png" alt="Olivia Wilson" />
+                                                <div>
+                                                    <a href="#"
+                                                        class="flex-y gap-2 text-l-medium link-1 text-w-neutral-1 mb-1">
+                                                        <span>Olivia Wilson</span>
+                                                        <i class="ti ti-circle-check-filled text-secondary icon-24"></i>
+                                                    </a>
+                                                    <span class="text-s-medium text-w-neutral-3">Leader</span>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="flex items-center gap-28p">
+                                <div class="swiper-navigation swp-navigation-one">
+                                    <button type="button" class="navigation-btn-one related-marketplace-carousel-prev">
+                                        <i class="ti ti-chevron-left"></i>
+                                    </button>
+                                    <button type="button" class="navigation-btn-one related-marketplace-carousel-next">
+                                        <i class="ti ti-chevron-right"></i>
+                                    </button>
+                                </div>
+                                <div class="swiper-scrollbar swiper-scrollbar-1"></div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </section>
+            <!-- related listings section start -->
+
+        </main>
+        <!-- main end -->
+
+        <!-- footer start -->
+        <include-footer />
+        <!-- footer end -->
+    </div>
+    <!-- app layout end -->
+
+
+</body>
+
+</html>

@@ -1,0 +1,274 @@
+<!DOCTYPE html>
+<html dir="ltr" lang="en">
+
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="shortcut icon" href="./assets/images/icons/favicon.ico" type="image/x-icon" />
+    <title>GameCo - HTML Tailwind CSS</title>
+</head>
+
+<body>
+
+    <!-- preloader start -->
+    <include-preloader />
+    <!-- preloader end -->
+
+    <!-- scroll to top button start -->
+    <include-scrollToTop />
+    <!-- scroll to top button end -->
+
+    <!-- header start -->
+    <include-navbar />
+    <!-- header end -->
+
+    <!-- sidebar start -->
+    <include-left-right-sidebar />
+    <!-- sidebar end -->
+
+    <!-- app layout start -->
+    <div class="app-layout">
+
+        <!-- main start -->
+        <main>
+
+            <!-- group details section start -->
+            <section class="section-pb pt-30 overflow-visible">
+                <div class="container">
+                    <div class="grid grid-cols-12 gap-x-30p gap-y-10">
+                        <div class="4xl:col-span-9 xxl:col-span-8 col-span-12">
+                            <div>
+
+                                <include-group-header />
+
+                                <!-- group details - media tab start -->
+                                <div x-data="{ activeTab: 1 }" class="pt-8">
+                                    <div>
+                                        <div
+                                            class="flex items-center max-sm:justify-center flex-wrap gap-x-20p text-base bg-b-neutral-3 rounded-12 p-40p *:px-3 *:py-2 *:rounded-4">
+                                            <button @click="activeTab = 1"
+                                                :class="activeTab == 1 ? 'bg-b-neutral-2 text-w-neutral-1' : 'text-w-neutral-4 '"
+                                                class="flex items-start gap-2">
+                                                All
+                                                <span class="counter-badge">4</span>
+                                            </button>
+                                            <button @click="activeTab = 2"
+                                                :class="activeTab == 2 ? 'bg-b-neutral-2 text-w-neutral-1' : 'text-w-neutral-4 '"
+                                                class="flex items-start gap-2">
+                                                Albums
+                                                <span class="counter-badge">0</span>
+                                            </button>
+                                            <button @click="activeTab = 3"
+                                                :class="activeTab == 3 ? 'bg-b-neutral-2 text-w-neutral-1' : 'text-w-neutral-4 '"
+                                                class="flex items-start gap-2">
+                                                Photos
+                                                <span class="counter-badge">4</span>
+                                            </button>
+                                            <button @click="activeTab = 4"
+                                                :class="activeTab == 4 ? 'bg-b-neutral-2 text-w-neutral-1' : 'text-w-neutral-4 '"
+                                                class="flex items-start gap-2">
+                                                Videos
+                                                <span class="counter-badge">1</span>
+                                            </button>
+                                        </div>
+                                        <div class="bg-b-neutral-3 rounded-12 p-40p mt-30p">
+                                            <div x-show="activeTab == 1" x-transition>
+                                                <div>
+                                                    <div class="flex-y justify-between flex-wrap gap-24p mb-40p">
+                                                        <h4 class="heading-4 text-w-neutral-1">
+                                                            Media Gallery
+                                                        </h4>
+                                                        <form
+                                                            class="flex items-center px-16p py-1 pr-1 bg-[rgba(242,150,32,0.10)]  rounded-full">
+                                                            <input class="placeholder:text-w-neutral-1 bg-transparent"
+                                                                type="text" name="search-all-media"
+                                                                placeholder="Search Media" id="search-all-media" />
+                                                            <button type="submit"
+                                                                class="btn-c btn-c-lg bg-primary text-b-neutral-4">
+                                                                <i class="ti ti-search"></i>
+                                                            </button>
+                                                        </form>
+                                                    </div>
+                                                    <div class="grid md:grid-cols-2 gap-30p">
+                                                        <div class="overflow-hidden rounded-12">
+                                                            <img class="w-full h-[286px] hover:scale-110 object-cover transition-1"
+                                                                src="./assets/images/games/game40.png" alt="img" />
+                                                        </div>
+                                                        <div class="overflow-hidden rounded-12">
+                                                            <img class="w-full h-[286px] hover:scale-110 object-cover transition-1"
+                                                                src="./assets/images/games/game41.png" alt="img" />
+                                                        </div>
+                                                        <div class="overflow-hidden rounded-12">
+                                                            <img class="w-full h-[286px] hover:scale-110 object-cover transition-1"
+                                                                src="./assets/images/games/game1.png" alt="img" />
+                                                        </div>
+                                                        <div class="overflow-hidden rounded-12">
+                                                            <img class="w-full h-[286px] hover:scale-110 object-cover transition-1"
+                                                                src="./assets/images/games/game2.png" alt="img" />
+                                                        </div>
+
+                                                        <div class="plyr__video-embed player relative">
+                                                            <img class="plyr_custom_poster"
+                                                                src="./assets/images/photos/saved1.1.png"
+                                                                alt="poster" />
+
+                                                            <iframe src="https://www.youtube.com/embed/mUxzKVrSAjs"
+                                                                allowfullscreen allow="autoplay"></iframe>
+                                                        </div>
+
+                                                        <div class="plyr__video-embed player relative">
+                                                            <img class="plyr_custom_poster"
+                                                                src="./assets/images/photos/saved1.2.png"
+                                                                alt="poster" />
+
+                                                            <iframe src="https://www.youtube.com/embed/mUxzKVrSAjs"
+                                                                allowfullscreen allow="autoplay"></iframe>
+                                                        </div>
+                                                    </div>
+                                                    <div class="flex-c mt-40p">
+                                                        <a href="#" class="btn btn-md py-3 btn-primary rounded-12">
+                                                            Load More...
+                                                        </a>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                            <div x-show="activeTab == 2" x-transition>
+                                                <div>
+                                                    <div class="flex-y justify-between flex-wrap gap-24p mb-40p">
+                                                        <h4 class="heading-4 text-w-neutral-1">
+                                                            Media Gallery
+                                                        </h4>
+                                                        <form
+                                                            class="flex items-center px-16p py-1 pr-1 bg-[rgba(242,150,32,0.10)]  rounded-full">
+                                                            <input class="placeholder:text-w-neutral-1 bg-transparent"
+                                                                type="text" name="search-albums"
+                                                                placeholder="Search Media" id="search-albums" />
+                                                            <button type="submit"
+                                                                class="btn-c btn-c-md icon-24 bg-primary text-b-neutral-4">
+                                                                <i class="ti ti-search"></i>
+                                                            </button>
+                                                        </form>
+                                                    </div>
+                                                    <div class="grid md:grid-cols-2 gap-30p">
+                                                        <p class="text-l-medium text-w-neutral-1">
+                                                            Sorry !! There's no media found for the request !!
+                                                        </p>
+                                                    </div>
+                                                    <div class="flex-c mt-48p">
+                                                        <button type="button" class="btn btn-md btn-primary rounded-12">
+                                                            Load more...
+                                                        </button>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                            <div x-show="activeTab == 3" x-transition>
+                                                <div>
+                                                    <div class="flex-y justify-between flex-wrap gap-24p mb-40p">
+                                                        <h4 class="heading-4 text-w-neutral-1">
+                                                            Media Gallery
+                                                        </h4>
+                                                        <form
+                                                            class="flex items-center px-16p py-1 pr-1 bg-[rgba(242,150,32,0.10)]  rounded-full">
+                                                            <input class="placeholder:text-w-neutral-1 bg-transparent"
+                                                                type="text" name="search-photos"
+                                                                placeholder="Search Media" id="search-photos" />
+                                                            <button type="submit"
+                                                                class="btn-c btn-c-lg bg-primary text-b-neutral-4">
+                                                                <i class="ti ti-search"></i>
+                                                            </button>
+                                                        </form>
+                                                    </div>
+                                                    <div class="grid md:grid-cols-2 gap-30p">
+                                                        <div class="overflow-hidden rounded-12">
+                                                            <img class="w-full h-[286px] hover:scale-110 object-cover transition-1"
+                                                                src="./assets/images/games/game40.png" alt="img" />
+                                                        </div>
+                                                        <div class="overflow-hidden rounded-12">
+                                                            <img class="w-full h-[286px] hover:scale-110 object-cover transition-1"
+                                                                src="./assets/images/games/game41.png" alt="img" />
+                                                        </div>
+                                                        <div class="overflow-hidden rounded-12">
+                                                            <img class="w-full h-[286px] hover:scale-110 object-cover transition-1"
+                                                                src="./assets/images/games/game1.png" alt="img" />
+                                                        </div>
+                                                        <div class="overflow-hidden rounded-12">
+                                                            <img class="w-full h-[286px] hover:scale-110 object-cover transition-1"
+                                                                src="./assets/images/games/game2.png" alt="img" />
+                                                        </div>
+                                                    </div>
+                                                    <div class="flex-c mt-40p">
+                                                        <a href="#" class="btn btn-md py-3 btn-primary rounded-12">
+                                                            Load More...
+                                                        </a>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                            <div x-show="activeTab == 4" x-transition>
+                                                <div>
+                                                    <div class="flex-y justify-between flex-wrap gap-24p mb-40p">
+                                                        <h4 class="heading-4 text-w-neutral-1">
+                                                            Media Gallery
+                                                        </h4>
+                                                        <form
+                                                            class="flex items-center px-16p py-1 pr-1 bg-[rgba(242,150,32,0.10)]  rounded-full">
+                                                            <input class="placeholder:text-w-neutral-1 bg-transparent"
+                                                                type="text" name="search-videos"
+                                                                placeholder="Search Media" id="search-videos" />
+                                                            <button type="submit"
+                                                                class="btn-c btn-c-lg bg-primary text-b-neutral-4">
+                                                                <i class="ti ti-search"></i>
+                                                            </button>
+                                                        </form>
+                                                    </div>
+                                                    <div class="max-w-[754px] mx-auto">
+                                                        <div class="grid grid-cols-1 gap-30p">
+                                                            <div class="w-full">
+                                                                <div class="plyr__video-embed player relative">
+                                                                    <img class="plyr_custom_poster"
+                                                                        src="./assets/images/photos/saved1.1.png"
+                                                                        alt="poster" />
+
+                                                                    <iframe
+                                                                        src="https://www.youtube.com/embed/mUxzKVrSAjs"
+                                                                        allowfullscreen allow="autoplay"></iframe>
+                                                                </div>
+                                                            </div>
+                                                        </div>
+                                                    </div>
+                                                    <div class="flex-c mt-40p">
+                                                        <a href="#" class="btn btn-md py-3 btn-primary rounded-12">
+                                                            Load More...
+                                                        </a>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                                <!-- group details - media tab end -->
+
+                            </div>
+                        </div>
+                        <div class="4xl:col-span-3 xxl:col-span-4 col-span-12 relative">
+                            <div class="xxl:sticky xxl:top-30">
+                                <include-right-aside-one />
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </section>
+            <!-- group details section end -->
+
+        </main>
+        <!-- main end -->
+
+        <!-- footer start -->
+        <include-footer />
+        <!-- footer end -->
+    </div>
+    <!-- app layout end -->
+
+
+</body>
+
+</html>

@@ -1,0 +1,808 @@
+<!DOCTYPE html>
+<html dir="ltr" lang="en">
+
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="shortcut icon" href="./assets/images/icons/favicon.ico" type="image/x-icon" />
+    <title>GameCo - HTML Tailwind CSS</title>
+</head>
+
+<body>
+
+    <!-- preloader start -->
+    <include-preloader />
+    <!-- preloader end -->
+
+    <!-- scroll to top button start -->
+    <include-scrollToTop />
+    <!-- scroll to top button end -->
+
+    <!-- header start -->
+    <include-navbar />
+    <!-- header end -->
+
+    <!-- sidebar start -->
+    <include-left-right-sidebar />
+    <!-- sidebar end -->
+
+    <!-- app layout start -->
+    <div class="app-layout">
+
+        <!-- main start -->
+        <main>
+
+            <!-- breadcrumb start -->
+            <section class="pt-30p">
+                <div class="section-pt">
+                    <div
+                        class="relative bg-[url('../images/photos/breadcrumbImg.png')] bg-cover bg-no-repeat rounded-24 overflow-hidden">
+                        <div class="container">
+                            <div class="grid grid-cols-12 gap-30p relative xl:py-[130px] md:py-30 sm:py-25 py-20 z-[2]">
+                                <div class="lg:col-start-2 lg:col-end-12 col-span-12">
+                                    <h2 class="heading-2 text-w-neutral-1 mb-3">
+                                        Live Stream
+                                    </h2>
+                                    <ul class="breadcrumb">
+                                        <li class="breadcrumb-item">
+                                            <a href="#" class="breadcrumb-link">
+                                                Home
+                                            </a>
+                                        </li>
+                                        <li class="breadcrumb-item">
+                                            <span class="breadcrumb-icon">
+                                                <i class="ti ti-chevrons-right"></i>
+                                            </span>
+                                        </li>
+                                        <li class="breadcrumb-item">
+                                            <span class="breadcrumb-current">Live Stream</span>
+                                        </li>
+                                    </ul>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="overlay-11"></div>
+                    </div>
+                </div>
+            </section>
+            <!-- breadcrumb end -->
+
+            <!-- trending details section start -->
+            <section class="pt-60p relative overflow-visible">
+                <div class="container">
+                    <div class="grid grid-cols-12 gap-24p">
+                        <div class="xxl:col-span-8 xl:col-span-7 col-span-12 relative">
+                            <div class="xl:sticky xl:top-30">
+
+                                <div class="swiper thumbs-carousel-container mb-30p"
+                                    data-carousel-name="home-hero-slider" data-slides-per-view="4">
+                                    <div class="swiper thumbs-gallery-main">
+                                        <div class="swiper-wrapper">
+                                            <div class="swiper-slide rounded-12 overflow-hidden">
+                                                <div class="w-full">
+                                                    <div class="plyr__video-embed player relative ">
+                                                        <span
+                                                            class="absolute sm:left-5 left-2 sm:top-5 top-2 badge badge-smm badge-danger font-normal z-[4]">
+                                                            24K Watching
+                                                        </span>
+                                                        <img class="plyr_custom_poster"
+                                                            src="./assets/images/photos/trendingPlayerThumb.png"
+                                                            alt="poster" />
+                                                        <iframe src="https://www.youtube.com/embed/mUxzKVrSAjs"
+                                                            allowfullscreen allow="autoplay"></iframe>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                            <div class="swiper-slide rounded-12 overflow-hidden">
+                                                <div class="w-full">
+                                                    <div class="plyr__video-embed player relative ">
+                                                        <span
+                                                            class="absolute sm:left-5 left-2 sm:top-5 top-2 badge badge-smm badge-danger font-normal z-[4]">
+                                                            24K Watching
+                                                        </span>
+                                                        <img class="plyr_custom_poster"
+                                                            src="./assets/images/library/libraryDetails1.png"
+                                                            alt="poster" />
+                                                        <iframe src="https://www.youtube.com/embed/mUxzKVrSAjs"
+                                                            allowfullscreen allow="autoplay"></iframe>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                            <div class="swiper-slide rounded-12 overflow-hidden">
+                                                <div class="w-full">
+                                                    <div class="plyr__video-embed player relative ">
+                                                        <span
+                                                            class="absolute sm:left-5 left-2 sm:top-5 top-2 badge badge-smm badge-danger font-normal z-[4]">
+                                                            5K Watching
+                                                        </span>
+                                                        <img class="plyr_custom_poster"
+                                                            src="./assets/images/library/libraryDetails2.png"
+                                                            alt="poster" />
+                                                        <iframe src="https://www.youtube.com/embed/mUxzKVrSAjs"
+                                                            allowfullscreen allow="autoplay"></iframe>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                            <div class="swiper-slide rounded-12 overflow-hidden">
+                                                <div class="w-full">
+                                                    <div class="plyr__video-embed player relative ">
+                                                        <span
+                                                            class="absolute sm:left-5 left-2 sm:top-5 top-2 badge badge-smm badge-danger font-normal z-[4]">
+                                                            20K Watching
+                                                        </span>
+                                                        <img class="plyr_custom_poster"
+                                                            src="./assets/images/library/libraryDetails3.png"
+                                                            alt="poster" />
+                                                        <iframe src="https://www.youtube.com/embed/mUxzKVrSAjs"
+                                                            allowfullscreen allow="autoplay"></iframe>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                            <div class="swiper-slide rounded-12 overflow-hidden">
+                                                <div class="w-full">
+                                                    <div class="plyr__video-embed player relative ">
+                                                        <span
+                                                            class="absolute sm:left-5 left-2 sm:top-5 top-2 badge badge-smm badge-danger font-normal z-[4]">
+                                                            16K Watching
+                                                        </span>
+                                                        <img class="plyr_custom_poster"
+                                                            src="./assets/images/library/libraryDetails4.png"
+                                                            alt="poster" />
+                                                        <iframe src="https://www.youtube.com/embed/mUxzKVrSAjs"
+                                                            allowfullscreen allow="autoplay"></iframe>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                            <div class="swiper-slide rounded-12 overflow-hidden">
+                                                <div class="w-full">
+                                                    <div class="plyr__video-embed player relative ">
+                                                        <span
+                                                            class="absolute sm:left-5 left-2 sm:top-5 top-2 badge badge-smm badge-danger font-normal z-[4]">
+                                                            24K Watching
+                                                        </span>
+                                                        <img class="plyr_custom_poster"
+                                                            src="./assets/images/library/libraryDetails1.png"
+                                                            alt="poster" />
+                                                        <iframe src="https://www.youtube.com/embed/mUxzKVrSAjs"
+                                                            allowfullscreen allow="autoplay"></iframe>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                            <div class="swiper-slide rounded-12 overflow-hidden">
+                                                <div class="w-full">
+                                                    <div class="plyr__video-embed player relative ">
+                                                        <span
+                                                            class="absolute sm:left-5 left-2 sm:top-5 top-2 badge badge-smm badge-danger font-normal z-[4]">
+                                                            5K Watching
+                                                        </span>
+                                                        <img class="plyr_custom_poster"
+                                                            src="./assets/images/library/libraryDetails2.png"
+                                                            alt="poster" />
+                                                        <iframe src="https://www.youtube.com/embed/mUxzKVrSAjs"
+                                                            allowfullscreen allow="autoplay"></iframe>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                            <div class="swiper-slide rounded-12 overflow-hidden">
+                                                <div class="w-full">
+                                                    <div class="plyr__video-embed player relative ">
+                                                        <span
+                                                            class="absolute sm:left-5 left-2 sm:top-5 top-2 badge badge-smm badge-danger font-normal z-[4]">
+                                                            20K Watching
+                                                        </span>
+                                                        <img class="plyr_custom_poster"
+                                                            src="./assets/images/library/libraryDetails3.png"
+                                                            alt="poster" />
+                                                        <iframe src="https://www.youtube.com/embed/mUxzKVrSAjs"
+                                                            allowfullscreen allow="autoplay"></iframe>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                            <div class="swiper-slide rounded-12 overflow-hidden">
+                                                <div class="w-full">
+                                                    <div class="plyr__video-embed player relative ">
+                                                        <span
+                                                            class="absolute sm:left-5 left-2 sm:top-5 top-2 badge badge-smm badge-danger font-normal z-[4]">
+                                                            16K Watching
+                                                        </span>
+                                                        <img class="plyr_custom_poster"
+                                                            src="./assets/images/library/libraryDetails4.png"
+                                                            alt="poster" />
+                                                        <iframe src="https://www.youtube.com/embed/mUxzKVrSAjs"
+                                                            allowfullscreen allow="autoplay"></iframe>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="thumbs-gallery pt-30p">
+                                        <div class="swiper-wrapper">
+                                            <div class="swiper-slide">
+                                                <div class="overflow-hidden cursor-pointer rounded-16">
+                                                    <img class="w-full xxl:h-[200px] lg:h-[160px] md:h-[140px] sm:h-25 h-18 object-cover hover:scale-110 transition-1"
+                                                        src="./assets/images/photos/trendingPlayerThumb.png"
+                                                        alt="library">
+                                                </div>
+                                            </div>
+                                            <div class="swiper-slide">
+                                                <div class="overflow-hidden cursor-pointer rounded-16">
+                                                    <img class="w-full xxl:h-[200px] lg:h-[160px] md:h-[140px] sm:h-25 h-18 object-cover hover:scale-110 transition-1"
+                                                        src="./assets/images/library/libraryDetails1.png" alt="library">
+                                                </div>
+                                            </div>
+                                            <div class="swiper-slide">
+                                                <div class="overflow-hidden cursor-pointer rounded-16">
+                                                    <img class="w-full xxl:h-[200px] lg:h-[160px] md:h-[140px] sm:h-25 h-18 object-cover hover:scale-110 transition-1"
+                                                        src="./assets/images/library/libraryDetails2.png" alt="library">
+                                                </div>
+                                            </div>
+                                            <div class="swiper-slide">
+                                                <div class="overflow-hidden cursor-pointer rounded-16">
+                                                    <img class="w-full xxl:h-[200px] lg:h-[160px] md:h-[140px] sm:h-25 h-18 object-cover hover:scale-110 transition-1"
+                                                        src="./assets/images/library/libraryDetails3.png" alt="library">
+                                                </div>
+                                            </div>
+                                            <div class="swiper-slide">
+                                                <div class="overflow-hidden cursor-pointer rounded-16">
+                                                    <img class="w-full xxl:h-[200px] lg:h-[160px] md:h-[140px] sm:h-25 h-18 object-cover hover:scale-110 transition-1"
+                                                        src="./assets/images/library/libraryDetails4.png" alt="library">
+                                                </div>
+                                            </div>
+                                            <div class="swiper-slide">
+                                                <div class="overflow-hidden cursor-pointer rounded-16">
+                                                    <img class="w-full xxl:h-[200px] lg:h-[160px] md:h-[140px] sm:h-25 h-18 object-cover hover:scale-110 transition-1"
+                                                        src="./assets/images/library/libraryDetails1.png" alt="library">
+                                                </div>
+                                            </div>
+                                            <div class="swiper-slide">
+                                                <div class="overflow-hidden cursor-pointer rounded-16">
+                                                    <img class="w-full xxl:h-[200px] lg:h-[160px] md:h-[140px] sm:h-25 h-18 object-cover hover:scale-110 transition-1"
+                                                        src="./assets/images/library/libraryDetails2.png" alt="library">
+                                                </div>
+                                            </div>
+                                            <div class="swiper-slide">
+                                                <div class="overflow-hidden cursor-pointer rounded-16">
+                                                    <img class="w-full xxl:h-[200px] lg:h-[160px] md:h-[140px] sm:h-25 h-18 object-cover hover:scale-110 transition-1"
+                                                        src="./assets/images/library/libraryDetails3.png" alt="library">
+                                                </div>
+                                            </div>
+                                            <div class="swiper-slide">
+                                                <div class="overflow-hidden cursor-pointer rounded-16">
+                                                    <img class="w-full xxl:h-[200px] lg:h-[160px] md:h-[140px] sm:h-25 h-18 object-cover hover:scale-110 transition-1"
+                                                        src="./assets/images/library/libraryDetails4.png" alt="library">
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+
+                                <div x-data="{ open: false }">
+                                    <h4 class="heading-4 text-w-neutral-1 mb-16p">About Trending Game</h4>
+                                    <div class="grid grid-cols-1 gap-16p">
+                                        <p class="text-m-regular text-w-neutral-3">
+                                            Our vision is to create a welcoming, inclusive, and supportive environment
+                                            where
+                                            gamers of all backgrounds and skill levels can come together. We believe in
+                                            the
+                                            power of gaming to foster camaraderie, creativity, and personal growth.
+                                            Whether
+                                            you're a solo player, a competitive gamerstreamer, or a game developer, you
+                                            have
+                                            a
+                                            place here.
+                                        </p>
+                                        <p class="text-m-regular text-w-neutral-3">
+                                            We're a diverse group of gamers, ranging from casual players to hardcore
+                                            enthusiasts, spanning various platforms and genres. What unites us is our
+                                            belief
+                                            that gaming is not just a pastime but an art form, a form of storytelling,
+                                            and a
+                                            means of forging connections with people from all walks of life
+                                        </p>
+                                        <p class="text-m-regular text-w-neutral-3">
+                                            As a result the villagers began invading one another, which in turn led to
+                                            an
+                                            ultimate war. Wild Ninnekos are born with to help the Ninnekos conquer the
+                                            entire
+                                            forest, build new villages, and establish a strong empire.
+                                        </p>
+                                        <div x-show="open" x-collapse class="grid grid-cols-1 gap-16p">
+                                            <p class="text-m-regular text-w-neutral-3">
+                                                We're a diverse group of gamers, ranging from casual players to hardcore
+                                                enthusiasts, spanning various platforms and genres. What unites us is
+                                                our
+                                                belief
+                                                that gaming is not just a pastime but an art form, a form of
+                                                storytelling,
+                                                and a
+                                                means of forging connections with people from all walks of life
+                                            </p>
+                                            <p class="text-m-regular text-w-neutral-3">
+                                                As a result the villagers began invading one another, which in turn led
+                                                to
+                                                an
+                                                ultimate war. Wild Ninnekos are born with to help the Ninnekos conquer
+                                                the
+                                                entire
+                                                forest, build new villages, and establish a strong empire.
+                                            </p>
+                                        </div>
+                                    </div>
+
+                                    <button @click="open = !open"
+                                        class="inline-flex items-center text-base font-poppins font-semibold gap-2 mt-40p ">
+                                        Read More
+                                        <i class="ti ti-chevron-down icon-24 transition-1"
+                                            :class="{ 'rotate-180': open }"></i>
+                                    </button>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="xxl:col-span-4 xl:col-span-5 col-span-12 relative">
+                            <div class="xl:sticky xl:top-30">
+                                <div class="border border-shap p-40p rounded-12">
+                                    <div class="flex-y flex-wrap justify-between gap-24p pb-40p border-b border-shap">
+                                        <h4 class="heading-4 text-w-neutral-1">
+                                            Live chat room
+                                        </h4>
+                                        <a href="./chat.html" class="icon-32 text-w-neutral-4">
+                                            <i class="ti ti-arrow-up-right"></i>
+                                        </a>
+                                    </div>
+                                    <div
+                                        class="grid grid-cols-1 gap-20p py-40p max-h-[540px] overflow-y-auto overflow-x-hidden scrollbar-sm">
+                                        <div class="flex gap-2">
+                                            <img class="avatar size-48p shrink-0" src="./assets/images/users/user1.png"
+                                                alt="user" />
+                                            <div>
+                                                <div class="flex-y gap-2 mb-16p">
+                                                    <a href="./profile.html"
+                                                        class="text-m-medium text-w-neutral-1 link-1">David Malan</a>
+                                                    <span class="text-xs !text-w-neutral-4">2m</span>
+                                                </div>
+                                                <div
+                                                    class="inline-grid gap-y-1 *:inline-flex *:gap-2.5 *:items-center  *:px-20p *:py-3 *:text-w-neutral-4 text-sm *:bg-glass-1 *:rounded-24 *:rounded-tl-none">
+                                                    <div>
+                                                        <p class="text-w-neutral-4">
+                                                            Hey team,
+                                                        </p>
+                                                        <span class="icon-24">
+                                                            <i class="ti ti-mood-nerd text-w-neutral-4"></i>
+                                                        </span>
+                                                    </div>
+                                                    <div>
+                                                        <p class="text-w-neutral-4">
+                                                            Avoid combat, watch the jungle
+                                                        </p>
+                                                        <button class="icon-24">
+                                                            <i class="ti ti-dots-vertical text-w-neutral-4"></i>
+                                                        </button>
+                                                    </div>
+                                                    <div>
+                                                        <p class="text-w-neutral-4">
+                                                            Avoid combat, watch the jungle
+                                                        </p>
+                                                    </div>
+
+                                                </div>
+                                            </div>
+                                        </div>
+                                        <div class="flex gap-2">
+                                            <img class="avatar size-48p shrink-0" src="./assets/images/users/user2.png"
+                                                alt="user" />
+                                            <div>
+                                                <div class="flex-y gap-2 mb-16p">
+                                                    <a href="./profile.html"
+                                                        class="text-m-medium text-w-neutral-1 link-1">Rolex Millar</a>
+                                                    <span class="text-xs !text-w-neutral-4">4m</span>
+                                                </div>
+                                                <div
+                                                    class="inline-grid gap-y-1 *:inline-flex *:gap-2.5 *:items-center  *:px-20p *:py-3 *:text-w-neutral-4 text-sm *:bg-glass-1 *:rounded-24 *:rounded-tl-none">
+                                                    <div>
+                                                        <p class="text-w-neutral-4">
+                                                            As we wrap up our journey through the world of online
+                                                            gaming,
+                                                        </p>
+                                                        <span class="icon-24">
+                                                            <i class="ti ti-mood-nerd text-w-neutral-4"></i>
+                                                        </span>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </div>
+                                        <div class="flex gap-2">
+                                            <img class="avatar size-48p shrink-0" src="./assets/images/users/user3.png"
+                                                alt="user" />
+                                            <div>
+                                                <div class="flex-y gap-2 mb-16p">
+                                                    <a href="./profile.html"
+                                                        class="text-m-medium text-w-neutral-1 link-1">Sammi Esmit</a>
+                                                    <span class="text-xs !text-w-neutral-4">4m</span>
+                                                </div>
+                                                <div
+                                                    class="inline-grid gap-y-1 *:inline-flex *:gap-2.5 *:items-center  *:px-20p *:py-3 *:text-w-neutral-4 text-sm *:bg-glass-1 *:rounded-24 *:rounded-tl-none">
+                                                    <div>
+                                                        <p class="text-w-neutral-4">
+                                                            Great!
+                                                        </p>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </div>
+                                        <div class="flex gap-2">
+                                            <img class="avatar size-48p shrink-0" src="./assets/images/users/user4.png"
+                                                alt="user" />
+                                            <div>
+                                                <div class="flex-y gap-2 mb-16p">
+                                                    <a href="./profile.html"
+                                                        class="text-m-medium text-w-neutral-1 link-1">Adder son</a>
+                                                    <span class="text-xs !text-w-neutral-4">4m</span>
+                                                </div>
+                                                <div
+                                                    class="inline-grid gap-y-1 *:inline-flex *:gap-2.5 *:items-center  *:px-20p *:py-3 *:text-w-neutral-4 text-sm *:bg-glass-1 *:rounded-24 *:rounded-tl-none">
+                                                    <div>
+                                                        <p class="text-w-neutral-4">
+                                                            Our massage therapy has something
+                                                            for everyone.
+                                                        </p>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </div>
+                                        <div class="flex gap-2">
+                                            <img class="avatar size-48p shrink-0" src="./assets/images/users/user7.png"
+                                                alt="user" />
+                                            <div>
+                                                <div class="flex-y gap-2 mb-16p">
+                                                    <a href="./profile.html"
+                                                        class="text-m-medium text-w-neutral-1 link-1">David Smith</a>
+                                                    <span class="text-xs !text-w-neutral-4">9m</span>
+                                                </div>
+                                                <div
+                                                    class="inline-grid gap-y-1 *:inline-flex *:gap-2.5 *:items-center  *:px-20p *:py-3 *:text-w-neutral-4 text-sm *:bg-glass-1 *:rounded-24 *:rounded-tl-none">
+                                                    <div>
+                                                        <p class="text-w-neutral-4">
+                                                            Your comfort and well-being are of
+                                                            utmost importance to us.
+                                                        </p>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <form class="flex-y justify-between gap-3 px-20p py-3 bg-b-neutral-3 rounded-24">
+                                        <div class="flex items-center gap-3">
+                                            <button type="button" class="icon-24 text-w-neutral-4">
+                                                <i class="ti ti-mood-smile"></i>
+                                            </button>
+                                            <input type="text"
+                                                class="bg-transparent text-sm text-w-neutral-1 placeholder:text-w-neutral-1 w-full"
+                                                placeholder="Send a message" />
+                                        </div>
+                                        <button type="submit" class="btn btn-c-md btn-primary rounded-12">
+                                            <i class="ti ti-send icon-24"></i>
+                                        </button>
+                                    </form>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </section>
+            <!-- trending details section end -->
+
+            <!-- related trending section start -->
+            <section class="section-py">
+                <div class="container">
+                    <div class="flex items-center justify-between flex-wrap gap-24p">
+                        <h2 class="heading-2 text-w-neutral-1 text-split-left">
+                            Related Trending
+                        </h2>
+                        <form class="select-1 shrink-0">
+                            <select class="select w-full sm:py-3 py-2 px-24p rounded-full">
+                                <option value="popular">Popular</option>
+                                <option value="new-releases">New Releases</option>
+                                <option value="action">Action</option>
+                                <option value="adventure">Adventure</option>
+                                <option value="sports">Sports</option>
+                            </select>
+                        </form>
+                    </div>
+                    <div class="swiper two-card-carousel mt-40p" data-carousel-name="related-trending"
+                        data-aos="fade-up">
+                        <div class="swiper-wrapper pb-15" data-carousel-reverse="true">
+                            <div class="swiper-slide">
+                                <div class="w-full bg-b-neutral-3 p-24p rounded-24 grid 4xl:grid-cols-2 grid-cols-1 items-center gap-24p group"
+                                    data-aos="zoom-in">
+                                    <div class="overflow-hidden rounded-24">
+                                        <img class="w-full xxl:h-[304px] xl:h-[280px] md:h-[260px] h-[240px] object-cover group-hover:scale-110 transition-1"
+                                            src="./assets/images/games/game1.png" alt="img" />
+                                    </div>
+                                    <div>
+                                        <div class="flex-y flex-wrap gap-2">
+                                            <span class="badge badge-neutral-2 badge-smm">Strategy</span>
+                                            <span class="badge badge-danger badge-smm">Live</span>
+                                            <span class="badge badge-neutral-2 badge-smm">Shooter</span>
+                                        </div>
+                                        <a href="./live-stream.html"
+                                            class="heading-3 text-w-neutral-1 4xl:line-clamp-2 line-clamp-1 link-1 my-16p text-split-left">Neo
+                                            Frontiers: Build Rule Prosper</a>
+                                        <div class="flex-y flex-wrap *:py-2 *:px-3 mb-20p">
+                                            <div class="flex-y gap-2.5">
+                                                <span class="badge badge-secondary size-3 badge-circle"></span>
+                                                <p class="text-base text-neutral-100">
+                                                    <span class="span">4.7k</span> Viewers
+                                                </p>
+                                            </div>
+                                            <div class="flex-y gap-2.5">
+                                                <span class="badge badge-primary size-3 badge-circle"></span>
+                                                <p class="text-base text-neutral-100">
+                                                    <span class="span">4 days ago</span>
+                                                </p>
+                                            </div>
+                                        </div>
+                                        <div class="flex-y flex-wrap gap-3">
+                                            <img class="size-60p rounded-full shrink-0"
+                                                src="./assets/images/users/user4.png" alt="user" />
+                                            <div>
+                                                <a href="./profile.html"
+                                                    class="text-l-medium link-1 text-w-neutral-1 mb-1">
+                                                    David Smith
+                                                    <i class="ti ti-circle-check-filled text-secondary icon-24"></i>
+                                                </a>
+                                                <span class="text-s-medium text-w-neutral-4">Leader</span>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="swiper-slide">
+                                <div class="w-full bg-b-neutral-3 p-24p rounded-24 grid 4xl:grid-cols-2 grid-cols-1 items-center gap-24p group"
+                                    data-aos="zoom-in">
+                                    <div class="overflow-hidden rounded-24">
+                                        <img class="w-full xxl:h-[304px] xl:h-[280px] md:h-[260px] h-[240px] object-cover group-hover:scale-110 transition-1"
+                                            src="./assets/images/games/game2.png" alt="img" />
+                                    </div>
+                                    <div>
+                                        <div class="flex-y flex-wrap gap-2">
+                                            <span class="badge badge-neutral-2 badge-smm">Strategy</span>
+                                            <span class="badge badge-danger badge-smm">Live</span>
+                                            <span class="badge badge-neutral-2 badge-smm">Shooter</span>
+                                        </div>
+                                        <a href="./live-stream.html"
+                                            class="heading-3 text-w-neutral-1 4xl:line-clamp-2 line-clamp-1 link-1 my-16p text-split-left">Metropolis
+                                            Tycoon: Urban Empire</a>
+                                        <div class="flex-y flex-wrap *:py-2 *:px-3 mb-20p">
+                                            <div class="flex-y gap-2.5">
+                                                <span class="badge badge-secondary size-3 badge-circle"></span>
+                                                <p class="text-base text-neutral-100">
+                                                    <span class="span">2.5k</span> Viewers
+                                                </p>
+                                            </div>
+                                            <div class="flex-y gap-2.5">
+                                                <span class="badge badge-primary size-3 badge-circle"></span>
+                                                <p class="text-base text-neutral-100">
+                                                    <span class="span">2 days ago</span>
+                                                </p>
+                                            </div>
+                                        </div>
+                                        <div class="flex-y flex-wrap gap-3">
+                                            <img class="size-60p rounded-full shrink-0"
+                                                src="./assets/images/users/user2.png" alt="user" />
+                                            <div>
+                                                <a href="./profile.html"
+                                                    class="text-l-medium link-1 text-w-neutral-1 mb-1">
+                                                    Wlieeam Son
+                                                    <i class="ti ti-circle-check-filled text-secondary icon-24"></i>
+                                                </a>
+                                                <span class="text-s-medium text-w-neutral-4">Developer</span>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="swiper-slide">
+                                <div class="w-full bg-b-neutral-3 p-24p rounded-24 grid 4xl:grid-cols-2 grid-cols-1 items-center gap-24p group"
+                                    data-aos="zoom-in">
+                                    <div class="overflow-hidden rounded-24">
+                                        <img class="w-full xxl:h-[304px] xl:h-[280px] md:h-[260px] h-[240px] object-cover group-hover:scale-110 transition-1"
+                                            src="./assets/images/games/game3.png" alt="img" />
+                                    </div>
+                                    <div>
+                                        <div class="flex-y flex-wrap gap-2">
+                                            <span class="badge badge-neutral-2 badge-smm">Adventure</span>
+                                            <span class="badge badge-danger badge-smm">New</span>
+                                            <span class="badge badge-neutral-2 badge-smm">RPG</span>
+                                        </div>
+                                        <a href="./live-stream.html"
+                                            class="heading-3 text-w-neutral-1 4xl:line-clamp-2 line-clamp-1 link-1 my-16p text-split-left">Chronos
+                                            Quest: Time's Edge</a>
+                                        <div class="flex-y flex-wrap *:py-2 *:px-3 mb-20p">
+                                            <div class="flex-y gap-2.5">
+                                                <span class="badge badge-secondary size-3 badge-circle"></span>
+                                                <p class="text-base text-neutral-100">
+                                                    <span class="span">3.9k</span> Viewers
+                                                </p>
+                                            </div>
+                                            <div class="flex-y gap-2.5">
+                                                <span class="badge badge-primary size-3 badge-circle"></span>
+                                                <p class="text-base text-neutral-100">
+                                                    <span class="span">1 day ago</span>
+                                                </p>
+                                            </div>
+                                        </div>
+                                        <div class="flex-y flex-wrap gap-3">
+                                            <img class="size-60p rounded-full shrink-0"
+                                                src="./assets/images/users/user3.png" alt="user" />
+                                            <div>
+                                                <a href="./profile.html"
+                                                    class="text-l-medium link-1 text-w-neutral-1 mb-1">
+                                                    Clara Benson
+                                                    <i class="ti ti-circle-check-filled text-secondary icon-24"></i>
+                                                </a>
+                                                <span class="text-s-medium text-w-neutral-4">Explorer</span>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="swiper-slide">
+                                <div class="w-full bg-b-neutral-3 p-24p rounded-24 grid 4xl:grid-cols-2 grid-cols-1 items-center gap-24p group"
+                                    data-aos="zoom-in">
+                                    <div class="overflow-hidden rounded-24">
+                                        <img class="w-full xxl:h-[304px] xl:h-[280px] md:h-[260px] h-[240px] object-cover group-hover:scale-110 transition-1"
+                                            src="./assets/images/games/game4.png" alt="img" />
+                                    </div>
+                                    <div>
+                                        <div class="flex-y flex-wrap gap-2">
+                                            <span class="badge badge-neutral-2 badge-smm">Simulation</span>
+                                            <span class="badge badge-danger badge-smm">Trending</span>
+                                            <span class="badge badge-neutral-2 badge-smm">RPG</span>
+                                        </div>
+                                        <a href="./live-stream.html"
+                                            class="heading-3 text-w-neutral-1 4xl:line-clamp-2 line-clamp-1 link-1 my-16p text-split-left">Galactic
+                                            Sim: Space Odyssey</a>
+                                        <div class="flex-y flex-wrap *:py-2 *:px-3 mb-20p">
+                                            <div class="flex-y gap-2.5">
+                                                <span class="badge badge-secondary size-3 badge-circle"></span>
+                                                <p class="text-base text-neutral-100">
+                                                    <span class="span">4.5k</span> Viewers
+                                                </p>
+                                            </div>
+                                            <div class="flex-y gap-2.5">
+                                                <span class="badge badge-primary size-3 badge-circle"></span>
+                                                <p class="text-base text-neutral-100">
+                                                    <span class="span">3 days ago</span>
+                                                </p>
+                                            </div>
+                                        </div>
+                                        <div class="flex-y flex-wrap gap-3">
+                                            <img class="size-60p rounded-full shrink-0"
+                                                src="./assets/images/users/user5.png" alt="user" />
+                                            <div>
+                                                <a href="./profile.html"
+                                                    class="text-l-medium link-1 text-w-neutral-1 mb-1">
+                                                    Elena Brooks
+                                                    <i class="ti ti-circle-check-filled text-secondary icon-24"></i>
+                                                </a>
+                                                <span class="text-s-medium text-w-neutral-4">Commander</span>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="swiper-slide">
+                                <div class="w-full bg-b-neutral-3 p-24p rounded-24 grid 4xl:grid-cols-2 grid-cols-1 items-center gap-24p group"
+                                    data-aos="zoom-in">
+                                    <div class="overflow-hidden rounded-24">
+                                        <img class="w-full xxl:h-[304px] xl:h-[280px] md:h-[260px] h-[240px] object-cover group-hover:scale-110 transition-1"
+                                            src="./assets/images/games/game5.png"
+                                            alt="Enchanted Echoes: Uncover Fate" />
+                                    </div>
+                                    <div>
+                                        <div class="flex-y flex-wrap gap-2">
+                                            <span class="badge badge-neutral-2 badge-smm">Strategy</span>
+                                            <span class="badge badge-danger badge-smm">Live</span>
+                                            <span class="badge badge-neutral-2 badge-smm">Shooter</span>
+                                        </div>
+                                        <a href="./live-stream.html"
+                                            class="heading-3 text-w-neutral-1 4xl:line-clamp-2 line-clamp-1 link-1 my-16p text-split-left">
+                                            Enchanted Echoes: Uncover Fate
+                                        </a>
+                                        <div class="flex-y flex-wrap *:py-2 *:px-3 mb-20p">
+                                            <div class="flex-y gap-2.5">
+                                                <span class="badge badge-secondary size-3 badge-circle"></span>
+                                                <p class="text-base text-neutral-100">
+                                                    <span class="span">4.7k</span> Viewers
+                                                </p>
+                                            </div>
+                                            <div class="flex-y gap-2.5">
+                                                <span class="badge badge-primary size-3 badge-circle"></span>
+                                                <p class="text-base text-neutral-100">
+                                                    <span class="span">4 days ago</span>
+                                                </p>
+                                            </div>
+                                        </div>
+                                        <div class="flex-y flex-wrap gap-3">
+                                            <img class="size-60p rounded-full shrink-0"
+                                                src="./assets/images/users/user5.png" alt="Malan Willam" />
+                                            <div>
+                                                <a href="./profile.html"
+                                                    class="text-l-medium link-1 text-w-neutral-1 mb-1">
+                                                    Malan Willam
+                                                    <i class="ti ti-circle-check-filled text-secondary icon-24"></i>
+                                                </a>
+                                                <span class="text-s-medium text-w-neutral-4">Developer</span>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="swiper-slide">
+                                <div class="w-full bg-b-neutral-3 p-24p rounded-24 grid 4xl:grid-cols-2 grid-cols-1 items-center gap-24p group"
+                                    data-aos="zoom-in">
+                                    <div class="overflow-hidden rounded-24">
+                                        <img class="w-full xxl:h-[304px] xl:h-[280px] md:h-[260px] h-[240px] object-cover group-hover:scale-110 transition-1"
+                                            src="./assets/images/games/game6.png" alt="Wlieeam son" />
+                                    </div>
+                                    <div>
+                                        <div class="flex-y flex-wrap gap-2">
+                                            <span class="badge badge-neutral-2 badge-smm">Strategy</span>
+                                            <span class="badge badge-danger badge-smm">Live</span>
+                                            <span class="badge badge-neutral-2 badge-smm">Shooter</span>
+                                        </div>
+                                        <a href="./live-stream.html"
+                                            class="heading-3 text-w-neutral-1 4xl:line-clamp-2 line-clamp-1 link-1 my-16p text-split-left">
+                                            Chronos Quest: Time's Edge
+                                        </a>
+                                        <div class="flex-y flex-wrap *:py-2 *:px-3 mb-20p">
+                                            <div class="flex-y gap-2.5">
+                                                <span class="badge badge-secondary size-3 badge-circle"></span>
+                                                <p class="text-base text-neutral-100">
+                                                    <span class="span">2.5k</span> Viewers
+                                                </p>
+                                            </div>
+                                            <div class="flex-y gap-2.5">
+                                                <span class="badge badge-primary size-3 badge-circle"></span>
+                                                <p class="text-base text-neutral-100">
+                                                    <span class="span">2 days ago</span>
+                                                </p>
+                                            </div>
+                                        </div>
+                                        <div class="flex-y flex-wrap gap-3">
+                                            <img class="size-60p rounded-full shrink-0"
+                                                src="./assets/images/users/user6.png" alt="Wlieeam Son" />
+                                            <div>
+                                                <a href="./profile.html"
+                                                    class="text-l-medium link-1 text-w-neutral-1 mb-1">
+                                                    Wlieeam Son
+                                                    <i class="ti ti-circle-check-filled text-secondary icon-24"></i>
+                                                </a>
+                                                <span class="text-s-medium text-w-neutral-4">Developer</span>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <div
+                            class="swiper-pagination pagination-one related-trending-carousel-pagination flex-c gap-2.5">
+                        </div>
+                    </div>
+                </div>
+            </section>
+            <!-- related trending section end -->
+
+        </main>
+        <!-- main end -->
+
+        <!-- footer start -->
+        <include-footer />
+        <!-- footer end -->
+    </div>
+    <!-- app layout end -->
+
+
+</body>
+
+</html>

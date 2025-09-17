@@ -1,0 +1,94 @@
+@layer components {
+  // desktop menu
+  .menus {
+    @apply flex justify-center items-center gap-3.5 md:gap-4 xxl:gap-5 3xl:gap-6;
+  }
+
+  .menu {
+    @apply text-base font-medium text-w-neutral-4 transition-1 py-16p;
+
+    .active {
+      @apply border-b border-w-neutral-4 hover:border-w-neutral-4;
+    }
+  }
+
+  .submenu-icon {
+    @apply ml-1 text-base group-hover:rotate-180 transition-1;
+  }
+
+  .submenu {
+    @apply text-base font-medium text-w-neutral-4 hover:cursor-pointer flex justify-center items-center  relative transition-1 sm:py-4 py-3.5;
+
+    &.active {
+      .submenu-btn {
+        @apply border-b border-w-neutral-4;
+      }
+    }
+  }
+
+  .submenu-options {
+    @apply bg-w-neutral-4 shadow-3 w-48 max-h-[334px] overflow-y-auto scrollbar-sm z-[300] opacity-0 invisible absolute top-6 left-0 transition-1 translate-y-14 p-4 rounded-lg group-hover:visible group-hover:opacity-100 group-hover:translate-y-8;
+  }
+
+  .submenu-link {
+    @apply text-white hover:bg-w-neutral-4 hover:bg-opacity-20 w-full transition-1;
+    a {
+      @apply block py-2 px-2.5;
+    }
+    .active {
+      @apply text-primary;
+    }
+  }
+
+  // mobail menu
+  .mobail-menu {
+    @apply sm:text-xl text-lg font-borda text-w-neutral-1 hover:text-primary transition-1 border-b border-w-neutral-4/60 w-full pb-20p;
+    .active {
+      @apply text-primary;
+    }
+  }
+
+  .mobail-submenu {
+    @apply cursor-pointer relative border-b border-w-neutral-4/60 w-full pb-20p;
+    .active {
+      @apply text-primary;
+    }
+  }
+
+  .mobail-submenu-btn {
+    @apply flex justify-between items-center sm:text-xl text-lg font-borda hover:text-primary transition-1;
+  }
+
+  .mobail-submenu-icon {
+    @apply ml-1 text-2xl group-hover:text-primary transition-1;
+  }
+  // desktop menu
+
+  // Tab Navbar
+  .tab-navbar a {
+    @apply heading-5 text-w-neutral-4 border-b-2 border-spacing-y-2 border-transparent;
+
+    &.active {
+      @apply border-primary text-w-neutral-1;
+    }
+  }
+
+  // Tab Navbar
+  .side-navbar-one .nav-item {
+    // @apply heading-5 text-w-neutral-4 border-b-2 border-spacing-y-2 border-transparent;
+
+    &.active {
+      @apply bg-primary text-b-neutral-4;
+    }
+  }
+
+  /* Navbar search field */
+  .nav-search {
+    @apply px-20p py-16p max-w-[400px] w-full flex items-center sm:gap-3 gap-2;
+  }
+
+  // Navbar overlay
+  .navbar-overly {
+    @apply absolute inset-0 bg-b-neutral-3 max-md:bg-b-neutral-4/25 transition-2;
+  }
+}

@@ -1,0 +1,299 @@
+<!DOCTYPE html>
+<html dir="ltr" lang="en">
+
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="shortcut icon" href="./assets/images/icons/favicon.ico" type="image/x-icon" />
+    <title>GameCo - HTML Tailwind CSS</title>
+</head>
+
+<body>
+
+    <!-- preloader start -->
+    <include-preloader />
+    <!-- preloader end -->
+
+    <!-- scroll to top button start -->
+    <include-scrollToTop />
+    <!-- scroll to top button end -->
+
+    <!-- header start -->
+    <include-navbar />
+    <!-- header end -->
+
+    <!-- sidebar start -->
+    <include-left-right-sidebar />
+    <!-- sidebar end -->
+
+    <!-- app layout start -->
+    <div class="app-layout">
+
+        <!-- main start -->
+        <main>
+
+            <include-tournament-header />
+
+            <!-- Tournament overview section start -->
+            <section class="section-pb relative overflow-visible">
+                <div class="container">
+                    <div class="grid 4xl:grid-cols-12 grid-cols-1 gap-30p ">
+                        <div class="4xl:col-start-2 4xl:col-end-12">
+                            <div class="grid grid-cols-10 gap-30p items-start">
+                                <div class="3xl:col-span-7 xl:col-span-6 col-span-10">
+                                    <div>
+                                        <div
+                                            class="flex-y flex-wrap gap-x-32p bg-b-neutral-3 px-32p py-24p rounded-12 mb-32p">
+                                            <img class="avatar size-72p shrink-0"
+                                                src="./assets/images/users/avatar8.png" alt="avater" />
+                                            <div class="flex-y gap-32p">
+                                                <div>
+                                                    <span class="text-base text-w-neutral-4 mb-1">Game</span>
+                                                    <span class="text-xl-medium text-w-neutral-1">
+                                                        UNO
+                                                    </span>
+                                                </div>
+                                                <div>
+                                                    <span class="text-base text-w-neutral-4 mb-1">Game
+                                                        Mode</span>
+                                                    <span class="text-xl-medium text-w-neutral-1">
+                                                        Solos
+                                                    </span>
+                                                </div>
+                                            </div>
+                                        </div>
+                                        <div class="bg-b-neutral-3 py-40p px-32p rounded-12">
+                                            <h3 class="heading-3 text-w-neutral-1 mb-3">
+                                                Tournament Info
+                                            </h3>
+                                            <p class="text-base text-w-neutral-4 mb-24p">
+                                                Our tournaments require four teams to start, to you get the
+                                                best
+                                                competitive experience. A tournament containing less than
+                                                the
+                                                mentioned
+                                                amount will automatically be cancelled, and any entry fee
+                                                will
+                                                be
+                                                refunded through our customer support.
+                                            </p>
+                                            <h3 class="heading-4 text-w-neutral-1 mb-3">
+                                                Tournament Rules
+                                            </h3>
+                                            <ul class="list-disc text-base text-w-neutral-4 ml-5 mb-24p">
+                                                <li>
+                                                    After entering the application, you must go to your
+                                                    social,
+                                                    and
+                                                    add the opponent via ID.
+                                                </li>
+                                                <li>
+                                                    All Rounds: Team has to win 2 rounds to Win; Finals:
+                                                    Team
+                                                    has to
+                                                    win 3 Rounds to Win.
+                                                </li>
+                                                <li>
+                                                    Players must provide their ID in the Discord Uno IDs tab
+                                                    so
+                                                    players can communicate together and with the organizer
+                                                    when
+                                                    needed
+                                                </li>
+                                                <li>
+                                                    Players communicate in Discord Only
+                                                </li>
+                                            </ul>
+                                            <h3 class="heading-5 text-w-neutral-1 mb-3">
+                                                Join the Game
+                                            </h3>
+                                            <ul class="list-disc text-base text-w-neutral-4 ml-5 mb-24p">
+                                                <li>
+                                                    Check-in opens 60 minutes before the tournament starts..
+                                                </li>
+                                                <li>
+                                                    After that, players have 45 minutes to confirm their
+                                                    rticipation.
+                                                </li>
+                                                <li>
+                                                    The team responsible for creating the in-game lobby
+                                                    choose
+                                                    sides..
+                                                </li>
+                                                <li>
+                                                    Players will be instructed as to which player has been
+                                                    selected
+                                                    to
+                                                    create the in-game lobby, along with who must be invited
+                                                    from
+                                                    the
+                                                    posite team.
+                                                </li>
+                                                <li>
+                                                    Players have 5 minutes to join the pre-game lobby on the
+                                                    Epulze
+                                                    atform. Once matched with opponents.
+                                                </li>
+                                            </ul>
+                                            <h3 class="heading-5 text-w-neutral-1 mb-3">
+                                                Feedback
+                                            </h3>
+                                            <p class="text-base text-w-neutral-4">
+                                                Please tell us about your experience, and make sure you
+                                                report
+                                                any
+                                                bugs
+                                                to Support.
+                                            </p>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="3xl:col-span-3 xl:col-span-4 col-span-10 relative">
+                                    <div class="xl:sticky xl:top-30">
+                                        <div class="grid grid-cols-1 gap-y-30p *:bg-b-neutral-3 *:p-32p *:rounded-12">
+                                            <div class="flex-y flex-wrap justify-between gap-20p">
+                                                <div>
+                                                    <span class="text-sm text-w-neutral-4 mb-2">
+                                                        Organized by
+                                                    </span>
+                                                    <h4 class="heading-4 text-white">
+                                                        GameCO
+                                                    </h4>
+                                                </div>
+                                                <div class="flex items-center gap-3">
+                                                    <a href="#" class="btn-socal-primary">
+                                                        <i class="ti ti-brand-facebook"></i>
+                                                    </a>
+                                                    <a href="#" class="btn-socal-primary">
+                                                        <i class="ti ti-brand-twitch"></i>
+                                                    </a>
+                                                    <a href="#" class="btn-socal-primary">
+                                                        <i class="ti ti-brand-instagram"></i>
+                                                    </a>
+                                                    <a href="#" class="btn-socal-primary">
+                                                        <i class="ti ti-brand-discord"></i>
+                                                    </a>
+                                                </div>
+                                            </div>
+                                            <div>
+                                                <div class="flex-y gap-3">
+                                                    <span class="icon-24 text-primary">
+                                                        <i class="ti ti-bolt-filled"></i>
+                                                    </span>
+                                                    <h5 class="heading-5 text-w-neutral-1">
+                                                        Boost The Prize Pool
+                                                    </h5>
+                                                </div>
+                                                <p class="text-s-regular text-w-neutral-3 py-16p">
+                                                    Boost and increase the prize pool by any amount. The
+                                                    boosted
+                                                    prize
+                                                    pool
+                                                    can
+                                                    only be the highest ranking booster.
+                                                </p>
+                                                <a href="#" class="text-s-medium hover:underline text-primary mb-24p">
+                                                    Leam More
+                                                </a>
+                                                <form
+                                                    class="bg-b-neutral-2 p-3 rounded-12 flex items-center justify-between sm:gap-3 gap-2">
+                                                    <input autocomplete="off"
+                                                        class="bg-transparent text-w-neutral-1 placeholder:text-w-neutral-1 placeholder:text-xs w-full"
+                                                        type="text" name="search" id="search"
+                                                        placeholder="Enter Amount">
+                                                    <button type="submit"
+                                                        class="btn btn-md btn-primary rounded-12 text-xs font-medium shrink-0">
+                                                        BOOST NOW
+                                                    </button>
+                                                </form>
+                                            </div>
+                                            <div>
+                                                <h5 class="heading-5 text-w-neutral-1 mb-24p">
+                                                    Admins (02)
+                                                </h5>
+                                                <div class="grid grid-cols-1 gap-y-20p">
+                                                    <div class="flex justify-between items-center gap-3">
+                                                        <div class="flex items-center gap-3">
+                                                            <img class="avatar size-60p"
+                                                                src="./assets/images/users/user1.png" alt="use1" />
+                                                            <div class="">
+                                                                <a href="./profile.html"
+                                                                    class="text-l-medium text-w-neutral-1 mb-1">
+                                                                    David Smith
+                                                                </a>
+                                                                <span class="text-s-medium text-w-neutral-3">
+                                                                    Leader
+                                                                </span>
+                                                            </div>
+                                                        </div>
+                                                        <div x-data="dropdown" class="dropdown">
+                                                            <button @click="toggle()" class="dropdown-toggle w-fit"
+                                                                :aria-expanded="isOpen">
+                                                                <i class="ti ti-dots icon-24"></i>
+                                                            </button>
+                                                            <div x-show="isOpen" @click.away="close()"
+                                                                class="dropdown-content">
+                                                                <a href="./profile.html" @click="close()"
+                                                                    class="dropdown-item">Profile</a>
+                                                                <button @click="close()"
+                                                                    class="dropdown-item">Report</button>
+                                                                <button @click="close()"
+                                                                    class="dropdown-item">Block</button>
+                                                            </div>
+                                                        </div>
+                                                    </div>
+                                                    <div class="flex justify-between items-center gap-3">
+                                                        <div class="flex items-center gap-3">
+                                                            <img class="avatar size-60p"
+                                                                src="./assets/images/users/user2.png" alt="use1" />
+                                                            <div class="">
+                                                                <a href="./profile.html"
+                                                                    class="text-l-medium text-w-neutral-1 mb-1">
+                                                                    Jon Smith
+                                                                </a>
+                                                                <span class="text-s-medium text-w-neutral-3">
+                                                                    Leader
+                                                                </span>
+                                                            </div>
+                                                        </div>
+                                                        <div x-data="dropdown" class="dropdown">
+                                                            <button @click="toggle()" class="dropdown-toggle w-fit"
+                                                                :aria-expanded="isOpen">
+                                                                <i class="ti ti-dots icon-24"></i>
+                                                            </button>
+                                                            <div x-show="isOpen" @click.away="close()"
+                                                                class="dropdown-content">
+                                                                <a href="./profile.html" @click="close()"
+                                                                    class="dropdown-item">Profile</a>
+                                                                <button @click="close()"
+                                                                    class="dropdown-item">Report</button>
+                                                                <button @click="close()"
+                                                                    class="dropdown-item">Block</button>
+                                                            </div>
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </section>
+            <!-- Tournament overview section end -->
+
+        </main>
+        <!-- main end -->
+
+        <!-- footer start -->
+        <include-footer />
+        <!-- footer end -->
+    </div>
+    <!-- app layout end -->
+
+
+</body>
+
+</html>

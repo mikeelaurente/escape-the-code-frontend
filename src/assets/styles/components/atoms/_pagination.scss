@@ -1,0 +1,75 @@
+@layer components {
+  .pagination {
+    @apply flex items-center md:gap-5 sm:gap-4 gap-3 w-full;
+
+    // Alignment modifiers
+    &-start {
+      @apply justify-start;
+    }
+
+    &-center {
+      @apply justify-center;
+    }
+
+    &-end {
+      @apply justify-end;
+    }
+
+    &-list {
+      @apply flex items-center lg:gap-6 md:gap-5 sm:gap-4 gap-3;
+    }
+
+    &-item {
+      @apply flex items-center justify-center transition-1 rounded-full;
+
+      // Primary variant
+      .pagination-primary & {
+        @apply hover:text-primary text-white;
+
+        &.active {
+          @apply bg-primary text-b-neutral-4 size-60p;
+        }
+      }
+
+      // Secondary variant
+      .pagination-secondary & {
+        @apply hover:bg-secondary hover:text-white;
+
+        &.active {
+          @apply bg-secondary text-white;
+        }
+      }
+    }
+
+    // Prev/Next buttons
+    &-prev,
+    &-next {
+      @apply flex items-center justify-center;
+
+      .pagination-primary & {
+        @apply text-primary;
+      }
+
+      .pagination-secondary & {
+        @apply text-secondary;
+      }
+    }
+
+    // Sizes
+    &-sm {
+      @apply size-6 text-sm;
+    }
+
+    &-md {
+      @apply size-8 text-base;
+    }
+
+    &-lg {
+      @apply size-40p text-lg;
+    }
+
+    &-xl {
+      @apply size-60p icon-24;
+    }
+  }
+}

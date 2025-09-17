@@ -1,0 +1,664 @@
+<!DOCTYPE html>
+<html dir="ltr" lang="en">
+
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="shortcut icon" href="./assets/images/icons/favicon.ico" type="image/x-icon" />
+    <title>GameCo - HTML Tailwind CSS</title>
+</head>
+
+<body>
+
+    <!-- preloader start -->
+    <include-preloader />
+    <!-- preloader end -->
+
+    <!-- scroll to top button start -->
+    <include-scrollToTop />
+    <!-- scroll to top button end -->
+
+    <!-- header start -->
+    <include-navbar />
+    <!-- header end -->
+
+    <!-- sidebar start -->
+    <include-left-right-sidebar />
+    <!-- sidebar end -->
+
+    <!-- app layout start -->
+    <div class="app-layout">
+
+        <!-- main start -->
+        <main>
+
+            <!-- breadcrumb start -->
+            <section class="pt-30p">
+                <div class="section-pt">
+                    <div
+                        class="relative bg-[url('../images/photos/breadcrumbImg.png')] bg-cover bg-no-repeat rounded-24 overflow-hidden">
+                        <div class="container">
+                            <div class="grid grid-cols-12 gap-30p relative xl:py-[130px] md:py-30 sm:py-25 py-20 z-[2]">
+                                <div class="lg:col-start-2 lg:col-end-12 col-span-12">
+                                    <h2 class="heading-2 text-w-neutral-1 mb-3">
+                                        Shop Details
+                                    </h2>
+                                    <ul class="breadcrumb">
+                                        <li class="breadcrumb-item">
+                                            <a href="#" class="breadcrumb-link">
+                                                Home
+                                            </a>
+                                        </li>
+                                        <li class="breadcrumb-item">
+                                            <span class="breadcrumb-icon">
+                                                <i class="ti ti-chevrons-right"></i>
+                                            </span>
+                                        </li>
+                                        <li class="breadcrumb-item">
+                                            <span class="breadcrumb-current">Shop Details</span>
+                                        </li>
+                                    </ul>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="overlay-11"></div>
+                    </div>
+                </div>
+            </section>
+            <!-- breadcrumb end -->
+
+            <!-- shop details section start -->
+            <section class="py-15 overflow-visible">
+                <div class="container">
+                    <div class="grid grid-cols-12 gap-x-30p gap-y-10 mb-60p">
+                        <div class="xxl:col-span-6 xl:col-span-7 col-span-12 relative">
+                            <div class="xl:sticky xl:top-30">
+                                <div class="thumbs-carousel-container" data-carousel-name="product-slider"
+                                    data-slides-per-view="4" data-carousel-direction="vertical">
+                                    <div class="swiper !flex md:gap-30p gap-2.5 xl:h-[514px] sm:h-[400px] h-[300px]">
+                                        <div class="shrink-0 sm:w-[110px] w-20  thumbs-gallery">
+                                            <div class="swiper-wrapper *:!h-fit">
+                                                <div class="swiper-slide">
+                                                    <div class="cursor-pointer flex-c bg-b-neutral-3 rounded-12">
+                                                        <img class="w-full sm:h-[114px] h-24  object-contain"
+                                                            src="./assets/images/shop/product1.2.1.png" alt="product">
+                                                    </div>
+                                                </div>
+                                                <div class="swiper-slide">
+                                                    <div class="cursor-pointer flex-c bg-b-neutral-3 rounded-12">
+                                                        <img class="w-full sm:h-[114px] h-24  object-contain"
+                                                            src="./assets/images/shop/product1.2.2.png" alt="product">
+                                                    </div>
+                                                </div>
+                                                <div class="swiper-slide">
+                                                    <div class="cursor-pointer flex-c bg-b-neutral-3 rounded-12">
+                                                        <img class="w-full sm:h-[114px] h-24  object-contain"
+                                                            src="./assets/images/shop/product1.2.3.png" alt="product">
+                                                    </div>
+                                                </div>
+                                                <div class="swiper-slide">
+                                                    <div class="cursor-pointer flex-c bg-b-neutral-3 rounded-12">
+                                                        <img class="w-full sm:h-[114px] h-24  object-contain"
+                                                            src="./assets/images/shop/product1.2.4.png" alt="product">
+                                                    </div>
+                                                </div>
+                                                <div class="swiper-slide">
+                                                    <div class="cursor-pointer flex-c bg-b-neutral-3 rounded-12">
+                                                        <img class="w-full sm:h-[114px] h-24  object-contain"
+                                                            src="./assets/images/shop/product1.2.1.png" alt="product">
+                                                    </div>
+                                                </div>
+                                                <div class="swiper-slide">
+                                                    <div class="cursor-pointer flex-c bg-b-neutral-3 rounded-12">
+                                                        <img class="w-full sm:h-[114px] h-24  object-contain"
+                                                            src="./assets/images/shop/product1.2.2.png" alt="product">
+                                                    </div>
+                                                </div>
+                                                <div class="swiper-slide">
+                                                    <div class="cursor-pointer flex-c bg-b-neutral-3 rounded-12">
+                                                        <img class="w-full sm:h-[114px] h-24  object-contain"
+                                                            src="./assets/images/shop/product1.2.3.png" alt="product">
+                                                    </div>
+                                                </div>
+                                                <div class="swiper-slide">
+                                                    <div class="cursor-pointer flex-c bg-b-neutral-3 rounded-12">
+                                                        <img class="w-[110px] h-[114px] object-coverer"
+                                                            src="./assets/images/shop/product1.2.4.png" alt="product">
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </div>
+                                        <div class="swiper thumbs-gallery-main">
+                                            <div class="swiper-wrapper">
+                                                <div class="swiper-slide">
+                                                    <div
+                                                        class="w-full h-full flex-c bg-b-neutral-3 p-32p rounded-12 overflow-hidden">
+                                                        <img class="md:size-[356px] sm:size-[300px] size-[280px] object-contain"
+                                                            src="./assets/images/shop/product1.1.webp" alt="product" />
+                                                    </div>
+                                                </div>
+                                                <div class="swiper-slide">
+                                                    <div
+                                                        class="w-full h-full flex-c bg-b-neutral-3 p-32p rounded-12 overflow-hidden">
+                                                        <img class="md:size-[356px] sm:size-[300px] size-[280px] object-contain"
+                                                            src="./assets/images/shop/product1.2.webp" alt="product" />
+                                                    </div>
+                                                </div>
+                                                <div class="swiper-slide">
+                                                    <div
+                                                        class="w-full h-full flex-c bg-b-neutral-3 p-32p rounded-12 overflow-hidden">
+                                                        <img class="md:size-[356px] sm:size-[300px] size-[280px] object-contain"
+                                                            src="./assets/images/shop/product1.3.webp" alt="product" />
+                                                    </div>
+                                                </div>
+                                                <div class="swiper-slide">
+                                                    <div
+                                                        class="w-full h-full flex-c bg-b-neutral-3 p-32p rounded-12 overflow-hidden">
+                                                        <img class="md:size-[356px] sm:size-[300px] size-[280px] object-contain"
+                                                            src="./assets/images/shop/product1.4.webp" alt="product" />
+                                                    </div>
+                                                </div>
+                                                <div class="swiper-slide">
+                                                    <div
+                                                        class="w-full h-full flex-c bg-b-neutral-3 p-32p rounded-12 overflow-hidden">
+                                                        <img class="md:size-[356px] sm:size-[300px] size-[280px] object-contain"
+                                                            src="./assets/images/shop/product1.1.webp" alt="product" />
+                                                    </div>
+                                                </div>
+                                                <div class="swiper-slide">
+                                                    <div
+                                                        class="w-full h-full flex-c bg-b-neutral-3 p-32p rounded-12 overflow-hidden">
+                                                        <img class="md:size-[356px] sm:size-[300px] size-[280px] object-contain"
+                                                            src="./assets/images/shop/product1.2.webp" alt="product" />
+                                                    </div>
+                                                </div>
+                                                <div class="swiper-slide">
+                                                    <div
+                                                        class="w-full h-full flex-c bg-b-neutral-3 p-32p rounded-12 overflow-hidden">
+                                                        <img class="md:size-[356px] sm:size-[300px] size-[280px] object-contain"
+                                                            src="./assets/images/shop/product1.3.webp" alt="product" />
+                                                    </div>
+                                                </div>
+                                                <div class="swiper-slide">
+                                                    <div
+                                                        class="w-full h-full flex-c bg-b-neutral-3 p-32p rounded-12 overflow-hidden">
+                                                        <img class="md:size-[356px] sm:size-[300px] size-[280px] object-contain"
+                                                            src="./assets/images/shop/product1.4.webp" alt="product" />
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="xxl:col-span-6 xl:col-span-5 col-span-12">
+                            <div>
+                                <h2 class="heading-2 text-w-neutral-1 mb-16p">
+                                    Beats Solo Wireless On Ear
+                                </h2>
+                                <div class="flex-y gap-2 mb-20p">
+                                    <div class="flex-c gap-1 icon-24 text-primary">
+                                        <i class="ti ti-star-filled"></i>
+                                        <i class="ti ti-star-filled"></i>
+                                        <i class="ti ti-star-filled"></i>
+                                        <i class="ti ti-star-filled"></i>
+                                        <i class="ti ti-star-half-filled"></i>
+                                    </div>
+                                    <span class="text-base text-w-neutral-4">
+                                        ( 0 Reviews)
+                                    </span>
+                                </div>
+                                <div class="flex-y gap-1 mb-20p">
+                                    <span class="text-xl text-w-neutral-4 line-through">
+                                        $100
+                                    </span>
+                                    <span class="text-lead-medium text-w-neutral-1">
+                                        $75
+                                    </span>
+                                </div>
+                                <p class="text-base text-w-neutral-4 mb-3">
+                                    As music continues to evolve, it also shapes the world around us. It inspires
+                                    movements for change, spreads messages of love and unity, and serves as a medium for
+                                    artists to express their deepest thoughts and emotions.
+                                </p>
+                                <p class="text-base text-w-neutral-4">
+                                    The joy music goes beyond mere it has therapeutic properties too. Music therapy have
+                                    positive effects on mental health.
+                                </p>
+                                <div class="flex items-center flex-wrap gap-3 my-32p">
+                                    <div
+                                        class="qtySelector inline-flex items-center justify-center border border-shap px-16p sm:py-3.5 py-2.5 rounded-12 w-[144px] *:h-full">
+                                        <button class="decreaseQty flex-c size-12 icon-24">
+                                            <i class="ti ti-minus"></i>
+                                        </button>
+                                        <input min="1" value="1" type="number" placeholder="1"
+                                            class="qtyValue btn-xsm bg-transparent min-w-12 max-w-18 text-base text-w-neutral-1 text-center"
+                                            readonly="">
+                                        <button class="increaseQty flex-c size-12 icon-24">
+                                            <i class="ti ti-plus"></i>
+                                        </button>
+                                    </div>
+                                    <a href="./shipping.html" class="btn btn-lg-2 btn-primary rounded-12">
+                                        <i class="ti ti-shopping-cart-plus icon-24"></i>
+                                        Buy Now
+                                    </a>
+                                    <a href="./shopping-cart.html"
+                                        class="btn py-3 px-16p btn-primary rounded-12 icon-28">
+                                        <i class="ti ti-heart"></i>
+                                    </a>
+                                </div>
+                                <div class="flex-y gap-3.5 mb-16p">
+                                    <span class="text-l-medium text-w-neutral-1">
+                                        Categories:
+                                    </span>
+                                    <span class="text-base text-w-neutral-4">
+                                        Design, Illustration
+                                    </span>
+                                </div>
+                                <div class="flex-y gap-3.5 mb-16p">
+                                    <span class="text-l-medium text-w-neutral-1">
+                                        Tag:
+                                    </span>
+                                    <span class="text-base text-w-neutral-4">
+                                        Business, Commercial, Trends
+                                    </span>
+                                </div>
+                                <div class="flex-y gap-3.5 mb-16p">
+                                    <span class="text-l-medium text-w-neutral-1">
+                                        Product ID:
+                                    </span>
+                                    <span class="text-base text-w-neutral-4">
+                                        12447
+                                    </span>
+                                </div>
+
+                            </div>
+                        </div>
+                    </div>
+                    <div x-data="{ activeTab: 1 }" class="max-w-[1230px] w-full">
+                        <div class="flex items-center flex-wrap text-l-medium mb-6">
+                            <button @click="activeTab = 1"
+                                :class="activeTab === 1 ? 'bg-secondary text-b-neutral-4' : 'bg-b-neutral-3 text-w-neutral-4'"
+                                class="px-60p py-16p">
+                                Description
+                            </button>
+                            <button @click="activeTab = 2"
+                                :class="activeTab === 2 ? 'bg-secondary text-b-neutral-4' : 'bg-b-neutral-3 text-w-neutral-4'"
+                                class="px-60p py-16p">
+                                Reviews (01)
+                            </button>
+                            <button @click="activeTab = 3"
+                                :class="activeTab === 3 ? 'bg-secondary text-b-neutral-4' : 'bg-b-neutral-3 text-w-neutral-4'"
+                                class="px-60p py-16p">
+                                Shipping
+                            </button>
+                        </div>
+
+                        <div>
+                            <div x-show="activeTab === 1" x-transition>
+                                <div>
+                                    <p class="text-base text-w-neutral-4 mb-3">
+                                        Music has an extraordinary power to touch our souls and transcend barriers,
+                                        bringing people together from all walks of life. It is an art form that has been
+                                        an integral part of human civilization since time immemorial. Whether it's the
+                                        rhythmic beats of a drum, the soothing melody of a violin, or the soulful lyric
+                                        of a song, music has a unique way of evoking emotions and creating unforgettable
+                                        memories.
+                                    </p>
+                                    <p class="text-base text-w-neutral-4">
+                                        Music has an extraordinary power to touch our souls and transcend barriers,
+                                        bringing people together from all walks of life.
+                                        an integral part of human civilization since time immemorial.
+                                    </p>
+                                </div>
+                            </div>
+
+                            <div x-show="activeTab === 2" x-transition>
+                                <div>
+
+                                    <h5 class="heading-5 text-w-neutral-1 mb-20p">
+                                        02 Reviews
+                                    </h5>
+
+                                    <div x-data="{ activeId: null }" class="grid grid-cols-1 gap-x-30p gap-y-40p">
+                                        <div>
+                                            <div class="flex-y justify-between mb-32p">
+                                                <div class="flex-y flex-wrap gap-3">
+                                                    <img class="avatar size-60p" src="./assets/images/users/avatar3.png"
+                                                        alt="user" />
+                                                    <div>
+                                                        <a href="./prifile.html"
+                                                            class="text-l-medium text-w-neutral-1 link-1 mb-1">
+                                                            David Smith
+                                                        </a>
+                                                        <span class="text-s-medium text-w-neutral-3">
+                                                            Leader
+                                                        </span>
+                                                    </div>
+                                                </div>
+                                                <button @click="activeId = (activeId === 1 ? null : 1)"
+                                                    class="flex-y gap-3">
+                                                    <img class="w-6" src="./assets/images/icons/reply-fill.svg"
+                                                        alt="icon" />
+                                                    <span class="text-m-medium text-white">
+                                                        Reply
+                                                    </span>
+                                                </button>
+                                            </div>
+                                            <p class="text-base text-w-neutral-4">
+                                                Gaming has cultivated vibrant communities and the rise of esports has
+                                                brought
+                                                competitive gaming to the forefront. We'll examine the phenomenon of ,
+                                                its
+                                                rapid
+                                                growth, and the professional gaming scene.
+                                            </p>
+                                            <div x-show="activeId === 1" x-collapse>
+                                                <div class="flex items-center gap-24p rounded-12 pt-24p">
+                                                    <img class="avatar size-60p" src="./assets/images/users/user1.png"
+                                                        alt="user" />
+                                                    <input class="box-input-1 sm:col-span-4 col-span-8" type="text"
+                                                        name="name" placeholder="Write a replay..." />
+                                                    <button type="submit"
+                                                        class="shrink-0 btn-c btn-c-lg btn-primary icon-24">
+                                                        <i class="ti ti-send"></i>
+                                                    </button>
+                                                </div>
+                                            </div>
+                                        </div>
+                                        <div>
+                                            <div class="flex-y justify-between mb-32p">
+                                                <div class="flex-y flex-wrap gap-3">
+                                                    <img class="avatar size-60p" src="./assets/images/users/avatar4.png"
+                                                        alt="user" />
+                                                    <div>
+                                                        <a href="./prifile.html"
+                                                            class="text-l-medium text-w-neutral-1 link-1 mb-1">
+                                                            David Smith
+                                                        </a>
+                                                        <span class="text-s-medium text-w-neutral-3">
+                                                            Leader
+                                                        </span>
+                                                    </div>
+                                                </div>
+                                                <button @click="activeId = (activeId === 2 ? null : 2)"
+                                                    class="flex-y gap-3">
+                                                    <img class="w-6" src="./assets/images/icons/reply-fill.svg"
+                                                        alt="icon" />
+                                                    <span class="text-m-medium text-white">
+                                                        Reply
+                                                    </span>
+                                                </button>
+                                            </div>
+                                            <p class="text-base text-w-neutral-4">
+                                                Gaming has cultivated vibrant communities and the rise of esports has
+                                                brought
+                                                competitive gaming to the forefront. We'll examine the phenomenon of ,
+                                                its
+                                                rapid
+                                                growth, and the professional gaming scene.
+                                            </p>
+                                            <div x-show="activeId === 2" x-collapse>
+                                                <div class="flex items-center gap-24p rounded-12 pt-24p">
+                                                    <img class="avatar size-60p" src="./assets/images/users/user1.png"
+                                                        alt="user" />
+                                                    <input class="box-input-1 sm:col-span-4 col-span-8" type="text"
+                                                        name="name" placeholder="Write a replay..." />
+                                                    <button type="submit"
+                                                        class="shrink-0 btn-c btn-c-lg btn-primary icon-24">
+                                                        <i class="ti ti-send"></i>
+                                                    </button>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+
+                                    <div data-aos="fade-up" class="mt-60p">
+                                        <!-- Leave a replay -->
+                                        <h5 class="heading-5 text-w-neutral-1 mb-32p">
+                                            Leave a Reply
+                                        </h5>
+                                        <form>
+                                            <div class="grid grid-cols-8 gap-30p mb-30p">
+                                                <input class="box-input-1 sm:col-span-4 col-span-8" type="text"
+                                                    name="name" id="name" placeholder="Enter Your Name" />
+                                                <input class="box-input-1 sm:col-span-4 col-span-8" type="email"
+                                                    name="commenterEmail" id="commenterEmail"
+                                                    placeholder="Enter Your Name" />
+                                                <textarea class="box-input-1 col-span-8 h-[200px]" name="comment"
+                                                    id="comment" placeholder="Enter Your Comments"></textarea>
+                                            </div>
+                                            <button type="submit" class="btn btn-xl btn-primary rounded-12">
+                                                Submit Comments
+                                            </button>
+                                        </form>
+                                    </div>
+                                </div>
+                            </div>
+
+                            <div x-show="activeTab === 3" x-transition>
+                                <div>
+                                    <p class="text-base text-w-neutral-4">
+                                        Melodies of Emotion" is a mesmerizing instrumental album brought to life by the
+                                        talented Harmony Ensemble. collection takes listeners on an enchanting journey
+                                        through a variety of emotions, skillfully conveyed through a blend of classical
+                                        and contemporary musical elements. The absence of lyrics allows to speak
+                                        directly to the invoking vivid imagery and stirring sentiments.
+                                    </p>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </section>
+            <!-- shop details section end -->
+
+            <!-- realated product section start -->
+            <section class="section-pb">
+                <div class="container">
+                    <div class="flex-y justify-between gap-24p mb-40p">
+                        <h2 class="heading-2 text-w-neutral-1">
+                            Related Products
+                        </h2>
+                        <a href="#" class="text-s-medium text-w-neutral-1 link-1">
+                            View All
+                            <i class="ti ti-arrow-right"></i>
+                        </a>
+                    </div>
+                    <div class="grid xxl+:grid-cols-4 xl:grid-cols-3 sm:grid-cols-2 gap-30p mb-60p">
+                        <!-- product card 1 -->
+                        <div class="py-30p px-20p rounded-20 border border-shap group">
+                            <div class="flex-col-c overflow-hidden mb-30p">
+                                <img class="w-[220px] h-[225px] group-hover:scale-105 transition-1"
+                                    src="./assets/images/shop/product1.1.webp" alt="img" />
+                            </div>
+                            <div class="py-24p border-t border-shap pt-30p">
+                                <a href="./shop-details.html"
+                                    class="heading-4 text-w-neutral-1 line-clamp-1 link-1 mb-20p ">
+                                    Wireless Earbuds with Noise Cancellation
+                                </a>
+                                <div class="flex-y flex-wrap gap-x-24p gap-y-3 mb-20p">
+                                    <div class="flex-y gap-1">
+                                        <span class="text-base text-body line-through">
+                                            $100
+                                        </span>
+                                        <span class="text-xl-medium text-w-neutral-1">
+                                            $75
+                                        </span>
+                                    </div>
+                                    <div class="flex-c gap-1 icon-20 text-primary">
+                                        <i class="ti ti-star-filled"></i>
+                                        <i class="ti ti-star-filled"></i>
+                                        <i class="ti ti-star-filled"></i>
+                                        <i class="ti ti-star-filled"></i>
+                                        <i class="ti ti-star-half-filled"></i>
+                                    </div>
+                                </div>
+                                <div class="flex-y justify-between 4xl:gap-6 gap-3">
+                                    <a href="./shopping-cart.html"
+                                        class="btn btn-md btn-neutral-3 group-hover:bg-primary group-hover:text-b-neutral-4 rounded-12">
+                                        <span class="flex-c icon-24">
+                                            <i class="ti ti-shopping-cart-plus"></i>
+                                        </span>
+                                        Add To Cart
+                                    </a>
+                                    <button
+                                        class="shrink-0 btn-c btn-c-lg btn-c-neutral-3 group-hover:bg-secondary group-hover:text-b-neutral-4 icon-24">
+                                        <i class="ti ti-heart"></i>
+                                    </button>
+                                </div>
+                            </div>
+                        </div>
+                        <!-- product card 2 -->
+                        <div class="py-30p px-20p rounded-20 border border-shap group">
+                            <div class="flex-col-c overflow-hidden mb-30p">
+                                <img class="w-[220px] h-[225px] group-hover:scale-105 transition-1"
+                                    src="./assets/images/shop/product2.webp" alt="img" />
+                            </div>
+                            <div class="py-24p border-t border-shap pt-30p">
+                                <a href="./shop-details.html"
+                                    class="heading-4 text-w-neutral-1 line-clamp-1 link-1 mb-20p ">
+                                    Compact Washing Machine
+                                </a>
+                                <div class="flex-y flex-wrap gap-x-24p gap-y-3 mb-20p">
+                                    <div class="flex-y gap-1">
+                                        <span class="text-base text-body line-through">
+                                            $100
+                                        </span>
+                                        <span class="text-xl-medium text-w-neutral-1">
+                                            $75
+                                        </span>
+                                    </div>
+                                    <div class="flex-c gap-1 icon-20 text-primary">
+                                        <i class="ti ti-star-filled"></i>
+                                        <i class="ti ti-star-filled"></i>
+                                        <i class="ti ti-star-filled"></i>
+                                        <i class="ti ti-star-filled"></i>
+                                        <i class="ti ti-star-half-filled"></i>
+                                    </div>
+                                </div>
+                                <div class="flex-y justify-between 4xl:gap-6 gap-3">
+                                    <a href="./shopping-cart.html"
+                                        class="btn btn-md btn-neutral-3 group-hover:bg-primary group-hover:text-b-neutral-4 rounded-12">
+                                        <span class="flex-c icon-24">
+                                            <i class="ti ti-shopping-cart-plus"></i>
+                                        </span>
+                                        Add To Cart
+                                    </a>
+                                    <button
+                                        class="shrink-0 btn-c btn-c-lg btn-c-neutral-3 group-hover:bg-secondary group-hover:text-b-neutral-4 icon-24">
+                                        <i class="ti ti-heart"></i>
+                                    </button>
+                                </div>
+                            </div>
+                        </div>
+                        <!-- product card 3 -->
+                        <div class="py-30p px-20p rounded-20 border border-shap group">
+                            <div class="flex-col-c overflow-hidden mb-30p">
+                                <img class="w-[220px] h-[225px] group-hover:scale-105 transition-1"
+                                    src="./assets/images/shop/product3.webp" alt="img" />
+                            </div>
+                            <div class="py-24p border-t border-shap pt-30p">
+                                <a href="./shop-details.html"
+                                    class="heading-4 text-w-neutral-1 line-clamp-1 link-1 mb-20p ">
+                                    Double-Door Refrigerator
+                                </a>
+                                <div class="flex-y flex-wrap gap-x-24p gap-y-3 mb-20p">
+                                    <div class="flex-y gap-1">
+                                        <span class="text-base text-body line-through">
+                                            $100
+                                        </span>
+                                        <span class="text-xl-medium text-w-neutral-1">
+                                            $75
+                                        </span>
+                                    </div>
+                                    <div class="flex-c gap-1 icon-20 text-primary">
+                                        <i class="ti ti-star-filled"></i>
+                                        <i class="ti ti-star-filled"></i>
+                                        <i class="ti ti-star-filled"></i>
+                                        <i class="ti ti-star-filled"></i>
+                                        <i class="ti ti-star-half-filled"></i>
+                                    </div>
+                                </div>
+                                <div class="flex-y justify-between 4xl:gap-6 gap-3">
+                                    <a href="./shopping-cart.html"
+                                        class="btn btn-md btn-neutral-3 group-hover:bg-primary group-hover:text-b-neutral-4 rounded-12">
+                                        <span class="flex-c icon-24">
+                                            <i class="ti ti-shopping-cart-plus"></i>
+                                        </span>
+                                        Add To Cart
+                                    </a>
+                                    <button
+                                        class="shrink-0 btn-c btn-c-lg btn-c-neutral-3 group-hover:bg-secondary group-hover:text-b-neutral-4 icon-24">
+                                        <i class="ti ti-heart"></i>
+                                    </button>
+                                </div>
+                            </div>
+                        </div>
+                        <!-- product card 4 -->
+                        <div class="py-30p px-20p rounded-20 border border-shap group">
+                            <div class="flex-col-c overflow-hidden mb-30p">
+                                <img class="w-[220px] h-[225px] group-hover:scale-105 transition-1"
+                                    src="./assets/images/shop/product4.webp" alt="img" />
+                            </div>
+                            <div class="py-24p border-t border-shap pt-30p">
+                                <a href="./shop-details.html"
+                                    class="heading-4 text-w-neutral-1 line-clamp-1 link-1 mb-20p ">
+                                    Portable Air Purifier
+                                </a>
+                                <div class="flex-y flex-wrap gap-x-24p gap-y-3 mb-20p">
+                                    <div class="flex-y gap-1">
+                                        <span class="text-base text-body line-through">
+                                            $100
+                                        </span>
+                                        <span class="text-xl-medium text-w-neutral-1">
+                                            $75
+                                        </span>
+                                    </div>
+                                    <div class="flex-c gap-1 icon-20 text-primary">
+                                        <i class="ti ti-star-filled"></i>
+                                        <i class="ti ti-star-filled"></i>
+                                        <i class="ti ti-star-filled"></i>
+                                        <i class="ti ti-star-filled"></i>
+                                        <i class="ti ti-star-half-filled"></i>
+                                    </div>
+                                </div>
+                                <div class="flex-y justify-between 4xl:gap-6 gap-3">
+                                    <a href="./shopping-cart.html"
+                                        class="btn btn-md btn-neutral-3 group-hover:bg-primary group-hover:text-b-neutral-4 rounded-12">
+                                        <span class="flex-c icon-24">
+                                            <i class="ti ti-shopping-cart-plus"></i>
+                                        </span>
+                                        Add To Cart
+                                    </a>
+                                    <button
+                                        class="shrink-0 btn-c btn-c-lg btn-c-neutral-3 group-hover:bg-secondary group-hover:text-b-neutral-4 icon-24">
+                                        <i class="ti ti-heart"></i>
+                                    </button>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="flex-c mt-48p">
+                        <a href="#" class="btn btn-xl py-3 btn-primary rounded-12">
+                            Load More...
+                        </a>
+                    </div>
+                </div>
+            </section>
+            <!-- realated product section end -->
+
+        </main>
+        <!-- main end -->
+
+        <!-- footer start -->
+        <include-footer />
+        <!-- footer end -->
+    </div>
+    <!-- app layout end -->
+
+
+</body>
+
+</html>

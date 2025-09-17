@@ -1,0 +1,235 @@
+<!DOCTYPE html>
+<html dir="ltr" lang="en">
+
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="shortcut icon" href="./assets/images/icons/favicon.ico" type="image/x-icon" />
+    <title>GameCo - HTML Tailwind CSS</title>
+</head>
+
+<body>
+
+    <!-- preloader start -->
+    <include-preloader />
+    <!-- preloader end -->
+
+    <!-- scroll to top button start -->
+    <include-scrollToTop />
+    <!-- scroll to top button end -->
+
+    <!-- header start -->
+    <include-navbar />
+    <!-- header end -->
+
+    <!-- sidebar start -->
+    <include-left-right-sidebar />
+    <!-- sidebar end -->
+
+    <!-- app layout start -->
+    <div class="app-layout">
+
+        <!-- main start -->
+        <main>
+
+            <include-tournament-header />
+
+            <!-- Tournament Prizes section start -->
+            <section class="section-pb">
+                <div class="container">
+                    <div class="overflow-visible relative grid 4xl:grid-cols-12 grid-cols-1 gap-30p">
+                        <div class="4xl:col-start-2 4xl:col-end-12">
+                            <div class="overflow-x-auto scrollbar-sm">
+                                <table class="min-w-full whitespace-nowrap">
+                                    <thead class="text-xl font-borda bg-transparent text-w-neutral-1">
+                                        <tr>
+                                            <th class="px-32p pb-20p text-left">
+                                                Placement
+                                            </th>
+                                            <th class="px-32p pb-20p text-left">
+                                                Current Prize
+                                            </th>
+                                            <th class="px-32p pb-20p text-left">
+                                                Potential Prize
+                                            </th>
+                                            <th class="px-32p pb-20p text-right">
+                                            </th>
+                                        </tr>
+                                    </thead>
+                                    <tbody
+                                        class="text-base font-medium font-poppins text-w-neutral-3 divide-y-[12px] divide-b-neutral-4">
+                                        <!-- Row Template -->
+                                        <tr class="bg-b-neutral-3 hover:bg-b-neutral-2 text-w-neutral-3 transition-1">
+                                            <td class="px-32p py-3 text-secondary">1st</td>
+                                            <td class="px-32p py-3">$750.00</td>
+                                            <td class="px-32p py-3">$750.00</td>
+                                            <td class="px-32p py-3 cursor-pointer text-right flex-y justify-end">
+                                                <a href="#"
+                                                    class="flex items-center gap-2.5 hover:text-primary transition-1">
+                                                    View Details
+                                                    <i class="ti ti-chevrons-right icon-24 text-primary"></i>
+                                                </a>
+                                            </td>
+                                        </tr>
+                                        <tr class="bg-b-neutral-3 hover:bg-b-neutral-2 text-w-neutral-3 transition-1">
+                                            <td class="px-32p py-3 text-primary">2nd</td>
+                                            <td class="px-32p py-3">$700.00</td>
+                                            <td class="px-32p py-3">$700.00</td>
+                                            <td class="px-32p py-3 cursor-pointer text-right flex-y justify-end">
+                                                <a href="#"
+                                                    class="flex items-center gap-2.5 hover:text-primary transition-1">
+                                                    View Details
+                                                    <i class="ti ti-chevrons-right icon-24 text-primary"></i>
+                                                </a>
+                                            </td>
+                                        </tr>
+                                        <tr class="bg-b-neutral-3 hover:bg-b-neutral-2 text-w-neutral-3 transition-1">
+                                            <td class="px-32p py-3 text-accent-5">3rd</td>
+                                            <td class="px-32p py-3">$650.00</td>
+                                            <td class="px-32p py-3">$650.00</td>
+                                            <td class="px-32p py-3 cursor-pointer text-right flex-y justify-end">
+                                                <a href="#"
+                                                    class="flex items-center gap-2.5 hover:text-primary transition-1">
+                                                    View Details
+                                                    <i class="ti ti-chevrons-right icon-24 text-primary"></i>
+                                                </a>
+                                            </td>
+                                        </tr>
+                                        <tr class="bg-b-neutral-3 hover:bg-b-neutral-2 text-w-neutral-3 transition-1">
+                                            <td class="px-32p py-3">4th</td>
+                                            <td class="px-32p py-3">$550.00</td>
+                                            <td class="px-32p py-3">$550.00</td>
+                                            <td class="px-32p py-3 cursor-pointer text-right flex-y justify-end">
+                                                <a href="#"
+                                                    class="flex items-center gap-2.5 hover:text-primary transition-1">
+                                                    View Details
+                                                    <i class="ti ti-chevrons-right icon-24 text-primary"></i>
+                                                </a>
+                                            </td>
+                                        </tr>
+                                        <tr class="bg-b-neutral-3 hover:bg-b-neutral-2 text-w-neutral-3 transition-1">
+                                            <td class="px-32p py-3">5th-8th</td>
+                                            <td class="px-32p py-3">$500.00</td>
+                                            <td class="px-32p py-3">$500.00</td>
+                                            <td class="px-32p py-3 cursor-pointer text-right flex-y justify-end">
+                                                <a href="#"
+                                                    class="flex items-center gap-2.5 hover:text-primary transition-1">
+                                                    View Details
+                                                    <i class="ti ti-chevrons-right icon-24 text-primary"></i>
+                                                </a>
+                                            </td>
+                                        </tr>
+                                        <tr class="bg-b-neutral-3 hover:bg-b-neutral-2 text-w-neutral-3 transition-1">
+                                            <td class="px-32p py-3">9th-16th</td>
+                                            <td class="px-32p py-3">$450.00</td>
+                                            <td class="px-32p py-3">$450.00</td>
+                                            <td class="px-32p py-3 cursor-pointer text-right flex-y justify-end">
+                                                <a href="#"
+                                                    class="flex items-center gap-2.5 hover:text-primary transition-1">
+                                                    View Details
+                                                    <i class="ti ti-chevrons-right icon-24 text-primary"></i>
+                                                </a>
+                                            </td>
+                                        </tr>
+                                        <tr class="bg-b-neutral-3 hover:bg-b-neutral-2 text-w-neutral-3 transition-1">
+                                            <td class="px-32p py-3">17th</td>
+                                            <td class="px-32p py-3">$400.00</td>
+                                            <td class="px-32p py-3">$400.00</td>
+                                            <td class="px-32p py-3 cursor-pointer text-right flex-y justify-end">
+                                                <a href="#"
+                                                    class="flex items-center gap-2.5 hover:text-primary transition-1">
+                                                    View Details
+                                                    <i class="ti ti-chevrons-right icon-24 text-primary"></i>
+                                                </a>
+                                            </td>
+                                        </tr>
+                                        <tr class="bg-b-neutral-3 hover:bg-b-neutral-2 text-w-neutral-3 transition-1">
+                                            <td class="px-32p py-3">18th</td>
+                                            <td class="px-32p py-3">$50.00</td>
+                                            <td class="px-32p py-3">$50.00</td>
+                                            <td class="px-32p py-3 cursor-pointer text-right flex-y justify-end">
+                                                <a href="#"
+                                                    class="flex items-center gap-2.5 hover:text-primary transition-1">
+                                                    View Details
+                                                    <i class="ti ti-chevrons-right icon-24 text-primary"></i>
+                                                </a>
+                                            </td>
+                                        </tr>
+                                        <tr class="bg-b-neutral-3 hover:bg-b-neutral-2 text-w-neutral-3 transition-1">
+                                            <td class="px-32p py-3">19th</td>
+                                            <td class="px-32p py-3">$20.00</td>
+                                            <td class="px-32p py-3">$20.00</td>
+                                            <td class="px-32p py-3 cursor-pointer text-right flex-y justify-end">
+                                                <a href="#"
+                                                    class="flex items-center gap-2.5 hover:text-primary transition-1">
+                                                    View Details
+                                                    <i class="ti ti-chevrons-right icon-24 text-primary"></i>
+                                                </a>
+                                            </td>
+                                        </tr>
+                                        <tr class="bg-b-neutral-3 hover:bg-b-neutral-2 text-w-neutral-3 transition-1">
+                                            <td class="px-32p py-3">20th-25th</td>
+                                            <td class="px-32p py-3">$01.00</td>
+                                            <td class="px-32p py-3">$01.00</td>
+                                            <td class="px-32p py-3 cursor-pointer text-right flex-y justify-end">
+                                                <a href="#"
+                                                    class="flex items-center gap-2.5 hover:text-primary transition-1">
+                                                    View Details
+                                                    <i class="ti ti-chevrons-right icon-24 text-primary"></i>
+                                                </a>
+                                            </td>
+                                        </tr>
+                                    </tbody>
+                                </table>
+                            </div>
+                            <div
+                                class="pagination pagination-primary lg:pagination-center pagination-center pagination-circle pagination-xl w-full mt-48p">
+                                <a href="#" class="pagination-item pagination-prev">
+                                    <i class="ti ti-chevron-left"></i>
+                                </a>
+                                <div class="pagination-list">
+                                    <a href="#" class="pagination-item pagination-circle active">
+                                        <span class="pagination-link">1</span>
+                                    </a>
+                                    <a href="#" class="pagination-item pagination-circle">
+                                        <span class="pagination-link">2</span>
+                                    </a>
+                                    <a href="#" class="pagination-item pagination-circle">
+                                        <span class="pagination-link">3</span>
+                                    </a>
+                                    <a href="#" class="pagination-item pagination-circle">
+                                        <span class="pagination-link">4</span>
+                                    </a>
+                                    <a href="#" class="pagination-item pagination-circle">
+                                        <span class="pagination-link">5</span>
+                                    </a>
+                                    <a href="#" class="pagination-item pagination-circle">
+                                        <span class="pagination-link pagination-more">...</span>
+                                    </a>
+                                    <a href="#" class="pagination-item pagination-circle">
+                                        <span class="pagination-link">10</span>
+                                    </a>
+                                </div>
+                                <a href="#" class="pagination-item pagination-next">
+                                    <i class="ti ti-chevron-right"></i>
+                                </a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </section>
+            <!-- Tournament Prizes section end -->
+
+        </main>
+        <!-- main end -->
+
+        <!-- footer start -->
+        <include-footer />
+        <!-- footer end -->
+    </div>
+    <!-- app layout end -->
+
+
+</body>
+
+</html>

@@ -1,0 +1,307 @@
+<!DOCTYPE html>
+<html dir="ltr" lang="en">
+
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="shortcut icon" href="./assets/images/icons/favicon.ico" type="image/x-icon" />
+    <title>GameCo - HTML Tailwind CSS</title>
+</head>
+
+<body>
+
+    <!-- preloader start -->
+    <include-preloader />
+    <!-- preloader end -->
+
+    <!-- scroll to top button start -->
+    <include-scrollToTop />
+    <!-- scroll to top button end -->
+
+    <!-- header start -->
+    <include-navbar />
+    <!-- header end -->
+
+    <!-- sidebar start -->
+    <include-left-right-sidebar />
+    <!-- sidebar end -->
+
+    <!-- app layout start -->
+    <div class="app-layout">
+
+        <!-- main start -->
+        <main>
+
+            <!-- breadcrumb start -->
+            <section class="pt-30p">
+                <div class="section-pt">
+                    <div
+                        class="relative bg-[url('../images/photos/breadcrumbImg.png')] bg-cover bg-no-repeat rounded-24 overflow-hidden">
+                        <div class="container">
+                            <div class="grid grid-cols-12 gap-30p relative xl:py-[130px] md:py-30 sm:py-25 py-20 z-[2]">
+                                <div class="lg:col-start-2 lg:col-end-12 col-span-12">
+                                    <h2 class="heading-2 text-w-neutral-1 mb-3">
+                                        Library
+                                    </h2>
+                                    <ul class="breadcrumb">
+                                        <li class="breadcrumb-item">
+                                            <a href="#" class="breadcrumb-link">
+                                                Home
+                                            </a>
+                                        </li>
+                                        <li class="breadcrumb-item">
+                                            <span class="breadcrumb-icon">
+                                                <i class="ti ti-chevrons-right"></i>
+                                            </span>
+                                        </li>
+                                        <li class="breadcrumb-item">
+                                            <span class="breadcrumb-current"> Library</span>
+                                        </li>
+                                    </ul>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="overlay-11"></div>
+                    </div>
+                </div>
+            </section>
+            <!-- breadcrumb end -->
+
+            <!-- library section start -->
+            <section class="section-pb pt-60p">
+                <div class="container">
+                    <div class="grid xxl:grid-cols-3 md:grid-cols-2 grid-cols-1 gap-30p">
+                        <!-- card 1 -->
+                        <div class="library-card group" data-aos="fade-up">
+                            <div class="flex flex-col justify-between h-full relative z-[2]">
+                                <div class="flex-y justify-between flex-wrap gap-16p">
+                                    <span class="badge badge-compact badge-glass flex-y gap-1 text-w-neutral-1">
+                                        <i class="ti ti-star icon-24 text-primary"></i>
+                                        5.4
+                                    </span>
+                                    <div x-data="dropdown" class="dropdown">
+                                        <button @click="toggle()"
+                                            class="dropdown-toggle w-fit btn-c btn-c-md btn-primary"
+                                            :aria-expanded="isOpen">
+                                            <i class="ti ti-dots-vertical icon-24"></i>
+                                        </button>
+                                        <div x-show="isOpen" @click.away="close()" class="dropdown-content">
+                                            <button @click="close()" class="dropdown-item">Report</button>
+                                            <button @click="close()" class="dropdown-item">Hide</button>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div>
+                                    <a href="./library-details.html"
+                                        class="heading-4 text-w-neutral-1 line-clamp-1 mb-1 link-1">
+                                        Simulation Tycoon Urban Empire
+                                    </a>
+                                    <div class="flex-y gap-3 text-l-regular text-w-neutral-2">
+                                        <span>Video</span>
+                                        <span class="badge badge-circle badge-dot badge-light size-1"></span>
+                                        <span>17 Jan 2023</span>
+                                    </div>
+                                </div>
+                            </div>
+                            <img class="absolute inset-0 w-full h-full object-cover object-top group-hover:scale-110 transition-1"
+                                src="./assets/images/library/library1.png" alt="library" />
+                        </div>
+                        <!-- card 2 -->
+                        <div class="library-card group" data-aos="fade-up">
+                            <div class="flex flex-col justify-between h-full relative z-[2]">
+                                <div class="flex-y justify-between flex-wrap gap-16p">
+                                    <span class="badge badge-compact badge-glass flex-y gap-1 text-w-neutral-1">
+                                        <i class="ti ti-star icon-24 text-primary"></i>
+                                        5.4
+                                    </span>
+                                    <div x-data="dropdown" class="dropdown">
+                                        <button @click="toggle()"
+                                            class="dropdown-toggle w-fit btn-c btn-c-md btn-primary"
+                                            :aria-expanded="isOpen">
+                                            <i class="ti ti-dots-vertical icon-24"></i>
+                                        </button>
+                                        <div x-show="isOpen" @click.away="close()" class="dropdown-content">
+                                            <button @click="close()" class="dropdown-item">Report</button>
+                                            <button @click="close()" class="dropdown-item">Hide</button>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div>
+                                    <a href="./library-details.html"
+                                        class="heading-4 text-w-neutral-1 line-clamp-1 mb-1 link-1">
+                                        Quantum Puzzle Quest
+                                    </a>
+                                    <div class="flex-y gap-3 text-l-regular text-w-neutral-2">
+                                        <span>Video</span>
+                                        <span class="badge badge-circle badge-dot badge-light size-1"></span>
+                                        <span>12 Mar 2023</span>
+                                    </div>
+                                </div>
+                            </div>
+                            <img class="absolute inset-0 w-full h-full object-cover object-top group-hover:scale-110 transition-1"
+                                src="./assets/images/library/library2.png" alt="library" />
+                        </div>
+                        <!-- card 3 -->
+                        <div class="library-card group" data-aos="fade-up">
+                            <div class="flex flex-col justify-between h-full relative z-[2]">
+                                <div class="flex-y justify-between flex-wrap gap-16p">
+                                    <span class="badge badge-compact badge-glass flex-y gap-1 text-w-neutral-1">
+                                        <i class="ti ti-star icon-24 text-primary"></i>
+                                        5.4
+                                    </span>
+                                    <div x-data="dropdown" class="dropdown">
+                                        <button @click="toggle()"
+                                            class="dropdown-toggle w-fit btn-c btn-c-md btn-primary"
+                                            :aria-expanded="isOpen">
+                                            <i class="ti ti-dots-vertical icon-24"></i>
+                                        </button>
+                                        <div x-show="isOpen" @click.away="close()" class="dropdown-content">
+                                            <button @click="close()" class="dropdown-item">Report</button>
+                                            <button @click="close()" class="dropdown-item">Hide</button>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div>
+                                    <a href="./library-details.html"
+                                        class="heading-4 text-w-neutral-1 line-clamp-1 mb-1 link-1">
+                                        Virtual Odyssey Chronicles
+                                    </a>
+                                    <div class="flex-y gap-3 text-l-regular text-w-neutral-2">
+                                        <span>Video</span>
+                                        <span class="badge badge-circle badge-dot badge-light size-1"></span>
+                                        <span> 15 Apr 2023</span>
+                                    </div>
+                                </div>
+                            </div>
+                            <img class="absolute inset-0 w-full h-full object-cover object-top group-hover:scale-110 transition-1"
+                                src="./assets/images/library/library3.png" alt="library" />
+                        </div>
+                        <!-- card 4 -->
+                        <div class="library-card group" data-aos="fade-up">
+                            <div class="flex flex-col justify-between h-full relative z-[2]">
+                                <div class="flex-y justify-between flex-wrap gap-16p">
+                                    <span class="badge badge-compact badge-glass flex-y gap-1 text-w-neutral-1">
+                                        <i class="ti ti-star icon-24 text-primary"></i>
+                                        5.4
+                                    </span>
+                                    <div x-data="dropdown" class="dropdown">
+                                        <button @click="toggle()"
+                                            class="dropdown-toggle w-fit btn-c btn-c-md btn-primary"
+                                            :aria-expanded="isOpen">
+                                            <i class="ti ti-dots-vertical icon-24"></i>
+                                        </button>
+                                        <div x-show="isOpen" @click.away="close()" class="dropdown-content">
+                                            <button @click="close()" class="dropdown-item">Report</button>
+                                            <button @click="close()" class="dropdown-item">Hide</button>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div>
+                                    <a href="./library-details.html"
+                                        class="heading-4 text-w-neutral-1 line-clamp-1 mb-1 link-1">
+                                        Galactic Explorers: New Horizons
+                                    </a>
+                                    <div class="flex-y gap-3 text-l-regular text-w-neutral-2">
+                                        <span>Video</span>
+                                        <span class="badge badge-circle badge-dot badge-light size-1"></span>
+                                        <span>9 May 2023</span>
+                                    </div>
+                                </div>
+                            </div>
+                            <img class="absolute inset-0 w-full h-full object-cover object-top group-hover:scale-110 transition-1"
+                                src="./assets/images/library/library4.png" alt="library" />
+                        </div>
+                        <!-- card 5 -->
+                        <div class="library-card group" data-aos="fade-up">
+                            <div class="flex flex-col justify-between h-full relative z-[2]">
+                                <div class="flex-y justify-between flex-wrap gap-16p">
+                                    <span class="badge badge-compact badge-glass flex-y gap-1 text-w-neutral-1">
+                                        <i class="ti ti-star icon-24 text-primary"></i>
+                                        5.4
+                                    </span>
+                                    <div x-data="dropdown" class="dropdown">
+                                        <button @click="toggle()"
+                                            class="dropdown-toggle w-fit btn-c btn-c-md btn-primary"
+                                            :aria-expanded="isOpen">
+                                            <i class="ti ti-dots-vertical icon-24"></i>
+                                        </button>
+                                        <div x-show="isOpen" @click.away="close()" class="dropdown-content">
+                                            <button @click="close()" class="dropdown-item">Report</button>
+                                            <button @click="close()" class="dropdown-item">Hide</button>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div>
+                                    <a href="./library-details.html"
+                                        class="heading-4 text-w-neutral-1 line-clamp-1 mb-1 link-1">
+                                        Mystic Legends Unraveled
+                                    </a>
+                                    <div class="flex-y gap-3 text-l-regular text-w-neutral-2">
+                                        <span>Video</span>
+                                        <span class="badge badge-circle badge-dot badge-light size-1"></span>
+                                        <span>28 Jul 2023</span>
+                                    </div>
+                                </div>
+                            </div>
+                            <img class="absolute inset-0 w-full h-full object-cover object-top group-hover:scale-110 transition-1"
+                                src="./assets/images/library/library5.png" alt="library" />
+                        </div>
+                        <!-- card 6 -->
+                        <div class="library-card group" data-aos="fade-up">
+                            <div class="flex flex-col justify-between h-full relative z-[2]">
+                                <div class="flex-y justify-between flex-wrap gap-16p">
+                                    <span class="badge badge-compact badge-glass flex-y gap-1 text-w-neutral-1">
+                                        <i class="ti ti-star icon-24 text-primary"></i>
+                                        5.4
+                                    </span>
+                                    <div x-data="dropdown" class="dropdown">
+                                        <button @click="toggle()"
+                                            class="dropdown-toggle w-fit btn-c btn-c-md btn-primary"
+                                            :aria-expanded="isOpen">
+                                            <i class="ti ti-dots-vertical icon-24"></i>
+                                        </button>
+                                        <div x-show="isOpen" @click.away="close()" class="dropdown-content">
+                                            <button @click="close()" class="dropdown-item">Report</button>
+                                            <button @click="close()" class="dropdown-item">Hide</button>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div>
+                                    <a href="./library-details.html"
+                                        class="heading-4 text-w-neutral-1 line-clamp-1 mb-1 link-1">
+                                        Eternal Fortress Saga
+                                    </a>
+                                    <div class="flex-y gap-3 text-l-regular text-w-neutral-2">
+                                        <span>Video</span>
+                                        <span class="badge badge-circle badge-dot badge-light size-1"></span>
+                                        <span>17 Jan 2023</span>
+                                    </div>
+                                </div>
+                            </div>
+                            <img class="absolute inset-0 w-full h-full object-cover object-top group-hover:scale-110 transition-1"
+                                src="./assets/images/library/library6.png" alt="library" />
+                        </div>
+                    </div>
+                    <div class="flex-c mt-48p">
+                        <a href="#"
+                            class="btn btn-xl py-3 btn-neutral-3 bg-b-neutral-3 text-w-neutral-1 rounded-12 outline-none">
+                            Load More
+                        </a>
+                    </div>
+                </div>
+            </section>
+            <!-- library section end -->
+
+        </main>
+        <!-- main end -->
+
+        <!-- footer start -->
+        <include-footer />
+        <!-- footer end -->
+    </div>
+    <!-- app layout end -->
+
+
+</body>
+
+</html>

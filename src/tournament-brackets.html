@@ -1,0 +1,595 @@
+<!DOCTYPE html>
+<html dir="ltr" lang="en">
+
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="shortcut icon" href="./assets/images/icons/favicon.ico" type="image/x-icon" />
+    <title>GameCo - HTML Tailwind CSS</title>
+</head>
+
+<body>
+
+    <!-- preloader start -->
+    <include-preloader />
+    <!-- preloader end -->
+
+    <!-- scroll to top button start -->
+    <include-scrollToTop />
+    <!-- scroll to top button end -->
+
+    <!-- header start -->
+    <include-navbar />
+    <!-- header end -->
+
+    <!-- sidebar start -->
+    <include-left-right-sidebar />
+    <!-- sidebar end -->
+
+    <!-- app layout start -->
+    <div class="app-layout">
+
+        <!-- main start -->
+        <main>
+
+            <include-tournament-header />
+
+            <!-- Tournament brackets section start -->
+            <section class="section-pb">
+                <div class="container">
+                    <div class="pb-30p overflow-visible relative grid 4xl:grid-cols-12 grid-cols-1 gap-30p ">
+                        <div class="4xl:col-start-2 4xl:col-end-12">
+                            <div class="3xl:pb-30 xxl:pb-0 md:pb-30">
+                                <div
+                                    class="grid 3xl:grid-cols-4 xxl:grid-cols-3 md:grid-cols-2 grid-cols-1 max-sm:place-items-center w-full gap-80p h-full ">
+                                    <div class="3xl:min-h-full h-full">
+                                        <div class="flex-col-c text-center bg-b-neutral-2 p-5 rounded-12 mb-60p">
+                                            <h4 class="heading-4 text-w-neutral-1 mb-1">
+                                                ROUND 1
+                                            </h4>
+                                            <p class="text-m-regular text-w-neutral-1">
+                                                16 Matches
+                                            </p>
+                                        </div>
+                                        <div
+                                            class="3xl:w-[266px] max-md:w-full max-sm:w-[266px] flex flex-col 3xl:justify-around md:h-full gap-80p">
+                                            <div class="grid grid-cols-1 gap-40p relative bracket">
+                                                <div class="grid grid-cols-1 gap-2">
+                                                    <div
+                                                        class="3xl:w-[266px] max-md:w-full max-sm:w-[266px] flex items-center justify-between gap-3 px-16p py-3 bg-b-neutral-2 border-r-4 border-b-neutral-1 rounded-4">
+                                                        <div class="flex items-center gap-3">
+                                                            <img class="avatar size-48p"
+                                                                src="./assets/images/users/user1.png" alt="user" />
+                                                            <a href="./profile.html"
+                                                                class="text-m-medium text-w-neutral-1 line-clamp-1 link-1">
+                                                                Dianne Russell
+                                                            </a>
+                                                        </div>
+                                                        <span class="text-xl-medium text-w-neutral-1">
+                                                            1
+                                                        </span>
+                                                    </div>
+                                                    <div
+                                                        class="3xl:w-[266px] max-md:w-full max-sm:w-[266px] flex items-center justify-between gap-3 px-16p py-3 bg-b-neutral-2 border-r-4 border-w-neutral-4 rounded-4">
+                                                        <div class="flex items-center gap-3">
+                                                            <img class="avatar size-48p"
+                                                                src="./assets/images/users/user2.png" alt="user" />
+                                                            <a href="./profile.html"
+                                                                class="text-m-medium text-w-neutral-1 line-clamp-1 link-1">
+                                                                Dianne Russell
+                                                            </a>
+                                                        </div>
+                                                        <span class="text-xl-medium text-w-neutral-1">
+                                                            1
+                                                        </span>
+                                                    </div>
+                                                </div>
+                                                <div class="grid grid-cols-1 gap-2">
+                                                    <div
+                                                        class="3xl:w-[266px] max-md:w-full max-sm:w-[266px] flex items-center justify-between gap-3 px-16p py-3 bg-b-neutral-2 border-r-4 border-b-neutral-1 rounded-4">
+                                                        <div class="flex items-center gap-3">
+                                                            <img class="avatar size-48p"
+                                                                src="./assets/images/users/user3.png" alt="user" />
+                                                            <a href="./profile.html"
+                                                                class="text-m-medium text-w-neutral-1 line-clamp-1 link-1">
+                                                                Dianne Russell
+                                                            </a>
+                                                        </div>
+                                                        <span class="text-xl-medium text-w-neutral-1">
+                                                            1
+                                                        </span>
+                                                    </div>
+                                                    <div
+                                                        class="3xl:w-[266px] max-md:w-full max-sm:w-[266px] flex items-center justify-between gap-3 px-16p py-3 bg-b-neutral-2 border-r-4 border-w-neutral-4 rounded-4">
+                                                        <div class="flex items-center gap-3">
+                                                            <img class="avatar size-48p"
+                                                                src="./assets/images/users/user4.png" alt="user" />
+                                                            <a href="./profile.html"
+                                                                class="text-m-medium text-w-neutral-1 line-clamp-1 link-1">
+                                                                Dianne Russell
+                                                            </a>
+                                                        </div>
+                                                        <span class="text-xl-medium text-w-neutral-1">
+                                                            1
+                                                        </span>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                            <div class="grid grid-cols-1 gap-40p relative bracket">
+                                                <div class="grid grid-cols-1 gap-2">
+                                                    <div
+                                                        class="3xl:w-[266px] max-md:w-full max-sm:w-[266px] flex items-center justify-between gap-3 px-16p py-3 bg-b-neutral-2 border-r-4 border-b-neutral-1 rounded-4">
+                                                        <div class="flex items-center gap-3">
+                                                            <img class="avatar size-48p"
+                                                                src="./assets/images/users/user5.png" alt="user" />
+                                                            <a href="./profile.html"
+                                                                class="text-m-medium text-w-neutral-1 line-clamp-1 link-1">
+                                                                Dianne Russell
+                                                            </a>
+                                                        </div>
+                                                        <span class="text-xl-medium text-w-neutral-1">
+                                                            1
+                                                        </span>
+                                                    </div>
+                                                    <div
+                                                        class="3xl:w-[266px] max-md:w-full max-sm:w-[266px] flex items-center justify-between gap-3 px-16p py-3 bg-b-neutral-2 border-r-4 border-w-neutral-4 rounded-4">
+                                                        <div class="flex items-center gap-3">
+                                                            <img class="avatar size-48p"
+                                                                src="./assets/images/users/user6.png" alt="user" />
+                                                            <a href="./profile.html"
+                                                                class="text-m-medium text-w-neutral-1 line-clamp-1 link-1">
+                                                                Dianne Russell
+                                                            </a>
+                                                        </div>
+                                                        <span class="text-xl-medium text-w-neutral-1">
+                                                            1
+                                                        </span>
+                                                    </div>
+                                                </div>
+                                                <div class="grid grid-cols-1 gap-2">
+                                                    <div
+                                                        class="3xl:w-[266px] max-md:w-full max-sm:w-[266px] flex items-center justify-between gap-3 px-16p py-3 bg-b-neutral-2 border-r-4 border-b-neutral-1 rounded-4">
+                                                        <div class="flex items-center gap-3">
+                                                            <img class="avatar size-48p"
+                                                                src="./assets/images/users/user7.png" alt="user" />
+                                                            <a href="./profile.html"
+                                                                class="text-m-medium text-w-neutral-1 line-clamp-1 link-1">
+                                                                Dianne Russell
+                                                            </a>
+                                                        </div>
+                                                        <span class="text-xl-medium text-w-neutral-1">
+                                                            1
+                                                        </span>
+                                                    </div>
+                                                    <div
+                                                        class="3xl:w-[266px] max-md:w-full max-sm:w-[266px] flex items-center justify-between gap-3 px-16p py-3 bg-b-neutral-2 border-r-4 border-w-neutral-4 rounded-4">
+                                                        <div class="flex items-center gap-3">
+                                                            <img class="avatar size-48p"
+                                                                src="./assets/images/users/user8.png" alt="user" />
+                                                            <a href="./profile.html"
+                                                                class="text-m-medium text-w-neutral-1 line-clamp-1 link-1">
+                                                                Dianne Russell
+                                                            </a>
+                                                        </div>
+                                                        <span class="text-xl-medium text-w-neutral-1">
+                                                            1
+                                                        </span>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                            <div class="grid grid-cols-1 gap-40p relative bracket">
+                                                <div class="grid grid-cols-1 gap-2">
+                                                    <div
+                                                        class="3xl:w-[266px] max-md:w-full max-sm:w-[266px] flex items-center justify-between gap-3 px-16p py-3 bg-b-neutral-2 border-r-4 border-b-neutral-1 rounded-4">
+                                                        <div class="flex items-center gap-3">
+                                                            <img class="avatar size-48p"
+                                                                src="./assets/images/users/user9.png" alt="user" />
+                                                            <a href="./profile.html"
+                                                                class="text-m-medium text-w-neutral-1 line-clamp-1 link-1">
+                                                                Dianne Russell
+                                                            </a>
+                                                        </div>
+                                                        <span class="text-xl-medium text-w-neutral-1">
+                                                            1
+                                                        </span>
+                                                    </div>
+                                                    <div
+                                                        class="3xl:w-[266px] max-md:w-full max-sm:w-[266px] flex items-center justify-between gap-3 px-16p py-3 bg-b-neutral-2 border-r-4 border-w-neutral-4 rounded-4">
+                                                        <div class="flex items-center gap-3">
+                                                            <img class="avatar size-48p"
+                                                                src="./assets/images/users/user10.png" alt="user" />
+                                                            <a href="./profile.html"
+                                                                class="text-m-medium text-w-neutral-1 line-clamp-1 link-1">
+                                                                Dianne Russell
+                                                            </a>
+                                                        </div>
+                                                        <span class="text-xl-medium text-w-neutral-1">
+                                                            1
+                                                        </span>
+                                                    </div>
+                                                </div>
+                                                <div class="grid grid-cols-1 gap-2">
+                                                    <div
+                                                        class="3xl:w-[266px] max-md:w-full max-sm:w-[266px] flex items-center justify-between gap-3 px-16p py-3 bg-b-neutral-2 border-r-4 border-b-neutral-1 rounded-4">
+                                                        <div class="flex items-center gap-3">
+                                                            <img class="avatar size-48p"
+                                                                src="./assets/images/users/user11.png" alt="user" />
+                                                            <a href="./profile.html"
+                                                                class="text-m-medium text-w-neutral-1 line-clamp-1 link-1">
+                                                                Dianne Russell
+                                                            </a>
+                                                        </div>
+                                                        <span class="text-xl-medium text-w-neutral-1">
+                                                            1
+                                                        </span>
+                                                    </div>
+                                                    <div
+                                                        class="3xl:w-[266px] max-md:w-full max-sm:w-[266px] flex items-center justify-between gap-3 px-16p py-3 bg-b-neutral-2 border-r-4 border-w-neutral-4 rounded-4">
+                                                        <div class="flex items-center gap-3">
+                                                            <img class="avatar size-48p"
+                                                                src="./assets/images/users/user12.png" alt="user" />
+                                                            <a href="./profile.html"
+                                                                class="text-m-medium text-w-neutral-1 line-clamp-1 link-1">
+                                                                Dianne Russell
+                                                            </a>
+                                                        </div>
+                                                        <span class="text-xl-medium text-w-neutral-1">
+                                                            1
+                                                        </span>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                            <div class="grid grid-cols-1 gap-40p relative bracket">
+                                                <div class="grid grid-cols-1 gap-2">
+                                                    <div
+                                                        class="3xl:w-[266px] max-md:w-full max-sm:w-[266px] flex items-center justify-between gap-3 px-16p py-3 bg-b-neutral-2 border-r-4 border-b-neutral-1 rounded-4">
+                                                        <div class="flex items-center gap-3">
+                                                            <img class="avatar size-48p"
+                                                                src="./assets/images/users/user13.png" alt="user" />
+                                                            <a href="./profile.html"
+                                                                class="text-m-medium text-w-neutral-1 line-clamp-1 link-1">
+                                                                Dianne Russell
+                                                            </a>
+                                                        </div>
+                                                        <span class="text-xl-medium text-w-neutral-1">
+                                                            1
+                                                        </span>
+                                                    </div>
+                                                    <div
+                                                        class="3xl:w-[266px] max-md:w-full max-sm:w-[266px] flex items-center justify-between gap-3 px-16p py-3 bg-b-neutral-2 border-r-4 border-w-neutral-4 rounded-4">
+                                                        <div class="flex items-center gap-3">
+                                                            <img class="avatar size-48p"
+                                                                src="./assets/images/users/user14.png" alt="user" />
+                                                            <a href="./profile.html"
+                                                                class="text-m-medium text-w-neutral-1 line-clamp-1 link-1">
+                                                                Dianne Russell
+                                                            </a>
+                                                        </div>
+                                                        <span class="text-xl-medium text-w-neutral-1">
+                                                            1
+                                                        </span>
+                                                    </div>
+                                                </div>
+                                                <div class="grid grid-cols-1 gap-2">
+                                                    <div
+                                                        class="3xl:w-[266px] max-md:w-full max-sm:w-[266px] flex items-center justify-between gap-3 px-16p py-3 bg-b-neutral-2 border-r-4 border-b-neutral-1 rounded-4">
+                                                        <div class="flex items-center gap-3">
+                                                            <img class="avatar size-48p"
+                                                                src="./assets/images/users/user1.png" alt="user" />
+                                                            <a href="./profile.html"
+                                                                class="text-m-medium text-w-neutral-1 line-clamp-1 link-1">
+                                                                Dianne Russell
+                                                            </a>
+                                                        </div>
+                                                        <span class="text-xl-medium text-w-neutral-1">
+                                                            1
+                                                        </span>
+                                                    </div>
+                                                    <div
+                                                        class="3xl:w-[266px] max-md:w-full max-sm:w-[266px] flex items-center justify-between gap-3 px-16p py-3 bg-b-neutral-2 border-r-4 border-w-neutral-4 rounded-4">
+                                                        <div class="flex items-center gap-3">
+                                                            <img class="avatar size-48p"
+                                                                src="./assets/images/users/user2.png" alt="user" />
+                                                            <a href="./profile.html"
+                                                                class="text-m-medium text-w-neutral-1 line-clamp-1 link-1">
+                                                                Dianne Russell
+                                                            </a>
+                                                        </div>
+                                                        <span class="text-xl-medium text-w-neutral-1">
+                                                            1
+                                                        </span>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="3xl:min-h-full h-full">
+                                        <div class="flex-col-c text-center bg-b-neutral-2 p-5 rounded-12 mb-60p">
+                                            <h4 class="heading-4 text-w-neutral-1 mb-1">
+                                                QUARTER FINALS
+                                            </h4>
+                                            <p class="text-m-regular text-w-neutral-1">
+                                                08 Matches
+                                            </p>
+                                        </div>
+                                        <div
+                                            class="3xl:w-[266px] max-md:w-full max-sm:w-[266px] flex flex-col 3xl:justify-around md:h-full gap-80p">
+                                            <div class="flex flex-col justify-around gap-2 h-full relative bracket">
+                                                <div class="grid grid-cols-1 gap-40p">
+                                                    <div class="grid grid-cols-1 gap-2">
+                                                        <div
+                                                            class="3xl:w-[266px] max-md:w-full max-sm:w-[266px] flex items-center justify-between gap-3 px-16p py-3 bg-b-neutral-2 border-r-4 border-b-neutral-1 rounded-4">
+                                                            <div class="flex items-center gap-3">
+                                                                <img class="avatar size-48p"
+                                                                    src="./assets/images/users/user1.png" alt="user" />
+                                                                <a href="./profile.html"
+                                                                    class="text-m-medium text-w-neutral-1 line-clamp-1 link-1">
+                                                                    Dianne Russell
+                                                                </a>
+                                                            </div>
+                                                            <span class="text-xl-medium text-w-neutral-1">
+                                                                1
+                                                            </span>
+                                                        </div>
+                                                        <div
+                                                            class="3xl:w-[266px] max-md:w-full max-sm:w-[266px] flex items-center justify-between gap-3 px-16p py-3 bg-b-neutral-2 border-r-4 border-w-neutral-4 rounded-4">
+                                                            <div class="flex items-center gap-3">
+                                                                <img class="avatar size-48p"
+                                                                    src="./assets/images/users/user2.png" alt="user" />
+                                                                <a href="./profile.html"
+                                                                    class="text-m-medium text-w-neutral-1 line-clamp-1 link-1">
+                                                                    Dianne Russell
+                                                                </a>
+                                                            </div>
+                                                            <span class="text-xl-medium text-w-neutral-1">
+                                                                1
+                                                            </span>
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                                <div class="grid grid-cols-1 gap-40p">
+                                                    <div class="grid grid-cols-1 gap-2">
+                                                        <div
+                                                            class="3xl:w-[266px] max-md:w-full max-sm:w-[266px] flex items-center justify-between gap-3 px-16p py-3 bg-b-neutral-2 border-r-4 border-b-neutral-1 rounded-4">
+                                                            <div class="flex items-center gap-3">
+                                                                <img class="avatar size-48p"
+                                                                    src="./assets/images/users/user3.png" alt="user" />
+                                                                <a href="./profile.html"
+                                                                    class="text-m-medium text-w-neutral-1 line-clamp-1 link-1">
+                                                                    Dianne Russell
+                                                                </a>
+                                                            </div>
+                                                            <span class="text-xl-medium text-w-neutral-1">
+                                                                1
+                                                            </span>
+                                                        </div>
+                                                        <div
+                                                            class="3xl:w-[266px] max-md:w-full max-sm:w-[266px] flex items-center justify-between gap-3 px-16p py-3 bg-b-neutral-2 border-r-4 border-w-neutral-4 rounded-4">
+                                                            <div class="flex items-center gap-3">
+                                                                <img class="avatar size-48p"
+                                                                    src="./assets/images/users/user4.png" alt="user" />
+                                                                <a href="./profile.html"
+                                                                    class="text-m-medium text-w-neutral-1 line-clamp-1 link-1">
+                                                                    Dianne Russell
+                                                                </a>
+                                                            </div>
+                                                            <span class="text-xl-medium text-w-neutral-1">
+                                                                1
+                                                            </span>
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                            <div class="flex flex-col justify-around gap-2 h-full relative bracket">
+                                                <div class="grid grid-cols-1 gap-40p">
+                                                    <div class="grid grid-cols-1 gap-2">
+                                                        <div
+                                                            class="3xl:w-[266px] max-md:w-full max-sm:w-[266px] flex items-center justify-between gap-3 px-16p py-3 bg-b-neutral-2 border-r-4 border-b-neutral-1 rounded-4">
+                                                            <div class="flex items-center gap-3">
+                                                                <img class="avatar size-48p"
+                                                                    src="./assets/images/users/user5.png" alt="user" />
+                                                                <a href="./profile.html"
+                                                                    class="text-m-medium text-w-neutral-1 line-clamp-1 link-1">
+                                                                    Dianne Russell
+                                                                </a>
+                                                            </div>
+                                                            <span class="text-xl-medium text-w-neutral-1">
+                                                                1
+                                                            </span>
+                                                        </div>
+                                                        <div
+                                                            class="3xl:w-[266px] max-md:w-full max-sm:w-[266px] flex items-center justify-between gap-3 px-16p py-3 bg-b-neutral-2 border-r-4 border-w-neutral-4 rounded-4">
+                                                            <div class="flex items-center gap-3">
+                                                                <img class="avatar size-48p"
+                                                                    src="./assets/images/users/user6.png" alt="user" />
+                                                                <a href="./profile.html"
+                                                                    class="text-m-medium text-w-neutral-1 line-clamp-1 link-1">
+                                                                    Dianne Russell
+                                                                </a>
+                                                            </div>
+                                                            <span class="text-xl-medium text-w-neutral-1">
+                                                                1
+                                                            </span>
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                                <div class="grid grid-cols-1 gap-40p">
+                                                    <div class="grid grid-cols-1 gap-2">
+                                                        <div
+                                                            class="3xl:w-[266px] max-md:w-full max-sm:w-[266px] flex items-center justify-between gap-3 px-16p py-3 bg-b-neutral-2 border-r-4 border-b-neutral-1 rounded-4">
+                                                            <div class="flex items-center gap-3">
+                                                                <img class="avatar size-48p"
+                                                                    src="./assets/images/users/user7.png" alt="user" />
+                                                                <a href="./profile.html"
+                                                                    class="text-m-medium text-w-neutral-1 line-clamp-1 link-1">
+                                                                    Dianne Russell
+                                                                </a>
+                                                            </div>
+                                                            <span class="text-xl-medium text-w-neutral-1">
+                                                                1
+                                                            </span>
+                                                        </div>
+                                                        <div
+                                                            class="3xl:w-[266px] max-md:w-full max-sm:w-[266px] flex items-center justify-between gap-3 px-16p py-3 bg-b-neutral-2 border-r-4 border-w-neutral-4 rounded-4">
+                                                            <div class="flex items-center gap-3">
+                                                                <img class="avatar size-48p"
+                                                                    src="./assets/images/users/user8.png" alt="user" />
+                                                                <a href="./profile.html"
+                                                                    class="text-m-medium text-w-neutral-1 line-clamp-1 link-1">
+                                                                    Dianne Russell
+                                                                </a>
+                                                            </div>
+                                                            <span class="text-xl-medium text-w-neutral-1">
+                                                                1
+                                                            </span>
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="3xl:min-h-full h-full">
+                                        <div class="flex-col-c text-center bg-b-neutral-2 p-5 rounded-12 mb-60p">
+                                            <h4 class="heading-4 text-w-neutral-1 mb-1">
+                                                SEMI FINALS
+                                            </h4>
+                                            <p class="text-m-regular text-w-neutral-1">
+                                                04 Matches
+                                            </p>
+                                        </div>
+                                        <div
+                                            class="3xl:w-[266px] max-md:w-full max-sm:w-[266px] flex flex-col 3xl:justify-around md:h-full gap-80p">
+                                            <div class="flex flex-col justify-around gap-2 h-full relative bracket">
+                                                <div class="grid grid-cols-1 gap-40p">
+                                                    <div class="grid grid-cols-1 gap-2">
+                                                        <div
+                                                            class="3xl:w-[266px] max-md:w-full max-sm:w-[266px] flex items-center justify-between gap-3 px-16p py-3 bg-b-neutral-2 border-r-4 border-b-neutral-1 rounded-4">
+                                                            <div class="flex items-center gap-3">
+                                                                <img class="avatar size-48p"
+                                                                    src="./assets/images/users/user1.png" alt="user" />
+                                                                <a href="./profile.html"
+                                                                    class="text-m-medium text-w-neutral-1 line-clamp-1 link-1">
+                                                                    Dianne Russell
+                                                                </a>
+                                                            </div>
+                                                            <span class="text-xl-medium text-w-neutral-1">
+                                                                1
+                                                            </span>
+                                                        </div>
+                                                        <div
+                                                            class="3xl:w-[266px] max-md:w-full max-sm:w-[266px] flex items-center justify-between gap-3 px-16p py-3 bg-b-neutral-2 border-r-4 border-w-neutral-4 rounded-4">
+                                                            <div class="flex items-center gap-3">
+                                                                <img class="avatar size-48p"
+                                                                    src="./assets/images/users/user2.png" alt="user" />
+                                                                <a href="./profile.html"
+                                                                    class="text-m-medium text-w-neutral-1 line-clamp-1 link-1">
+                                                                    Dianne Russell
+                                                                </a>
+                                                            </div>
+                                                            <span class="text-xl-medium text-w-neutral-1">
+                                                                1
+                                                            </span>
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                                <div class="grid grid-cols-1 gap-40p">
+                                                    <div class="grid grid-cols-1 gap-2">
+                                                        <div
+                                                            class="3xl:w-[266px] max-md:w-full max-sm:w-[266px] flex items-center justify-between gap-3 px-16p py-3 bg-b-neutral-2 border-r-4 border-b-neutral-1 rounded-4">
+                                                            <div class="flex items-center gap-3">
+                                                                <img class="avatar size-48p"
+                                                                    src="./assets/images/users/user3.png" alt="user" />
+                                                                <a href="./profile.html"
+                                                                    class="text-m-medium text-w-neutral-1 line-clamp-1 link-1">
+                                                                    Dianne Russell
+                                                                </a>
+                                                            </div>
+                                                            <span class="text-xl-medium text-w-neutral-1">
+                                                                1
+                                                            </span>
+                                                        </div>
+                                                        <div
+                                                            class="3xl:w-[266px] max-md:w-full max-sm:w-[266px] flex items-center justify-between gap-3 px-16p py-3 bg-b-neutral-2 border-r-4 border-w-neutral-4 rounded-4">
+                                                            <div class="flex items-center gap-3">
+                                                                <img class="avatar size-48p"
+                                                                    src="./assets/images/users/user4.png" alt="user" />
+                                                                <a href="./profile.html"
+                                                                    class="text-m-medium text-w-neutral-1 line-clamp-1 link-1">
+                                                                    Dianne Russell
+                                                                </a>
+                                                            </div>
+                                                            <span class="text-xl-medium text-w-neutral-1">
+                                                                1
+                                                            </span>
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="3xl:min-h-full h-full">
+                                        <div class="flex-col-c text-center bg-b-neutral-2 p-5 rounded-12 mb-60p">
+                                            <h4 class="heading-4 text-w-neutral-1 mb-1">
+                                                FINALS
+                                            </h4>
+                                            <p class="text-m-regular text-w-neutral-1">
+                                                02 Matches
+                                            </p>
+                                        </div>
+                                        <div
+                                            class="3xl:w-[266px] max-md:w-full max-sm:w-[266px] flex flex-col 3xl:justify-around md:h-full gap-80p">
+                                            <div class="grid grid-cols-1 gap-40p  relative bracket">
+                                                <div class="grid grid-cols-1 gap-2">
+                                                    <div
+                                                        class="flex items-center justify-between gap-3 px-16p py-3 bg-secondary border-r-4 border-accent-1 rounded-4">
+                                                        <div class="flex items-center gap-3">
+                                                            <img class="avatar size-48p"
+                                                                src="./assets/images/users/user3.png" alt="user" />
+                                                            <a href="./profile.html"
+                                                                class="text-m-medium text-b-neutral-4 line-clamp-1">
+                                                                Dianne Russell
+                                                            </a>
+                                                        </div>
+                                                        <span class="text-xl-medium text-b-neutral-4">
+                                                            1
+                                                        </span>
+                                                    </div>
+                                                    <div
+                                                        class="flex items-center justify-between gap-3 px-16p py-3 bg-primary border-r-4 border-accent-5 rounded-4">
+                                                        <div class="flex items-center gap-3">
+                                                            <img class="avatar size-48p"
+                                                                src="./assets/images/users/user4.png" alt="user" />
+                                                            <a href="./profile.html"
+                                                                class="text-m-medium text-b-neutral-4 line-clamp-1">
+                                                                Dianne Russell
+                                                            </a>
+                                                        </div>
+                                                        <span class="text-xl-medium text-b-neutral-4">
+                                                            1
+                                                        </span>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </section>
+            <!-- Tournament brackets section end -->
+
+        </main>
+        <!-- main end -->
+
+        <!-- footer start -->
+        <include-footer />
+        <!-- footer end -->
+    </div>
+    <!-- app layout end -->
+
+
+</body>
+
+</html>

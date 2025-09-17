@@ -1,0 +1,40 @@
+:root {
+  --font-poppins: "Poppins";
+  --font-borda: "Borda";
+}
+
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+// Third party libraries
+@import "./utility/fonts.scss";
+@import "@tabler/icons-webfont/dist/tabler-icons.min.css";
+@import "aos/dist/aos.css";
+@import "odometer/themes/odometer-theme-default.css";
+@import "/node_modules/slim-select/dist/slimselect.css";
+@import "swiper/css/bundle";
+@import "/node_modules/flatpickr/dist/flatpickr.min.css";
+@import "/node_modules/video.js/dist/video-js.min.css";
+@import "/node_modules/splitting/dist/splitting.css";
+@import "/node_modules/splitting/dist/splitting-cells.css";
+@import "/node_modules/lightgallery/css/lightgallery-bundle.css";
+@import "/node_modules/plyr/dist/plyr.css";
+
+// Custom styles
+@import "./utility/reset";
+@import "./utility/base";
+
+// Tailwind typography, spacing, sizing and custom utilities
+@import "./utility/typography";
+@import "./utility/spacing";
+@import "./utility/sizing";
+@import "./utility/box_layout";
+// Tailwind ui components
+@import "./components/index";
+
+// custom utility classes
+@import "./utility/utility";
+
+// Project styles
+@import "./utility/global";

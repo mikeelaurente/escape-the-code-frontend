@@ -1,0 +1,20 @@
+@layer components {
+  .dropdown {
+    @apply relative flex flex-col;
+
+    &-toggle {
+      @apply inline-flex items-center gap-2 cursor-pointer;
+    }
+
+    &-content {
+      @apply max-w-sm absolute top-12 right-0 grid grid-cols-1 gap-y-2 p-16p rounded-10 bg-b-neutral-2 w-[200px] max-h-[240px]  overflow-y-auto scrollbar-sm z-10;
+    }
+
+    &-item {
+      @apply inline-flex w-full items-center justify-between gap-2 p-2 text-base text-w-neutral-1 cursor-pointer rounded-lg hover:bg-primary hover:text-b-neutral-4 transition-1;
+      &.active {
+        @apply text-b-neutral-4;
+      }
+    }
+  }
+}

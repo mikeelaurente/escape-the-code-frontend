@@ -1,0 +1,663 @@
+<!DOCTYPE html>
+<html dir="ltr" lang="en">
+
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="shortcut icon" href="./assets/images/icons/favicon.ico" type="image/x-icon" />
+    <title>GameCo - HTML Tailwind CSS</title>
+</head>
+
+<body>
+
+    <!-- preloader start -->
+    <include-preloader />
+    <!-- preloader end -->
+
+    <!-- scroll to top button start -->
+    <include-scrollToTop />
+    <!-- scroll to top button end -->
+
+    <!-- header start -->
+    <include-navbar />
+    <!-- header end -->
+
+    <!-- sidebar start -->
+    <include-left-right-sidebar />
+    <!-- sidebar end -->
+
+    <!-- app layout start -->
+    <div class="app-layout">
+
+        <!-- main start -->
+        <main>
+
+            <include-user-profile />
+
+            <!-- user profile Game Stats section start -->
+            <section class="section-pb pt-60p overflow-visible">
+                <div class="container">
+                    <div class="grid 4xl:grid-cols-4 xxl:grid-cols-3 md:grid-cols-2 grid-cols-1 gap-24p">
+
+                        <!-- Team 1 -->
+                        <div class="bg-b-neutral-3 rounded-12 p-32p border border-transparent hover:border-accent-7 group transition-1"
+                            data-aos="zoom-in">
+                            <div class="flex items-start justify-between gap-24p mb-24p">
+                                <div class="flex-y flex-wrap gap-3">
+                                    <img class="avatar size-60p" src="./assets/images/teams/team1.png" alt="team" />
+                                    <div>
+                                        <a href="./team-home.html"
+                                            class="text-xl-medium text-w-neutral-1 link-1">Inferno
+                                            Aces</a>
+                                        <span class="text-m-medium text-w-neutral-3">Team Wolves</span>
+                                    </div>
+                                </div>
+                                <button class="btn-c btn-c-lg btn-c-light-outline shrink-0">
+                                    <i class="ti ti-user-plus"></i>
+                                </button>
+                            </div>
+                            <div class="flex-y flex-wrap gap-20p whitespace-nowrap mb-32p">
+                                <div>
+                                    <span class="text-m-medium text-w-neutral-4 mb-1">AVG Rank</span>
+                                    <div class="flex-y gap-2 text-l-medium text-w-neutral-1">
+                                        <i class="ti ti-diamond icon-24"></i>
+                                        <span>Diamond</span>
+                                    </div>
+                                </div>
+                                <div>
+                                    <span class="text-m-medium text-w-neutral-4 mb-1">RECION</span>
+                                    <div class="text-l-medium text-w-neutral-1">EUW</div>
+                                </div>
+                                <div>
+                                    <span class="text-m-medium text-w-neutral-4 mb-1">EARNINGS</span>
+                                    <span class="text-l-medium text-w-neutral-1">$4,75 USD</span>
+                                </div>
+                            </div>
+                            <div class="flex-y flex-wrap justify-between gap-24p pt-32p border-t border-t-shap">
+                                <div
+                                    class="flex items-center *:size-40p *:shrink-0 *:size-40p *:border *:border-white *:-ml-3 ml-3">
+                                    <img class="avatar" src="./assets/images/users/user1.png" alt="user" />
+                                    <img class="avatar" src="./assets/images/users/user2.png" alt="user" />
+                                    <img class="avatar" src="./assets/images/users/user3.png" alt="user" />
+                                    <img class="avatar" src="./assets/images/users/user4.png" alt="user" />
+                                    <span
+                                        class="flex-c rounded-full bg-[#333333] text-s-medium text-w-neutral-1">+30</span>
+                                </div>
+                                <a href="./team-home.html"
+                                    class="btn px-16p py-2 btn-outline-secondary group-hover:bg-secondary group-hover:text-b-neutral-4">
+                                    View Team
+                                </a>
+                            </div>
+                        </div>
+
+                        <!-- Team 2 -->
+                        <div class="bg-b-neutral-3 rounded-12 p-32p border border-transparent hover:border-accent-7 group transition-1"
+                            data-aos="zoom-in">
+                            <div class="flex items-start justify-between gap-24p mb-24p">
+                                <div class="flex-y flex-wrap gap-3">
+                                    <img class="avatar size-60p" src="./assets/images/teams/team2.png" alt="team" />
+                                    <div>
+                                        <a href="./team-home.html" class="text-xl-medium text-w-neutral-1 link-1">Vortex
+                                            Rising</a>
+                                        <span class="text-m-medium text-w-neutral-3">Team Wolves</span>
+                                    </div>
+                                </div>
+                                <button class="btn-c btn-c-lg btn-c-light-outline shrink-0">
+                                    <i class="ti ti-user-plus"></i>
+                                </button>
+                            </div>
+                            <div class="flex-y flex-wrap gap-20p whitespace-nowrap mb-32p">
+                                <div>
+                                    <span class="text-m-medium text-w-neutral-4 mb-1">AVG Rank</span>
+                                    <div class="flex-y gap-2 text-l-medium text-w-neutral-1">
+                                        <i class="ti ti-diamond icon-24"></i>
+                                        <span>Diamond</span>
+                                    </div>
+                                </div>
+                                <div>
+                                    <span class="text-m-medium text-w-neutral-4 mb-1">RECION</span>
+                                    <div class="text-l-medium text-w-neutral-1">EUW</div>
+                                </div>
+                                <div>
+                                    <span class="text-m-medium text-w-neutral-4 mb-1">EARNINGS</span>
+                                    <span class="text-l-medium text-w-neutral-1">$4,75 USD</span>
+                                </div>
+                            </div>
+                            <div class="flex-y flex-wrap justify-between gap-24p pt-32p border-t border-t-shap">
+                                <div
+                                    class="flex items-center *:size-40p *:shrink-0 *:size-40p *:border *:border-white *:-ml-3 ml-3">
+                                    <img class="avatar" src="./assets/images/users/user1.png" alt="user" />
+                                    <img class="avatar" src="./assets/images/users/user2.png" alt="user" />
+                                    <img class="avatar" src="./assets/images/users/user3.png" alt="user" />
+                                    <img class="avatar" src="./assets/images/users/user4.png" alt="user" />
+                                    <span
+                                        class="flex-c rounded-full bg-[#333333] text-s-medium text-w-neutral-1">+30</span>
+                                </div>
+                                <a href="./team-home.html"
+                                    class="btn px-16p py-2 btn-outline-secondary group-hover:bg-secondary group-hover:text-b-neutral-4">
+                                    View Team
+                                </a>
+                            </div>
+                        </div>
+
+                        <!-- Team 3 -->
+                        <div class="bg-b-neutral-3 rounded-12 p-32p border border-transparent hover:border-accent-7 group transition-1"
+                            data-aos="zoom-in">
+                            <div class="flex items-start justify-between gap-24p mb-24p">
+                                <div class="flex-y flex-wrap gap-3">
+                                    <img class="avatar size-60p" src="./assets/images/teams/team3.png" alt="team" />
+                                    <div>
+                                        <a href="./team-home.html" class="text-xl-medium text-w-neutral-1 link-1">Cyber
+                                            Pulse</a>
+                                        <span class="text-m-medium text-w-neutral-3">Team Wolves</span>
+                                    </div>
+                                </div>
+                                <button class="btn-c btn-c-lg btn-c-light-outline shrink-0">
+                                    <i class="ti ti-user-plus"></i>
+                                </button>
+                            </div>
+                            <div class="flex-y flex-wrap gap-20p whitespace-nowrap mb-32p">
+                                <div>
+                                    <span class="text-m-medium text-w-neutral-4 mb-1">AVG Rank</span>
+                                    <div class="flex-y gap-2 text-l-medium text-w-neutral-1">
+                                        <i class="ti ti-diamond icon-24"></i>
+                                        <span>Diamond</span>
+                                    </div>
+                                </div>
+                                <div>
+                                    <span class="text-m-medium text-w-neutral-4 mb-1">RECION</span>
+                                    <div class="text-l-medium text-w-neutral-1">EUW</div>
+                                </div>
+                                <div>
+                                    <span class="text-m-medium text-w-neutral-4 mb-1">EARNINGS</span>
+                                    <span class="text-l-medium text-w-neutral-1">$4,75 USD</span>
+                                </div>
+                            </div>
+                            <div class="flex-y flex-wrap justify-between gap-24p pt-32p border-t border-t-shap">
+                                <div
+                                    class="flex items-center *:size-40p *:shrink-0 *:size-40p *:border *:border-white *:-ml-3 ml-3">
+                                    <img class="avatar" src="./assets/images/users/user1.png" alt="user" />
+                                    <img class="avatar" src="./assets/images/users/user2.png" alt="user" />
+                                    <img class="avatar" src="./assets/images/users/user3.png" alt="user" />
+                                    <img class="avatar" src="./assets/images/users/user4.png" alt="user" />
+                                    <span
+                                        class="flex-c rounded-full bg-[#333333] text-s-medium text-w-neutral-1">+30</span>
+                                </div>
+                                <a href="./team-home.html"
+                                    class="btn px-16p py-2 btn-outline-secondary group-hover:bg-secondary group-hover:text-b-neutral-4">
+                                    View Team
+                                </a>
+                            </div>
+                        </div>
+
+                        <!-- Team 4 -->
+                        <div class="bg-b-neutral-3 rounded-12 p-32p border border-transparent hover:border-accent-7 group transition-1"
+                            data-aos="zoom-in">
+                            <div class="flex items-start justify-between gap-24p mb-24p">
+                                <div class="flex-y flex-wrap gap-3">
+                                    <img class="avatar size-60p" src="./assets/images/teams/team4.png" alt="team" />
+                                    <div>
+                                        <a href="./team-home.html"
+                                            class="text-xl-medium text-w-neutral-1 link-1">Frostbite</a>
+                                        <span class="text-m-medium text-w-neutral-3">Team Wolves</span>
+                                    </div>
+                                </div>
+                                <button class="btn-c btn-c-lg btn-c-light-outline shrink-0">
+                                    <i class="ti ti-user-plus"></i>
+                                </button>
+                            </div>
+                            <div class="flex-y flex-wrap gap-20p whitespace-nowrap mb-32p">
+                                <div>
+                                    <span class="text-m-medium text-w-neutral-4 mb-1">AVG Rank</span>
+                                    <div class="flex-y gap-2 text-l-medium text-w-neutral-1">
+                                        <i class="ti ti-diamond icon-24"></i>
+                                        <span>Diamond</span>
+                                    </div>
+                                </div>
+                                <div>
+                                    <span class="text-m-medium text-w-neutral-4 mb-1">RECION</span>
+                                    <div class="text-l-medium text-w-neutral-1">EUW</div>
+                                </div>
+                                <div>
+                                    <span class="text-m-medium text-w-neutral-4 mb-1">EARNINGS</span>
+                                    <span class="text-l-medium text-w-neutral-1">$4,75 USD</span>
+                                </div>
+                            </div>
+                            <div class="flex-y flex-wrap justify-between gap-24p pt-32p border-t border-t-shap">
+                                <div
+                                    class="flex items-center *:size-40p *:shrink-0 *:size-40p *:border *:border-white *:-ml-3 ml-3">
+                                    <img class="avatar" src="./assets/images/users/user1.png" alt="user" />
+                                    <img class="avatar" src="./assets/images/users/user2.png" alt="user" />
+                                    <img class="avatar" src="./assets/images/users/user3.png" alt="user" />
+                                    <img class="avatar" src="./assets/images/users/user4.png" alt="user" />
+                                    <span
+                                        class="flex-c rounded-full bg-[#333333] text-s-medium text-w-neutral-1">+30</span>
+                                </div>
+                                <a href="./team-home.html"
+                                    class="btn px-16p py-2 btn-outline-secondary group-hover:bg-secondary group-hover:text-b-neutral-4">
+                                    View Team
+                                </a>
+                            </div>
+                        </div>
+
+                        <!-- Team 5 -->
+                        <div class="bg-b-neutral-3 rounded-12 p-32p border border-transparent hover:border-accent-7 group transition-1"
+                            data-aos="zoom-in">
+                            <div class="flex items-start justify-between gap-24p mb-24p">
+                                <div class="flex-y flex-wrap gap-3">
+                                    <img class="avatar size-60p" src="./assets/images/teams/team5.png" alt="team" />
+                                    <div>
+                                        <a href="./team-home.html"
+                                            class="text-xl-medium text-w-neutral-1 link-1">Quantum
+                                            Blaze</a>
+                                        <span class="text-m-medium text-w-neutral-3">Team Wolves</span>
+                                    </div>
+                                </div>
+                                <button class="btn-c btn-c-lg btn-c-light-outline shrink-0">
+                                    <i class="ti ti-user-plus"></i>
+                                </button>
+                            </div>
+                            <div class="flex-y flex-wrap gap-20p whitespace-nowrap mb-32p">
+                                <div>
+                                    <span class="text-m-medium text-w-neutral-4 mb-1">AVG Rank</span>
+                                    <div class="flex-y gap-2 text-l-medium text-w-neutral-1">
+                                        <i class="ti ti-diamond icon-24"></i>
+                                        <span>Diamond</span>
+                                    </div>
+                                </div>
+                                <div>
+                                    <span class="text-m-medium text-w-neutral-4 mb-1">RECION</span>
+                                    <div class="text-l-medium text-w-neutral-1">EUW</div>
+                                </div>
+                                <div>
+                                    <span class="text-m-medium text-w-neutral-4 mb-1">EARNINGS</span>
+                                    <span class="text-l-medium text-w-neutral-1">$4,75 USD</span>
+                                </div>
+                            </div>
+                            <div class="flex-y flex-wrap justify-between gap-24p pt-32p border-t border-t-shap">
+                                <div
+                                    class="flex items-center *:size-40p *:shrink-0 *:size-40p *:border *:border-white *:-ml-3 ml-3">
+                                    <img class="avatar" src="./assets/images/users/user1.png" alt="user" />
+                                    <img class="avatar" src="./assets/images/users/user2.png" alt="user" />
+                                    <img class="avatar" src="./assets/images/users/user3.png" alt="user" />
+                                    <img class="avatar" src="./assets/images/users/user4.png" alt="user" />
+                                    <span
+                                        class="flex-c rounded-full bg-[#333333] text-s-medium text-w-neutral-1">+30</span>
+                                </div>
+                                <a href="./team-home.html"
+                                    class="btn px-16p py-2 btn-outline-secondary group-hover:bg-secondary group-hover:text-b-neutral-4">
+                                    View Team
+                                </a>
+                            </div>
+                        </div>
+
+                        <!-- Team 6 -->
+                        <div class="bg-b-neutral-3 rounded-12 p-32p border border-transparent hover:border-accent-7 group transition-1"
+                            data-aos="zoom-in">
+                            <div class="flex items-start justify-between gap-24p mb-24p">
+                                <div class="flex-y flex-wrap gap-3">
+                                    <img class="avatar size-60p" src="./assets/images/teams/team6.png" alt="team" />
+                                    <div>
+                                        <a href="./team-home.html"
+                                            class="text-xl-medium text-w-neutral-1 link-1">Shadow</a>
+                                        <span class="text-m-medium text-w-neutral-3">Team Wolves</span>
+                                    </div>
+                                </div>
+                                <button class="btn-c btn-c-lg bg-primary text-b-neutral-4 shrink-0">
+                                    <i class="ti ti-check"></i>
+                                </button>
+                            </div>
+                            <div class="flex-y flex-wrap gap-20p whitespace-nowrap mb-32p">
+                                <div>
+                                    <span class="text-m-medium text-w-neutral-4 mb-1">AVG Rank</span>
+                                    <div class="flex-y gap-2 text-l-medium text-w-neutral-1">
+                                        <i class="ti ti-diamond icon-24"></i>
+                                        <span>Diamond</span>
+                                    </div>
+                                </div>
+                                <div>
+                                    <span class="text-m-medium text-w-neutral-4 mb-1">RECION</span>
+                                    <div class="text-l-medium text-w-neutral-1">EUW</div>
+                                </div>
+                                <div>
+                                    <span class="text-m-medium text-w-neutral-4 mb-1">EARNINGS</span>
+                                    <span class="text-l-medium text-w-neutral-1">$4,75 USD</span>
+                                </div>
+                            </div>
+                            <div class="flex-y flex-wrap justify-between gap-24p pt-32p border-t border-t-shap">
+                                <div
+                                    class="flex items-center *:size-40p *:shrink-0 *:size-40p *:border *:border-white *:-ml-3 ml-3">
+                                    <img class="avatar" src="./assets/images/users/user1.png" alt="user" />
+                                    <img class="avatar" src="./assets/images/users/user2.png" alt="user" />
+                                    <img class="avatar" src="./assets/images/users/user3.png" alt="user" />
+                                    <img class="avatar" src="./assets/images/users/user4.png" alt="user" />
+                                    <span
+                                        class="flex-c rounded-full bg-[#333333] text-s-medium text-w-neutral-1">+30</span>
+                                </div>
+                                <a href="./team-home.html"
+                                    class="btn px-16p py-2 btn-outline-secondary group-hover:bg-secondary group-hover:text-b-neutral-4">
+                                    View Team
+                                </a>
+                            </div>
+                        </div>
+
+                        <!-- Team 7 -->
+                        <div class="bg-b-neutral-3 rounded-12 p-32p border border-transparent hover:border-accent-7 group transition-1"
+                            data-aos="zoom-in">
+                            <div class="flex items-start justify-between gap-24p mb-24p">
+                                <div class="flex-y flex-wrap gap-3">
+                                    <img class="avatar size-60p" src="./assets/images/teams/team7.png" alt="team" />
+                                    <div>
+                                        <a href="./team-home.html" class="text-xl-medium text-w-neutral-1 link-1">Nebula
+                                            Nova</a>
+                                        <span class="text-m-medium text-w-neutral-3">Team Wolves</span>
+                                    </div>
+                                </div>
+                                <button class="btn-c btn-c-lg btn-c-light-outline shrink-0">
+                                    <i class="ti ti-user-plus"></i>
+                                </button>
+                            </div>
+                            <div class="flex-y flex-wrap gap-20p whitespace-nowrap mb-32p">
+                                <div>
+                                    <span class="text-m-medium text-w-neutral-4 mb-1">AVG Rank</span>
+                                    <div class="flex-y gap-2 text-l-medium text-w-neutral-1">
+                                        <i class="ti ti-diamond icon-24"></i>
+                                        <span>Diamond</span>
+                                    </div>
+                                </div>
+                                <div>
+                                    <span class="text-m-medium text-w-neutral-4 mb-1">RECION</span>
+                                    <div class="text-l-medium text-w-neutral-1">EUW</div>
+                                </div>
+                                <div>
+                                    <span class="text-m-medium text-w-neutral-4 mb-1">EARNINGS</span>
+                                    <span class="text-l-medium text-w-neutral-1">$4,75 USD</span>
+                                </div>
+                            </div>
+                            <div class="flex-y flex-wrap justify-between gap-24p pt-32p border-t border-t-shap">
+                                <div
+                                    class="flex items-center *:size-40p *:shrink-0 *:size-40p *:border *:border-white *:-ml-3 ml-3">
+                                    <img class="avatar" src="./assets/images/users/user1.png" alt="user" />
+                                    <img class="avatar" src="./assets/images/users/user2.png" alt="user" />
+                                    <img class="avatar" src="./assets/images/users/user3.png" alt="user" />
+                                    <img class="avatar" src="./assets/images/users/user4.png" alt="user" />
+                                    <span
+                                        class="flex-c rounded-full bg-[#333333] text-s-medium text-w-neutral-1">+30</span>
+                                </div>
+                                <a href="./team-home.html"
+                                    class="btn px-16p py-2 btn-outline-secondary group-hover:bg-secondary group-hover:text-b-neutral-4">
+                                    View Team
+                                </a>
+                            </div>
+                        </div>
+
+                        <!-- Team 8 -->
+                        <div class="bg-b-neutral-3 rounded-12 p-32p border border-transparent hover:border-accent-7 group transition-1"
+                            data-aos="zoom-in">
+                            <div class="flex items-start justify-between gap-24p mb-24p">
+                                <div class="flex-y flex-wrap gap-3">
+                                    <img class="avatar size-60p" src="./assets/images/teams/team8.png" alt="team" />
+                                    <div>
+                                        <a href="./team-home.html" class="text-xl-medium text-w-neutral-1 link-1">The
+                                            Phoenix</a>
+                                        <span class="text-m-medium text-w-neutral-3">Team Wolves</span>
+                                    </div>
+                                </div>
+                                <button class="btn-c btn-c-lg btn-c-light-outline shrink-0">
+                                    <i class="ti ti-user-plus"></i>
+                                </button>
+                            </div>
+                            <div class="flex-y flex-wrap gap-20p whitespace-nowrap mb-32p">
+                                <div>
+                                    <span class="text-m-medium text-w-neutral-4 mb-1">AVG Rank</span>
+                                    <div class="flex-y gap-2 text-l-medium text-w-neutral-1">
+                                        <i class="ti ti-diamond icon-24"></i>
+                                        <span>Diamond</span>
+                                    </div>
+                                </div>
+                                <div>
+                                    <span class="text-m-medium text-w-neutral-4 mb-1">RECION</span>
+                                    <div class="text-l-medium text-w-neutral-1">EUW</div>
+                                </div>
+                                <div>
+                                    <span class="text-m-medium text-w-neutral-4 mb-1">EARNINGS</span>
+                                    <span class="text-l-medium text-w-neutral-1">$4,75 USD</span>
+                                </div>
+                            </div>
+                            <div class="flex-y flex-wrap justify-between gap-24p pt-32p border-t border-t-shap">
+                                <div
+                                    class="flex items-center *:size-40p *:shrink-0 *:size-40p *:border *:border-white *:-ml-3 ml-3">
+                                    <img class="avatar" src="./assets/images/users/user1.png" alt="user" />
+                                    <img class="avatar" src="./assets/images/users/user2.png" alt="user" />
+                                    <img class="avatar" src="./assets/images/users/user3.png" alt="user" />
+                                    <img class="avatar" src="./assets/images/users/user4.png" alt="user" />
+                                    <span
+                                        class="flex-c rounded-full bg-[#333333] text-s-medium text-w-neutral-1">+30</span>
+                                </div>
+                                <a href="./team-home.html"
+                                    class="btn px-16p py-2 btn-outline-secondary group-hover:bg-secondary group-hover:text-b-neutral-4">
+                                    View Team
+                                </a>
+                            </div>
+                        </div>
+
+                        <!-- Team 9 -->
+                        <div class="bg-b-neutral-3 rounded-12 p-32p border border-transparent hover:border-accent-7 group transition-1"
+                            data-aos="zoom-in">
+                            <div class="flex items-start justify-between gap-24p mb-24p">
+                                <div class="flex-y flex-wrap gap-3">
+                                    <img class="avatar size-60p" src="./assets/images/teams/team9.png" alt="team" />
+                                    <div>
+                                        <a href="./team-home.html" class="text-xl-medium text-w-neutral-1 link-1">Cyber
+                                            Storm</a>
+                                        <span class="text-m-medium text-w-neutral-3">Team Wolves</span>
+                                    </div>
+                                </div>
+                                <button class="btn-c btn-c-lg btn-c-light-outline shrink-0">
+                                    <i class="ti ti-user-plus"></i>
+                                </button>
+                            </div>
+                            <div class="flex-y flex-wrap gap-20p whitespace-nowrap mb-32p">
+                                <div>
+                                    <span class="text-m-medium text-w-neutral-4 mb-1">AVG Rank</span>
+                                    <div class="flex-y gap-2 text-l-medium text-w-neutral-1">
+                                        <i class="ti ti-diamond icon-24"></i>
+                                        <span>Diamond</span>
+                                    </div>
+                                </div>
+                                <div>
+                                    <span class="text-m-medium text-w-neutral-4 mb-1">RECION</span>
+                                    <div class="text-l-medium text-w-neutral-1">EUW</div>
+                                </div>
+                                <div>
+                                    <span class="text-m-medium text-w-neutral-4 mb-1">EARNINGS</span>
+                                    <span class="text-l-medium text-w-neutral-1">$4,75 USD</span>
+                                </div>
+                            </div>
+                            <div class="flex-y flex-wrap justify-between gap-24p pt-32p border-t border-t-shap">
+                                <div
+                                    class="flex items-center *:size-40p *:shrink-0 *:size-40p *:border *:border-white *:-ml-3 ml-3">
+                                    <img class="avatar" src="./assets/images/users/user1.png" alt="user" />
+                                    <img class="avatar" src="./assets/images/users/user2.png" alt="user" />
+                                    <img class="avatar" src="./assets/images/users/user3.png" alt="user" />
+                                    <img class="avatar" src="./assets/images/users/user4.png" alt="user" />
+                                    <span
+                                        class="flex-c rounded-full bg-[#333333] text-s-medium text-w-neutral-1">+30</span>
+                                </div>
+                                <a href="./team-home.html"
+                                    class="btn px-16p py-2 btn-outline-secondary group-hover:bg-secondary group-hover:text-b-neutral-4">
+                                    View Team
+                                </a>
+                            </div>
+                        </div>
+
+                        <!-- Team 10 -->
+                        <div class="bg-b-neutral-3 rounded-12 p-32p border border-transparent hover:border-accent-7 group transition-1"
+                            data-aos="zoom-in">
+                            <div class="flex items-start justify-between gap-24p mb-24p">
+                                <div class="flex-y flex-wrap gap-3">
+                                    <img class="avatar size-60p" src="./assets/images/teams/team10.png" alt="team" />
+                                    <div>
+                                        <a href="./team-home.html" class="text-xl-medium text-w-neutral-1 link-1">Nova
+                                            Knight</a>
+                                        <span class="text-m-medium text-w-neutral-3">Team Wolves</span>
+                                    </div>
+                                </div>
+                                <button class="btn-c btn-c-lg btn-c-light-outline shrink-0">
+                                    <i class="ti ti-user-plus"></i>
+                                </button>
+                            </div>
+                            <div class="flex-y flex-wrap gap-20p whitespace-nowrap mb-32p">
+                                <div>
+                                    <span class="text-m-medium text-w-neutral-4 mb-1">AVG Rank</span>
+                                    <div class="flex-y gap-2 text-l-medium text-w-neutral-1">
+                                        <i class="ti ti-diamond icon-24"></i>
+                                        <span>Diamond</span>
+                                    </div>
+                                </div>
+                                <div>
+                                    <span class="text-m-medium text-w-neutral-4 mb-1">RECION</span>
+                                    <div class="text-l-medium text-w-neutral-1">EUW</div>
+                                </div>
+                                <div>
+                                    <span class="text-m-medium text-w-neutral-4 mb-1">EARNINGS</span>
+                                    <span class="text-l-medium text-w-neutral-1">$4,75 USD</span>
+                                </div>
+                            </div>
+                            <div class="flex-y flex-wrap justify-between gap-24p pt-32p border-t border-t-shap">
+                                <div
+                                    class="flex items-center *:size-40p *:shrink-0 *:size-40p *:border *:border-white *:-ml-3 ml-3">
+                                    <img class="avatar" src="./assets/images/users/user1.png" alt="user" />
+                                    <img class="avatar" src="./assets/images/users/user2.png" alt="user" />
+                                    <img class="avatar" src="./assets/images/users/user3.png" alt="user" />
+                                    <img class="avatar" src="./assets/images/users/user4.png" alt="user" />
+                                    <span
+                                        class="flex-c rounded-full bg-[#333333] text-s-medium text-w-neutral-1">+30</span>
+                                </div>
+                                <a href="./team-home.html"
+                                    class="btn px-16p py-2 btn-outline-secondary group-hover:bg-secondary group-hover:text-b-neutral-4">
+                                    View Team
+                                </a>
+                            </div>
+                        </div>
+
+                        <!-- Team 11 -->
+                        <div class="bg-b-neutral-3 rounded-12 p-32p border border-transparent hover:border-accent-7 group transition-1"
+                            data-aos="zoom-in">
+                            <div class="flex items-start justify-between gap-24p mb-24p">
+                                <div class="flex-y flex-wrap gap-3">
+                                    <img class="avatar size-60p" src="./assets/images/teams/team11.png" alt="team" />
+                                    <div>
+                                        <a href="./team-home.html" class="text-xl-medium text-w-neutral-1 link-1">Astral
+                                            Titans</a>
+                                        <span class="text-m-medium text-w-neutral-3">Team Wolves</span>
+                                    </div>
+                                </div>
+                                <button class="btn-c btn-c-lg btn-c-light-outline shrink-0">
+                                    <i class="ti ti-user-plus"></i>
+                                </button>
+                            </div>
+                            <div class="flex-y flex-wrap gap-20p whitespace-nowrap mb-32p">
+                                <div>
+                                    <span class="text-m-medium text-w-neutral-4 mb-1">AVG Rank</span>
+                                    <div class="flex-y gap-2 text-l-medium text-w-neutral-1">
+                                        <i class="ti ti-diamond icon-24"></i>
+                                        <span>Diamond</span>
+                                    </div>
+                                </div>
+                                <div>
+                                    <span class="text-m-medium text-w-neutral-4 mb-1">RECION</span>
+                                    <div class="text-l-medium text-w-neutral-1">EUW</div>
+                                </div>
+                                <div>
+                                    <span class="text-m-medium text-w-neutral-4 mb-1">EARNINGS</span>
+                                    <span class="text-l-medium text-w-neutral-1">$4,75 USD</span>
+                                </div>
+                            </div>
+                            <div class="flex-y flex-wrap justify-between gap-24p pt-32p border-t border-t-shap">
+                                <div
+                                    class="flex items-center *:size-40p *:shrink-0 *:size-40p *:border *:border-white *:-ml-3 ml-3">
+                                    <img class="avatar" src="./assets/images/users/user1.png" alt="user" />
+                                    <img class="avatar" src="./assets/images/users/user2.png" alt="user" />
+                                    <img class="avatar" src="./assets/images/users/user3.png" alt="user" />
+                                    <img class="avatar" src="./assets/images/users/user4.png" alt="user" />
+                                    <span
+                                        class="flex-c rounded-full bg-[#333333] text-s-medium text-w-neutral-1">+30</span>
+                                </div>
+                                <a href="./team-home.html"
+                                    class="btn px-16p py-2 btn-outline-secondary group-hover:bg-secondary group-hover:text-b-neutral-4">
+                                    View Team
+                                </a>
+                            </div>
+                        </div>
+
+                        <!-- Team 12 -->
+                        <div class="bg-b-neutral-3 rounded-12 p-32p border border-transparent hover:border-accent-7 group transition-1"
+                            data-aos="zoom-in">
+                            <div class="flex items-start justify-between gap-24p mb-24p">
+                                <div class="flex-y flex-wrap gap-3">
+                                    <img class="avatar size-60p" src="./assets/images/teams/team5.png" alt="team" />
+                                    <div>
+                                        <a href="./team-home.html"
+                                            class="text-xl-medium text-w-neutral-1 link-1">Inferno
+                                            Finity</a>
+                                        <span class="text-m-medium text-w-neutral-3">Team Wolves</span>
+                                    </div>
+                                </div>
+                                <button class="btn-c btn-c-lg btn-c-light-outline shrink-0">
+                                    <i class="ti ti-user-plus"></i>
+                                </button>
+                            </div>
+
+                            <div class="flex-y flex-wrap gap-20p whitespace-nowrap mb-32p">
+                                <div>
+                                    <span class="text-m-medium text-w-neutral-4 mb-1">AVG Rank</span>
+                                    <div class="flex-y gap-2 text-l-medium text-w-neutral-1">
+                                        <i class="ti ti-diamond icon-24"></i>
+                                        <span>Diamond</span>
+                                    </div>
+                                </div>
+                                <div>
+                                    <span class="text-m-medium text-w-neutral-4 mb-1">RECION</span>
+                                    <div class="text-l-medium text-w-neutral-1">EUW</div>
+                                </div>
+                                <div>
+                                    <span class="text-m-medium text-w-neutral-4 mb-1">EARNINGS</span>
+                                    <span class="text-l-medium text-w-neutral-1">$4,75 USD</span>
+                                </div>
+                            </div>
+                            <div class="flex-y flex-wrap justify-between gap-24p pt-32p border-t border-t-shap">
+                                <div
+                                    class="flex items-center *:size-40p *:shrink-0 *:size-40p *:border *:border-white *:-ml-3 ml-3">
+                                    <img class="avatar" src="./assets/images/users/user1.png" alt="user" />
+                                    <img class="avatar" src="./assets/images/users/user2.png" alt="user" />
+                                    <img class="avatar" src="./assets/images/users/user3.png" alt="user" />
+                                    <img class="avatar" src="./assets/images/users/user4.png" alt="user" />
+                                    <span
+                                        class="flex-c rounded-full bg-[#333333] text-s-medium text-w-neutral-1">+30</span>
+                                </div>
+                                <a href="./team-home.html"
+                                    class="btn px-16p py-2 btn-outline-secondary group-hover:bg-secondary group-hover:text-b-neutral-4">
+                                    View Team
+                                </a>
+                            </div>
+                        </div>
+
+                    </div>
+                </div>
+            </section>
+            <!-- user profile Game Stats section end -->
+
+        </main>
+        <!-- main end -->
+
+        <!-- footer start -->
+        <include-footer />
+        <!-- footer end -->
+    </div>
+    <!-- app layout end -->
+
+
+</body>
+
+</html>

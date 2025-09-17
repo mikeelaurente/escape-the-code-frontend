@@ -1,0 +1,257 @@
+<!DOCTYPE html>
+<html dir="ltr" lang="en">
+
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="shortcut icon" href="./assets/images/icons/favicon.ico" type="image/x-icon" />
+    <title>GameCo - HTML Tailwind CSS</title>
+</head>
+
+<body>
+
+    <!-- preloader start -->
+    <include-preloader />
+    <!-- preloader end -->
+
+    <!-- scroll to top button start -->
+    <include-scrollToTop />
+    <!-- scroll to top button end -->
+
+    <!-- header start -->
+    <include-navbar />
+    <!-- header end -->
+
+    <!-- sidebar start -->
+    <include-left-right-sidebar />
+    <!-- sidebar end -->
+
+    <!-- app layout start -->
+    <div class="app-layout">
+
+        <!-- main start -->
+        <main>
+
+            <!-- team section start -->
+            <section class="section-pb pt-30 overflow-visible">
+                <div class="container">
+                    <div class="grid grid-cols-12 gap-x-30p gap-y-10">
+                        <div class="4xl:col-span-9 xxl:col-span-8 col-span-12">
+                            <div>
+                                <include-team-header />
+
+                                <!-- ranks start -->
+                                <div class="bg-b-neutral-3 p-40p rounded-12">
+                                    <div class="overflow-x-auto scrollbar-sm text-left">
+                                        <table class="w-full ">
+                                            <thead class="bg-b-neutral-4/40 text-base">
+                                                <tr>
+                                                    <th class="py-3 px-40p font-normal min-w-30 w-[268px]">
+                                                        #
+                                                    </th>
+                                                    <th class="p-3 font-normal min-w-[232px] w-[294px]">
+                                                        Player
+                                                    </th>
+                                                    <th class="p-3 font-normal min-w-[180px] w-[294px]">
+                                                        Profit
+                                                    </th>
+                                                    <th class="p-3 font-normal min-w-[180px] w-[294px]">
+                                                        wagered
+                                                    </th>
+                                                </tr>
+                                            </thead>
+                                            <tbody
+                                                class="bg-b-neutral-4 divide-y divide-solid divide-shap border-y border-shap text-m-regular text-w-neutral-1">
+                                                <!-- table row 1 -->
+                                                <tr class="text-primary">
+                                                    <td class="py-3 px-40p">
+                                                        <img class="w-[30px]" src="./assets/images/icons/rankLogo1.webp"
+                                                            alt="rank" />
+                                                    </td>
+                                                    <td class="p-3">
+                                                        <div class="flex-y gap-2.5">
+                                                            <img class="rounded-full size-8"
+                                                                src="./assets/images/users/user1.png" alt="player" />
+                                                            <a href="./profile.html">
+                                                                Jon Smith
+                                                            </a>
+                                                        </div>
+                                                    </td>
+                                                    <td class="p-3">
+                                                        0.2387908847
+                                                    </td>
+                                                    <td class="p-3">
+                                                        0.88557764310
+                                                    </td>
+                                                </tr>
+                                                <!-- table row 2 -->
+                                                <tr class="text-secondary">
+                                                    <td class="py-3 px-40p">
+                                                        <img class="w-[30px]" src="./assets/images/icons/rankLogo1.webp"
+                                                            alt="rank" />
+                                                    </td>
+                                                    <td class="p-3">
+                                                        <div class="flex-y gap-2.5">
+                                                            <img class="rounded-full size-8"
+                                                                src="./assets/images/users/user2.png" alt="player" />
+                                                            <a href="./profile.html">
+                                                                Courtney Henry
+                                                            </a>
+                                                        </div>
+                                                    </td>
+                                                    <td class="p-3">
+                                                        0.8976375890
+                                                    </td>
+                                                    <td class="p-3">
+                                                        0.33009908761
+                                                    </td>
+                                                </tr>
+                                                <!-- table row 3 -->
+                                                <tr class="text-accent-4">
+                                                    <td class="py-3 px-40p">
+                                                        <img class="w-[30px]" src="./assets/images/icons/rankLogo1.webp"
+                                                            alt="rank" />
+                                                    </td>
+                                                    <td class="p-3">
+                                                        <div class="flex-y gap-2.5">
+                                                            <img class="rounded-full size-8"
+                                                                src="./assets/images/users/user3.png" alt="player" />
+                                                            <a href="./profile.html">
+                                                                Albert Flores
+                                                            </a>
+                                                        </div>
+                                                    </td>
+                                                    <td class="p-3">
+                                                        0.4570356688
+                                                    </td>
+                                                    <td class="p-3">
+                                                        0.7766655449
+                                                    </td>
+                                                </tr>
+                                                <!-- table row 4 -->
+                                                <tr>
+                                                    <td class="py-3 px-40p">
+                                                        4
+                                                    </td>
+                                                    <td class="p-3">
+                                                        <div class="flex-y gap-2.5">
+                                                            <img class="rounded-full size-8"
+                                                                src="./assets/images/users/user4.png" alt="player" />
+                                                            <a href="./profile.html">
+                                                                Ronald Richards
+                                                            </a>
+                                                        </div>
+                                                    </td>
+                                                    <td class="p-3">
+                                                        0.2277869444
+                                                    </td>
+                                                    <td class="p-3">
+                                                        0.9977665544
+                                                    </td>
+                                                </tr>
+                                                <!-- table row 5 -->
+                                                <tr>
+                                                    <td class="py-3 px-40p">
+                                                        5
+                                                    </td>
+                                                    <td class="p-3">
+                                                        <div class="flex-y gap-2.5">
+                                                            <img class="rounded-full size-8"
+                                                                src="./assets/images/users/user5.png" alt="player" />
+                                                            <a href="./profile.html">
+                                                                Marvin McKinney
+                                                            </a>
+                                                        </div>
+                                                    </td>
+                                                    <td class="p-3">
+                                                        0.09876543211
+                                                    </td>
+                                                    <td class="p-3">
+                                                        0.99882211334
+                                                    </td>
+                                                </tr>
+                                                <!-- table row 6 -->
+                                                <tr>
+                                                    <td class="py-3 px-40p">
+                                                        6
+                                                    </td>
+                                                    <td class="p-3">
+                                                        <div class="flex-y gap-2.5">
+                                                            <img class="rounded-full size-8"
+                                                                src="./assets/images/users/user6.png" alt="player" />
+                                                            <a href="./profile.html">
+                                                                Kristin Watson
+                                                            </a>
+                                                        </div>
+                                                    </td>
+                                                    <td class="p-3">
+                                                        0.9988776655
+                                                    </td>
+                                                    <td class="p-3">
+                                                        0.2288773634
+                                                    </td>
+                                                </tr>
+
+                                            </tbody>
+                                        </table>
+                                    </div>
+                                </div>
+
+                                <div
+                                    class="pagination pagination-primary lg:pagination-center pagination-center pagination-circle pagination-xl w-full mt-48p">
+                                    <a href="#" class="pagination-item pagination-prev">
+                                        <i class="ti ti-chevron-left"></i>
+                                    </a>
+                                    <div class="pagination-list">
+                                        <a href="#" class="pagination-item pagination-circle active">
+                                            <span class="pagination-link">1</span>
+                                        </a>
+                                        <a href="#" class="pagination-item pagination-circle">
+                                            <span class="pagination-link">2</span>
+                                        </a>
+                                        <a href="#" class="pagination-item pagination-circle">
+                                            <span class="pagination-link">3</span>
+                                        </a>
+                                        <a href="#" class="pagination-item pagination-circle">
+                                            <span class="pagination-link">4</span>
+                                        </a>
+                                        <a href="#" class="pagination-item pagination-circle">
+                                            <span class="pagination-link">5</span>
+                                        </a>
+                                        <a href="#" class="pagination-item pagination-circle">
+                                            <span class="pagination-link pagination-more">...</span>
+                                        </a>
+                                        <a href="#" class="pagination-item pagination-circle">
+                                            <span class="pagination-link">10</span>
+                                        </a>
+                                    </div>
+                                    <a href="#" class="pagination-item pagination-next">
+                                        <i class="ti ti-chevron-right"></i>
+                                    </a>
+                                </div>
+                                <!-- ranks end -->
+                            </div>
+                        </div>
+                        <div class="4xl:col-span-3 xxl:col-span-4 col-span-12 relative">
+                            <div class="xxl:sticky xxl:top-30">
+                                <include-right-aside-one />
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </section>
+            <!-- team section end -->
+
+        </main>
+        <!-- main end -->
+
+        <!-- footer start -->
+        <include-footer />
+        <!-- footer end -->
+    </div>
+    <!-- app layout end -->
+
+
+</body>
+
+</html>

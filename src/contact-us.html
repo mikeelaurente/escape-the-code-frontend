@@ -1,0 +1,181 @@
+<!DOCTYPE html>
+<html dir="ltr" lang="en">
+
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="shortcut icon" href="./assets/images/icons/favicon.ico" type="image/x-icon" />
+    <title>GameCo - HTML Tailwind CSS</title>
+</head>
+
+<body>
+
+    <!-- preloader start -->
+    <include-preloader />
+    <!-- preloader end -->
+
+    <!-- scroll to top button start -->
+    <include-scrollToTop />
+    <!-- scroll to top button end -->
+
+    <!-- header start -->
+    <include-navbar />
+    <!-- header end -->
+
+    <!-- sidebar start -->
+    <include-left-right-sidebar />
+    <!-- sidebar end -->
+
+    <!-- app layout start -->
+    <div class="app-layout">
+
+        <!-- main start -->
+        <main>
+
+            <!-- breadcrumb start -->
+            <section class="pt-30p">
+                <div class="section-pt">
+                    <div
+                        class="relative bg-[url('../images/photos/breadcrumbImg.png')] bg-cover bg-no-repeat rounded-24 overflow-hidden">
+                        <div class="container">
+                            <div class="grid grid-cols-12 gap-30p relative xl:py-[130px] md:py-30 sm:py-25 py-20 z-[2]">
+                                <div class="lg:col-start-2 lg:col-end-12 col-span-12">
+                                    <h2 class="heading-2 text-w-neutral-1 mb-3">
+                                        Contact Us
+                                    </h2>
+                                    <ul class="breadcrumb">
+                                        <li class="breadcrumb-item">
+                                            <a href="#" class="breadcrumb-link">
+                                                Home
+                                            </a>
+                                        </li>
+                                        <li class="breadcrumb-item">
+                                            <span class="breadcrumb-icon">
+                                                <i class="ti ti-chevrons-right"></i>
+                                            </span>
+                                        </li>
+                                        <li class="breadcrumb-item">
+                                            <span class="breadcrumb-current">Contact Us</span>
+                                        </li>
+                                    </ul>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="overlay-11"></div>
+                    </div>
+                </div>
+            </section>
+            <!-- breadcrumb end -->
+
+            <!-- contact us section start -->
+            <section class="section-py">
+                <div class="container">
+                    <div class="grid grid-cols-12 gap-30p">
+                        <div class="3xl:col-start-3 xxl:col-start-2 3xl:col-end-11 xxl:col-end-12 col-span-12">
+                            <h2 class="heading-2 text-center text-w-neutral-1 mb-48p">
+                                Let’s Get In Touch
+                            </h2>
+
+                            <div class="grid lg:grid-cols-3 sm:grid-cols-2 grid-cols-1 gap-30p mb-60p">
+                                <div class="bg-b-neutral-3 rounded-4 flex-col-c text-center p-32p">
+                                    <span
+                                        class="flex-c size-80p rounded-full border border-primary text-primary icon-40 mb-32p">
+                                        <i class="ti ti-map-pin-filled"></i>
+                                    </span>
+                                    <h5 class="heading-5 text-w-neutral-1 mb-3">
+                                        Location
+                                    </h5>
+                                    <a href="#" class="text-m-regular text-body">
+                                        View on Google Maps
+                                    </a>
+                                </div>
+                                <div class="bg-b-neutral-3 rounded-4 flex-col-c text-center p-32p">
+                                    <span
+                                        class="flex-c size-80p rounded-full border border-primary text-primary icon-40 mb-32p">
+                                        <i class="ti ti-mail-opened-filled"></i>
+                                    </span>
+                                    <h5 class="heading-5 text-w-neutral-1 mb-3">
+                                        Email Address
+                                    </h5>
+                                    <a href="mailto:support@example.com" class="text-m-regular text-body">
+                                        support@example.com
+                                    </a>
+                                </div>
+                                <div class="bg-b-neutral-3 rounded-4 flex-col-c text-center p-32p">
+                                    <span
+                                        class="flex-c size-80p rounded-full border border-primary text-primary icon-40 mb-32p">
+                                        <i class="ti ti-phone-call"></i>
+                                    </span>
+                                    <h5 class="heading-5 text-w-neutral-1 mb-3">
+                                        Contact Us
+                                    </h5>
+                                    <a href="tel:2395550108" class="text-m-regular text-body">
+                                        (239) 555-0108
+                                    </a>
+                                </div>
+                            </div>
+
+                            <div class="bg-b-neutral-3 rounded-4 p-40p">
+                                <form>
+                                    <div class="grid grid-cols-8 gap-30p mb-48p">
+                                        <div class="sm:col-span-4 col-span-8">
+                                            <label for="name" class="label label-md font-normal text-white mb-3">
+                                                Your Name*
+                                            </label>
+                                            <input class="box-input-4" type="text" name="name" id="name"
+                                                placeholder="Name" />
+                                        </div>
+                                        <div class="sm:col-span-4 col-span-8">
+                                            <label for="contactEmail"
+                                                class="label label-md font-normal text-white mb-3">
+                                                Email Address*
+                                            </label>
+                                            <input class="box-input-4" type="text" name="contactEmail" id="contactEmail"
+                                                placeholder="Email" />
+                                        </div>
+                                        <div class="sm:col-span-4 col-span-8">
+                                            <label for="phone" class="label label-md font-normal text-white mb-3">
+                                                Phone Number*
+                                            </label>
+                                            <input class="box-input-4" type="number" name="phone" id="phone"
+                                                placeholder="--- --- ---" />
+                                        </div>
+                                        <div class="sm:col-span-4 col-span-8">
+                                            <label for="subject" class="label label-md font-normal text-white mb-3">
+                                                Subject*
+                                            </label>
+                                            <input class="box-input-4" type="text" name="subject" id="subject"
+                                                placeholder="Name" />
+                                        </div>
+                                        <div class="col-span-8">
+                                            <label for="subject" class="label label-md font-normal text-white mb-3">
+                                                Describe your message*
+                                            </label>
+                                            <textarea class="box-input-4 h-[156px]" name="message" id="message"
+                                                placeholder="Message"></textarea>
+                                        </div>
+                                    </div>
+                                    <button class="btn btn-sm btn-primary rounded-12 w-full">
+                                        Submit Now
+                                    </button>
+                                </form>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </section>
+            <!-- contact us section end -->
+
+        </main>
+        <!-- main end -->
+
+        <!-- footer start -->
+        <include-footer />
+        <!-- footer end -->
+    </div>
+    <!-- app layout end -->
+
+
+</body>
+
+</html>

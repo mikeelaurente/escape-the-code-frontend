@@ -1,0 +1,28 @@
+/* ScrollToTop start */
+.scroll-to-top {
+  z-index: 50;
+  position: fixed;
+  bottom: 20px;
+  right: 20px;
+  background-color: #f29620;
+  color: #030304;
+  width: 40px;
+  height: 48px;
+  font-size: 24px;
+  border-radius: 18px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  cursor: pointer;
+  transform: translateY(100px); /* Initially hidden below the viewport */
+  transition: all 0.7s ease-in-out;
+}
+
+.scroll-to-top:hover {
+  background-color: #45f882;
+}
+
+.scroll-to-top.show {
+  transform: translateY(-0px); /* Bring the element back into view */
+}
+/* ScrollToTop end */

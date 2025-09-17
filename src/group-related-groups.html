@@ -1,0 +1,337 @@
+<!DOCTYPE html>
+<html dir="ltr" lang="en">
+
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="shortcut icon" href="./assets/images/icons/favicon.ico" type="image/x-icon" />
+    <title>GameCo - HTML Tailwind CSS</title>
+</head>
+
+<body>
+
+    <!-- preloader start -->
+    <include-preloader />
+    <!-- preloader end -->
+
+    <!-- scroll to top button start -->
+    <include-scrollToTop />
+    <!-- scroll to top button end -->
+
+    <!-- header start -->
+    <include-navbar />
+    <!-- header end -->
+
+    <!-- sidebar start -->
+    <include-left-right-sidebar />
+    <!-- sidebar end -->
+
+    <!-- app layout start -->
+    <div class="app-layout">
+
+        <!-- main start -->
+        <main>
+
+            <!-- group details section start -->
+            <section class="section-pb pt-30 overflow-visible">
+                <div class="container">
+                    <div class="grid grid-cols-12 gap-x-30p gap-y-10">
+                        <div class="4xl:col-span-9 xxl:col-span-8 col-span-12">
+                            <div>
+
+                                <include-group-header />
+
+                                <!-- groups - related groups tab start -->
+                                <div class="pt-8">
+                                    <div
+                                        class="flex items-center justify-between flex-wrap gap-3 bg-b-neutral-3 rounded-12 px-30p py-20p mb-30p">
+                                        <span class="text-m-medium text-w-neutral-1">
+                                            Memberships
+                                        </span>
+                                        <form class="select-3 shrink-0">
+                                            <select
+                                                class="select !w-[260px] sm:py-3 py-2 px-24p rounded-full !text-base font-medium">
+                                                <option value="popular">Last active</option>
+                                                <option value="new-releases">Recent Joined</option>
+                                                <option value="action">Follow Groups</option>
+                                            </select>
+                                        </form>
+                                    </div>
+
+                                    <div class="grid lg:grid-cols-3 sm:grid-cols-2 grid-cols-1 gap-30p">
+
+                                        <div class="bg-b-neutral-3 rounded-12 group" data-aos="zoom-in">
+                                            <div class="overflow-hidden relative rounded-12">
+                                                <img class="w-full xxl:h-[216px] lg:h-[200px] h-[180px] object-cover group-hover:scale-110 transition-1"
+                                                    src="./assets/images/groups/group8.png" alt="img" />
+                                                <button
+                                                    class="absolute top-3 left-3 badge badge-sm badge-secondary font-poppins">
+                                                    Leave Group
+                                                </button>
+                                            </div>
+                                            <div class="p-24p">
+                                                <div class="flex-col-c text-center pb-16p lg:-mt-15 md:-mt-12 -mt-10">
+                                                    <img class="avatar size-15 border-2 border-secondary mb-3"
+                                                        src="./assets/images/groups/groupLogo8.png" alt="group" />
+                                                    <a href="./group-home.html"
+                                                        class="heading-4 text-w-neutral-1 line-clamp-1 link-1 mb-1 text-split-left">
+                                                        Mountain Riders
+                                                    </a>
+                                                    <p class="text-sm text-w-neutral-3">
+                                                        3 months ago
+                                                    </p>
+                                                </div>
+                                                <div
+                                                    class="flex-y flex-wrap justify-between gap-24p pt-16p border-t border-shap">
+                                                    <div class="flex-y gap-1">
+                                                        <i class="ti ti-world icon-24 text-w-neutral-1"></i>
+                                                        <span class="text-sm text-w-neutral-1">
+                                                            Public
+                                                        </span>
+                                                    </div>
+                                                    <div
+                                                        class="px-3 py-2 inline-flex items-center gap-1 badge-bage badge-neutral-2 rounded-full">
+                                                        <i class="ti ti-users icon-16 text-w-neutral-4"></i>
+                                                        <span class="text-sm text-w-neutral-1">
+                                                            07
+                                                        </span>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </div>
+
+                                        <div class="bg-b-neutral-3 rounded-12 group" data-aos="zoom-in">
+                                            <div class="overflow-hidden relative rounded-12">
+                                                <img class="w-full xxl:h-[216px] lg:h-[200px] h-[180px] object-cover group-hover:scale-110 transition-1"
+                                                    src="./assets/images/groups/group5.png" alt="img" />
+                                                <button
+                                                    class="absolute top-3 left-3 badge badge-sm badge-secondary font-poppins">
+                                                    Leave Group
+                                                </button>
+                                            </div>
+                                            <div class="p-24p">
+                                                <div class="flex-col-c text-center pb-16p lg:-mt-15 md:-mt-12 -mt-10">
+                                                    <img class="avatar size-15 border-2 border-secondary mb-3"
+                                                        src="./assets/images/groups/groupLogo5.png" alt="group" />
+                                                    <a href="./group-home.html"
+                                                        class="heading-4 text-w-neutral-1 line-clamp-1 link-1 mb-1 text-split-left">
+                                                        Technology
+                                                    </a>
+                                                    <p class="text-sm text-w-neutral-3">
+                                                        3 months ago
+                                                    </p>
+                                                </div>
+                                                <div
+                                                    class="flex-y flex-wrap justify-between gap-24p pt-16p border-t border-shap">
+                                                    <div class="flex-y gap-1">
+                                                        <i class="ti ti-world icon-24 text-w-neutral-1"></i>
+                                                        <span class="text-sm text-w-neutral-1">
+                                                            Public
+                                                        </span>
+                                                    </div>
+                                                    <div
+                                                        class="px-3 py-2 inline-flex items-center gap-1 badge-bage badge-neutral-2 rounded-full">
+                                                        <i class="ti ti-users icon-16 text-w-neutral-4"></i>
+                                                        <span class="text-sm text-w-neutral-1">
+                                                            07
+                                                        </span>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </div>
+
+                                        <div class="bg-b-neutral-3 rounded-12 group" data-aos="zoom-in">
+                                            <div class="overflow-hidden relative rounded-12">
+                                                <img class="w-full xxl:h-[216px] lg:h-[200px] h-[180px] object-cover group-hover:scale-110 transition-1"
+                                                    src="./assets/images/groups/group6.png" alt="img" />
+                                                <button
+                                                    class="absolute top-3 left-3 badge badge-sm badge-secondary font-poppins">
+                                                    Leave Group
+                                                </button>
+                                            </div>
+                                            <div class="p-24p">
+                                                <div class="flex-col-c text-center pb-16p lg:-mt-15 md:-mt-12 -mt-10">
+                                                    <img class="avatar size-15 border-2 border-secondary mb-3"
+                                                        src="./assets/images/groups/groupLogo6.png" alt="group" />
+                                                    <a href="./group-home.html"
+                                                        class="heading-4 text-w-neutral-1 line-clamp-1 link-1 mb-1 text-split-left">
+                                                        Drawing & Art
+                                                    </a>
+                                                    <p class="text-sm text-w-neutral-3">
+                                                        3 months ago
+                                                    </p>
+                                                </div>
+                                                <div
+                                                    class="flex-y flex-wrap justify-between gap-24p pt-16p border-t border-shap">
+                                                    <div class="flex-y gap-1">
+                                                        <i class="ti ti-world icon-24 text-w-neutral-1"></i>
+                                                        <span class="text-sm text-w-neutral-1">
+                                                            Public
+                                                        </span>
+                                                    </div>
+                                                    <div
+                                                        class="px-3 py-2 inline-flex items-center gap-1 badge-bage badge-neutral-2 rounded-full">
+                                                        <i class="ti ti-users icon-16 text-w-neutral-4"></i>
+                                                        <span class="text-sm text-w-neutral-1">
+                                                            07
+                                                        </span>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </div>
+
+                                        <div class="bg-b-neutral-3 rounded-12 group" data-aos="zoom-in">
+                                            <div class="overflow-hidden relative rounded-12">
+                                                <img class="w-full xxl:h-[216px] lg:h-[200px] h-[180px] object-cover group-hover:scale-110 transition-1"
+                                                    src="./assets/images/groups/group9.png" alt="img" />
+                                                <button
+                                                    class="absolute top-3 left-3 badge badge-sm badge-secondary font-poppins">
+                                                    Leave Group
+                                                </button>
+                                            </div>
+                                            <div class="p-24p">
+                                                <div class="flex-col-c text-center pb-16p lg:-mt-15 md:-mt-12 -mt-10">
+                                                    <img class="avatar size-15 border-2 border-secondary mb-3"
+                                                        src="./assets/images/groups/groupLogo9.png" alt="group" />
+                                                    <a href="./group-home.html"
+                                                        class="heading-4 text-w-neutral-1 line-clamp-1 link-1 mb-1 text-split-left">
+                                                        Business
+                                                    </a>
+                                                    <p class="text-sm text-w-neutral-3">
+                                                        3 months ago
+                                                    </p>
+                                                </div>
+                                                <div
+                                                    class="flex-y flex-wrap justify-between gap-24p pt-16p border-t border-shap">
+                                                    <div class="flex-y gap-1">
+                                                        <i class="ti ti-world icon-24 text-w-neutral-1"></i>
+                                                        <span class="text-sm text-w-neutral-1">
+                                                            Public
+                                                        </span>
+                                                    </div>
+                                                    <div
+                                                        class="px-3 py-2 inline-flex items-center gap-1 badge-bage badge-neutral-2 rounded-full">
+                                                        <i class="ti ti-users icon-16 text-w-neutral-4"></i>
+                                                        <span class="text-sm text-w-neutral-1">
+                                                            07
+                                                        </span>
+                                                    </div>
+                                                </div>
+                                            </div>
+
+
+                                        </div>
+
+                                        <div class="bg-b-neutral-3 rounded-12 group" data-aos="zoom-in">
+                                            <div class="overflow-hidden relative rounded-12">
+                                                <img class="w-full xxl:h-[216px] lg:h-[200px] h-[180px] object-cover group-hover:scale-110 transition-1"
+                                                    src="./assets/images/groups/group10.png" alt="img" />
+                                                <button
+                                                    class="absolute top-3 left-3 badge badge-sm badge-secondary font-poppins">
+                                                    Leave Group
+                                                </button>
+                                            </div>
+                                            <div class="p-24p">
+                                                <div class="flex-col-c text-center pb-16p lg:-mt-15 md:-mt-12 -mt-10">
+                                                    <img class="avatar size-15 border-2 border-secondary mb-3"
+                                                        src="./assets/images/groups/groupLogo10.png" alt="group" />
+                                                    <a href="./group-home.html"
+                                                        class="heading-4 text-w-neutral-1 line-clamp-1 link-1 mb-1 text-split-left">
+                                                        Music Enthusiasts
+                                                    </a>
+                                                    <p class="text-sm text-w-neutral-3">
+                                                        5 months ago
+                                                    </p>
+                                                </div>
+                                                <div
+                                                    class="flex-y flex-wrap justify-between gap-24p pt-16p border-t border-shap">
+                                                    <div class="flex-y gap-1">
+                                                        <i class="ti ti-world icon-24 text-w-neutral-1"></i>
+                                                        <span class="text-sm text-w-neutral-1">
+                                                            Public
+                                                        </span>
+                                                    </div>
+                                                    <div
+                                                        class="px-3 py-2 inline-flex items-center gap-1 badge-bage badge-neutral-2 rounded-full">
+                                                        <i class="ti ti-users icon-16 text-w-neutral-4"></i>
+                                                        <span class="text-sm text-w-neutral-1">
+                                                            85
+                                                        </span>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </div>
+
+                                        <div class="bg-b-neutral-3 rounded-12 group" data-aos="zoom-in">
+                                            <div class="overflow-hidden relative rounded-12">
+                                                <img class="w-full xxl:h-[216px] lg:h-[200px] h-[180px] object-cover group-hover:scale-110 transition-1"
+                                                    src="./assets/images/groups/group12.png" alt="img" />
+                                                <button
+                                                    class="absolute top-3 left-3 badge badge-sm badge-secondary font-poppins">
+                                                    Leave Group
+                                                </button>
+                                            </div>
+                                            <div class="p-24p">
+                                                <div class="flex-col-c text-center pb-16p lg:-mt-15 md:-mt-12 -mt-10">
+                                                    <img class="avatar size-15 border-2 border-secondary mb-3"
+                                                        src="./assets/images/groups/groupLogo12.png" alt="group" />
+                                                    <a href="./group-home.html"
+                                                        class="heading-4 text-w-neutral-1 line-clamp-1 link-1 mb-1 text-split-left">
+                                                        Adventure Seekers
+                                                    </a>
+                                                    <p class="text-sm text-w-neutral-3">
+                                                        2 months ago
+                                                    </p>
+                                                </div>
+                                                <div
+                                                    class="flex-y flex-wrap justify-between gap-24p pt-16p border-t border-shap">
+                                                    <div class="flex-y gap-1">
+                                                        <i class="ti ti-world icon-24 text-w-neutral-1"></i>
+                                                        <span class="text-sm text-w-neutral-1">
+                                                            Public
+                                                        </span>
+                                                    </div>
+                                                    <div
+                                                        class="px-3 py-2 inline-flex items-center gap-1 badge-bage badge-neutral-2 rounded-full">
+                                                        <i class="ti ti-users icon-16 text-w-neutral-4"></i>
+                                                        <span class="text-sm text-w-neutral-1">
+                                                            76
+                                                        </span>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+
+                                    <div class="flex-c mt-48p">
+                                        <a href="#" class="btn btn-xl py-3 btn-primary rounded-12">
+                                            Load More...
+                                        </a>
+                                    </div>
+                                </div>
+                                <!-- groups - related groups tab end -->
+                            </div>
+                        </div>
+                        <div class="4xl:col-span-3 xxl:col-span-4 col-span-12 relative">
+                            <div class="xxl:sticky xxl:top-30">
+                                <include-right-aside-one />
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </section>
+            <!-- group details section end -->
+
+        </main>
+        <!-- main end -->
+
+        <!-- footer start -->
+        <include-footer />
+        <!-- footer end -->
+    </div>
+    <!-- app layout end -->
+
+
+</body>
+
+</html>

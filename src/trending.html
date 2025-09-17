@@ -1,0 +1,358 @@
+<!DOCTYPE html>
+<html dir="ltr" lang="en">
+
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="shortcut icon" href="./assets/images/icons/favicon.ico" type="image/x-icon" />
+    <title>GameCo - HTML Tailwind CSS</title>
+</head>
+
+<body>
+
+    <!-- preloader start -->
+    <include-preloader />
+    <!-- preloader end -->
+
+    <!-- scroll to top button start -->
+    <include-scrollToTop />
+    <!-- scroll to top button end -->
+
+    <!-- header start -->
+    <include-navbar />
+    <!-- header end -->
+
+    <!-- sidebar start -->
+    <include-left-right-sidebar />
+    <!-- sidebar end -->
+
+    <!-- app layout start -->
+    <div class="app-layout">
+
+        <!-- main start -->
+        <main>
+
+            <!-- breadcrumb start -->
+            <section class="pt-30p">
+                <div class="section-pt">
+                    <div
+                        class="relative bg-[url('../images/photos/breadcrumbImg.png')] bg-cover bg-no-repeat rounded-24 overflow-hidden">
+                        <div class="container">
+                            <div class="grid grid-cols-12 gap-30p relative xl:py-[130px] md:py-30 sm:py-25 py-20 z-[2]">
+                                <div class="lg:col-start-2 lg:col-end-12 col-span-12">
+                                    <h2 class="heading-2 text-w-neutral-1 mb-3">
+                                        Trending
+                                    </h2>
+                                    <ul class="breadcrumb">
+                                        <li class="breadcrumb-item">
+                                            <a href="#" class="breadcrumb-link">
+                                                Home
+                                            </a>
+                                        </li>
+                                        <li class="breadcrumb-item">
+                                            <span class="breadcrumb-icon">
+                                                <i class="ti ti-chevrons-right"></i>
+                                            </span>
+                                        </li>
+                                        <li class="breadcrumb-item">
+                                            <span class="breadcrumb-current">Trending</span>
+                                        </li>
+                                    </ul>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="overlay-11"></div>
+                    </div>
+                </div>
+            </section>
+            <!-- breadcrumb end -->
+
+            <!-- trending section start -->
+            <section class="section-pb pt-60p">
+                <div class="container">
+                    <div class="grid 4xl:grid-cols-2 xxl:grid-cols-3 md:grid-cols-2 grid-cols-1 gap-24p">
+
+                        <div class="w-full bg-b-neutral-3 p-24p rounded-24 grid 4xl:grid-cols-2 grid-cols-1 items-center gap-24p group"
+                            data-aos="zoom-in">
+                            <div class="overflow-hidden rounded-24">
+                                <img class="w-full xxl:h-[304px] xl:h-[280px] md:h-[260px] h-[240px] object-cover group-hover:scale-110 transition-1"
+                                    src="./assets/images/games/game1.png" alt="img" />
+                            </div>
+                            <div>
+                                <div class="flex-y flex-wrap gap-2">
+                                    <span class="badge badge-neutral-2 badge-smm">Strategy</span>
+                                    <span class="badge badge-danger badge-smm">Live</span>
+                                    <span class="badge badge-neutral-2 badge-smm">Shooter</span>
+                                </div>
+                                <a href="./live-stream.html"
+                                    class="heading-3 text-w-neutral-1 4xl:line-clamp-2 line-clamp-1 link-1 my-16p text-split-left">Neo
+                                    Frontiers: Build Rule Prosper</a>
+                                <div class="flex-y flex-wrap *:py-2 *:px-3 mb-20p">
+                                    <div class="flex-y gap-2.5">
+                                        <span class="badge badge-secondary size-3 badge-circle"></span>
+                                        <p class="text-base text-neutral-100">
+                                            <span class="span">4.7k</span> Viewers
+                                        </p>
+                                    </div>
+                                    <div class="flex-y gap-2.5">
+                                        <span class="badge badge-primary size-3 badge-circle"></span>
+                                        <p class="text-base text-neutral-100">
+                                            <span class="span">4 days ago</span>
+                                        </p>
+                                    </div>
+                                </div>
+                                <div class="flex-y flex-wrap gap-3">
+                                    <img class="size-60p rounded-full shrink-0" src="./assets/images/users/user4.png"
+                                        alt="user" />
+                                    <div>
+                                        <a href="./profile.html" class="text-l-medium link-1 text-w-neutral-1 mb-1">
+                                            David Smith
+                                            <i class="ti ti-circle-check-filled text-secondary icon-24"></i>
+                                        </a>
+                                        <span class="text-s-medium text-w-neutral-4">Leader</span>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="w-full bg-b-neutral-3 p-24p rounded-24 grid 4xl:grid-cols-2 grid-cols-1 items-center gap-24p group"
+                            data-aos="zoom-in">
+                            <div class="overflow-hidden rounded-24">
+                                <img class="w-full xxl:h-[304px] xl:h-[280px] md:h-[260px] h-[240px] object-cover group-hover:scale-110 transition-1"
+                                    src="./assets/images/games/game2.png" alt="img" />
+                            </div>
+                            <div>
+                                <div class="flex-y flex-wrap gap-2">
+                                    <span class="badge badge-neutral-2 badge-smm">Strategy</span>
+                                    <span class="badge badge-danger badge-smm">Live</span>
+                                    <span class="badge badge-neutral-2 badge-smm">Shooter</span>
+                                </div>
+                                <a href="./live-stream.html"
+                                    class="heading-3 text-w-neutral-1 4xl:line-clamp-2 line-clamp-1 link-1 my-16p text-split-left">Metropolis
+                                    Tycoon: Urban Empire</a>
+                                <div class="flex-y flex-wrap *:py-2 *:px-3 mb-20p">
+                                    <div class="flex-y gap-2.5">
+                                        <span class="badge badge-secondary size-3 badge-circle"></span>
+                                        <p class="text-base text-neutral-100">
+                                            <span class="span">2.5k</span> Viewers
+                                        </p>
+                                    </div>
+                                    <div class="flex-y gap-2.5">
+                                        <span class="badge badge-primary size-3 badge-circle"></span>
+                                        <p class="text-base text-neutral-100">
+                                            <span class="span">2 days ago</span>
+                                        </p>
+                                    </div>
+                                </div>
+                                <div class="flex-y flex-wrap gap-3">
+                                    <img class="size-60p rounded-full shrink-0" src="./assets/images/users/user2.png"
+                                        alt="user" />
+                                    <div>
+                                        <a href="./profile.html" class="text-l-medium link-1 text-w-neutral-1 mb-1">
+                                            Wlieeam Son
+                                            <i class="ti ti-circle-check-filled text-secondary icon-24"></i>
+                                        </a>
+                                        <span class="text-s-medium text-w-neutral-4">Developer</span>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="w-full bg-b-neutral-3 p-24p rounded-24 grid 4xl:grid-cols-2 grid-cols-1 items-center gap-24p group"
+                            data-aos="zoom-in">
+                            <div class="overflow-hidden rounded-24">
+                                <img class="w-full xxl:h-[304px] xl:h-[280px] md:h-[260px] h-[240px] object-cover group-hover:scale-110 transition-1"
+                                    src="./assets/images/games/game3.png" alt="img" />
+                            </div>
+                            <div>
+                                <div class="flex-y flex-wrap gap-2">
+                                    <span class="badge badge-neutral-2 badge-smm">Adventure</span>
+                                    <span class="badge badge-danger badge-smm">New</span>
+                                    <span class="badge badge-neutral-2 badge-smm">RPG</span>
+                                </div>
+                                <a href="./live-stream.html"
+                                    class="heading-3 text-w-neutral-1 4xl:line-clamp-2 line-clamp-1 link-1 my-16p text-split-left">Chronos
+                                    Quest: Time's Edge</a>
+                                <div class="flex-y flex-wrap *:py-2 *:px-3 mb-20p">
+                                    <div class="flex-y gap-2.5">
+                                        <span class="badge badge-secondary size-3 badge-circle"></span>
+                                        <p class="text-base text-neutral-100">
+                                            <span class="span">3.9k</span> Viewers
+                                        </p>
+                                    </div>
+                                    <div class="flex-y gap-2.5">
+                                        <span class="badge badge-primary size-3 badge-circle"></span>
+                                        <p class="text-base text-neutral-100">
+                                            <span class="span">1 day ago</span>
+                                        </p>
+                                    </div>
+                                </div>
+                                <div class="flex-y flex-wrap gap-3">
+                                    <img class="size-60p rounded-full shrink-0" src="./assets/images/users/user3.png"
+                                        alt="user" />
+                                    <div>
+                                        <a href="./profile.html" class="text-l-medium link-1 text-w-neutral-1 mb-1">
+                                            Clara Benson
+                                            <i class="ti ti-circle-check-filled text-secondary icon-24"></i>
+                                        </a>
+                                        <span class="text-s-medium text-w-neutral-4">Explorer</span>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="w-full bg-b-neutral-3 p-24p rounded-24 grid 4xl:grid-cols-2 grid-cols-1 items-center gap-24p group"
+                            data-aos="zoom-in">
+                            <div class="overflow-hidden rounded-24">
+                                <img class="w-full xxl:h-[304px] xl:h-[280px] md:h-[260px] h-[240px] object-cover group-hover:scale-110 transition-1"
+                                    src="./assets/images/games/game4.png" alt="img" />
+                            </div>
+                            <div>
+                                <div class="flex-y flex-wrap gap-2">
+                                    <span class="badge badge-neutral-2 badge-smm">Simulation</span>
+                                    <span class="badge badge-danger badge-smm">Trending</span>
+                                    <span class="badge badge-neutral-2 badge-smm">RPG</span>
+                                </div>
+                                <a href="./live-stream.html"
+                                    class="heading-3 text-w-neutral-1 4xl:line-clamp-2 line-clamp-1 link-1 my-16p text-split-left">Galactic
+                                    Sim: Space Odyssey</a>
+                                <div class="flex-y flex-wrap *:py-2 *:px-3 mb-20p">
+                                    <div class="flex-y gap-2.5">
+                                        <span class="badge badge-secondary size-3 badge-circle"></span>
+                                        <p class="text-base text-neutral-100">
+                                            <span class="span">4.5k</span> Viewers
+                                        </p>
+                                    </div>
+                                    <div class="flex-y gap-2.5">
+                                        <span class="badge badge-primary size-3 badge-circle"></span>
+                                        <p class="text-base text-neutral-100">
+                                            <span class="span">3 days ago</span>
+                                        </p>
+                                    </div>
+                                </div>
+                                <div class="flex-y flex-wrap gap-3">
+                                    <img class="size-60p rounded-full shrink-0" src="./assets/images/users/user5.png"
+                                        alt="user" />
+                                    <div>
+                                        <a href="./profile.html" class="text-l-medium link-1 text-w-neutral-1 mb-1">
+                                            Elena Brooks
+                                            <i class="ti ti-circle-check-filled text-secondary icon-24"></i>
+                                        </a>
+                                        <span class="text-s-medium text-w-neutral-4">Commander</span>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="w-full bg-b-neutral-3 p-24p rounded-24 grid 4xl:grid-cols-2 grid-cols-1 items-center gap-24p group"
+                            data-aos="zoom-in">
+                            <div class="overflow-hidden rounded-24">
+                                <img class="w-full xxl:h-[304px] xl:h-[280px] md:h-[260px] h-[240px] object-cover group-hover:scale-110 transition-1"
+                                    src="./assets/images/games/game5.png" alt="Enchanted Echoes: Uncover Fate" />
+                            </div>
+                            <div>
+                                <div class="flex-y flex-wrap gap-2">
+                                    <span class="badge badge-neutral-2 badge-smm">Strategy</span>
+                                    <span class="badge badge-danger badge-smm">Live</span>
+                                    <span class="badge badge-neutral-2 badge-smm">Shooter</span>
+                                </div>
+                                <a href="./live-stream.html"
+                                    class="heading-3 text-w-neutral-1 4xl:line-clamp-2 line-clamp-1 link-1 my-16p text-split-left">
+                                    Enchanted Echoes: Uncover Fate
+                                </a>
+                                <div class="flex-y flex-wrap *:py-2 *:px-3 mb-20p">
+                                    <div class="flex-y gap-2.5">
+                                        <span class="badge badge-secondary size-3 badge-circle"></span>
+                                        <p class="text-base text-neutral-100">
+                                            <span class="span">4.7k</span> Viewers
+                                        </p>
+                                    </div>
+                                    <div class="flex-y gap-2.5">
+                                        <span class="badge badge-primary size-3 badge-circle"></span>
+                                        <p class="text-base text-neutral-100">
+                                            <span class="span">4 days ago</span>
+                                        </p>
+                                    </div>
+                                </div>
+                                <div class="flex-y flex-wrap gap-3">
+                                    <img class="size-60p rounded-full shrink-0" src="./assets/images/users/user5.png"
+                                        alt="Malan Willam" />
+                                    <div>
+                                        <a href="./profile.html" class="text-l-medium link-1 text-w-neutral-1 mb-1">
+                                            Malan Willam
+                                            <i class="ti ti-circle-check-filled text-secondary icon-24"></i>
+                                        </a>
+                                        <span class="text-s-medium text-w-neutral-4">Developer</span>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="w-full bg-b-neutral-3 p-24p rounded-24 grid 4xl:grid-cols-2 grid-cols-1 items-center gap-24p group"
+                            data-aos="zoom-in">
+                            <div class="overflow-hidden rounded-24">
+                                <img class="w-full xxl:h-[304px] xl:h-[280px] md:h-[260px] h-[240px] object-cover group-hover:scale-110 transition-1"
+                                    src="./assets/images/games/game6.png" alt="Wlieeam son" />
+                            </div>
+                            <div>
+                                <div class="flex-y flex-wrap gap-2">
+                                    <span class="badge badge-neutral-2 badge-smm">Strategy</span>
+                                    <span class="badge badge-danger badge-smm">Live</span>
+                                    <span class="badge badge-neutral-2 badge-smm">Shooter</span>
+                                </div>
+                                <a href="./live-stream.html"
+                                    class="heading-3 text-w-neutral-1 4xl:line-clamp-2 line-clamp-1 link-1 my-16p text-split-left">
+                                    Chronos Quest: Time's Edge
+                                </a>
+                                <div class="flex-y flex-wrap *:py-2 *:px-3 mb-20p">
+                                    <div class="flex-y gap-2.5">
+                                        <span class="badge badge-secondary size-3 badge-circle"></span>
+                                        <p class="text-base text-neutral-100">
+                                            <span class="span">2.5k</span> Viewers
+                                        </p>
+                                    </div>
+                                    <div class="flex-y gap-2.5">
+                                        <span class="badge badge-primary size-3 badge-circle"></span>
+                                        <p class="text-base text-neutral-100">
+                                            <span class="span">2 days ago</span>
+                                        </p>
+                                    </div>
+                                </div>
+                                <div class="flex-y flex-wrap gap-3">
+                                    <img class="size-60p rounded-full shrink-0" src="./assets/images/users/user6.png"
+                                        alt="Wlieeam Son" />
+                                    <div>
+                                        <a href="./profile.html" class="text-l-medium link-1 text-w-neutral-1 mb-1">
+                                            Wlieeam Son
+                                            <i class="ti ti-circle-check-filled text-secondary icon-24"></i>
+                                        </a>
+                                        <span class="text-s-medium text-w-neutral-4">Developer</span>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+
+                    </div>
+                    <div class="flex-c mt-48p">
+                        <a href="#"
+                            class="btn btn-xl py-3 btn-neutral-3 bg-b-neutral-3 text-w-neutral-1 rounded-12 outline-none">
+                            Load More
+                        </a>
+                    </div>
+                </div>
+            </section>
+            <!-- trending section end -->
+
+        </main>
+        <!-- main end -->
+
+        <!-- footer start -->
+        <include-footer />
+        <!-- footer end -->
+    </div>
+    <!-- app layout end -->
+
+
+</body>
+
+</html>
