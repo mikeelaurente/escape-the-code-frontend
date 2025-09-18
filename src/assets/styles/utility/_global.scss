@@ -15,7 +15,7 @@
   }
 
   .app-layout {
-    @apply min-h-screen lg:w-[calc(100%-268px)] lg:mx-auto;
+    @apply min-h-screen lg:w-[calc(100%-140px)] lg:mx-auto lg:ml-[130px];
   }
 
   .app-main {
@@ -41,7 +41,7 @@
   .black-btn::before,
   .btn-primary::before,
   .outline-btn::before {
-    content: "";
+    content: '';
     width: 0;
     height: 100vh;
     position: absolute;
@@ -210,7 +210,7 @@
 
   /* Bracket AFTER - Base styles */
   .bracket::after {
-    content: "";
+    content: '';
     position: absolute;
     top: 50%;
     transform: translateY(-50%);
@@ -232,7 +232,7 @@
   /* Bracket BEFORE - Only for screens > 1400px */
   @media screen and (min-width: 1400px) {
     .bracket::before {
-      content: "";
+      content: '';
       position: absolute;
       top: 50%;
       transform: translateY(-50%);

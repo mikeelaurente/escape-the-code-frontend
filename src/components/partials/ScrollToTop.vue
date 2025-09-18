@@ -1,0 +1,5 @@
+<template>
+  <button class="scroll-to-top show" id="scrollToTop">
+    <i class="ti ti-arrow-up"></i>
+  </button>
+</template>

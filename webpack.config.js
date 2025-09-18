@@ -5,6 +5,7 @@ const MiniCssExtractPlugin = require('mini-css-extract-plugin');
 const fs = require('fs');
 const HtmlWebpackPlugin = require('html-webpack-plugin');
 const HtmlWebpackSimpleIncludePlugin = require('html-webpack-simple-include-plugin');
+const { VueLoaderPlugin } = require('vue-loader');
 
 // List of HTML Pages files
 const htmlFiles = [
@@ -116,7 +117,7 @@ const partialIncludePlugin = new HtmlWebpackSimpleIncludePlugin(
 
 module.exports = {
   entry: {
-    main: './src/assets/js/app.js',
+    main: './src/assets/js/script.js',
   },
   mode: 'development',
   devServer: {
@@ -127,6 +128,10 @@ module.exports = {
 
   module: {
     rules: [
+      {
+        test: /\.vue$/,
+        loader: 'vue-loader',
+      },
       {
         test: /\.(scss)$/,
         use: [
@@ -167,9 +172,13 @@ module.exports = {
     ],
   },
   resolve: {
-    extensions: ['.tsx', '.ts', '.js', '.jsx'],
+    extensions: ['.tsx', '.ts', '.js', '.jsx', '.vue'],
+    alias: {
+      '@': path.resolve(__dirname, 'src'), // Optional: setup alias for easier imports
+    },
   },
   plugins: [
+    new VueLoaderPlugin(),
     new MiniCssExtractPlugin({
       filename: 'assets/styles/app.css',
     }),
