@@ -50,7 +50,7 @@
           <div class="overflow-hidden rounded-24">
             <img
               class="w-full xxl:h-[304px] xl:h-[280px] md:h-[260px] h-[240px] object-cover group-hover:scale-110 transition-1"
-              src="../../assets/images/games/game1.png"
+              src="../assets/images/games/game1.png"
               alt="img"
             />
           </div>

@@ -4,14 +4,14 @@ const apiClient = axios.create({
   baseURL: 'http://localhost:3000/api', // Your base URL
   headers: {
     'Content-type': 'application/json',
-    Authorization: 'Bearer ' + localStorage.getItem('accessToken') ?? '',
   },
 });
 
 apiClient.interceptors.request.use(
   (config) => {
     // Success callback: Modify the request configuration
-    const token = localStorage.getItem('token'); // Retrieve the token from storage (e.g., localStorage)
+    const token = localStorage.getItem('accessToken'); // Retrieve the token from storage (e.g., localStorage)
+    console.log('token retrieved', token);
     if (token) {
       config.headers['Authorization'] = `Bearer ${token}`; // Add the bearer token to the Authorization header
     }

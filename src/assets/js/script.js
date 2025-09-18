@@ -185,17 +185,20 @@ document.getElementById('videoPoster')?.addEventListener('click', function () {
     }
   }
 });
+import './ace.config.js';
+import 'ace-builds/css/ace.css';
+import 'flowbite';
 
 import { createApp } from 'vue';
 import App from '../../App.vue';
 import { createWebHashHistory, createRouter } from 'vue-router';
-import Home from '../../components/pages/Home.vue';
-import About from '../../components/pages/About.vue';
-import Story from '../../components/pages/Story.vue';
-import Chapter from '../../components/pages/Chapter.vue';
-import Section from '../../components/pages/Section.vue';
-import Login from '../../components/pages/Login.vue';
-import Register from '../../components/pages/Register.vue';
+import Home from '../../pages/Home.vue';
+import About from '../../pages/About.vue';
+import Story from '../../pages/Story.vue';
+import Chapter from '../../pages/Chapter.vue';
+import Section from '../../pages/Section.vue';
+import Login from '../../pages/Login.vue';
+import Register from '../../pages/Register.vue';
 import { apiClient } from './http.js';
 import { createPinia } from 'pinia';
 import { useAuthStore } from '../../stores/auth'; // Import your Pinia store

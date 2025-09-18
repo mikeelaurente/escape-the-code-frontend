@@ -2,6 +2,7 @@
   <div>
     <!-- left sidebar start-->
     <div
+      v-if="user && user.id"
       class="fixed top-0 left-0 lg:translate-x-0 -translate-x-full h-screen z-30 bg-b-neutral-4 pt-30 px-[27px] transition-1"
     >
       <div class="max-h-screen overflow-y-auto scrollbar-0">
@@ -197,3 +198,18 @@
     <!-- left sidebar end -->
   </div>
 </template>
+
+<script>
+import { mapStores } from 'pinia';
+import { useAuthStore } from '../../stores/auth';
+
+export default {
+  computed: {
+    ...mapStores(useAuthStore),
+    user() {
+      console.log('user access', this.authStore.user);
+      return this.authStore.user;
+    },
+  },
+};
+</script>

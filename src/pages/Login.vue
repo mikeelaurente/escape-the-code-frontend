@@ -60,7 +60,18 @@
 <script>
 import Swal from 'sweetalert2';
 
-import { useAuthStore } from '../../stores/auth';
+import { useAuthStore } from '../stores/auth';
+const Toast = Swal.mixin({
+  toast: true,
+  position: 'top-end',
+  showConfirmButton: false,
+  timer: 3000,
+  timerProgressBar: true,
+  didOpen: (toast) => {
+    toast.onmouseenter = Swal.stopTimer;
+    toast.onmouseleave = Swal.resumeTimer;
+  },
+});
 
 export default {
   data() {
@@ -86,21 +97,17 @@ export default {
           icon: 'error',
           customClass: {
             popup: 'bg-gray-800 text-white shadow-lg rounded-lg',
-            confirmButton:
-              'bg-[#f29620] outline-none hover:outline-none focus:outline-none hover:bg-[#45f882] hover:text-black text-white font-bold py-2 px-4 rounded',
+
+            confirmButton: 'btn btn-primary',
+            cancelButton: 'btn btn-c-dark-outline',
           },
         });
       } else if (data.status === 'ok') {
-        Swal.fire({
-          title: data.message,
+        Toast.fire({
           icon: 'success',
-          customClass: {
-            popup: 'bg-gray-800 text-white shadow-lg rounded-lg',
-            confirmButton:
-              'bg-[#f29620] outline-none hover:outline-none focus:outline-none hover:bg-[#45f882] hover:text-black text-white font-bold py-2 px-4 rounded',
-          },
+          title: 'Signed in successfully',
         });
-        store.login(data.data.accessToken);
+        store.login(data.data);
         this.$router.push('/');
       }
     },

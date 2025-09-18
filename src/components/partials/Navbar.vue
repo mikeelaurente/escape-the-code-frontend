@@ -16,105 +16,14 @@
                   alt="brand"
                 />
               </a>
-              <form
-                class="hidden lg:flex items-center sm:gap-3 gap-2 min-w-[300px] max-w-[670px] w-full px-20p py-16p bg-b-neutral-4 rounded-full"
-              >
-                <span class="flex-c icon-20 text-white">
-                  <i class="ti ti-search"></i>
-                </span>
-                <input
-                  autocomplete="off"
-                  class="bg-transparent w-full"
-                  type="text"
-                  name="search"
-                  id="search"
-                  placeholder="Search..."
-                />
-              </form>
             </div>
             <div
-              class="3xl:col-span-6 xl:col-span-7 flex items-center xl:justify-between justify-end w-full"
+              class="3xl:col-span-6 xl:col-span-7 flex items-center xl:justify-end justify-end w-full"
             >
-              <a
-                href="#"
-                class="hidden xl:inline-flex items-center gap-3 pl-1 py-1 pr-6 rounded-full bg-[rgba(242,150,32,0.10)] text-w-neutral-1 text-base"
+              <div
+                class="flex items-end lg:gap-x-32p gap-x-2"
+                v-if="user && user.id"
               >
-                <span
-                  class="size-48p flex-c text-b-neutral-4 bg-primary rounded-full icon-32"
-                >
-                  <svg
-                    xmlns="http://www.w3.org/2000/svg"
-                    width="32"
-                    height="32"
-                    viewBox="0 0 24 24"
-                    fill="none"
-                    stroke="currentColor"
-                    stroke-width="1.5"
-                    stroke-linecap="round"
-                    stroke-linejoin="round"
-                    class="icon icon-tabler icons-tabler-outline icon-tabler-speakerphone"
-                  >
-                    <path stroke="none" d="M0 0h24v24H0z" fill="none" />
-                    <path d="M18 8a3 3 0 0 1 0 6" />
-                    <path d="M10 8v11a1 1 0 0 1 -1 1h-1a1 1 0 0 1 -1 -1v-5" />
-                    <path
-                      d="M12 8h0l4.524 -3.77a.9 .9 0 0 1 1.476 .692v12.156a.9 .9 0 0 1 -1.476 .692l-4.524 -3.77h-8a1 1 0 0 1 -1 -1v-4a1 1 0 0 1 1 -1h8"
-                    />
-                  </svg>
-                </span>
-                News For You
-              </a>
-              <div class="flex items-center lg:gap-x-32p gap-x-2">
-                <div class="hidden lg:flex items-center gap-1 shrink-0">
-                  <a
-                    href="../../shopping-cart.html"
-                    class="btn-c btn-c-lg btn-c-dark-outline"
-                  >
-                    <svg
-                      xmlns="http://www.w3.org/2000/svg"
-                      width="24"
-                      height="24"
-                      viewBox="0 0 24 24"
-                      fill="none"
-                      stroke="currentColor"
-                      stroke-width="1.5"
-                      stroke-linecap="round"
-                      stroke-linejoin="round"
-                      class="icon icon-tabler icons-tabler-outline icon-tabler-shopping-cart"
-                    >
-                      <path stroke="none" d="M0 0h24v24H0z" fill="none" />
-                      <path d="M6 19m-2 0a2 2 0 1 0 4 0a2 2 0 1 0 -4 0" />
-                      <path d="M17 19m-2 0a2 2 0 1 0 4 0a2 2 0 1 0 -4 0" />
-                      <path d="M17 17h-11v-14h-2" />
-                      <path d="M6 5l14 1l-1 7h-13" />
-                    </svg>
-                  </a>
-                  <div class="relative hidden lg:block">
-                    <a
-                      href="chat.html"
-                      class="btn-c btn-c-lg btn-c-dark-outline"
-                    >
-                      <svg
-                        xmlns="http://www.w3.org/2000/svg"
-                        width="24"
-                        height="24"
-                        viewBox="0 0 24 24"
-                        fill="none"
-                        stroke="currentColor"
-                        stroke-width="1.5"
-                        stroke-linecap="round"
-                        stroke-linejoin="round"
-                        class="icon icon-tabler icons-tabler-outline icon-tabler-bell"
-                      >
-                        <path stroke="none" d="M0 0h24v24H0z" fill="none" />
-                        <path
-                          d="M10 5a2 2 0 1 1 4 0a7 7 0 0 1 4 6v3a4 4 0 0 0 2 3h-16a4 4 0 0 0 2 -3v-3a7 7 0 0 1 4 -6"
-                        />
-                        <path d="M9 17v1a3 3 0 0 0 6 0v-1" />
-                      </svg>
-                    </a>
-                  </div>
-                </div>
                 <div
                   x-data="dropdown"
                   class="dropdown relative shrink-0 lg:block hidden"
@@ -128,10 +37,7 @@
                       />
                       <span class="">
                         <span class="text-m-medium text-w-neutral-1 mb-1">
-                          David Malan
-                        </span>
-                        <span class="text-sm text-w-neutral-4 block">
-                          270 Followars
+                          {{ user.email }}
                         </span>
                       </span>
                     </span>
@@ -158,26 +64,14 @@
                   </button>
 
                   <div v-if="isOpen" class="dropdown-content">
-                    <a href="../../profile.html" class="dropdown-item"
-                      >Profile</a
-                    >
-                    <a href="../../user-settings.html" class="dropdown-item"
-                      >Settings</a
-                    >
-                    <button
-                      type="button"
-                      @click="close()"
-                      class="dropdown-item"
-                    >
-                      Logout
-                    </button>
-                    <a href="../../contact-us.html" class="dropdown-item"
-                      >Help</a
+                    <a @click.prevent="logout()" class="dropdown-item"
+                      >Logout</a
                     >
                   </div>
                 </div>
 
                 <button
+                  @click="toggle()"
                   class="lg:hidden btn-c btn-c-lg btn-c-dark-outline nav-toggole shrink-0"
                 >
                   <i class="ti ti-menu-2"></i>
@@ -888,11 +782,26 @@
   </header>
 </template>
 <script>
+import { mapStores } from 'pinia';
+import { useAuthStore } from '../../stores/auth';
+
 export default {
   data() {
     return { isOpen: false };
   },
+  computed: {
+    ...mapStores(useAuthStore),
+    user() {
+      console.log('user access', this.authStore.user);
+      return this.authStore.user;
+    },
+  },
   methods: {
+    logout() {
+      this.authStore.logout();
+      this.$router.push('/login');
+      this.close();
+    },
     toggle() {
       this.isOpen = !this.isOpen;
     },

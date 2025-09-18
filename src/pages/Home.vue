@@ -13,7 +13,7 @@
               <div class="w-full rounded-32 overflow-hidden relative">
                 <img
                   class="w-full xxl:h-[630px] xl:h-[580px] lg:h-[520px] md:h-[420px] sm:h-[380px] h-[300px] object-cover"
-                  src="../../assets/images/photos/heroBanner1.webp"
+                  src="../assets/images/photos/heroBanner1.webp"
                   alt="product"
                 />
                 <div
@@ -54,7 +54,7 @@
               <div class="w-full rounded-32 overflow-hidden relative">
                 <img
                   class="w-full xxl:h-[630px] xl:h-[580px] lg:h-[520px] md:h-[420px] sm:h-[380px] h-[300px] object-cover"
-                  src="../../assets/images/photos/heroBanner2.webp"
+                  src="../assets/images/photos/heroBanner2.webp"
                   alt="product"
                 />
                 <div
@@ -95,7 +95,7 @@
               <div class="w-full rounded-32 overflow-hidden relative">
                 <img
                   class="w-full xxl:h-[630px] xl:h-[580px] lg:h-[520px] md:h-[420px] sm:h-[380px] h-[300px] object-cover"
-                  src="../../assets/images/photos/heroBanner3.webp"
+                  src="../assets/images/photos/heroBanner3.webp"
                   alt="product"
                 />
                 <div
@@ -136,7 +136,7 @@
               <div class="w-full rounded-32 overflow-hidden relative">
                 <img
                   class="w-full xxl:h-[630px] xl:h-[580px] lg:h-[520px] md:h-[420px] sm:h-[380px] h-[300px] object-cover"
-                  src="../../assets/images/photos/heroBanner1.webp"
+                  src="../assets/images/photos/heroBanner1.webp"
                   alt="product"
                 />
                 <div
@@ -177,7 +177,7 @@
               <div class="w-full rounded-32 overflow-hidden relative">
                 <img
                   class="w-full xxl:h-[630px] xl:h-[580px] lg:h-[520px] md:h-[420px] sm:h-[380px] h-[300px] object-cover"
-                  src="../../assets/images/photos/heroBanner2.webp"
+                  src="../assets/images/photos/heroBanner2.webp"
                   alt="product"
                 />
                 <div
@@ -218,7 +218,7 @@
               <div class="w-full rounded-32 overflow-hidden relative">
                 <img
                   class="w-full xxl:h-[630px] xl:h-[580px] lg:h-[520px] md:h-[420px] sm:h-[380px] h-[300px] object-cover"
-                  src="../../assets/images/photos/heroBanner3.webp"
+                  src="../assets/images/photos/heroBanner3.webp"
                   alt="product"
                 />
                 <div
@@ -268,7 +268,7 @@
                 <div class="overflow-hidden cursor-pointer rounded-20">
                   <img
                     class="xxl:w-[180px] xl:w-[140px] lg:w-[120px] md:w-25 w-20 xxl:h-[110px] xl:h-24 lg:h-20 md:h-18 h-16 hover:scale-110 hover:-rotate-6 object-cover transition-1"
-                    src="../../assets/images/photos/heroBanner1.webp"
+                    src="../assets/images/photos/heroBanner1.webp"
                     alt="product"
                   />
                 </div>
@@ -277,7 +277,7 @@
                 <div class="overflow-hidden cursor-pointer rounded-20">
                   <img
                     class="xxl:w-[180px] xl:w-[140px] lg:w-[120px] md:w-25 w-20 xxl:h-[110px] xl:h-24 lg:h-20 md:h-18 h-16 hover:scale-110 hover:-rotate-6 object-cover transition-1"
-                    src="../../assets/images/photos/heroBanner2.webp"
+                    src="../assets/images/photos/heroBanner2.webp"
                     alt="product"
                   />
                 </div>
@@ -286,7 +286,7 @@
                 <div class="overflow-hidden cursor-pointer rounded-20">
                   <img
                     class="xxl:w-[180px] xl:w-[140px] lg:w-[120px] md:w-25 w-20 xxl:h-[110px] xl:h-24 lg:h-20 md:h-18 h-16 hover:scale-110 hover:-rotate-6 object-cover transition-1"
-                    src="../../assets/images/photos/heroBanner3.webp"
+                    src="../assets/images/photos/heroBanner3.webp"
                     alt="product"
                   />
                 </div>
@@ -295,7 +295,7 @@
                 <div class="overflow-hidden cursor-pointer rounded-20">
                   <img
                     class="xxl:w-[180px] xl:w-[140px] lg:w-[120px] md:w-25 w-20 xxl:h-[110px] xl:h-24 lg:h-20 md:h-18 h-16 hover:scale-110 hover:-rotate-6 object-cover transition-1"
-                    src="../../assets/images/photos/heroBanner1.webp"
+                    src="../assets/images/photos/heroBanner1.webp"
                     alt="product"
                   />
                 </div>
@@ -304,7 +304,7 @@
                 <div class="overflow-hidden cursor-pointer rounded-20">
                   <img
                     class="xxl:w-[180px] xl:w-[140px] lg:w-[120px] md:w-25 w-20 xxl:h-[110px] xl:h-24 lg:h-20 md:h-18 h-16 hover:scale-110 hover:-rotate-6 object-cover transition-1"
-                    src="../../assets/images/photos/heroBanner2.webp"
+                    src="../assets/images/photos/heroBanner2.webp"
                     alt="product"
                   />
                 </div>
@@ -313,7 +313,7 @@
                 <div class="overflow-hidden cursor-pointer rounded-20">
                   <img
                     class="xxl:w-[180px] xl:w-[140px] lg:w-[120px] md:w-25 w-20 xxl:h-[110px] xl:h-24 lg:h-20 md:h-18 h-16 hover:scale-110 hover:-rotate-6 object-cover transition-1"
-                    src="../../assets/images/photos/heroBanner3.webp"
+                    src="../assets/images/photos/heroBanner3.webp"
                     alt="product"
                   />
                 </div>
