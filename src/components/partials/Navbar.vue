@@ -71,7 +71,7 @@
                 </div>
 
                 <button
-                  @click="toggle()"
+                  @click="showSideNavMobile = !showSideNavMobile"
                   class="lg:hidden btn-c btn-c-lg btn-c-dark-outline nav-toggole shrink-0"
                 >
                   <i class="ti ti-menu-2"></i>
@@ -81,9 +81,12 @@
           </nav>
         </div>
       </div>
-      <nav class="w-full flex justify-between items-center">
+      <nav
+        class="w-full flex justify-between items-center"
+        v-if="showSideNavMobile"
+      >
         <div
-          class="small-nav fixed top-0 left-0 h-screen w-full shadow-lg z-[999] transform transition-transform ease-in-out invisible md:translate-y-full max-md:-translate-x-full duration-500"
+          class="duration-500 ease-in-out fixed h-screen left-0 max-md:translate-x-0 md:translate-y-0 shadow-lg small-nav top-0 transform transition-transform w-full z-[999]"
         >
           <div
             class="absolute z-[5] inset-0 bg-b-neutral-3 flex-col-c min-h-screen max-md:max-w-[400px]"
@@ -100,7 +103,10 @@
                       alt="GameCo"
                     />
                   </a>
-                  <button class="nav-close btn-c btn-c-md btn-c-primary">
+                  <button
+                    @click="showSideNavMobile = false"
+                    class="nav-close btn-c btn-c-md btn-c-primary"
+                  >
                     <i class="ti ti-x"></i>
                   </button>
                 </div>
@@ -113,17 +119,29 @@
                         class="flex flex-col justify-center items-start gap-20p text-w-neutral-1"
                       >
                         <li class="sub-menu mobail-submenu">
-                          <span class="mobail-submenu-btn">
+                          <span class="mobail-submenu-btn active">
                             <span class="submenu-btn">Home</span>
-                            <span class="collapse-icon mobail-submenu-icon">
-                              <i class="ti ti-chevron-down"></i>
+                            <span
+                              class="collapse-icon mobail-submenu-icon"
+                              style="transition: transform 0.5s ease-in-out"
+                            >
+                              <i class="ti ti-chevron-down active"></i>
                             </span>
                           </span>
-                          <ul class="grid gap-y-2 px-16p">
+                          <ul
+                            class="grid gap-y-2 px-16p"
+                            style="
+                              max-height: 0px;
+                              padding-top: 0px;
+                              overflow: hidden;
+                              transition: max-height 0.5s ease-in-out,
+                                padding-top 0.5s ease-in-out;
+                            "
+                          >
                             <li class="pt-2">
                               <a
                                 aria-label="item"
-                                class="text-base hover:text-primary transition-1"
+                                class="text-base hover:text-primary transition-1 active"
                                 href="index.html"
                               >
                                 - Home One
@@ -173,11 +191,23 @@
                         <li class="sub-menu mobail-submenu">
                           <span class="mobail-submenu-btn">
                             <span class="submenu-btn">Library</span>
-                            <span class="collapse-icon mobail-submenu-icon">
+                            <span
+                              class="collapse-icon mobail-submenu-icon"
+                              style="transition: transform 0.5s ease-in-out"
+                            >
                               <i class="ti ti-chevron-down"></i>
                             </span>
                           </span>
-                          <ul class="grid gap-y-2 px-16p">
+                          <ul
+                            class="grid gap-y-2 px-16p"
+                            style="
+                              max-height: 0px;
+                              padding-top: 0px;
+                              overflow: hidden;
+                              transition: max-height 0.5s ease-in-out,
+                                padding-top 0.5s ease-in-out;
+                            "
+                          >
                             <li class="pt-2">
                               <a
                                 aria-label="item"
@@ -201,11 +231,23 @@
                         <li class="sub-menu mobail-submenu">
                           <span class="mobail-submenu-btn">
                             <span class="submenu-btn">Games</span>
-                            <span class="collapse-icon mobail-submenu-icon">
+                            <span
+                              class="collapse-icon mobail-submenu-icon"
+                              style="transition: transform 0.5s ease-in-out"
+                            >
                               <i class="ti ti-chevron-down"></i>
                             </span>
                           </span>
-                          <ul class="grid gap-y-2 px-16p">
+                          <ul
+                            class="grid gap-y-2 px-16p"
+                            style="
+                              max-height: 0px;
+                              padding-top: 0px;
+                              overflow: hidden;
+                              transition: max-height 0.5s ease-in-out,
+                                padding-top 0.5s ease-in-out;
+                            "
+                          >
                             <li class="pt-2">
                               <a
                                 aria-label="item"
@@ -238,11 +280,23 @@
                         <li class="sub-menu mobail-submenu">
                           <span class="mobail-submenu-btn">
                             <span class="submenu-btn">Groups</span>
-                            <span class="collapse-icon mobail-submenu-icon">
+                            <span
+                              class="collapse-icon mobail-submenu-icon"
+                              style="transition: transform 0.5s ease-in-out"
+                            >
                               <i class="ti ti-chevron-down"></i>
                             </span>
                           </span>
-                          <ul class="grid gap-y-2 px-16p">
+                          <ul
+                            class="grid gap-y-2 px-16p"
+                            style="
+                              max-height: 0px;
+                              padding-top: 0px;
+                              overflow: hidden;
+                              transition: max-height 0.5s ease-in-out,
+                                padding-top 0.5s ease-in-out;
+                            "
+                          >
                             <li class="pt-2">
                               <a
                                 aria-label="item"
@@ -311,11 +365,23 @@
                         <li class="sub-menu mobail-submenu">
                           <span class="mobail-submenu-btn">
                             <span class="submenu-btn">Teams</span>
-                            <span class="collapse-icon mobail-submenu-icon">
+                            <span
+                              class="collapse-icon mobail-submenu-icon"
+                              style="transition: transform 0.5s ease-in-out"
+                            >
                               <i class="ti ti-chevron-down"></i>
                             </span>
                           </span>
-                          <ul class="grid gap-y-2 px-16p">
+                          <ul
+                            class="grid gap-y-2 px-16p"
+                            style="
+                              max-height: 0px;
+                              padding-top: 0px;
+                              overflow: hidden;
+                              transition: max-height 0.5s ease-in-out,
+                                padding-top 0.5s ease-in-out;
+                            "
+                          >
                             <li class="pt-2">
                               <a
                                 aria-label="item"
@@ -366,11 +432,23 @@
                         <li class="sub-menu mobail-submenu">
                           <span class="mobail-submenu-btn">
                             <span class="submenu-btn">Tournaments</span>
-                            <span class="collapse-icon mobail-submenu-icon">
+                            <span
+                              class="collapse-icon mobail-submenu-icon"
+                              style="transition: transform 0.5s ease-in-out"
+                            >
                               <i class="ti ti-chevron-down"></i>
                             </span>
                           </span>
-                          <ul class="grid gap-y-2 px-16p">
+                          <ul
+                            class="grid gap-y-2 px-16p"
+                            style="
+                              max-height: 0px;
+                              padding-top: 0px;
+                              overflow: hidden;
+                              transition: max-height 0.5s ease-in-out,
+                                padding-top 0.5s ease-in-out;
+                            "
+                          >
                             <li class="pt-2">
                               <a
                                 aria-label="item"
@@ -433,11 +511,23 @@
                         <li class="sub-menu mobail-submenu">
                           <span class="mobail-submenu-btn">
                             <span class="submenu-btn">Marketplace</span>
-                            <span class="collapse-icon mobail-submenu-icon">
+                            <span
+                              class="collapse-icon mobail-submenu-icon"
+                              style="transition: transform 0.5s ease-in-out"
+                            >
                               <i class="ti ti-chevron-down"></i>
                             </span>
                           </span>
-                          <ul class="grid gap-y-2 px-16p">
+                          <ul
+                            class="grid gap-y-2 px-16p"
+                            style="
+                              max-height: 0px;
+                              padding-top: 0px;
+                              overflow: hidden;
+                              transition: max-height 0.5s ease-in-out,
+                                padding-top 0.5s ease-in-out;
+                            "
+                          >
                             <li class="pt-2">
                               <a
                                 aria-label="item"
@@ -470,11 +560,23 @@
                         <li class="sub-menu mobail-submenu">
                           <span class="mobail-submenu-btn">
                             <span class="submenu-btn">Profile</span>
-                            <span class="collapse-icon mobail-submenu-icon">
+                            <span
+                              class="collapse-icon mobail-submenu-icon"
+                              style="transition: transform 0.5s ease-in-out"
+                            >
                               <i class="ti ti-chevron-down"></i>
                             </span>
                           </span>
-                          <ul class="grid gap-y-2 px-16p">
+                          <ul
+                            class="grid gap-y-2 px-16p"
+                            style="
+                              max-height: 0px;
+                              padding-top: 0px;
+                              overflow: hidden;
+                              transition: max-height 0.5s ease-in-out,
+                                padding-top 0.5s ease-in-out;
+                            "
+                          >
                             <li class="pt-2">
                               <a
                                 aria-label="item"
@@ -570,11 +672,23 @@
                         <li class="sub-menu mobail-submenu">
                           <span class="mobail-submenu-btn">
                             <span class="submenu-btn">Shop</span>
-                            <span class="collapse-icon mobail-submenu-icon">
+                            <span
+                              class="collapse-icon mobail-submenu-icon"
+                              style="transition: transform 0.5s ease-in-out"
+                            >
                               <i class="ti ti-chevron-down"></i>
                             </span>
                           </span>
-                          <ul class="grid gap-y-2 px-16p">
+                          <ul
+                            class="grid gap-y-2 px-16p"
+                            style="
+                              max-height: 0px;
+                              padding-top: 0px;
+                              overflow: hidden;
+                              transition: max-height 0.5s ease-in-out,
+                                padding-top 0.5s ease-in-out;
+                            "
+                          >
                             <li class="pt-2">
                               <a
                                 aria-label="item"
@@ -625,11 +739,23 @@
                         <li class="sub-menu mobail-submenu">
                           <span class="mobail-submenu-btn">
                             <span class="submenu-btn">Blogs</span>
-                            <span class="collapse-icon mobail-submenu-icon">
+                            <span
+                              class="collapse-icon mobail-submenu-icon"
+                              style="transition: transform 0.5s ease-in-out"
+                            >
                               <i class="ti ti-chevron-down"></i>
                             </span>
                           </span>
-                          <ul class="grid gap-y-2 px-16p">
+                          <ul
+                            class="grid gap-y-2 px-16p"
+                            style="
+                              max-height: 0px;
+                              padding-top: 0px;
+                              overflow: hidden;
+                              transition: max-height 0.5s ease-in-out,
+                                padding-top 0.5s ease-in-out;
+                            "
+                          >
                             <li class="pt-2">
                               <a
                                 aria-label="item"
@@ -653,11 +779,23 @@
                         <li class="sub-menu mobail-submenu">
                           <span class="mobail-submenu-btn">
                             <span class="submenu-btn">Pages</span>
-                            <span class="collapse-icon mobail-submenu-icon">
+                            <span
+                              class="collapse-icon mobail-submenu-icon"
+                              style="transition: transform 0.5s ease-in-out"
+                            >
                               <i class="ti ti-chevron-down"></i>
                             </span>
                           </span>
-                          <ul class="grid gap-y-2 px-16p">
+                          <ul
+                            class="grid gap-y-2 px-16p"
+                            style="
+                              max-height: 0px;
+                              padding-top: 0px;
+                              overflow: hidden;
+                              transition: max-height 0.5s ease-in-out,
+                                padding-top 0.5s ease-in-out;
+                            "
+                          >
                             <li class="pt-2">
                               <a
                                 aria-label="item"
@@ -787,7 +925,7 @@ import { useAuthStore } from '../../stores/auth';
 
 export default {
   data() {
-    return { isOpen: false };
+    return { isOpen: false, showSideNavMobile: false };
   },
   computed: {
     ...mapStores(useAuthStore),

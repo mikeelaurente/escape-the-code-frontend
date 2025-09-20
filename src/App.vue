@@ -3,12 +3,7 @@
   <scroll-to-top></scroll-to-top>
   <navbar></navbar>
   <left-right-sidebar></left-right-sidebar>
-  <div
-    class="app-layout"
-    :style="{
-      'margin-left': user && user.id ? '130px' : 'auto',
-    }"
-  >
+  <div ref="layout" class="app-layout">
     <main>
       <router-view></router-view>
     </main>
@@ -31,11 +26,26 @@ export default {
     Preloader,
     ScrollToTop,
   },
+
   computed: {
     ...mapStores(useAuthStore),
     user() {
       console.log('user access', this.authStore.user);
       return this.authStore.user;
+    },
+    inLogin() {
+      return this.$route.path.includes('/login');
+    },
+  },
+  watch: {
+    inLogin(current, old) {
+      console.log('inlogin', old, current);
+      if (current !== old && current) {
+        console.log('changing style');
+        this.$refs.layout.style.marginLeft = 'auto';
+      } else {
+        this.$refs.layout.removeAttribute('style');
+      }
     },
   },
 };

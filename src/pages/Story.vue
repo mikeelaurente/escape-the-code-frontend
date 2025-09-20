@@ -53,36 +53,51 @@
             />
           </div>
           <div>
-            <div class="flex-y flex-wrap gap-2">
-              <span class="badge badge-neutral-2 badge-smm">Strategy</span>
-              <span class="badge badge-danger badge-smm">Live</span>
-              <span class="badge badge-neutral-2 badge-smm">Shooter</span>
+            <div class="flex-y items-center justify-center gap-2">
+              <span
+                v-for="(reward, key) in chapter.rewardOptions"
+                :key="key"
+                class="badge badge-outline-shap hover:badge-primary badge-smm"
+              >
+                {{ key }}: {{ reward }}
+              </span>
             </div>
-            <a
-              href="./live-stream.html"
-              class="heading-3 text-w-neutral-1 4xl:line-clamp-2 line-clamp-1 link-1 my-16p text-split-left"
-              >{{ chapter.title }}</a
+            <router-link
+              :to="`/story/chapters/${chapter.id}`"
+              class="heading-4 text-w-neutral-1 4xl:line-clamp-2 line-clamp-1 link-1 my-16p text-split-left"
+              >{{ chapter.title }}</router-link
             >
             <div class="flex-y flex-wrap *:py-2 *:px-3 mb-20p">
               <div class="flex-y gap-2.5">
                 <span class="badge badge-secondary size-3 badge-circle"></span>
                 <p class="text-base text-neutral-100">
-                  <span class="span">4.7k</span> Viewers
+                  <span class="span">{{ chapter.sections.length }}</span>
+                  Sections
                 </p>
               </div>
               <div class="flex-y gap-2.5">
                 <span class="badge badge-primary size-3 badge-circle"></span>
                 <p class="text-base text-neutral-100">
-                  <span class="span">4 days ago</span>
+                  <span class="span"
+                    >Completed: {{ countCompletedSections(chapter) }}/{{
+                      chapter.sections.length
+                    }}</span
+                  >
                 </p>
               </div>
             </div>
             <div class="flex-y flex-wrap items-center justify-center">
               <router-link
                 :to="`/story/chapters/${chapter.id}`"
-                class="btn btn-md btn-primary rounded-12 w-full"
+                class="btn btn-md rounded-12 w-full"
+                :class="{
+                  pulse: !chapter.completed && !chapter.locked,
+                  'btn-primary': !chapter.completed,
+                  'btn-secondary': chapter.completed,
+                }"
               >
-                View
+                <i class="ti ti-eye icon-24"></i>
+                {{ chapter.completed ? 'Review' : 'View' }}
               </router-link>
             </div>
           </div>
@@ -105,10 +120,15 @@ export default {
     };
   },
   inject: ['http'],
+  methods: {
+    countCompletedSections(chapter) {
+      return chapter.sections.filter((s) => s.storyProgress).length;
+    },
+  },
   async mounted() {
     try {
       const response = await this.http.get('/story');
-      this.story = response.data;
+      this.story = response.data.data;
     } catch (e) {}
   },
 };

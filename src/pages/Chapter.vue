@@ -55,36 +55,56 @@
             />
           </div>
           <div>
-            <div class="flex-y flex-wrap gap-2">
-              <span class="badge badge-neutral-2 badge-smm">Strategy</span>
-              <span class="badge badge-danger badge-smm">Live</span>
-              <span class="badge badge-neutral-2 badge-smm">Shooter</span>
+            <div class="flex-y items-center justify-center gap-2">
+              <span
+                v-for="(reward, key) in section.rewardOptions"
+                :key="key"
+                class="badge badge-outline-shap hover:badge-primary badge-smm"
+              >
+                {{ key }}: {{ reward }}
+              </span>
             </div>
-            <a
-              href="./live-stream.html"
-              class="heading-3 text-w-neutral-1 4xl:line-clamp-2 line-clamp-1 link-1 my-16p text-split-left"
-              >{{ section.title }}</a
+            <router-link
+              :to="'/story/chapters/' + chapter.id + '/' + section.id"
+              :title="section.title"
+              class="heading-4 text-w-neutral-1 4xl:line-clamp-2 line-clamp-1 link-1 my-16p text-split-left"
             >
+              {{ section.title }}
+            </router-link>
             <div class="flex-y flex-wrap *:py-2 *:px-3 mb-20p">
-              <div class="flex-y gap-2.5">
+              <div class="flex-y gap-2.5" v-if="section.completed">
                 <span class="badge badge-secondary size-3 badge-circle"></span>
                 <p class="text-base text-neutral-100">
-                  <span class="span">4.7k</span> Viewers
+                  <span class="span">Completed</span>
                 </p>
               </div>
-              <div class="flex-y gap-2.5">
+              <div class="flex-y gap-2.5" v-if="!section.completed">
                 <span class="badge badge-primary size-3 badge-circle"></span>
                 <p class="text-base text-neutral-100">
-                  <span class="span">4 days ago</span>
+                  <span class="span">Not yet taken</span>
                 </p>
               </div>
             </div>
             <div class="flex-y flex-wrap items-center justify-center">
-              <router-link
-                :to="'/story/chapters/' + chapter.id + '/' + section.id"
-                class="btn btn-md btn-primary rounded-12 w-full"
+              <button
+                v-if="section.locked"
+                class="btn btn-md btn-c-dark-outline rounded-12 w-full"
               >
-                View
+                <i class="ti ti-lock icon-24"></i>
+                Locked
+              </button>
+              <router-link
+                v-if="!section.locked"
+                :to="'/story/chapters/' + chapter.id + '/' + section.id"
+                class="btn btn-md rounded-12 w-full"
+                :class="{
+                  pulse: !section.completed && !section.locked,
+                  'btn-primary': !section.completed,
+                  'btn-secondary': section.completed,
+                }"
+              >
+                <i class="ti ti-eye icon-24"></i>
+                {{ section.completed ? 'Review' : 'View' }}
               </router-link>
             </div>
           </div>
@@ -94,6 +114,21 @@
   </section>
   <!-- trending section end -->
 </template>
+
+<style>
+.pulse {
+  animation: pulse-animation 1.3s infinite;
+}
+
+@keyframes pulse-animation {
+  0% {
+    box-shadow: 0 0 0 0px rgba(242, 150, 32, 0.5);
+  }
+  100% {
+    box-shadow: 0 0 0 15px rgba(255, 0, 0, 0);
+  }
+}
+</style>
 
 <script>
 export default {
@@ -108,7 +143,7 @@ export default {
     const response = await this.http.get(
       '/story/chapters/' + this.$route.params.chapter + '/sections'
     );
-    this.chapter = response.data;
+    this.chapter = response.data.data;
   },
 };
 </script>

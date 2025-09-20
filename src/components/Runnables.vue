@@ -3,6 +3,7 @@
     <div v-for="(runnable, idx) in runnables" :key="idx">
       <h6 id="accordion-collapse-heading-1">
         <button
+          @click="toggleRunnable(runnable)"
           type="button"
           :class="{
             'flex items-center justify-between w-full p-5 font-medium rtl:text-right text-gray-500 border border-b-0 border-gray-200 rounded-t-xl focus:ring-4 focus:ring-blue-200 dark:focus:ring-blue-800 dark:border-gray-700 dark:text-gray-400 hover:bg-blue-100 dark:hover:bg-gray-800 gap-3':
@@ -12,13 +13,14 @@
             'flex items-center justify-between w-full p-5 font-medium rtl:text-right text-gray-500 border border-gray-200 focus:ring-4 focus:ring-gray-200 dark:focus:ring-gray-800 dark:border-gray-700 dark:text-gray-400 hover:bg-gray-100 dark:hover:bg-gray-800 gap-3':
               idx === runnables.length - 1,
           }"
-          :data-accordion-target="`#accordion-collapse-body-${idx}`"
-          :aria-controls="`accordion-collapse-body-${idx}`"
         >
           <span>{{ runnable.title }}</span>
           <svg
             data-accordion-icon
-            class="w-3 h-3 rotate-180 shrink-0"
+            class="w-3 h-3 shrink-0"
+            :class="{
+              'rotate-180': !runnable.open,
+            }"
             aria-hidden="true"
             xmlns="http://www.w3.org/2000/svg"
             fill="none"
@@ -36,7 +38,9 @@
       </h6>
       <div
         :id="`accordion-collapse-body-${idx}`"
-        class="hidden"
+        :class="{
+          hidden: !runnable.open,
+        }"
         aria-labelledby="accordion-collapse-heading-1"
       >
         <div
@@ -93,6 +97,9 @@ export default {
     },
   },
   methods: {
+    toggleRunnable(runnable) {
+      runnable.open = !runnable.open;
+    },
     async runCode(runnable) {
       runnable.results = [];
       Toast.fire({

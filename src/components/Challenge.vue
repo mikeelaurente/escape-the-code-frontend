@@ -23,7 +23,7 @@
       </button>
     </div>
 
-    <div class="mt-4" v-if="selectedChallege.id">
+    <div class="mt-4 w-full" v-if="selectedChallege.id">
       <h3>{{ selectedChallege.title }}</h3>
       <div v-html="selectedChallege.description"></div>
       <hr class="my-2 border-dotted border-3" />
@@ -49,7 +49,7 @@
           <i class="ti ti-help-circle-filled icon-24"></i>
           Hints
         </button>
-        <button @click="runCode()" class="btn btn-primary">
+        <button @click="submitAnswer()" class="btn btn-primary">
           <i class="ti ti-player-play-filled icon-24"></i>
           Run
         </button>
@@ -110,6 +110,13 @@
         <div class="mt-2" v-if="selectedTab == 'errors'">
           <pre v-html="getCodeErrors(submissionResult)"></pre>
         </div>
+      </div>
+      <div
+        class="mt-2 p-4 rounded-12 border-t border-dotted border-2"
+        v-show="feedback.length > 0"
+      >
+        <h2>Feedback</h2>
+        <div v-html="feedback"></div>
       </div>
     </div>
   </div>
@@ -232,6 +239,7 @@ export default {
   },
   data() {
     return {
+      feedback: '',
       selectedChallege: {},
       selectedTab: 'result',
       codeSubmitted: false,
@@ -362,7 +370,7 @@ export default {
           icon: 'info',
           title: 'Hint',
           html: `
-            <pre class="my-2 border-2 p-3">${boughtHint.hint.hintText}</pre>
+            <div class="font-mono my-2 border-2 p-3">${boughtHint.hint.hintText}</div>
           `,
           customClass: this.swalClasses,
         });
@@ -442,13 +450,13 @@ export default {
         const response = await this.http.get(
           '/story/challenges/' + challengeId + '/hints'
         );
-        const hints = response.data;
+        const hints = response.data.data;
         this.hints = hints;
 
         this.showChallengeHints = true;
       } catch (e) {}
     },
-    runCode() {
+    submitAnswer() {
       Swal.fire({
         title: 'Are you sure?',
         showCancelButton: true,
@@ -458,6 +466,7 @@ export default {
         preConfirm: async () => {
           try {
             this.answerError = false;
+            this.feedback = '';
             this.codeSubmitted = true;
             const answer = encodeURIComponent(this.content);
             const challengeId = this.selectedChallege.id;
@@ -486,11 +495,17 @@ export default {
               icon: 'success',
               customClass: this.swalClasses,
             });
+
+            if (result.value.feedback) {
+              this.feedback = result.value.feedback;
+            }
           } else {
             this.answerError = true;
             Swal.fire({
               title: '🪄 Spell Fizzled!',
-              text: 'The magic faltered... check your runes and try again!',
+              text: result.value.errors
+                ? result.value.errors.answer
+                : 'The magic faltered... check your runes and try again!',
               icon: 'error',
               customClass: this.swalClasses,
             });

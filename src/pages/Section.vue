@@ -3,7 +3,7 @@
 
   <!-- breadcrumb start -->
   <section class="pt-30p">
-    <div class="section-pt" v-if="section.id">
+    <div class="section-pt" v-if="status === 'ok'">
       <div
         class="relative bg-[url('../images/photos/breadcrumbImg.png')] bg-cover bg-no-repeat rounded-24 overflow-hidden"
       >
@@ -28,6 +28,28 @@
                   <span class="breadcrumb-current">Game Details</span>
                 </li>
               </ul>
+            </div>
+          </div>
+        </div>
+        <div class="overlay-11"></div>
+      </div>
+    </div>
+
+    <div class="section-pt" v-if="status === 'error'">
+      <div
+        class="relative bg-[url('../images/photos/breadcrumbImg.png')] bg-cover bg-no-repeat rounded-24 overflow-hidden"
+      >
+        <div class="container">
+          <div
+            class="grid grid-cols-12 gap-x-30p gap-y-10 relative xl:py-[130px] md:py-30 sm:py-25 py-20 z-[2]"
+          >
+            <div class="lg:col-start-2 lg:col-end-12 col-span-12">
+              <div class="flex justify-center">
+                <i class="ti ti-lock icon-60 mb-2 text-danger mr-2"></i>
+              </div>
+              <h2 class="heading-2">
+                {{ message }}
+              </h2>
             </div>
           </div>
         </div>
@@ -162,6 +184,8 @@ export default {
   },
   data() {
     return {
+      status: '',
+      error: '',
       section: {
         id: 0,
         chapterId: 0,
@@ -180,9 +204,19 @@ export default {
     const response = await this.http.get(
       '/story/sections/' + this.$route.params.section
     );
+
+    this.status = response.data.status;
+
+    if (this.status === 'error') {
+      this.message = response.data.message;
+      return;
+    }
+
+    const data = response.data.data;
+
     this.section = {
-      ...response.data,
-      runnables: JSON.parse(response.data.runnables),
+      ...data,
+      runnables: JSON.parse(data.runnables),
     };
     console.log(this.section);
   },
