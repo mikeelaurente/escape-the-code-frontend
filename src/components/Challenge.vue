@@ -118,6 +118,17 @@
         <h2>Feedback</h2>
         <div v-html="feedback"></div>
       </div>
+      <div class="mt-3 flex justify-center" v-if="nextSection">
+        <router-link
+          class="btn btn-primary rounder-12 pulse"
+          :key="nextSection.id"
+          :to="`/story/chapters/${nextSection.chapterId}/${
+            nextSection.id
+          }?t=${new Date().getTime()}`"
+        >
+          Next: {{ nextSection.title }}
+        </router-link>
+      </div>
     </div>
   </div>
 
@@ -240,6 +251,7 @@ export default {
   data() {
     return {
       feedback: '',
+      nextSection: null,
       selectedChallege: {},
       selectedTab: 'result',
       codeSubmitted: false,
@@ -498,6 +510,9 @@ export default {
 
             if (result.value.feedback) {
               this.feedback = result.value.feedback;
+            }
+            if (result.value.nextSection) {
+              this.nextSection = result.value.nextSection;
             }
           } else {
             this.answerError = true;

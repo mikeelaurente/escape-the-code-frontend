@@ -7,14 +7,38 @@ import Section from '../../pages/Section.vue';
 import Login from '../../pages/Login.vue';
 import Register from '../../pages/Register.vue';
 import { useAuthStore } from '../../stores/auth'; // Import your Pinia store
+import NotFound from '../../pages/NotFound.vue';
+import Achievements from '../../pages/Achievements.vue';
+import Leaderboard from '../../pages/Leaderboard.vue';
+import Progress from '../../pages/Progress.vue';
+import Profile from '../../pages/Profile.vue';
 
 export const createRoutes = () => {
   const routes = [
     { name: 'login', path: '/login', component: Login },
     { path: '/register', component: Register },
     { name: 'home', path: '/', component: Home, meta: { requiresAuth: true } },
-    { path: '/about', component: About, meta: { requiresAuth: true } },
     { path: '/story', component: Story, meta: { requiresAuth: true } },
+    {
+      path: '/achievements',
+      component: Achievements,
+      meta: { requiresAuth: true },
+    },
+    {
+      path: '/profile',
+      component: Profile,
+      meta: { requiresAuth: true },
+    },
+    {
+      path: '/leaderboard',
+      component: Leaderboard,
+      meta: { requiresAuth: true },
+    },
+    {
+      path: '/progress',
+      component: Progress,
+      meta: { requiresAuth: true },
+    },
     {
       path: '/story/chapters/:chapter',
       component: Chapter,
@@ -24,6 +48,10 @@ export const createRoutes = () => {
       path: '/story/chapters/:chapter/:section',
       component: Section,
       meta: { requiresAuth: true },
+    },
+    {
+      path: '/:pathMatch(.*)*', // Catch-all for unmatched routes
+      component: NotFound,
     },
   ];
 

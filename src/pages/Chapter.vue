@@ -15,7 +15,7 @@
               </h2>
               <ul class="breadcrumb">
                 <li class="breadcrumb-item">
-                  <a href="#" class="breadcrumb-link"> Home </a>
+                  <router-link to="/" class="breadcrumb-link">Home</router-link>
                 </li>
                 <li class="breadcrumb-item">
                   <span class="breadcrumb-icon">
@@ -23,7 +23,9 @@
                   </span>
                 </li>
                 <li class="breadcrumb-item">
-                  <span class="breadcrumb-current">Trending</span>
+                  <router-link to="/story" class="breadcrumb-current">
+                    Chapters
+                  </router-link>
                 </li>
               </ul>
             </div>
@@ -65,6 +67,7 @@
               </span>
             </div>
             <router-link
+              :key="section.id"
               :to="'/story/chapters/' + chapter.id + '/' + section.id"
               :title="section.title"
               class="heading-4 text-w-neutral-1 4xl:line-clamp-2 line-clamp-1 link-1 my-16p text-split-left"
@@ -94,6 +97,7 @@
                 Locked
               </button>
               <router-link
+                :key="section.id"
                 v-if="!section.locked"
                 :to="'/story/chapters/' + chapter.id + '/' + section.id"
                 class="btn btn-md rounded-12 w-full"

@@ -17,7 +17,7 @@
               </h2>
               <ul class="breadcrumb">
                 <li class="breadcrumb-item">
-                  <a href="#" class="breadcrumb-link"> Home </a>
+                  <router-link to="/" class="breadcrumb-link">Home</router-link>
                 </li>
                 <li class="breadcrumb-item">
                   <span class="breadcrumb-icon">
@@ -25,7 +25,19 @@
                   </span>
                 </li>
                 <li class="breadcrumb-item">
-                  <span class="breadcrumb-current">Game Details</span>
+                  <router-link :to="`/story/chapters/${section.chapter.id}`">
+                    {{ section.chapter.title }}
+                  </router-link>
+                </li>
+                <li class="breadcrumb-item">
+                  <span class="breadcrumb-icon">
+                    <i class="ti ti-chevrons-right"></i>
+                  </span>
+                </li>
+                <li class="breadcrumb-item">
+                  <span class="breadcrumb-current">
+                    {{ section.title }}
+                  </span>
                 </li>
               </ul>
             </div>
@@ -117,53 +129,43 @@
                 </div>
               </div>
               <div>
-                <h4 class="heading-4 text-w-neutral-1 mb-20p">Trivias</h4>
+                <h4 class="heading-4 text-w-neutral-1 mb-20p">
+                  <i class="ti ti-bulb icon-24 text-warning"></i>
+                  Trivias
+                </h4>
                 <ul
                   class="grid grid-cols-1 gap-16p *:flex-y *:justify-between text-m-regular text-w-neutral-1"
                 >
-                  <li>
-                    <a href="#" class="hover:text-secondary transition-1">
-                      Gaming
-                    </a>
-                    <span class="text-w-neutral-4"> (12) </span>
-                  </li>
-                  <li>
-                    <a href="#" class="hover:text-secondary transition-1">
-                      Live
-                    </a>
-                    <span class="text-w-neutral-4"> (12) </span>
-                  </li>
-                  <li>
-                    <a href="#" class="hover:text-secondary transition-1">
-                      Electronic
-                    </a>
-                    <span class="text-w-neutral-4"> (13) </span>
-                  </li>
-                  <li>
-                    <a href="#" class="hover:text-secondary transition-1">
-                      Online
-                    </a>
-                    <span class="text-w-neutral-4"> (07) </span>
-                  </li>
-                  <li>
-                    <a href="#" class="hover:text-secondary transition-1">
-                      Contraoller
-                    </a>
-                    <span class="text-w-neutral-4"> (02) </span>
+                  <li
+                    v-for="(trivia, idx) in section.trivias"
+                    :key="idx"
+                    class="border-2 rounded-10 p-2 border-dotted"
+                  >
+                    <span class="text-w-neutral-4">{{ trivia }}</span>
                   </li>
                 </ul>
               </div>
               <div>
                 <h4 class="heading-4 text-w-neutral-1 mb-20p">
+                  <i class="ti ti-file icon-24 text-warning"></i>
                   Additional Resources
                 </h4>
-                <div class="tag">
-                  <a href="#" class="tag-item tag-neutral-4"> E- Sports </a>
-                  <a href="#" class="tag-item tag-neutral-4"> Fantasy </a>
-                  <a href="#" class="tag-item tag-neutral-4"> Matches </a>
-                  <a href="#" class="tag-item tag-neutral-4"> Streamers </a>
-                  <a href="#" class="tag-item tag-neutral-4"> Landing </a>
-                </div>
+                <ul
+                  class="grid grid-cols-1 gap-16p *:flex-y *:justify-between text-m-regular text-w-neutral-1"
+                >
+                  <li
+                    v-for="(resource, idx) in section.additionalResources"
+                    :key="idx"
+                  >
+                    <a
+                      :href="resource.url"
+                      target="_blank"
+                      class="w-full bg-shap hover:bg-dark-900 rounded-8 p-2"
+                    >
+                      {{ resource.title }}
+                    </a>
+                  </li>
+                </ul>
               </div>
             </div>
           </div>
@@ -199,26 +201,33 @@ export default {
     };
   },
   inject: ['http'],
+  methods: {
+    async fetchSection(sectionId) {
+      const response = await this.http.get('/story/sections/' + sectionId);
+
+      this.status = response.data.status;
+
+      if (this.status === 'error') {
+        this.message = response.data.message;
+        return;
+      }
+
+      const data = response.data.data;
+
+      this.section = JSON.parse(
+        JSON.stringify({
+          ...data,
+          runnables: JSON.parse(data.runnables),
+          trivias: JSON.parse(data.trivias),
+          additionalResources: JSON.parse(data.additionalResources),
+        })
+      );
+      console.log(this.section);
+    },
+  },
   async mounted() {
-    console.log(this.$route.params);
-    const response = await this.http.get(
-      '/story/sections/' + this.$route.params.section
-    );
-
-    this.status = response.data.status;
-
-    if (this.status === 'error') {
-      this.message = response.data.message;
-      return;
-    }
-
-    const data = response.data.data;
-
-    this.section = {
-      ...data,
-      runnables: JSON.parse(data.runnables),
-    };
-    console.log(this.section);
+    console.log('mounted', this.$route.params);
+    await this.fetchSection(this.$route.params.section);
   },
 };
 </script>

@@ -13,7 +13,7 @@
               <h2 class="heading-2 text-w-neutral-1 mb-3">{{ story.title }}</h2>
               <ul class="breadcrumb">
                 <li class="breadcrumb-item">
-                  <a href="#" class="breadcrumb-link"> Home </a>
+                  <router-link to="/" class="breadcrumb-link">Home</router-link>
                 </li>
                 <li class="breadcrumb-item">
                   <span class="breadcrumb-icon">

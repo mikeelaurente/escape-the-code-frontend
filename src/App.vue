@@ -5,17 +5,17 @@
   <left-right-sidebar></left-right-sidebar>
   <div ref="layout" class="app-layout">
     <main>
-      <router-view></router-view>
+      <router-view :key="$route.path"></router-view>
     </main>
   </div>
 </template>
 
 <script>
 import { mapStores } from 'pinia';
-import LeftRightSidebar from './components/partials/LeftRightSidebar.vue';
-import Navbar from './components/partials/navbar.vue';
-import Preloader from './components/partials/preloader.vue';
-import ScrollToTop from './components/partials/scrollToTop.vue';
+import LeftRightSidebar from './components/partials/LeftRightSidebar';
+import Navbar from './components/partials/Navbar';
+import Preloader from './components/partials/Preloader';
+import ScrollToTop from './components/partials/ScrollToTop';
 import { useAuthStore } from './stores/auth';
 
 export default {

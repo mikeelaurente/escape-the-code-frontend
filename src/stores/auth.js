@@ -12,13 +12,21 @@ export const useAuthStore = defineStore('auth', {
       email: '',
       firstName: '',
       lastName: '',
+      avatar: 'user.png',
+      about: '',
     },
   }),
+  getters: {
+    avatar() {
+      console.log('##### user', this.user);
+      return `http://localhost:3000/avatars/${this.user.avatar}`;
+    },
+  },
   actions: {
     login(data) {
       this.isAuthenticated = true;
       this.userToken = data.accessToken;
-      this.user = data.user;
+      this.user = JSON.parse(JSON.stringify(data.user));
       console.log('-------data-------', data);
       console.log('setting token', this.userToken);
       localStorage.setItem(tokenKey, this.userToken);
@@ -28,6 +36,9 @@ export const useAuthStore = defineStore('auth', {
       this.userToken = null;
       this.user = {};
       localStorage.removeItem(tokenKey);
+    },
+    setAvatar(avatar) {
+      this.user.avatar = avatar;
     },
     async init() {
       const http = inject('http');
