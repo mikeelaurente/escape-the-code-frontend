@@ -80,7 +80,7 @@
       <div class="grid grid-cols-12 gap-x-30p gap-y-10">
         <div class="4xl:col-span-9 xxl:col-span-8 xl:col-span-7 col-span-12">
           <div>
-            <div class="glitch-effect rounded-24 overflow-hidden mb-3">
+            <!-- <div class="glitch-effect rounded-24 overflow-hidden mb-3">
               <div class="glitch-thumb">
                 <img
                   class="w-full xxl:h-[510px] lg:h-[440px] md:h-[400px] sm:h-[320px] h-[300px] object-cover"
@@ -95,7 +95,7 @@
                   alt="image"
                 />
               </div>
-            </div>
+            </div> -->
             <p class="text-w-neutral-1 mb-3">
               {{ section.description }}
             </p>
@@ -108,10 +108,7 @@
             <div
               class="grid grid-cols-1 gap-30p *:bg-b-neutral-3 *:rounded-12 *:px-32p *:py-24p"
             >
-              <challenge
-                :challenges="section.challenges"
-                :credit-usages="section.creditUsages"
-              ></challenge>
+              <challenge :section="section"></challenge>
             </div>
           </div>
         </div>
