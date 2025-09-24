@@ -28,17 +28,7 @@
                     </h1>
                     <div
                       class="flex flex-wrap items-center gap-3 text-l-medium text-w-neutral-1 mb-40p"
-                    >
-                      <span class="text-m-medium text-w-neutral-1">
-                        Leagues of Legends
-                      </span>
-                      <span
-                        class="badge badge-circle badge-dot badge-light size-1"
-                      ></span>
-                      <span class="text-m-medium text-w-neutral-1">
-                        Us English
-                      </span>
-                    </div>
+                    ></div>
                     <a
                       @click="startNow()"
                       class="btn btn-lg btn-primary rounded-12"
@@ -231,19 +221,6 @@
                     >
                       UNITE. PLAY. CONQUER.
                     </h1>
-                    <div
-                      class="flex flex-wrap items-center gap-3 text-l-medium text-w-neutral-1 mb-40p"
-                    >
-                      <span class="text-m-medium text-w-neutral-1">
-                        Leagues of Legends
-                      </span>
-                      <span
-                        class="badge badge-circle badge-dot badge-light size-1"
-                      ></span>
-                      <span class="text-m-medium text-w-neutral-1">
-                        Us English
-                      </span>
-                    </div>
                     <a
                       href="./game-details.html"
                       class="btn btn-lg btn-primary rounded-12"

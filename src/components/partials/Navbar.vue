@@ -11,7 +11,7 @@
             >
               <router-link to="/">
                 <img
-                  class="xl:w-[170px] sm:w-36 w-30 h-auto shrink-0"
+                  class="xl:w-[190px] sm:w-58 w-48 h-auto shrink-0"
                   src="../../assets/images/icons/logo.png"
                   alt="brand"
                 />
@@ -28,7 +28,10 @@
                   x-data="dropdown"
                   class="dropdown relative shrink-0 lg:block hidden"
                 >
-                  <button @click="toggle()" class="dropdown-toggle gap-24p">
+                  <button
+                    @click.prevent.stop="toggle()"
+                    class="dropdown-toggle gap-24p"
+                  >
                     <span class="flex items-center gap-3">
                       <img
                         class="size-48p rounded-full shrink-0"
@@ -42,7 +45,7 @@
                       </span>
                     </span>
                     <span
-                      :class="isOpen ? '-rotate-180' : ''"
+                      :class="appStore.isSettingsOpen ? '-rotate-180' : ''"
                       class="btn-c btn-c-lg text-w-neutral-4 icon-32 transition-1"
                     >
                       <svg
@@ -63,7 +66,7 @@
                     </span>
                   </button>
 
-                  <div v-if="isOpen" class="dropdown-content">
+                  <div v-if="appStore.isSettingsOpen" class="dropdown-content">
                     <a @click.prevent="logout()" class="dropdown-item"
                       >Logout</a
                     >
@@ -170,13 +173,15 @@
 <script>
 import { mapStores } from 'pinia';
 import { useAuthStore } from '../../stores/auth';
+import { useAppStore } from '../../stores/app';
 
 export default {
   data() {
-    return { isOpen: false, showSideNavMobile: false };
+    return { showSideNavMobile: false };
   },
   computed: {
     ...mapStores(useAuthStore),
+    ...mapStores(useAppStore),
     user() {
       console.log('user access', this.authStore.user);
       return this.authStore.user;
@@ -199,10 +204,12 @@ export default {
       this.close();
     },
     toggle() {
-      this.isOpen = !this.isOpen;
+      this.appStore.isSettingsOpen
+        ? this.appStore.closeSettings()
+        : this.appStore.openSettings();
     },
     close() {
-      this.isOpen = false;
+      this.appStore.closeSettings();
     },
   },
 };

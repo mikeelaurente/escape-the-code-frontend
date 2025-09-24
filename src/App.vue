@@ -1,12 +1,14 @@
 <template>
-  <preloader></preloader>
-  <scroll-to-top></scroll-to-top>
-  <navbar></navbar>
-  <left-right-sidebar></left-right-sidebar>
-  <div ref="layout" class="app-layout">
-    <main>
-      <router-view :key="$route.path"></router-view>
-    </main>
+  <div ref="wrapper" @click="wrapperClicked">
+    <preloader></preloader>
+    <scroll-to-top></scroll-to-top>
+    <navbar></navbar>
+    <left-right-sidebar></left-right-sidebar>
+    <div ref="layout" class="app-layout">
+      <main>
+        <router-view :key="$route.path"></router-view>
+      </main>
+    </div>
   </div>
 </template>
 
@@ -17,6 +19,7 @@ import Navbar from './components/partials/Navbar';
 import Preloader from './components/partials/Preloader';
 import ScrollToTop from './components/partials/ScrollToTop';
 import { useAuthStore } from './stores/auth';
+import { useAppStore } from './stores/app';
 
 export default {
   name: 'app',
@@ -26,9 +29,17 @@ export default {
     Preloader,
     ScrollToTop,
   },
+  methods: {
+    wrapperClicked(e) {
+      if (this.appStore.isSettingsOpen) {
+        this.appStore.closeSettings();
+      }
+    },
+  },
 
   computed: {
     ...mapStores(useAuthStore),
+    ...mapStores(useAppStore),
     user() {
       console.log('user access', this.authStore.user);
       return this.authStore.user;

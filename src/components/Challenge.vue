@@ -3,7 +3,7 @@
     <h2 class="heading-2 mb-4 border-dotted border-b-2">Challenge</h2>
     <div class="inline-flex rounded-md shadow-xs" role="group">
       <button
-        v-for="(challenge, idx) in challenges"
+        v-for="(challenge, idx) in section.challenges"
         :key="challenge.id"
         @click="displayChallenge(challenge)"
         type="button"
@@ -11,9 +11,9 @@
           'px-4 py-2 text-sm btn-primary font-medium text-gray-900 bg-white border border-gray-200 rounded-s-lg hover:bg-gray-100 hover:text-blue-700 focus:z-10 focus:ring-2 focus:ring-blue-700 focus:text-blue-700 dark:bg-gray-800 dark:border-gray-700 dark:text-white dark:hover:text-white dark:hover:bg-gray-700 dark:focus:ring-blue-500 dark:focus:text-white':
             idx === 0,
           'px-4 py-2 text-sm btn-primary font-medium text-gray-900 bg-white border-t border-b border-gray-200 hover:bg-gray-100 hover:text-blue-700 focus:z-10 focus:ring-2 focus:ring-blue-700 focus:text-blue-700 dark:bg-gray-800 dark:border-gray-700 dark:text-white dark:hover:text-white dark:hover:bg-gray-700 dark:focus:ring-blue-500 dark:focus:text-white':
-            idx > 0 && idx < challenges.length - 1,
+            idx > 0 && idx < section.challenges.length - 1,
           'px-4 py-2 text-sm btn-primary font-medium text-gray-900 bg-white border border-gray-200 rounded-e-lg hover:bg-gray-100 hover:text-blue-700 focus:z-10 focus:ring-2 focus:ring-blue-700 focus:text-blue-700 dark:bg-gray-800 dark:border-gray-700 dark:text-white dark:hover:text-white dark:hover:bg-gray-700 dark:focus:ring-blue-500 dark:focus:text-white':
-            idx === challenges.length - 1,
+            idx === section.challenges.length - 1,
         }"
         :style="{
           background: selectedChallege.id == challenge.id ? '#f29620' : '',
@@ -27,107 +27,199 @@
       <h3>{{ selectedChallege.title }}</h3>
       <div v-html="selectedChallege.description"></div>
       <hr class="my-2 border-dotted border-3" />
-      <div
-        class="shadow-3 border-2 rounded-12 border-indigo-950"
-        :class="{ 'shake border-danger': answerError }"
-      >
-        <v-ace-editor
-          v-model:value="content"
-          class="code-editor rounded-12 text-lg"
-          lang="javascript"
-          theme="monokai"
-          style="height: 300px"
-          :options="{
-            enableBasicAutocompletion: true,
-            enableSnippets: true,
-            enableLiveAutocompletion: true,
-          }"
-        />
-      </div>
-      <div class="flex justify-between mt-3">
-        <button @click="showHints()" class="btn btn-c-outline-primary">
-          <i class="ti ti-help-circle-filled icon-24"></i>
-          Hints
-        </button>
-        <button @click="submitAnswer()" class="btn btn-primary">
-          <i class="ti ti-player-play-filled icon-24"></i>
-          Run
-        </button>
-      </div>
-      <div v-show="!allTestsPassed && codeSubmitted" class="flex flex-col mt-3">
-        <ul
-          class="flex flex-wrap text-sm font-medium text-center text-gray-500 border-b border-gray-200 dark:border-gray-700 dark:text-gray-400"
+      <div class="flex justify-center">
+        <button
+          v-if="selectedChallege.status === 'none'"
+          @click="startChallenge(selectedChallege)"
+          class="btn btn-primary rounded-10"
         >
-          <li class="me-2">
-            <a
-              @click.prevent="selectedTab = 'result'"
-              aria-current="page"
-              class="inline-block p-4 rounded-t-lg hover:bg-gray-800 hover:dark:bg-gray-800 cursor-pointer"
-              :class="{
-                'active text-blue-600 bg-gray-100 dark:bg-gray-800 dark:text-blue-500':
-                  selectedTab == 'result',
-              }"
-              >Result</a
-            >
-          </li>
-          <li class="me-2">
-            <a
-              @click.prevent="selectedTab = 'errors'"
-              class="inline-block p-4 rounded-t-lg hover:bg-gray-800 hover:dark:bg-gray-800 cursor-pointer"
-              :class="{
-                'active text-blue-600 bg-gray-100 dark:bg-gray-800 dark:text-blue-500':
-                  selectedTab == 'errors',
-              }"
-              >Errors</a
-            >
-          </li>
-        </ul>
-        <div class="mt-2" v-if="selectedTab == 'result'">
-          <h4 class="font-mono">
-            Result:
-            <strong
-              class="font-mono"
-              v-html="getSubmissionResultTitle()"
-            ></strong>
-          </h4>
-          <ul class="mb-0">
-            <li v-for="(result, idx) in submissionResult.results" :key="idx">
-              <template v-if="result.ok">
-                <div>
-                  {{ result.ms }}ms | Test {{ idx + 1 }}:
-                  <strong class="text-success">PASSED</strong>
-                </div>
-              </template>
-              <template v-else>
-                <div
-                  class="font-mono"
-                  v-html="getAssertionResult(result, idx)"
-                ></div>
-              </template>
+          <i class="ti ti-player-play-filled icon-32"></i>
+          Start Challenge
+        </button>
+        <button
+          v-if="selectedChallege.status === 'solved'"
+          @click="completeChallenge(selectedChallege)"
+          class="btn btn-primary rounded-10 mt-4"
+        >
+          <i class="ti ti-circle-check-filled icon-32"></i>
+          Complete Challenge
+        </button>
+      </div>
+      <div v-if="selectedChallege.status === 'ongoing'">
+        <div
+          class="shadow-3 border-2 rounded-12 border-indigo-950"
+          :class="{ 'shake border-danger': answerError }"
+        >
+          <v-ace-editor
+            v-model:value="content"
+            class="code-editor rounded-12 text-lg"
+            lang="javascript"
+            theme="monokai"
+            style="height: 300px"
+            :options="{
+              enableBasicAutocompletion: true,
+              enableSnippets: true,
+              enableLiveAutocompletion: true,
+            }"
+          />
+        </div>
+        <div class="flex justify-between mt-3">
+          <button @click="showHints()" class="btn btn-c-outline-primary">
+            <i class="ti ti-help-circle-filled icon-24"></i>
+            Hints
+          </button>
+          <button @click="submitAnswer()" class="btn btn-primary">
+            <i class="ti ti-player-play-filled icon-24"></i>
+            Run
+          </button>
+        </div>
+        <div
+          v-show="!allTestsPassed && codeSubmitted"
+          class="flex flex-col mt-3"
+        >
+          <ul
+            class="flex flex-wrap text-sm font-medium text-center text-gray-500 border-b border-gray-200 dark:border-gray-700 dark:text-gray-400"
+          >
+            <li class="me-2">
+              <a
+                @click.prevent="selectedTab = 'result'"
+                aria-current="page"
+                class="inline-block p-4 rounded-t-lg hover:bg-gray-800 hover:dark:bg-gray-800 cursor-pointer"
+                :class="{
+                  'active text-blue-600 bg-gray-100 dark:bg-gray-800 dark:text-blue-500':
+                    selectedTab == 'result',
+                }"
+                >Result</a
+              >
+            </li>
+            <li class="me-2">
+              <a
+                @click.prevent="selectedTab = 'errors'"
+                class="inline-block p-4 rounded-t-lg hover:bg-gray-800 hover:dark:bg-gray-800 cursor-pointer"
+                :class="{
+                  'active text-blue-600 bg-gray-100 dark:bg-gray-800 dark:text-blue-500':
+                    selectedTab == 'errors',
+                }"
+                >Errors</a
+              >
             </li>
           </ul>
-        </div>
-        <div class="mt-2" v-if="selectedTab == 'errors'">
-          <pre v-html="getCodeErrors(submissionResult)"></pre>
+          <div class="mt-2" v-if="selectedTab == 'result'">
+            <h4 class="font-mono">
+              Result:
+              <strong
+                class="font-mono"
+                v-html="getSubmissionResultTitle(this.submissionResult)"
+              ></strong>
+            </h4>
+            <ul class="mb-0">
+              <li v-for="(result, idx) in submissionResult.results" :key="idx">
+                <template v-if="result.ok">
+                  <div>
+                    {{ result.ms }}ms | Test {{ idx + 1 }}:
+                    <strong class="text-success">PASSED</strong>
+                  </div>
+                </template>
+                <template v-else>
+                  <div
+                    class="font-mono"
+                    v-html="getAssertionResult(result, idx)"
+                  ></div>
+                </template>
+              </li>
+            </ul>
+          </div>
+          <div class="mt-2" v-if="selectedTab == 'errors'">
+            <pre v-html="getCodeErrors(submissionResult)"></pre>
+          </div>
         </div>
       </div>
-      <div
-        class="mt-2 p-4 rounded-12 border-t border-dotted border-2"
-        v-show="feedback.length > 0"
-      >
-        <h2>Feedback</h2>
-        <div v-html="feedback"></div>
+
+      <div v-if="selectedChallege.status === 'solved'">
+        <div class="mt-4">
+          <h2 class="text-center">Challenge Solved!</h2>
+          <div>
+            <h3>Code</h3>
+            <div
+              class="font-mono p-3 bg-neutral-900 rounded-10 my-2"
+              v-html="
+                selectedChallege.ongoingAnswer.submission.code.replace(
+                  /\n/,
+                  '<br />'
+                )
+              "
+            ></div>
+
+            <h4 class="font-mono">
+              Result:
+              <strong
+                class="font-mono"
+                v-html="
+                  getSubmissionResultTitle(
+                    selectedChallege.ongoingAnswer.submission.metadata
+                  )
+                "
+              ></strong>
+            </h4>
+            <div class="p-3 bg-neutral-900 rounded-10 my-2">
+              <ul class="mb-0">
+                <li
+                  v-for="(result, idx) in selectedChallege.ongoingAnswer
+                    .submission.metadata.results"
+                  :key="idx"
+                >
+                  <template v-if="result.ok">
+                    <div>
+                      {{ result.ms }}ms | Test {{ idx + 1 }}:
+                      <strong class="text-success">PASSED</strong>
+                    </div>
+                  </template>
+                  <template v-else>
+                    <div
+                      class="font-mono"
+                      v-html="getAssertionResult(result, idx)"
+                    ></div>
+                  </template>
+                </li>
+              </ul>
+            </div>
+          </div>
+        </div>
       </div>
-      <div class="mt-3 flex justify-center" v-if="nextSection">
-        <router-link
-          class="btn btn-primary rounder-12 pulse"
-          :key="nextSection.id"
-          :to="`/story/chapters/${nextSection.chapterId}/${
-            nextSection.id
-          }?t=${new Date().getTime()}`"
-        >
-          Next: {{ nextSection.title }}
-        </router-link>
+
+      <div v-if="selectedChallege.status === 'completed'">
+        <div class="mt-4">
+          <h2 class="text-center">Challenge Completed!</h2>
+          <div>
+            <h3>Code</h3>
+            <div
+              class="font-mono p-3 bg-neutral-900 rounded-10 my-2"
+              v-html="
+                selectedChallege.acceptedAnswer.submission.code.replace(
+                  /\n/,
+                  '<br />'
+                )
+              "
+            ></div>
+            <h3>Feedback</h3>
+            <div
+              class="p-3 bg-neutral-900 rounded-10 my-2"
+              v-html="selectedChallege.acceptedAnswer.feedback"
+            ></div>
+          </div>
+        </div>
+
+        <div class="mt-3 flex justify-center" v-if="nextSection">
+          <router-link
+            class="btn btn-primary rounder-12 pulse"
+            :key="nextSection.id"
+            :to="`/story/chapters/${nextSection.chapterId}/${
+              nextSection.id
+            }?t=${new Date().getTime()}`"
+          >
+            Next: {{ nextSection.title }}
+          </router-link>
+        </div>
       </div>
     </div>
   </div>
@@ -251,7 +343,6 @@ export default {
   data() {
     return {
       feedback: '',
-      nextSection: null,
       selectedChallege: {},
       selectedTab: 'result',
       codeSubmitted: false,
@@ -271,22 +362,18 @@ export default {
     };
   },
   props: {
-    challenges: {
-      default: [],
+    section: {
       required: true,
-      type: Array,
-    },
-    creditUsages: {
-      default: [],
-      required: false,
-      type: Array,
     },
   },
   inject: ['http'],
   computed: {
+    nextSection() {
+      return this.section.nextSection;
+    },
     modifiedHints() {
       return this.hints.map((hint) => {
-        const boughtHint = this.creditUsages.find(
+        const boughtHint = this.section.creditUsages.find(
           (x) => x.challengeHintId == hint.id
         );
         if (boughtHint) {
@@ -306,22 +393,99 @@ export default {
     },
   },
   methods: {
-    getSubmissionResultTitle() {
-      const status = this.submissionResult.status;
+    startChallenge(challenge) {
+      Swal.fire({
+        title: 'Are you sure?',
+        showCancelButton: true,
+        confirmButtonText: 'Start',
+        showLoaderOnConfirm: true,
+        customClass: this.swalClasses,
+        preConfirm: async () => {
+          try {
+            const challengeId = this.selectedChallege.id;
+            const response = await this.http.post(
+              '/challenges/' + challengeId + '/start'
+            );
+            challenge.status = response.data.data.status;
+            return response.data;
+          } catch (error) {
+            Swal.showValidationMessage(`Request failed: ${error}`);
+          }
+        },
+        allowOutsideClick: () => !Swal.isLoading(),
+      }).then((result, response) => {
+        if (result.isConfirmed) {
+        }
+      });
+    },
+    completeChallenge(challenge) {
+      Swal.fire({
+        title: 'Are you sure?',
+        showCancelButton: true,
+        confirmButtonText: 'Complete',
+        showLoaderOnConfirm: true,
+        customClass: this.swalClasses,
+        preConfirm: async () => {
+          try {
+            const challengeId = this.selectedChallege.id;
+            const response = await this.http.post(
+              '/challenges/' + challengeId + '/complete'
+            );
+            console.log('========', response.data.data);
+            console.log('========b4', challenge);
+            challenge.acceptedAnswer = response.data.data.answer;
+            challenge.status = response.data.data.answer.status;
+            this.section.nextSection = response.data.data.nextSection;
+            console.log('========after', challenge);
+            return response.data;
+          } catch (error) {
+            console.log('error', error);
+            Swal.showValidationMessage(`Request failed: ${error}`);
+          }
+        },
+        allowOutsideClick: () => !Swal.isLoading(),
+      }).then((result, response) => {
+        if (result.isConfirmed) {
+          Swal.fire({
+            icon: 'success',
+            title: 'Yey',
+            text: 'You have completed this challenge!',
+            customClass: this.swalClasses,
+          });
+
+          Swal.fire({
+            title: 'Congrats!',
+            text: 'Challenge completed!',
+            width: 600,
+            padding: '3em',
+            color: '#716add',
+            customClass: this.swalClasses,
+            backdrop: `
+              rgba(0,0,123,0.4)
+              url("/assets/images/nyan-cat.gif")
+              left top
+              no-repeat
+            `,
+          });
+        }
+      });
+    },
+    getSubmissionResultTitle(submissionResult) {
+      const status = submissionResult.status;
       switch (status) {
         case 'timeout':
           return '<strong class="text-danger">Timeout</strong>';
         case 'ok': {
-          if (this.submissionResult.results.every((x) => x.ok)) {
+          if (submissionResult.results.every((x) => x.ok)) {
             return '<strong class="text-success">Passed</strong>';
           } else if (
-            this.submissionResult.results.some(
+            submissionResult.results.some(
               (x) => x.error && x.error.indexOf('ReferenceError') > -1
             )
           ) {
             return (
               '<strong class="text-danger">' +
-              this.submissionResult.results[0].error +
+              submissionResult.results[0].error +
               '</strong>'
             );
           } else {
@@ -365,15 +529,16 @@ export default {
       console.log(
         'hintId',
         hintId,
-        this.creditUsages,
-        this.creditUsages.find((c) => c.challengeHintId == hintId)
+        this.section.creditUsages,
+        this.section.creditUsages.find((c) => c.challengeHintId == hintId)
       );
       return (
-        this.creditUsages.filter((c) => c.challengeHintId == hintId).length > 0
+        this.section.creditUsages.filter((c) => c.challengeHintId == hintId)
+          .length > 0
       );
     },
     getHint(hintId) {
-      return this.creditUsages.find((c) => c.challengeHintId == hintId);
+      return this.section.creditUsages.find((c) => c.challengeHintId == hintId);
     },
     async buyHint(hint) {
       const boughtHint = this.getHint(hint.id);
@@ -400,7 +565,7 @@ export default {
             const challengeId = this.selectedChallege.id;
             const hintId = hint.id;
             const response = await this.http.post(
-              '/story/challenges/' + challengeId + '/buy-hint',
+              '/challenges/' + challengeId + '/buy-hint',
               {
                 hintId,
               }
@@ -434,7 +599,7 @@ export default {
           `,
                   customClass: this.swalClasses,
                 });
-                this.creditUsages.push(data.creditUsage);
+                this.section.creditUsages.push(data.creditUsage);
               }
             } else {
               Swal.fire({
@@ -460,7 +625,7 @@ export default {
         const challengeId = this.selectedChallege.id;
 
         const response = await this.http.get(
-          '/story/challenges/' + challengeId + '/hints'
+          '/challenges/' + challengeId + '/hints'
         );
         const hints = response.data.data;
         this.hints = hints;
@@ -483,13 +648,17 @@ export default {
             const answer = encodeURIComponent(this.content);
             const challengeId = this.selectedChallege.id;
             const response = await this.http.post(
-              '/story/challenges/' + challengeId + '/answer',
+              '/challenges/' + challengeId + '/answer',
               {
                 answer,
               }
             );
-            this.submissionResult = response.data;
-            return response.data;
+            this.submissionResult =
+              response.data.data.ongoingAnswer.submission.metadata;
+            this.selectedChallege.ongoingAnswer =
+              response.data.data.ongoingAnswer;
+            this.selectedChallege.status = response.data.data.result;
+            return this.submissionResult;
           } catch (error) {
             Swal.showValidationMessage(`Request failed: ${error}`);
           }
@@ -507,20 +676,13 @@ export default {
               icon: 'success',
               customClass: this.swalClasses,
             });
-
-            if (result.value.feedback) {
-              this.feedback = result.value.feedback;
-            }
-            if (result.value.nextSection) {
-              this.nextSection = result.value.nextSection;
-            }
           } else {
             this.answerError = true;
             Swal.fire({
               title: '🪄 Spell Fizzled!',
               text: result.value.errors
                 ? result.value.errors.answer
-                : 'The magic faltered... check your runes and try again!',
+                : result.value.message,
               icon: 'error',
               customClass: this.swalClasses,
             });
@@ -530,7 +692,7 @@ export default {
     },
   },
   mounted() {
-    this.displayChallenge(this.challenges[0]);
+    this.displayChallenge(this.section.challenges[0]);
   },
 };
 </script>
