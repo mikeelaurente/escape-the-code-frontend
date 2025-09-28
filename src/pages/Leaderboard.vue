@@ -48,485 +48,70 @@
               <th
                 class="text-l-medium px-24p py-3 lg:min-w-[300px] min-w-[280px]"
               >
-                Team Name
+                User
               </th>
-              <th class="text-l-medium px-24p py-3 min-w-[216px]">Roster</th>
-              <th class="text-l-medium px-24p py-3 min-w-25">Win</th>
-              <th class="text-l-medium px-24p py-3 min-w-25">Lose</th>
-              <th class="text-l-medium px-24p py-3 min-w-25">Played</th>
-              <th class="text-l-medium px-24p py-3 min-w-25">Ratio</th>
               <th class="text-l-medium px-24p py-3 min-w-25">Points</th>
+              <th class="text-l-medium px-24p py-3 min-w-25">
+                Sections Completed
+              </th>
             </tr>
           </thead>
           <tbody
             class="divide-y divide-solid divide-shap border-b border-shap bg-b-neutral-3"
           >
-            <tr>
+            <tr v-for="(rank, idx) in ranking" :key="idx">
               <td class="px-24p py-3">
                 <div class="flex-y gap-3">
                   <i class="ti ti-chevrons-up icon-24 text-danger"></i>
-                  <span class="text-l-medium"> 01 </span>
+                  <span class="text-l-medium"> {{ rank.rank }} </span>
                 </div>
               </td>
               <td class="px-24p py-3">
                 <div class="flex items-center gap-20p">
                   <img
-                    class="avatar size-60p shrink-0"
-                    src="../assets/images/teams/team12.webp"
-                    alt="team"
+                    class="size-48p rounded-full shrink-0"
+                    :src="rank.photoUrl"
+                    alt="profile"
                   />
                   <div>
-                    <span class="text-m-medium text-danger mb-1"> Gold </span>
-                    <a
-                      href="./team-details.html"
+                    <router-link :to="`/user-stats/` + rank.id">
+                      <span class="text-m-medium text-danger mb-1">
+                        {{ rank.email }}
+                      </span>
+                    </router-link>
+                    <router-link
+                      :to="`/user-stats/` + rank.id"
                       class="text-l-medium text-w-neutral-1 link-1 line-clamp-1"
                     >
-                      Age of Kings
-                    </a>
+                      {{ rank.lastName }}, {{ rank.firstName }}
+                    </router-link>
                   </div>
                 </div>
               </td>
-              <td class="px-24p py-3">
-                <div
-                  class="flex items-center *:avatar *:size-10 *:border *:border-white *:-ml-3 ml-3"
-                >
-                  <img src="../assets/images/users/avatar1.png" alt="user" />
-                  <img src="../assets/images/users/avatar2.png" alt="user" />
-                  <img src="../assets/images/users/avatar3.png" alt="user" />
-                  <img src="../assets/images/users/avatar4.png" alt="user" />
-                  <img src="../assets/images/users/avatar5.png" alt="user" />
-                </div>
-              </td>
-              <td class="px-24p py-3">59</td>
-              <td class="px-24p py-3">57</td>
-              <td class="px-24p py-3">345</td>
-              <td class="px-24p py-3">75%</td>
-              <td class="px-24p py-3">675</td>
-            </tr>
-            <tr>
-              <td class="px-24p py-3">
-                <div class="flex-y gap-3">
-                  <i class="ti ti-chevrons-up icon-24 text-primary"></i>
-                  <span class="text-l-medium"> 02 </span>
-                </div>
-              </td>
-              <td class="px-24p py-3">
-                <div class="flex items-center gap-20p">
-                  <img
-                    class="avatar size-60p shrink-0"
-                    src="../assets/images/teams/team13.webp"
-                    alt="team"
-                  />
-                  <div>
-                    <span class="text-m-medium text-primary mb-1">
-                      Silber
-                    </span>
-                    <a
-                      href="./team-details.html"
-                      class="text-l-medium text-w-neutral-1 link-1 line-clamp-1"
-                    >
-                      Velocity Arena
-                    </a>
-                  </div>
-                </div>
-              </td>
-              <td class="px-24p py-3">
-                <div
-                  class="flex items-center *:avatar *:size-10 *:border *:border-white *:-ml-3 ml-3"
-                >
-                  <img src="../assets/images/users/avatar1.png" alt="user" />
-                  <img src="../assets/images/users/avatar2.png" alt="user" />
-                  <img src="../assets/images/users/avatar3.png" alt="user" />
-                  <img src="../assets/images/users/avatar4.png" alt="user" />
-                  <img src="../assets/images/users/avatar5.png" alt="user" />
-                </div>
-              </td>
-              <td class="px-24p py-3">12</td>
-              <td class="px-24p py-3">54</td>
-              <td class="px-24p py-3">254</td>
-              <td class="px-24p py-3">87%</td>
-              <td class="px-24p py-3">324</td>
-            </tr>
-            <tr>
-              <td class="px-24p py-3">
-                <div class="flex-y gap-3">
-                  <i class="ti ti-chevrons-up icon-24 text-danger"></i>
-                  <span class="text-l-medium"> 03 </span>
-                </div>
-              </td>
-              <td class="px-24p py-3">
-                <div class="flex items-center gap-20p">
-                  <img
-                    class="avatar size-60p shrink-0"
-                    src="../assets/images/teams/team14.webp"
-                    alt="team"
-                  />
-                  <div>
-                    <span class="text-m-medium text-danger mb-1"> Gold </span>
-                    <a
-                      href="./team-details.html"
-                      class="text-l-medium text-w-neutral-1 link-1 line-clamp-1"
-                    >
-                      Cursed Requiem
-                    </a>
-                  </div>
-                </div>
-              </td>
-              <td class="px-24p py-3">
-                <div
-                  class="flex items-center *:avatar *:size-10 *:border *:border-white *:-ml-3 ml-3"
-                >
-                  <img src="../assets/images/users/avatar1.png" alt="user" />
-                  <img src="../assets/images/users/avatar2.png" alt="user" />
-                  <img src="../assets/images/users/avatar3.png" alt="user" />
-                  <img src="../assets/images/users/avatar4.png" alt="user" />
-                  <img src="../assets/images/users/avatar5.png" alt="user" />
-                </div>
-              </td>
-              <td class="px-24p py-3">55</td>
-              <td class="px-24p py-3">25</td>
-              <td class="px-24p py-3">701</td>
-              <td class="px-24p py-3">12%</td>
-              <td class="px-24p py-3">897</td>
-            </tr>
-            <tr>
-              <td class="px-24p py-3">
-                <div class="flex-y gap-3">
-                  <i class="ti ti-chevrons-up icon-24 text-primary"></i>
-                  <span class="text-l-medium"> 04 </span>
-                </div>
-              </td>
-              <td class="px-24p py-3">
-                <div class="flex items-center gap-20p">
-                  <img
-                    class="avatar size-60p shrink-0"
-                    src="../assets/images/teams/team15.webp"
-                    alt="team"
-                  />
-                  <div>
-                    <span class="text-m-medium text-primary mb-1">
-                      Silber
-                    </span>
-                    <a
-                      href="./team-details.html"
-                      class="text-l-medium text-w-neutral-1 link-1 line-clamp-1"
-                    >
-                      Pixel Quest
-                    </a>
-                  </div>
-                </div>
-              </td>
-              <td class="px-24p py-3">
-                <div
-                  class="flex items-center *:avatar *:size-10 *:border *:border-white *:-ml-3 ml-3"
-                >
-                  <img src="../assets/images/users/avatar1.png" alt="user" />
-                  <img src="../assets/images/users/avatar2.png" alt="user" />
-                  <img src="../assets/images/users/avatar3.png" alt="user" />
-                  <img src="../assets/images/users/avatar4.png" alt="user" />
-                  <img src="../assets/images/users/avatar5.png" alt="user" />
-                </div>
-              </td>
-              <td class="px-24p py-3">55</td>
-              <td class="px-24p py-3">23</td>
-              <td class="px-24p py-3">109</td>
-              <td class="px-24p py-3">34%</td>
-              <td class="px-24p py-3">566</td>
-            </tr>
-            <tr>
-              <td class="px-24p py-3">
-                <div class="flex-y gap-3">
-                  <i class="ti ti-chevrons-up icon-24 text-danger"></i>
-                  <span class="text-l-medium"> 05 </span>
-                </div>
-              </td>
-              <td class="px-24p py-3">
-                <div class="flex items-center gap-20p">
-                  <img
-                    class="avatar size-60p shrink-0"
-                    src="../assets/images/teams/team16.webp"
-                    alt="team"
-                  />
-                  <div>
-                    <span class="text-m-medium text-danger mb-1"> Gold </span>
-                    <a
-                      href="./team-details.html"
-                      class="text-l-medium text-w-neutral-1 link-1 line-clamp-1"
-                    >
-                      Chronicles of Aetheria
-                    </a>
-                  </div>
-                </div>
-              </td>
-              <td class="px-24p py-3">
-                <div
-                  class="flex items-center *:avatar *:size-10 *:border *:border-white *:-ml-3 ml-3"
-                >
-                  <img src="../assets/images/users/avatar1.png" alt="user" />
-                  <img src="../assets/images/users/avatar2.png" alt="user" />
-                  <img src="../assets/images/users/avatar3.png" alt="user" />
-                  <img src="../assets/images/users/avatar4.png" alt="user" />
-                  <img src="../assets/images/users/avatar5.png" alt="user" />
-                </div>
-              </td>
-              <td class="px-24p py-3">41</td>
-              <td class="px-24p py-3">18</td>
-              <td class="px-24p py-3">132</td>
-              <td class="px-24p py-3">78%</td>
-              <td class="px-24p py-3">566</td>
-            </tr>
-            <tr>
-              <td class="px-24p py-3">
-                <div class="flex-y gap-3">
-                  <i class="ti ti-chevrons-up icon-24 text-danger"></i>
-                  <span class="text-l-medium"> 06 </span>
-                </div>
-              </td>
-              <td class="px-24p py-3">
-                <div class="flex items-center gap-20p">
-                  <img
-                    class="avatar size-60p shrink-0"
-                    src="../assets/images/teams/team17.webp"
-                    alt="team"
-                  />
-                  <div>
-                    <span class="text-m-medium text-danger mb-1"> Gold </span>
-                    <a
-                      href="./team-details.html"
-                      class="text-l-medium text-w-neutral-1 link-1 line-clamp-1"
-                    >
-                      Age of Kings
-                    </a>
-                  </div>
-                </div>
-              </td>
-              <td class="px-24p py-3">
-                <div
-                  class="flex items-center *:avatar *:size-10 *:border *:border-white *:-ml-3 ml-3"
-                >
-                  <img src="../assets/images/users/avatar1.png" alt="user" />
-                  <img src="../assets/images/users/avatar2.png" alt="user" />
-                  <img src="../assets/images/users/avatar3.png" alt="user" />
-                  <img src="../assets/images/users/avatar4.png" alt="user" />
-                  <img src="../assets/images/users/avatar5.png" alt="user" />
-                </div>
-              </td>
-              <td class="px-24p py-3">32</td>
-              <td class="px-24p py-3">11</td>
-              <td class="px-24p py-3">526</td>
-              <td class="px-24p py-3">34%</td>
-              <td class="px-24p py-3">545</td>
-            </tr>
-            <tr>
-              <td class="px-24p py-3">
-                <div class="flex-y gap-3">
-                  <i class="ti ti-chevrons-up icon-24 text-primary"></i>
-                  <span class="text-l-medium"> 07 </span>
-                </div>
-              </td>
-              <td class="px-24p py-3">
-                <div class="flex items-center gap-20p">
-                  <img
-                    class="avatar size-60p shrink-0"
-                    src="../assets/images/teams/team18.webp"
-                    alt="team"
-                  />
-                  <div>
-                    <span class="text-m-medium text-primary mb-1">
-                      Silber
-                    </span>
-                    <a
-                      href="./team-details.html"
-                      class="text-l-medium text-w-neutral-1 link-1 line-clamp-1"
-                    >
-                      Clockwork Enigma
-                    </a>
-                  </div>
-                </div>
-              </td>
-              <td class="px-24p py-3">
-                <div
-                  class="flex items-center *:avatar *:size-10 *:border *:border-white *:-ml-3 ml-3"
-                >
-                  <img src="../assets/images/users/avatar1.png" alt="user" />
-                  <img src="../assets/images/users/avatar2.png" alt="user" />
-                  <img src="../assets/images/users/avatar3.png" alt="user" />
-                  <img src="../assets/images/users/avatar4.png" alt="user" />
-                  <img src="../assets/images/users/avatar5.png" alt="user" />
-                </div>
-              </td>
-              <td class="px-24p py-3">81</td>
-              <td class="px-24p py-3">12</td>
-              <td class="px-24p py-3">233</td>
-              <td class="px-24p py-3">25%</td>
-              <td class="px-24p py-3">570</td>
-            </tr>
-            <tr>
-              <td class="px-24p py-3">
-                <div class="flex-y gap-3">
-                  <i class="ti ti-chevrons-up icon-24 text-danger"></i>
-                  <span class="text-l-medium"> 08 </span>
-                </div>
-              </td>
-              <td class="px-24p py-3">
-                <div class="flex items-center gap-20p">
-                  <img
-                    class="avatar size-60p shrink-0"
-                    src="../assets/images/teams/team19.webp"
-                    alt="team"
-                  />
-                  <div>
-                    <span class="text-m-medium text-danger mb-1"> Gold </span>
-                    <a
-                      href="./team-details.html"
-                      class="text-l-medium text-w-neutral-1 link-1 line-clamp-1"
-                    >
-                      Chronicles of Aetheria
-                    </a>
-                  </div>
-                </div>
-              </td>
-              <td class="px-24p py-3">
-                <div
-                  class="flex items-center *:avatar *:size-10 *:border *:border-white *:-ml-3 ml-3"
-                >
-                  <img src="../assets/images/users/avatar1.png" alt="user" />
-                  <img src="../assets/images/users/avatar2.png" alt="user" />
-                  <img src="../assets/images/users/avatar3.png" alt="user" />
-                  <img src="../assets/images/users/avatar4.png" alt="user" />
-                  <img src="../assets/images/users/avatar5.png" alt="user" />
-                </div>
-              </td>
-              <td class="px-24p py-3">25</td>
-              <td class="px-24p py-3">21</td>
-              <td class="px-24p py-3">170</td>
-              <td class="px-24p py-3">65%</td>
-              <td class="px-24p py-3">550</td>
-            </tr>
-            <tr>
-              <td class="px-24p py-3">
-                <div class="flex-y gap-3">
-                  <i class="ti ti-chevrons-up icon-24 text-primary"></i>
-                  <span class="text-l-medium"> 09 </span>
-                </div>
-              </td>
-              <td class="px-24p py-3">
-                <div class="flex items-center gap-20p">
-                  <img
-                    class="avatar size-60p shrink-0"
-                    src="../assets/images/teams/team20.webp"
-                    alt="team"
-                  />
-                  <div>
-                    <span class="text-m-medium text-primary mb-1">
-                      Silber
-                    </span>
-                    <a
-                      href="./team-details.html"
-                      class="text-l-medium text-w-neutral-1 link-1 line-clamp-1"
-                    >
-                      Empire Ascension
-                    </a>
-                  </div>
-                </div>
-              </td>
-              <td class="px-24p py-3">
-                <div
-                  class="flex items-center *:avatar *:size-10 *:border *:border-white *:-ml-3 ml-3"
-                >
-                  <img src="../assets/images/users/avatar1.png" alt="user" />
-                  <img src="../assets/images/users/avatar2.png" alt="user" />
-                  <img src="../assets/images/users/avatar3.png" alt="user" />
-                  <img src="../assets/images/users/avatar4.png" alt="user" />
-                  <img src="../assets/images/users/avatar5.png" alt="user" />
-                </div>
-              </td>
-              <td class="px-24p py-3">17</td>
-              <td class="px-24p py-3">12</td>
-              <td class="px-24p py-3">110</td>
-              <td class="px-24p py-3">23%</td>
-              <td class="px-24p py-3">220</td>
-            </tr>
-            <tr>
-              <td class="px-24p py-3">
-                <div class="flex-y gap-3">
-                  <i class="ti ti-chevrons-up icon-24 text-danger"></i>
-                  <span class="text-l-medium"> 10 </span>
-                </div>
-              </td>
-              <td class="px-24p py-3">
-                <div class="flex items-center gap-20p">
-                  <img
-                    class="avatar size-60p shrink-0"
-                    src="../assets/images/teams/team21.webp"
-                    alt="team"
-                  />
-                  <div>
-                    <span class="text-m-medium text-danger mb-1"> Gold </span>
-                    <a
-                      href="./team-details.html"
-                      class="text-l-medium text-w-neutral-1 link-1 line-clamp-1"
-                    >
-                      Realm of Eldoria
-                    </a>
-                  </div>
-                </div>
-              </td>
-              <td class="px-24p py-3">
-                <div
-                  class="flex items-center *:avatar *:size-10 *:border *:border-white *:-ml-3 ml-3"
-                >
-                  <img src="../assets/images/users/avatar1.png" alt="user" />
-                  <img src="../assets/images/users/avatar2.png" alt="user" />
-                  <img src="../assets/images/users/avatar3.png" alt="user" />
-                  <img src="../assets/images/users/avatar4.png" alt="user" />
-                  <img src="../assets/images/users/avatar5.png" alt="user" />
-                </div>
-              </td>
-              <td class="px-24p py-3">08</td>
-              <td class="px-24p py-3">03</td>
-              <td class="px-24p py-3">75</td>
-              <td class="px-24p py-3">55%</td>
-              <td class="px-24p py-3">342</td>
+              <td class="px-24p py-3">{{ rank.points }}</td>
+              <td class="px-24p py-3">{{ rank.completed }}/{{ rank.total }}</td>
             </tr>
           </tbody>
         </table>
-      </div>
-      <div
-        class="pagination pagination-primary lg:pagination-center pagination-center pagination-circle pagination-xl w-full mt-48p"
-      >
-        <a href="#" class="pagination-item pagination-prev">
-          <i class="ti ti-chevron-left"></i>
-        </a>
-        <div class="pagination-list">
-          <a href="#" class="pagination-item pagination-circle active">
-            <span class="pagination-link">1</span>
-          </a>
-          <a href="#" class="pagination-item pagination-circle">
-            <span class="pagination-link">2</span>
-          </a>
-          <a href="#" class="pagination-item pagination-circle">
-            <span class="pagination-link">3</span>
-          </a>
-          <a href="#" class="pagination-item pagination-circle">
-            <span class="pagination-link">4</span>
-          </a>
-          <a href="#" class="pagination-item pagination-circle">
-            <span class="pagination-link">5</span>
-          </a>
-          <a href="#" class="pagination-item pagination-circle">
-            <span class="pagination-link pagination-more">...</span>
-          </a>
-          <a href="#" class="pagination-item pagination-circle">
-            <span class="pagination-link">10</span>
-          </a>
-        </div>
-        <a href="#" class="pagination-item pagination-next">
-          <i class="ti ti-chevron-right"></i>
-        </a>
       </div>
     </div>
   </section>
 
   <!-- Leaderboard section end -->
 </template>
+
+<script>
+export default {
+  data() {
+    return {
+      ranking: {},
+    };
+  },
+  inject: ['http'],
+  async mounted() {
+    console.log(this.$route.params);
+    const response = await this.http.get('/story/ranking');
+    this.ranking = response.data.data;
+  },
+};
+</script>

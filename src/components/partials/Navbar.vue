@@ -67,6 +67,9 @@
                   </button>
 
                   <div v-if="appStore.isSettingsOpen" class="dropdown-content">
+                    <router-link to="/profile" class="dropdown-item"
+                      >Edit Profile</router-link
+                    >
                     <a @click.prevent="logout()" class="dropdown-item"
                       >Logout</a
                     >

@@ -1,0 +1,384 @@
+<template>
+  <!-- user profile section start -->
+  <section class="section-pt overflow-visible">
+    <div class="container">
+      <div class="relative">
+        <div class="glitch-effect">
+          <div class="glitch-thumb">
+            <img
+              class="w-full xl:h-[490px] h-[400px] hover:scale-110 object-cover"
+              src="../assets/images/photos/profileCover1.png"
+              alt="image"
+            />
+          </div>
+          <div class="glitch-thumb">
+            <img
+              class="w-full xl:h-[490px] lg:h-[400px] md:h-[340px] sm:h-[300px] h-[240px] hover:scale-110 object-cover"
+              src="../assets/images/photos/profileCover1.png"
+              alt="image"
+            />
+          </div>
+        </div>
+      </div>
+      <div class="grid grid-cols-12 gap-30p bg-b-neutral-3 rounded-12 pb-30p">
+        <div class="4xl:col-start-2 4xl:col-end-12 col-span-12 max-4xl:px-48p">
+          <div
+            class="relative flex 3xl:items-end max-3xl:items-center 3xl:justify-between max-3xl:flex-col gap-30p 3xl:mt-[70px] xl:-mt-52 lg:-mt-44 md:-mt-36 sm:-mt-30 -mt-20 4xl:mb-[70px] mb-60p"
+          >
+            <div
+              class="3xl:order-1 order-2 flex text-center divide-x divide-shap"
+            >
+              <div class="px-24p">
+                <h2 class="heading-40 text-w-neutral-1 mb-1">
+                  {{ user.points }}
+                </h2>
+                <span class="text-m-medium text-w-neutral-4/70">
+                  Total Points
+                </span>
+              </div>
+            </div>
+            <div
+              class="3xl:order-2 order-1 3xl:absolute 3xl:bottom-0 3xl:left-1/2 3xl:-translate-x-1/2 max-3xl:flex-col-c z-[4]"
+            >
+              <img
+                class="avatar xl:size-60 lg:size-52 md:size-44 sm:size-40 size-28 border border-secondary"
+                :src="user.photoUrl"
+                alt="profile"
+              />
+              <div class="text-center mt-30p">
+                <h3 class="heading-3 text-w-neutral-1 mb-3 text-split-top">
+                  {{ user.firstName }} {{ user.lastName }}
+                </h3>
+                <p class="text-m-medium text-w-neutral-4">
+                  {{ user.about }}
+                </p>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+  <!-- user profile section end -->
+
+  <!-- user profile Game Stats section start -->
+  <section class="section-pb pt-60p overflow-visible">
+    <div class="container">
+      <div class="grid grid-cols-12 gap-30p">
+        <div class="4xl:col-start-2 4xl:col-end-8 xl:col-span-7 col-span-12">
+          <div class="bg-b-neutral-3 p-40p rounded-12">
+            <h3 class="heading-3 text-w-neutral-1 mb-30p text-split-left">
+              Game Stats
+            </h3>
+            <div
+              class="grid xxl+:grid-cols-3 xl:grid-cols-2 lg:grid-cols-3 sm:grid-cols-2 grid-cols-1 gap-30p"
+            >
+              <!-- game stats 1 -->
+              <div class="bg-b-neutral-4 p-16p flex-col-c" data-aos="fade-up">
+                <img
+                  class="avatar size-80p"
+                  src="../assets/images/games/gameLogo3.png"
+                  alt="game stats"
+                />
+                <a
+                  href="./game-details.html"
+                  class="heading-5 text-w-neutral-1 link-1 line-clamp-1 my-2"
+                >
+                  Lunar Legends
+                </a>
+                <div
+                  class="flex items-center border-t border-shap text-center pt-2"
+                >
+                  <div>
+                    <span class="text-sm text-w-neutral-1 mb-1"> Matches </span>
+                    <span class="text-sm text-primary"> 275 </span>
+                  </div>
+                  <div class="3xl:mx-7 mx-20p w-1px h-full bg-shap"></div>
+                  <div>
+                    <span class="text-sm text-w-neutral-1 mb-1">
+                      Winnings
+                    </span>
+                    <span class="text-sm text-primary"> 145 </span>
+                  </div>
+                </div>
+              </div>
+              <!-- game stats 2 -->
+              <div class="bg-b-neutral-4 p-16p flex-col-c" data-aos="fade-up">
+                <img
+                  class="avatar size-80p"
+                  src="../assets/images/games/gameLogo4.png"
+                  alt="game stats"
+                />
+                <a
+                  href="./game-details.html"
+                  class="heading-5 text-w-neutral-1 link-1 line-clamp-1 my-2"
+                >
+                  Elysian Tales
+                </a>
+                <div
+                  class="flex items-center border-t border-shap text-center pt-2"
+                >
+                  <div>
+                    <span class="text-sm text-w-neutral-1 mb-1"> Matches </span>
+                    <span class="text-sm text-primary"> 275 </span>
+                  </div>
+                  <div class="3xl:mx-7 mx-20p w-1px h-full bg-shap"></div>
+                  <div>
+                    <span class="text-sm text-w-neutral-1 mb-1">
+                      Winnings
+                    </span>
+                    <span class="text-sm text-primary"> 145 </span>
+                  </div>
+                </div>
+              </div>
+              <!-- game stats 3 -->
+              <div class="bg-b-neutral-4 p-16p flex-col-c" data-aos="fade-up">
+                <img
+                  class="avatar size-80p"
+                  src="../assets/images/games/gameLogo5.png"
+                  alt="game stats"
+                />
+                <a
+                  href="./game-details.html"
+                  class="heading-5 text-w-neutral-1 link-1 line-clamp-1 my-2"
+                >
+                  Soul Spark
+                </a>
+                <div
+                  class="flex items-center border-t border-shap text-center pt-2"
+                >
+                  <div>
+                    <span class="text-sm text-w-neutral-1 mb-1"> Matches </span>
+                    <span class="text-sm text-primary"> 275 </span>
+                  </div>
+                  <div class="3xl:mx-7 mx-20p w-1px h-full bg-shap"></div>
+                  <div>
+                    <span class="text-sm text-w-neutral-1 mb-1">
+                      Winnings
+                    </span>
+                    <span class="text-sm text-primary"> 145 </span>
+                  </div>
+                </div>
+              </div>
+              <!-- game stats 4 -->
+              <div class="bg-b-neutral-4 p-16p flex-col-c" data-aos="fade-up">
+                <img
+                  class="avatar size-80p"
+                  src="../assets/images/games/gameLogo6.png"
+                  alt="game stats"
+                />
+                <a
+                  href="./game-details.html"
+                  class="heading-5 text-w-neutral-1 link-1 line-clamp-1 my-2"
+                >
+                  Nova Rush
+                </a>
+                <div
+                  class="flex items-center border-t border-shap text-center pt-2"
+                >
+                  <div>
+                    <span class="text-sm text-w-neutral-1 mb-1"> Matches </span>
+                    <span class="text-sm text-primary"> 275 </span>
+                  </div>
+                  <div class="3xl:mx-7 mx-20p w-1px h-full bg-shap"></div>
+                  <div>
+                    <span class="text-sm text-w-neutral-1 mb-1">
+                      Winnings
+                    </span>
+                    <span class="text-sm text-primary"> 145 </span>
+                  </div>
+                </div>
+              </div>
+              <!-- game stats 5 -->
+              <div class="bg-b-neutral-4 p-16p flex-col-c" data-aos="fade-up">
+                <img
+                  class="avatar size-80p"
+                  src="../assets/images/games/gameLogo7.png"
+                  alt="game stats"
+                />
+                <a
+                  href="./game-details.html"
+                  class="heading-5 text-w-neutral-1 link-1 line-clamp-1 my-2"
+                >
+                  Shadow Strike
+                </a>
+                <div
+                  class="flex items-center border-t border-shap text-center pt-2"
+                >
+                  <div>
+                    <span class="text-sm text-w-neutral-1 mb-1"> Matches </span>
+                    <span class="text-sm text-primary"> 275 </span>
+                  </div>
+                  <div class="3xl:mx-7 mx-20p w-1px h-full bg-shap"></div>
+                  <div>
+                    <span class="text-sm text-w-neutral-1 mb-1">
+                      Winnings
+                    </span>
+                    <span class="text-sm text-primary"> 145 </span>
+                  </div>
+                </div>
+              </div>
+              <!-- game stats 6 -->
+              <div class="bg-b-neutral-4 p-16p flex-col-c" data-aos="fade-up">
+                <img
+                  class="avatar size-80p"
+                  src="../assets/images/games/gameLogo8.png"
+                  alt="game stats"
+                />
+                <a
+                  href="./game-details.html"
+                  class="heading-5 text-w-neutral-1 link-1 line-clamp-1 my-2"
+                >
+                  Dragon Fury
+                </a>
+                <div
+                  class="flex items-center border-t border-shap text-center pt-2"
+                >
+                  <div>
+                    <span class="text-sm text-w-neutral-1 mb-1"> Matches </span>
+                    <span class="text-sm text-primary"> 275 </span>
+                  </div>
+                  <div class="3xl:mx-7 mx-20p w-1px h-full bg-shap"></div>
+                  <div>
+                    <span class="text-sm text-w-neutral-1 mb-1">
+                      Winnings
+                    </span>
+                    <span class="text-sm text-primary"> 145 </span>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+        <div
+          class="4xl:col-start-8 4xl:col-end-12 xl:col-span-5 col-span-12 relative"
+        >
+          <div class="xl:sticky xl:top-30">
+            <div
+              class="grid grid-cols-1 gap-30p *:bg-b-neutral-3 *:rounded-12 *:py-32p *:px-40p"
+            >
+              <div>
+                <h3 class="heading-3 text-w-neutral-1 mb-20p text-split-left">
+                  Progress
+                </h3>
+
+                <div class="flex items-center gap-24p overflow-x-hidden mb-3">
+                  <div class="flex items-center w-full">
+                    <div class="w-3.5 h-5 bg-primary"></div>
+                    <div class="relative w-full h-2.5 bg-w-neutral-3">
+                      <span
+                        :style="'width:' + nextSection.progressCounter + '%'"
+                        class="progressbar-1"
+                      >
+                      </span>
+                    </div>
+                  </div>
+                  <div class="flex items-center text-w-neutral-1">
+                    <h4 x-text="progress" class="heading-4"></h4>
+                    <h4 class="heading-4">
+                      {{ nextSection.progressCounter }}%
+                    </h4>
+                  </div>
+                </div>
+                <div class="flex items-center justify-center">
+                  <h5>
+                    {{ user.completed }}/{{ user.total }} sections completed
+                  </h5>
+                </div>
+              </div>
+
+              <div v-if="nextSection.id">
+                <h3 class="heading-3 text-w-neutral-1 mb-30p text-split-left">
+                  Current Section
+                </h3>
+
+                <div class="grid grid-cols-1 gap-y-40p">
+                  <div
+                    class="flex max-sm:flex-col items-center max-sm:text-center gap-3"
+                  >
+                    <img
+                      class="shrink-0 size-[102px] rounded-12"
+                      src="../assets/images/games/gameLogo2.png"
+                      alt="game"
+                    />
+                    <div class="w-full">
+                      <span
+                        class="heading-4 text-w-neutral-1 link-1 line-clamp-1 inline-block"
+                      >
+                        {{ nextSection.title }}
+                      </span>
+
+                      <span class="text-base text-w-neutral-1 my-2">
+                        {{ nextSection.description.substring(0, 150) }}...
+                      </span>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+  <!-- user profile Game Stats section end -->
+</template>
+
+<script>
+export default {
+  data() {
+    return {
+      user: {},
+      progressInterval: null,
+      end: 0,
+      nextSection: {
+        progressCounter: 0,
+      },
+    };
+  },
+  computed: {
+    progress() {
+      if (!this.user.completed) {
+        return 0;
+      }
+
+      return (this.user.completed / this.user.total) * 100;
+    },
+  },
+  watch: {
+    progress(current, old) {
+      if (current != old) {
+        this.end = current;
+        this.startProgress();
+      }
+    },
+  },
+  methods: {
+    startProgress() {
+      // Clear any existing interval
+      if (this.progressInterval) clearInterval(this.progressInterval);
+
+      // Start progress increment
+      this.progressInterval = setInterval(() => {
+        this.nextSection.progressCounter += 1;
+        if (this.nextSection.progressCounter >= this.end) {
+          // Use this.end
+          clearInterval(this.progressInterval);
+        }
+      }, 100); // 30ms interval for smoother progress
+    },
+  },
+  inject: ['http'],
+  async mounted() {
+    console.log(this.$route.params);
+    const response = await this.http.get(
+      '/story/user-stats/' + this.$route.params.id
+    );
+    this.user = response.data.data.rank;
+    this.nextSection = {
+      progressCounter: 0,
+      ...response.data.data.nextSection,
+    };
+  },
+};
+</script>

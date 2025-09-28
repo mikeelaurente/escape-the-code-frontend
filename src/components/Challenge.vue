@@ -2,25 +2,29 @@
   <div class="flex flex-col items-center justify-center">
     <h2 class="heading-2 mb-4 border-dotted border-b-2">Challenge</h2>
     <div class="inline-flex rounded-md shadow-xs" role="group">
-      <button
+      <template
         v-for="(challenge, idx) in section.challenges"
         :key="challenge.id"
-        @click="displayChallenge(challenge)"
-        type="button"
-        :class="{
-          'px-4 py-2 text-sm btn-primary font-medium text-gray-900 bg-white border border-gray-200 rounded-s-lg hover:bg-gray-100 hover:text-blue-700 focus:z-10 focus:ring-2 focus:ring-blue-700 focus:text-blue-700 dark:bg-gray-800 dark:border-gray-700 dark:text-white dark:hover:text-white dark:hover:bg-gray-700 dark:focus:ring-blue-500 dark:focus:text-white':
-            idx === 0,
-          'px-4 py-2 text-sm btn-primary font-medium text-gray-900 bg-white border-t border-b border-gray-200 hover:bg-gray-100 hover:text-blue-700 focus:z-10 focus:ring-2 focus:ring-blue-700 focus:text-blue-700 dark:bg-gray-800 dark:border-gray-700 dark:text-white dark:hover:text-white dark:hover:bg-gray-700 dark:focus:ring-blue-500 dark:focus:text-white':
-            idx > 0 && idx < section.challenges.length - 1,
-          'px-4 py-2 text-sm btn-primary font-medium text-gray-900 bg-white border border-gray-200 rounded-e-lg hover:bg-gray-100 hover:text-blue-700 focus:z-10 focus:ring-2 focus:ring-blue-700 focus:text-blue-700 dark:bg-gray-800 dark:border-gray-700 dark:text-white dark:hover:text-white dark:hover:bg-gray-700 dark:focus:ring-blue-500 dark:focus:text-white':
-            idx === section.challenges.length - 1,
-        }"
-        :style="{
-          background: selectedChallege.id == challenge.id ? '#f29620' : '',
-        }"
       >
-        {{ challenge.difficulty.toUpperCase() }}
-      </button>
+        <button
+          @click="displayChallenge(challenge)"
+          type="button"
+          :class="{
+            'px-4 py-2 text-sm btn-primary font-medium text-gray-900 bg-white border border-gray-200 rounded-s-lg hover:bg-gray-100 hover:text-blue-700 focus:z-10 focus:ring-2 focus:ring-blue-700 focus:text-blue-700 dark:bg-gray-800 dark:border-gray-700 dark:text-white dark:hover:text-white dark:hover:bg-gray-700 dark:focus:ring-blue-500 dark:focus:text-white':
+              idx === 0,
+            'px-4 py-2 text-sm btn-primary font-medium text-gray-900 bg-white border-t border-b border-gray-200 hover:bg-gray-100 hover:text-blue-700 focus:z-10 focus:ring-2 focus:ring-blue-700 focus:text-blue-700 dark:bg-gray-800 dark:border-gray-700 dark:text-white dark:hover:text-white dark:hover:bg-gray-700 dark:focus:ring-blue-500 dark:focus:text-white':
+              idx > 0 && idx < section.challenges.length - 1,
+            'px-4 py-2 text-sm btn-primary font-medium text-gray-900 bg-white border border-gray-200 rounded-e-lg hover:bg-gray-100 hover:text-blue-700 focus:z-10 focus:ring-2 focus:ring-blue-700 focus:text-blue-700 dark:bg-gray-800 dark:border-gray-700 dark:text-white dark:hover:text-white dark:hover:bg-gray-700 dark:focus:ring-blue-500 dark:focus:text-white':
+              idx === section.challenges.length - 1,
+          }"
+          :style="{
+            background: selectedChallege.id == challenge.id ? '#f29620' : '',
+          }"
+        >
+          <i class="ti ti-lock" v-if="challenge.locked"></i>
+          {{ challenge.difficulty.toUpperCase() }}
+        </button>
+      </template>
     </div>
 
     <div class="mt-4 w-full" v-if="selectedChallege.id">
@@ -191,6 +195,10 @@
         <div class="mt-4">
           <h2 class="text-center">Challenge Completed!</h2>
           <div>
+            <h3>Time Spent</h3>
+            <div class="font-mono p-3 bg-neutral-900 rounded-10 my-2">
+              {{ formatTime(selectedChallege.acceptedAnswer.duration) }}
+            </div>
             <h3>Code</h3>
             <div
               class="font-mono p-3 bg-neutral-900 rounded-10 my-2"
@@ -335,6 +343,7 @@
 <script>
 import { VAceEditor } from 'vue3-ace-editor';
 import Swal from 'sweetalert2';
+import { Toast } from '../assets/js/swal-mixin';
 
 export default {
   components: {
@@ -435,6 +444,14 @@ export default {
             console.log('========b4', challenge);
             challenge.acceptedAnswer = response.data.data.answer;
             challenge.status = response.data.data.answer.status;
+            const nextChallenge = this.section.challenges.find(
+              (c) => c.order == challenge.order + 1
+            );
+
+            if (nextChallenge) {
+              nextChallenge.locked = false;
+            }
+
             this.section.nextSection = response.data.data.nextSection;
             console.log('========after', challenge);
             return response.data;
@@ -523,6 +540,14 @@ export default {
       return codeErrorsHTML;
     },
     displayChallenge(challenge) {
+      if (challenge.locked) {
+        Toast.fire({
+          icon: 'warning',
+          title: 'Challenge is currently locked.',
+        });
+        return;
+      }
+
       this.selectedChallege = challenge;
     },
     isBought(hintId) {
@@ -690,8 +715,40 @@ export default {
         }
       });
     },
+    formatTime(seconds) {
+      let hours = Math.floor(seconds / 3600);
+      let minutes = Math.floor((seconds - hours * 3600) / 60);
+      seconds = seconds - hours * 3600 - minutes * 60;
+
+      if (hours < 10) {
+        hours = '0' + hours;
+      }
+      if (minutes < 10) {
+        minutes = '0' + minutes;
+      }
+      if (seconds < 10) {
+        seconds = '0' + seconds;
+      }
+      return hours + 'h:' + minutes + 'm:' + seconds + 's';
+    },
   },
   mounted() {
+    for (const challenge of this.section.challenges) {
+      challenge.locked = false;
+      const currentOrder = challenge.order;
+      console.log(currentOrder);
+
+      if (currentOrder > 1) {
+        const previousChallenge = this.section.challenges.find(
+          (c) => c.order == currentOrder - 1
+        );
+
+        if (previousChallenge.status !== 'completed') {
+          challenge.locked = true;
+        }
+      }
+    }
+
     this.displayChallenge(this.section.challenges[0]);
   },
 };

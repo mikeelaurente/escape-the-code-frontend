@@ -139,7 +139,10 @@
             </router-link>
           </div>
           <div class="flex flex-col gap-2 rounded-full w-fit p-2 shrink-0">
-            <router-link to="/profile" class="nav-item btn-c btn-c-3xl">
+            <router-link
+              :to="`/user-stats/` + user.id"
+              class="nav-item btn-c btn-c-3xl"
+            >
               <svg
                 xmlns="http://www.w3.org/2000/svg"
                 width="32"

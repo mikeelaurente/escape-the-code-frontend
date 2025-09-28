@@ -1,6 +1,5 @@
 import { createWebHashHistory, createRouter } from 'vue-router';
 import Home from '../../pages/Home.vue';
-import About from '../../pages/About.vue';
 import Story from '../../pages/Story.vue';
 import Chapter from '../../pages/Chapter.vue';
 import Section from '../../pages/Section.vue';
@@ -12,6 +11,7 @@ import Achievements from '../../pages/Achievements.vue';
 import Leaderboard from '../../pages/Leaderboard.vue';
 import Progress from '../../pages/Progress.vue';
 import Profile from '../../pages/Profile.vue';
+import UserStats from '../../pages/UserStats.vue';
 
 export const createRoutes = () => {
   const routes = [
@@ -37,6 +37,11 @@ export const createRoutes = () => {
     {
       path: '/progress',
       component: Progress,
+      meta: { requiresAuth: true },
+    },
+    {
+      path: '/user-stats/:id',
+      component: UserStats,
       meta: { requiresAuth: true },
     },
     {
