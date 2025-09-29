@@ -31,6 +31,11 @@
       </div>
     </div>
   </section>
+  <div v-if="!progress.length">
+    <h3 class="heading-3 text-w-neutral-1 mb-20p text-split-left my-10">
+      No sections completed yet :(
+    </h3>
+  </div>
   <!-- breadcrumb end -->
   <!-- User profile Progress section start -->
   <section class="section-pb pt-60p overflow-visible">
@@ -41,7 +46,7 @@
           <div v-for="(time, key) in timeline" :key="key">
             <!-- Heading -->
             <div class="ps-2 my-2 first:mt-0">
-              <h3 class="text-xs font-medium uppercase text-gray-500">
+              <h3 class="text-xs font-medium uppercase text-gray-500 my-24p">
                 {{ time.group }}
               </h3>
             </div>
@@ -103,6 +108,7 @@
       </div>
     </div>
   </section>
+
   <!-- User profile Progress section end -->
 </template>
 

@@ -40,7 +40,7 @@
         class="grid 4xl:grid-cols-2 xxl:grid-cols-3 md:grid-cols-2 grid-cols-1 gap-24p"
       >
         <div
-          v-for="chapter in story.chapters"
+          v-for="(chapter, idx) in story.chapters"
           :key="chapter.id"
           class="w-full bg-b-neutral-3 p-24p rounded-24 grid 4xl:grid-cols-2 grid-cols-1 items-center gap-24p group"
           data-aos="zoom-in"
@@ -48,7 +48,7 @@
           <div class="overflow-hidden rounded-24">
             <img
               class="w-full xxl:h-[304px] xl:h-[280px] md:h-[260px] h-[240px] object-cover group-hover:scale-110 transition-1"
-              src="../assets/images/games/game1.png"
+              :src="`../assets/images/games/chap${idx + 1}.png`"
               alt="img"
             />
           </div>

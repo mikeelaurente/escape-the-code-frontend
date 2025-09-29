@@ -7,14 +7,14 @@
           <div class="glitch-thumb">
             <img
               class="w-full xl:h-[472px] lg:h-[400px] md:h-[340px] sm:h-[300px] h-[240px] hover:scale-110 object-cover"
-              src="../assets/images/photos/profileCover2.png"
+              src="../assets/images/photos/profileCover1.png"
               alt="image"
             />
           </div>
           <div class="glitch-thumb">
             <img
               class="w-full xl:h-[472px] lg:h-[400px] md:h-[340px] sm:h-[300px] h-[240px] hover:scale-110 object-cover"
-              src="../assets/images/photos/profileCover2.png"
+              src="../assets/images/photos/profileCover1.png"
               alt="image"
             />
           </div>

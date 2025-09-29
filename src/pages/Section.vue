@@ -119,7 +119,8 @@
             >
               <div>
                 <h4 class="heading-4 text-w-neutral-1 mb-20p">
-                  🧙‍♀️ Cast a Spell
+                  <i class="ti ti-album icon-24 text-warning"></i>
+                  Examples
                 </h4>
                 <div class="grid grid-cols-1 gap-20p">
                   <runnables :runnables="section.runnables"></runnables>

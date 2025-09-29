@@ -471,11 +471,11 @@ export default {
           });
 
           Swal.fire({
+            icon: 'success',
             title: 'Congrats!',
             text: 'Challenge completed!',
             width: 600,
             padding: '3em',
-            color: '#716add',
             customClass: this.swalClasses,
             backdrop: `
               rgba(0,0,123,0.4)
