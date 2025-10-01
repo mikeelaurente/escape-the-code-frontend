@@ -103,7 +103,7 @@ module.exports = {
       patterns: [{ from: 'src/assets/images', to: 'assets/images' }],
     }),
     ...htmlPlugins,
-    partialIncludePlugin,
+    // partialIncludePlugin,
   ],
   output: {
     filename: 'assets/js/app.js',

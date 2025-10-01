@@ -67,8 +67,13 @@
                   </button>
 
                   <div v-if="appStore.isSettingsOpen" class="dropdown-content">
+                    <router-link
+                      :to="`/user-stats/` + user.id"
+                      class="dropdown-item"
+                      >Profile</router-link
+                    >
                     <router-link to="/profile" class="dropdown-item"
-                      >Edit Profile</router-link
+                      >Settings</router-link
                     >
                     <a @click.prevent="logout()" class="dropdown-item"
                       >Logout</a

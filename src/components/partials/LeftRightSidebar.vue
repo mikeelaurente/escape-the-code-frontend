@@ -43,6 +43,7 @@
             class="flex flex-col gap-2 rounded-full bg-b-neutral-1 w-fit p-2 shrink-0"
           >
             <router-link
+              active-class="active"
               to="/story"
               class="nav-item btn-c btn-c-3xl text-white transition-1"
             >
@@ -67,6 +68,7 @@
               </svg>
             </router-link>
             <router-link
+              active-class="active"
               to="/leaderboard"
               class="nav-item btn-c btn-c-3xl text-white transition-1"
             >
@@ -92,6 +94,7 @@
               </svg>
             </router-link>
             <router-link
+              active-class="active"
               to="/achievements"
               class="nav-item btn-c btn-c-3xl text-white transition-1"
             >
@@ -114,6 +117,7 @@
               </svg>
             </router-link>
             <router-link
+              active-class="active"
               to="/progress"
               class="nav-item btn-c btn-c-3xl text-white transition-1"
             >
@@ -140,6 +144,7 @@
           </div>
           <div class="flex flex-col gap-2 rounded-full w-fit p-2 shrink-0">
             <router-link
+              active-class="active"
               :to="`/user-stats/` + user.id"
               class="nav-item btn-c btn-c-3xl"
             >

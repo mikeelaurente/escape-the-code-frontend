@@ -40,3 +40,7 @@
 @import './utility/global';
 
 @import './code-editor.scss';
+
+.error {
+  border: 1px solid red;
+}

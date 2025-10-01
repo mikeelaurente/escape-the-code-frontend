@@ -1,10 +1,14 @@
-import { createWebHashHistory, createRouter } from 'vue-router';
+import {
+  createWebHashHistory,
+  createRouter,
+  createWebHistory,
+} from 'vue-router';
 import Home from '../../pages/Home.vue';
 import Story from '../../pages/Story.vue';
 import Chapter from '../../pages/Chapter.vue';
 import Section from '../../pages/Section.vue';
-import Login from '../../pages/Login.vue';
-import Register from '../../pages/Register.vue';
+import Login from '../../pages/Auth/Login.vue';
+import Register from '../../pages/Auth/Register.vue';
 import { useAuthStore } from '../../stores/auth'; // Import your Pinia store
 import NotFound from '../../pages/NotFound.vue';
 import Achievements from '../../pages/Achievements.vue';
@@ -12,6 +16,9 @@ import Leaderboard from '../../pages/Leaderboard.vue';
 import Progress from '../../pages/Progress.vue';
 import Profile from '../../pages/Profile.vue';
 import UserStats from '../../pages/UserStats.vue';
+import VerifyEmail from '../../pages/Auth/VerifyEmail.vue';
+import PasswordReset from '../../pages/Auth/PasswordReset.vue';
+import PasswordConfirm from '../../pages/Auth/PasswordConfirm.vue';
 
 export const createRoutes = () => {
   const routes = [
@@ -55,18 +62,31 @@ export const createRoutes = () => {
       meta: { requiresAuth: true },
     },
     {
+      path: '/verify-email',
+      component: VerifyEmail,
+    },
+    {
+      path: '/password-reset',
+      component: PasswordReset,
+    },
+    {
+      path: '/password-confirm',
+      component: PasswordConfirm,
+    },
+    {
       path: '/:pathMatch(.*)*', // Catch-all for unmatched routes
       component: NotFound,
     },
   ];
 
   const router = createRouter({
-    history: createWebHashHistory(),
+    history: createWebHistory(),
     routes,
   });
 
   router.beforeEach(async (to, from, next) => {
     const authStore = useAuthStore(); // Access the Pinia store
+    console.log('===========================================');
     console.log(authStore.isAuthenticated, authStore.userToken);
     await authStore.init();
 

@@ -18,8 +18,10 @@ export const useAuthStore = defineStore('auth', {
   }),
   getters: {
     avatar() {
-      console.log('##### user', this.user);
-      return `http://localhost:3000/avatars/${this.user.avatar}`;
+      return this.user.avatar;
+    },
+    banner() {
+      return this.user.banner;
     },
   },
   actions: {
@@ -35,10 +37,14 @@ export const useAuthStore = defineStore('auth', {
       this.isAuthenticated = false;
       this.userToken = null;
       this.user = {};
+      this.initialized = false;
       localStorage.removeItem(tokenKey);
     },
     setAvatar(avatar) {
       this.user.avatar = avatar;
+    },
+    setBanner(banner) {
+      this.user.banner = banner;
     },
     async init() {
       const http = inject('http');

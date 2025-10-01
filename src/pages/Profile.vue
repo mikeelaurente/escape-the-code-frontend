@@ -7,18 +7,37 @@
           <div class="glitch-thumb">
             <img
               class="w-full xl:h-[472px] lg:h-[400px] md:h-[340px] sm:h-[300px] h-[240px] hover:scale-110 object-cover"
-              src="../assets/images/photos/profileCover1.png"
+              :src="user.banner"
               alt="image"
             />
           </div>
           <div class="glitch-thumb">
             <img
               class="w-full xl:h-[472px] lg:h-[400px] md:h-[340px] sm:h-[300px] h-[240px] hover:scale-110 object-cover"
-              src="../assets/images/photos/profileCover1.png"
+              :src="user.banner"
               alt="image"
             />
           </div>
         </div>
+        <label
+          for="banner"
+          class="cursor-pointer absolute xl:top-[30px] md:top-5 top-4 xl:right-[30px] md:right-5 right-4 z-[5]"
+        >
+          <span
+            class="flex-c size-60p rounded-full bg-b-neutral-3 text-w-neutral-1 icon-32"
+          >
+            <i class="ti ti-camera"></i>
+          </span>
+        </label>
+        <input
+          ref="banner"
+          type="file"
+          name="banner"
+          id="banner"
+          class="hidden"
+          accept="image/*"
+          @change="handleBannerChange"
+        />
       </div>
 
       <div
@@ -227,12 +246,6 @@
   <!-- profile settiongs section end -->
 </template>
 
-<style scoped>
-.error {
-  border: 1px solid red;
-}
-</style>
-
 <script>
 import { mapStores } from 'pinia';
 import { useAuthStore } from '../stores/auth';
@@ -254,6 +267,7 @@ export default {
         confirmPassword: '',
       },
       selectedFile: null,
+      selectedBanner: null,
       objectUrl: null,
       errors: {},
       swalClasses: {
@@ -291,12 +305,16 @@ export default {
 
       try {
         // Use a library like Axios for HTTP requests
-        const response = await this.http.post('/users/avatar', formData, {
-          headers: {
-            'Content-Type': 'multipart/form-data',
-          },
-          // You can also add onUploadProgress for progress tracking
-        });
+        const response = await this.http.post(
+          '/users/avatar?type=avatar',
+          formData,
+          {
+            headers: {
+              'Content-Type': 'multipart/form-data',
+            },
+            // You can also add onUploadProgress for progress tracking
+          }
+        );
         console.log('File uploaded successfully:', response.data);
         URL.revokeObjectURL(this.objectUrl);
         Toast.fire({
@@ -313,6 +331,61 @@ export default {
           title: 'Error uploading avatar',
         });
       }
+    },
+    handleBannerChange(event) {
+      console.log('handleBannerChange', event);
+      this.selectedBanner = event.target.files[0];
+      this.objectUrl = URL.createObjectURL(this.selectedBanner);
+
+      Swal.fire({
+        html: `
+            <img
+              class="w-full xl:h-[472px] lg:h-[400px] md:h-[340px] sm:h-[300px] h-[240px] object-cover"
+              src="${this.objectUrl}"
+              alt="image"
+            />
+        `,
+        width: 1500,
+        showCancelButton: true,
+        focusConfirm: true,
+        confirmButtonText: 'Upload',
+        customClass: this.swalClasses,
+        preConfirm: async () => {
+          try {
+            Toast.fire({
+              icon: 'info',
+              title: 'Uploading...',
+            });
+
+            const formData = new FormData();
+            formData.append('banner', this.selectedBanner);
+
+            const response = await this.http.post(
+              '/users/banner?type=banner',
+              formData,
+              {
+                headers: {
+                  'Content-Type': 'multipart/form-data',
+                },
+              }
+            );
+            Toast.fire({
+              icon: 'success',
+              title: response.data.message,
+            });
+
+            // update banner state
+            this.authStore.setBanner(response.data.data.banner);
+
+            return response.data;
+          } catch (error) {
+            Swal.showValidationMessage(`Request failed: ${error}`);
+          } finally {
+            URL.revokeObjectURL(this.objectUrl);
+            this.$refs.banner.value = '';
+          }
+        },
+      });
     },
     updateProfile() {
       try {
@@ -366,7 +439,14 @@ export default {
               customClass: this.swalClasses,
             });
           });
-      } catch (e) {}
+      } catch (e) {
+        Swal.fire({
+          icon: 'error',
+          title: 'Oops!',
+          text: 'Something went wrong. Please refresh the page and try again',
+          customClass: this.swalClasses,
+        });
+      }
     },
     changePassword() {
       try {
