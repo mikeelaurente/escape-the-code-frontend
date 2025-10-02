@@ -60,6 +60,8 @@
                 class="flex gap-x-3 my-3"
                 v-for="(item, idx) in time.items"
                 :key="idx"
+                data-aos="fade-left"
+                data-aos-duration="1500"
               >
                 <!-- Icon -->
                 <div
@@ -74,10 +76,12 @@
                 <!-- End Icon -->
 
                 <!-- Right Content -->
-                <div class="grow bg-b-neutral-3 p-4 rounded-12">
+                <div
+                  class="grow bg-[url('../images/photos/profileCover1.png')] p-4 rounded-12 transition-1"
+                >
                   <h3 class="flex gap-x-1.5 font-semibold">
                     <svg
-                      class="shrink-0 size-4 mt-1"
+                      class="shrink-0 size-7 mt-1"
                       xmlns="http://www.w3.org/2000/svg"
                       width="24"
                       height="24"

@@ -20,6 +20,16 @@
             <div
               class="3xl:col-span-6 xl:col-span-7 flex items-center xl:justify-end justify-end w-full"
             >
+              <div class="relative hidden lg:block mr-4">
+                <span
+                  v-if="user.id"
+                  class="px-3 py-2 rounded-12 btn-outline-secondary font-bold"
+                  title="Credits Available"
+                >
+                  <i class="ti ti-moneybag"></i>
+                  {{ authStore.user.credits }}
+                </span>
+              </div>
               <div
                 class="flex items-end lg:gap-x-32p gap-x-2"
                 v-if="user && user.id"

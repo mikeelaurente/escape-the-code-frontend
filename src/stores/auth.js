@@ -13,6 +13,7 @@ export const useAuthStore = defineStore('auth', {
       firstName: '',
       lastName: '',
       avatar: 'user.png',
+      credits: 0,
       about: '',
     },
   }),
@@ -46,12 +47,18 @@ export const useAuthStore = defineStore('auth', {
     setBanner(banner) {
       this.user.banner = banner;
     },
+    setCredits(credits) {
+      this.user.credits = credits;
+    },
     async init() {
-      const http = inject('http');
       if (this.initialized) {
         return;
       }
       this.initialized = true;
+      await this.fetchUser();
+    },
+    async fetchUser() {
+      const http = this.http;
       try {
         const token = localStorage.getItem(tokenKey);
         const response = await http.get('/auth/me');

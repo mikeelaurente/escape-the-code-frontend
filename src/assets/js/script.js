@@ -198,7 +198,12 @@ import { createRoutes } from './route.js';
 const pinia = createPinia();
 const app = createApp(App);
 
+pinia.use(({ store }) => {
+  store.http = apiClient;
+});
+
+app.provide('http', apiClient);
+
 app.use(pinia);
 app.use(createRoutes());
-app.provide('http', apiClient);
 app.mount('#app');

@@ -23,9 +23,9 @@
                     <div class="max-w-[790px]">
                       <h1
                         class="display-120 text-w-neutral-1 stroked-text-1 line-clamp-2 mb-2"
-                        data-text="UNITE. PLAY. CONQUER."
+                        data-text="THINK. CODE. CONQUER."
                       >
-                        UNITE. PLAY. CONQUER.
+                        THINK. CODE. CONQUER.
                       </h1>
                       <div
                         class="flex flex-wrap items-center gap-3 text-l-medium text-w-neutral-1 mb-40p"
@@ -33,6 +33,8 @@
                       <router-link
                         to="/story"
                         class="btn btn-lg btn-primary rounded-12"
+                        data-aos="zoom-in"
+                        data-aos-duration="1500"
                       >
                         Start Now
                       </router-link>
@@ -41,500 +43,455 @@
                   <div class="overlay-1"></div>
                 </div>
               </div>
-              <div class="swiper-slide">
-                <div class="w-full rounded-32 overflow-hidden relative">
-                  <img
-                    class="w-full xxl:h-[630px] xl:h-[580px] lg:h-[520px] md:h-[420px] sm:h-[380px] h-[300px] object-cover"
-                    src="../assets/images/photos/heroBanner2.webp"
-                    alt="product"
-                  />
-                  <div
-                    class="absolute inset-0 z-[2] mx-80p 3xl:pt-[160px] xxl:pt-30 xl:pt-25 md:pt-12 pt-8"
-                  >
-                    <div class="max-w-[790px]">
-                      <h1
-                        class="display-120 text-w-neutral-1 stroked-text-1 line-clamp-2 mb-2"
-                        data-text="UNITE. PLAY. CONQUER."
-                      >
-                        UNITE. PLAY. CONQUER.
-                      </h1>
-                      <div
-                        class="flex flex-wrap items-center gap-3 text-l-medium text-w-neutral-1 mb-40p"
-                      >
-                        <span class="text-m-medium text-w-neutral-1">
-                          Leagues of Legends
-                        </span>
-                        <span
-                          class="badge badge-circle badge-dot badge-light size-1"
-                        ></span>
-                        <span class="text-m-medium text-w-neutral-1">
-                          Us English
-                        </span>
-                      </div>
-                      <a
-                        href="./game-details.html"
-                        class="btn btn-lg btn-primary rounded-12"
-                      >
-                        Start Now
-                      </a>
-                    </div>
-                  </div>
-                  <div class="overlay-1"></div>
-                </div>
-              </div>
-              <div class="swiper-slide">
-                <div class="w-full rounded-32 overflow-hidden relative">
-                  <img
-                    class="w-full xxl:h-[630px] xl:h-[580px] lg:h-[520px] md:h-[420px] sm:h-[380px] h-[300px] object-cover"
-                    src="../assets/images/photos/heroBanner3.webp"
-                    alt="product"
-                  />
-                  <div
-                    class="absolute inset-0 z-[2] mx-80p 3xl:pt-[160px] xxl:pt-30 xl:pt-25 md:pt-12 pt-8"
-                  >
-                    <div class="max-w-[790px]">
-                      <h1
-                        class="display-120 text-w-neutral-1 stroked-text-1 line-clamp-2 mb-2"
-                        data-text="UNITE. PLAY. CONQUER."
-                      >
-                        UNITE. PLAY. CONQUER.
-                      </h1>
-                      <div
-                        class="flex flex-wrap items-center gap-3 text-l-medium text-w-neutral-1 mb-40p"
-                      >
-                        <span class="text-m-medium text-w-neutral-1">
-                          Leagues of Legends
-                        </span>
-                        <span
-                          class="badge badge-circle badge-dot badge-light size-1"
-                        ></span>
-                        <span class="text-m-medium text-w-neutral-1">
-                          Us English
-                        </span>
-                      </div>
-                      <a
-                        href="./game-details.html"
-                        class="btn btn-lg btn-primary rounded-12"
-                      >
-                        Start Now
-                      </a>
-                    </div>
-                  </div>
-                  <div class="overlay-1"></div>
-                </div>
-              </div>
-              <div class="swiper-slide">
-                <div class="w-full rounded-32 overflow-hidden relative">
-                  <img
-                    class="w-full xxl:h-[630px] xl:h-[580px] lg:h-[520px] md:h-[420px] sm:h-[380px] h-[300px] object-cover"
-                    src="../assets/images/photos/heroBanner1.webp"
-                    alt="product"
-                  />
-                  <div
-                    class="absolute inset-0 z-[2] mx-80p 3xl:pt-[160px] xxl:pt-30 xl:pt-25 md:pt-12 pt-8"
-                  >
-                    <div class="max-w-[790px]">
-                      <h1
-                        class="display-120 text-w-neutral-1 stroked-text-1 line-clamp-2 mb-2"
-                        data-text="UNITE. PLAY. CONQUER."
-                      >
-                        UNITE. PLAY. CONQUER.
-                      </h1>
-                      <div
-                        class="flex flex-wrap items-center gap-3 text-l-medium text-w-neutral-1 mb-40p"
-                      >
-                        <span class="text-m-medium text-w-neutral-1">
-                          Leagues of Legends
-                        </span>
-                        <span
-                          class="badge badge-circle badge-dot badge-light size-1"
-                        ></span>
-                        <span class="text-m-medium text-w-neutral-1">
-                          Us English
-                        </span>
-                      </div>
-                      <a
-                        href="./game-details.html"
-                        class="btn btn-lg btn-primary rounded-12"
-                      >
-                        Start Now
-                      </a>
-                    </div>
-                  </div>
-                  <div class="overlay-1"></div>
-                </div>
-              </div>
-              <div class="swiper-slide">
-                <div class="w-full rounded-32 overflow-hidden relative">
-                  <img
-                    class="w-full xxl:h-[630px] xl:h-[580px] lg:h-[520px] md:h-[420px] sm:h-[380px] h-[300px] object-cover"
-                    src="../assets/images/photos/heroBanner2.webp"
-                    alt="product"
-                  />
-                  <div
-                    class="absolute inset-0 z-[2] mx-80p 3xl:pt-[160px] xxl:pt-30 xl:pt-25 md:pt-12 pt-8"
-                  >
-                    <div class="max-w-[790px]">
-                      <h1
-                        class="display-120 text-w-neutral-1 stroked-text-1 line-clamp-2 mb-2"
-                        data-text="UNITE. PLAY. CONQUER."
-                      >
-                        UNITE. PLAY. CONQUER.
-                      </h1>
-                      <div
-                        class="flex flex-wrap items-center gap-3 text-l-medium text-w-neutral-1 mb-40p"
-                      >
-                        <span class="text-m-medium text-w-neutral-1">
-                          Leagues of Legends
-                        </span>
-                        <span
-                          class="badge badge-circle badge-dot badge-light size-1"
-                        ></span>
-                        <span class="text-m-medium text-w-neutral-1">
-                          Us English
-                        </span>
-                      </div>
-                      <a
-                        href="./game-details.html"
-                        class="btn btn-lg btn-primary rounded-12"
-                      >
-                        Start Now
-                      </a>
-                    </div>
-                  </div>
-                  <div class="overlay-1"></div>
-                </div>
-              </div>
-              <div class="swiper-slide">
-                <div class="w-full rounded-32 overflow-hidden relative">
-                  <img
-                    class="w-full xxl:h-[630px] xl:h-[580px] lg:h-[520px] md:h-[420px] sm:h-[380px] h-[300px] object-cover"
-                    src="../assets/images/photos/heroBanner3.webp"
-                    alt="product"
-                  />
-                  <div
-                    class="absolute inset-0 z-[2] mx-80p 3xl:pt-[160px] xxl:pt-30 xl:pt-25 md:pt-12 pt-8"
-                  >
-                    <div class="max-w-[790px]">
-                      <h1
-                        class="display-120 text-w-neutral-1 stroked-text-1 line-clamp-2 mb-2"
-                        data-text="UNITE. PLAY. CONQUER."
-                      >
-                        UNITE. PLAY. CONQUER.
-                      </h1>
-                      <a
-                        href="./game-details.html"
-                        class="btn btn-lg btn-primary rounded-12"
-                      >
-                        Start Now
-                      </a>
-                    </div>
-                  </div>
-                  <div class="overlay-1"></div>
-                </div>
-              </div>
             </div>
           </div>
+        </div>
+      </div>
+    </section>
+    <div class="container">
+      <div
+        class="pb-30p overflow-visible relative grid 4xl:grid-cols-12 grid-cols-1 gap-30p lg:-mt-30 md:-mt-40 sm:-mt-48 -mt-56"
+      >
+        <div class="4xl:col-start-2 4xl:col-end-12">
           <div
-            class="md:absolute lg:right-15 md:right-12 lg:bottom-15 md:bottom-12 z-[2] overflow-hidden pt-5 flex justify-end"
+            class="relative z-10 grid 4xl:grid-cols-11 items-center gap-30p bg-b-neutral-3 shadow-4 p-40p rounded-24 xl:divide-x divide-shap/70"
+            data-aos="fade-up"
+            data-aos-duration="1500"
           >
             <div
-              class="thumbs-gallery xxl:w-[572px] lg:w-[400px] md:w-[380px] xsm:w-[300px] w-full h-fit overflow-hidden"
+              class="3xl:col-span-4 xl:col-span-7 col-span-12 grid xl:grid-cols-4 md:grid-cols-2 grid-cols-1 gap-y-30p xl:divide-x divide-shap/70"
             >
-              <div class="swiper-wrapper pb-10">
-                <div class="swiper-slide">
-                  <div class="overflow-hidden cursor-pointer rounded-20">
-                    <img
-                      class="xxl:w-[180px] xl:w-[140px] lg:w-[120px] md:w-25 w-20 xxl:h-[110px] xl:h-24 lg:h-20 md:h-18 h-16 hover:scale-110 hover:-rotate-6 object-cover transition-1"
-                      src="../assets/images/photos/heroBanner1.webp"
-                      alt="product"
-                    />
-                  </div>
-                </div>
-                <div class="swiper-slide">
-                  <div class="overflow-hidden cursor-pointer rounded-20">
-                    <img
-                      class="xxl:w-[180px] xl:w-[140px] lg:w-[120px] md:w-25 w-20 xxl:h-[110px] xl:h-24 lg:h-20 md:h-18 h-16 hover:scale-110 hover:-rotate-6 object-cover transition-1"
-                      src="../assets/images/photos/heroBanner2.webp"
-                      alt="product"
-                    />
-                  </div>
-                </div>
-                <div class="swiper-slide">
-                  <div class="overflow-hidden cursor-pointer rounded-20">
-                    <img
-                      class="xxl:w-[180px] xl:w-[140px] lg:w-[120px] md:w-25 w-20 xxl:h-[110px] xl:h-24 lg:h-20 md:h-18 h-16 hover:scale-110 hover:-rotate-6 object-cover transition-1"
-                      src="../assets/images/photos/heroBanner3.webp"
-                      alt="product"
-                    />
-                  </div>
-                </div>
-                <div class="swiper-slide">
-                  <div class="overflow-hidden cursor-pointer rounded-20">
-                    <img
-                      class="xxl:w-[180px] xl:w-[140px] lg:w-[120px] md:w-25 w-20 xxl:h-[110px] xl:h-24 lg:h-20 md:h-18 h-16 hover:scale-110 hover:-rotate-6 object-cover transition-1"
-                      src="../assets/images/photos/heroBanner1.webp"
-                      alt="product"
-                    />
-                  </div>
-                </div>
-                <div class="swiper-slide">
-                  <div class="overflow-hidden cursor-pointer rounded-20">
-                    <img
-                      class="xxl:w-[180px] xl:w-[140px] lg:w-[120px] md:w-25 w-20 xxl:h-[110px] xl:h-24 lg:h-20 md:h-18 h-16 hover:scale-110 hover:-rotate-6 object-cover transition-1"
-                      src="../assets/images/photos/heroBanner2.webp"
-                      alt="product"
-                    />
-                  </div>
-                </div>
-                <div class="swiper-slide">
-                  <div class="overflow-hidden cursor-pointer rounded-20">
-                    <img
-                      class="xxl:w-[180px] xl:w-[140px] lg:w-[120px] md:w-25 w-20 xxl:h-[110px] xl:h-24 lg:h-20 md:h-18 h-16 hover:scale-110 hover:-rotate-6 object-cover transition-1"
-                      src="../assets/images/photos/heroBanner3.webp"
-                      alt="product"
-                    />
-                  </div>
+              <div class="flex-col-c text-center">
+                <h4 class="heading-4 text-w-neutral-1">Rank</h4>
+                <h3 class="py-3 heading-3 text-secondary text-center">
+                  <span v-if="data.ranking.rank">
+                    {{ data.ranking.rank }} <i class="ti ti-crown"></i>
+                  </span>
+                  <span v-else>- -</span>
+                </h3>
+              </div>
+              <div class="flex-col-c text-center">
+                <h4 class="heading-4 text-w-neutral-1">Total Points</h4>
+                <h3 class="py-3 heading-3 text-fuchsia-500 text-center">
+                  {{ data.ranking.points }} <i class="ti ti-star"></i>
+                </h3>
+              </div>
+              <div class="flex-col-c text-center">
+                <h4 class="heading-4 text-w-neutral-1">No Hints Streak</h4>
+                <h3 class="py-3 heading-3 text-primary text-center">
+                  {{ data.longestStreak }} <i class="ti ti-flame"></i>
+                </h3>
+              </div>
+              <div class="flex-col-c text-center">
+                <h4 class="heading-4 text-w-neutral-1">
+                  Shortest Completion Time
+                </h4>
+                <h3 class="py-3 heading-3 text-cyan-600 text-center">
+                  <span v-if="data.ranking.shortestTime">
+                    {{ data.ranking.shortestTime }} sec
+                    <i class="ti ti-clock"></i>
+                  </span>
+                  <span v-else>- -</span>
+                </h3>
+              </div>
+            </div>
+          </div>
+
+          <div
+            class="tab-navbar flex items-center flex-wrap gap-x-32p gap-y-24p sm:text-xl text-lg *:font-borda font-medium text-w-neutral-1 whitespace-nowrap pt-30p"
+          >
+            <a
+              @click.prevent="selectedTab = 'overview'"
+              class="cursor-pointer"
+              :class="{
+                active: selectedTab == 'overview',
+              }"
+            >
+              Overview
+            </a>
+            <a
+              @click.prevent="selectedTab = 'progress'"
+              class="cursor-pointer"
+              :class="{
+                active: selectedTab == 'progress',
+              }"
+            >
+              Progress
+            </a>
+            <a
+              @click.prevent="selectedTab = 'credit'"
+              class="cursor-pointer"
+              :class="{
+                active: selectedTab == 'credit',
+              }"
+            >
+              Credit Usages
+            </a>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <div v-if="selectedTab == 'overview'">
+      <section class="mb-10">
+        <div class="container">
+          <template v-if="loaded">
+            <div
+              v-for="(chapterChart, idx) in chapterCharts"
+              :key="idx"
+              data-aos="fade-left"
+              data-aos-duration="1500"
+            >
+              <h4>{{ chapterChart.chapter.title }}</h4>
+              <div class="my-2 min-h-[300px]">
+                <Line
+                  class="p-3 bg-gray-700 rounded-10"
+                  :data="chapterChart.chartData"
+                  :options="chartOptions"
+                ></Line>
+              </div>
+            </div>
+          </template>
+        </div>
+      </section>
+    </div>
+
+    <div v-if="selectedTab == 'progress'" data-aos="zoom-in">
+      <!-- Progress section start -->
+      <section class="section-pb">
+        <div class="container">
+          <div class="overflow-x-auto scrollbar-sm rounded-12">
+            <table
+              class="text-sm font-poppins text-w-neutral-1 w-full whitespace-nowra"
+            >
+              <thead class="text-left">
+                <tr class="bg-shap rounded-t-12">
+                  <th class="text-sm px-24p py-3 lg:min-w-[150px] min-w-25">
+                    Chapter
+                  </th>
+                  <th class="text-sm px-24p py-3 min-w-25">Sections</th>
+                  <th class="text-sm px-24p py-3 min-w-25"></th>
+                </tr>
+              </thead>
+              <tbody
+                class="divide-y divide-solid divide-shap border-b border-shap bg-b-neutral-3"
+              >
+                <template v-for="(chapter, idx) in data.progress" :key="idx">
+                  <tr>
+                    <td class="px-24p py-3">
+                      <div class="flex-y gap-3">
+                        <span class="text-sm"> {{ chapter.title }} </span>
+                      </div>
+                    </td>
+                    <td class="px-24p py-3">{{ chapter.sections.length }}</td>
+                    <td class="px-24p py-3 text-right">
+                      <button
+                        class="btn btn-c-dark-outline"
+                        :class="{
+                          'bg-gray-800 text-white': chapter.expanded,
+                        }"
+                        @click="toggleChapter(chapter)"
+                      >
+                        <i
+                          class="ti icon-24"
+                          :class="{
+                            'ti-chevron-down': !chapter.expanded,
+                            'ti-chevron-up': chapter.expanded,
+                          }"
+                        ></i>
+                      </button>
+                    </td>
+                  </tr>
+                  <tr
+                    v-if="chapter.expanded"
+                    :class="{
+                      'bg-b-neutral-4/40': chapter.expanded,
+                    }"
+                  >
+                    <td class="px-24p py-3 grid-lines-1" colspan="3">
+                      <div
+                        class="overflow-x-auto scrollbar-sm rounded-12 border border-w-neutral-4/60"
+                      >
+                        <table
+                          class="text-l-medium font-poppins text-w-neutral-1 w-full whitespace-nowra"
+                        >
+                          <thead class="text-left">
+                            <tr class="bg-shap rounded-t-12">
+                              <th
+                                class="text-sm px-24p py-3 lg:min-w-[150px] min-w-25"
+                              >
+                                Title
+                              </th>
+                              <th class="text-sm px-24p py-3 min-w-25">
+                                Challenges
+                              </th>
+                              <th class="text-sm px-24p py-3 min-w-25"></th>
+                            </tr>
+                          </thead>
+                          <tbody
+                            class="divide-y divide-solid divide-shap border-b border-shap bg-b-neutral-3"
+                          >
+                            <template
+                              v-for="(section, idxSection) in chapter.sections"
+                              :key="idxSection"
+                            >
+                              <tr>
+                                <td class="px-24p py-3">
+                                  <div class="flex-y gap-3">
+                                    <span class="text-sm">
+                                      {{ section.title }}
+                                    </span>
+                                  </div>
+                                </td>
+                                <td class="px-24p py-3">
+                                  {{ section.challenges.length }}
+                                </td>
+                                <td class="px-24p py-3 text-right">
+                                  <button
+                                    class="btn btn-c-dark-outline"
+                                    :class="{
+                                      'bg-gray-800': section.expanded,
+                                    }"
+                                    @click="toggleSection(section)"
+                                  >
+                                    <i
+                                      class="ti icon-24"
+                                      :class="{
+                                        'ti-chevron-down': !section.expanded,
+                                        'ti-chevron-up': section.expanded,
+                                      }"
+                                    ></i>
+                                  </button>
+                                </td>
+                              </tr>
+                              <tr
+                                v-if="section.expanded"
+                                :class="{
+                                  'bg-b-neutral-4/40': section.expanded,
+                                }"
+                              >
+                                <td
+                                  class="px-24p py-3 grid-lines-1"
+                                  colspan="3"
+                                >
+                                  <div
+                                    class="overflow-x-auto scrollbar-sm rounded-12 border border-w-neutral-4/60"
+                                  >
+                                    <table
+                                      class="text-sm font-poppins text-w-neutral-1 w-full whitespace-nowra"
+                                    >
+                                      <thead class="text-left">
+                                        <tr class="bg-shap rounded-t-12">
+                                          <th
+                                            class="text-sm px-24p py-3 lg:min-w-[150px] min-w-25"
+                                          >
+                                            Challenge
+                                          </th>
+                                          <th
+                                            class="text-sm px-24p py-3 min-w-25"
+                                          >
+                                            Completed On
+                                          </th>
+                                          <th
+                                            class="text-sm px-24p py-3 min-w-25"
+                                          >
+                                            Time Taken
+                                          </th>
+                                          <th
+                                            class="text-sm px-24p py-3 min-w-25"
+                                          >
+                                            Hints Taken
+                                          </th>
+                                          <th
+                                            class="text-sm px-24p py-3 min-w-25"
+                                          >
+                                            Status
+                                          </th>
+                                        </tr>
+                                      </thead>
+                                      <tbody
+                                        class="divide-y divide-solid divide-shap border-b border-shap bg-b-neutral-3"
+                                      >
+                                        <template
+                                          v-for="(
+                                            challenge, idxChallenge
+                                          ) in section.challenges"
+                                          :key="idxChallenge"
+                                        >
+                                          <tr>
+                                            <td class="px-24p py-3">
+                                              <div class="flex-y gap-3">
+                                                <i
+                                                  class="ti ti-star-filled"
+                                                  :class="{
+                                                    'text-success':
+                                                      challenge.difficulty ===
+                                                      'easy',
+                                                    'text-warning':
+                                                      challenge.difficulty ===
+                                                      'medium',
+                                                    'text-danger':
+                                                      challenge.difficulty ===
+                                                      'hard',
+                                                  }"
+                                                >
+                                                  {{ challenge.difficulty }}
+                                                </i>
+                                                <span class="text-sm">
+                                                  {{ challenge.title }}
+                                                </span>
+                                              </div>
+                                            </td>
+                                            <td class="px-24p py-3">
+                                              <span v-if="challenge.answer">
+                                                {{
+                                                  formatDate(
+                                                    challenge.answer
+                                                      .completed_at
+                                                  )
+                                                }}
+                                                <i
+                                                  @click="
+                                                    showChallengeAnswer(
+                                                      challenge
+                                                    )
+                                                  "
+                                                  class="ti ti-question-mark text-info cursor-pointer border-warning border rounded-8"
+                                                ></i>
+                                              </span>
+                                            </td>
+                                            <td class="px-24p py-3">
+                                              <span v-if="challenge.answer">
+                                                {{
+                                                  formatTime(
+                                                    challenge.answer.time_taken
+                                                  )
+                                                }}
+                                              </span>
+                                            </td>
+                                            <td class="px-24p py-3">
+                                              <span v-if="challenge.answer">
+                                                {{
+                                                  challenge.answer.usages
+                                                    ? challenge.answer.usages
+                                                        .length
+                                                    : 0
+                                                }}
+                                              </span>
+                                            </td>
+                                            <td class="px-24p py-3">
+                                              <span
+                                                class="text-success"
+                                                v-if="challenge.answer"
+                                              >
+                                                Completed
+                                              </span>
+                                              <span class="text-warning" v-else>
+                                                Not yet answered
+                                              </span>
+                                            </td>
+                                          </tr>
+                                        </template>
+                                      </tbody>
+                                    </table>
+                                  </div>
+                                </td>
+                              </tr>
+                            </template>
+                          </tbody>
+                        </table>
+                      </div>
+                    </td>
+                  </tr>
+                </template>
+              </tbody>
+            </table>
+          </div>
+        </div>
+      </section>
+      <!-- Progress section end -->
+    </div>
+
+    <!-- Main modal -->
+    <div
+      v-show="showChallengeAnswerModal"
+      id="select-modal"
+      tabindex="-1"
+      aria-hidden="true"
+      style="background: rgba(0, 0, 0, 0.8)"
+      class="fixed flex items-center justify-center z-[999] left-0 max-h-full md:inset-0 overflow-x-hidden overflow-y-auto right-0 top-0 w-full z-50"
+    >
+      <div
+        class="relative p-4 w-full max-w-lg max-h-full"
+        v-if="selectedAnswer"
+      >
+        <!-- Modal content -->
+        <div class="relative bg-white rounded-lg shadow-sm dark:bg-gray-700">
+          <!-- Modal header -->
+          <div
+            class="flex items-center justify-between p-4 md:p-5 border-b rounded-t dark:border-gray-600 border-gray-200"
+          >
+            <h3 class="text-lg font-semibold text-gray-900 dark:text-white">
+              <i class="ti ti-help-circle-filled"></i>
+              Submissions
+            </h3>
+            <button
+              @click="showChallengeAnswerModal = false"
+              type="button"
+              class="text-gray-400 bg-transparent hover:bg-gray-200 hover:text-gray-900 rounded-lg text-sm h-8 w-8 ms-auto inline-flex justify-center items-center dark:hover:bg-gray-600 dark:hover:text-white"
+            >
+              <svg
+                class="w-3 h-3"
+                aria-hidden="true"
+                xmlns="http://www.w3.org/2000/svg"
+                fill="none"
+                viewBox="0 0 14 14"
+              >
+                <path
+                  stroke="currentColor"
+                  stroke-linecap="round"
+                  stroke-linejoin="round"
+                  stroke-width="2"
+                  d="m1 1 6 6m0 0 6 6M7 7l6-6M7 7l-6 6"
+                />
+              </svg>
+              <span class="sr-only">Close</span>
+            </button>
+          </div>
+          <!-- Modal body -->
+          <div class="p-4 md:p-5">
+            <div class="max-h-[500px] overflow-auto">
+              <div
+                v-for="(submission, idx) in selectedAnswer.submissions"
+                :key="idx"
+                class="w-full p-4 mb-1 bg-white border border-gray-200 rounded-lg shadow-sm sm:p-8 dark:bg-gray-800 dark:border-gray-700"
+              >
+                <h5
+                  class="mb-4 text-xl font-medium text-gray-500 dark:text-gray-400"
+                >
+                  {{ formatDate(submission.created_at) }}
+                </h5>
+                <div
+                  class="my-2 border-2 rounded-4 p-3 font-mono"
+                  v-html="submission.code.replace(/\n/, '<br />')"
+                ></div>
+                <div class="flex justify-center">
+                  <span
+                    class="px-4 py-1.5 rounded-8"
+                    :class="{
+                      'bg-success': submission.result === 'passed',
+                      'bg-danger': submission.result !== 'passed',
+                    }"
+                  >
+                    {{ submission.result }}
+                  </span>
                 </div>
               </div>
-              <div
-                class="swiper-pagination pagination-three thumbs-gallery-pagination flex-c gap-2.5"
-              ></div>
             </div>
           </div>
         </div>
       </div>
-    </section>
-
-    <section class="pt-60p">
-      <div class="container">
-        <template v-if="loaded">
-          <div v-for="(chapterChart, idx) in chapterCharts" :key="idx">
-            <h4>{{ chapterChart.chapter.title }}</h4>
-            <div class="my-2">
-              <Line
-                class="p-3 bg-gray-700 rounded-10"
-                :data="chapterChart.chartData"
-                :options="chartOptions"
-              ></Line>
-            </div>
-          </div>
-        </template>
-      </div>
-    </section>
-    <!-- Progress section start -->
-    <section class="section-pb pt-60p">
-      <div class="container">
-        <div class="overflow-x-auto scrollbar-sm rounded-12">
-          <table
-            class="text-sm font-poppins text-w-neutral-1 w-full whitespace-nowra"
-          >
-            <thead class="text-left">
-              <tr class="bg-shap rounded-t-12">
-                <th class="text-sm px-24p py-3 lg:min-w-[150px] min-w-25">
-                  Chapter
-                </th>
-                <th class="text-sm px-24p py-3 min-w-25">Sections</th>
-                <th class="text-sm px-24p py-3 min-w-25"></th>
-              </tr>
-            </thead>
-            <tbody
-              class="divide-y divide-solid divide-shap border-b border-shap bg-b-neutral-3"
-            >
-              <template v-for="(chapter, idx) in data.progress" :key="idx">
-                <tr>
-                  <td class="px-24p py-3">
-                    <div class="flex-y gap-3">
-                      <span class="text-sm"> {{ chapter.title }} </span>
-                    </div>
-                  </td>
-                  <td class="px-24p py-3">{{ chapter.sections.length }}</td>
-                  <td class="px-24p py-3 text-right">
-                    <button
-                      class="btn btn-c-dark-outline"
-                      :class="{
-                        'bg-gray-800 text-white': chapter.expanded,
-                      }"
-                      @click="toggleChapter(chapter)"
-                    >
-                      <i
-                        class="ti icon-24"
-                        :class="{
-                          'ti-chevron-down': !chapter.expanded,
-                          'ti-chevron-up': chapter.expanded,
-                        }"
-                      ></i>
-                    </button>
-                  </td>
-                </tr>
-                <tr v-if="chapter.expanded">
-                  <td class="px-24p py-3" colspan="3">
-                    <table
-                      class="text-l-medium font-poppins text-w-neutral-1 w-full whitespace-nowra"
-                    >
-                      <thead class="text-left">
-                        <tr class="bg-shap rounded-t-12">
-                          <th
-                            class="text-sm px-24p py-3 lg:min-w-[150px] min-w-25"
-                          >
-                            Title
-                          </th>
-                          <th class="text-sm px-24p py-3 min-w-25">
-                            Challenges
-                          </th>
-                          <th class="text-sm px-24p py-3 min-w-25"></th>
-                        </tr>
-                      </thead>
-                      <tbody
-                        class="divide-y divide-solid divide-shap border-b border-shap bg-b-neutral-3"
-                      >
-                        <template
-                          v-for="(section, idxSection) in chapter.sections"
-                          :key="idxSection"
-                        >
-                          <tr>
-                            <td class="px-24p py-3">
-                              <div class="flex-y gap-3">
-                                <span class="text-sm">
-                                  {{ section.title }}
-                                </span>
-                              </div>
-                            </td>
-                            <td class="px-24p py-3">
-                              {{ section.challenges.length }}
-                            </td>
-                            <td class="px-24p py-3 text-right">
-                              <button
-                                class="btn btn-c-dark-outline"
-                                :class="{
-                                  'bg-gray-800': section.expanded,
-                                }"
-                                @click="toggleSection(section)"
-                              >
-                                <i
-                                  class="ti icon-24"
-                                  :class="{
-                                    'ti-chevron-down': !section.expanded,
-                                    'ti-chevron-up': section.expanded,
-                                  }"
-                                ></i>
-                              </button>
-                            </td>
-                          </tr>
-                          <tr v-if="section.expanded">
-                            <td class="px-24p py-3" colspan="3">
-                              <table
-                                class="text-sm font-poppins text-w-neutral-1 w-full whitespace-nowra"
-                              >
-                                <thead class="text-left">
-                                  <tr class="bg-shap rounded-t-12">
-                                    <th
-                                      class="text-sm px-24p py-3 lg:min-w-[150px] min-w-25"
-                                    >
-                                      Challenge
-                                    </th>
-                                    <th class="text-sm px-24p py-3 min-w-25">
-                                      Completed On
-                                    </th>
-                                    <th class="text-sm px-24p py-3 min-w-25">
-                                      Time Taken
-                                    </th>
-                                    <th class="text-sm px-24p py-3 min-w-25">
-                                      Hints Taken
-                                    </th>
-                                    <th class="text-sm px-24p py-3 min-w-25">
-                                      Status
-                                    </th>
-                                  </tr>
-                                </thead>
-                                <tbody
-                                  class="divide-y divide-solid divide-shap border-b border-shap bg-b-neutral-3"
-                                >
-                                  <template
-                                    v-for="(
-                                      challenge, idxChallenge
-                                    ) in section.challenges"
-                                    :key="idxChallenge"
-                                  >
-                                    <tr>
-                                      <td class="px-24p py-3">
-                                        <div class="flex-y gap-3">
-                                          <i
-                                            class="ti ti-star-filled"
-                                            :class="{
-                                              'text-success':
-                                                challenge.difficulty === 'easy',
-                                              'text-warning':
-                                                challenge.difficulty ===
-                                                'medium',
-                                              'text-danger':
-                                                challenge.difficulty === 'hard',
-                                            }"
-                                          >
-                                            {{ challenge.difficulty }}
-                                          </i>
-                                          <span class="text-sm">
-                                            {{ challenge.title }}
-                                          </span>
-                                        </div>
-                                      </td>
-                                      <td class="px-24p py-3">
-                                        <span v-if="challenge.answer">
-                                          {{
-                                            formatDate(
-                                              challenge.answer.completed_at
-                                            )
-                                          }}
-                                        </span>
-                                      </td>
-                                      <td class="px-24p py-3">
-                                        <span v-if="challenge.answer">
-                                          {{
-                                            formatTime(
-                                              challenge.answer.time_taken
-                                            )
-                                          }}
-                                        </span>
-                                      </td>
-                                      <td class="px-24p py-3">
-                                        <span v-if="challenge.answer">
-                                          {{
-                                            challenge.answer.usages
-                                              ? challenge.answer.usages.length
-                                              : 0
-                                          }}
-                                        </span>
-                                      </td>
-                                      <td class="px-24p py-3">
-                                        <span
-                                          class="text-success"
-                                          v-if="challenge.answer"
-                                        >
-                                          Completed
-                                        </span>
-                                        <span class="text-warning" v-else>
-                                          Not yet answered
-                                        </span>
-                                      </td>
-                                    </tr>
-                                  </template>
-                                </tbody>
-                              </table>
-                            </td>
-                          </tr>
-                        </template>
-                      </tbody>
-                    </table>
-                  </td>
-                </tr>
-              </template>
-            </tbody>
-          </table>
-        </div>
-      </div>
-    </section>
-
-    <!-- Progress section end -->
+    </div>
   </div>
 </template>
 
@@ -546,6 +503,7 @@
 
 <script>
 import { Line } from 'vue-chartjs';
+import Swal from 'sweetalert2';
 import dayjs from 'dayjs';
 import {
   Chart as ChartJS,
@@ -572,15 +530,24 @@ export default {
   components: { Line },
   data() {
     return {
+      selectedTab: 'overview',
       data: {
         ranking: {},
         progress: [],
+        longestStreak: 0,
       },
+      showChallengeAnswerModal: false,
+      selectedAnswer: null,
       loaded: false,
       chapterCharts: [],
       chartOptions: {
         responsive: true,
         maintainAspectRatio: false,
+      },
+      swalClasses: {
+        popup: 'bg-gray-800 text-white shadow-lg rounded-lg',
+        confirmButton: 'btn btn-primary',
+        cancelButton: 'btn btn-c-dark-outline',
       },
     };
   },
@@ -594,9 +561,12 @@ export default {
       ranking: response.data.data.ranking,
     };
 
+    this.data.longestStreak = this.getLongestStreak(
+      response.data.data.progress.data
+    );
+
     const getAnswers = (chapter, mode) => {
       return chapter.sections.map((s) => {
-        console.log('challenges', s);
         const challenge = s.challenges.find((c) => c.difficulty === mode);
         let challengeAnswer = null;
         if (challenge && s.answers) {
@@ -668,6 +638,27 @@ export default {
     this.loaded = true;
   },
   methods: {
+    getLongestStreak(data) {
+      let counter = 0;
+      const longestStreak = data
+        .reduce((agg, cur) => {
+          if (cur.answers && cur.answers.every((a) => !a.usages)) {
+            counter++;
+          } else {
+            if (counter > 0) {
+              agg.push(counter);
+            }
+            counter = 0;
+          }
+          return agg;
+        }, [])
+        .reduce((a, b) => (a > b ? a : b), 0);
+      return longestStreak;
+    },
+    showChallengeAnswer(challenge) {
+      this.selectedAnswer = challenge.answer;
+      this.showChallengeAnswerModal = true;
+    },
     toggleChapter(chapter) {
       if (typeof chapter.expanded === 'undefined') {
         chapter.expanded = false;

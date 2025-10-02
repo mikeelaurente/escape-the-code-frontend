@@ -39,7 +39,11 @@
     <!-- Leaderboard section start -->
     <section class="section-pb pt-60p">
       <div class="container">
-        <div class="overflow-x-auto scrollbar-sm">
+        <div
+          class="overflow-x-auto scrollbar-sm"
+          data-aos="fade-up"
+          data-aos-duration="2000"
+        >
           <table
             class="text-l-medium font-poppins text-w-neutral-1 w-full whitespace-nowra"
           >
@@ -62,10 +66,26 @@
             <tbody
               class="divide-y divide-solid divide-shap border-b border-shap bg-b-neutral-3"
             >
-              <tr v-for="(rank, idx) in ranking" :key="idx">
+              <tr
+                v-for="(rank, idx) in ranking"
+                :key="idx"
+                :class="{
+                  'bg-glass-1': rank.id === user.id,
+                }"
+                data-aos="fade-left"
+                data-aos-duration="1000"
+              >
                 <td class="px-24p py-3">
                   <div class="flex-y gap-3">
-                    <i class="ti ti-chevrons-up icon-24 text-danger"></i>
+                    <i
+                      class="ti icon-24"
+                      :class="{
+                        'text-yellow-400 ti-trophy-filled': rank.rank === 1,
+                        'text-gray-400 ti-trophy-filled': rank.rank === 2,
+                        'text-orange-700 ti-trophy-filled': rank.rank === 3,
+                        'text-gray-400 ti-trophy': rank.rank > 3,
+                      }"
+                    ></i>
                     <span class="text-l-medium"> {{ rank.rank }} </span>
                   </div>
                 </td>
@@ -107,11 +127,23 @@
 </template>
 
 <script>
+import { mapStores } from 'pinia';
+import { useAuthStore } from '../stores/auth';
+import { useAppStore } from '../stores/app';
+
 export default {
   data() {
     return {
       ranking: {},
     };
+  },
+  computed: {
+    ...mapStores(useAuthStore),
+    ...mapStores(useAppStore),
+    user() {
+      console.log('user access', this.authStore.user);
+      return this.authStore.user;
+    },
   },
   inject: ['http'],
   async mounted() {

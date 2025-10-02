@@ -344,6 +344,8 @@
 import { VAceEditor } from 'vue3-ace-editor';
 import Swal from 'sweetalert2';
 import { Toast } from '../assets/js/swal-mixin';
+import { useAuthStore } from '../stores/auth';
+import { mapStores } from 'pinia';
 
 export default {
   components: {
@@ -377,6 +379,7 @@ export default {
   },
   inject: ['http'],
   computed: {
+    ...mapStores(useAuthStore),
     nextSection() {
       return this.section.nextSection;
     },
@@ -461,7 +464,7 @@ export default {
           }
         },
         allowOutsideClick: () => !Swal.isLoading(),
-      }).then((result, response) => {
+      }).then(async (result, response) => {
         if (result.isConfirmed) {
           Swal.fire({
             icon: 'success',
@@ -484,6 +487,7 @@ export default {
               no-repeat
             `,
           });
+          await this.authStore.fetchUser();
         }
       });
     },
@@ -602,7 +606,7 @@ export default {
         },
         allowOutsideClick: () => !Swal.isLoading(),
       })
-        .then((result, response) => {
+        .then(async (result, response) => {
           if (result.isConfirmed && result.value) {
             const data = result.value;
 
@@ -625,6 +629,7 @@ export default {
                   customClass: this.swalClasses,
                 });
                 this.section.creditUsages.push(data.creditUsage);
+                this.authStore.setCredits(data.remainingCredits);
               }
             } else {
               Swal.fire({
