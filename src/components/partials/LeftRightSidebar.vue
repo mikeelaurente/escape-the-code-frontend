@@ -9,7 +9,7 @@
         <div
           class="flex flex-col items-center xxl:gap-[30px] xl:gap-6 lg:gap-5 gap-4 h-[700px] side-navbar-one"
         >
-          <router-link to="/">
+          <router-link to="/" title="Dashboard">
             <button class="btn-c btn-c-3xl btn-primary icon-32 shrink-0">
               <svg
                 xmlns="http://www.w3.org/2000/svg"
@@ -43,6 +43,7 @@
             class="flex flex-col gap-2 rounded-full bg-b-neutral-1 w-fit p-2 shrink-0"
           >
             <router-link
+              title="Story"
               active-class="active"
               to="/story"
               class="nav-item btn-c btn-c-3xl text-white transition-1"
@@ -68,6 +69,7 @@
               </svg>
             </router-link>
             <router-link
+              title="Leaderboard"
               active-class="active"
               to="/leaderboard"
               class="nav-item btn-c btn-c-3xl text-white transition-1"
@@ -94,6 +96,7 @@
               </svg>
             </router-link>
             <router-link
+              title="Achievements"
               active-class="active"
               to="/achievements"
               class="nav-item btn-c btn-c-3xl text-white transition-1"
@@ -117,6 +120,7 @@
               </svg>
             </router-link>
             <router-link
+              title="Progress"
               active-class="active"
               to="/progress"
               class="nav-item btn-c btn-c-3xl text-white transition-1"
@@ -144,6 +148,7 @@
           </div>
           <div class="flex flex-col gap-2 rounded-full w-fit p-2 shrink-0">
             <router-link
+              title="Profile"
               active-class="active"
               :to="`/user-stats/` + user.id"
               class="nav-item btn-c btn-c-3xl"

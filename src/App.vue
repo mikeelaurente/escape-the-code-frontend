@@ -107,9 +107,9 @@ export default {
     hideLeftNav(current, old) {
       if (current !== old && current) {
         console.log('changing style');
-        // this.$refs.layout.style.marginLeft = 'auto';
+        this.$refs.layout.style.marginLeft = 'auto';
       } else {
-        // this.$refs.layout.removeAttribute('style');
+        this.$refs.layout.removeAttribute('style');
       }
     },
   },

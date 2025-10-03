@@ -63,10 +63,10 @@
             >
               <div class="flex-col-c text-center">
                 <h4 class="heading-4 text-w-neutral-1">Rank</h4>
-                <h3 class="py-3 heading-3 text-secondary text-center">
-                  <span v-if="data.ranking.rank">
+                <h3 class="py-3 heading-3 text-yellow-300 text-center">
+                  <div v-if="data.ranking.rank">
                     {{ data.ranking.rank }} <i class="ti ti-crown"></i>
-                  </span>
+                  </div>
                   <span v-else>- -</span>
                 </h3>
               </div>
@@ -87,10 +87,10 @@
                   Shortest Completion Time
                 </h4>
                 <h3 class="py-3 heading-3 text-cyan-600 text-center">
-                  <span v-if="data.ranking.shortestTime">
+                  <div v-if="data.ranking.shortestTime">
                     {{ data.ranking.shortestTime }} sec
                     <i class="ti ti-clock"></i>
-                  </span>
+                  </div>
                   <span v-else>- -</span>
                 </h3>
               </div>
@@ -136,7 +136,9 @@
       <section class="mb-10">
         <div class="container">
           <template v-if="loaded">
+            <h2 class="heading-2">Time Spent in Challenges (seconds)</h2>
             <div
+              class="my-6"
               v-for="(chapterChart, idx) in chapterCharts"
               :key="idx"
               data-aos="fade-left"
@@ -543,6 +545,25 @@ export default {
       chartOptions: {
         responsive: true,
         maintainAspectRatio: false,
+        plugins: {
+          legend: {
+            labels: {
+              color: 'white',
+            },
+          },
+        },
+        scales: {
+          x: {
+            ticks: {
+              color: 'white',
+            },
+          },
+          y: {
+            ticks: {
+              color: 'white',
+            },
+          },
+        },
       },
       swalClasses: {
         popup: 'bg-gray-800 text-white shadow-lg rounded-lg',

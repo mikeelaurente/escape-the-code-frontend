@@ -156,7 +156,15 @@
                           >
                         </li>
                         <li class="mobail-menu">
-                          <router-link to="/profile">Profile</router-link>
+                          <router-link :to="`/user-stats/` + user.id"
+                            >Profile</router-link
+                          >
+                        </li>
+                        <li class="mobail-menu">
+                          <router-link to="/profile">Settings</router-link>
+                        </li>
+                        <li class="mobail-menu">
+                          <a @click.prevent="logout()">Logout</a>
                         </li>
                       </ul>
                     </div>
@@ -172,8 +180,9 @@
                           alt="logo"
                         />
                         <p class="text-base text-w-neutral-3 mb-32p">
-                          Become visionary behind a sprawling metropolis in
-                          Metropolis Tycoon Plan empire progress.
+                          Learn JavaScript the fun way in Escape the Code, a
+                          gamified platform with real coding practice and smart
+                          feedback.
                         </p>
                       </div>
                     </div>
