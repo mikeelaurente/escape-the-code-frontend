@@ -1,7 +1,7 @@
 /* ---------- Import All Libraries and Plugins Start ---------- */
-import Alpine from 'alpinejs';
-import collapse from '@alpinejs/collapse';
-import focus from '@alpinejs/focus';
+// import Alpine from 'alpinejs';
+// import collapse from '@alpinejs/collapse';
+// import focus from '@alpinejs/focus';
 import AOS from 'aos';
 import './../styles/app.scss';
 
@@ -10,32 +10,26 @@ import './../styles/app.scss';
 /* ---------- Import All Custom Utilities functions Start ---------- */
 import {
   activeMenu,
-  currentYear,
-  initializeCart,
   navScrollAnimation,
-  popupVideoModal,
   preloader,
-  priceRange,
-  pricingPlan,
-  productQty,
   scrollToTop,
   setupMobileSubmenu,
   setupNavigation,
 } from './main.js';
-import progressBar from './app/progressBar.js';
-import circleTextSpin from './app/circleTextSpin.js';
+// import progressBar from './app/progressBar.js';
+// import circleTextSpin from './app/circleTextSpin.js';
 /* ---------- Import All Custom Utilities functions End ---------- */
 
 /* ---------- Import All Dataset Start ---------- */
-import { intersect } from '@alpinejs/intersect';
-import SwiperSliders from './lib/swiperCustom.js';
-import { OdometerCounter } from './lib/odometerCustom.js';
-import { TiltEffect } from './lib/tiltCustom.js';
-import { FlatpickrCustom } from './lib/flatpickrCustom.js';
-import { SlimSelectCustom } from './lib/SlimSelectCustom.js';
-import { CountdownCustom } from './lib/CountdownCustom.js';
-import { lightGalleryCustom } from './lib/lightGalleryCustom.js';
-import { plyrCustom } from './lib/plyrCustom.js';
+// import { intersect } from '@alpinejs/intersect';
+// import SwiperSliders from './lib/swiperCustom.js';
+// import { OdometerCounter } from './lib/odometerCustom.js';
+// import { TiltEffect } from './lib/tiltCustom.js';
+// import { FlatpickrCustom } from './lib/flatpickrCustom.js';
+// import { SlimSelectCustom } from './lib/SlimSelectCustom.js';
+// import { CountdownCustom } from './lib/CountdownCustom.js';
+// import { lightGalleryCustom } from './lib/lightGalleryCustom.js';
+// import { plyrCustom } from './lib/plyrCustom.js';
 /* ---------- Import All Dataset End ---------- */
 
 // Setup Alpine.js configuration
@@ -124,35 +118,18 @@ window.addEventListener('DOMContentLoaded', function () {
     preloader();
     scrollToTop();
     activeMenu();
-    currentYear();
-    initializeCart();
   };
 
   // Then load non-critical UI functions
-  const initSecondaryFunctions = () => {
-    popupVideoModal();
-    circleTextSpin();
-    priceRange();
-    pricingPlan();
-    productQty();
-  };
+  const initSecondaryFunctions = () => {};
 
   // Finally load plugins and animations
   const initPlugins = () => {
     // Load custom plugins
-    OdometerCounter();
-    TiltEffect();
-    SwiperSliders();
-    FlatpickrCustom();
-    SlimSelectCustom();
-    CountdownCustom();
-    lightGalleryCustom();
-    plyrCustom();
-
     // Load GSAP animations if conditions are met
-    // if (shouldLoadAnimations()) {
-    loadAnimations();
-    // }
+    if (shouldLoadAnimations()) {
+      loadAnimations();
+    }
   };
 
   // Execute functions in order with slight delays
@@ -171,20 +148,7 @@ setupNavigation();
 setupMobileSubmenu();
 
 // Video poster click handler
-document.getElementById('videoPoster')?.addEventListener('click', function () {
-  const poster = document.getElementById('videoPoster');
-  const player = document.getElementById('videoPlayer');
 
-  if (poster && player) {
-    poster.classList.add('hidden');
-    player.classList.remove('hidden');
-
-    const currentSrc = player.getAttribute('src');
-    if (currentSrc) {
-      player.setAttribute('src', currentSrc + '&autoplay=1');
-    }
-  }
-});
 import './ace.config.js';
 // import 'ace-builds/css/ace.css';
 

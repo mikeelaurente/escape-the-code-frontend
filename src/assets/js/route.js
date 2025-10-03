@@ -4,13 +4,14 @@ import {
   createWebHistory,
 } from 'vue-router';
 import { useAuthStore } from '../../stores/auth'; // Import your Pinia store
+import Login from '../../pages/Auth/Login.vue';
 
 export const createRoutes = () => {
   const routes = [
     {
       name: 'login',
       path: '/login',
-      component: import('../../pages/Auth/Login.vue'),
+      component: Login,
     },
     { path: '/register', component: import('../../pages/Auth/Register.vue') },
     {
