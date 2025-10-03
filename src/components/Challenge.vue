@@ -239,7 +239,7 @@
     tabindex="-1"
     aria-hidden="true"
     style="background: rgba(0, 0, 0, 0.8)"
-    class="fixed flex items-center justify-center left-0 max-h-full md:inset-0 overflow-x-hidden overflow-y-auto right-0 top-0 w-full z-50"
+    class="fixed flex items-center justify-center z-[999] left-0 max-h-full md:inset-0 overflow-x-hidden overflow-y-auto right-0 top-0 w-full z-50"
   >
     <div class="relative p-4 w-full max-w-md max-h-full">
       <!-- Modal content -->
