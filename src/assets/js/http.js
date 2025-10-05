@@ -1,8 +1,7 @@
 import axios from 'axios';
-import configData from './config.json';
 
 const apiClient = axios.create({
-  baseURL: configData.apiUrl, // Your base URL
+  baseURL: process.env.API_BASE_URL, // Your base URL
   headers: {
     'Content-type': 'application/json',
   },

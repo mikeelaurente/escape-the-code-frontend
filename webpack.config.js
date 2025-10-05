@@ -1,4 +1,5 @@
 const autoprefixer = require('autoprefixer');
+const webpack = require('webpack');
 const path = require('path');
 const CopyPlugin = require('copy-webpack-plugin');
 const MiniCssExtractPlugin = require('mini-css-extract-plugin');
@@ -6,6 +7,23 @@ const fs = require('fs');
 const HtmlWebpackPlugin = require('html-webpack-plugin');
 const HtmlWebpackSimpleIncludePlugin = require('html-webpack-simple-include-plugin');
 const { VueLoaderPlugin } = require('vue-loader');
+const dotenv = require('dotenv');
+
+// get from args
+const args = process.argv.slice(2);
+const isProd =
+  args.includes('--mode=production') || process.env.NODE_ENV === 'production';
+const envPath = isProd ? '.env.production' : '.env.development';
+
+// Load environment variables from .env file
+const env = dotenv.config({ path: envPath }).parsed || {};
+// Convert environment variables to DefinePlugin format
+const envKeys = Object.keys(env).reduce((prev, next) => {
+  prev[`process.env.${next}`] = JSON.stringify(env[next]);
+  return prev;
+}, {});
+
+console.log('process.env.NODE_ENV:', process.env.NODE_ENV);
 
 // List of HTML Pages files
 const htmlFiles = ['index'];
@@ -36,7 +54,7 @@ module.exports = {
   entry: {
     main: './src/assets/js/script.js',
   },
-  mode: 'development',
+  mode: process.env.NODE_ENV === 'production' ? 'production' : 'development',
   devServer: {
     watchFiles: ['src/**/*'],
     hot: true,
@@ -104,6 +122,22 @@ module.exports = {
     }),
     ...htmlPlugins,
     // partialIncludePlugin,
+    process.env.NODE_ENV === 'production' &&
+      new webpack.DefinePlugin({
+        ...envKeys,
+        'process.env.NODE_ENV': JSON.stringify('production'),
+        __VUE_OPTIONS_API__: JSON.stringify(true),
+        __VUE_PROD_DEVTOOLS__: JSON.stringify(false),
+        __VUE_PROD_HYDRATION_MISMATCH_DETAILS__: JSON.stringify(false),
+      }),
+    process.env.NODE_ENV === 'development' &&
+      new webpack.DefinePlugin({
+        ...envKeys,
+        'process.env.NODE_ENV': JSON.stringify('development'),
+        __VUE_OPTIONS_API__: JSON.stringify(true),
+        __VUE_PROD_DEVTOOLS__: JSON.stringify(true),
+        __VUE_PROD_HYDRATION_MISMATCH_DETAILS__: JSON.stringify(true),
+      }),
   ],
   output: {
     filename: 'assets/js/app.js',
