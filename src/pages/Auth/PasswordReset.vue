@@ -1,40 +1,42 @@
 <template>
-  <!-- login section start -->
-  <section class="section-py pt-30">
-    <div class="container">
-      <div class="flex-c">
-        <div class="max-w-[530px] w-full p-40p bg-b-neutral-3 rounded-12">
-          <h2 class="heading-2 text-w-neutral-1 mb-16p text-center">
-            Reset Password
-          </h2>
-          <form @submit.prevent="resetPassword()">
-            <div class="grid grid-cols-1 gap-30p mb-40p">
-              <div>
-                <label
-                  for="userEmail"
-                  class="label label-xl text-w-neutral-1 font-borda mb-3"
-                >
-                  Email
-                </label>
-                <input
-                  class="border-input-1"
-                  type="email"
-                  name="email"
-                  id="userEmail"
-                  v-model="email"
-                  placeholder="Email"
-                />
+  <div>
+    <!-- login section start -->
+    <section class="section-py pt-30">
+      <div class="container">
+        <div class="flex-c">
+          <div class="max-w-[530px] w-full p-40p bg-b-neutral-3 rounded-12">
+            <h2 class="heading-2 text-w-neutral-1 mb-16p text-center">
+              Reset Password
+            </h2>
+            <form @submit.prevent="resetPassword()">
+              <div class="grid grid-cols-1 gap-30p mb-40p">
+                <div>
+                  <label
+                    for="userEmail"
+                    class="label label-xl text-w-neutral-1 font-borda mb-3"
+                  >
+                    Email
+                  </label>
+                  <input
+                    class="border-input-1"
+                    type="email"
+                    name="email"
+                    id="userEmail"
+                    v-model="email"
+                    placeholder="Email"
+                  />
+                </div>
               </div>
-            </div>
-            <button class="btn btn-md btn-primary rounded-12 w-full mb-16p">
-              Submit
-            </button>
-          </form>
+              <button class="btn btn-md btn-primary rounded-12 w-full mb-16p">
+                Submit
+              </button>
+            </form>
+          </div>
         </div>
       </div>
-    </div>
-  </section>
-  <!-- login section end -->
+    </section>
+    <!-- login section end -->
+  </div>
 </template>
 
 <script>

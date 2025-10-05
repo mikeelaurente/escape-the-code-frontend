@@ -1,9 +1,12 @@
 <template>
   <div>
-    <!-- breadcrumb start -->
-
-    <!-- breadcrumb start -->
     <section class="pt-30p">
+      <div class="section-pt" v-if="status === 'loading'">
+        <div class="flex justify-center items-center min-h-[50vh]">
+          <i class="ti ti-loader icon-60 animate-spin text-w-neutral-4"></i>
+        </div>
+      </div>
+
       <div class="section-pt" v-if="status === 'ok'">
         <div
           class="relative bg-[url('../images/photos/breadcrumbImg.png')] bg-cover bg-no-repeat rounded-24 overflow-hidden"
@@ -205,30 +208,39 @@ export default {
   inject: ['http'],
   methods: {
     async fetchSection(sectionId) {
-      const response = await this.http.get('/story/sections/' + sectionId);
+      try {
+        this.status = 'loading';
+        this.message = '';
+        const response = await this.http.get('/story/sections/' + sectionId);
 
-      this.status = response.data.status;
+        this.status = response.data.status;
 
-      if (this.status === 'error') {
-        this.message = response.data.message;
+        if (this.status === 'error') {
+          this.message = response.data.message;
+          return;
+        }
+
+        const data = response.data.data;
+
+        this.section = JSON.parse(
+          JSON.stringify({
+            ...data,
+            runnables: JSON.parse(data.runnables),
+            trivias: JSON.parse(data.trivias),
+            additionalResources: JSON.parse(data.additionalResources),
+          })
+        );
+
+        this.status = 'ok';
+        return;
+      } catch (error) {
+        this.status = 'error';
+        this.message = 'An error occurred while fetching the section.';
         return;
       }
-
-      const data = response.data.data;
-
-      this.section = JSON.parse(
-        JSON.stringify({
-          ...data,
-          runnables: JSON.parse(data.runnables),
-          trivias: JSON.parse(data.trivias),
-          additionalResources: JSON.parse(data.additionalResources),
-        })
-      );
-      console.log(this.section);
     },
   },
   async mounted() {
-    console.log('mounted', this.$route.params);
     await this.fetchSection(this.$route.params.section);
   },
 };

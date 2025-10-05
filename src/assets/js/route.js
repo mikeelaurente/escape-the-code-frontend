@@ -13,68 +13,71 @@ export const createRoutes = () => {
       path: '/login',
       component: Login,
     },
-    { path: '/register', component: import('../../pages/Auth/Register.vue') },
+    {
+      path: '/register',
+      component: () => import('../../pages/Auth/Register.vue'),
+    },
     {
       name: 'home',
       path: '/',
-      component: import('../../pages/Home.vue'),
+      component: () => import('../../pages/Home.vue'),
       meta: { requiresAuth: true },
     },
     {
       path: '/story',
-      component: import('../../pages/Story.vue'),
+      component: () => import('../../pages/Story.vue'),
       meta: { requiresAuth: true },
     },
     {
       path: '/achievements',
-      component: import('../../pages/Achievements.vue'),
+      component: () => import('../../pages/Achievements.vue'),
       meta: { requiresAuth: true },
     },
     {
       path: '/profile',
-      component: import('../../pages/Profile.vue'),
+      component: () => import('../../pages/Profile.vue'),
       meta: { requiresAuth: true },
     },
     {
       path: '/leaderboard',
-      component: import('../../pages/Leaderboard.vue'),
+      component: () => import('../../pages/Leaderboard.vue'),
       meta: { requiresAuth: true },
     },
     {
       path: '/progress',
-      component: import('../../pages/Progress.vue'),
+      component: () => import('../../pages/Progress.vue'),
       meta: { requiresAuth: true },
     },
     {
       path: '/user-stats/:id',
-      component: import('../../pages/UserStats.vue'),
+      component: () => import('../../pages/UserStats.vue'),
       meta: { requiresAuth: true },
     },
     {
       path: '/story/chapters/:chapter',
-      component: import('../../pages/Chapter.vue'),
+      component: () => import('../../pages/Chapter.vue'),
       meta: { requiresAuth: true },
     },
     {
       path: '/story/chapters/:chapter/:section',
-      component: import('../../pages/Section.vue'),
+      component: () => import('../../pages/Section.vue'),
       meta: { requiresAuth: true },
     },
     {
       path: '/verify-email',
-      component: import('../../pages/Auth/VerifyEmail.vue'),
+      component: () => import('../../pages/Auth/VerifyEmail.vue'),
     },
     {
       path: '/password-reset',
-      component: import('../../pages/Auth/PasswordReset.vue'),
+      component: () => import('../../pages/Auth/PasswordReset.vue'),
     },
     {
       path: '/password-confirm',
-      component: import('../../pages/Auth/PasswordConfirm.vue'),
+      component: () => import('../../pages/Auth/PasswordConfirm.vue'),
     },
     {
       path: '/:pathMatch(.*)*', // Catch-all for unmatched routes
-      component: import('../../pages/NotFound.vue'),
+      component: () => import('../../pages/NotFound.vue'),
     },
   ];
 
@@ -85,8 +88,6 @@ export const createRoutes = () => {
 
   router.beforeEach(async (to, from, next) => {
     const authStore = useAuthStore(); // Access the Pinia store
-    console.log('===========================================');
-    console.log(authStore.isAuthenticated, authStore.userToken);
     await authStore.init();
 
     if (to.meta.requiresAuth && !authStore.isAuthenticated) {

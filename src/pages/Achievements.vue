@@ -45,183 +45,40 @@
             >
               <!-- achievements 1 -->
               <div
+                v-for="(achievement, index) in achievements"
+                :key="index"
                 class="bg-b-neutral-4 py-32p px-40p flex-col-c text-center rounded-12"
+                :class="{
+                  'border-4 border-primary':
+                    achievement.userAchievements.length,
+                }"
               >
-                <img
-                  class="size-140p rounded-full mb-16p"
-                  src="../assets/images/games/gameLogo9.png"
-                  alt="game"
-                />
-                <a
+                <i :class="getAchievementIcon(achievement)" class="icon-60"></i>
+                <span
                   href="./game-details.html"
                   class="heading-4 text-w-neutral-1 link-1 line-clamp-1 mb-3"
                 >
-                  Gameplays
-                </a>
-                <span class="text-m-medium text-primary mb-16p"> 3 of 20 </span>
-                <div
-                  x-data="progressBar(0, 45)"
-                  x-init="init()"
-                  class="overflow-x-hidden w-full"
+                  {{ achievement.title }}
+                </span>
+
+                <p class="text-m-regular text-w-neutral-3 line-clamp-3">
+                  {{ achievement.description }}
+                </p>
+                <span
+                  v-if="achievement.userAchievements.length"
+                  class="text-m-medium text-primary mb-16p"
                 >
-                  <div class="flex items-center w-full">
-                    <div class="w-3.5 h-5 bg-primary"></div>
-                    <div
-                      x-intersect.once="$dispatch('start-progress')"
-                      class="relative w-full h-2.5 bg-w-neutral-3"
-                    >
-                      <span
-                        :style="'width:' + progress + '%'"
-                        class="progressbar-1 h-full"
-                      >
-                      </span>
-                    </div>
-                  </div>
-                </div>
-              </div>
-              <!-- achievements 2 -->
-              <div
-                class="bg-b-neutral-4 py-32p px-40p flex-col-c text-center rounded-12"
-              >
-                <img
-                  class="size-140p rounded-full mb-16p"
-                  src="../assets/images/games/gameLogo10.png"
-                  alt="game"
-                />
-                <a
-                  href="./game-details.html"
-                  class="heading-4 text-w-neutral-1 link-1 line-clamp-1 mb-3"
-                >
-                  Gameplays
-                </a>
-                <span class="text-m-medium text-primary mb-16p"> 3 of 20 </span>
-                <div
-                  x-data="progressBar(0, 45)"
-                  x-init="init()"
-                  class="overflow-x-hidden w-full"
-                >
-                  <div class="flex items-center w-full">
-                    <div class="w-3.5 h-5 bg-primary"></div>
-                    <div
-                      x-intersect.once="$dispatch('start-progress')"
-                      class="relative w-full h-2.5 bg-w-neutral-3"
-                    >
-                      <span
-                        :style="'width:' + progress + '%'"
-                        class="progressbar-1 h-full"
-                      >
-                      </span>
-                    </div>
-                  </div>
-                </div>
-              </div>
-              <!-- achievements 3 -->
-              <div
-                class="bg-b-neutral-4 py-32p px-40p flex-col-c text-center rounded-12"
-              >
-                <img
-                  class="size-140p rounded-full mb-16p"
-                  src="../assets/images/games/gameLogo11.png"
-                  alt="game"
-                />
-                <a
-                  href="./game-details.html"
-                  class="heading-4 text-w-neutral-1 link-1 line-clamp-1 mb-3"
-                >
-                  Gameplays
-                </a>
-                <span class="text-m-medium text-primary mb-16p"> 3 of 20 </span>
-                <div
-                  x-data="progressBar(0, 45)"
-                  x-init="init()"
-                  class="overflow-x-hidden w-full"
-                >
-                  <div class="flex items-center w-full">
-                    <div class="w-3.5 h-5 bg-primary"></div>
-                    <div
-                      x-intersect.once="$dispatch('start-progress')"
-                      class="relative w-full h-2.5 bg-w-neutral-3"
-                    >
-                      <span
-                        :style="'width:' + progress + '%'"
-                        class="progressbar-1 h-full"
-                      >
-                      </span>
-                    </div>
-                  </div>
-                </div>
-              </div>
-              <!-- achievements 4 -->
-              <div
-                class="bg-b-neutral-4 py-32p px-40p flex-col-c text-center rounded-12"
-              >
-                <img
-                  class="size-140p rounded-full mb-16p"
-                  src="../assets/images/games/gameLogo12.png"
-                  alt="game"
-                />
-                <a
-                  href="./game-details.html"
-                  class="heading-4 text-w-neutral-1 link-1 line-clamp-1 mb-3"
-                >
-                  Gameplays
-                </a>
-                <span class="text-m-medium text-primary mb-16p"> 3 of 20 </span>
-                <div
-                  x-data="progressBar(0, 45)"
-                  x-init="init()"
-                  class="overflow-x-hidden w-full"
-                >
-                  <div class="flex items-center w-full">
-                    <div class="w-3.5 h-5 bg-primary"></div>
-                    <div
-                      x-intersect.once="$dispatch('start-progress')"
-                      class="relative w-full h-2.5 bg-w-neutral-3"
-                    >
-                      <span
-                        :style="'width:' + progress + '%'"
-                        class="progressbar-1 h-full"
-                      >
-                      </span>
-                    </div>
-                  </div>
-                </div>
-              </div>
-              <!-- achievements 5 -->
-              <div
-                class="bg-b-neutral-4 py-32p px-40p flex-col-c text-center rounded-12"
-              >
-                <img
-                  class="size-140p rounded-full mb-16p"
-                  src="../assets/images/games/gameLogo13.png"
-                  alt="game"
-                />
-                <a
-                  href="./game-details.html"
-                  class="heading-4 text-w-neutral-1 link-1 line-clamp-1 mb-3"
-                >
-                  Gameplays
-                </a>
-                <span class="text-m-medium text-primary mb-16p"> 3 of 20 </span>
-                <div
-                  x-data="progressBar(0, 45)"
-                  x-init="init()"
-                  class="overflow-x-hidden w-full"
-                >
-                  <div class="flex items-center w-full">
-                    <div class="w-3.5 h-5 bg-primary"></div>
-                    <div
-                      x-intersect.once="$dispatch('start-progress')"
-                      class="relative w-full h-2.5 bg-w-neutral-3"
-                    >
-                      <span
-                        :style="'width:' + progress + '%'"
-                        class="progressbar-1 h-full"
-                      >
-                      </span>
-                    </div>
-                  </div>
-                </div>
+                  Achieved on:
+                  {{
+                    new Date(
+                      achievement.userAchievements[0].awardedAt
+                    ).toLocaleDateString('en-US', {
+                      year: 'numeric',
+                      month: 'long',
+                      day: 'numeric',
+                    })
+                  }}
+                </span>
               </div>
             </div>
           </div>
@@ -233,14 +90,31 @@
 </template>
 
 <script>
+import axios from 'axios';
+
 export default {
   data() {
     return {
-      progress: 0,
+      achievements: [],
     };
   },
-  mounted() {
-    console.log('Achievements');
+  inject: ['http'],
+  methods: {
+    getAchievementIcon(achievement) {
+      if (achievement.userAchievements.length) {
+        return achievement.icon + ' text-primary';
+      }
+      return achievement.icon || 'ti ti-award';
+    },
+  },
+  async mounted() {
+    try {
+      // Fetch section data from API
+      const response = await this.http.get(`/achievements`);
+      this.achievements = response.data.data;
+    } catch (error) {
+      console.error('Error fetching section data:', error);
+    }
   },
 };
 </script>

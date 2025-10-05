@@ -14,7 +14,7 @@
                 <div class="w-full rounded-32 overflow-hidden relative">
                   <img
                     class="w-full xxl:h-[630px] xl:h-[580px] lg:h-[520px] md:h-[420px] sm:h-[380px] h-[300px] object-cover"
-                    src="../assets/images/photos/heroBanner1.webp"
+                    src="../assets/images/photos/heroBanner1.png"
                     alt="product"
                   />
                   <div
@@ -50,16 +50,16 @@
     </section>
     <div class="container">
       <div
-        class="pb-30p overflow-visible relative grid 4xl:grid-cols-12 grid-cols-1 gap-30p lg:-mt-30 md:-mt-40 sm:-mt-48 -mt-56"
+        class="pb-30p overflow-visible relative grid 4xl:grid-cols-12 grid-cols-1 gap-30p lg:-mt-50 md:-mt-40 sm:mt-48 xsm:mt-0"
       >
         <div class="4xl:col-start-2 4xl:col-end-12">
           <div
-            class="relative z-10 grid 4xl:grid-cols-11 items-center gap-30p bg-b-neutral-3 shadow-4 p-40p rounded-24 xl:divide-x divide-shap/70"
+            class="relative z-10 grid 4xl:grid-cols-11 items-center gap-30p md:mt-10 bg-b-neutral-3 shadow-4 p-40p rounded-24 xl:divide-x divide-shap/70"
             data-aos="fade-up"
             data-aos-duration="1500"
           >
             <div
-              class="3xl:col-span-4 xl:col-span-7 col-span-12 grid xl:grid-cols-4 md:grid-cols-2 grid-cols-1 gap-y-30p xl:divide-x divide-shap/70"
+              class="3xl:col-span-4 xl:col-span-7 col-span-12 grid xl:grid-cols-4 grid-cols-2 gap-y-30p xl:divide-x divide-shap/70"
             >
               <div class="flex-col-c text-center">
                 <h4 class="heading-4 text-w-neutral-1">Rank</h4>
@@ -119,13 +119,13 @@
               Progress
             </a>
             <a
-              @click.prevent="selectedTab = 'credit'"
+              @click.prevent="selectedTab = 'transactions'"
               class="cursor-pointer"
               :class="{
-                active: selectedTab == 'credit',
+                active: selectedTab == 'transactions',
               }"
             >
-              Credit Usages
+              Transactions
             </a>
           </div>
         </div>
@@ -414,6 +414,72 @@
       <!-- Progress section end -->
     </div>
 
+    <div v-if="selectedTab == 'transactions'" data-aos="zoom-in">
+      <!-- Progress section start -->
+      <section class="section-pb">
+        <div class="container">
+          <div class="overflow-x-auto scrollbar-sm rounded-12">
+            <table
+              class="text-sm font-poppins text-w-neutral-1 w-full whitespace-nowra"
+            >
+              <thead class="text-left">
+                <tr class="bg-shap rounded-t-12">
+                  <th class="text-sm px-24p py-3 min-w-25">Date</th>
+                  <th class="text-sm px-24p py-3 lg:min-w-[150px] min-w-25">
+                    Title
+                  </th>
+                  <th class="text-sm px-24p py-3 min-w-25">Type</th>
+                  <th class="text-sm px-24p py-3 min-w-25">Amount</th>
+                </tr>
+              </thead>
+              <tbody
+                class="divide-y divide-solid divide-shap border-b border-shap bg-b-neutral-3"
+              >
+                <template
+                  v-for="(transaction, idx) in data.transactions"
+                  :key="idx"
+                >
+                  <tr>
+                    <td class="px-24p py-3 text-left">
+                      {{ formatDate(transaction.createdAt) }}
+                    </td>
+                    <td class="px-24p py-3">
+                      <div class="flex-y gap-3">
+                        <span class="text-sm"> {{ transaction.title }} </span>
+                      </div>
+                    </td>
+                    <td class="px-24p py-3">
+                      <span
+                        :class="{
+                          'text-success': transaction.type === 'in',
+                          'text-danger': transaction.type === 'out',
+                        }"
+                      >
+                        {{ transaction.type === 'in' ? 'Credit' : 'Debit' }}
+                      </span>
+                    </td>
+                    <td class="px-24p py-3 text-right">
+                      <span
+                        :class="{
+                          'text-success': transaction.type === 'in',
+                          'text-danger': transaction.type === 'out',
+                        }"
+                      >
+                        {{ transaction.type === 'in' ? '+' : '-' }}
+                        {{ transaction.amount }}
+                        <i class="ti ti-star-filled"></i>
+                      </span>
+                    </td>
+                  </tr>
+                </template>
+              </tbody>
+            </table>
+          </div>
+        </div>
+      </section>
+      <!-- Progress section end -->
+    </div>
+
     <!-- Main modal -->
     <div
       v-show="showChallengeAnswerModal"
@@ -535,6 +601,7 @@ export default {
       selectedTab: 'overview',
       data: {
         ranking: {},
+        transactions: [],
         progress: [],
         longestStreak: 0,
       },
@@ -575,11 +642,11 @@ export default {
   inject: ['http'],
   async mounted() {
     this.loaded = false;
-    console.log(this.$route.params);
     const response = await this.http.get('/users/dashboard');
     this.data = {
       progress: Object.values(response.data.data.progress.grouped),
       ranking: response.data.data.ranking,
+      transactions: response.data.data.transactions,
     };
 
     this.data.longestStreak = this.getLongestStreak(
@@ -651,7 +718,6 @@ export default {
           ],
         },
       };
-      console.log(easyDataset, mediumDataset, hardDataset);
     }
 
     this.chapterCharts = Object.values(chapterDatasets);
@@ -685,14 +751,12 @@ export default {
         chapter.expanded = false;
       }
       chapter.expanded = !chapter.expanded;
-      console.log(chapter);
     },
     toggleSection(section) {
       if (typeof section.expanded === 'undefined') {
         section.expanded = false;
       }
       section.expanded = !section.expanded;
-      console.log(section);
     },
     formatDate(date) {
       const dt = dayjs(date);

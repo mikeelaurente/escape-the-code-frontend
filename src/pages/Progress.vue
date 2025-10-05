@@ -77,7 +77,7 @@
 
                 <!-- Right Content -->
                 <div
-                  class="grow bg-[url('../images/photos/profileCover1.png')] p-4 rounded-12 transition-1"
+                  class="grow bg-neutral-900 px-4 py-6 rounded-12 transition-1"
                 >
                   <h3 class="flex gap-x-1.5 font-semibold">
                     <svg
@@ -136,7 +136,6 @@ export default {
       const group = this.progress.reduce((acc, cur) => {
         const dt = dayjs(cur.createdAt);
         const key = dt.format('YYYY-MM-DD');
-        console.log('key', key);
         if (!(key in acc)) {
           acc[key] = {
             group: dt.format('MMM DD, YYYY'),
@@ -146,7 +145,6 @@ export default {
         acc[key].items.push(cur);
         return acc;
       }, {});
-      console.log(group);
       return group;
     },
   },
@@ -155,7 +153,6 @@ export default {
       const { data } = await this.http.get('/story/progress');
       this.progress = data.data;
     } catch (e) {
-      console.log(e);
       Toast.fire({
         icon: 'error',
         title: 'Failed to retrieve progress',

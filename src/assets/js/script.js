@@ -162,6 +162,9 @@ import { createRoutes } from './route.js';
 const pinia = createPinia();
 const app = createApp(App);
 
+app.config.productionTip = false;
+app.config.devtools = false;
+
 pinia.use(({ store }) => {
   store.http = apiClient;
 });

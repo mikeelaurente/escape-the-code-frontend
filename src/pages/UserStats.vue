@@ -74,196 +74,31 @@
           <div class="4xl:col-start-2 4xl:col-end-8 xl:col-span-7 col-span-12">
             <div class="bg-b-neutral-3 p-40p rounded-12">
               <h3 class="heading-3 text-w-neutral-1 mb-30p text-split-left">
-                Game Stats
+                Achievements
               </h3>
               <div
                 class="grid xxl+:grid-cols-3 xl:grid-cols-2 lg:grid-cols-3 sm:grid-cols-2 grid-cols-1 gap-30p"
               >
                 <!-- game stats 1 -->
-                <div class="bg-b-neutral-4 p-16p flex-col-c" data-aos="fade-up">
-                  <img
-                    class="avatar size-80p"
-                    src="../assets/images/games/gameLogo3.png"
-                    alt="game stats"
-                  />
-                  <a
-                    href="./game-details.html"
+                <div
+                  v-for="achievement in achievements"
+                  :key="achievement.id"
+                  class="bg-b-neutral-4 p-16p flex-col-c"
+                  data-aos="fade-up"
+                >
+                  <i :class="achievement.achievement.icon" class="icon-60"></i>
+                  <span
                     class="heading-5 text-w-neutral-1 link-1 line-clamp-1 my-2"
                   >
-                    Lunar Legends
-                  </a>
+                    {{ achievement.achievement.title }}
+                  </span>
+                  <p class="text-m-regular text-w-neutral-3 text-center mb-3">
+                    {{ achievement.achievement.description }}
+                  </p>
+
                   <div
                     class="flex items-center border-t border-shap text-center pt-2"
-                  >
-                    <div>
-                      <span class="text-sm text-w-neutral-1 mb-1">
-                        Matches
-                      </span>
-                      <span class="text-sm text-primary"> 275 </span>
-                    </div>
-                    <div class="3xl:mx-7 mx-20p w-1px h-full bg-shap"></div>
-                    <div>
-                      <span class="text-sm text-w-neutral-1 mb-1">
-                        Winnings
-                      </span>
-                      <span class="text-sm text-primary"> 145 </span>
-                    </div>
-                  </div>
-                </div>
-                <!-- game stats 2 -->
-                <div class="bg-b-neutral-4 p-16p flex-col-c" data-aos="fade-up">
-                  <img
-                    class="avatar size-80p"
-                    src="../assets/images/games/gameLogo4.png"
-                    alt="game stats"
-                  />
-                  <a
-                    href="./game-details.html"
-                    class="heading-5 text-w-neutral-1 link-1 line-clamp-1 my-2"
-                  >
-                    Elysian Tales
-                  </a>
-                  <div
-                    class="flex items-center border-t border-shap text-center pt-2"
-                  >
-                    <div>
-                      <span class="text-sm text-w-neutral-1 mb-1">
-                        Matches
-                      </span>
-                      <span class="text-sm text-primary"> 275 </span>
-                    </div>
-                    <div class="3xl:mx-7 mx-20p w-1px h-full bg-shap"></div>
-                    <div>
-                      <span class="text-sm text-w-neutral-1 mb-1">
-                        Winnings
-                      </span>
-                      <span class="text-sm text-primary"> 145 </span>
-                    </div>
-                  </div>
-                </div>
-                <!-- game stats 3 -->
-                <div class="bg-b-neutral-4 p-16p flex-col-c" data-aos="fade-up">
-                  <img
-                    class="avatar size-80p"
-                    src="../assets/images/games/gameLogo5.png"
-                    alt="game stats"
-                  />
-                  <a
-                    href="./game-details.html"
-                    class="heading-5 text-w-neutral-1 link-1 line-clamp-1 my-2"
-                  >
-                    Soul Spark
-                  </a>
-                  <div
-                    class="flex items-center border-t border-shap text-center pt-2"
-                  >
-                    <div>
-                      <span class="text-sm text-w-neutral-1 mb-1">
-                        Matches
-                      </span>
-                      <span class="text-sm text-primary"> 275 </span>
-                    </div>
-                    <div class="3xl:mx-7 mx-20p w-1px h-full bg-shap"></div>
-                    <div>
-                      <span class="text-sm text-w-neutral-1 mb-1">
-                        Winnings
-                      </span>
-                      <span class="text-sm text-primary"> 145 </span>
-                    </div>
-                  </div>
-                </div>
-                <!-- game stats 4 -->
-                <div class="bg-b-neutral-4 p-16p flex-col-c" data-aos="fade-up">
-                  <img
-                    class="avatar size-80p"
-                    src="../assets/images/games/gameLogo6.png"
-                    alt="game stats"
-                  />
-                  <a
-                    href="./game-details.html"
-                    class="heading-5 text-w-neutral-1 link-1 line-clamp-1 my-2"
-                  >
-                    Nova Rush
-                  </a>
-                  <div
-                    class="flex items-center border-t border-shap text-center pt-2"
-                  >
-                    <div>
-                      <span class="text-sm text-w-neutral-1 mb-1">
-                        Matches
-                      </span>
-                      <span class="text-sm text-primary"> 275 </span>
-                    </div>
-                    <div class="3xl:mx-7 mx-20p w-1px h-full bg-shap"></div>
-                    <div>
-                      <span class="text-sm text-w-neutral-1 mb-1">
-                        Winnings
-                      </span>
-                      <span class="text-sm text-primary"> 145 </span>
-                    </div>
-                  </div>
-                </div>
-                <!-- game stats 5 -->
-                <div class="bg-b-neutral-4 p-16p flex-col-c" data-aos="fade-up">
-                  <img
-                    class="avatar size-80p"
-                    src="../assets/images/games/gameLogo7.png"
-                    alt="game stats"
-                  />
-                  <a
-                    href="./game-details.html"
-                    class="heading-5 text-w-neutral-1 link-1 line-clamp-1 my-2"
-                  >
-                    Shadow Strike
-                  </a>
-                  <div
-                    class="flex items-center border-t border-shap text-center pt-2"
-                  >
-                    <div>
-                      <span class="text-sm text-w-neutral-1 mb-1">
-                        Matches
-                      </span>
-                      <span class="text-sm text-primary"> 275 </span>
-                    </div>
-                    <div class="3xl:mx-7 mx-20p w-1px h-full bg-shap"></div>
-                    <div>
-                      <span class="text-sm text-w-neutral-1 mb-1">
-                        Winnings
-                      </span>
-                      <span class="text-sm text-primary"> 145 </span>
-                    </div>
-                  </div>
-                </div>
-                <!-- game stats 6 -->
-                <div class="bg-b-neutral-4 p-16p flex-col-c" data-aos="fade-up">
-                  <img
-                    class="avatar size-80p"
-                    src="../assets/images/games/gameLogo8.png"
-                    alt="game stats"
-                  />
-                  <a
-                    href="./game-details.html"
-                    class="heading-5 text-w-neutral-1 link-1 line-clamp-1 my-2"
-                  >
-                    Dragon Fury
-                  </a>
-                  <div
-                    class="flex items-center border-t border-shap text-center pt-2"
-                  >
-                    <div>
-                      <span class="text-sm text-w-neutral-1 mb-1">
-                        Matches
-                      </span>
-                      <span class="text-sm text-primary"> 275 </span>
-                    </div>
-                    <div class="3xl:mx-7 mx-20p w-1px h-full bg-shap"></div>
-                    <div>
-                      <span class="text-sm text-w-neutral-1 mb-1">
-                        Winnings
-                      </span>
-                      <span class="text-sm text-primary"> 145 </span>
-                    </div>
-                  </div>
+                  ></div>
                 </div>
               </div>
             </div>
@@ -353,6 +188,7 @@ export default {
       nextSection: {
         progressCounter: 0,
       },
+      achievements: [],
     };
   },
   computed: {
@@ -389,7 +225,6 @@ export default {
   },
   inject: ['http'],
   async mounted() {
-    console.log(this.$route.params);
     const response = await this.http.get(
       '/story/user-stats/' + this.$route.params.id
     );
@@ -398,6 +233,7 @@ export default {
       progressCounter: 0,
       ...response.data.data.nextSection,
     };
+    this.achievements = response.data.data.achievements;
   },
 };
 </script>

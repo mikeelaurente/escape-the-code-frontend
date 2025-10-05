@@ -346,6 +346,7 @@ import Swal from 'sweetalert2';
 import { Toast } from '../assets/js/swal-mixin';
 import { useAuthStore } from '../stores/auth';
 import { mapStores } from 'pinia';
+import Toastify from 'toastify-js';
 
 export default {
   components: {
@@ -432,19 +433,55 @@ export default {
     },
     completeChallenge(challenge) {
       Swal.fire({
-        title: 'Are you sure?',
+        title: 'Complete Challenge?',
+        html: `
+        <p>This operation will take time.</p>
+        <p>Please be patient while it's generating a feedback.</p>
+        <p>Do not close this window or navigate away.</p>
+        <div id="msg">
+          <p>Do you want to proceed?</p>
+        </div>
+        `,
         showCancelButton: true,
         confirmButtonText: 'Complete',
         showLoaderOnConfirm: true,
         customClass: this.swalClasses,
         preConfirm: async () => {
           try {
+            const msg = Swal.getPopup().querySelector('#msg');
+            const htmlMessages = [
+              'Generating feedback...',
+              'Analyzing your code...',
+              'Checking for improvements...',
+              'Almost done...',
+              'Finalizing feedback...',
+              'Wrapping up...',
+              'Just a moment more...',
+              'Preparing your results...',
+            ];
+            let i = 0;
+            msg.setAttribute(
+              'class',
+              'mt-3 px-2 py-3 bg-gray-700 rounded-10 flex justify-center items-center'
+            );
+            msg.innerHTML = '';
+            const msgElem = document.createElement('div');
+            const msgImg = document.createElement('img');
+            msgImg.setAttribute('src', '/assets/images/loading-3.gif');
+            msg.appendChild(msgImg);
+            msg.appendChild(msgElem);
+            msgElem.innerHTML = htmlMessages[i % htmlMessages.length];
+            i++;
+            const interval = setInterval(() => {
+              msgElem.innerHTML = htmlMessages[i % htmlMessages.length];
+              i++;
+            }, 10000);
+
             const challengeId = this.selectedChallege.id;
             const response = await this.http.post(
               '/challenges/' + challengeId + '/complete'
             );
-            console.log('========', response.data.data);
-            console.log('========b4', challenge);
+            clearInterval(interval);
             challenge.acceptedAnswer = response.data.data.answer;
             challenge.status = response.data.data.answer.status;
             const nextChallenge = this.section.challenges.find(
@@ -456,10 +493,8 @@ export default {
             }
 
             this.section.nextSection = response.data.data.nextSection;
-            console.log('========after', challenge);
             return response.data;
           } catch (error) {
-            console.log('error', error);
             Swal.showValidationMessage(`Request failed: ${error}`);
           }
         },
@@ -486,6 +521,19 @@ export default {
               left top
               no-repeat
             `,
+          }).then(async () => {
+            for (const c of result.value.achievements) {
+              Toastify({
+                text: `Achievement Unlocked: ${c.title}`,
+                duration: 5000,
+                destination: '/achievements',
+                gravity: 'top', // `top` or `bottom`
+                position: 'right', // `left`, `center` or `right`
+                backgroundColor: '#00a93a',
+                className: 'success',
+                stopOnFocus: true, // Prevents dismissing of toast on hover
+              }).showToast();
+            }
           });
           await this.authStore.fetchUser();
         }
@@ -555,12 +603,6 @@ export default {
       this.selectedChallege = challenge;
     },
     isBought(hintId) {
-      console.log(
-        'hintId',
-        hintId,
-        this.section.creditUsages,
-        this.section.creditUsages.find((c) => c.challengeHintId == hintId)
-      );
       return (
         this.section.creditUsages.filter((c) => c.challengeHintId == hintId)
           .length > 0
@@ -741,7 +783,6 @@ export default {
     for (const challenge of this.section.challenges) {
       challenge.locked = false;
       const currentOrder = challenge.order;
-      console.log(currentOrder);
 
       if (currentOrder > 1) {
         const previousChallenge = this.section.challenges.find(

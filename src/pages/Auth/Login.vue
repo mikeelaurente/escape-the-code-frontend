@@ -125,7 +125,6 @@ export default {
         email: this.email,
         password: this.password,
       });
-      console.log('response', data);
       if (data.status == 'error') {
         if (data.code === 'invalid_credentials') {
           Swal.fire({

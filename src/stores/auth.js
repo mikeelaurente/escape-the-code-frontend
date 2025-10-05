@@ -30,8 +30,6 @@ export const useAuthStore = defineStore('auth', {
       this.isAuthenticated = true;
       this.userToken = data.accessToken;
       this.user = JSON.parse(JSON.stringify(data.user));
-      console.log('-------data-------', data);
-      console.log('setting token', this.userToken);
       localStorage.setItem(tokenKey, this.userToken);
     },
     logout() {
@@ -71,7 +69,6 @@ export const useAuthStore = defineStore('auth', {
           });
         }
       } catch (e) {
-        console.log('errror', e);
         this.logout();
       }
     },

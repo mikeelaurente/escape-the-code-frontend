@@ -149,7 +149,6 @@ export default {
   },
   inject: ['http'],
   async mounted() {
-    console.log(this.$route.params);
     const response = await this.http.get(
       '/story/chapters/' + this.$route.params.chapter + '/sections'
     );

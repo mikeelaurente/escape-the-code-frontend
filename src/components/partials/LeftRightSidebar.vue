@@ -186,7 +186,6 @@ export default {
   computed: {
     ...mapStores(useAuthStore),
     user() {
-      console.log('user access', this.authStore.user);
       return this.authStore.user;
     },
   },

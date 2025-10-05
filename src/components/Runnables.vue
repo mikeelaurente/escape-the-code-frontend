@@ -117,8 +117,6 @@ export default {
       runnable.results = response.data.results;
     },
   },
-  mounted() {
-    console.log(this.runnables);
-  },
+  mounted() {},
 };
 </script>

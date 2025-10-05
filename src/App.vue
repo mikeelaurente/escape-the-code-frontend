@@ -90,7 +90,6 @@ export default {
     ...mapStores(useAuthStore),
     ...mapStores(useAppStore),
     user() {
-      console.log('user access', this.authStore.user);
       return this.authStore.user;
     },
     hideLeftNav() {
@@ -106,7 +105,6 @@ export default {
   watch: {
     hideLeftNav(current, old) {
       if (current !== old && current) {
-        console.log('changing style');
         this.$refs.layout.style.marginLeft = 'auto';
       } else {
         this.$refs.layout.removeAttribute('style');

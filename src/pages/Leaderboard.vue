@@ -141,13 +141,11 @@ export default {
     ...mapStores(useAuthStore),
     ...mapStores(useAppStore),
     user() {
-      console.log('user access', this.authStore.user);
       return this.authStore.user;
     },
   },
   inject: ['http'],
   async mounted() {
-    console.log(this.$route.params);
     const response = await this.http.get('/story/ranking');
     this.ranking = response.data.data;
   },

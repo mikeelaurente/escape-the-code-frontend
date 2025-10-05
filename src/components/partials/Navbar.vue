@@ -210,7 +210,6 @@ export default {
     ...mapStores(useAuthStore),
     ...mapStores(useAppStore),
     user() {
-      console.log('user access', this.authStore.user);
       return this.authStore.user;
     },
     route() {

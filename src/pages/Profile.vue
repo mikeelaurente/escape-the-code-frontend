@@ -292,7 +292,6 @@ export default {
   methods: {
     handleFileChange(event) {
       this.selectedFile = event.target.files[0];
-      console.log(this.selectedFile);
       this.objectUrl = URL.createObjectURL(this.selectedFile);
       this.$refs.avatarImg.src = this.objectUrl;
     },
@@ -320,7 +319,6 @@ export default {
             // You can also add onUploadProgress for progress tracking
           }
         );
-        console.log('File uploaded successfully:', response.data);
         URL.revokeObjectURL(this.objectUrl);
         Toast.fire({
           icon: 'success',
@@ -338,7 +336,6 @@ export default {
       }
     },
     handleBannerChange(event) {
-      console.log('handleBannerChange', event);
       this.selectedBanner = event.target.files[0];
       this.objectUrl = URL.createObjectURL(this.selectedBanner);
 
