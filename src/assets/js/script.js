@@ -127,6 +127,11 @@ window.addEventListener('DOMContentLoaded', function () {
   const initPlugins = () => {
     // Load custom plugins
     // Load GSAP animations if conditions are met
+    // TiltEffect();
+    // SwiperSliders();
+    // lightGalleryCustom();
+    // plyrCustom();
+    // SlimSelectCustom();
     if (shouldLoadAnimations()) {
       loadAnimations();
     }

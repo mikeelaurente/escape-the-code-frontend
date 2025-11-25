@@ -31,7 +31,9 @@
                     </span>
                   </li>
                   <li class="breadcrumb-item">
-                    <router-link :to="`/story/chapters/${section.chapter.id}`">
+                    <router-link
+                      :to="`/courses/${section.chapter.courseId}?chapter=${section.chapter.id}`"
+                    >
                       {{ section.chapter.title }}
                     </router-link>
                   </li>
@@ -202,6 +204,7 @@ export default {
         content: '',
         runnables: [],
         rewardOptions: [],
+        chapter: {},
       },
     };
   },
@@ -211,7 +214,7 @@ export default {
       try {
         this.status = 'loading';
         this.message = '';
-        const response = await this.http.get('/story/sections/' + sectionId);
+        const response = await this.http.get('/sections/' + sectionId);
 
         this.status = response.data.status;
 

@@ -143,7 +143,7 @@
                           <router-link to="/">Dashboard</router-link>
                         </li>
                         <li class="mobail-menu">
-                          <router-link to="/story">Story</router-link>
+                          <router-link to="/course">Story</router-link>
                         </li>
                         <li class="mobail-menu">
                           <router-link to="/leaderboard"

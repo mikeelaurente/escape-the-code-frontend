@@ -150,7 +150,7 @@ export default {
   },
   async mounted() {
     try {
-      const { data } = await this.http.get('/story/progress');
+      const { data } = await this.http.get('/courses/progress');
       this.progress = data.data;
     } catch (e) {
       Toast.fire({

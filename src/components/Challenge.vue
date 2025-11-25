@@ -221,9 +221,7 @@
           <router-link
             class="btn btn-primary rounder-12 pulse"
             :key="nextSection.id"
-            :to="`/story/chapters/${nextSection.chapterId}/${
-              nextSection.id
-            }?t=${new Date().getTime()}`"
+            :to="`/sections/${nextSection.id}`"
           >
             Next: {{ nextSection.title }}
           </router-link>

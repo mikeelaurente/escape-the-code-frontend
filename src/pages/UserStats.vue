@@ -226,7 +226,7 @@ export default {
   inject: ['http'],
   async mounted() {
     const response = await this.http.get(
-      '/story/user-stats/' + this.$route.params.id
+      '/course/user-stats/' + this.$route.params.id
     );
     this.user = response.data.data.rank;
     this.nextSection = {

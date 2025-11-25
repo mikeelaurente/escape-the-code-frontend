@@ -1,8 +1,4 @@
-import {
-  createWebHashHistory,
-  createRouter,
-  createWebHistory,
-} from 'vue-router';
+import { createRouter, createWebHistory } from 'vue-router';
 import { useAuthStore } from '../../stores/auth'; // Import your Pinia store
 import Login from '../../pages/Auth/Login.vue';
 
@@ -24,8 +20,13 @@ export const createRoutes = () => {
       meta: { requiresAuth: true },
     },
     {
-      path: '/story',
-      component: () => import('../../pages/Story.vue'),
+      path: '/courses',
+      component: () => import('../../pages/Courses.vue'),
+      meta: { requiresAuth: true },
+    },
+    {
+      path: '/courses/:id',
+      component: () => import('../../pages/Course.vue'),
       meta: { requiresAuth: true },
     },
     {
@@ -54,12 +55,7 @@ export const createRoutes = () => {
       meta: { requiresAuth: true },
     },
     {
-      path: '/story/chapters/:chapter',
-      component: () => import('../../pages/Chapter.vue'),
-      meta: { requiresAuth: true },
-    },
-    {
-      path: '/story/chapters/:chapter/:section',
+      path: '/sections/:section',
       component: () => import('../../pages/Section.vue'),
       meta: { requiresAuth: true },
     },

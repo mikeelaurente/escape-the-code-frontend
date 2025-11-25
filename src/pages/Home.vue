@@ -31,7 +31,7 @@
                         class="flex flex-wrap items-center gap-3 text-l-medium text-w-neutral-1 mb-40p"
                       ></div>
                       <router-link
-                        to="/story"
+                        to="/courses"
                         class="btn btn-lg btn-primary rounded-12"
                         data-aos="zoom-in"
                         data-aos-duration="1500"

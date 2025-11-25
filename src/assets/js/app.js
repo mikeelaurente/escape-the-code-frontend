@@ -27,7 +27,7 @@ import {
 
 /* ---------- Import All Dataset Start ---------- */
 // import { intersect } from '@alpinejs/intersect';
-// import SwiperSliders from './lib/swiperCustom.js';
+import SwiperSliders from './lib/swiperCustom.js';
 // import { OdometerCounter } from './lib/odometerCustom.js';
 // import { TiltEffect } from './lib/tiltCustom.js';
 // import { FlatpickrCustom } from './lib/flatpickrCustom.js';
@@ -141,7 +141,7 @@ window.addEventListener('DOMContentLoaded', function () {
     // Load custom plugins
     // OdometerCounter();
     // TiltEffect();
-    // SwiperSliders();
+    SwiperSliders();
     // FlatpickrCustom();
     // SlimSelectCustom();
     // CountdownCustom();

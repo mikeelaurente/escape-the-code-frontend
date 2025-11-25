@@ -146,7 +146,7 @@ export default {
   },
   inject: ['http'],
   async mounted() {
-    const response = await this.http.get('/story/ranking');
+    const response = await this.http.get('/courses/ranking');
     this.ranking = response.data.data;
   },
 };

@@ -1,5 +1,4 @@
 import { defineStore } from 'pinia';
-import { inject } from 'vue';
 
 const tokenKey = 'accessToken';
 export const useAuthStore = defineStore('auth', {

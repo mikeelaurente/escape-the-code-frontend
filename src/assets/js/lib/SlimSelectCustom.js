@@ -1,7 +1,7 @@
-import SlimSelect from "slim-select";
+import SlimSelect from 'slim-select';
 
 export function SlimSelectCustom() {
-  document.querySelectorAll(".select").forEach((el) => {
+  document.querySelectorAll('.select').forEach((el) => {
     new SlimSelect({
       select: el,
       settings: {
@@ -10,7 +10,7 @@ export function SlimSelectCustom() {
     });
   });
 
-  document.querySelectorAll(".select-search").forEach((el) => {
+  document.querySelectorAll('.select-search').forEach((el) => {
     new SlimSelect({
       select: el,
       settings: {

@@ -43,9 +43,9 @@
             class="flex flex-col gap-2 rounded-full bg-b-neutral-1 w-fit p-2 shrink-0"
           >
             <router-link
-              title="Story"
+              title="Courses"
               active-class="active"
-              to="/story"
+              to="/courses"
               class="nav-item btn-c btn-c-3xl text-white transition-1"
             >
               <svg
