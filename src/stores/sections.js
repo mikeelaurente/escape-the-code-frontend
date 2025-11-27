@@ -60,10 +60,9 @@ export const useSectionStore = defineStore('sections', {
         '/sections?' + queryParams.toString()
       );
 
-      console.log('response', response.data.data);
-      console.log('response', response.data.meta);
-
-      this.sections = response.data.data;
+      this.sections = {
+        ...response.data.data,
+      };
       this.meta = response.data.meta;
     },
   },

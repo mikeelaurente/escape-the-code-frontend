@@ -217,13 +217,29 @@
           </div>
         </div>
 
-        <div class="mt-3 flex justify-center" v-if="nextSection">
+        <div
+          class="mt-3 flex justify-center"
+          v-if="nextSection && nextSection.id"
+        >
           <router-link
             class="btn btn-primary rounder-12 pulse"
             :key="nextSection.id"
             :to="`/sections/${nextSection.id}`"
           >
             Next: {{ nextSection.title }}
+          </router-link>
+        </div>
+
+        <div
+          class="mt-3 flex justify-center"
+          v-if="nextSection && !nextSection.id"
+        >
+          <router-link
+            class="btn btn-primary rounder-12 pulse"
+            :key="nextSection.id"
+            :to="`/courses/${courseId}?chapter=${section.chapterId}`"
+          >
+            Back to Chapter Sections
           </router-link>
         </div>
       </div>
@@ -369,12 +385,14 @@ export default {
         status: '',
         results: [],
       },
+      completeChallengeController: new AbortController(),
     };
   },
   props: {
     section: {
       required: true,
     },
+    courseId: Number,
   },
   inject: ['http'],
   computed: {
@@ -433,55 +451,111 @@ export default {
       Swal.fire({
         title: 'Complete Challenge?',
         html: `
-        <p>This operation will take time.</p>
-        <p>Please be patient while it's generating a feedback.</p>
-        <p>Do not close this window or navigate away.</p>
-        <div id="msg">
+        <div id="msg" class="flex flex-col gap-1">
+          <p>This operation will take time.</p>
+          <p>Please be patient while it's generating a feedback.</p>
+          <p>Do not close this window or navigate away.</p>
           <p>Do you want to proceed?</p>
         </div>
+        <hr class="my-2" />
+        <div id="feedback" class="max-h-96 overflow-y-auto text-sm"></div>
         `,
         showCancelButton: true,
         confirmButtonText: 'Complete',
         showLoaderOnConfirm: true,
-        customClass: this.swalClasses,
+        customClass: {
+          ...this.swalClasses,
+          popup: 'bg-gray-800 text-white shadow-lg rounded-lg w-fit max-w-4xl',
+        },
         preConfirm: async () => {
           try {
             const msg = Swal.getPopup().querySelector('#msg');
-            const htmlMessages = [
-              'Generating feedback...',
-              'Analyzing your code...',
-              'Checking for improvements...',
-              'Almost done...',
-              'Finalizing feedback...',
-              'Wrapping up...',
-              'Just a moment more...',
-              'Preparing your results...',
-            ];
-            let i = 0;
-            msg.setAttribute(
-              'class',
-              'mt-3 px-2 py-3 bg-gray-700 rounded-10 flex justify-center items-center'
-            );
-            msg.innerHTML = '';
-            const msgElem = document.createElement('div');
+            const feedback = Swal.getPopup().querySelector('#feedback');
+
+            const div = document.createElement('div');
+            div.setAttribute('class', 'flex items-center justify-center');
+
             const msgImg = document.createElement('img');
             msgImg.setAttribute('src', '/assets/images/loading-3.gif');
-            msg.appendChild(msgImg);
-            msg.appendChild(msgElem);
-            msgElem.innerHTML = htmlMessages[i % htmlMessages.length];
-            i++;
-            const interval = setInterval(() => {
-              msgElem.innerHTML = htmlMessages[i % htmlMessages.length];
-              i++;
-            }, 10000);
+            msgImg.setAttribute('class', 'text-center');
+
+            div.appendChild(msgImg);
+
+            feedback.insertBefore(div, feedback.firstChild);
+
+            this.completeChallengeController.abort();
+            this.completeChallengeController = new AbortController();
+            const { signal } = this.completeChallengeController;
 
             const challengeId = this.selectedChallege.id;
             const response = await this.http.post(
-              '/challenges/' + challengeId + '/complete'
+              '/challenges/' + challengeId + '/complete',
+              {},
+              {
+                signal,
+                adapter: 'fetch',
+                responseType: 'stream',
+                headers: {
+                  'Content-Type': 'application/json',
+                  Accept: 'text/event-stream',
+                  'Cache-Control': 'no-cache',
+                },
+              }
             );
-            clearInterval(interval);
-            challenge.acceptedAnswer = response.data.data.answer;
-            challenge.status = response.data.data.answer.status;
+
+            // Set up a reader for the response
+            const reader = response.data.getReader();
+            const decoder = new TextDecoder('utf-8');
+
+            let responseData = null;
+            let feedbackParts = '';
+
+            // Process the SSE stream
+            while (true) {
+              const { done, value } = await reader.read();
+
+              if (done) {
+                break;
+              }
+
+              const chunk = decoder.decode(value);
+              const messages = chunk.split('\n\n').filter(Boolean);
+
+              for (const message of messages) {
+                if (message.startsWith('message: ')) {
+                  try {
+                    const eventData = JSON.parse(
+                      message.substring('message: '.length)
+                    );
+                    msg.innerHTML = `<div class="py-2 px-4">${eventData.message}</div>`;
+                  } catch (e) {
+                    console.error('Failed to parse SSE data:', e);
+                  }
+                }
+                if (message.startsWith('feedback: ')) {
+                  try {
+                    const eventData = JSON.parse(
+                      message.substring('feedback: '.length)
+                    );
+                    feedbackParts += eventData.data;
+                    feedback.innerHTML = feedbackParts;
+                    feedback.scrollTo({
+                      behavior: 'smooth',
+                      top: feedback.clientHeight,
+                    });
+                  } catch (e) {
+                    console.error('Failed to parse SSE data:', e);
+                  }
+                }
+                if (message.startsWith('end: ')) {
+                  responseData = JSON.parse(message.substring('end: '.length));
+                  reader.cancel();
+                }
+              }
+            }
+
+            challenge.acceptedAnswer = responseData.data.data.answer;
+            challenge.status = responseData.data.data.answer.status;
             const nextChallenge = this.section.challenges.find(
               (c) => c.order == challenge.order + 1
             );
@@ -490,8 +564,11 @@ export default {
               nextChallenge.locked = false;
             }
 
-            this.section.nextSection = response.data.data.nextSection;
-            return response.data;
+            this.section.nextSection = responseData.data.data.nextSection;
+
+            await new Promise((res, rej) => setTimeout(() => res(), 2000));
+
+            return responseData.data;
           } catch (error) {
             Swal.showValidationMessage(`Request failed: ${error}`);
           }
@@ -501,24 +578,17 @@ export default {
         if (result.isConfirmed) {
           Swal.fire({
             icon: 'success',
-            title: 'Yey',
-            text: 'You have completed this challenge!',
-            customClass: this.swalClasses,
-          });
-
-          Swal.fire({
-            icon: 'success',
             title: 'Congrats!',
             text: 'Challenge completed!',
             width: 600,
             padding: '3em',
             customClass: this.swalClasses,
             backdrop: `
-              rgba(0,0,123,0.4)
-              url("/assets/images/nyan-cat.gif")
-              left top
-              no-repeat
-            `,
+                rgba(0,0,123,0.4)
+                url("/assets/images/nyan-cat.gif")
+                left top
+                no-repeat
+              `,
           }).then(async () => {
             for (const c of result.value.achievements) {
               Toastify({
@@ -776,6 +846,11 @@ export default {
       }
       return hours + 'h:' + minutes + 'm:' + seconds + 's';
     },
+  },
+  beforeUnmount() {
+    if (!this.completeChallengeController.signal.aborted) {
+      this.completeChallengeController.abort();
+    }
   },
   mounted() {
     for (const challenge of this.section.challenges) {

@@ -16,7 +16,6 @@ export function toSearchParams(obj) {
   const searchParams = new URLSearchParams();
   const acc = {};
   flatten(obj, acc);
-  console.log(acc);
 
   for (const key in acc) {
     searchParams.append(key, acc[key]);

@@ -172,7 +172,10 @@
                 <select
                   v-model="sectionsStore.params.limit"
                   class="select w-full sm:py-3 py-2 px-24p rounded-full !text-base"
-                  @change="sectionsStore.params.page = 1"
+                  @change="
+                    sectionsStore.params.page = 1;
+                    dirty = true;
+                  "
                 >
                   <option value="3">3</option>
                   <option value="6">6</option>
@@ -307,22 +310,19 @@ export default {
   inject: ['http'],
   methods: {
     countCompletedSections(chapter) {
-      return chapter.sections.filter((s) => s.storyProgress).length;
+      return chapter.sections.filter((s) => s.courseProgress).length;
     },
     showSections(chapter) {
       this.currentChapter = chapter;
-      console.log('chapterId', chapter);
       this.dirty = false;
       this.sectionsStore.reset();
       this.sectionsStore.getSections(chapter.courseId, chapter.id);
     },
     onNavigateTo(page) {
-      console.log('page', page);
       this.sectionsStore.params.page = page;
       this.dirty = true;
     },
     search: debounce(function (event) {
-      console.log('search', event.target.value);
       this.sectionsStore.params.search = event.target.value;
       this.dirty = true;
     }, 300),
@@ -342,7 +342,6 @@ export default {
     },
     params: {
       handler: function (newVal) {
-        console.log('newVal', newVal);
         if (this.dirty) {
           this.sectionsStore.getSections(
             this.currentChapter.courseId,

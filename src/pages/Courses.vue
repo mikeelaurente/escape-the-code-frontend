@@ -90,6 +90,13 @@
             data-aos="zoom-in"
           >
             <div class="overflow-hidden rounded-24">
+              <span
+                v-if="isCourseCompleted(course)"
+                class="badge badge-neutral absolute top-3 left-3 z-10"
+              >
+                <i class="avatar bg-secondary size-3"></i>
+                <span class="text-sm text-w-neutral-1">Completed</span>
+              </span>
               <img
                 class="w-full xxl:h-[304px] xl:h-[280px] md:h-[260px] h-[240px] object-cover group-hover:scale-110 transition-1"
                 :src="`../assets/images/games/chap${idx + 1}.png`"
@@ -186,22 +193,25 @@ export default {
   inject: ['http'],
   methods: {
     countCompletedChapters(course) {
-      return course.chapters.filter((s) => s.storyProgress).length;
+      return course.chapters.filter((s) => s.courseProgress).length;
+    },
+    isCourseCompleted(course) {
+      return (
+        course.chapters.some((c) => c.courseProgress) &&
+        course.chapters.length === this.countCompletedChapters(course)
+      );
     },
     onNavigateTo(page) {
       this.params.page = page;
     },
 
     search: debounce(function (event) {
-      console.log('search', event.target.value);
       this.params.search = event.target.value;
     }, 300),
     async fetchCourses() {
       const params = toSearchParams(this.params);
-      console.log('params', params);
       const response = await this.http.get('/courses?' + params.toString());
       this.courses = response.data.data;
-      console.log(response.data.meta);
       this.meta = {
         ...response.data.meta,
       };

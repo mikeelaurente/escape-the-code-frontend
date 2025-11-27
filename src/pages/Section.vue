@@ -116,7 +116,10 @@
               <div
                 class="grid grid-cols-1 gap-30p *:bg-b-neutral-3 *:rounded-12 *:px-32p *:py-24p"
               >
-                <challenge :section="section"></challenge>
+                <challenge
+                  :course-id="section.chapter.courseId"
+                  :section="section"
+                ></challenge>
               </div>
             </div>
           </div>
