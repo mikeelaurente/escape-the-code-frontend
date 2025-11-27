@@ -130,15 +130,6 @@
               >
                 <div>
                   <h4 class="heading-4 text-w-neutral-1 mb-20p">
-                    <i class="ti ti-album icon-24 text-warning"></i>
-                    Examples
-                  </h4>
-                  <div class="grid grid-cols-1 gap-20p">
-                    <runnables :runnables="section.runnables"></runnables>
-                  </div>
-                </div>
-                <div>
-                  <h4 class="heading-4 text-w-neutral-1 mb-20p">
                     <i class="ti ti-bulb icon-24 text-warning"></i>
                     Trivias
                   </h4>
@@ -154,6 +145,16 @@
                     </li>
                   </ul>
                 </div>
+                <div>
+                  <h4 class="heading-4 text-w-neutral-1 mb-20p">
+                    <i class="ti ti-album icon-24 text-warning"></i>
+                    Examples
+                  </h4>
+                  <div class="grid grid-cols-1 gap-20p">
+                    <runnables :runnables="section.runnables"></runnables>
+                  </div>
+                </div>
+
                 <div>
                   <h4 class="heading-4 text-w-neutral-1 mb-20p">
                     <i class="ti ti-file icon-24 text-warning"></i>
