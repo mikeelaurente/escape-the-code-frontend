@@ -503,14 +503,12 @@ export default {
               }
             );
 
-            // Set up a reader for the response
             const reader = response.data.getReader();
             const decoder = new TextDecoder('utf-8');
 
             let responseData = null;
             let feedbackParts = '';
 
-            // Process the SSE stream
             while (true) {
               const { done, value } = await reader.read();
 
@@ -811,15 +809,15 @@ export default {
             result.value.results.every((x) => x.ok)
           ) {
             Swal.fire({
-              title: '✨ Spell Cast!',
-              text: 'Your incantation worked perfectly — the quest advances!',
+              title: '✅ Solution Successful',
+              text: 'Your code executed correctly. You may proceed to the next challenge.',
               icon: 'success',
               customClass: this.swalClasses,
             });
           } else {
             this.answerError = true;
             Swal.fire({
-              title: '🪄 Spell Fizzled!',
+              title: 'Execution Error',
               text: result.value.errors
                 ? result.value.errors.answer
                 : result.value.message,

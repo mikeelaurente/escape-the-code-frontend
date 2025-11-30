@@ -44,6 +44,11 @@
         <div class="flex items-center justify-between flex-wrap gap-24p">
           <h2 class="heading-2 text-w-neutral-1 text-split-left">Chapters</h2>
         </div>
+        <div v-if="!course.chapters.length">
+          <h3 class="heading-3 text-b-neutral-1 my-4">
+            No available chapters for this course yet.
+          </h3>
+        </div>
         <div class="mt-40p" data-aos="fade-left">
           <div class="swiper chapter-list" data-carousel-name="chapter-cards">
             <div class="swiper-wrapper pb-40p">
@@ -104,11 +109,23 @@
                         </p>
                       </div>
                     </div>
+                    <div v-if="chapter.tags" class="flex flex-wrap justify-center items-center gap-2">
+                        <span
+                            v-for="(tag, idx) in chapter.tags"
+                            :key="idx"
+                            class="px-3 py-1 text-sm rounded-xl bg-slate-800"
+                        >
+                            {{ tag }}
+                        </span>
+                    </div>
                   </div>
                 </div>
               </div>
             </div>
-            <div class="flex items-center gap-28p">
+            <div
+              class="flex items-center gap-28p"
+              v-if="course.chapters.length"
+            >
               <div class="swiper-navigation swp-navigation-one">
                 <button
                   type="button"
@@ -141,6 +158,7 @@
         >
           {{ currentChapter.title }} Sections
         </h2>
+
         <div class="flex-y justify-between flex-wrap gap-24p mb-[30px]">
           <h5 class="heading-5 text-w-neutral-1">
             Viewing {{ sectionsStore.meta.offset + 1 }} -
@@ -187,72 +205,81 @@
             </div>
           </div>
         </div>
+
+        <div v-if="sectionsStore.sectionList.length <= 0">
+          <h3 class="heading-3 text-b-neutral-1 my-4">No sections found.</h3>
+        </div>
         <div
           class="grid 4xl:grid-cols-2 xxl:grid-cols-3 md:grid-cols-2 grid-cols-1 gap-24p"
         >
-          <div
+          <template
             v-for="(section, idx) in sectionsStore.sectionList"
             :key="section.id"
-            class="w-full bg-b-neutral-3 p-24p rounded-24 grid 4xl:grid-cols-2 grid-cols-1 items-center gap-24p group"
-            data-aos="zoom-in"
           >
-            <div class="overflow-hidden rounded-24">
-              <img
-                class="w-full xxl:h-[304px] xl:h-[280px] md:h-[260px] h-[240px] object-cover group-hover:scale-110 transition-1"
-                :src="`../assets/images/games/sec${idx + 1}.png`"
-                alt="img"
-              />
-            </div>
-            <div>
-              <router-link
-                :key="section.id"
-                :to="'/sections/' + section.id"
-                :title="section.title"
-                class="heading-4 text-w-neutral-1 4xl:line-clamp-2 line-clamp-1 link-1 my-16p text-split-left"
-              >
-                {{ section.title }}
-              </router-link>
-              <div class="flex-y flex-wrap *:py-2 *:px-3 mb-20p">
-                <div class="flex-y gap-2.5" v-if="section.completed">
-                  <span
-                    class="badge badge-secondary size-3 badge-circle"
-                  ></span>
-                  <p class="text-base text-neutral-100">
-                    <span class="span">Completed</span>
-                  </p>
-                </div>
-                <div class="flex-y gap-2.5" v-if="!section.completed">
-                  <span class="badge badge-primary size-3 badge-circle"></span>
-                  <p class="text-base text-neutral-100">
-                    <span class="span">Not yet taken</span>
-                  </p>
-                </div>
+            <div
+              class="w-full bg-b-neutral-3 p-24p rounded-24 grid 4xl:grid-cols-2 grid-cols-1 items-center gap-24p group"
+              data-aos="zoom-in"
+            >
+              <div class="overflow-hidden rounded-24">
+                <img
+                  class="w-full xxl:h-[304px] xl:h-[280px] md:h-[260px] h-[240px] object-cover group-hover:scale-110 transition-1"
+                  :src="`../assets/images/games/sec${idx + 1}.png`"
+                  alt="img"
+                />
               </div>
-              <div class="flex-y flex-wrap items-center justify-center">
-                <button
-                  v-if="section.locked"
-                  class="btn btn-md btn-c-dark-outline rounded-12 w-full"
-                >
-                  <i class="ti ti-lock icon-24"></i>
-                  Locked
-                </button>
+              <div>
                 <router-link
                   :key="section.id"
-                  v-if="!section.locked"
                   :to="'/sections/' + section.id"
-                  class="btn btn-md rounded-12 w-full"
-                  :class="{
-                    pulse: !section.completed && !section.locked,
-                    'btn-primary': !section.completed,
-                    'btn-secondary': section.completed,
-                  }"
+                  :title="section.title"
+                  class="heading-4 text-w-neutral-1 4xl:line-clamp-2 line-clamp-1 link-1 my-16p text-split-left"
                 >
-                  <i class="ti ti-eye icon-24"></i>
-                  {{ section.completed ? 'Review' : 'View' }}
+                  {{ section.title }}
                 </router-link>
+                <div class="flex-y flex-wrap *:py-2 *:px-3 mb-20p">
+                  <div class="flex-y gap-2.5" v-if="section.completed">
+                    <span
+                      class="badge badge-secondary size-3 badge-circle"
+                    ></span>
+                    <p class="text-base text-neutral-100">
+                      <span class="span">Completed</span>
+                    </p>
+                  </div>
+                  <div class="flex-y gap-2.5" v-if="!section.completed">
+                    <span
+                      class="badge badge-primary size-3 badge-circle"
+                    ></span>
+                    <p class="text-base text-neutral-100">
+                      <span class="span">Not yet taken</span>
+                    </p>
+                  </div>
+                </div>
+                <div class="flex-y flex-wrap items-center justify-center">
+                  <button
+                    v-if="section.locked"
+                    class="btn btn-md btn-c-dark-outline rounded-12 w-full"
+                  >
+                    <i class="ti ti-lock icon-24"></i>
+                    Locked
+                  </button>
+                  <router-link
+                    :key="section.id"
+                    v-if="!section.locked"
+                    :to="'/sections/' + section.id"
+                    class="btn btn-md rounded-12 w-full"
+                    :class="{
+                      pulse: !section.completed && !section.locked,
+                      'btn-primary': !section.completed,
+                      'btn-secondary': section.completed,
+                    }"
+                  >
+                    <i class="ti ti-eye icon-24"></i>
+                    {{ section.completed ? 'Review' : 'View' }}
+                  </router-link>
+                </div>
               </div>
             </div>
-          </div>
+          </template>
         </div>
         <Pagination
           :total="sectionsStore.meta.total"
@@ -329,8 +356,10 @@ export default {
   },
   watch: {
     sections(val) {
-      if (val.length) {
+      console.log('VALUE', val);
+      if (val) {
         const sections = this.$refs.sections;
+        console.log('SECTION', sections);
         setTimeout(() => {
           scrollTo({
             behavior: 'smooth',

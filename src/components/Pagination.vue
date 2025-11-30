@@ -1,6 +1,6 @@
 <template>
   <div
-    class="pagination pagination-primary lg:pagination-center pagination-center pagination-circle w-full mt-48p"
+    class="pagination pagination-primary lg:pagination-center pagination-center pagination-circle w-full mt-48p overflow-y-auto"
   >
     <a
       @click="$emit('navigateTo', page - 1)"

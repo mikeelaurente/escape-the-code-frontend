@@ -39,10 +39,56 @@
     <!-- Leaderboard section start -->
     <section class="section-pb pt-60p">
       <div class="container">
+
+          <div class="flex-y justify-between flex-wrap gap-24p mb-[30px]">
+            <h5 class="heading-5 text-w-neutral-1">
+              Viewing {{ meta.offset + 1 }} - {{ meta.offset + params.limit }} of
+              {{ meta.total }} groups
+            </h5>
+            <div
+              class="flex items-center sm:justify-end max-sm:flex-wrap w-[500px] gap-24p"
+            >
+              <form
+                class="flex items-center sm:gap-3 gap-2 max-w-[500px] w-full px-20p py-16p bg-b-neutral-3 rounded-full"
+              >
+                <span class="flex-c icon-20 text-white">
+                  <i class="ti ti-search"></i>
+                </span>
+                <input
+                  autocomplete="off"
+                  class="bg-transparent w-full"
+                  type="text"
+                  name="search"
+                  id="search"
+                  placeholder="Search..."
+                  @input="search"
+                />
+              </form>
+              <div class="shrink-0 flex-y gap-28p">
+                <span class="text-m-medium text-w-neutral-1"> Per Page: </span>
+                <form class="select-2 shrink-0">
+                  <select
+                    v-model="params.limit"
+                    class="select w-full sm:py-3 py-2 px-24p rounded-full !text-base"
+                  >
+                    <option value="5">5</option>
+                    <option value="10">10</option>
+                    <option value="15">15</option>
+                    <option value="30">30</option>
+                    <option value="50">50</option>
+                  </select>
+                </form>
+              </div>
+            </div>
+          </div>
+        <div v-if="!ranking">
+          <h3 class="heading-3 text-b-neutral-1 my-4">No user ranking yet.</h3>
+        </div>
         <div
           class="overflow-x-auto scrollbar-sm"
           data-aos="fade-up"
           data-aos-duration="2000"
+          v-if="ranking"
         >
           <table
             class="text-l-medium font-poppins text-w-neutral-1 w-full whitespace-nowra"
@@ -72,8 +118,6 @@
                 :class="{
                   'bg-glass-1': rank.id === user.id,
                 }"
-                data-aos="fade-left"
-                data-aos-duration="1000"
               >
                 <td class="px-24p py-3">
                   <div class="flex-y gap-3">
@@ -119,6 +163,13 @@
             </tbody>
           </table>
         </div>
+
+        <Pagination
+          :total="meta.total"
+          :limit="meta.limit"
+          :page="meta.page"
+          @navigate-to="onNavigateTo"
+        ></Pagination>
       </div>
     </section>
 
@@ -130,11 +181,34 @@
 import { mapStores } from 'pinia';
 import { useAuthStore } from '../stores/auth';
 import { useAppStore } from '../stores/app';
+import Pagination from '../components/Pagination.vue';
+import { toSearchParams, debounce } from '../assets/js/utils';
+import { SlimSelectCustom } from '../assets/js/lib/SlimSelectCustom.js';
 
 export default {
+  components: {
+    Pagination
+  },
   data() {
     return {
       ranking: {},
+      params: {
+        page: 1,
+        limit: 5,
+        search: '',
+        sort: [
+          {
+            name: 'title',
+            order: 'asc',
+          },
+        ],
+      },
+      meta: {
+        total: 0,
+        page: 1,
+        limit: 10,
+        offset: 0,
+      },
     };
   },
   computed: {
@@ -145,9 +219,34 @@ export default {
     },
   },
   inject: ['http'],
+  methods: {
+    async fetchRangkings() {
+      const params = toSearchParams(this.params);
+      const response = await this.http.get('/courses/ranking?' + params.toString());
+      this.ranking = response.data.data;
+      this.meta = {
+        ...response.data.meta,
+      };
+    },
+    onNavigateTo(page) {
+      this.params.page = page;
+    },
+
+    search: debounce(function (event) {
+      this.params.search = event.target.value;
+    }, 300),
+  },
+  watch: {
+    params: {
+      handler: function (val) {
+        this.fetchRangkings();
+      },
+      deep: true,
+    },
+  },
   async mounted() {
-    const response = await this.http.get('/courses/ranking');
-    this.ranking = response.data.data;
+    this.fetchRangkings();
+    SlimSelectCustom();
   },
 };
 </script>

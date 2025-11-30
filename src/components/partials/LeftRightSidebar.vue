@@ -9,7 +9,7 @@
         <div
           class="flex flex-col items-center xxl:gap-[30px] xl:gap-6 lg:gap-5 gap-4 h-[700px] side-navbar-one"
         >
-          <router-link to="/" title="Dashboard">
+          <router-link to="/" title="Dashboard" exact-active-class="active">
             <button class="btn-c btn-c-3xl btn-primary icon-32 shrink-0">
               <svg
                 xmlns="http://www.w3.org/2000/svg"

@@ -1,32 +1,32 @@
 import { defineStore } from 'pinia';
 import { toSearchParams } from '../assets/js/utils';
 
-export const useSectionStore = defineStore('sections', {
+export const useTransactionStore = defineStore('creditTransactions', {
   state: () => ({
-    sections: [],
+    transactions: [],
     meta: {
       total: 0,
       page: 1,
-      limit: 3,
+      limit: 10,
       offset: 0,
     },
     params: {
       page: 1,
-      limit: 3,
+      limit: 10,
       search: '',
       filters: {
-        chapterId: null,
-        courseId: null,
+        type: 'all',
+        group: 'all',
       },
       sort: {
         name: 'id',
-        order: 'asc',
+        order: 'desc',
       },
     },
   }),
   getters: {
-    sectionList() {
-      return this.sections;
+    transactionList() {
+      return this.transactions;
     },
     metadata() {
       return this.meta;
@@ -39,11 +39,11 @@ export const useSectionStore = defineStore('sections', {
     reset() {
       this.params = {
         page: 1,
-        limit: 3,
+        limit: 10,
         search: '',
         filters: {
-          chapterId: null,
-          courseId: null,
+          group: 'all',
+          type: 'all',
         },
         sort: {
           name: 'id',
@@ -51,17 +51,12 @@ export const useSectionStore = defineStore('sections', {
         },
       };
     },
-    async getSections(courseId, chapterId) {
-      this.params.filters.courseId = courseId;
-      this.params.filters.chapterId = chapterId;
+    async getTransactions() {
       const queryParams = toSearchParams(this.params);
-
       const response = await this.http.get(
-        '/sections?' + queryParams.toString()
+        '/transactions?' + queryParams.toString()
       );
-
-      this.sections = response.data.data;
-
+      this.transactions = response.data.data;
       this.meta = response.data.meta;
     },
   },

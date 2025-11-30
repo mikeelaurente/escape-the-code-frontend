@@ -20,15 +20,17 @@
             <div
               class="3xl:col-span-6 xl:col-span-7 flex items-center xl:justify-end justify-end w-full"
             >
-              <div class="relative hidden lg:block mr-4">
+              <div
+                v-if="authStore.isAuthenticated"
+                class="min-w-24 inline-flex items-center gap-3 pl-1 py-1 pr-6 rounded-full bg-[rgba(242,150,32,0.10)] text-w-neutral-1 text-base mx-5"
+              >
                 <span
-                  v-if="user.id"
-                  class="px-3 py-2 rounded-12 btn-outline-secondary font-bold"
-                  title="Credits Available"
+                  class="size-48p flex-c text-b-neutral-4 bg-primary rounded-full icon-24"
                 >
                   <i class="ti ti-moneybag"></i>
-                  {{ authStore.user.credits }}
                 </span>
+                {{ authStore.user.credits }}
+                <span class="hidden md:inline">Credits</span>
               </div>
               <div
                 class="flex items-end lg:gap-x-32p gap-x-2"
@@ -143,7 +145,7 @@
                           <router-link to="/">Dashboard</router-link>
                         </li>
                         <li class="mobail-menu">
-                          <router-link to="/course">Story</router-link>
+                          <router-link to="/courses">Courses</router-link>
                         </li>
                         <li class="mobail-menu">
                           <router-link to="/leaderboard"

@@ -71,15 +71,17 @@
                 </h3>
               </div>
               <div class="flex-col-c text-center">
-                <h4 class="heading-4 text-w-neutral-1">Total Points</h4>
+                <h4 class="heading-4 text-w-neutral-1">
+                  Total Courses Enrolled
+                </h4>
                 <h3 class="py-3 heading-3 text-fuchsia-500 text-center">
-                  {{ data.ranking.points }} <i class="ti ti-star"></i>
+                  {{ data.ranking.points }} <i class="ti ti-book"></i>
                 </h3>
               </div>
               <div class="flex-col-c text-center">
-                <h4 class="heading-4 text-w-neutral-1">No Hints Streak</h4>
-                <h3 class="py-3 heading-3 text-primary text-center">
-                  {{ data.longestStreak }} <i class="ti ti-flame"></i>
+                <h4 class="heading-4 text-w-neutral-1">Total Points</h4>
+                <h3 class="py-3 heading-3 text-lime-500 text-center">
+                  {{ data.ranking.points }} <i class="ti ti-star"></i>
                 </h3>
               </div>
               <div class="flex-col-c text-center">
@@ -127,9 +129,16 @@
       <section class="mb-10">
         <div class="container">
           <template v-if="loaded">
-            <h2 class="heading-2">Enrolled Courses</h2>
-
-            <div class="overflow-x-auto scrollbar-sm rounded-12">
+            <h2>Enrolled Courses</h2>
+            <div v-if="!data.courses">
+              <h3 class="heading-3 text-b-neutral-1 my-4">
+                No course enrolled yet :(
+              </h3>
+            </div>
+            <div
+              v-if="data.courses"
+              class="overflow-x-auto scrollbar-sm rounded-12"
+            >
               <table
                 class="text-sm font-poppins text-w-neutral-1 w-full whitespace-nowra"
               >
@@ -154,9 +163,9 @@
                       <td class="px-24p py-3 text-right">
                         <router-link
                           :to="`/courses/${course.id}/progress`"
-                          class="btn btn-sm btn-primary rounded-12"
+                          class="btn btn-sm btn-primary rounded-12 text-center"
                         >
-                          View Progress
+                          View <span class="hidden sm:inline">Progress</span>
                         </router-link>
                       </td>
                     </tr>
@@ -173,6 +182,85 @@
       <!-- Progress section start -->
       <section class="section-pb">
         <div class="container">
+
+            <div class="flex-y justify-between flex-wrap gap-24p mb-[30px]">
+              <h5 class="heading-5 text-w-neutral-1">
+                Viewing {{ creditTransactionsStore.meta.offset + 1 }} -
+                {{ Number(creditTransactionsStore.meta.offset) + Number(creditTransactionsStore.params.limit) }} of
+                {{ creditTransactionsStore.meta.total }} groups
+              </h5>
+              <div
+                class="flex items-center sm:justify-end max-sm:flex-wrap justify-center w-[500px] gap-24p"
+              >
+                <form
+                  class="flex items-center sm:gap-3 gap-2 max-w-[500px] w-full px-20p py-16p bg-b-neutral-3 rounded-full"
+                >
+                  <span class="flex-c icon-20 text-white">
+                    <i class="ti ti-search"></i>
+                  </span>
+                  <input
+                    autocomplete="off"
+                    class="bg-transparent w-full"
+                    type="text"
+                    name="search"
+                    id="search"
+                    placeholder="Search..."
+                    @input="search"
+                  />
+                </form>
+                <div class="shrink-0 flex-y gap-28p">
+                  <span class="text-m-medium text-w-neutral-1"> Per Page: </span>
+                  <form class="select-2 shrink-0">
+                    <select
+                      v-model="creditTransactionsStore.params.limit"
+                      class="select w-full sm:py-3 py-2 px-24p rounded-full !text-base"
+                      @change="
+                        creditTransactionsStore.params.page = 1;
+                        dirty = true;
+                      "
+                    >
+                      <option value="10">10</option>
+                      <option value="20">20</option>
+                      <option value="30">30</option>
+                      <option value="50">50</option>
+                      <option value="75">75</option>
+                    </select>
+                  </form>
+                </div>
+              </div>
+            </div>
+
+
+            <div class="flex my-4 gap-4 items-center justify-center">
+              <div class="shrink-0 flex-y gap-28p">
+                <span class="text-m-medium text-w-neutral-1"> Type: </span>
+                <form class="select-2 shrink-0">
+                  <select
+                    v-model="params.filters.type"
+                    class="select w-full sm:py-3 py-2 px-24p rounded-full !text-base"
+                  >
+                    <option value="all">All</option>
+                    <option value="in">Debit</option>
+                    <option value="out">Credit</option>
+                  </select>
+                </form>
+              </div>
+              <div class="shrink-0 flex-y gap-28p">
+                <span class="text-m-medium text-w-neutral-1"> Group: </span>
+                <form class="select-2 shrink-0">
+                  <select
+                    v-model="params.filters.group"
+                    class="select w-full sm:py-3 py-2 px-24p rounded-full !text-base"
+                  >
+                    <option value="all">All</option>
+                    <option value="hint">Hints</option>
+                    <option value="reward">Rewards</option>
+                  </select>
+                </form>
+              </div>
+            </div>
+
+
           <div class="overflow-x-auto scrollbar-sm rounded-12">
             <table
               class="text-sm font-poppins text-w-neutral-1 w-full whitespace-nowra"
@@ -191,7 +279,7 @@
                 class="divide-y divide-solid divide-shap border-b border-shap bg-b-neutral-3"
               >
                 <template
-                  v-for="(transaction, idx) in data.transactions"
+                  v-for="(transaction, idx) in creditTransactionsStore.transactionList"
                   :key="idx"
                 >
                   <tr>
@@ -210,7 +298,7 @@
                           'text-danger': transaction.type === 'out',
                         }"
                       >
-                        {{ transaction.type === 'in' ? 'Credit' : 'Debit' }}
+                        {{ transaction.type === 'in' ? 'Debit' : 'Credit' }}
                       </span>
                     </td>
                     <td class="px-24p py-3 text-right">
@@ -230,6 +318,12 @@
               </tbody>
             </table>
           </div>
+          <Pagination
+            :total="creditTransactionsStore.meta.total"
+            :limit="creditTransactionsStore.meta.limit"
+            :page="creditTransactionsStore.meta.page"
+            @navigate-to="onNavigateTo"
+          ></Pagination>
         </div>
       </section>
       <!-- Progress section end -->
@@ -245,8 +339,16 @@
 
 <script>
 import dayjs from 'dayjs';
+import { mapStores } from 'pinia';
+import { debounce } from '../assets/js/utils';
+import { useTransactionStore } from '../stores/transactions';
+import Pagination from '../components/Pagination.vue';
+import { SlimSelectCustom } from '../assets/js/lib/SlimSelectCustom.js';
 
 export default {
+  components: {
+    Pagination
+  },
   data() {
     return {
       selectedTab: 'overview',
@@ -265,18 +367,46 @@ export default {
     };
   },
   inject: ['http'],
+  computed: {
+    ...mapStores(useTransactionStore),
+    params() {
+      return this.creditTransactionsStore.params;
+    },
+  },
+  watch: {
+    params: {
+      handler: function (newVal) {
+        this.creditTransactionsStore.getTransactions();
+      },
+      deep: true,
+    },
+    selectedTab(newVal) {
+      if (newVal === 'transactions') {
+        setTimeout(() => {
+          SlimSelectCustom();
+        }, 100);
+      }
+    }
+  },
   async mounted() {
     this.loaded = false;
     const response = await this.http.get('/users/dashboard');
     this.data = {
       courses: response.data.data.courses,
       ranking: response.data.data.ranking,
-      transactions: response.data.data.transactions,
     };
-
     this.loaded = true;
+    this.creditTransactionsStore.getTransactions();
   },
   methods: {
+    onNavigateTo(page) {
+      this.creditTransactionsStore.params.page = page;
+    },
+    search: debounce(function (event) {
+      this.creditTransactionsStore.params.page = 1;
+      this.creditTransactionsStore.params.search = event.target.value;
+    }, 300),
+
     formatDate(date) {
       const dt = dayjs(date);
       return dt.format('YYYY-MM-DD HH:mm:ss');

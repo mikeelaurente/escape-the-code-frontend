@@ -312,4 +312,8 @@ span:not(.word, .char) {
   @apply text-4xl md:text-5xl lg:text-[60px];
 }
 
+.icon-80 {
+  @apply text-5xl md:text-6xl lg:text-[80px];
+}
+
 /*Common icon size end */

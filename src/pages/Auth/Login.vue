@@ -22,32 +22,57 @@
                     Email
                   </label>
                   <input
-                    class="border-input-1"
+                    class="border-input-1 py-5"
                     type="email"
                     name="email"
                     id="userEmail"
                     v-model="email"
                     placeholder="Email"
+                    :class="{
+                      error: errors.email,
+                    }"
                   />
+                  <span v-if="errors.email" class="px-2 span text-danger">
+                    {{ errors.email }}
+                  </span>
                 </div>
                 <div>
                   <label
-                    for="password"
+                    for="userPassword"
                     class="label label-xl text-w-neutral-1 font-borda mb-3"
                   >
                     Password
                   </label>
-                  <input
-                    class="border-input-1"
-                    type="Password"
-                    name="Password"
-                    id="password"
-                    v-model="password"
-                    placeholder="Password"
-                  />
+                  <div
+                    class="flex-y justify-between gap-3 bg-b-neutral-3 rounded-24 border-input-1"
+                    :class="{
+                      error: errors.password,
+                    }"
+                  >
+                    <input
+                      class="bg-transparent w-full"
+                      :type="showPassword ? 'text' : 'password'"
+                      name="Password"
+                      id="userPassword"
+                      v-model="password"
+                      placeholder="Password"
+                    />
+                    <i
+                      class="ti cursor-pointer"
+                      :class="showPassword ? 'ti-eye' : 'ti-eye-closed'"
+                      @mousedown="showPassword = true"
+                      @mouseup="showPassword = false"
+                    ></i>
+                  </div>
+                  <span v-if="errors.password" class="px-2 span text-danger">
+                    {{ errors.password }}
+                  </span>
                 </div>
               </div>
-              <button class="btn btn-md btn-primary rounded-12 w-full mb-16p">
+              <button
+                :disabled="loading"
+                class="btn btn-md btn-primary rounded-12 w-full mb-16p">
+                <Loading :loading="loading" />
                 Log In
               </button>
               <router-link
@@ -82,13 +107,20 @@ import Swal from 'sweetalert2';
 
 import { useAuthStore } from '../../stores/auth';
 import { Toast } from '../../assets/js/swal-mixin';
+import Loading from '../../components/ui/Loading.vue';
 
 export default {
+  components: {
+    Loading
+  },
   data() {
     return {
+      loading: false,
       email: '',
       password: '',
       showVerificationLink: false,
+      showPassword: false,
+      errors: {},
     };
   },
   inject: ['http'],
@@ -121,37 +153,49 @@ export default {
     async login() {
       const store = useAuthStore();
 
-      const { data } = await this.http.post('/auth/login', {
-        email: this.email,
-        password: this.password,
-      });
-      if (data.status == 'error') {
-        if (data.code === 'invalid_credentials') {
-          Swal.fire({
-            title: data.error,
-            icon: 'error',
-            customClass: {
-              popup: 'bg-gray-800 text-white shadow-lg rounded-lg',
-
-              confirmButton: 'btn btn-primary',
-              cancelButton: 'btn btn-c-dark-outline',
-            },
-          });
-        } else if (data.code === 'not_verified') {
-          this.showVerificationLink = true;
-          Toast.fire({
-            icon: 'error',
-            title: data.error,
-          });
-        }
-      } else if (data.status === 'ok') {
-        Toast.fire({
-          icon: 'success',
-          title: 'Signed in successfully',
+      try {
+        this.loading = true;
+        const { data } = await this.http.post('/auth/login', {
+          email: this.email,
+          password: this.password,
         });
-        store.login(data.data);
-        await this.$router.push('/');
+        if (data.status == 'error') {
+          if (data.code == 'invalid_credentials') {
+            Swal.fire({
+              title: data.error,
+              text: 'Email or Password may be wrong.',
+              icon: 'error',
+              customClass: {
+                popup: 'bg-gray-800 text-white shadow-lg rounded-lg',
+                confirmButton: 'btn btn-primary',
+                cancelButton: 'btn btn-c-dark-outline',
+              },
+            });
+          } else if (data.code === 'not_verified') {
+            this.showVerificationLink = true;
+            Toast.fire({
+              icon: 'error',
+              title: data.error,
+            });
+          }
+        } else if (data.status === 'ok') {
+          Toast.fire({
+            icon: 'success',
+            title: 'Signed in successfully',
+          });
+          store.login(data.data);
+          await this.$router.push('/');
+        }
+      } catch (e) {
+        Swal.fire({
+          icon: 'error',
+          title: 'Error',
+          message: 'Something went wrong'
+        })
+      } finally {
+        this.loading = false;
       }
+
     },
   },
 };

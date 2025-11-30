@@ -83,6 +83,9 @@
         <div
           class="grid 4xl:grid-cols-2 xxl:grid-cols-3 md:grid-cols-2 grid-cols-1 gap-24p"
         >
+          <div v-if="!courses.length">
+            <h3 class="heading-3 text-b-neutral-1 my-4">No courses found.</h3>
+          </div>
           <div
             v-for="(course, idx) in courses"
             :key="course.id"

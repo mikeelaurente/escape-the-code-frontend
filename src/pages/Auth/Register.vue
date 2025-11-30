@@ -82,26 +82,73 @@
                     {{ errors.lastName }}
                   </span>
                 </div>
+
                 <div>
                   <label
-                    for="password"
+                    for="userPassword"
                     class="label label-xl text-w-neutral-1 font-borda mb-3"
                   >
                     Password
                   </label>
-                  <input
-                    class="border-input-1"
-                    type="Password"
-                    name="Password"
-                    id="password"
-                    v-model="password"
-                    placeholder="Password"
+                  <div
+                    class="flex-y justify-between gap-3 bg-b-neutral-3 rounded-24 border-input-1"
                     :class="{
                       error: errors.password,
                     }"
-                  />
+                  >
+                    <input
+                      class="bg-transparent w-full"
+                      :type="showPassword ? 'text' : 'password'"
+                      name="Password"
+                      id="userPassword"
+                      v-model="password"
+                      placeholder="Password"
+                    />
+                    <i
+                      class="ti cursor-pointer"
+                      :class="showPassword ? 'ti-eye' : 'ti-eye-closed'"
+                      @click="showPassword = !showPassword"
+                    ></i>
+                  </div>
+
                   <span v-if="errors.password" class="px-2 span text-danger">
                     {{ errors.password }}
+                  </span>
+                </div>
+
+                <div>
+                  <label
+                    for="userPassword"
+                    class="label label-xl text-w-neutral-1 font-borda mb-3"
+                  >
+                    Confirm Password
+                  </label>
+                  <div
+                    class="flex-y justify-between gap-3 bg-b-neutral-3 rounded-24 border-input-1"
+                    :class="{
+                      error: errors.confirmPassword,
+                    }"
+                  >
+                    <input
+                      class="bg-transparent w-full"
+                      :type="showConfirmPassword ? 'text' : 'password'"
+                      name="ConfirmPassword"
+                      id="userConfirmPassword"
+                      v-model="confirmPassword"
+                      placeholder="Confirm password"
+                    />
+                    <i
+                      class="ti cursor-pointer"
+                      :class="showConfirmPassword ? 'ti-eye' : 'ti-eye-closed'"
+                      @click="showConfirmPassword = !showConfirmPassword"
+                    ></i>
+                  </div>
+
+                  <span
+                    v-if="errors.confirmPassword"
+                    class="px-2 span text-danger"
+                  >
+                    {{ errors.confirmPassword }}
                   </span>
                 </div>
               </div>
@@ -120,10 +167,6 @@
 <script>
 import Swal from 'sweetalert2';
 
-import { useAuthStore } from '../../stores/auth';
-import { Toast } from '../../assets/js/swal-mixin';
-import { resolveComponent } from 'vue';
-
 export default {
   data() {
     return {
@@ -131,6 +174,9 @@ export default {
       password: '',
       firstName: '',
       lastName: '',
+      confirmPassword: '',
+      showPassword: false,
+      showConfirmPassword: false,
       errors: {},
 
       swalClasses: {
@@ -147,6 +193,7 @@ export default {
       this.lastName = '';
       this.email = '';
       this.password = '';
+      this.confirmPassword = '';
       this.errors = {};
     },
     async register() {
@@ -155,6 +202,7 @@ export default {
         firstName: this.firstName,
         lastName: this.lastName,
         password: this.password,
+        confirmPassword: this.confirmPassword,
       };
 
       try {

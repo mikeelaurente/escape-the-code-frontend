@@ -19,9 +19,9 @@
                     >
                   </li>
                   <li class="breadcrumb-item">
-                    <span class="breadcrumb-icon">
+                    <us class="breadcrumb-icon">
                       <i class="ti ti-chevrons-right"></i>
-                    </span>
+                    </us>
                   </li>
                   <li class="breadcrumb-item">
                     <span class="breadcrumb-current">Achievements</span>
@@ -99,6 +99,11 @@
             <div
               class="grid xl:grid-cols-3 md:grid-cols-2 grid-cols-1 gap-30p py-40p 4xl:px-[70px] px-40p bg-b-neutral-3 rounded-12"
             >
+              <div v-if="!achievements.length">
+                <h3 class="heading-3 text-b-neutral-1 my-4">
+                  No achievements found.
+                </h3>
+              </div>
               <!-- achievements 1 -->
               <div
                 v-for="(achievement, index) in achievements"
@@ -109,9 +114,9 @@
                     achievement.userAchievements.length,
                 }"
               >
-                <i :class="getAchievementIcon(achievement)" class="icon-60"></i>
+                <img v-if="achievement.coverImage" :src="achievement.coverImage" class="w-24 h-24 rounded-full object-cover" />
+                <i v-else :class="getAchievementIcon(achievement)" class="icon-80"></i>
                 <span
-                  href="./game-details.html"
                   class="heading-4 text-w-neutral-1 link-1 line-clamp-1 mb-3"
                 >
                   {{ achievement.title }}
@@ -215,8 +220,8 @@ export default {
   },
   async mounted() {
     try {
-      this.fetchAchievements();
       SlimSelectCustom();
+      this.fetchAchievements();
     } catch (e) {}
   },
 };

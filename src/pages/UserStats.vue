@@ -76,7 +76,14 @@
               <h3 class="heading-3 text-w-neutral-1 mb-30p text-split-left">
                 Achievements
               </h3>
+              <h3
+                class="heading-3 text-b-neutral-1"
+                v-if="!achievements.length"
+              >
+                No achievements yet :(
+              </h3>
               <div
+                v-if="achievements"
                 class="grid xxl+:grid-cols-3 xl:grid-cols-2 lg:grid-cols-3 sm:grid-cols-2 grid-cols-1 gap-30p"
               >
                 <!-- game stats 1 -->
@@ -226,7 +233,7 @@ export default {
   inject: ['http'],
   async mounted() {
     const response = await this.http.get(
-      '/course/user-stats/' + this.$route.params.id
+      '/courses/user-stats/' + this.$route.params.id
     );
     this.user = response.data.data.rank;
     this.nextSection = {

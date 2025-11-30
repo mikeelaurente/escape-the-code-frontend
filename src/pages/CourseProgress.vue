@@ -44,6 +44,29 @@
                 </div>
               </div>
             </div>
+
+            <div
+              class="tab-navbar flex items-center flex-wrap gap-x-32p gap-y-24p sm:text-xl text-lg *:font-borda font-medium text-w-neutral-1 whitespace-nowrap pt-30p"
+            >
+              <a
+                @click.prevent="selectedTab = 'overview'"
+                class="cursor-pointer"
+                :class="{
+                  active: selectedTab == 'overview',
+                }"
+              >
+                Overview
+              </a>
+              <a
+                @click.prevent="selectedTab = 'progress'"
+                class="cursor-pointer"
+                :class="{
+                  active: selectedTab == 'progress',
+                }"
+              >
+                Progress
+              </a>
+            </div>
           </div>
         </div>
       </div>
@@ -52,25 +75,53 @@
     <div v-if="selectedTab == 'overview'">
       <section class="mb-10">
         <div class="container">
-          <template v-if="loaded">
+          <div >
             <h2 class="heading-2">Time Spent in Challenges (seconds)</h2>
-            <div
-              class="my-6"
-              v-for="(chapterChart, idx) in chapterCharts"
-              :key="idx"
-              data-aos="fade-left"
-              data-aos-duration="1500"
-            >
-              <h4>{{ chapterChart.chapter.title }}</h4>
-              <div class="my-2 min-h-[300px]">
-                <Line
-                  class="p-3 bg-gray-700 rounded-10"
-                  :data="chapterChart.chartData"
-                  :options="chartOptions"
-                ></Line>
+
+            <div class="mt-40p" data-aos="fade-left">
+              <div class="swiper chapter-list" data-carousel-name="chapter-cards">
+                <div class="swiper-wrapper pb-40p">
+                  <div
+                    v-for="(chapterChart, idx) in chapterCharts"
+                    :key="idx"
+                    class="swiper-slide"
+                  >
+                      <div class="w-full">
+                        <h4>{{ chapterChart.chapter.title }}</h4>
+                        <div class="my-2 min-h-[300px]">
+                          <Line
+                            class="p-3 bg-gray-700 rounded-10"
+                            :data="chapterChart.chartData"
+                            :options="chartOptions"
+                          ></Line>
+                        </div>
+                      </div>
+                  </div>
+                </div>
+                <div
+                  class="flex items-center gap-28p"
+                  v-if="chapterCharts.length"
+                >
+                  <div class="swiper-navigation swp-navigation-one">
+                    <button
+                      type="button"
+                      class="navigation-btn-one chapter-cards-carousel-prev"
+                    >
+                      <i class="ti ti-chevron-left"></i>
+                    </button>
+                    <button
+                      type="button"
+                      class="navigation-btn-one chapter-cards-carousel-next"
+                    >
+                      <i class="ti ti-chevron-right"></i>
+                    </button>
+                  </div>
+                  <div class="swiper-scrollbar swiper-scrollbar-1"></div>
+                </div>
               </div>
             </div>
-          </template>
+
+          </div>
         </div>
       </section>
     </div>
@@ -338,7 +389,7 @@
       tabindex="-1"
       aria-hidden="true"
       style="background: rgba(0, 0, 0, 0.8)"
-      class="fixed flex items-center justify-center z-[999] left-0 max-h-full md:inset-0 overflow-x-hidden overflow-y-auto right-0 top-0 w-full z-50"
+      class="fixed flex items-center justify-center z-[999] left-0 max-h-full md:inset-0 overflow-x-hidden overflow-y-auto right-0 top-0 w-full"
     >
       <div
         class="relative p-4 w-full max-w-lg max-h-full"
@@ -421,8 +472,8 @@
 </style>
 
 <script>
+import Swiper from 'swiper/bundle';
 import { Line } from 'vue-chartjs';
-import Swal from 'sweetalert2';
 import dayjs from 'dayjs';
 import {
   Chart as ChartJS,
@@ -470,11 +521,21 @@ export default {
         },
         scales: {
           x: {
+            title: {
+              display: true,
+              text: 'Sections Completed',
+              color: 'cyan',
+            },
             ticks: {
               color: 'white',
             },
           },
           y: {
+            title: {
+              display: true,
+              text: 'Time in Seconds',
+              color: 'cyan',
+            },
             ticks: {
               color: 'white',
             },
@@ -568,6 +629,61 @@ export default {
     this.chapterCharts = Object.values(chapterDatasets);
 
     this.loaded = true;
+
+    setTimeout(() => {
+      let chapterCarousel = document.querySelectorAll('.chapter-list');
+
+      if (chapterCarousel.length > 0) {
+        chapterCarousel.forEach((el, idx) => {
+          const carouselName = el.getAttribute('data-carousel-name');
+          console.log('carouselName', carouselName)
+          const swiper = new Swiper(el, {
+            slidesPerView: 1,
+            speed: 500,
+            centeredSlides: true,
+            breakpoints: {
+              0: {
+                slidesPerView: 1,
+                spaceBetween: 14,
+              },
+              576: {
+                slidesPerView: 1,
+                spaceBetween: 16,
+              },
+              768: {
+                slidesPerView: 1,
+                spaceBetween: 16,
+              },
+              1200: {
+                slidesPerView: 1,
+                spaceBetween: 20,
+              },
+              1200: {
+                slidesPerView: 1,
+                spaceBetween: 24,
+              },
+              1600: {
+                slidesPerView: 4,
+                spaceBetween: 30,
+              },
+            },
+            navigation: {
+              nextEl: `.${carouselName}-carousel-next`,
+              prevEl: `.${carouselName}-carousel-prev`,
+            },
+            pagination: {
+              el: `.${carouselName}-carousel-pagination`,
+              clickable: true,
+            },
+            scrollbar: {
+              el: `.swiper-scrollbar `,
+              draggable: true,
+            },
+          });
+        });
+      }
+    }, 300);
+
   },
   methods: {
     showChallengeAnswer(challenge) {

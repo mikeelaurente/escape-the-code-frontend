@@ -100,6 +100,7 @@
                       id="first_name"
                       v-model="form.firstName"
                       class="box-input-3"
+                      placeholder="Enter your firstname"
                       :class="{
                         error: errors.firstName,
                       }"
@@ -118,6 +119,7 @@
                       id="last_name"
                       v-model="form.lastName"
                       class="box-input-3"
+                      placeholder="Enter your lastname"
                       :class="{
                         error: errors.lastName,
                       }"
@@ -134,6 +136,7 @@
                       id="email"
                       v-model="form.email"
                       class="box-input-3"
+                      placeholder="Enter your new email"
                       :class="{
                         error: errors.email,
                       }"
@@ -151,6 +154,7 @@
                       id="about"
                       v-model="form.about"
                       class="box-input-3 h-[142px]"
+                      placeholder="Enter a bio"
                     ></textarea>
                     <span v-if="errors.about" class="px-2 span text-danger">
                       {{ errors.about }}
@@ -174,25 +178,39 @@
               <h4 class="heading-4 text-w-neutral-1 mb-60p">Change Password</h4>
               <form @submit.prevent="changePassword" v-if="user.id > 0">
                 <div class="col-span-8 mb-10">
-                  <label for="email" class="label label-lg mb-3"
-                    >Old Password</label
-                  >
-                  <input
-                    type="password"
-                    name="old_password"
-                    id="old_password"
-                    v-model="changePasswordForm.oldPassword"
-                    class="box-input-3"
+                  <label for="userOldPassword" class="label label-lg mb-3">
+                    Old Password
+                  </label>
+                  <div
+                    class="flex-y justify-between gap-3 bg-b-neutral-3 rounded-24 border-input-1"
                     :class="{
                       error: errors.oldPassword,
                     }"
-                  />
+                  >
+                    <input
+                      class="bg-transparent w-full"
+                      :type="showOldPassword ? 'text' : 'password'"
+                      name="OldPassword"
+                      id="userOldPassword"
+                      v-model="changePasswordForm.oldPassword"
+                      placeholder="Old password"
+                      :class="{
+                        error: errors.oldPassword,
+                      }"
+                    />
+                    <i
+                      class="ti cursor-pointer"
+                      :class="showOldPassword ? 'ti-eye' : 'ti-eye-closed'"
+                      @click="showOldPassword = !showOldPassword"
+                    ></i>
+                  </div>
+
                   <span v-if="errors.oldPassword" class="px-2 span text-danger">
                     {{ errors.oldPassword }}
                   </span>
                 </div>
                 <div class="grid grid-cols-8 gap-30p">
-                  <div class="sm:col-span-4 col-span-8">
+                  <!-- <div class="sm:col-span-4 col-span-8">
                     <label for="first_name" class="label label-lg mb-3"
                       >New Password</label
                     >
@@ -212,8 +230,77 @@
                     >
                       {{ errors.newPassword }}
                     </span>
+                  </div> -->
+                  <div class="sm:col-span-4 col-span-8">
+                    <label for="userNewPassword" class="label label-lg mb-3">
+                      New Password
+                    </label>
+                    <div
+                      class="flex-y justify-between gap-3 bg-b-neutral-3 rounded-24 border-input-1"
+                      :class="{
+                        error: errors.newPassword,
+                      }"
+                    >
+                      <input
+                        class="bg-transparent w-full"
+                        :type="showPassword ? 'text' : 'password'"
+                        name="NewPassword"
+                        id="userNewPassword"
+                        v-model="changePasswordForm.newPassword"
+                        placeholder="New password"
+                        :class="{
+                          error: errors.newPassword,
+                        }"
+                      />
+                      <i
+                        class="ti cursor-pointer"
+                        :class="showPassword ? 'ti-eye' : 'ti-eye-closed'"
+                        @click="showPassword = !showPassword"
+                      ></i>
+                    </div>
+
+                    <span
+                      v-if="errors.newPassword"
+                      class="px-2 span text-danger"
+                    >
+                      {{ errors.newPassword }}
+                    </span>
                   </div>
                   <div class="sm:col-span-4 col-span-8">
+                    <label for="userPassword" class="label label-lg mb-3">
+                      Confirm Password
+                    </label>
+                    <div
+                      class="flex-y justify-between gap-3 bg-b-neutral-3 rounded-24 border-input-1"
+                      :class="{
+                        error: errors.confirmPassword,
+                      }"
+                    >
+                      <input
+                        class="bg-transparent w-full"
+                        :type="showConfirmPassword ? 'text' : 'password'"
+                        name="ConfirmPassword"
+                        id="userConfirmPassword"
+                        v-model="changePasswordForm.confirmPassword"
+                        placeholder="Confirm password"
+                      />
+                      <i
+                        class="ti cursor-pointer"
+                        :class="
+                          showConfirmPassword ? 'ti-eye' : 'ti-eye-closed'
+                        "
+                        @click="showConfirmPassword = !showConfirmPassword"
+                      ></i>
+                    </div>
+
+                    <span
+                      v-if="errors.confirmPassword"
+                      class="px-2 span text-danger"
+                    >
+                      {{ errors.confirmPassword }}
+                    </span>
+                  </div>
+                  <!-- <div class="sm:col-span-4 col-span-8">
                     <label for="last_name" class="label label-lg mb-3"
                       >Confirm Password</label
                     >
@@ -233,7 +320,7 @@
                     >
                       {{ errors.confirmPassword }}
                     </span>
-                  </div>
+                  </div> -->
                 </div>
                 <div class="flex items-center md:justify-end justify-center">
                   <button class="btn btn-md btn-primary rounded-12 mt-60p">
@@ -271,6 +358,9 @@ export default {
         newPassword: '',
         confirmPassword: '',
       },
+      showOldPassword: false,
+      showPassword: false,
+      showConfirmPassword: false,
       selectedFile: null,
       selectedBanner: null,
       objectUrl: null,
