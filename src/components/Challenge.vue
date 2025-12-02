@@ -41,7 +41,10 @@
           Start Challenge
         </button>
         <button
-          v-if="selectedChallege.status === 'solved'"
+          v-if="
+            selectedChallege.status === 'solved' &&
+            (!selectedChallege.type || selectedChallege.type === 'code')
+          "
           @click="completeChallenge(selectedChallege)"
           class="btn btn-primary rounded-10 mt-4"
         >
@@ -50,35 +53,108 @@
         </button>
       </div>
       <div v-if="selectedChallege.status === 'ongoing'">
-        <div
-          class="shadow-3 border-2 rounded-12 border-indigo-950"
-          :class="{ 'shake border-danger': answerError }"
-        >
-          <v-ace-editor
-            v-model:value="content"
-            class="code-editor rounded-12 text-lg"
-            lang="javascript"
-            theme="monokai"
-            style="height: 300px"
-            :options="{
-              enableBasicAutocompletion: true,
-              enableSnippets: true,
-              enableLiveAutocompletion: true,
-            }"
-          />
+        <!-- Code Challenge -->
+        <div v-if="!selectedChallege.type || selectedChallege.type === 'code'">
+          <div
+            class="shadow-3 border-2 rounded-12 border-indigo-950"
+            :class="{ 'shake border-danger': answerError }"
+          >
+            <v-ace-editor
+              v-model:value="content"
+              class="code-editor rounded-12 text-lg"
+              lang="javascript"
+              theme="monokai"
+              style="height: 300px"
+              :options="{
+                enableBasicAutocompletion: true,
+                enableSnippets: true,
+                enableLiveAutocompletion: true,
+              }"
+            />
+          </div>
+          <div class="flex justify-between mt-3">
+            <button @click="showHints()" class="btn btn-c-outline-primary">
+              <i class="ti ti-help-circle-filled icon-24"></i>
+              Hints
+            </button>
+            <button @click="submitAnswer()" class="btn btn-primary">
+              <i class="ti ti-player-play-filled icon-24"></i>
+              Run
+            </button>
+          </div>
         </div>
-        <div class="flex justify-between mt-3">
-          <button @click="showHints()" class="btn btn-c-outline-primary">
-            <i class="ti ti-help-circle-filled icon-24"></i>
-            Hints
-          </button>
-          <button @click="submitAnswer()" class="btn btn-primary">
-            <i class="ti ti-player-play-filled icon-24"></i>
-            Run
-          </button>
+
+        <!-- Multiple Choice Challenge -->
+        <div v-if="selectedChallege.type === 'multiple_choice'">
+          <div
+            class="rounded-12 p-4 mb-4"
+            :class="
+              appStore.isDarkMode
+                ? 'bg-b-neutral-4 border border-gray-700'
+                : 'bg-white border border-gray-300'
+            "
+          >
+            <h4
+              class="font-semibold mb-4"
+              :class="
+                appStore.isDarkMode ? 'text-w-neutral-1' : 'text-gray-900'
+              "
+            >
+              Select your answer:
+            </h4>
+            <div class="space-y-3">
+              <label
+                v-for="(choice, index) in parsedChoices"
+                :key="index"
+                class="flex items-start p-4 rounded-lg cursor-pointer transition-all"
+                :class="[
+                  selectedChoice === index
+                    ? appStore.isDarkMode
+                      ? 'bg-primary bg-opacity-20 border-2 border-primary'
+                      : 'bg-primary bg-opacity-10 border-2 border-primary'
+                    : appStore.isDarkMode
+                    ? 'bg-b-neutral-3 border border-gray-600 hover:border-gray-500'
+                    : 'bg-gray-50 border border-gray-200 hover:border-gray-400',
+                  { 'shake border-danger': answerError },
+                ]"
+              >
+                <input
+                  type="radio"
+                  :value="index"
+                  v-model="selectedChoice"
+                  class="mt-1 mr-3"
+                />
+                <span
+                  class="text-base"
+                  :class="
+                    appStore.isDarkMode ? 'text-w-neutral-1' : 'text-gray-900'
+                  "
+                  >{{ choice.text }}</span
+                >
+              </label>
+            </div>
+          </div>
+          <div class="flex justify-between mt-3">
+            <button @click="showHints()" class="btn btn-c-outline-primary">
+              <i class="ti ti-help-circle-filled icon-24"></i>
+              Hints
+            </button>
+            <button
+              @click="submitAnswer()"
+              class="btn btn-primary"
+              :disabled="selectedChoice === null"
+            >
+              <i class="ti ti-check icon-24"></i>
+              Submit Answer
+            </button>
+          </div>
         </div>
         <div
-          v-show="!allTestsPassed && codeSubmitted"
+          v-show="
+            !allTestsPassed &&
+            codeSubmitted &&
+            (!selectedChallege.type || selectedChallege.type === 'code')
+          "
           class="flex flex-col mt-3"
         >
           <ul
@@ -154,12 +230,72 @@
             <pre v-html="getCodeErrors(submissionResult)"></pre>
           </div>
         </div>
+
+        <!-- Multiple Choice Result -->
+        <div
+          v-if="selectedChallege.type === 'multiple_choice' && codeSubmitted"
+          class="mt-4 p-4 rounded-12"
+          :class="
+            submissionResult.correct
+              ? appStore.isDarkMode
+                ? 'bg-green-900 bg-opacity-20 border border-green-700'
+                : 'bg-green-50 border border-green-300'
+              : appStore.isDarkMode
+              ? 'bg-red-900 bg-opacity-20 border border-red-700'
+              : 'bg-red-50 border border-red-300'
+          "
+        >
+          <div class="flex items-center mb-3">
+            <i
+              :class="
+                submissionResult.correct
+                  ? 'ti ti-circle-check text-success icon-32'
+                  : 'ti ti-circle-x text-danger icon-32'
+              "
+            ></i>
+            <h4
+              class="ml-2 font-bold"
+              :class="submissionResult.correct ? 'text-success' : 'text-danger'"
+            >
+              {{ submissionResult.correct ? 'Correct!' : 'Incorrect' }}
+            </h4>
+          </div>
+          <div
+            v-if="!submissionResult.correct"
+            :class="appStore.isDarkMode ? 'text-w-neutral-2' : 'text-gray-800'"
+          >
+            <p class="mb-2">
+              <strong>Your answer:</strong>
+              {{ submissionResult.userAnswerText }}
+            </p>
+            <p class="mb-2">
+              <strong>Correct answer:</strong>
+              {{ submissionResult.correctAnswerText }}
+            </p>
+          </div>
+          <div
+            v-if="submissionResult.explanation"
+            class="mt-3 pt-3 border-t"
+            :class="
+              appStore.isDarkMode
+                ? 'border-gray-600 text-w-neutral-2'
+                : 'border-gray-300 text-gray-700'
+            "
+          >
+            <strong>Explanation:</strong>
+            <p class="mt-1" v-html="submissionResult.explanation"></p>
+          </div>
+        </div>
       </div>
 
       <div v-if="selectedChallege.status === 'solved'">
         <div class="mt-4">
           <h2 class="text-center">Challenge Solved!</h2>
-          <div>
+
+          <!-- Code Challenge Solved Display -->
+          <div
+            v-if="!selectedChallege.type || selectedChallege.type === 'code'"
+          >
             <h3>Code</h3>
             <div
               class="font-mono p-3 rounded-10 my-2"
@@ -217,6 +353,31 @@
               </ul>
             </div>
           </div>
+
+          <!-- Multiple Choice Challenge Solved Display -->
+          <div v-if="selectedChallege.type === 'multiple_choice'">
+            <div
+              class="p-4 rounded-10 my-2"
+              :class="
+                appStore.isDarkMode
+                  ? 'bg-green-900 bg-opacity-20 border border-green-700'
+                  : 'bg-green-50 border border-green-300'
+              "
+            >
+              <div class="flex items-center mb-3">
+                <i class="ti ti-circle-check text-success icon-32"></i>
+                <h4 class="ml-2 font-bold text-success">Correct Answer!</h4>
+              </div>
+              <p
+                :class="
+                  appStore.isDarkMode ? 'text-w-neutral-2' : 'text-gray-800'
+                "
+              >
+                <strong>Your answer:</strong>
+                {{ parsedChoices[selectedChoice]?.text || 'N/A' }}
+              </p>
+            </div>
+          </div>
         </div>
       </div>
 
@@ -235,21 +396,73 @@
             >
               {{ formatTime(selectedChallege.acceptedAnswer.duration) }}
             </div>
-            <h3>Code</h3>
-            <div
-              class="font-mono p-3 rounded-10 my-2"
-              :class="
-                appStore.isDarkMode
-                  ? 'bg-neutral-900 text-white'
-                  : 'bg-gray-100 text-gray-900 border border-gray-300'
-              "
-              v-html="
-                selectedChallege.acceptedAnswer.submission.code.replace(
-                  /\n/,
-                  '<br />'
-                )
-              "
-            ></div>
+
+            <!-- Code Challenge Display -->
+            <template
+              v-if="!selectedChallege.type || selectedChallege.type === 'code'"
+            >
+              <h3>Code</h3>
+              <div
+                class="font-mono p-3 rounded-10 my-2"
+                :class="
+                  appStore.isDarkMode
+                    ? 'bg-neutral-900 text-white'
+                    : 'bg-gray-100 text-gray-900 border border-gray-300'
+                "
+                v-html="
+                  selectedChallege.acceptedAnswer.submission.code.replace(
+                    /\n/,
+                    '<br />'
+                  )
+                "
+              ></div>
+            </template>
+
+            <!-- Multiple Choice Display -->
+            <template v-if="selectedChallege.type === 'multiple_choice'">
+              <h3>Question</h3>
+              <div
+                class="p-3 rounded-10 my-2"
+                :class="
+                  appStore.isDarkMode
+                    ? 'bg-b-neutral-4 border border-gray-700'
+                    : 'bg-gray-100 border border-gray-300'
+                "
+                v-html="selectedChallege.description"
+              ></div>
+
+              <h3>Options</h3>
+              <div class="space-y-2 my-2">
+                <div
+                  v-for="(choice, index) in parsedChoices"
+                  :key="index"
+                  class="flex items-start p-3 rounded-lg"
+                  :class="getCompletedChoiceStyle(choice.text)"
+                >
+                  <span
+                    class="mr-2 font-semibold"
+                    :class="
+                      appStore.isDarkMode ? 'text-w-neutral-1' : 'text-gray-900'
+                    "
+                  >
+                    {{ String.fromCharCode(65 + index) }}.
+                  </span>
+                  <span
+                    :class="
+                      appStore.isDarkMode ? 'text-w-neutral-1' : 'text-gray-900'
+                    "
+                  >
+                    {{ choice.text }}
+                  </span>
+                  <i
+                    v-if="getCompletedChoiceIcon(choice.text)"
+                    :class="getCompletedChoiceIcon(choice.text)"
+                    class="ml-auto icon-24"
+                  ></i>
+                </div>
+              </div>
+            </template>
+
             <h3>Feedback</h3>
             <div
               class="p-3 rounded-10 my-2"
@@ -299,7 +512,7 @@
     tabindex="-1"
     aria-hidden="true"
     style="background: rgba(0, 0, 0, 0.8)"
-    class="fixed flex items-center justify-center z-[999] left-0 max-h-full md:inset-0 overflow-x-hidden overflow-y-auto right-0 top-0 w-full z-50"
+    class="fixed flex items-center justify-center left-0 max-h-full md:inset-0 overflow-x-hidden overflow-y-auto right-0 top-0 w-full z-[999]"
   >
     <div class="relative p-4 w-full max-w-md max-h-full">
       <!-- Modal content -->
@@ -438,6 +651,7 @@ export default {
       codeSubmitted: false,
       answerError: false,
       content: '',
+      selectedChoice: null,
       showChallengeHints: false,
       hints: [],
       submissionResult: {
@@ -468,6 +682,24 @@ export default {
     },
     nextSection() {
       return this.section.nextSection;
+    },
+    parsedChoices() {
+      if (this.selectedChallege.choices) {
+        try {
+          const choices = Array.isArray(this.selectedChallege.choices)
+            ? this.selectedChallege.choices
+            : JSON.parse(this.selectedChallege.choices);
+          // Add index to each choice for easier reference
+          return choices.map((choice, index) => ({
+            ...choice,
+            index,
+          }));
+        } catch (e) {
+          console.error('Error parsing choices:', e);
+          return [];
+        }
+      }
+      return [];
     },
     modifiedHints() {
       return this.hints.map((hint) => {
@@ -738,6 +970,9 @@ export default {
       }
 
       this.selectedChallege = challenge;
+      this.selectedChoice = null;
+      this.codeSubmitted = false;
+      this.answerError = false;
     },
     isBought(hintId) {
       return (
@@ -854,20 +1089,137 @@ export default {
             this.answerError = false;
             this.feedback = '';
             this.codeSubmitted = true;
-            const answer = encodeURIComponent(this.content);
+
             const challengeId = this.selectedChallege.id;
-            const response = await this.http.post(
-              '/challenges/' + challengeId + '/answer',
-              {
-                answer,
+            let requestData;
+
+            // Handle different challenge types
+            if (this.selectedChallege.type === 'multiple_choice') {
+              if (this.selectedChoice === null) {
+                Swal.showValidationMessage('Please select an answer');
+                return;
               }
-            );
-            this.submissionResult =
-              response.data.data.ongoingAnswer.submission.metadata;
-            this.selectedChallege.ongoingAnswer =
-              response.data.data.ongoingAnswer;
-            this.selectedChallege.status = response.data.data.result;
-            return this.submissionResult;
+
+              // Send the actual text of the selected choice, not the index
+              const selectedChoiceText =
+                this.parsedChoices[this.selectedChoice]?.text;
+
+              requestData = {
+                answer: selectedChoiceText,
+              };
+
+              try {
+                const response = await this.http.post(
+                  '/challenges/' + challengeId + '/answer-multiple-choice',
+                  requestData
+                );
+
+                // Check for error status in response
+                if (response.data.status === 'error') {
+                  let errorMessage = response.data.message;
+
+                  switch (response.data.code) {
+                    case 'challenge_already_answered':
+                      errorMessage = 'You have already answered this challenge';
+                      break;
+                    case 'challenge_not_found':
+                      errorMessage = 'Challenge not found';
+                      break;
+                    case 'invalid_challenge_type':
+                      errorMessage =
+                        'This endpoint is only for multiple choice challenges';
+                      break;
+                    case 'challenge_not_started':
+                      errorMessage = 'Challenge has not been started yet';
+                      break;
+                    case 'internal_error':
+                      errorMessage =
+                        'An error occurred while processing your answer';
+                      break;
+                  }
+
+                  Swal.showValidationMessage(errorMessage);
+                  return;
+                }
+
+                // Process multiple choice response
+                this.submissionResult = {
+                  correct: response.data.data.result === 'correct',
+                  result: response.data.data.result,
+                  userAnswer: response.data.data.userAnswer,
+                  userAnswerText: response.data.data.userAnswer,
+                  correctAnswerIndex: response.data.data.choices.findIndex(
+                    (c) => c.isCorrect
+                  ),
+                  correctAnswerText:
+                    response.data.data.choices.find((c) => c.isCorrect)?.text ||
+                    '',
+                  choices: response.data.data.choices,
+                  explanation: response.data.data.explanation || '',
+                };
+
+                // Update challenge status based on result
+                if (this.submissionResult.correct) {
+                  this.selectedChallege.status = 'solved';
+                }
+
+                return this.submissionResult;
+              } catch (error) {
+                // Handle axios error responses
+                if (error.response && error.response.data) {
+                  const errorData = error.response.data;
+                  let errorMessage = errorData.message || 'Request failed';
+
+                  switch (errorData.code) {
+                    case 'challenge_already_answered':
+                      errorMessage = 'You have already answered this challenge';
+                      break;
+                    case 'challenge_not_found':
+                      errorMessage = 'Challenge not found';
+                      break;
+                    case 'invalid_challenge_type':
+                      errorMessage =
+                        'This endpoint is only for multiple choice challenges';
+                      break;
+                    case 'challenge_not_started':
+                      errorMessage =
+                        'Challenge has not been started yet. Please start the challenge first.';
+                      break;
+                    case 'internal_error':
+                      errorMessage =
+                        'An error occurred while processing your answer. Please try again.';
+                      break;
+                  }
+
+                  Swal.showValidationMessage(errorMessage);
+                } else {
+                  Swal.showValidationMessage(
+                    `Request failed: ${error.message || error}`
+                  );
+                }
+                return;
+              }
+            } else {
+              // Default to code type
+              const answer = encodeURIComponent(this.content);
+              requestData = {
+                answer,
+                type: 'code',
+              };
+
+              const response = await this.http.post(
+                '/challenges/' + challengeId + '/answer',
+                requestData
+              );
+
+              this.submissionResult =
+                response.data.data.ongoingAnswer.submission.metadata;
+              this.selectedChallege.ongoingAnswer =
+                response.data.data.ongoingAnswer;
+              this.selectedChallege.status = response.data.data.result;
+
+              return this.submissionResult;
+            }
           } catch (error) {
             Swal.showValidationMessage(`Request failed: ${error}`);
           }
@@ -875,26 +1227,46 @@ export default {
         allowOutsideClick: () => !Swal.isLoading(),
       }).then((result, response) => {
         if (result.isConfirmed) {
-          if (
-            result.value.status === 'ok' &&
-            result.value.results.every((x) => x.ok)
-          ) {
-            Swal.fire({
-              title: '✅ Solution Successful',
-              text: 'Your code executed correctly. You may proceed to the next challenge.',
-              icon: 'success',
-              customClass: this.swalClasses,
-            });
+          if (this.selectedChallege.type === 'multiple_choice') {
+            if (result.value.correct) {
+              Swal.fire({
+                title: '✅ Correct Answer!',
+                text: 'Well done! You may proceed to the next challenge.',
+                icon: 'success',
+                customClass: this.swalClasses,
+              });
+            } else {
+              this.answerError = true;
+              Swal.fire({
+                title: '❌ Incorrect Answer',
+                text: 'Please review the explanation and try again.',
+                icon: 'error',
+                customClass: this.swalClasses,
+              });
+            }
           } else {
-            this.answerError = true;
-            Swal.fire({
-              title: 'Execution Error',
-              text: result.value.errors
-                ? result.value.errors.answer
-                : result.value.message,
-              icon: 'error',
-              customClass: this.swalClasses,
-            });
+            // Code challenge result handling
+            if (
+              result.value.status === 'ok' &&
+              result.value.results.every((x) => x.ok)
+            ) {
+              Swal.fire({
+                title: '✅ Solution Successful',
+                text: 'Your code executed correctly. You may proceed to the next challenge.',
+                icon: 'success',
+                customClass: this.swalClasses,
+              });
+            } else {
+              this.answerError = true;
+              Swal.fire({
+                title: 'Execution Error',
+                text: result.value.errors
+                  ? result.value.errors.answer
+                  : result.value.message,
+                icon: 'error',
+                customClass: this.swalClasses,
+              });
+            }
           }
         }
       });
@@ -915,6 +1287,162 @@ export default {
       }
       return hours + 'h:' + minutes + 'm:' + seconds + 's';
     },
+    getCompletedMultipleChoiceAnswer() {
+      // For completed multiple choice challenges, get the answer from acceptedAnswer
+      if (
+        this.selectedChallege.acceptedAnswer &&
+        this.selectedChallege.acceptedAnswer.submissions &&
+        this.selectedChallege.acceptedAnswer.submissions.length > 0
+      ) {
+        try {
+          // Get the last submission
+          const submission =
+            this.selectedChallege.acceptedAnswer.submissions[
+              this.selectedChallege.acceptedAnswer.submissions.length - 1
+            ];
+
+          // The submission.code contains the answer text directly
+          const answerText = submission.code;
+
+          // Try to parse metadata to get additional info if needed
+          if (submission.metadata) {
+            const metadata =
+              typeof submission.metadata === 'string'
+                ? JSON.parse(submission.metadata)
+                : submission.metadata;
+
+            // Return the userAnswer from metadata if available
+            if (metadata.userAnswer) {
+              return metadata.userAnswer;
+            }
+          }
+
+          // Otherwise return the code field
+          return answerText || 'N/A';
+        } catch (e) {
+          console.error('Error parsing completed answer:', e);
+          return 'N/A';
+        }
+      }
+      return 'N/A';
+    },
+    getCompletedUserAnswer() {
+      // Get user's answer from acceptedAnswer submissions
+      if (
+        this.selectedChallege.acceptedAnswer &&
+        this.selectedChallege.acceptedAnswer.submissions &&
+        this.selectedChallege.acceptedAnswer.submissions.length > 0
+      ) {
+        try {
+          // Get the last submission
+          const submission =
+            this.selectedChallege.acceptedAnswer.submissions[
+              this.selectedChallege.acceptedAnswer.submissions.length - 1
+            ];
+
+          const metadata =
+            typeof submission.metadata === 'string'
+              ? JSON.parse(submission.metadata)
+              : submission.metadata;
+
+          return metadata?.userAnswer || submission.code || 'N/A';
+        } catch (e) {
+          console.error('Error parsing user answer:', e);
+          return 'N/A';
+        }
+      }
+      return 'N/A';
+    },
+    getCompletedCorrectAnswer() {
+      // Get correct answer from acceptedAnswer submissions metadata
+      if (
+        this.selectedChallege.acceptedAnswer &&
+        this.selectedChallege.acceptedAnswer.submissions &&
+        this.selectedChallege.acceptedAnswer.submissions.length > 0
+      ) {
+        try {
+          // Get the last submission
+          const submission =
+            this.selectedChallege.acceptedAnswer.submissions[
+              this.selectedChallege.acceptedAnswer.submissions.length - 1
+            ];
+
+          const metadata =
+            typeof submission.metadata === 'string'
+              ? JSON.parse(submission.metadata)
+              : submission.metadata;
+
+          return metadata?.correctAnswer || 'N/A';
+        } catch (e) {
+          console.error('Error parsing correct answer:', e);
+          return 'N/A';
+        }
+      }
+      return 'N/A';
+    },
+    getCompletedAnswerWasCorrect() {
+      // Check if user's answer was correct
+      if (
+        this.selectedChallege.acceptedAnswer &&
+        this.selectedChallege.acceptedAnswer.submissions &&
+        this.selectedChallege.acceptedAnswer.submissions.length > 0
+      ) {
+        try {
+          // Get the last submission
+          const submission =
+            this.selectedChallege.acceptedAnswer.submissions[
+              this.selectedChallege.acceptedAnswer.submissions.length - 1
+            ];
+
+          const metadata =
+            typeof submission.metadata === 'string'
+              ? JSON.parse(submission.metadata)
+              : submission.metadata;
+
+          return metadata?.isCorrect === true;
+        } catch (e) {
+          return false;
+        }
+      }
+      return false;
+    },
+    getCompletedChoiceStyle(choiceText) {
+      // Style each choice based on whether it's correct or user's selection
+      const userAnswer = this.getCompletedUserAnswer();
+      const correctAnswer = this.getCompletedCorrectAnswer();
+
+      const isUserChoice = choiceText === userAnswer;
+      const isCorrectChoice = choiceText === correctAnswer;
+
+      if (isCorrectChoice) {
+        return this.appStore.isDarkMode
+          ? 'bg-green-900 bg-opacity-20 border-2 border-green-700'
+          : 'bg-green-50 border-2 border-green-300';
+      } else if (isUserChoice && !isCorrectChoice) {
+        return this.appStore.isDarkMode
+          ? 'bg-red-900 bg-opacity-20 border-2 border-red-700'
+          : 'bg-red-50 border-2 border-red-300';
+      } else {
+        return this.appStore.isDarkMode
+          ? 'bg-b-neutral-4 border border-gray-700'
+          : 'bg-gray-100 border border-gray-300';
+      }
+    },
+    getCompletedChoiceIcon(choiceText) {
+      // Show icon for correct answer and user's incorrect answer
+      const userAnswer = this.getCompletedUserAnswer();
+      const correctAnswer = this.getCompletedCorrectAnswer();
+
+      const isUserChoice = choiceText === userAnswer;
+      const isCorrectChoice = choiceText === correctAnswer;
+
+      if (isCorrectChoice) {
+        return 'ti ti-circle-check text-success';
+      } else if (isUserChoice && !isCorrectChoice) {
+        return 'ti ti-circle-x text-danger';
+      }
+      return null;
+    },
   },
   beforeUnmount() {
     if (!this.completeChallengeController.signal.aborted) {
@@ -922,6 +1450,15 @@ export default {
     }
   },
   mounted() {
+    // Sort challenges by difficulty: easy, medium, hard
+    const difficultyOrder = { easy: 1, medium: 2, hard: 3 };
+    this.section.challenges.sort((a, b) => {
+      return (
+        (difficultyOrder[a.difficulty] || 999) -
+        (difficultyOrder[b.difficulty] || 999)
+      );
+    });
+
     for (const challenge of this.section.challenges) {
       challenge.locked = false;
       const currentOrder = challenge.order;
@@ -931,7 +1468,7 @@ export default {
           (c) => c.order == currentOrder - 1
         );
 
-        if (previousChallenge.status !== 'completed') {
+        if (previousChallenge && previousChallenge.status !== 'completed') {
           challenge.locked = true;
         }
       }
