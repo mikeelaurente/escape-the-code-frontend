@@ -41,8 +41,9 @@
 
 <script>
 import Swal from 'sweetalert2';
-
+import { mapStores } from 'pinia';
 import { useAuthStore } from '../../stores/auth';
+import { useAppStore } from '../../stores/app';
 import { Toast } from '../../assets/js/swal-mixin';
 
 export default {
@@ -51,14 +52,21 @@ export default {
       email: '',
       password: '',
       showVerificationLink: false,
-      swalClasses: {
-        popup: 'bg-gray-800 text-white shadow-lg rounded-lg',
-        confirmButton: 'btn btn-primary',
-        cancelButton: 'btn btn-c-dark-outline',
-      },
     };
   },
   inject: ['http'],
+  computed: {
+    ...mapStores(useAppStore),
+    swalClasses() {
+      return {
+        popup: this.appStore.isDarkMode
+          ? 'bg-gray-800 text-white shadow-lg rounded-lg'
+          : 'bg-white text-gray-900 shadow-lg rounded-lg',
+        confirmButton: 'btn btn-primary',
+        cancelButton: 'btn btn-c-dark-outline',
+      };
+    },
+  },
   methods: {
     async resetPassword() {
       try {

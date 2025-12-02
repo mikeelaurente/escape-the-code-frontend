@@ -166,6 +166,8 @@
 
 <script>
 import Swal from 'sweetalert2';
+import { mapStores } from 'pinia';
+import { useAppStore } from '../../stores/app';
 
 export default {
   data() {
@@ -178,15 +180,21 @@ export default {
       showPassword: false,
       showConfirmPassword: false,
       errors: {},
-
-      swalClasses: {
-        popup: 'bg-gray-800 text-white shadow-lg rounded-lg',
-        confirmButton: 'btn btn-primary',
-        cancelButton: 'btn btn-c-dark-outline',
-      },
     };
   },
   inject: ['http'],
+  computed: {
+    ...mapStores(useAppStore),
+    swalClasses() {
+      return {
+        popup: this.appStore.isDarkMode
+          ? 'bg-gray-800 text-white shadow-lg rounded-lg'
+          : 'bg-white text-gray-900 shadow-lg rounded-lg',
+        confirmButton: 'btn btn-primary',
+        cancelButton: 'btn btn-c-dark-outline',
+      };
+    },
+  },
   methods: {
     resetForm() {
       this.firstName = '';

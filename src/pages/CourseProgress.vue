@@ -75,27 +75,30 @@
     <div v-if="selectedTab == 'overview'">
       <section class="mb-10">
         <div class="container">
-          <div >
+          <div>
             <h2 class="heading-2">Time Spent in Challenges (seconds)</h2>
 
             <div class="mt-40p" data-aos="fade-left">
-              <div class="swiper chapter-list" data-carousel-name="chapter-cards">
+              <div
+                class="swiper chapter-list"
+                data-carousel-name="chapter-cards"
+              >
                 <div class="swiper-wrapper pb-40p">
                   <div
                     v-for="(chapterChart, idx) in chapterCharts"
                     :key="idx"
                     class="swiper-slide"
                   >
-                      <div class="w-full">
-                        <h4>{{ chapterChart.chapter.title }}</h4>
-                        <div class="my-2 min-h-[300px]">
-                          <Line
-                            class="p-3 bg-gray-700 rounded-10"
-                            :data="chapterChart.chartData"
-                            :options="chartOptions"
-                          ></Line>
-                        </div>
+                    <div class="w-full">
+                      <h4>{{ chapterChart.chapter.title }}</h4>
+                      <div class="my-2 min-h-[300px]">
+                        <Line
+                          class="p-3 bg-gray-700 rounded-10"
+                          :data="chapterChart.chartData"
+                          :options="chartOptions"
+                        ></Line>
                       </div>
+                    </div>
                   </div>
                 </div>
                 <div
@@ -120,7 +123,6 @@
                 </div>
               </div>
             </div>
-
           </div>
         </div>
       </section>
@@ -475,6 +477,8 @@
 import Swiper from 'swiper/bundle';
 import { Line } from 'vue-chartjs';
 import dayjs from 'dayjs';
+import { mapStores } from 'pinia';
+import { useAppStore } from '../stores/app';
 import {
   Chart as ChartJS,
   CategoryScale,
@@ -542,14 +546,21 @@ export default {
           },
         },
       },
-      swalClasses: {
-        popup: 'bg-gray-800 text-white shadow-lg rounded-lg',
-        confirmButton: 'btn btn-primary',
-        cancelButton: 'btn btn-c-dark-outline',
-      },
     };
   },
   inject: ['http'],
+  computed: {
+    ...mapStores(useAppStore),
+    swalClasses() {
+      return {
+        popup: this.appStore.isDarkMode
+          ? 'bg-gray-800 text-white shadow-lg rounded-lg'
+          : 'bg-white text-gray-900 shadow-lg rounded-lg',
+        confirmButton: 'btn btn-primary',
+        cancelButton: 'btn btn-c-dark-outline',
+      };
+    },
+  },
   async mounted() {
     this.loaded = false;
     const courseId = this.$route.params.id;
@@ -636,7 +647,7 @@ export default {
       if (chapterCarousel.length > 0) {
         chapterCarousel.forEach((el, idx) => {
           const carouselName = el.getAttribute('data-carousel-name');
-          console.log('carouselName', carouselName)
+          console.log('carouselName', carouselName);
           const swiper = new Swiper(el, {
             slidesPerView: 1,
             speed: 500,
@@ -683,7 +694,6 @@ export default {
         });
       }
     }, 300);
-
   },
   methods: {
     showChallengeAnswer(challenge) {

@@ -6,6 +6,31 @@ html {
 body {
   background-color: #030304;
   color: #fefefe;
+  transition: background-color 0.3s ease, color 0.3s ease;
+}
+
+/* Light mode styles */
+.light body {
+  background-color: #f3f5f7;
+  color: #080808;
+}
+
+.light {
+  --bg-primary: #ffffff;
+  --bg-secondary: #f3f5f7;
+  --bg-tertiary: #e8ecef;
+  --text-primary: #080808;
+  --text-secondary: #343839;
+  --text-muted: #9cabb9;
+}
+
+.dark {
+  --bg-primary: #030304;
+  --bg-secondary: #0e1012;
+  --bg-tertiary: #232627;
+  --text-primary: #fefefe;
+  --text-secondary: #e8ecef;
+  --text-muted: #9cabb9;
 }
 
 section {
@@ -37,6 +62,10 @@ section {
   background-color: #030304;
 }
 
+.light .header-animation {
+  background-color: #ffffff;
+}
+
 @keyframes fadeDown {
   0% {
     opacity: 0;
@@ -56,9 +85,17 @@ section {
   background-color: #030304;
 }
 
+.light ::-webkit-scrollbar {
+  background-color: #e8ecef;
+}
+
 ::-webkit-scrollbar-thumb {
   border-radius: 40px;
   background-color: #45f882;
+}
+
+.light ::-webkit-scrollbar-thumb {
+  background-color: #f29620;
 }
 
 .scrollbar-0::-webkit-scrollbar {
@@ -92,8 +129,8 @@ input:focus {
 }
 
 /* Remove number input spinners */
-input[type="number"]::-webkit-inner-spin-button,
-input[type="number"]::-webkit-outer-spin-button {
+input[type='number']::-webkit-inner-spin-button,
+input[type='number']::-webkit-outer-spin-button {
   -webkit-appearance: none;
   margin: 0;
 }
@@ -105,13 +142,13 @@ input::-webkit-inner-spin-button {
   margin: 0;
 }
 
-input[type="number"]::-webkit-inner-spin-button,
-input[type="number"]::-webkit-outer-spin-button {
+input[type='number']::-webkit-inner-spin-button,
+input[type='number']::-webkit-outer-spin-button {
   opacity: 1;
   margin: 0;
 }
 
 /* Firefox specific styles */
-input[type="number"] {
+input[type='number'] {
   -moz-appearance: textfield;
 }

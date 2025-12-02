@@ -295,3 +295,329 @@
 
   // webkit end
 }
+
+// Theme-aware utility classes
+.light {
+  // Background utilities
+  .bg-b-neutral-3 {
+    background-color: #ffffff !important;
+  }
+
+  .bg-b-neutral-2 {
+    background-color: #f3f5f7 !important;
+  }
+
+  .bg-b-neutral-1 {
+    background-color: #e8ecef !important;
+  }
+
+  .bg-b-neutral-4 {
+    background-color: #f9fafb !important;
+  }
+
+  // Text utilities - Better contrast
+  .text-w-neutral-1,
+  .heading-1,
+  .heading-2,
+  .heading-3,
+  .heading-4,
+  .heading-5,
+  .heading-40,
+  .display-120 {
+    color: #080808 !important;
+  }
+
+  .text-w-neutral-2 {
+    color: #232627 !important;
+  }
+
+  .text-w-neutral-3 {
+    color: #343839 !important;
+  }
+
+  .text-w-neutral-4 {
+    color: #6b7280 !important;
+  }
+
+  .text-b-neutral-1 {
+    color: #343839 !important;
+  }
+
+  .text-b-neutral-2 {
+    color: #232627 !important;
+  }
+
+  .text-b-neutral-3 {
+    color: #080808 !important;
+  }
+
+  .text-b-neutral-4 {
+    color: #fefefe !important;
+  }
+
+  // Specific text colors
+  .text-white {
+    color: #080808 !important;
+  }
+
+  // Border utilities
+  .border-w-neutral-1,
+  .border-w-neutral-2,
+  .border-w-neutral-3 {
+    border-color: #d1d5db !important;
+  }
+
+  .border-w-neutral-4 {
+    border-color: #9ca3af !important;
+  }
+
+  .border-b-neutral-1,
+  .border-b-neutral-2,
+  .border-b-neutral-3 {
+    border-color: #343839 !important;
+  }
+
+  .border-shap,
+  .divide-shap {
+    border-color: #d1d5db !important;
+  }
+
+  // Navbar overlay
+  .navbar-overly {
+    background-color: rgba(0, 0, 0, 0.3) !important;
+  }
+
+  // Cards and containers
+  .small-nav {
+    background-color: rgba(255, 255, 255, 0.98) !important;
+  }
+
+  // Shadows for light mode
+  .shadow-lg {
+    box-shadow: 0 10px 15px -3px rgba(0, 0, 0, 0.1),
+      0 4px 6px -2px rgba(0, 0, 0, 0.05) !important;
+  }
+
+  .shadow-4 {
+    box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.1),
+      0 2px 4px -1px rgba(0, 0, 0, 0.06) !important;
+  }
+
+  // Button contrast fixes
+  .btn-c-dark-outline {
+    border-color: #6b7280 !important;
+    color: #374151 !important;
+
+    &:hover {
+      background-color: #374151 !important;
+      color: #ffffff !important;
+    }
+  }
+
+  .btn-c-neutral-3 {
+    background-color: #f3f5f7 !important;
+    color: #080808 !important;
+
+    &:hover {
+      background-color: #45f882 !important;
+      color: #080808 !important;
+    }
+  }
+
+  // Dropdown improvements
+  .dropdown-content {
+    background-color: #ffffff !important;
+    box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.1),
+      0 2px 4px -1px rgba(0, 0, 0, 0.06) !important;
+    border: 1px solid #e5e7eb !important;
+  }
+
+  .dropdown-item {
+    color: #1f2937 !important;
+
+    &:hover {
+      background-color: #f29620 !important;
+      color: #030304 !important;
+    }
+
+    &.active {
+      color: #030304 !important;
+    }
+  }
+
+  // Form inputs
+  .box-input-1,
+  .box-input-2,
+  .box-input-3,
+  .box-input-4,
+  .box-input-5 {
+    background-color: #ffffff !important;
+    color: #1f2937 !important;
+    border-color: #d1d5db !important;
+
+    &::placeholder {
+      color: #9ca3af !important;
+    }
+
+    &:focus {
+      border-color: #f29620 !important;
+    }
+  }
+
+  .border-input-1 {
+    border-color: #d1d5db !important;
+  }
+
+  // Sidebar
+  .side-navbar-one {
+    .btn-c {
+      color: #374151 !important;
+
+      &:hover {
+        color: #030304 !important;
+      }
+    }
+
+    .nav-item {
+      color: #374151 !important;
+
+      &:hover {
+        color: #f29620 !important;
+      }
+    }
+
+    .active .btn-c,
+    .active .nav-item {
+      background-color: #f29620 !important;
+      color: #030304 !important;
+    }
+  }
+
+  // Credits badge
+  .bg-\[rgba\(242\,150\,32\,0\.10\)\] {
+    background-color: rgba(242, 150, 32, 0.15) !important;
+    color: #1f2937 !important;
+  }
+
+  // Mobile menu text
+  .mobail-menu {
+    a,
+    .router-link-active {
+      color: #1f2937 !important;
+
+      &:hover {
+        color: #f29620 !important;
+      }
+    }
+  }
+
+  // Ensure good contrast on cards
+  .bg-glass-1,
+  .bg-glass-5,
+  .bg-glass-7,
+  .bg-glass-9 {
+    background-color: rgba(243, 245, 247, 0.8) !important;
+  }
+
+  // Body text
+  .text-body {
+    color: #6b7280 !important;
+  }
+
+  // Tab navigation
+  .tab-navbar {
+    color: #1f2937 !important;
+
+    a {
+      color: #1f2937 !important;
+
+      &:hover,
+      &.active {
+        color: #f29620 !important;
+      }
+    }
+  }
+
+  // Overlays
+  .overlay-1,
+  .overlay-2,
+  .overlay-3,
+  .overlay-11 {
+    background: linear-gradient(
+      270deg,
+      rgba(255, 255, 255, 0.36) 0%,
+      rgba(245, 245, 245, 0.36) 21.5%,
+      rgba(255, 255, 255, 0.72) 62.71%
+    ) !important;
+  }
+
+  // Breadcrumb
+  .breadcrumb {
+    .breadcrumb-link,
+    .breadcrumb-current {
+      color: #1f2937 !important;
+    }
+
+    .breadcrumb-icon {
+      color: #6b7280 !important;
+    }
+  }
+
+  // Tables
+  table {
+    thead {
+      color: #1f2937 !important;
+    }
+
+    tbody {
+      tr {
+        &:hover {
+          background-color: rgba(243, 245, 247, 0.5) !important;
+        }
+      }
+    }
+  }
+
+  // Links
+  .link-1:hover {
+    color: #f29620 !important;
+  }
+
+  // Stroked text
+  .stroked-text-1 {
+    -webkit-text-stroke-color: #f29620 !important;
+
+    &::after {
+      -webkit-text-stroke: 1px #f29620 !important;
+      color: #080808 !important;
+    }
+  }
+
+  // Placeholders
+  ::placeholder {
+    color: #9ca3af !important;
+  }
+
+  // Loading spinner
+  .text-w-neutral-4.animate-spin {
+    color: #6b7280 !important;
+  }
+
+  // Text variants
+  .text-l-medium,
+  .text-m-medium,
+  .text-m-regular,
+  .text-sm {
+    &.text-w-neutral-1 {
+      color: #080808 !important;
+    }
+
+    &.text-w-neutral-3 {
+      color: #343839 !important;
+    }
+
+    &.text-w-neutral-4 {
+      color: #6b7280 !important;
+    }
+  }
+}

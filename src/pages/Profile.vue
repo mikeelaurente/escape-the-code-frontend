@@ -341,6 +341,7 @@
 <script>
 import { mapStores } from 'pinia';
 import { useAuthStore } from '../stores/auth';
+import { useAppStore } from '../stores/app';
 import Swal from 'sweetalert2';
 import { Toast } from '../assets/js/swal-mixin';
 
@@ -365,16 +366,21 @@ export default {
       selectedBanner: null,
       objectUrl: null,
       errors: {},
-      swalClasses: {
-        popup: 'bg-gray-800 text-white shadow-lg rounded-lg',
-        confirmButton: 'btn btn-primary',
-        cancelButton: 'btn btn-c-dark-outline',
-      },
     };
   },
   inject: ['http'],
   computed: {
     ...mapStores(useAuthStore),
+    ...mapStores(useAppStore),
+    swalClasses() {
+      return {
+        popup: this.appStore.isDarkMode
+          ? 'bg-gray-800 text-white shadow-lg rounded-lg'
+          : 'bg-white text-gray-900 shadow-lg rounded-lg',
+        confirmButton: 'btn btn-primary',
+        cancelButton: 'btn btn-c-dark-outline',
+      };
+    },
     user() {
       return this.authStore.user;
     },

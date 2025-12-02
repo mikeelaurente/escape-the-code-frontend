@@ -344,6 +344,7 @@ import dayjs from 'dayjs';
 import { mapStores } from 'pinia';
 import { debounce } from '../assets/js/utils';
 import { useTransactionStore } from '../stores/transactions';
+import { useAppStore } from '../stores/app';
 import Pagination from '../components/Pagination.vue';
 import { SlimSelectCustom } from '../assets/js/lib/SlimSelectCustom.js';
 
@@ -361,16 +362,21 @@ export default {
         longestStreak: 0,
       },
       loaded: false,
-      swalClasses: {
-        popup: 'bg-gray-800 text-white shadow-lg rounded-lg',
-        confirmButton: 'btn btn-primary',
-        cancelButton: 'btn btn-c-dark-outline',
-      },
     };
   },
   inject: ['http'],
   computed: {
     ...mapStores(useTransactionStore),
+    ...mapStores(useAppStore),
+    swalClasses() {
+      return {
+        popup: this.appStore.isDarkMode
+          ? 'bg-gray-800 text-white shadow-lg rounded-lg'
+          : 'bg-white text-gray-900 shadow-lg rounded-lg',
+        confirmButton: 'btn btn-primary',
+        cancelButton: 'btn btn-c-dark-outline',
+      };
+    },
     params() {
       return this.creditTransactionsStore.params;
     },

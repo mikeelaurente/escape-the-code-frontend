@@ -1,7 +1,11 @@
 <template>
   <header id="header" class="absolute w-full z-[999]">
     <div class="mx-auto relative">
-      <div id="header-nav" class="w-full px-24p bg-b-neutral-3 relative">
+      <div
+        id="header-nav"
+        class="w-full px-24p relative"
+        :class="appStore.isDarkMode ? 'bg-b-neutral-3' : 'bg-white'"
+      >
         <div class="flex items-center justify-between gap-x-2 mx-auto py-20p">
           <nav
             class="relative xl:grid xl:grid-cols-12 flex justify-between items-center gap-24p text-semibold w-full"
@@ -20,9 +24,29 @@
             <div
               class="3xl:col-span-6 xl:col-span-7 flex items-center xl:justify-end justify-end w-full"
             >
+              <button
+                @click="toggleTheme"
+                class="btn-c btn-c-lg icon-32 transition-1 mr-3 hover:text-primary"
+                :class="
+                  appStore.isDarkMode ? 'text-w-neutral-1' : 'text-b-neutral-1'
+                "
+                :title="
+                  appStore.isDarkMode
+                    ? 'Switch to Light Mode'
+                    : 'Switch to Dark Mode'
+                "
+              >
+                <i v-if="appStore.isDarkMode" class="ti ti-sun"></i>
+                <i v-else class="ti ti-moon"></i>
+              </button>
               <div
                 v-if="authStore.isAuthenticated"
-                class="min-w-24 inline-flex items-center gap-3 pl-1 py-1 pr-6 rounded-full bg-[rgba(242,150,32,0.10)] text-w-neutral-1 text-base mx-5"
+                class="min-w-24 inline-flex items-center gap-3 pl-1 py-1 pr-6 rounded-full text-base mx-5"
+                :class="
+                  appStore.isDarkMode
+                    ? 'bg-[rgba(242,150,32,0.10)] text-w-neutral-1'
+                    : 'bg-[rgba(242,150,32,0.15)] text-b-neutral-1'
+                "
               >
                 <span
                   class="size-48p flex-c text-b-neutral-4 bg-primary rounded-full icon-24"
@@ -51,14 +75,26 @@
                         alt="profile"
                       />
                       <span class="">
-                        <span class="text-m-medium text-w-neutral-1 mb-1">
+                        <span
+                          class="text-m-medium mb-1"
+                          :class="
+                            appStore.isDarkMode
+                              ? 'text-w-neutral-1'
+                              : 'text-b-neutral-1'
+                          "
+                        >
                           {{ user.email }}
                         </span>
                       </span>
                     </span>
                     <span
-                      :class="appStore.isSettingsOpen ? '-rotate-180' : ''"
-                      class="btn-c btn-c-lg text-w-neutral-4 icon-32 transition-1"
+                      class="btn-c btn-c-lg icon-32 transition-1"
+                      :class="[
+                        appStore.isSettingsOpen ? '-rotate-180' : '',
+                        appStore.isDarkMode
+                          ? 'text-w-neutral-4'
+                          : 'text-b-neutral-2',
+                      ]"
                     >
                       <svg
                         xmlns="http://www.w3.org/2000/svg"
@@ -112,7 +148,8 @@
           class="duration-500 ease-in-out fixed h-screen left-0 max-md:translate-x-0 md:translate-y-0 shadow-lg small-nav top-0 transform transition-transform w-full z-[999]"
         >
           <div
-            class="absolute z-[5] inset-0 bg-b-neutral-3 flex-col-c min-h-screen max-md:max-w-[400px]"
+            class="absolute z-[5] inset-0 flex-col-c min-h-screen max-md:max-w-[400px]"
+            :class="appStore.isDarkMode ? 'bg-b-neutral-3' : 'bg-white'"
           >
             <div
               class="container max-md:p-0 md:overflow-y-hidden overflow-y-scroll scrollbar-sm lg:max-h-screen"
@@ -139,7 +176,12 @@
                       class="overflow-y-scroll overflow-x-hidden scrollbar scrollbar-sm xl:max-h-[532px] md:max-h-[400px] md:pr-4"
                     >
                       <ul
-                        class="flex flex-col justify-center items-start gap-20p text-w-neutral-1"
+                        class="flex flex-col justify-center items-start gap-20p"
+                        :class="
+                          appStore.isDarkMode
+                            ? 'text-w-neutral-1'
+                            : 'text-b-neutral-1'
+                        "
                       >
                         <li class="mobail-menu">
                           <router-link to="/">Dashboard</router-link>
@@ -166,6 +208,18 @@
                           <router-link to="/profile">Settings</router-link>
                         </li>
                         <li class="mobail-menu">
+                          <a
+                            @click.prevent="toggleTheme"
+                            class="cursor-pointer flex items-center gap-2"
+                          >
+                            <i v-if="appStore.isDarkMode" class="ti ti-sun"></i>
+                            <i v-else class="ti ti-moon"></i>
+                            {{
+                              appStore.isDarkMode ? 'Light Mode' : 'Dark Mode'
+                            }}
+                          </a>
+                        </li>
+                        <li class="mobail-menu">
                           <a @click.prevent="logout()">Logout</a>
                         </li>
                       </ul>
@@ -181,7 +235,14 @@
                           src="../../assets/images/icons/logo.png"
                           alt="logo"
                         />
-                        <p class="text-base text-w-neutral-3 mb-32p">
+                        <p
+                          class="text-base mb-32p"
+                          :class="
+                            appStore.isDarkMode
+                              ? 'text-w-neutral-3'
+                              : 'text-b-neutral-2'
+                          "
+                        >
                           Learn JavaScript the fun way in Escape the Code, a
                           gamified platform with real coding practice and smart
                           feedback.
@@ -238,6 +299,9 @@ export default {
     },
     close() {
       this.appStore.closeSettings();
+    },
+    toggleTheme() {
+      this.appStore.toggleTheme();
     },
   },
 };

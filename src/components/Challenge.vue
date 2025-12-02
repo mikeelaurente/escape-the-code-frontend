@@ -82,28 +82,45 @@
           class="flex flex-col mt-3"
         >
           <ul
-            class="flex flex-wrap text-sm font-medium text-center text-gray-500 border-b border-gray-200 dark:border-gray-700 dark:text-gray-400"
+            class="flex flex-wrap text-sm font-medium text-center border-b"
+            :class="
+              appStore.isDarkMode
+                ? 'text-gray-500 border-gray-700'
+                : 'text-gray-600 border-gray-300'
+            "
           >
             <li class="me-2">
               <a
                 @click.prevent="selectedTab = 'result'"
                 aria-current="page"
-                class="inline-block p-4 rounded-t-lg hover:bg-gray-800 hover:dark:bg-gray-800 cursor-pointer"
-                :class="{
-                  'active text-blue-600 bg-gray-100 dark:bg-gray-800 dark:text-blue-500':
-                    selectedTab == 'result',
-                }"
+                class="inline-block p-4 rounded-t-lg cursor-pointer"
+                :class="[
+                  selectedTab == 'result'
+                    ? appStore.isDarkMode
+                      ? 'text-blue-500 bg-gray-800'
+                      : 'text-blue-600 bg-gray-200'
+                    : '',
+                  appStore.isDarkMode
+                    ? 'hover:bg-gray-800'
+                    : 'hover:bg-gray-200',
+                ]"
                 >Result</a
               >
             </li>
             <li class="me-2">
               <a
                 @click.prevent="selectedTab = 'errors'"
-                class="inline-block p-4 rounded-t-lg hover:bg-gray-800 hover:dark:bg-gray-800 cursor-pointer"
-                :class="{
-                  'active text-blue-600 bg-gray-100 dark:bg-gray-800 dark:text-blue-500':
-                    selectedTab == 'errors',
-                }"
+                class="inline-block p-4 rounded-t-lg cursor-pointer"
+                :class="[
+                  selectedTab == 'errors'
+                    ? appStore.isDarkMode
+                      ? 'text-blue-500 bg-gray-800'
+                      : 'text-blue-600 bg-gray-200'
+                    : '',
+                  appStore.isDarkMode
+                    ? 'hover:bg-gray-800'
+                    : 'hover:bg-gray-200',
+                ]"
                 >Errors</a
               >
             </li>
@@ -145,7 +162,12 @@
           <div>
             <h3>Code</h3>
             <div
-              class="font-mono p-3 bg-neutral-900 rounded-10 my-2"
+              class="font-mono p-3 rounded-10 my-2"
+              :class="
+                appStore.isDarkMode
+                  ? 'bg-neutral-900 text-white'
+                  : 'bg-gray-100 text-gray-900 border border-gray-300'
+              "
               v-html="
                 selectedChallege.ongoingAnswer.submission.code.replace(
                   /\n/,
@@ -165,7 +187,14 @@
                 "
               ></strong>
             </h4>
-            <div class="p-3 bg-neutral-900 rounded-10 my-2">
+            <div
+              class="p-3 rounded-10 my-2"
+              :class="
+                appStore.isDarkMode
+                  ? 'bg-neutral-900 text-white'
+                  : 'bg-gray-100 text-gray-900 border border-gray-300'
+              "
+            >
               <ul class="mb-0">
                 <li
                   v-for="(result, idx) in selectedChallege.ongoingAnswer
@@ -196,12 +225,24 @@
           <h2 class="text-center">Challenge Completed!</h2>
           <div>
             <h3>Time Spent</h3>
-            <div class="font-mono p-3 bg-neutral-900 rounded-10 my-2">
+            <div
+              class="font-mono p-3 rounded-10 my-2"
+              :class="
+                appStore.isDarkMode
+                  ? 'bg-neutral-900 text-white'
+                  : 'bg-gray-100 text-gray-900 border border-gray-300'
+              "
+            >
               {{ formatTime(selectedChallege.acceptedAnswer.duration) }}
             </div>
             <h3>Code</h3>
             <div
-              class="font-mono p-3 bg-neutral-900 rounded-10 my-2"
+              class="font-mono p-3 rounded-10 my-2"
+              :class="
+                appStore.isDarkMode
+                  ? 'bg-neutral-900 text-white'
+                  : 'bg-gray-100 text-gray-900 border border-gray-300'
+              "
               v-html="
                 selectedChallege.acceptedAnswer.submission.code.replace(
                   /\n/,
@@ -211,7 +252,12 @@
             ></div>
             <h3>Feedback</h3>
             <div
-              class="p-3 bg-neutral-900 rounded-10 my-2"
+              class="p-3 rounded-10 my-2"
+              :class="
+                appStore.isDarkMode
+                  ? 'bg-neutral-900 text-white'
+                  : 'bg-gray-100 text-gray-900 border border-gray-300'
+              "
               v-html="selectedChallege.acceptedAnswer.feedback"
             ></div>
           </div>
@@ -257,19 +303,31 @@
   >
     <div class="relative p-4 w-full max-w-md max-h-full">
       <!-- Modal content -->
-      <div class="relative bg-white rounded-lg shadow-sm dark:bg-gray-700">
+      <div
+        class="relative rounded-lg shadow-sm"
+        :class="appStore.isDarkMode ? 'bg-gray-700' : 'bg-white'"
+      >
         <!-- Modal header -->
         <div
-          class="flex items-center justify-between p-4 md:p-5 border-b rounded-t dark:border-gray-600 border-gray-200"
+          class="flex items-center justify-between p-4 md:p-5 border-b rounded-t"
+          :class="appStore.isDarkMode ? 'border-gray-600' : 'border-gray-200'"
         >
-          <h3 class="text-lg font-semibold text-gray-900 dark:text-white">
+          <h3
+            class="text-lg font-semibold"
+            :class="appStore.isDarkMode ? 'text-white' : 'text-gray-900'"
+          >
             <i class="ti ti-help-circle-filled"></i>
             Hints
           </h3>
           <button
             @click="showChallengeHints = false"
             type="button"
-            class="text-gray-400 bg-transparent hover:bg-gray-200 hover:text-gray-900 rounded-lg text-sm h-8 w-8 ms-auto inline-flex justify-center items-center dark:hover:bg-gray-600 dark:hover:text-white"
+            class="bg-transparent rounded-lg text-sm h-8 w-8 ms-auto inline-flex justify-center items-center"
+            :class="
+              appStore.isDarkMode
+                ? 'text-gray-400 hover:bg-gray-600 hover:text-white'
+                : 'text-gray-500 hover:bg-gray-200 hover:text-gray-900'
+            "
           >
             <svg
               class="w-3 h-3"
@@ -291,7 +349,12 @@
         </div>
         <!-- Modal body -->
         <div class="p-4 md:p-5">
-          <p class="text-gray-500 dark:text-gray-400 mb-4">Choose a hint:</p>
+          <p
+            class="mb-4"
+            :class="appStore.isDarkMode ? 'text-gray-400' : 'text-gray-600'"
+          >
+            Choose a hint:
+          </p>
           <ul class="space-y-4 mb-4">
             <li
               v-for="hint in modifiedHints"
@@ -359,6 +422,7 @@ import { VAceEditor } from 'vue3-ace-editor';
 import Swal from 'sweetalert2';
 import { Toast } from '../assets/js/swal-mixin';
 import { useAuthStore } from '../stores/auth';
+import { useAppStore } from '../stores/app';
 import { mapStores } from 'pinia';
 import Toastify from 'toastify-js';
 
@@ -375,11 +439,6 @@ export default {
       answerError: false,
       content: '',
       showChallengeHints: false,
-      swalClasses: {
-        popup: 'bg-gray-800 text-white shadow-lg rounded-lg',
-        confirmButton: 'btn btn-primary',
-        cancelButton: 'btn btn-c-dark-outline',
-      },
       hints: [],
       submissionResult: {
         status: '',
@@ -397,6 +456,16 @@ export default {
   inject: ['http'],
   computed: {
     ...mapStores(useAuthStore),
+    ...mapStores(useAppStore),
+    swalClasses() {
+      return {
+        popup: this.appStore.isDarkMode
+          ? 'bg-gray-800 text-white shadow-lg rounded-lg'
+          : 'bg-white text-gray-900 shadow-lg rounded-lg',
+        confirmButton: 'btn btn-primary',
+        cancelButton: 'btn btn-c-dark-outline',
+      };
+    },
     nextSection() {
       return this.section.nextSection;
     },
@@ -465,7 +534,9 @@ export default {
         showLoaderOnConfirm: true,
         customClass: {
           ...this.swalClasses,
-          popup: 'bg-gray-800 text-white shadow-lg rounded-lg w-fit max-w-4xl',
+          popup:
+            (this.appStore.isDarkMode ? 'bg-gray-800' : 'bg-white') +
+            ' text-white shadow-lg rounded-lg w-fit max-w-4xl',
         },
         preConfirm: async () => {
           try {
@@ -557,7 +628,7 @@ export default {
             const nextChallenge = this.section.challenges.find(
               (c) => c.order == challenge.order + 1
             );
-
+            console.log('nextChallenge', nextChallenge);
             if (nextChallenge) {
               nextChallenge.locked = false;
             }
@@ -866,7 +937,9 @@ export default {
       }
     }
 
-    this.displayChallenge(this.section.challenges[0]);
+    if (this.section.challenges.length > 0) {
+      this.displayChallenge(this.section.challenges[0]);
+    }
   },
 };
 </script>

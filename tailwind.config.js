@@ -3,6 +3,7 @@ const plugin = require('tailwindcss/plugin');
 import colors from 'tailwindcss/colors';
 module.exports = {
   content: ['./src/**/*.{html,js,vue}'],
+  darkMode: 'class',
   theme: {
     screens: {
       xsm: '400px',

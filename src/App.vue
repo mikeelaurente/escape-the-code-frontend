@@ -102,6 +102,9 @@ export default {
       );
     },
   },
+  mounted() {
+    this.appStore.initTheme();
+  },
   watch: {
     hideLeftNav(current, old) {
       if (current !== old && current) {
