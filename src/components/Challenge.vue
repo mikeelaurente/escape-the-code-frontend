@@ -1186,8 +1186,45 @@ export default {
 
                 // Update challenge status based on result
                 if (this.submissionResult.correct) {
-                  this.selectedChallege.status = 'solved';
+                  this.selectedChallege.status = 'completed';
+
+                  // Store the accepted answer for display
+                  this.selectedChallege.acceptedAnswer = {
+                    submission: {
+                      code: response.data.data.userAnswer,
+                      metadata: {
+                        isCorrect: true,
+                        userAnswer: response.data.data.userAnswer,
+                        correctAnswer: this.submissionResult.correctAnswerText,
+                      },
+                    },
+                    feedback:
+                      response.data.data.explanation ||
+                      'Great job! You selected the correct answer.',
+                    duration: response.data.data.duration || 0,
+                  };
+
+                  // Update nextSection if returned
+                  if (response.data.data.nextSection) {
+                    this.section.nextSection = response.data.data.nextSection;
+                  }
+
+                  // Unlock next challenge if exists
+                  const nextChallenge = this.section.challenges.find(
+                    (c) => c.order == this.selectedChallege.order + 1
+                  );
+                  if (nextChallenge) {
+                    nextChallenge.locked = false;
+                  }
                 }
+
+                // Include additional data from response for notifications
+                this.submissionResult.achievements =
+                  response.data.data.achievements || [];
+                this.submissionResult.rewardPoints =
+                  response.data.data.rewardPoints || 0;
+                this.submissionResult.creditPoints =
+                  response.data.data.creditPoints || 0;
 
                 return this.submissionResult;
               } catch (error) {
@@ -1257,9 +1294,57 @@ export default {
             if (result.value.correct) {
               Swal.fire({
                 title: '✅ Correct Answer!',
-                text: 'Well done! You may proceed to the next challenge.',
+                text: 'Well done! Challenge completed!',
                 icon: 'success',
                 customClass: this.swalClasses,
+              }).then(async () => {
+                // Show achievement notifications
+                if (
+                  result.value.achievements &&
+                  result.value.achievements.length > 0
+                ) {
+                  for (const c of result.value.achievements) {
+                    Toastify({
+                      text: `Achievement Unlocked: ${c.title}`,
+                      duration: 5000,
+                      destination: '/achievements',
+                      gravity: 'top',
+                      position: 'right',
+                      backgroundColor: '#00a93a',
+                      className: 'success',
+                      stopOnFocus: true,
+                    }).showToast();
+                  }
+                }
+
+                // Show reward points notification
+                if (result.value.rewardPoints) {
+                  Toastify({
+                    text: `🏆 +${result.value.rewardPoints} Reward Points`,
+                    duration: 4000,
+                    gravity: 'top',
+                    position: 'right',
+                    backgroundColor: '#f59e0b',
+                    className: 'info',
+                    stopOnFocus: true,
+                  }).showToast();
+                }
+
+                // Show credit points notification
+                if (result.value.creditPoints) {
+                  Toastify({
+                    text: `💰 +${result.value.creditPoints} Credit Points`,
+                    duration: 4000,
+                    gravity: 'top',
+                    position: 'right',
+                    backgroundColor: '#3b82f6',
+                    className: 'info',
+                    stopOnFocus: true,
+                  }).showToast();
+                }
+
+                // Refresh user data
+                await this.authStore.fetchUser();
               });
             } else {
               this.answerError = true;
