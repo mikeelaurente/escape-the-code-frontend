@@ -23,13 +23,11 @@ export const createRoutes = () => {
       path: '/courses',
       component: () => import('../../pages/Courses.vue'),
       meta: { requiresAuth: true },
-      children: [
-        {
-          path: ':id/progress',
-          component: () => import('../../pages/CourseProgress.vue'),
-          meta: { requiresAuth: true },
-        },
-      ]
+    },
+    {
+      path: '/courses/:id/progress',
+      component: () => import('../../pages/CourseProgress.vue'),
+      meta: { requiresAuth: true },
     },
     {
       path: '/courses/:id',
