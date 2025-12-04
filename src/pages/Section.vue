@@ -96,25 +96,6 @@
         <div class="grid grid-cols-12 gap-x-30p gap-y-10">
           <div class="4xl:col-span-9 xxl:col-span-8 xl:col-span-7 col-span-12">
             <div>
-              <div
-                class="glitch-effect rounded-24 overflow-hidden mb-3"
-                v-if="section.coverImage"
-              >
-                <div class="glitch-thumb">
-                  <img
-                    class="w-full xxl:h-[510px] lg:h-[440px] md:h-[400px] sm:h-[320px] h-[300px] object-cover"
-                    :src="section.coverImage"
-                    alt="image"
-                  />
-                </div>
-                <div class="glitch-thumb">
-                  <img
-                    class="w-full xxl:h-[510px] lg:h-[440px] md:h-[400px] sm:h-[320px] h-[300px] object-cover"
-                    :src="section.coverImage"
-                    alt="image"
-                  />
-                </div>
-              </div>
               <p
                 class="mb-3"
                 :class="

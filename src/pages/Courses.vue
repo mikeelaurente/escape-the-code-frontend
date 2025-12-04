@@ -108,7 +108,8 @@
               <img
                 class="w-full xxl:h-[304px] xl:h-[280px] md:h-[260px] h-[240px] object-cover group-hover:scale-110 transition-1"
                 :src="
-                  course.imageUrl || `../assets/images/games/chap${idx + 1}.png`
+                  course.coverImage ||
+                  `../assets/images/games/chap${idx + 1}.png`
                 "
                 alt="img"
               />

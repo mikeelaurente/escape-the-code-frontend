@@ -80,7 +80,7 @@
                     </span>
                     <img
                       :src="
-                        chapter.imageUrl ||
+                        chapter.coverImage ||
                         '../assets/images/channels/fireStrikers.png'
                       "
                       class="w-full 3xl:h-[310px] xl:h-[280px] lg:h-[260px] h-[240px] object-cover object-top group-hover:scale-110 group-hover:rotate-2 transition-1"
@@ -249,7 +249,7 @@
                 <img
                   class="w-full xxl:h-[304px] xl:h-[280px] md:h-[260px] h-[240px] object-cover group-hover:scale-110 transition-1"
                   :src="
-                    section.imageUrl ||
+                    section.coverImage ||
                     `../assets/images/games/sec${idx + 1}.png`
                   "
                   alt="img"
