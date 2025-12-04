@@ -1203,19 +1203,39 @@ export default {
                       'Great job! You selected the correct answer.',
                     duration: response.data.data.duration || 0,
                   };
+                } else {
+                  // Even if incorrect, multiple choice is completed after answering
+                  this.selectedChallege.status = 'completed';
 
-                  // Update nextSection if returned
-                  if (response.data.data.nextSection) {
-                    this.section.nextSection = response.data.data.nextSection;
-                  }
+                  // Store the accepted answer for display (incorrect answer)
+                  this.selectedChallege.acceptedAnswer = {
+                    submission: {
+                      code: response.data.data.userAnswer,
+                      metadata: {
+                        isCorrect: false,
+                        userAnswer: response.data.data.userAnswer,
+                        correctAnswer: this.submissionResult.correctAnswerText,
+                      },
+                    },
+                    feedback:
+                      response.data.data.explanation ||
+                      'The correct answer was: ' +
+                        this.submissionResult.correctAnswerText,
+                    duration: response.data.data.duration || 0,
+                  };
+                }
 
-                  // Unlock next challenge if exists
-                  const nextChallenge = this.section.challenges.find(
-                    (c) => c.order == this.selectedChallege.order + 1
-                  );
-                  if (nextChallenge) {
-                    nextChallenge.locked = false;
-                  }
+                // Update nextSection if returned (for both correct and incorrect)
+                if (response.data.data.nextSection) {
+                  this.section.nextSection = response.data.data.nextSection;
+                }
+
+                // Unlock next challenge if exists (for both correct and incorrect)
+                const nextChallenge = this.section.challenges.find(
+                  (c) => c.order == this.selectedChallege.order + 1
+                );
+                if (nextChallenge) {
+                  nextChallenge.locked = false;
                 }
 
                 // Include additional data from response for notifications
@@ -1350,9 +1370,57 @@ export default {
               this.answerError = true;
               Swal.fire({
                 title: '❌ Incorrect Answer',
-                text: 'Please review the explanation and try again.',
+                text: 'Challenge completed. Review the explanation below.',
                 icon: 'error',
                 customClass: this.swalClasses,
+              }).then(async () => {
+                // Show achievement notifications even for incorrect answers
+                if (
+                  result.value.achievements &&
+                  result.value.achievements.length > 0
+                ) {
+                  for (const c of result.value.achievements) {
+                    Toastify({
+                      text: `Achievement Unlocked: ${c.title}`,
+                      duration: 5000,
+                      destination: '/achievements',
+                      gravity: 'top',
+                      position: 'right',
+                      backgroundColor: '#00a93a',
+                      className: 'success',
+                      stopOnFocus: true,
+                    }).showToast();
+                  }
+                }
+
+                // Show reward points notification (if any for incorrect)
+                if (result.value.rewardPoints) {
+                  Toastify({
+                    text: `🏆 +${result.value.rewardPoints} Reward Points`,
+                    duration: 4000,
+                    gravity: 'top',
+                    position: 'right',
+                    backgroundColor: '#f59e0b',
+                    className: 'info',
+                    stopOnFocus: true,
+                  }).showToast();
+                }
+
+                // Show credit points notification (if any for incorrect)
+                if (result.value.creditPoints) {
+                  Toastify({
+                    text: `💰 +${result.value.creditPoints} Credit Points`,
+                    duration: 4000,
+                    gravity: 'top',
+                    position: 'right',
+                    backgroundColor: '#3b82f6',
+                    className: 'info',
+                    stopOnFocus: true,
+                  }).showToast();
+                }
+
+                // Refresh user data
+                await this.authStore.fetchUser();
               });
             }
           } else {
