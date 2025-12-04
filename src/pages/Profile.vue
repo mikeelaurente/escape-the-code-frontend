@@ -84,8 +84,20 @@
 
         <div class="grid grid-cols-12 gap-30p">
           <div class="xxl:col-start-3 xxl:col-end-11 col-span-12 mb-10">
-            <div class="bg-b-neutral-3 rounded-12 p-40p">
-              <h4 class="heading-4 text-w-neutral-1 mb-60p">
+            <div
+              class="rounded-12 p-40p"
+              :class="
+                appStore.isDarkMode
+                  ? 'bg-b-neutral-3'
+                  : 'bg-white border border-gray-200'
+              "
+            >
+              <h4
+                class="heading-4 mb-60p"
+                :class="
+                  appStore.isDarkMode ? 'text-w-neutral-1' : 'text-gray-900'
+                "
+              >
                 General Information
               </h4>
               <form @submit.prevent="updateProfile" v-if="user.id > 0">
@@ -174,8 +186,22 @@
 
         <div class="grid grid-cols-12 gap-30p">
           <div class="xxl:col-start-3 xxl:col-end-11 col-span-12">
-            <div class="bg-b-neutral-3 rounded-12 p-40p">
-              <h4 class="heading-4 text-w-neutral-1 mb-60p">Change Password</h4>
+            <div
+              class="rounded-12 p-40p"
+              :class="
+                appStore.isDarkMode
+                  ? 'bg-b-neutral-3'
+                  : 'bg-white border border-gray-200'
+              "
+            >
+              <h4
+                class="heading-4 mb-60p"
+                :class="
+                  appStore.isDarkMode ? 'text-w-neutral-1' : 'text-gray-900'
+                "
+              >
+                Change Password
+              </h4>
               <form @submit.prevent="changePassword" v-if="user.id > 0">
                 <div class="col-span-8 mb-10">
                   <label for="userOldPassword" class="label label-lg mb-3">

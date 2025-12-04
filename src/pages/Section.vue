@@ -96,22 +96,25 @@
         <div class="grid grid-cols-12 gap-x-30p gap-y-10">
           <div class="4xl:col-span-9 xxl:col-span-8 xl:col-span-7 col-span-12">
             <div>
-              <!-- <div class="glitch-effect rounded-24 overflow-hidden mb-3">
+              <div
+                class="glitch-effect rounded-24 overflow-hidden mb-3"
+                v-if="section.coverImage"
+              >
                 <div class="glitch-thumb">
                   <img
                     class="w-full xxl:h-[510px] lg:h-[440px] md:h-[400px] sm:h-[320px] h-[300px] object-cover"
-                    src="../assets/images/saved/savedBanner.png"
+                    :src="section.coverImage"
                     alt="image"
                   />
                 </div>
                 <div class="glitch-thumb">
                   <img
                     class="w-full xxl:h-[510px] lg:h-[440px] md:h-[400px] sm:h-[320px] h-[300px] object-cover"
-                    src="../assets/images/saved/savedBanner.png"
+                    :src="section.coverImage"
                     alt="image"
                   />
                 </div>
-              </div> -->
+              </div>
               <p
                 class="mb-3"
                 :class="
@@ -164,6 +167,7 @@
                     <i class="ti ti-bulb icon-24 text-warning"></i>
                     Trivias
                   </h4>
+                  <div v-if="!section.trivias.length">No available trivias</div>
                   <ul
                     class="grid grid-cols-1 gap-16p *:flex-y *:justify-between text-m-regular"
                     :class="
@@ -201,7 +205,10 @@
                     <i class="ti ti-album icon-24 text-warning"></i>
                     Examples
                   </h4>
-                  <div class="grid grid-cols-1 gap-20p">
+                  <div v-if="!section.runnables.length">
+                    No available examples
+                  </div>
+                  <div class="grid grid-cols-1 gap-20p" v-else>
                     <runnables :runnables="section.runnables"></runnables>
                   </div>
                 </div>
@@ -216,6 +223,9 @@
                     <i class="ti ti-file icon-24 text-warning"></i>
                     Additional Resources
                   </h4>
+                  <div v-if="!section.additionalResources.length">
+                    No additional resources
+                  </div>
                   <ul
                     class="grid grid-cols-1 gap-16p *:flex-y *:justify-between text-m-regular"
                     :class="

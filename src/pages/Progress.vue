@@ -11,7 +11,14 @@
               class="grid grid-cols-12 gap-30p relative xl:py-[130px] md:py-30 sm:py-25 py-20 z-[2]"
             >
               <div class="lg:col-start-2 lg:col-end-12 col-span-12">
-                <h2 class="heading-2 text-w-neutral-1 mb-3">Progress</h2>
+                <h2
+                  class="heading-2 mb-3"
+                  :class="
+                    appStore.isDarkMode ? 'text-w-neutral-1' : 'text-gray-900'
+                  "
+                >
+                  Progress
+                </h2>
                 <ul class="breadcrumb">
                   <li class="breadcrumb-item">
                     <router-link to="/" class="breadcrumb-link"
@@ -34,8 +41,11 @@
         </div>
       </div>
     </section>
-    <div v-if="!progress.length">
-      <h3 class="heading-3 text-w-neutral-1 mb-20p text-split-left my-10">
+    <div v-if="!progress.length" class="container">
+      <h3
+        class="heading-3 mb-20p text-center my-10"
+        :class="appStore.isDarkMode ? 'text-w-neutral-1' : 'text-gray-900'"
+      >
         No sections completed yet :(
       </h3>
     </div>
@@ -77,9 +87,19 @@
 
                 <!-- Right Content -->
                 <div
-                  class="grow bg-neutral-900 px-4 py-6 rounded-12 transition-1"
+                  class="grow px-4 py-6 rounded-12 transition-1"
+                  :class="
+                    appStore.isDarkMode
+                      ? 'bg-neutral-900'
+                      : 'bg-white border border-gray-200'
+                  "
                 >
-                  <h3 class="flex gap-x-1.5 font-semibold">
+                  <h3
+                    class="flex gap-x-1.5 font-semibold"
+                    :class="
+                      appStore.isDarkMode ? 'text-w-neutral-1' : 'text-gray-900'
+                    "
+                  >
                     <svg
                       class="shrink-0 size-7 mt-1"
                       xmlns="http://www.w3.org/2000/svg"
@@ -102,7 +122,12 @@
                     </svg>
                     {{ item.section.title }}
                   </h3>
-                  <p class="mt-1 text-sm text-gray-600">
+                  <p
+                    class="mt-1 text-sm"
+                    :class="
+                      appStore.isDarkMode ? 'text-gray-600' : 'text-gray-700'
+                    "
+                  >
                     {{ item.section.description }}
                   </p>
                 </div>
@@ -123,6 +148,8 @@
 <script>
 import { Toast } from '../assets/js/swal-mixin';
 import dayjs from 'dayjs';
+import { mapStores } from 'pinia';
+import { useAppStore } from '../stores/app';
 
 export default {
   data() {
@@ -132,6 +159,7 @@ export default {
   },
   inject: ['http'],
   computed: {
+    ...mapStores(useAppStore),
     timeline() {
       const group = this.progress.reduce((acc, cur) => {
         const dt = dayjs(cur.createdAt);

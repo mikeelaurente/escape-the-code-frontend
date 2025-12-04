@@ -95,14 +95,21 @@
             <div class="overflow-hidden rounded-24">
               <span
                 v-if="isCourseCompleted(course)"
-                class="badge badge-neutral absolute top-3 left-3 z-10"
+                class="badge absolute top-3 left-3 z-10 rounded-12"
+                :class="
+                  appStore.isDarkMode
+                    ? 'bg-b-neutral-3 text-w-neutral-1'
+                    : 'bg-white text-gray-900 border border-gray-300'
+                "
               >
                 <i class="avatar bg-secondary size-3"></i>
-                <span class="text-sm text-w-neutral-1">Completed</span>
+                <span class="text-sm">Completed</span>
               </span>
               <img
                 class="w-full xxl:h-[304px] xl:h-[280px] md:h-[260px] h-[240px] object-cover group-hover:scale-110 transition-1"
-                :src="`../assets/images/games/chap${idx + 1}.png`"
+                :src="
+                  course.imageUrl || `../assets/images/games/chap${idx + 1}.png`
+                "
                 alt="img"
               />
             </div>
@@ -117,14 +124,24 @@
                   <span
                     class="badge badge-secondary size-3 badge-circle"
                   ></span>
-                  <p class="text-base text-neutral-100">
+                  <p
+                    class="text-base"
+                    :class="
+                      appStore.isDarkMode ? 'text-neutral-100' : 'text-gray-700'
+                    "
+                  >
                     <span class="span">{{ course.chapters.length }}</span>
                     Chapters
                   </p>
                 </div>
                 <div class="flex-y gap-2.5">
                   <span class="badge badge-primary size-3 badge-circle"></span>
-                  <p class="text-base text-neutral-100">
+                  <p
+                    class="text-base"
+                    :class="
+                      appStore.isDarkMode ? 'text-neutral-100' : 'text-gray-700'
+                    "
+                  >
                     <span class="span"
                       >Completed: {{ countCompletedChapters(course) }}/{{
                         course.chapters.length
@@ -166,10 +183,15 @@
 import { toSearchParams, debounce } from '../assets/js/utils';
 import Pagination from '../components/Pagination.vue';
 import { SlimSelectCustom } from '../assets/js/lib/SlimSelectCustom.js';
+import { mapStores } from 'pinia';
+import { useAppStore } from '../stores/app';
 
 export default {
   components: {
     Pagination,
+  },
+  computed: {
+    ...mapStores(useAppStore),
   },
   data() {
     return {
@@ -180,7 +202,7 @@ export default {
         search: '',
         sort: [
           {
-            name: 'title',
+            name: 'id',
             order: 'asc',
           },
         ],

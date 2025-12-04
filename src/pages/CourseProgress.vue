@@ -647,7 +647,6 @@ export default {
       if (chapterCarousel.length > 0) {
         chapterCarousel.forEach((el, idx) => {
           const carouselName = el.getAttribute('data-carousel-name');
-          console.log('carouselName', carouselName);
           const swiper = new Swiper(el, {
             slidesPerView: 1,
             speed: 500,

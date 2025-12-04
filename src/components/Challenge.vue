@@ -860,7 +860,6 @@ export default {
             const nextChallenge = this.section.challenges.find(
               (c) => c.order == challenge.order + 1
             );
-            console.log('nextChallenge', nextChallenge);
             if (nextChallenge) {
               nextChallenge.locked = false;
             }
@@ -891,6 +890,7 @@ export default {
                 no-repeat
               `,
           }).then(async () => {
+            // Show achievement notifications
             for (const c of result.value.achievements) {
               Toastify({
                 text: `Achievement Unlocked: ${c.title}`,
@@ -901,6 +901,32 @@ export default {
                 backgroundColor: '#00a93a',
                 className: 'success',
                 stopOnFocus: true, // Prevents dismissing of toast on hover
+              }).showToast();
+            }
+
+            // Show reward points notification
+            if (result.value.data.answer.rewardPoints) {
+              Toastify({
+                text: `🏆 +${result.value.data.answer.rewardPoints} Reward Points`,
+                duration: 4000,
+                gravity: 'top',
+                position: 'right',
+                backgroundColor: '#f59e0b',
+                className: 'info',
+                stopOnFocus: true,
+              }).showToast();
+            }
+
+            // Show credit points notification
+            if (result.value.data.answer.creditPoints) {
+              Toastify({
+                text: `💰 +${result.value.data.answer.creditPoints} Credit Points`,
+                duration: 4000,
+                gravity: 'top',
+                position: 'right',
+                backgroundColor: '#3b82f6',
+                className: 'info',
+                stopOnFocus: true,
               }).showToast();
             }
           });
@@ -1255,6 +1281,11 @@ export default {
                 text: 'Your code executed correctly. You may proceed to the next challenge.',
                 icon: 'success',
                 customClass: this.swalClasses,
+              }).then((successResult) => {
+                // If user clicks OK, automatically trigger completion flow
+                if (successResult.isConfirmed) {
+                  this.completeChallenge(this.selectedChallege);
+                }
               });
             } else {
               this.answerError = true;

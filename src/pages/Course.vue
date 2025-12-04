@@ -68,13 +68,21 @@
                   <div class="overflow-hidden">
                     <span
                       v-if="currentChapter && currentChapter.id == chapter.id"
-                      class="badge badge-neutral absolute top-3 left-3 z-10"
+                      class="badge absolute top-3 left-3 z-10 rounded-12"
+                      :class="
+                        appStore.isDarkMode
+                          ? 'bg-b-neutral-3 text-w-neutral-1'
+                          : 'bg-white text-gray-900 border border-gray-300'
+                      "
                     >
                       <i class="avatar avatar-primary size-3"></i>
-                      <span class="text-sm text-w-neutral-1">Current</span>
+                      <span class="text-sm">Current</span>
                     </span>
                     <img
-                      src="../assets/images/channels/fireStrikers.png"
+                      :src="
+                        chapter.imageUrl ||
+                        '../assets/images/channels/fireStrikers.png'
+                      "
                       class="w-full 3xl:h-[310px] xl:h-[280px] lg:h-[260px] h-[240px] object-cover object-top group-hover:scale-110 group-hover:rotate-2 transition-1"
                       alt="img"
                     />
@@ -89,7 +97,14 @@
                         <span
                           class="badge badge-secondary size-3 badge-circle"
                         ></span>
-                        <p class="text-base text-neutral-100">
+                        <p
+                          class="text-base"
+                          :class="
+                            appStore.isDarkMode
+                              ? 'text-neutral-100'
+                              : 'text-gray-700'
+                          "
+                        >
                           <span class="span">{{
                             chapter.sections.length
                           }}</span>
@@ -100,7 +115,14 @@
                         <span
                           class="badge badge-primary size-3 badge-circle"
                         ></span>
-                        <p class="text-base text-neutral-100">
+                        <p
+                          class="text-base"
+                          :class="
+                            appStore.isDarkMode
+                              ? 'text-neutral-100'
+                              : 'text-gray-700'
+                          "
+                        >
                           <span class="span"
                             >Completed: {{ countCompletedSections(chapter) }}/{{
                               chapter.sections.length
@@ -109,14 +131,17 @@
                         </p>
                       </div>
                     </div>
-                    <div v-if="chapter.tags" class="flex flex-wrap justify-center items-center gap-2">
-                        <span
-                            v-for="(tag, idx) in chapter.tags"
-                            :key="idx"
-                            class="px-3 py-1 text-sm rounded-xl bg-slate-800"
-                        >
-                            {{ tag }}
-                        </span>
+                    <div
+                      v-if="chapter.tags"
+                      class="flex flex-wrap justify-center items-center gap-2"
+                    >
+                      <span
+                        v-for="(tag, idx) in chapter.tags"
+                        :key="idx"
+                        class="px-3 py-1 text-sm rounded-xl bg-slate-800"
+                      >
+                        {{ tag }}
+                      </span>
                     </div>
                   </div>
                 </div>
@@ -223,7 +248,10 @@
               <div class="overflow-hidden rounded-24">
                 <img
                   class="w-full xxl:h-[304px] xl:h-[280px] md:h-[260px] h-[240px] object-cover group-hover:scale-110 transition-1"
-                  :src="`../assets/images/games/sec${idx + 1}.png`"
+                  :src="
+                    section.imageUrl ||
+                    `../assets/images/games/sec${idx + 1}.png`
+                  "
                   alt="img"
                 />
               </div>
@@ -241,7 +269,14 @@
                     <span
                       class="badge badge-secondary size-3 badge-circle"
                     ></span>
-                    <p class="text-base text-neutral-100">
+                    <p
+                      class="text-base"
+                      :class="
+                        appStore.isDarkMode
+                          ? 'text-neutral-100'
+                          : 'text-gray-700'
+                      "
+                    >
                       <span class="span">Completed</span>
                     </p>
                   </div>
@@ -249,7 +284,14 @@
                     <span
                       class="badge badge-primary size-3 badge-circle"
                     ></span>
-                    <p class="text-base text-neutral-100">
+                    <p
+                      class="text-base"
+                      :class="
+                        appStore.isDarkMode
+                          ? 'text-neutral-100'
+                          : 'text-gray-700'
+                      "
+                    >
                       <span class="span">Not yet taken</span>
                     </p>
                   </div>
@@ -312,6 +354,7 @@
 import Swiper from 'swiper/bundle';
 import { useSectionStore } from '../stores/sections';
 import { mapStores } from 'pinia';
+import { useAppStore } from '../stores/app';
 import Pagination from '../components/Pagination.vue';
 import { debounce } from '../assets/js/utils';
 import { SlimSelectCustom } from '../assets/js/lib/SlimSelectCustom.js';
@@ -356,10 +399,8 @@ export default {
   },
   watch: {
     sections(val) {
-      console.log('VALUE', val);
       if (val) {
         const sections = this.$refs.sections;
-        console.log('SECTION', sections);
         setTimeout(() => {
           scrollTo({
             behavior: 'smooth',
@@ -383,6 +424,7 @@ export default {
   },
   computed: {
     ...mapStores(useSectionStore),
+    ...mapStores(useAppStore),
     sections() {
       return this.sectionsStore.sectionList;
     },

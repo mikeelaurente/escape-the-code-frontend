@@ -39,48 +39,47 @@
     <!-- Leaderboard section start -->
     <section class="section-pb pt-60p">
       <div class="container">
-
-          <div class="flex-y justify-between flex-wrap gap-24p mb-[30px]">
-            <h5 class="heading-5 text-w-neutral-1">
-              Viewing {{ meta.offset + 1 }} - {{ meta.offset + params.limit }} of
-              {{ meta.total }} groups
-            </h5>
-            <div
-              class="flex items-center sm:justify-end max-sm:flex-wrap w-[500px] gap-24p"
+        <div class="flex-y justify-between flex-wrap gap-24p mb-[30px]">
+          <h5 class="heading-5 text-w-neutral-1">
+            Viewing {{ meta.offset + 1 }} - {{ meta.offset + params.limit }} of
+            {{ meta.total }} groups
+          </h5>
+          <div
+            class="flex items-center sm:justify-end max-sm:flex-wrap w-[500px] gap-24p"
+          >
+            <form
+              class="flex items-center sm:gap-3 gap-2 max-w-[500px] w-full px-20p py-16p bg-b-neutral-3 rounded-full"
             >
-              <form
-                class="flex items-center sm:gap-3 gap-2 max-w-[500px] w-full px-20p py-16p bg-b-neutral-3 rounded-full"
-              >
-                <span class="flex-c icon-20 text-white">
-                  <i class="ti ti-search"></i>
-                </span>
-                <input
-                  autocomplete="off"
-                  class="bg-transparent w-full"
-                  type="text"
-                  name="search"
-                  id="search"
-                  placeholder="Search..."
-                  @input="search"
-                />
+              <span class="flex-c icon-20 text-white">
+                <i class="ti ti-search"></i>
+              </span>
+              <input
+                autocomplete="off"
+                class="bg-transparent w-full"
+                type="text"
+                name="search"
+                id="search"
+                placeholder="Search..."
+                @input="search"
+              />
+            </form>
+            <div class="shrink-0 flex-y gap-28p">
+              <span class="text-m-medium text-w-neutral-1"> Per Page: </span>
+              <form class="select-2 shrink-0">
+                <select
+                  v-model="params.limit"
+                  class="select w-full sm:py-3 py-2 px-24p rounded-full !text-base"
+                >
+                  <option value="5">5</option>
+                  <option value="10">10</option>
+                  <option value="15">15</option>
+                  <option value="30">30</option>
+                  <option value="50">50</option>
+                </select>
               </form>
-              <div class="shrink-0 flex-y gap-28p">
-                <span class="text-m-medium text-w-neutral-1"> Per Page: </span>
-                <form class="select-2 shrink-0">
-                  <select
-                    v-model="params.limit"
-                    class="select w-full sm:py-3 py-2 px-24p rounded-full !text-base"
-                  >
-                    <option value="5">5</option>
-                    <option value="10">10</option>
-                    <option value="15">15</option>
-                    <option value="30">30</option>
-                    <option value="50">50</option>
-                  </select>
-                </form>
-              </div>
             </div>
           </div>
+        </div>
         <div v-if="!ranking">
           <h3 class="heading-3 text-b-neutral-1 my-4">No user ranking yet.</h3>
         </div>
@@ -91,10 +90,14 @@
           v-if="ranking"
         >
           <table
-            class="text-l-medium font-poppins text-w-neutral-1 w-full whitespace-nowra"
+            class="text-l-medium font-poppins w-full whitespace-nowra"
+            :class="appStore.isDarkMode ? 'text-w-neutral-1' : 'text-gray-900'"
           >
             <thead class="text-left">
-              <tr class="bg-shap rounded-t-12">
+              <tr
+                class="rounded-t-12"
+                :class="appStore.isDarkMode ? 'bg-shap' : 'bg-gray-200'"
+              >
                 <th class="text-l-medium px-24p py-3 lg:min-w-[150px] min-w-25">
                   Placement
                 </th>
@@ -110,7 +113,12 @@
               </tr>
             </thead>
             <tbody
-              class="divide-y divide-solid divide-shap border-b border-shap bg-b-neutral-3"
+              class="divide-y divide-solid"
+              :class="
+                appStore.isDarkMode
+                  ? 'divide-shap border-b border-shap bg-b-neutral-3'
+                  : 'divide-gray-200 border-b border-gray-200 bg-white'
+              "
             >
               <tr
                 v-for="(rank, idx) in ranking"
@@ -148,7 +156,12 @@
                       </router-link>
                       <router-link
                         :to="`/user-stats/` + rank.id"
-                        class="text-l-medium text-w-neutral-1 link-1 line-clamp-1"
+                        class="text-l-medium link-1 line-clamp-1"
+                        :class="
+                          appStore.isDarkMode
+                            ? 'text-w-neutral-1'
+                            : 'text-gray-900'
+                        "
                       >
                         {{ rank.lastName }}, {{ rank.firstName }}
                       </router-link>
@@ -187,7 +200,7 @@ import { SlimSelectCustom } from '../assets/js/lib/SlimSelectCustom.js';
 
 export default {
   components: {
-    Pagination
+    Pagination,
   },
   data() {
     return {
@@ -222,7 +235,9 @@ export default {
   methods: {
     async fetchRangkings() {
       const params = toSearchParams(this.params);
-      const response = await this.http.get('/courses/ranking?' + params.toString());
+      const response = await this.http.get(
+        '/courses/ranking?' + params.toString()
+      );
       this.ranking = response.data.data;
       this.meta = {
         ...response.data.meta,

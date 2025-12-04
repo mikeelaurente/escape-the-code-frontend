@@ -1,7 +1,6 @@
 import SlimSelect from 'slim-select';
 
 export function SlimSelectCustom() {
-  console.log('slim select');
   document.querySelectorAll('.select').forEach((el) => {
     new SlimSelect({
       select: el,

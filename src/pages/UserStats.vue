@@ -72,8 +72,20 @@
       <div class="container">
         <div class="grid grid-cols-12 gap-30p">
           <div class="4xl:col-start-2 4xl:col-end-8 xl:col-span-7 col-span-12">
-            <div class="bg-b-neutral-3 p-40p rounded-12">
-              <h3 class="heading-3 text-w-neutral-1 mb-30p text-split-left">
+            <div
+              class="p-40p rounded-12"
+              :class="
+                appStore.isDarkMode
+                  ? 'bg-b-neutral-3'
+                  : 'bg-white border border-gray-200'
+              "
+            >
+              <h3
+                class="heading-3 mb-30p text-split-left"
+                :class="
+                  appStore.isDarkMode ? 'text-w-neutral-1' : 'text-gray-900'
+                "
+              >
                 Achievements
               </h3>
               <h3
@@ -115,10 +127,20 @@
           >
             <div class="xl:sticky xl:top-30">
               <div
-                class="grid grid-cols-1 gap-30p *:bg-b-neutral-3 *:rounded-12 *:py-32p *:px-40p"
+                class="grid grid-cols-1 gap-30p *:rounded-12 *:py-32p *:px-40p"
+                :class="
+                  appStore.isDarkMode
+                    ? '*:bg-b-neutral-3'
+                    : '*:bg-white *:border *:border-gray-200'
+                "
               >
                 <div>
-                  <h3 class="heading-3 text-w-neutral-1 mb-20p text-split-left">
+                  <h3
+                    class="heading-3 mb-20p text-split-left"
+                    :class="
+                      appStore.isDarkMode ? 'text-w-neutral-1' : 'text-gray-900'
+                    "
+                  >
                     Progress
                   </h3>
 
@@ -148,7 +170,12 @@
                 </div>
 
                 <div v-if="nextSection.id">
-                  <h3 class="heading-3 text-w-neutral-1 mb-30p text-split-left">
+                  <h3
+                    class="heading-3 mb-30p text-split-left"
+                    :class="
+                      appStore.isDarkMode ? 'text-w-neutral-1' : 'text-gray-900'
+                    "
+                  >
                     Current Section
                   </h3>
 
@@ -163,12 +190,24 @@
                       />
                       <div class="w-full">
                         <span
-                          class="heading-4 text-w-neutral-1 link-1 line-clamp-1 inline-block"
+                          class="heading-4 link-1 line-clamp-1 inline-block"
+                          :class="
+                            appStore.isDarkMode
+                              ? 'text-w-neutral-1'
+                              : 'text-gray-900'
+                          "
                         >
                           {{ nextSection.title }}
                         </span>
 
-                        <span class="text-base text-w-neutral-1 my-2">
+                        <span
+                          class="text-base my-2"
+                          :class="
+                            appStore.isDarkMode
+                              ? 'text-w-neutral-1'
+                              : 'text-gray-700'
+                          "
+                        >
                           {{ nextSection.description.substring(0, 150) }}...
                         </span>
                       </div>
@@ -186,7 +225,21 @@
 </template>
 
 <script>
+import { mapStores } from 'pinia';
+import { useAppStore } from '../stores/app';
+
 export default {
+  computed: {
+    ...mapStores(useAppStore),
+    ...mapStores(useAppStore),
+    progress() {
+      if (!this.user.completed) {
+        return 0;
+      }
+
+      return (this.user.completed / this.user.total) * 100;
+    },
+  },
   data() {
     return {
       user: {},
@@ -197,15 +250,6 @@ export default {
       },
       achievements: [],
     };
-  },
-  computed: {
-    progress() {
-      if (!this.user.completed) {
-        return 0;
-      }
-
-      return (this.user.completed / this.user.total) * 100;
-    },
   },
   watch: {
     progress(current, old) {
