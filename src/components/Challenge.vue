@@ -811,6 +811,7 @@ export default {
 
             let responseData = null;
             let feedbackParts = '';
+            let finalResponse = '';
 
             while (true) {
               const { done, value } = await reader.read();
@@ -849,8 +850,12 @@ export default {
                   }
                 }
                 if (message.startsWith('end: ')) {
-                  responseData = JSON.parse(message.substring('end: '.length));
+                  responseData = JSON.parse(finalResponse);
                   reader.cancel();
+                }
+                if (message.startsWith('end:chunk')) {
+                  const msg = message.substring('end:chunk: '.length).trim();
+                  finalResponse += msg;
                 }
               }
             }

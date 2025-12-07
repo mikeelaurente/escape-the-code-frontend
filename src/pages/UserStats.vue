@@ -105,25 +105,21 @@
                   class="bg-b-neutral-4 p-16p flex-col-c"
                   data-aos="fade-up"
                 >
-                  <div v-if="achievement.achievement.coverImage">
+                  <div v-if="achievement.coverImage">
                     <img
-                      :src="achievement.achievement.coverImage"
-                      :alt="achievement.achievement.title"
+                      :src="achievement.coverImage"
+                      :alt="achievement.title"
                       class="w-20 h-20 rounded-full object-cover mb-16p"
                     />
                   </div>
-                  <i
-                    :class="achievement.achievement.icon"
-                    class="icon-60"
-                    v-else
-                  ></i>
+                  <i :class="achievement.icon" class="icon-60" v-else></i>
                   <span
                     class="heading-5 text-w-neutral-1 link-1 line-clamp-1 my-2"
                   >
-                    {{ achievement.achievement.title }}
+                    {{ achievement.title }}
                   </span>
                   <p class="text-m-regular text-w-neutral-3 text-center mb-3">
-                    {{ achievement.achievement.description }}
+                    {{ achievement.description }}
                   </p>
 
                   <div
@@ -152,14 +148,14 @@
                     : '*:bg-white *:border *:border-gray-200'
                 "
               >
-                <div>
+                <div v-for="(course, idx) in courses">
                   <h3
                     class="heading-3 mb-20p text-split-left"
                     :class="
                       appStore.isDarkMode ? 'text-w-neutral-1' : 'text-gray-900'
                     "
                   >
-                    Progress
+                    {{ course.title }}
                   </h3>
 
                   <div class="flex items-center gap-24p overflow-x-hidden mb-3">
@@ -167,7 +163,7 @@
                       <div class="w-3.5 h-5 bg-primary"></div>
                       <div class="relative w-full h-2.5 bg-w-neutral-3">
                         <span
-                          :style="'width:' + nextSection.progressCounter + '%'"
+                          :style="'width:' + course.progressCounter + '%'"
                           class="progressbar-1"
                         >
                         </span>
@@ -175,61 +171,14 @@
                     </div>
                     <div class="flex items-center text-w-neutral-1">
                       <h4 x-text="progress" class="heading-4"></h4>
-                      <h4 class="heading-4">
-                        {{ nextSection.progressCounter }}%
-                      </h4>
+                      <h4 class="heading-4">{{ course.progressCounter }}%</h4>
                     </div>
                   </div>
                   <div class="flex items-center justify-center">
                     <h5>
-                      {{ user.completed }}/{{ user.total }} sections completed
+                      {{ course.completedSections }}/{{ course.totalSections }}
+                      sections completed
                     </h5>
-                  </div>
-                </div>
-
-                <div v-if="nextSection.id">
-                  <h3
-                    class="heading-3 mb-30p text-split-left"
-                    :class="
-                      appStore.isDarkMode ? 'text-w-neutral-1' : 'text-gray-900'
-                    "
-                  >
-                    Current Section
-                  </h3>
-
-                  <div class="grid grid-cols-1 gap-y-40p">
-                    <div
-                      class="flex max-sm:flex-col items-center max-sm:text-center gap-3"
-                    >
-                      <img
-                        class="shrink-0 size-[102px] rounded-12"
-                        src="../assets/images/games/default.png"
-                        alt="game"
-                      />
-                      <div class="w-full">
-                        <span
-                          class="heading-4 link-1 line-clamp-1 inline-block"
-                          :class="
-                            appStore.isDarkMode
-                              ? 'text-w-neutral-1'
-                              : 'text-gray-900'
-                          "
-                        >
-                          {{ nextSection.title }}
-                        </span>
-
-                        <span
-                          class="text-base my-2"
-                          :class="
-                            appStore.isDarkMode
-                              ? 'text-w-neutral-1'
-                              : 'text-gray-700'
-                          "
-                        >
-                          {{ nextSection.description.substring(0, 150) }}...
-                        </span>
-                      </div>
-                    </div>
                   </div>
                 </div>
               </div>
@@ -258,46 +207,44 @@ export default {
       const end = start + this.achievementsPerPage;
       return this.achievements.slice(start, end);
     },
-    progress() {
-      if (!this.user.completed) {
-        return 0;
-      }
-
-      return (this.user.completed / this.user.total) * 100;
+    courses: function () {
+      return this.enrolledCourses.map((course) => {
+        return {
+          ...course,
+        };
+      });
     },
   },
   data() {
     return {
       user: {},
-      progressInterval: null,
-      end: 0,
-      nextSection: {
-        progressCounter: 0,
-      },
+      progressInterval: {},
       achievements: [],
       achievementsPage: 1,
       achievementsPerPage: 6,
+      enrolledCourses: [],
     };
   },
   watch: {
-    progress(current, old) {
+    enrolledCourses(current, old) {
       if (current != old) {
-        this.end = current;
-        this.startProgress();
+        console.log('enrolledCourses changed', current);
+        current.forEach((course) => {
+          this.startProgress(course);
+        });
       }
     },
   },
   methods: {
-    startProgress() {
+    startProgress(course) {
       // Clear any existing interval
-      if (this.progressInterval) clearInterval(this.progressInterval);
-
+      if (course.progressInterval) clearInterval(course.progressInterval);
       // Start progress increment
-      this.progressInterval = setInterval(() => {
-        this.nextSection.progressCounter += 1;
-        if (this.nextSection.progressCounter >= this.end) {
-          // Use this.end
-          clearInterval(this.progressInterval);
+      course.progressInterval = setInterval(() => {
+        course.progressCounter += 1;
+        if (course.progressCounter >= course.progress) {
+          // Use course.progress
+          clearInterval(course.progressInterval);
         }
       }, 100); // 30ms interval for smoother progress
     },
@@ -311,11 +258,17 @@ export default {
       '/courses/user-stats/' + this.$route.params.id
     );
     this.user = response.data.data.rank;
-    this.nextSection = {
-      progressCounter: 0,
-      ...response.data.data.nextSection,
-    };
     this.achievements = response.data.data.achievements;
+    this.enrolledCourses = response.data.data.enrolledCourses;
+
+    this.enrolledCourses.map((course) => {
+      course.progress =
+        course.totalSections === 0
+          ? 0
+          : (course.completedSections / course.totalSections) * 100;
+      course.progressInterval = null;
+      course.progressCounter = 0;
+    });
   },
 };
 </script>
