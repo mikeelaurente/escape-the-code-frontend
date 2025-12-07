@@ -4,7 +4,7 @@
       <div
         id="header-nav"
         class="w-full px-24p relative"
-        :class="appStore.isDarkMode ? 'bg-b-neutral-3' : 'bg-white'"
+        :class="appStore.isDarkMode ? 'bg-b-neutral-3' : 'bg-b-neutral-3'"
       >
         <div class="flex items-center justify-between gap-x-2 mx-auto py-20p">
           <nav
@@ -16,7 +16,11 @@
               <router-link to="/">
                 <img
                   class="xl:w-[190px] sm:w-58 w-48 h-auto shrink-0"
-                  src="../../assets/images/icons/logo.png"
+                  :src="
+                    appStore.isDarkMode
+                      ? '../../assets/images/icons/logo-dark.png'
+                      : '../../assets/images/icons/logo.png'
+                  "
                   alt="brand"
                 />
               </router-link>
@@ -148,8 +152,7 @@
           class="duration-500 ease-in-out fixed h-screen left-0 max-md:translate-x-0 md:translate-y-0 shadow-lg small-nav top-0 transform transition-transform w-full z-[999]"
         >
           <div
-            class="absolute z-[5] inset-0 flex-col-c min-h-screen max-md:max-w-[400px]"
-            :class="appStore.isDarkMode ? 'bg-b-neutral-3' : 'bg-white'"
+            class="absolute z-[5] inset-0 flex-col-c min-h-screen max-md:max-w-[400px] bg-b-neutral-3"
           >
             <div
               class="container max-md:p-0 md:overflow-y-hidden overflow-y-scroll scrollbar-sm lg:max-h-screen"
@@ -159,7 +162,11 @@
                   <router-link to="/">
                     <img
                       class="w-[142px]"
-                      src="../../assets/images/icons/logo.png"
+                      :src="
+                        appStore.isDarkMode
+                          ? '../../assets/images/icons/logo-dark.png'
+                          : '../../assets/images/icons/logo.png'
+                      "
                       alt="EscapeTheCode"
                     />
                   </router-link>
@@ -232,7 +239,11 @@
                       <div class="mt-40p">
                         <img
                           class="mb-16p"
-                          src="../../assets/images/icons/logo.png"
+                          :src="
+                            appStore.isDarkMode
+                              ? '../../assets/images/icons/logo-dark.png'
+                              : '../../assets/images/icons/logo.png'
+                          "
                           alt="logo"
                         />
                         <p

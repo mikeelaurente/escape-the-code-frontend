@@ -100,12 +100,23 @@
               >
                 <!-- game stats 1 -->
                 <div
-                  v-for="achievement in achievements"
+                  v-for="achievement in paginatedAchievements"
                   :key="achievement.id"
                   class="bg-b-neutral-4 p-16p flex-col-c"
                   data-aos="fade-up"
                 >
-                  <i :class="achievement.achievement.icon" class="icon-60"></i>
+                  <div v-if="achievement.achievement.coverImage">
+                    <img
+                      :src="achievement.achievement.coverImage"
+                      :alt="achievement.achievement.title"
+                      class="w-20 h-20 rounded-full object-cover mb-16p"
+                    />
+                  </div>
+                  <i
+                    :class="achievement.achievement.icon"
+                    class="icon-60"
+                    v-else
+                  ></i>
                   <span
                     class="heading-5 text-w-neutral-1 link-1 line-clamp-1 my-2"
                   >
@@ -120,6 +131,13 @@
                   ></div>
                 </div>
               </div>
+              <Pagination
+                v-if="achievements.length > achievementsPerPage"
+                :total="achievements.length"
+                :page="achievementsPage"
+                :limit="achievementsPerPage"
+                @navigateTo="navigateToAchievementsPage"
+              />
             </div>
           </div>
           <div
@@ -185,7 +203,7 @@
                     >
                       <img
                         class="shrink-0 size-[102px] rounded-12"
-                        src="../assets/images/games/gameLogo2.png"
+                        src="../assets/images/games/default.png"
                         alt="game"
                       />
                       <div class="w-full">
@@ -227,11 +245,19 @@
 <script>
 import { mapStores } from 'pinia';
 import { useAppStore } from '../stores/app';
+import Pagination from '../components/Pagination.vue';
 
 export default {
+  components: {
+    Pagination,
+  },
   computed: {
     ...mapStores(useAppStore),
-    ...mapStores(useAppStore),
+    paginatedAchievements() {
+      const start = (this.achievementsPage - 1) * this.achievementsPerPage;
+      const end = start + this.achievementsPerPage;
+      return this.achievements.slice(start, end);
+    },
     progress() {
       if (!this.user.completed) {
         return 0;
@@ -249,6 +275,8 @@ export default {
         progressCounter: 0,
       },
       achievements: [],
+      achievementsPage: 1,
+      achievementsPerPage: 6,
     };
   },
   watch: {
@@ -272,6 +300,9 @@ export default {
           clearInterval(this.progressInterval);
         }
       }, 100); // 30ms interval for smoother progress
+    },
+    navigateToAchievementsPage(page) {
+      this.achievementsPage = page;
     },
   },
   inject: ['http'],

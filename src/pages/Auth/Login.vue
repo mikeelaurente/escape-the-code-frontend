@@ -60,8 +60,7 @@
                     <i
                       class="ti cursor-pointer"
                       :class="showPassword ? 'ti-eye' : 'ti-eye-closed'"
-                      @mousedown="showPassword = true"
-                      @mouseup="showPassword = false"
+                      @click="showPassword = !showPassword"
                     ></i>
                   </div>
                   <span v-if="errors.password" class="px-2 span text-danger">
@@ -71,7 +70,8 @@
               </div>
               <button
                 :disabled="loading"
-                class="btn btn-md btn-primary rounded-12 w-full mb-16p">
+                class="btn btn-md btn-primary rounded-12 w-full mb-16p"
+              >
                 <Loading :loading="loading" />
                 Log In
               </button>
@@ -104,14 +104,16 @@
 
 <script>
 import Swal from 'sweetalert2';
+import { mapStores } from 'pinia';
 
 import { useAuthStore } from '../../stores/auth';
+import { useAppStore } from '../../stores/app';
 import { Toast } from '../../assets/js/swal-mixin';
 import Loading from '../../components/ui/Loading.vue';
 
 export default {
   components: {
-    Loading
+    Loading,
   },
   data() {
     return {
@@ -124,6 +126,18 @@ export default {
     };
   },
   inject: ['http'],
+  computed: {
+    ...mapStores(useAppStore),
+    swalClasses() {
+      return {
+        popup: this.appStore.isDarkMode
+          ? 'bg-gray-800 text-white shadow-lg rounded-lg'
+          : 'bg-white text-gray-900 shadow-lg rounded-lg',
+        confirmButton: 'btn btn-primary',
+        cancelButton: 'btn btn-c-dark-outline',
+      };
+    },
+  },
   methods: {
     async resendVerificationLink() {
       try {
@@ -135,12 +149,14 @@ export default {
           Swal.fire({
             icon: 'success',
             title: data.message,
+            customClass: this.swalClasses,
           });
           this.showVerificationLink = false;
         } else if (data.status === 'error') {
           Swal.fire({
             icon: 'error',
             title: data.errors ? data.errors.email : data.error,
+            customClass: this.swalClasses,
           });
         }
       } catch (error) {
@@ -165,11 +181,7 @@ export default {
               title: data.error,
               text: 'Email or Password may be wrong.',
               icon: 'error',
-              customClass: {
-                popup: 'bg-gray-800 text-white shadow-lg rounded-lg',
-                confirmButton: 'btn btn-primary',
-                cancelButton: 'btn btn-c-dark-outline',
-              },
+              customClass: this.swalClasses,
             });
           } else if (data.code === 'not_verified') {
             this.showVerificationLink = true;
@@ -190,12 +202,12 @@ export default {
         Swal.fire({
           icon: 'error',
           title: 'Error',
-          message: 'Something went wrong'
-        })
+          message: 'Something went wrong',
+          customClass: this.swalClasses,
+        });
       } finally {
         this.loading = false;
       }
-
     },
   },
 };

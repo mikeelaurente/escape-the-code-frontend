@@ -12,19 +12,14 @@
 
       <div class="section-pt" v-if="status === 'ok'">
         <div
-          class="relative bg-[url('../images/photos/breadcrumbImg.png')] bg-cover bg-no-repeat rounded-24 overflow-hidden"
+          class="relative bg-[url('../images/photos/breadcrumbImg1.png')] bg-cover bg-no-repeat rounded-24 overflow-hidden"
         >
           <div class="container">
             <div
               class="grid grid-cols-12 gap-x-30p gap-y-10 relative xl:py-[130px] md:py-30 sm:py-25 py-20 z-[2]"
             >
               <div class="lg:col-start-2 lg:col-end-12 col-span-12">
-                <h2
-                  class="heading-2 mb-3"
-                  :class="
-                    appStore.isDarkMode ? 'text-w-neutral-1' : 'text-gray-900'
-                  "
-                >
+                <h2 class="heading-2 mb-3">
                   {{ section.title }}
                 </h2>
                 <ul class="breadcrumb">
@@ -65,7 +60,7 @@
 
       <div class="section-pt" v-if="status === 'error'">
         <div
-          class="relative bg-[url('../images/photos/breadcrumbImg.png')] bg-cover bg-no-repeat rounded-24 overflow-hidden"
+          class="relative bg-[url('../images/photos/breadcrumbImg1.png')] bg-cover bg-no-repeat rounded-24 overflow-hidden"
         >
           <div class="container">
             <div
@@ -118,7 +113,7 @@
                 :class="
                   appStore.isDarkMode
                     ? '*:bg-b-neutral-3'
-                    : '*:bg-white *:border *:border-gray-200'
+                    : '*:bg-gray-100 *:border *:border-gray-200'
                 "
               >
                 <challenge
@@ -135,7 +130,7 @@
                 :class="
                   appStore.isDarkMode
                     ? '*:bg-b-neutral-3'
-                    : '*:bg-white *:border *:border-gray-200'
+                    : '*:bg-gray-100 *:border *:border-gray-200'
                 "
               >
                 <div>

@@ -4,7 +4,7 @@
     <section class="pt-30p">
       <div class="section-pt">
         <div
-          class="relative bg-[url('../images/photos/breadcrumbImg.png')] bg-cover bg-no-repeat rounded-24 overflow-hidden"
+          class="relative bg-[url('../images/photos/breadcrumbImg1.png')] bg-cover bg-no-repeat rounded-24 overflow-hidden"
         >
           <div class="container">
             <div

@@ -4,7 +4,7 @@
     <section class="pt-30p">
       <div class="section-pt">
         <div
-          class="relative bg-[url('../images/photos/breadcrumbImg.png')] bg-cover bg-no-repeat rounded-24 overflow-hidden"
+          class="relative bg-[url('../images/photos/breadcrumbImg1.png')] bg-cover bg-no-repeat rounded-24 overflow-hidden"
         >
           <div class="container">
             <div
@@ -96,7 +96,7 @@
             <thead class="text-left">
               <tr
                 class="rounded-t-12"
-                :class="appStore.isDarkMode ? 'bg-shap' : 'bg-gray-200'"
+                :class="appStore.isDarkMode ? 'bg-shap' : 'bg-slate-400'"
               >
                 <th class="text-l-medium px-24p py-3 lg:min-w-[150px] min-w-25">
                   Placement
@@ -112,6 +112,21 @@
                 </th>
               </tr>
             </thead>
+            <tbody v-if="!ranking.length">
+              <tr>
+                <td
+                  colspan="4"
+                  class="px-24p py-3 text-center"
+                  :class="
+                    appStore.isDarkMode
+                      ? 'bg-b-neutral-3 text-w-neutral-1'
+                      : 'bg-white text-gray-900'
+                  "
+                >
+                  No rankings found.
+                </td>
+              </tr>
+            </tbody>
             <tbody
               class="divide-y divide-solid"
               :class="

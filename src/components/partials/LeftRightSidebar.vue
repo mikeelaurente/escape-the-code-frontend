@@ -4,11 +4,7 @@
     <div
       v-if="user && user.id"
       class="fixed top-0 left-0 lg:translate-x-0 -translate-x-full h-screen z-30 pt-30 px-[27px] transition-1"
-      :class="
-        appStore.isDarkMode
-          ? 'bg-b-neutral-4'
-          : 'bg-white border-r border-gray-200'
-      "
+      :class="appStore.isDarkMode ? 'bg-b-neutral-4' : 'bg-b-neutral-2'"
     >
       <div class="max-h-screen overflow-y-auto scrollbar-0">
         <div
@@ -46,7 +42,7 @@
           </router-link>
           <div
             class="flex flex-col gap-2 rounded-full w-fit p-2 shrink-0"
-            :class="appStore.isDarkMode ? 'bg-b-neutral-1' : 'bg-gray-100'"
+            :class="appStore.isDarkMode ? 'bg-b-neutral-1' : 'bg-white'"
           >
             <router-link
               title="Courses"

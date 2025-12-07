@@ -4,33 +4,33 @@ html {
 }
 
 body {
-  background-color: #030304;
-  color: #fefefe;
+  background-color: #121416;
+  color: #e8ecef;
   transition: background-color 0.3s ease, color 0.3s ease;
 }
 
 /* Light mode styles */
 .light body {
-  background-color: #f3f5f7;
-  color: #080808;
+  background-color: #e2e6e9;
+  color: #2d3436;
 }
 
 .light {
   --bg-primary: #ffffff;
-  --bg-secondary: #f3f5f7;
-  --bg-tertiary: #e8ecef;
-  --text-primary: #080808;
-  --text-secondary: #343839;
-  --text-muted: #9cabb9;
+  --bg-secondary: #f0f2f4;
+  --bg-tertiary: #e2e6e9;
+  --text-primary: #2d3436;
+  --text-secondary: #4a5568;
+  --text-muted: #718096;
 }
 
 .dark {
-  --bg-primary: #030304;
-  --bg-secondary: #0e1012;
-  --bg-tertiary: #232627;
-  --text-primary: #fefefe;
-  --text-secondary: #e8ecef;
-  --text-muted: #9cabb9;
+  --bg-primary: #121416;
+  --bg-secondary: #1a1d20;
+  --bg-tertiary: #2a2d30;
+  --text-primary: #e8ecef;
+  --text-secondary: #c5ccd3;
+  --text-muted: #8a9aa8;
 }
 
 section {
@@ -59,11 +59,12 @@ section {
   z-index: 399;
   animation-name: fadeDown;
   animation-duration: 1s;
-  background-color: #030304;
+  background-color: #121416;
 }
 
-.light .header-animation {
-  background-color: #ffffff;
+.light .header-animation,
+html.light .header-animation {
+  background-color: #e2e6e9 !important;
 }
 
 @keyframes fadeDown {
@@ -82,11 +83,11 @@ section {
   width: 8px;
   height: 8px;
   padding-left: 8px;
-  background-color: #030304;
+  background-color: #121416;
 }
 
 .light ::-webkit-scrollbar {
-  background-color: #e8ecef;
+  background-color: #d5dadf;
 }
 
 ::-webkit-scrollbar-thumb {
@@ -95,7 +96,7 @@ section {
 }
 
 .light ::-webkit-scrollbar-thumb {
-  background-color: #f29620;
+  background-color: #3bdc70;
 }
 
 .scrollbar-0::-webkit-scrollbar {

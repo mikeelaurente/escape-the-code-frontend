@@ -4,7 +4,7 @@
     <section class="pt-30p">
       <div class="section-pt">
         <div
-          class="relative bg-[url('../images/photos/breadcrumbImg.png')] bg-cover bg-no-repeat rounded-24 overflow-hidden"
+          class="relative bg-[url('../images/photos/breadcrumbImg1.png')] bg-cover bg-no-repeat rounded-24 overflow-hidden"
         >
           <div class="container">
             <div
@@ -107,10 +107,7 @@
               </span>
               <img
                 class="w-full xxl:h-[304px] xl:h-[280px] md:h-[260px] h-[240px] object-cover group-hover:scale-110 transition-1"
-                :src="
-                  course.coverImage ||
-                  `../assets/images/games/chap${idx + 1}.png`
-                "
+                :src="course.coverImage || `../assets/images/games/default.png`"
                 alt="img"
               />
             </div>

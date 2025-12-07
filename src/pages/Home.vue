@@ -14,7 +14,7 @@
                 <div class="w-full rounded-32 overflow-hidden relative">
                   <img
                     class="w-full xxl:h-[630px] xl:h-[580px] lg:h-[520px] md:h-[420px] sm:h-[380px] h-[300px] object-cover"
-                    src="../assets/images/photos/heroBanner1.png"
+                    src="../assets/images/photos/heroBanner2.png"
                     alt="product"
                   />
                   <div
@@ -61,9 +61,21 @@
             <div
               class="3xl:col-span-4 xl:col-span-7 col-span-12 grid xl:grid-cols-4 grid-cols-2 gap-y-30p xl:divide-x divide-shap/70"
             >
-              <div class="flex-col-c text-center">
-                <h4 class="heading-4 text-w-neutral-1">Rank</h4>
-                <h3 class="py-3 heading-3 text-yellow-300 text-center">
+              <div class="flex-col-c text-center text-stats">
+                <h4
+                  class="heading-4 text-stats"
+                  :class="
+                    appStore.isDarkMode ? 'text-w-neutral-1' : 'text-gray-700'
+                  "
+                >
+                  Rank
+                </h4>
+                <h3
+                  class="py-3 heading-3 text-center text-stats"
+                  :class="
+                    appStore.isDarkMode ? 'text-yellow-300' : 'text-yellow-600'
+                  "
+                >
                   <div v-if="data.ranking.rank">
                     {{ data.ranking.rank }} <i class="ti ti-crown"></i>
                   </div>
@@ -71,24 +83,58 @@
                 </h3>
               </div>
               <div class="flex-col-c text-center">
-                <h4 class="heading-4 text-w-neutral-1">
+                <h4
+                  class="heading-4 text-stats"
+                  :class="
+                    appStore.isDarkMode ? 'text-w-neutral-1' : 'text-gray-700'
+                  "
+                >
                   Total Courses Enrolled
                 </h4>
-                <h3 class="py-3 heading-3 text-fuchsia-500 text-center">
+                <h3
+                  class="py-3 heading-3 text-center text-stats"
+                  :class="
+                    appStore.isDarkMode
+                      ? 'text-fuchsia-500'
+                      : 'text-fuchsia-600'
+                  "
+                >
                   {{ data.courses.length }} <i class="ti ti-book"></i>
                 </h3>
               </div>
               <div class="flex-col-c text-center">
-                <h4 class="heading-4 text-w-neutral-1">Total Points</h4>
-                <h3 class="py-3 heading-3 text-lime-500 text-center">
+                <h4
+                  class="heading-4 text-stats"
+                  :class="
+                    appStore.isDarkMode ? 'text-w-neutral-1' : 'text-gray-700'
+                  "
+                >
+                  Total Points
+                </h4>
+                <h3
+                  class="py-3 heading-3 text-center text-stats"
+                  :class="
+                    appStore.isDarkMode ? 'text-lime-500' : 'text-lime-600'
+                  "
+                >
                   {{ data.ranking.points }} <i class="ti ti-star"></i>
                 </h3>
               </div>
               <div class="flex-col-c text-center">
-                <h4 class="heading-4 text-w-neutral-1">
+                <h4
+                  class="heading-4 text-stats"
+                  :class="
+                    appStore.isDarkMode ? 'text-w-neutral-1' : 'text-gray-700'
+                  "
+                >
                   Shortest Completion Time
                 </h4>
-                <h3 class="py-3 heading-3 text-cyan-600 text-center">
+                <h3
+                  class="py-3 heading-3 text-center text-stats"
+                  :class="
+                    appStore.isDarkMode ? 'text-cyan-600' : 'text-cyan-700'
+                  "
+                >
                   <div v-if="data.ranking.shortestTime">
                     {{ data.ranking.shortestTime }} sec
                     <i class="ti ti-clock"></i>
@@ -143,7 +189,10 @@
                 class="text-sm font-poppins text-w-neutral-1 w-full whitespace-nowra"
               >
                 <thead class="text-left">
-                  <tr class="bg-shap rounded-t-12">
+                  <tr
+                    class="rounded-t-12"
+                    :class="appStore.isDarkMode ? 'bg-shap' : 'bg-slate-400'"
+                  >
                     <th class="text-sm px-24p py-3 lg:min-w-[150px] min-w-25">
                       Course
                     </th>
@@ -266,7 +315,10 @@
               class="text-sm font-poppins text-w-neutral-1 w-full whitespace-nowra"
             >
               <thead class="text-left">
-                <tr class="bg-shap rounded-t-12">
+                <tr
+                  class="rounded-t-12"
+                  :class="appStore.isDarkMode ? 'bg-shap' : 'bg-slate-400'"
+                >
                   <th class="text-sm px-24p py-3 min-w-25">Date</th>
                   <th class="text-sm px-24p py-3 lg:min-w-[150px] min-w-25">
                     Title

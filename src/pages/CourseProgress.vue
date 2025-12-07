@@ -13,8 +13,8 @@
               <div class="swiper-slide">
                 <div class="w-full rounded-32 overflow-hidden relative">
                   <img
-                    class="w-full xxl:h-[630px] xl:h-[580px] lg:h-[520px] md:h-[420px] sm:h-[380px] h-[300px] object-cover"
-                    src="../assets/images/photos/heroBanner1.png"
+                    class="w-full xxl:h-[560px] xl:h-[510px] lg:h-[450px] md:h-[350px] sm:h-[310px] h-[230px] object-cover"
+                    src="../assets/images/photos/heroBanner2.png"
                     alt="product"
                   />
                   <div
@@ -137,7 +137,10 @@
               class="text-sm font-poppins text-w-neutral-1 w-full whitespace-nowra"
             >
               <thead class="text-left">
-                <tr class="bg-shap rounded-t-12">
+                <tr
+                  class="rounded-t-12"
+                  :class="appStore.isDarkMode ? 'bg-shap' : 'bg-slate-400'"
+                >
                   <th class="text-sm px-24p py-3 lg:min-w-[150px] min-w-25">
                     Chapter
                   </th>
@@ -188,7 +191,12 @@
                           class="text-l-medium font-poppins text-w-neutral-1 w-full whitespace-nowra"
                         >
                           <thead class="text-left">
-                            <tr class="bg-shap rounded-t-12">
+                            <tr
+                              class="rounded-t-12"
+                              :class="
+                                appStore.isDarkMode ? 'bg-shap' : 'bg-slate-400'
+                              "
+                            >
                               <th
                                 class="text-sm px-24p py-3 lg:min-w-[150px] min-w-25"
                               >
@@ -253,7 +261,14 @@
                                       class="text-sm font-poppins text-w-neutral-1 w-full whitespace-nowra"
                                     >
                                       <thead class="text-left">
-                                        <tr class="bg-shap rounded-t-12">
+                                        <tr
+                                          class="rounded-t-12"
+                                          :class="
+                                            appStore.isDarkMode
+                                              ? 'bg-shap'
+                                              : 'bg-slate-400'
+                                          "
+                                        >
                                           <th
                                             class="text-sm px-24p py-3 lg:min-w-[150px] min-w-25"
                                           >

@@ -10,11 +10,11 @@
           @click="displayChallenge(challenge)"
           type="button"
           :class="{
-            'px-4 py-2 text-sm btn-primary font-medium text-gray-900 bg-white border border-gray-200 rounded-s-lg hover:bg-gray-100 hover:text-blue-700 focus:z-10 focus:ring-2 focus:ring-blue-700 focus:text-blue-700 dark:bg-gray-800 dark:border-gray-700 dark:text-white dark:hover:text-white dark:hover:bg-gray-700 dark:focus:ring-blue-500 dark:focus:text-white':
+            'px-4 py-2 text-sm btn-primary font-medium text-gray-900 bg-gray-100 border border-gray-200 rounded-s-lg hover:bg-gray-100 hover:text-blue-700 focus:z-10 focus:ring-2 focus:ring-blue-700 focus:text-blue-700 dark:bg-gray-800 dark:border-gray-700 dark:text-white dark:hover:text-white dark:hover:bg-gray-700 dark:focus:ring-blue-500 dark:focus:text-white':
               idx === 0,
-            'px-4 py-2 text-sm btn-primary font-medium text-gray-900 bg-white border-t border-b border-gray-200 hover:bg-gray-100 hover:text-blue-700 focus:z-10 focus:ring-2 focus:ring-blue-700 focus:text-blue-700 dark:bg-gray-800 dark:border-gray-700 dark:text-white dark:hover:text-white dark:hover:bg-gray-700 dark:focus:ring-blue-500 dark:focus:text-white':
+            'px-4 py-2 text-sm btn-primary font-medium text-gray-900 bg-gray-100 border-t border-b border-gray-200 hover:bg-gray-100 hover:text-blue-700 focus:z-10 focus:ring-2 focus:ring-blue-700 focus:text-blue-700 dark:bg-gray-800 dark:border-gray-700 dark:text-white dark:hover:text-white dark:hover:bg-gray-700 dark:focus:ring-blue-500 dark:focus:text-white':
               idx > 0 && idx < section.challenges.length - 1,
-            'px-4 py-2 text-sm btn-primary font-medium text-gray-900 bg-white border border-gray-200 rounded-e-lg hover:bg-gray-100 hover:text-blue-700 focus:z-10 focus:ring-2 focus:ring-blue-700 focus:text-blue-700 dark:bg-gray-800 dark:border-gray-700 dark:text-white dark:hover:text-white dark:hover:bg-gray-700 dark:focus:ring-blue-500 dark:focus:text-white':
+            'px-4 py-2 text-sm btn-primary font-medium text-gray-900 bg-gray-100 border border-gray-200 rounded-e-lg hover:bg-gray-100 hover:text-blue-700 focus:z-10 focus:ring-2 focus:ring-blue-700 focus:text-blue-700 dark:bg-gray-800 dark:border-gray-700 dark:text-white dark:hover:text-white dark:hover:bg-gray-700 dark:focus:ring-blue-500 dark:focus:text-white':
               idx === section.challenges.length - 1,
           }"
           :style="{
@@ -302,7 +302,7 @@
               :class="
                 appStore.isDarkMode
                   ? 'bg-neutral-900 text-white'
-                  : 'bg-gray-100 text-gray-900 border border-gray-300'
+                  : 'bg-white text-gray-900 border border-gray-300'
               "
               v-html="
                 selectedChallege.ongoingAnswer.submission.code.replace(
@@ -328,7 +328,7 @@
               :class="
                 appStore.isDarkMode
                   ? 'bg-neutral-900 text-white'
-                  : 'bg-gray-100 text-gray-900 border border-gray-300'
+                  : 'bg-white text-gray-900 border border-gray-300'
               "
             >
               <ul class="mb-0">
@@ -391,7 +391,7 @@
               :class="
                 appStore.isDarkMode
                   ? 'bg-neutral-900 text-white'
-                  : 'bg-gray-100 text-gray-900 border border-gray-300'
+                  : 'bg-white text-gray-900 border border-gray-300'
               "
             >
               {{ formatTime(selectedChallege.acceptedAnswer.duration) }}
@@ -407,7 +407,7 @@
                 :class="
                   appStore.isDarkMode
                     ? 'bg-neutral-900 text-white'
-                    : 'bg-gray-100 text-gray-900 border border-gray-300'
+                    : 'bg-white text-gray-900 border border-gray-300'
                 "
                 v-html="
                   selectedChallege.acceptedAnswer.submission.code.replace(
@@ -426,7 +426,7 @@
                 :class="
                   appStore.isDarkMode
                     ? 'bg-b-neutral-4 border border-gray-700'
-                    : 'bg-gray-100 border border-gray-300'
+                    : 'bg-white border border-gray-300'
                 "
                 v-html="selectedChallege.description"
               ></div>
@@ -469,7 +469,7 @@
               :class="
                 appStore.isDarkMode
                   ? 'bg-neutral-900 text-white'
-                  : 'bg-gray-100 text-gray-900 border border-gray-300'
+                  : 'bg-white text-gray-900 border border-gray-300'
               "
               v-html="selectedChallege.acceptedAnswer.feedback"
             ></div>
@@ -1609,7 +1609,7 @@ export default {
       } else {
         return this.appStore.isDarkMode
           ? 'bg-b-neutral-4 border border-gray-700'
-          : 'bg-gray-100 border border-gray-300';
+          : 'bg-white border border-gray-300';
       }
     },
     getCompletedChoiceIcon(choiceText) {

@@ -300,11 +300,11 @@
 .light {
   // Background utilities
   .bg-b-neutral-3 {
-    background-color: #ffffff !important;
+    background-color: #f3f5f7 !important;
   }
 
   .bg-b-neutral-2 {
-    background-color: #f3f5f7 !important;
+    background-color: #e2e6e9 !important;
   }
 
   .bg-b-neutral-1 {
@@ -315,16 +315,52 @@
     background-color: #f9fafb !important;
   }
 
-  // Text utilities - Better contrast
-  .text-w-neutral-1,
-  .heading-1,
-  .heading-2,
-  .heading-3,
-  .heading-4,
-  .heading-5,
-  .heading-40,
-  .display-120 {
+  // Text utilities - Better contrast (excluding breadcrumb, hero sections, and colored text)
+  .text-w-neutral-1:not([class*='breadcrumbImg'] *):not(
+      .thumbs-carousel-container *
+    ):not(.breadcrumb *),
+  .heading-1:not([class*='breadcrumbImg'] *):not(.thumbs-carousel-container *),
+  .heading-2:not([class*='breadcrumbImg'] *):not(
+      .thumbs-carousel-container *
+    ):not(.thumbs-carousel-container *),
+  .heading-3:not([class*='breadcrumbImg'] *):not(
+      .thumbs-carousel-container *
+    ):not(.text-stats),
+  .heading-4:not([class*='breadcrumbImg'] *):not(
+      .thumbs-carousel-container *
+    ):not(.text-stats),
+  .heading-5:not([class*='breadcrumbImg'] *):not(.thumbs-carousel-container *),
+  .heading-40:not([class*='breadcrumbImg'] *):not(.thumbs-carousel-container *),
+  .display-120:not([class*='breadcrumbImg'] *):not(
+      .thumbs-carousel-container *
+    ) {
     color: #080808 !important;
+  }
+
+  // Preserve colors for stats elements - override the above rule
+  .text-stats.text-yellow-300,
+  .text-stats.text-yellow-600 {
+    color: #ca8a04 !important; // yellow-600 for light mode
+  }
+
+  .text-stats.text-fuchsia-500,
+  .text-stats.text-fuchsia-600 {
+    color: #c026d3 !important; // fuchsia-600 for light mode
+  }
+
+  .text-stats.text-lime-500,
+  .text-stats.text-lime-600 {
+    color: #65a30d !important; // lime-600 for light mode
+  }
+
+  .text-stats.text-cyan-600,
+  .text-stats.text-cyan-700 {
+    color: #0e7490 !important; // cyan-700 for light mode
+  }
+
+  .text-stats.text-gray-700,
+  .text-stats.text-w-neutral-1 {
+    color: #374151 !important; // gray-700 for light mode
   }
 
   .text-w-neutral-2 {
@@ -480,10 +516,6 @@
 
     .nav-item {
       color: #374151 !important;
-
-      &:hover {
-        color: #f29620 !important;
-      }
     }
 
     .active .btn-c,
@@ -524,45 +556,6 @@
     color: #6b7280 !important;
   }
 
-  // Tab navigation
-  .tab-navbar {
-    color: #1f2937 !important;
-
-    a {
-      color: #1f2937 !important;
-
-      &:hover,
-      &.active {
-        color: #f29620 !important;
-      }
-    }
-  }
-
-  // Overlays
-  .overlay-1,
-  .overlay-2,
-  .overlay-3,
-  .overlay-11 {
-    background: linear-gradient(
-      270deg,
-      rgba(255, 255, 255, 0.36) 0%,
-      rgba(245, 245, 245, 0.36) 21.5%,
-      rgba(255, 255, 255, 0.72) 62.71%
-    ) !important;
-  }
-
-  // Breadcrumb
-  .breadcrumb {
-    .breadcrumb-link,
-    .breadcrumb-current {
-      color: #1f2937 !important;
-    }
-
-    .breadcrumb-icon {
-      color: #6b7280 !important;
-    }
-  }
-
   // Tables
   table {
     thead {
@@ -581,16 +574,6 @@
   // Links
   .link-1:hover {
     color: #f29620 !important;
-  }
-
-  // Stroked text
-  .stroked-text-1 {
-    -webkit-text-stroke-color: #f29620 !important;
-
-    &::after {
-      -webkit-text-stroke: 1px #f29620 !important;
-      color: #080808 !important;
-    }
   }
 
   // Placeholders

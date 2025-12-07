@@ -4,7 +4,7 @@
     <section class="pt-30p">
       <div class="section-pt">
         <div
-          class="relative bg-[url('../images/photos/breadcrumbImg.png')] bg-cover bg-no-repeat rounded-24 overflow-hidden"
+          class="relative bg-[url('../images/photos/breadcrumbImg1.png')] bg-cover bg-no-repeat rounded-24 overflow-hidden"
         >
           <div class="container">
             <div
@@ -114,8 +114,16 @@
                     achievement.userAchievements.length,
                 }"
               >
-                <img v-if="achievement.coverImage" :src="achievement.coverImage" class="w-24 h-24 rounded-full object-cover" />
-                <i v-else :class="getAchievementIcon(achievement)" class="icon-80"></i>
+                <img
+                  v-if="achievement.coverImage"
+                  :src="achievement.coverImage"
+                  class="w-24 h-24 rounded-full object-cover"
+                />
+                <i
+                  v-else
+                  :class="getAchievementIcon(achievement)"
+                  class="icon-80"
+                ></i>
                 <span
                   class="heading-4 text-w-neutral-1 link-1 line-clamp-1 mb-3"
                 >
