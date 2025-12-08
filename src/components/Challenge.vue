@@ -18,7 +18,7 @@
               idx === section.challenges.length - 1,
           }"
           :style="{
-            background: selectedChallege.id == challenge.id ? '#f29620' : '',
+            background: selectedChallenge.id == challenge.id ? '#f29620' : '',
           }"
         >
           <i class="ti ti-lock" v-if="challenge.locked"></i>
@@ -27,14 +27,14 @@
       </template>
     </div>
 
-    <div class="mt-4 w-full" v-if="selectedChallege.id">
-      <h3>{{ selectedChallege.title }}</h3>
-      <div v-html="selectedChallege.description"></div>
+    <div class="mt-4 w-full" v-if="selectedChallenge.id">
+      <h3>{{ selectedChallenge.title }}</h3>
+      <div v-html="selectedChallenge.description"></div>
       <hr class="my-2 border-dotted border-3" />
       <div class="flex justify-center">
         <button
-          v-if="selectedChallege.status === 'none'"
-          @click="startChallenge(selectedChallege)"
+          v-if="selectedChallenge.status === 'none'"
+          @click="startChallenge(selectedChallenge)"
           class="btn btn-primary rounded-10"
         >
           <i class="ti ti-player-play-filled icon-32"></i>
@@ -42,19 +42,21 @@
         </button>
         <button
           v-if="
-            selectedChallege.status === 'solved' &&
-            (!selectedChallege.type || selectedChallege.type === 'code')
+            selectedChallenge.status === 'solved' &&
+            (!selectedChallenge.type || selectedChallenge.type === 'code')
           "
-          @click="completeChallenge(selectedChallege)"
+          @click="completeChallenge(selectedChallenge)"
           class="btn btn-primary rounded-10 mt-4"
         >
           <i class="ti ti-circle-check-filled icon-32"></i>
           Complete Challenge
         </button>
       </div>
-      <div v-if="selectedChallege.status === 'ongoing'">
+      <div v-if="selectedChallenge.status === 'ongoing'">
         <!-- Code Challenge -->
-        <div v-if="!selectedChallege.type || selectedChallege.type === 'code'">
+        <div
+          v-if="!selectedChallenge.type || selectedChallenge.type === 'code'"
+        >
           <div
             class="shadow-3 border-2 rounded-12 border-indigo-950"
             :class="{ 'shake border-danger': answerError }"
@@ -85,7 +87,7 @@
         </div>
 
         <!-- Multiple Choice Challenge -->
-        <div v-if="selectedChallege.type === 'multiple_choice'">
+        <div v-if="selectedChallenge.type === 'multiple_choice'">
           <div
             class="rounded-12 p-4 mb-4"
             :class="
@@ -153,7 +155,7 @@
           v-show="
             !allTestsPassed &&
             codeSubmitted &&
-            (!selectedChallege.type || selectedChallege.type === 'code')
+            (!selectedChallenge.type || selectedChallenge.type === 'code')
           "
           class="flex flex-col mt-3"
         >
@@ -233,7 +235,7 @@
 
         <!-- Multiple Choice Result -->
         <div
-          v-if="selectedChallege.type === 'multiple_choice' && codeSubmitted"
+          v-if="selectedChallenge.type === 'multiple_choice' && codeSubmitted"
           class="mt-4 p-4 rounded-12"
           :class="
             submissionResult.correct
@@ -288,13 +290,13 @@
         </div>
       </div>
 
-      <div v-if="selectedChallege.status === 'solved'">
+      <div v-if="selectedChallenge.status === 'solved'">
         <div class="mt-4">
           <h2 class="text-center">Challenge Solved!</h2>
 
           <!-- Code Challenge Solved Display -->
           <div
-            v-if="!selectedChallege.type || selectedChallege.type === 'code'"
+            v-if="!selectedChallenge.type || selectedChallenge.type === 'code'"
           >
             <h3>Code</h3>
             <div
@@ -305,7 +307,7 @@
                   : 'bg-white text-gray-900 border border-gray-300'
               "
               v-html="
-                selectedChallege.ongoingAnswer.submission.code.replace(
+                selectedChallenge.ongoingAnswer.submission.code.replace(
                   /\n/,
                   '<br />'
                 )
@@ -318,7 +320,7 @@
                 class="font-mono"
                 v-html="
                   getSubmissionResultTitle(
-                    selectedChallege.ongoingAnswer.submission.metadata
+                    selectedChallenge.ongoingAnswer.submission.metadata
                   )
                 "
               ></strong>
@@ -333,7 +335,7 @@
             >
               <ul class="mb-0">
                 <li
-                  v-for="(result, idx) in selectedChallege.ongoingAnswer
+                  v-for="(result, idx) in selectedChallenge.ongoingAnswer
                     .submission.metadata.results"
                   :key="idx"
                 >
@@ -355,7 +357,7 @@
           </div>
 
           <!-- Multiple Choice Challenge Solved Display -->
-          <div v-if="selectedChallege.type === 'multiple_choice'">
+          <div v-if="selectedChallenge.type === 'multiple_choice'">
             <div
               class="p-4 rounded-10 my-2"
               :class="
@@ -381,7 +383,7 @@
         </div>
       </div>
 
-      <div v-if="selectedChallege.status === 'completed'">
+      <div v-if="selectedChallenge.status === 'completed'">
         <div class="mt-4">
           <h2 class="text-center">Challenge Completed!</h2>
           <div>
@@ -394,12 +396,14 @@
                   : 'bg-white text-gray-900 border border-gray-300'
               "
             >
-              {{ formatTime(selectedChallege.acceptedAnswer.duration) }}
+              {{ formatTime(selectedChallenge.acceptedAnswer.duration) }}
             </div>
 
             <!-- Code Challenge Display -->
             <template
-              v-if="!selectedChallege.type || selectedChallege.type === 'code'"
+              v-if="
+                !selectedChallenge.type || selectedChallenge.type === 'code'
+              "
             >
               <h3>Code</h3>
               <div
@@ -410,7 +414,7 @@
                     : 'bg-white text-gray-900 border border-gray-300'
                 "
                 v-html="
-                  selectedChallege.acceptedAnswer.submission.code.replace(
+                  selectedChallenge.acceptedAnswer.submission.code.replace(
                     /\n/,
                     '<br />'
                   )
@@ -419,7 +423,7 @@
             </template>
 
             <!-- Multiple Choice Display -->
-            <template v-if="selectedChallege.type === 'multiple_choice'">
+            <template v-if="selectedChallenge.type === 'multiple_choice'">
               <h3>Question</h3>
               <div
                 class="p-3 rounded-10 my-2"
@@ -428,7 +432,7 @@
                     ? 'bg-b-neutral-4 border border-gray-700'
                     : 'bg-white border border-gray-300'
                 "
-                v-html="selectedChallege.description"
+                v-html="selectedChallenge.description"
               ></div>
 
               <h3>Options</h3>
@@ -471,7 +475,7 @@
                   ? 'bg-neutral-900 text-white'
                   : 'bg-white text-gray-900 border border-gray-300'
               "
-              v-html="selectedChallege.acceptedAnswer.feedback"
+              v-html="selectedChallenge.acceptedAnswer.feedback"
             ></div>
           </div>
         </div>
@@ -646,7 +650,7 @@ export default {
   data() {
     return {
       feedback: '',
-      selectedChallege: {},
+      selectedChallenge: {},
       selectedTab: 'result',
       codeSubmitted: false,
       answerError: false,
@@ -684,11 +688,11 @@ export default {
       return this.section.nextSection;
     },
     parsedChoices() {
-      if (this.selectedChallege.choices) {
+      if (this.selectedChallenge.choices) {
         try {
-          const choices = Array.isArray(this.selectedChallege.choices)
-            ? this.selectedChallege.choices
-            : JSON.parse(this.selectedChallege.choices);
+          const choices = Array.isArray(this.selectedChallenge.choices)
+            ? this.selectedChallenge.choices
+            : JSON.parse(this.selectedChallenge.choices);
           // Add index to each choice for easier reference
           return choices.map((choice, index) => ({
             ...choice,
@@ -732,7 +736,7 @@ export default {
         customClass: this.swalClasses,
         preConfirm: async () => {
           try {
-            const challengeId = this.selectedChallege.id;
+            const challengeId = this.selectedChallenge.id;
             const response = await this.http.post(
               '/challenges/' + challengeId + '/start'
             );
@@ -790,7 +794,7 @@ export default {
             this.completeChallengeController = new AbortController();
             const { signal } = this.completeChallengeController;
 
-            const challengeId = this.selectedChallege.id;
+            const challengeId = this.selectedChallenge.id;
             const response = await this.http.post(
               '/challenges/' + challengeId + '/complete',
               {},
@@ -1005,7 +1009,7 @@ export default {
         return;
       }
 
-      this.selectedChallege = challenge;
+      this.selectedChallenge = challenge;
       this.selectedChoice = null;
       this.codeSubmitted = false;
       this.answerError = false;
@@ -1041,7 +1045,7 @@ export default {
         customClass: this.swalClasses,
         preConfirm: async () => {
           try {
-            const challengeId = this.selectedChallege.id;
+            const challengeId = this.selectedChallenge.id;
             const hintId = hint.id;
             const response = await this.http.post(
               '/challenges/' + challengeId + '/buy-hint',
@@ -1102,7 +1106,7 @@ export default {
     },
     async showHints() {
       try {
-        const challengeId = this.selectedChallege.id;
+        const challengeId = this.selectedChallenge.id;
 
         const response = await this.http.get(
           '/challenges/' + challengeId + '/hints'
@@ -1126,11 +1130,11 @@ export default {
             this.feedback = '';
             this.codeSubmitted = true;
 
-            const challengeId = this.selectedChallege.id;
+            const challengeId = this.selectedChallenge.id;
             let requestData;
 
             // Handle different challenge types
-            if (this.selectedChallege.type === 'multiple_choice') {
+            if (this.selectedChallenge.type === 'multiple_choice') {
               if (this.selectedChoice === null) {
                 Swal.showValidationMessage('Please select an answer');
                 return;
@@ -1196,43 +1200,18 @@ export default {
 
                 // Update challenge status based on result
                 if (this.submissionResult.correct) {
-                  this.selectedChallege.status = 'completed';
+                  this.selectedChallenge.status = 'completed';
 
                   // Store the accepted answer for display
-                  this.selectedChallege.acceptedAnswer = {
-                    submission: {
-                      code: response.data.data.userAnswer,
-                      metadata: {
-                        isCorrect: true,
-                        userAnswer: response.data.data.userAnswer,
-                        correctAnswer: this.submissionResult.correctAnswerText,
-                      },
-                    },
-                    feedback:
-                      response.data.data.explanation ||
-                      'Great job! You selected the correct answer.',
-                    duration: response.data.data.duration || 0,
-                  };
+                  this.selectedChallenge.acceptedAnswer =
+                    response.data.data.acceptedAnswer;
                 } else {
                   // Even if incorrect, multiple choice is completed after answering
-                  this.selectedChallege.status = 'completed';
+                  this.selectedChallenge.status = 'completed';
 
                   // Store the accepted answer for display (incorrect answer)
-                  this.selectedChallege.acceptedAnswer = {
-                    submission: {
-                      code: response.data.data.userAnswer,
-                      metadata: {
-                        isCorrect: false,
-                        userAnswer: response.data.data.userAnswer,
-                        correctAnswer: this.submissionResult.correctAnswerText,
-                      },
-                    },
-                    feedback:
-                      response.data.data.explanation ||
-                      'The correct answer was: ' +
-                        this.submissionResult.correctAnswerText,
-                    duration: response.data.data.duration || 0,
-                  };
+                  this.selectedChallenge.acceptedAnswer =
+                    response.data.data.completedAnswer;
                 }
 
                 // Update nextSection if returned (for both correct and incorrect)
@@ -1242,7 +1221,7 @@ export default {
 
                 // Unlock next challenge if exists (for both correct and incorrect)
                 const nextChallenge = this.section.challenges.find(
-                  (c) => c.order == this.selectedChallege.order + 1
+                  (c) => c.order == this.selectedChallenge.order + 1
                 );
                 if (nextChallenge) {
                   nextChallenge.locked = false;
@@ -1307,9 +1286,9 @@ export default {
 
               this.submissionResult =
                 response.data.data.ongoingAnswer.submission.metadata;
-              this.selectedChallege.ongoingAnswer =
+              this.selectedChallenge.ongoingAnswer =
                 response.data.data.ongoingAnswer;
-              this.selectedChallege.status = response.data.data.result;
+              this.selectedChallenge.status = response.data.data.result;
 
               return this.submissionResult;
             }
@@ -1320,7 +1299,7 @@ export default {
         allowOutsideClick: () => !Swal.isLoading(),
       }).then((result, response) => {
         if (result.isConfirmed) {
-          if (this.selectedChallege.type === 'multiple_choice') {
+          if (this.selectedChallenge.type === 'multiple_choice') {
             if (result.value.correct) {
               Swal.fire({
                 title: '✅ Correct Answer!',
@@ -1447,7 +1426,7 @@ export default {
               }).then((successResult) => {
                 // If user clicks OK, automatically trigger completion flow
                 if (successResult.isConfirmed) {
-                  this.completeChallenge(this.selectedChallege);
+                  this.completeChallenge(this.selectedChallenge);
                 }
               });
             } else {
@@ -1484,15 +1463,15 @@ export default {
     getCompletedMultipleChoiceAnswer() {
       // For completed multiple choice challenges, get the answer from acceptedAnswer
       if (
-        this.selectedChallege.acceptedAnswer &&
-        this.selectedChallege.acceptedAnswer.submissions &&
-        this.selectedChallege.acceptedAnswer.submissions.length > 0
+        this.selectedChallenge.acceptedAnswer &&
+        this.selectedChallenge.acceptedAnswer.submissions &&
+        this.selectedChallenge.acceptedAnswer.submissions.length > 0
       ) {
         try {
           // Get the last submission
           const submission =
-            this.selectedChallege.acceptedAnswer.submissions[
-              this.selectedChallege.acceptedAnswer.submissions.length - 1
+            this.selectedChallenge.acceptedAnswer.submissions[
+              this.selectedChallenge.acceptedAnswer.submissions.length - 1
             ];
 
           // The submission.code contains the answer text directly
@@ -1523,15 +1502,15 @@ export default {
     getCompletedUserAnswer() {
       // Get user's answer from acceptedAnswer submissions
       if (
-        this.selectedChallege.acceptedAnswer &&
-        this.selectedChallege.acceptedAnswer.submissions &&
-        this.selectedChallege.acceptedAnswer.submissions.length > 0
+        this.selectedChallenge.acceptedAnswer &&
+        this.selectedChallenge.acceptedAnswer.submissions &&
+        this.selectedChallenge.acceptedAnswer.submissions.length > 0
       ) {
         try {
           // Get the last submission
           const submission =
-            this.selectedChallege.acceptedAnswer.submissions[
-              this.selectedChallege.acceptedAnswer.submissions.length - 1
+            this.selectedChallenge.acceptedAnswer.submissions[
+              this.selectedChallenge.acceptedAnswer.submissions.length - 1
             ];
 
           const metadata =
@@ -1550,15 +1529,15 @@ export default {
     getCompletedCorrectAnswer() {
       // Get correct answer from acceptedAnswer submissions metadata
       if (
-        this.selectedChallege.acceptedAnswer &&
-        this.selectedChallege.acceptedAnswer.submissions &&
-        this.selectedChallege.acceptedAnswer.submissions.length > 0
+        this.selectedChallenge.acceptedAnswer &&
+        this.selectedChallenge.acceptedAnswer.submissions &&
+        this.selectedChallenge.acceptedAnswer.submissions.length > 0
       ) {
         try {
           // Get the last submission
           const submission =
-            this.selectedChallege.acceptedAnswer.submissions[
-              this.selectedChallege.acceptedAnswer.submissions.length - 1
+            this.selectedChallenge.acceptedAnswer.submissions[
+              this.selectedChallenge.acceptedAnswer.submissions.length - 1
             ];
 
           const metadata =
@@ -1577,15 +1556,15 @@ export default {
     getCompletedAnswerWasCorrect() {
       // Check if user's answer was correct
       if (
-        this.selectedChallege.acceptedAnswer &&
-        this.selectedChallege.acceptedAnswer.submissions &&
-        this.selectedChallege.acceptedAnswer.submissions.length > 0
+        this.selectedChallenge.acceptedAnswer &&
+        this.selectedChallenge.acceptedAnswer.submissions &&
+        this.selectedChallenge.acceptedAnswer.submissions.length > 0
       ) {
         try {
           // Get the last submission
           const submission =
-            this.selectedChallege.acceptedAnswer.submissions[
-              this.selectedChallege.acceptedAnswer.submissions.length - 1
+            this.selectedChallenge.acceptedAnswer.submissions[
+              this.selectedChallenge.acceptedAnswer.submissions.length - 1
             ];
 
           const metadata =
