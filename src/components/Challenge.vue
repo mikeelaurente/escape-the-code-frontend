@@ -611,6 +611,16 @@
   transform: translate3d(0, 0, 0);
 }
 
+.iframe-wrapper iframe {
+  aspect-ratio: 16 / 9;
+  border: none;
+  border-radius: 0.375rem;
+  display: block;
+  margin-bottom: 1rem;
+  margin-top: 1rem;
+  max-width: 100%;
+}
+
 @keyframes shake {
   10%,
   90% {
