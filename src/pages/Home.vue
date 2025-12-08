@@ -176,13 +176,13 @@
         <div class="container">
           <template v-if="loaded">
             <h2>Enrolled Courses</h2>
-            <div v-if="!data.courses.length">
+            <div v-if="!data.courses.length === 0">
               <h3 class="heading-3 text-b-neutral-1 my-4">
                 No course enrolled yet :(
               </h3>
             </div>
             <div
-              v-if="data.courses.length"
+              v-if="data.courses.length > 0"
               class="overflow-x-auto scrollbar-sm rounded-12"
             >
               <table
@@ -452,7 +452,7 @@ export default {
     this.loaded = false;
     const response = await this.http.get('/users/dashboard');
     this.data = {
-      courses: response.data.data.courses,
+      courses: response.data.data.courses || [],
       ranking: response.data.data.ranking,
     };
     this.loaded = true;
