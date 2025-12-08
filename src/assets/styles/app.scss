@@ -47,10 +47,29 @@
 }
 
 @keyframes spin {
-    to {
-        transform: rotate(360deg);
-    }
+  to {
+    transform: rotate(360deg);
+  }
 }
 .animate-spin {
-    animation: spin 1s linear infinite;
+  animation: spin 1s linear infinite;
+}
+
+.iframe-wrapper iframe {
+  aspect-ratio: 16 / 9;
+  border: none;
+  border-radius: 0.375rem;
+  display: block;
+  margin-bottom: 1rem;
+  margin-top: 1rem;
+  max-width: 100%;
+}
+
+.etc-image {
+  max-width: 100%;
+  height: auto;
+  border-radius: 0.375rem;
+  margin-top: 1rem;
+  margin-bottom: 1rem;
+  display: block;
 }
