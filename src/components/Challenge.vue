@@ -850,8 +850,13 @@ export default {
                   }
                 }
                 if (message.startsWith('end: ')) {
-                  responseData = JSON.parse(finalResponse);
-                  reader.cancel();
+                  try {
+                    responseData = JSON.parse(finalResponse);
+                    reader.cancel();
+                  } catch (e) {
+                    this.$emit('refetch');
+                    console.error('Failed to parse final response data:', e);
+                  }
                 }
                 if (message.startsWith('end:chunk')) {
                   const msg = message.substring('end:chunk: '.length).trim();

@@ -119,6 +119,7 @@
                 <challenge
                   :course-id="section.chapter.courseId"
                   :section="section"
+                  @refetch="fetchSection(section.id)"
                 ></challenge>
               </div>
             </div>

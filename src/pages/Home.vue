@@ -176,13 +176,13 @@
         <div class="container">
           <template v-if="loaded">
             <h2>Enrolled Courses</h2>
-            <div v-if="!data.courses">
+            <div v-if="!data.courses.length">
               <h3 class="heading-3 text-b-neutral-1 my-4">
                 No course enrolled yet :(
               </h3>
             </div>
             <div
-              v-if="data.courses"
+              v-if="data.courses.length"
               class="overflow-x-auto scrollbar-sm rounded-12"
             >
               <table
