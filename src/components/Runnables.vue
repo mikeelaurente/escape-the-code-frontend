@@ -46,7 +46,9 @@
         <div
           class="p-5 border border-b-0 border-gray-200 dark:border-gray-700 dark:bg-gray-900"
         >
-          <div class="font-mono py-2 px-4 mb-2 border border-1 rounded-8">
+          <div
+            class="font-mono whitespace-pre py-2 px-4 mb-2 border border-1 rounded-8"
+          >
             {{ runnable.code }}
           </div>
           <div class="flex justify-end">
@@ -58,11 +60,61 @@
               <i class="ti ti-player-play-filled icon-24"></i>
             </button>
           </div>
-          <template v-if="runnable.results && runnable.results.length">
+          <template v-if="runnable.error">
             <hr class="my-2 border-dotted border-dark border-2" />
-            <pre
-              class="bg-black/20 rounded-10 my-2 p-1 shadow-2 px-5 py-2"
-            >{{ runnable.results.map( result => result.logs.map(l => l.args).join('')).join('<br />') }}</pre>
+            <div
+              class="bg-red-500/20 border border-red-500 rounded-10 my-2 p-3"
+            >
+              <div
+                class="flex items-center gap-2 text-red-500 font-semibold mb-2"
+              >
+                <i class="ti ti-alert-circle"></i>
+                <span>{{
+                  runnable.error.errorType === 'syntax'
+                    ? 'Syntax Error'
+                    : 'Parse Error'
+                }}</span>
+              </div>
+              <div class="text-sm text-red-400 mb-2">
+                Line {{ runnable.error.errorLine }}, Column
+                {{ runnable.error.errorColumn }}
+              </div>
+              <pre
+                class="bg-black/30 rounded-8 p-3 text-red-300 text-sm overflow-x-auto"
+                >{{ runnable.error.codeFrame }}</pre
+              >
+            </div>
+          </template>
+          <template v-else-if="runnable.results && runnable.results.length">
+            <hr class="my-2 border-dotted border-dark border-2" />
+            <div class="bg-black/20 rounded-10 my-2 shadow-2 px-5 py-3">
+              <div
+                class="flex items-center gap-2 text-green-500 font-semibold mb-2"
+              >
+                <i class="ti ti-check"></i>
+                <span>Output</span>
+              </div>
+              <div class="text-sm overflow-x-auto">
+                <template
+                  v-for="(result, rIdx) in runnable.results"
+                  :key="rIdx"
+                >
+                  <template v-if="result.logs && result.logs.length">
+                    <div
+                      v-for="(log, lIdx) in result.logs"
+                      :key="`${rIdx}-${lIdx}`"
+                      :class="{
+                        'text-red-400': log.level === 'error',
+                        'text-blue-400': log.level === 'info',
+                        'text-gray-200': log.level === 'log',
+                      }"
+                    >
+                      {{ log.args.join(' ') }}
+                    </div>
+                  </template>
+                </template>
+              </div>
+            </div>
           </template>
         </div>
       </div>
@@ -102,6 +154,7 @@ export default {
     },
     async runCode(runnable) {
       runnable.results = [];
+      runnable.error = null;
       Toast.fire({
         icon: 'info',
         title: 'Running code...',
@@ -110,11 +163,32 @@ export default {
         code: btoa(encodeURIComponent(runnable.code)),
       });
 
+      const data = response.data;
+
+      // Check for parse/syntax errors (single error object)
+      if (
+        data.status === 'parse_error' ||
+        (data.ok === false && data.errorType)
+      ) {
+        Toast.fire({
+          icon: 'error',
+          title: 'Code has errors',
+        });
+        runnable.error = {
+          errorType: data.errorType,
+          errorLine: data.errorLine,
+          errorColumn: data.errorColumn,
+          codeFrame: data.codeFrame,
+        };
+        return;
+      }
+
+      // Successful response is an array of results
       Toast.fire({
         icon: 'success',
         title: 'It worked!',
       });
-      runnable.results = response.data.results;
+      runnable.results = data.results;
     },
   },
   mounted() {},
