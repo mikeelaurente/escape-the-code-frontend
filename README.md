@@ -109,7 +109,7 @@ Rather than building a full API client layer, a single shared Axios instance han
 ### Requirements
 
 - Node.js
-- The backend API running (see the [backend README](../backend/README.md) or repo)
+- The backend API running (see the [backend README](https://github.com/mikeelaurente/escape-the-code-backend) or repo)
 
 ### Installation
 
